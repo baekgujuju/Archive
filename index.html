@@ -104,9 +104,35 @@ details.article[data-bookmark-color]{border-left:4px solid var(--bkm-color,trans
 .quoted-link-out{margin-top:8px;font-size:12px}
 .quoted-link-out a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .reader-body .quoted{margin-top:20px}
-.full-text.web-html{white-space:normal}
+.full-text.web-html{white-space:normal;overflow-wrap:break-word}
 .full-text.web-html img{cursor:zoom-in}
+/* 웹글 히어로: 아카이브 전역 header flex를 무력화하고 제목-저자 상하 배치 */
+.full-text.web-html header.hero{display:block;padding:0 0 10px}
+.full-text.web-html header.hero .badge{display:inline-block;font-size:11px;font-weight:800;color:var(--accent);background:var(--soft);padding:4px 10px;border-radius:6px;margin-bottom:10px}
+.full-text.web-html header.hero h1{font-size:26px;line-height:1.35;letter-spacing:-.02em;margin:0 0 10px}
+.full-text.web-html header.hero p.sub{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
+/* 웹글 본문: 자연스러운 문단 흐름 */
+.full-text.web-html h2.sec{font-size:20px;margin:1.8em 0 .7em}
+.full-text.web-html p{margin:0 0 1em}
+.full-text.web-html h3.stage{font-size:18px;line-height:1.5;margin:1.4em 0 .6em}
+.full-text.web-html .stage-num::after{content:". "}
+.full-text.web-html .phase-tag{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
+.full-text.web-html ul.points{margin:.6em 0 1em;padding-left:1.3em}
+.full-text.web-html ul.points li{margin:.35em 0}
+.full-text.web-html blockquote.original{margin:.9em 0;padding:.7em 1em;border-left:3px solid var(--line);color:var(--muted);font-size:.92em}
+.full-text.web-html blockquote.original .org-label{display:inline-block;font-size:11px;font-weight:800;color:var(--accent);margin-right:.5em}
+.full-text.web-html figure.chart{margin:1.2em 0}
+.full-text.web-html figcaption{font-size:12px;color:var(--muted);text-align:center;margin-top:6px}
+/* 흐름도 단계: 번호+제목을 한 줄에, 세부 설명은 아래에 */
+.full-text.web-html .flow{margin:1em 0}
+.full-text.web-html .phase-head{display:block;font-size:12px;font-weight:800;color:var(--accent);letter-spacing:.1em;margin:1.2em 0 .4em}
+.full-text.web-html .flow-step{display:block;margin:10px 0}
+.full-text.web-html .flow-dot{display:inline}
+.full-text.web-html .flow-dot>span{font-weight:800}
+.full-text.web-html .flow-dot>span::after{content:". "}
+.full-text.web-html .flow-body{display:inline}
 .full-text.web-html .flow-body b{margin-right:.25em}
+.full-text.web-html .flow-body small{display:block;margin-top:3px;color:var(--muted);font-size:.92em}
 </style></head><body>
 <div id="js-debug" hidden style="background:#b42318;color:#fff;position:fixed;top:0;left:0;right:0;z-index:30000;font-size:12px;padding:10px"></div>
 <div id="file-notice" class="file-notice" hidden>파일로 직접 열람 중: 북마크 저장이 안 될 수 있어요 → 내보내기/가져오기 사용</div>
@@ -4042,7 +4068,7 @@ el('export-shortcut').onclick=()=>el('export').click();
 el('import-shortcut').onclick=()=>el('import').click();
 /* Google Drive 자동 동기화 (기존 기능과 격리: 실패해도 메인 스크립트에 영향 없음) */
 try{(function(){
- const DRIVE_CLIENT_ID='43687402502-i224ggjqa8v7hqtsoa0hiak3kk9913b4.apps.googleusercontent.com';
+ const DRIVE_CLIENT_ID='43687402502-rlid8pjoakcigrn6tpcs58elo357vtfr.apps.googleusercontent.com';
  const DRIVE_SCOPE='https://www.googleapis.com/auth/drive.appdata';
  const STATE_KEYS=['archive-pinned','archive-bookmarks','archive-bookmark-names','archive-deleted-replies'];
  const TS_KEY='archive-sync-updatedAt';
