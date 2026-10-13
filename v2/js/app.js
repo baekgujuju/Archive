@@ -95,6 +95,7 @@ var ArchiveApp = (function () {
   function toggle(array, value) { var i = array.indexOf(value); if (i < 0) array.push(value); else array.splice(i, 1); }
   function status(message) { var el = controls.querySelector('[data-results-status]'); if (el) el.textContent = message; }
   function update() {
+    var modeButton=controls.querySelector('[data-action="mode"]');modeButton.textContent=mode;modeButton.setAttribute('aria-label','검색 조건 '+mode+', 클릭하여 변경');modeButton.setAttribute('aria-pressed',String(mode==='AND'));
     var words = controls.querySelector('input').value.toLowerCase().split(',').map(function (s) { return s.trim(); }).filter(Boolean), count = 0, pinCount = 0;
     var defaultView=!words.length&&!selection.hidden&&!selection.type.length&&!selection.topic.length&&!selection.author.length&&!selection.bookmark.length;
     if(aiList)aiList.hidden=!defaultView;
@@ -201,6 +202,7 @@ var ArchiveApp = (function () {
     controls = document.createElement('section'); controls.className = 'aa-controls'; controls.id = 'archive-controls';
     controls.innerHTML = ArchiveUI.controls(records, colors, getBookmarkName);
     ArchiveUI.overview(records); ArchiveUI.related(records);
+    records.forEach(function(r){if(!r.related.length)return;var section=document.createElement('section');section.className='related-section';section.innerHTML='<h4>연관 게시글</h4>'+r.related.map(function(other){return '<button type="button" data-related-id="'+esc(other.id)+'">'+esc(title(other.article))+'</button>';}).join('');r.card.appendChild(section);});
     var ibRecords=records.filter(function(r){return r.type==='ib';});
     ['subject','category'].forEach(function(field,n){var values=Array.from(new Set(ibRecords.map(function(r){return r.article[field]||'';}).filter(Boolean)));controls.querySelectorAll('.aa-ib-nav .aa-chips')[n].innerHTML=button('전체',field,'')+values.map(function(v){return button(v,field,v);}).join('');});
     list.parentNode.insertBefore(controls, list); pinned = document.createElement('section'); pinned.className = 'aa-pinned'; pinned.innerHTML = '<h2>📌 고정한 글</h2><div class="aa-grid"></div>'; list.parentNode.insertBefore(pinned, list);
@@ -279,8 +281,11 @@ var ArchiveApp = (function () {
       else if (b.classList.contains('read-window-btn')) openRead(r);
       return;
     }
+    if(e.target.tagName==='IMG'){e.preventDefault();var source=e.target.dataset.full||e.target.src;openRead(r);var inlineImage=Array.from(readDialog.querySelectorAll('.aa-content img')).find(function(img){return img.src===source;});if(inlineImage)ArchiveImages.open(inlineImage,readDialog.querySelector('.aa-content'));return;}
     var media=e.target.closest('.post-media a');if(media){e.preventDefault();openRead(r);var imgs=readDialog.querySelectorAll('.aa-content img');var n=Array.from(card.querySelectorAll('.post-media a')).indexOf(media);if(imgs[n])ArchiveImages.open(imgs[n],readDialog.querySelector('.aa-content'));return;}
     if (e.target.closest('a,input,textarea,select,label')) return;
+    // Preserve v1 desktop inline expansion; mobile continues to open the full reader.
+    if(window.matchMedia('(min-width:768px)').matches&&e.target.closest('.card-toggle'))return;
     e.preventDefault(); openRead(r);
   }
   function refreshSavedState() {

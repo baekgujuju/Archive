@@ -1,7 +1,7 @@
 {
-  "version": "2026-10-13T11:04:59.085408+00:00",
+  "version": "2026-10-13T11:27:37.344844+00:00",
   "build": "v2",
-  "source_hash": "b38e005b3a8a6f7ccb201d51603ffd4f19f37abe30063c0d18d516c0eea81e68",
+  "source_hash": "571c7490507958a6ac8ec7633bb308c3942d09fff65f3cdf357ab22c55e92bcd",
   "builder_version": "1.2.0",
   "chunks": {
     "posts-x": {

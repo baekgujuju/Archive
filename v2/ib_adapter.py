@@ -92,6 +92,8 @@ def canonical_fingerprint() -> str:
         h.update(b"\x00")
         h.update(th.encode("utf-8"))
         h.update(b"\x00")
+    # Include fallback text.md and every effective canonical body as well.
+    h.update(json.dumps(collect_canonical(),ensure_ascii=False,sort_keys=True).encode('utf-8'))
     h.update(f"text_assets:{len(text_hashes)}".encode("utf-8"))
     return h.hexdigest()
 
@@ -254,6 +256,7 @@ def merge(snapshot, raws):
 
     merged = []
     seen = set()
+    reserved_ids = {s.get("id") for s in snapshot}
     stats = {"snapshot": len(snapshot), "matched": 0, "added": 0,
              "content_updated": 0, "snapshot_only": 0}
 
@@ -271,7 +274,10 @@ def merge(snapshot, raws):
             new_hash = hashlib.sha256(new_text.encode("utf-8")).hexdigest()[:16] if new_text else ""
             old_hash = snap.get("_source_hash", "")
             # 해시가 다르면 업데이트 (짧아져도 전파 — 수정 반영)
-            if new_text and new_hash != old_hash:
+            # First import establishes a baseline without destroying curated v1 bodies.
+            if new_hash and not old_hash:
+                post['_source_hash'] = new_hash
+            if old_hash and new_text and new_hash != old_hash and r.get('full_text'):
                 post["fullText"] = new_text
                 post["summary"] = new_text[:300]
                 post["_source_hash"] = new_hash
@@ -284,6 +290,9 @@ def merge(snapshot, raws):
                 )
                 post["fullHtml"] = safe_html
                 stats["content_updated"] += 1
+            if old_hash and new_hash != old_hash:
+                post['_source_hash'] = new_hash
+                if r.get('description'):post['summary']=r['description'][:300]
             stats["matched"] += 1
         else:
             # 신규: 안정적 ID (충돌 방지)
@@ -293,7 +302,7 @@ def merge(snapshot, raws):
             # ID 충돌 시 접미사로 해소
             pin_id, memo_id = base_pin, base_memo
             suffix = 1
-            while pin_id in seen:
+            while pin_id in seen or pin_id in reserved_ids:
                 pin_id = f"{base_pin}_{suffix}"
                 memo_id = f"{base_memo}_{suffix}"
                 suffix += 1
@@ -311,8 +320,8 @@ def merge(snapshot, raws):
                 "fullHtml": "",
                 "author": r.get("source") or "IB 자료",
                 "source_url": url,
-                "subject": subject_key,
-                "category": "IB",
+                "subject": subject_label,
+                "category": r.get("rl_category") or r.get("category") or "자료",
                 "topics": [subject_label],
                 "_source_hash": new_hash,
             }
@@ -362,10 +371,12 @@ def main():
         print(f"오류: 스냅샷 ID 유실: {missing}", file=sys.stderr)
         sys.exit(1)
 
-    IB_LIBRARY_JSON.write_text(
+    temporary = IB_LIBRARY_JSON.with_suffix(".tmp")
+    temporary.write_text(
         json.dumps({"posts": merged}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+    temporary.replace(IB_LIBRARY_JSON)
     print(f"IB 병합 완료: 스냅샷 {stats['snapshot']} → "
           f"매칭 {stats['matched']} + 신규 {stats['added']} + "
           f"스냅샷유지 {stats['snapshot_only']} = 총 {stats['total']}개 "

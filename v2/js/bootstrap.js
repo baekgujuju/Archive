@@ -491,6 +491,8 @@ async function boot() {
   if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
   showOfflineBadge(false);
   showMain();
+  const updateStatus=document.getElementById('archive-update-status');
+  if(updateStatus)updateStatus.textContent='자료 변경 자동 확인 · 60초 간격 · '+new Date(manifest.version).toLocaleString('ko-KR');
 
 }
 

@@ -24,6 +24,7 @@ import argparse
 import fcntl
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -110,7 +111,12 @@ def main():
         if retry_marker:
             print("[monitor] 재시도 마커 감지 — 후크 실행")
 
-        changed = args.force or retry_marker or any(current[k] != prev.get(k) for k in current)
+        # A restart or publication activation must also retry pending artifacts/commits.
+        dirty=subprocess.run(['git','-C',str(V2_ROOT),'status','--porcelain','--','data/','media/','ib-library.json'],capture_output=True,text=True)
+        branch=os.environ.get('V2_PUBLISH_BRANCH','main')
+        pending=subprocess.run(['git','-C',str(V2_ROOT),'rev-list','--count',f'origin/{branch}..HEAD'],capture_output=True,text=True)
+        pending_work=bool(dirty.returncode==0 and dirty.stdout.strip()) or bool(os.environ.get('V2_PUBLISH')=='1' and pending.returncode==0 and pending.stdout.strip()!='0')
+        changed = args.force or retry_marker or pending_work or any(current[k] != prev.get(k) for k in current)
         if not changed:
             save_state(current)
             return 0

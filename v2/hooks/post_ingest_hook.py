@@ -72,7 +72,7 @@ def sha256_file(path: Path) -> str:
 
 def changed_files():
     """porcelain v1 정확 파싱 (data/, media/ 한정)."""
-    r = git(["status", "--porcelain=v1", "-z", "--", "data/", "media/"])
+    r = git(["status", "--porcelain=v1", "-z", "--", "data/", "media/", "ib-library.json"])
     if r.returncode != 0:
         return []
     files = []
@@ -189,7 +189,7 @@ def main():
         # 2b. translations.json 백업
         backup = None
         if TRANSLATIONS.exists():
-            backup = Path(tempfile.mkdtemp(prefix="v2_trans_")) / "translations.json"
+            backup = Path(tempfile.mkdtemp(prefix="v2_trans_", dir=HOOKS_DIR)) / "translations.json"
             shutil.copy2(str(TRANSLATIONS), str(backup))
             log(f"번역 캐시 백업: {backup}")
 
