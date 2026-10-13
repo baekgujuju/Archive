@@ -202,6 +202,7 @@ var ArchiveApp = (function () {
     controls = document.createElement('section'); controls.className = 'aa-controls'; controls.id = 'archive-controls';
     controls.innerHTML = ArchiveUI.controls(records, colors, getBookmarkName);
     ArchiveUI.overview(records); ArchiveUI.related(records);
+    var lead=records.find(function(r){return r.type!=='ib'&&r.topics.indexOf('AI툴')<0;});if(lead){lead.card.classList.add('featured');var pick=lead.card.querySelector('.spotlight-label');if(pick)pick.hidden=false;}
     records.forEach(function(r){if(!r.related.length)return;var section=document.createElement('section');section.className='related-section';section.innerHTML='<h4>연관 게시글</h4>'+r.related.map(function(other){return '<button type="button" data-related-id="'+esc(other.id)+'">'+esc(title(other.article))+'</button>';}).join('');r.card.appendChild(section);});
     var ibRecords=records.filter(function(r){return r.type==='ib';});
     ['subject','category'].forEach(function(field,n){var values=Array.from(new Set(ibRecords.map(function(r){return r.article[field]||'';}).filter(Boolean)));controls.querySelectorAll('.aa-ib-nav .aa-chips')[n].innerHTML=button('전체',field,'')+values.map(function(v){return button(v,field,v);}).join('');});

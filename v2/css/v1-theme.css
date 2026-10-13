@@ -235,7 +235,6 @@ details.article[data-bookmark-color]{border-left:4px solid var(--bkm-color,trans
 
 
 
-body{font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;max-width:700px;margin:0 auto;padding:20px;line-height:1.7;color:#222;}h1{font-size:1.4em;border-bottom:2px solid #222;padding-bottom:10px;}img{max-width:100%;height:auto;margin:10px 0;}.meta{color:#888;font-size:0.85em;margin-bottom:20px;}
 @media(max-width:767px){
 
 @page{margin:14mm 12mm}
