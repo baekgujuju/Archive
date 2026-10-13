@@ -6,16 +6,19 @@ Hatch agent cron 대신 사용하는 결정적 호스트 워커.
 subprocess로 분리 실행되며 exec 완료 후에도 생존.
 
 특성:
-  - 300초마다 scheduler_runner.py 실행
+  - 300초마다 scheduler_runner.py 실행 (완료 후 300초 대기)
   - singleton flock + PID 파일 (중복 실행 방지)
   - 로그 크기 제한 (1MB, 로테이션)
   - V2_PUBLISH=1, V2_PUBLISH_BRANCH=main을 자식 프로세스에 프로그래밍 방식으로 설정
   - 모델 호출 없음 (순수 Python)
 
+타임아웃 예산:
+  - Drive 인제스트: 600초
+  - Monitor: 2400초 (번역 1800초 허용)
+  - 전체: 3120초 (600 + 2400 + 120 여유)
+
 사용법:
     # 시작 (백그라운드, 세션 분리)
-    nohup python3 v2/hooks/persistent_worker.py > /dev/null 2>&1 &
-    # 또는
     python3 v2/hooks/launcher.py start
 
     # 상태 확인
@@ -37,20 +40,28 @@ V2_ROOT = HOOKS_DIR.parent
 PID_FILE = HOOKS_DIR / ".worker.pid"
 LOCK_FILE = HOOKS_DIR / ".worker.lock"
 LOG_FILE = HOOKS_DIR / "worker.log"
+SCHEDULER_LOG = HOOKS_DIR / "scheduler.log"
 MAX_LOG_SIZE = 1 * 1024 * 1024  # 1MB
 
-POLL_INTERVAL = 300  # 5분
+POLL_INTERVAL = 300  # 5분 (완료 후 대기)
+
+# 타임아웃 예산 (초): Drive 600 + monitor 2400 + 여유 120
+TIMEOUT_TOTAL = 3120
+
+
+def rotate_log(path: Path):
+    """로그 로테이션 (1MB 초과 시)."""
+    if path.exists() and path.stat().st_size > MAX_LOG_SIZE:
+        old = path.with_suffix(path.suffix + ".old")
+        if old.exists():
+            old.unlink()
+        path.rename(old)
 
 
 def log(msg):
     """로그 기록 (크기 제한)."""
-    # 로그 로테이션
-    if LOG_FILE.exists() and LOG_FILE.stat().st_size > MAX_LOG_SIZE:
-        # 오래된 로그를 .old로 이동
-        old = LOG_FILE.with_suffix(".log.old")
-        if old.exists():
-            old.unlink()
-        LOG_FILE.rename(old)
+    rotate_log(LOG_FILE)
+    rotate_log(SCHEDULER_LOG)  # scheduler.log도 로테이션
 
     timestamp = datetime.now(timezone.utc).isoformat()
     line = f"[{timestamp}] {msg}\n"
@@ -59,13 +70,22 @@ def log(msg):
 
 
 def is_running():
-    """워커가 실행 중인지 확인."""
+    """워커가 실행 중인지 확인 (PID가 persistent_worker.py인지 검증)."""
     if not PID_FILE.exists():
         return False, None
     try:
         pid = int(PID_FILE.read_text().strip())
         # 프로세스 존재 확인
         os.kill(pid, 0)
+        # PID가 persistent_worker.py인지 확인 (PID 재사용 방지)
+        try:
+            with open(f"/proc/{pid}/cmdline", "rb") as f:
+                cmdline = f.read().decode("utf-8", errors="ignore")
+                if "persistent_worker.py" not in cmdline:
+                    return False, None  # 다른 프로세스가 PID 재사용
+        except (FileNotFoundError, PermissionError):
+            # /proc 접근 불가 시 PID 존재만으로 판단
+            pass
         return True, pid
     except (ValueError, OSError, ProcessLookupError):
         return False, None
@@ -78,11 +98,11 @@ def run_poll():
     env["V2_PUBLISH"] = "1"
     env["V2_PUBLISH_BRANCH"] = "main"
 
-    log("폴 시작")
+    log(f"폴 시작 (타임아웃 {TIMEOUT_TOTAL}초)")
     try:
         r = subprocess.run(
             [sys.executable, str(HOOKS_DIR / "scheduler_runner.py")],
-            capture_output=True, text=True, timeout=290, env=env)
+            capture_output=True, text=True, timeout=TIMEOUT_TOTAL, env=env)
         # scheduler_runner의 출력을 워커 로그에 기록
         if r.stdout:
             for line in r.stdout.strip().split("\n")[-10:]:  # 마지막 10줄만
@@ -94,30 +114,33 @@ def run_poll():
         else:
             log("폴 완료")
     except subprocess.TimeoutExpired:
-        log("폴 타임아웃 (290초)")
+        log(f"폴 타임아웃 ({TIMEOUT_TOTAL}초 초과)")
     except Exception as e:
         log(f"폴 예외: {e}")
 
 
 def main():
     """워커 메인 루프."""
-    # PID 파일에 기록
-    PID_FILE.write_text(str(os.getpid()))
+    my_pid = os.getpid()
 
-    # singleton flock
+    # 1. flock 먼저 획득 (PID 파일 건드리기 전)
     lock_fh = open(LOCK_FILE, "w")
     try:
         fcntl.flock(lock_fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except (OSError, IOError):
-        log("다른 워커가 실행 중 — 종료")
-        PID_FILE.unlink(missing_ok=True)
+        # 락 실패 시 PID 파일을 건드리지 않음
+        log("다른 워커가 실행 중 — 종료 (PID 파일 untouched)")
+        lock_fh.close()
         return 1
 
-    log(f"워커 시작 (PID {os.getpid()})")
+    # 2. 락 획득 성공 후에만 PID 기록
+    PID_FILE.write_text(str(my_pid))
+    log(f"워커 시작 (PID {my_pid})")
 
     try:
         while True:
             run_poll()
+            # 완료 후 300초 대기
             time.sleep(POLL_INTERVAL)
     except KeyboardInterrupt:
         log("워커 중지 (인터럽트)")
@@ -127,7 +150,17 @@ def main():
         except OSError:
             pass
         lock_fh.close()
-        PID_FILE.unlink(missing_ok=True)
+        # PID 파일은 자신의 PID와 일치할 때만 삭제
+        try:
+            if PID_FILE.exists():
+                recorded = PID_FILE.read_text().strip()
+                if recorded == str(my_pid):
+                    PID_FILE.unlink()
+                    log("PID 파일 정리됨")
+                else:
+                    log(f"PID 파일이 다른 값({recorded}) — 삭제하지 않음")
+        except OSError:
+            pass
         log("워커 종료")
 
     return 0

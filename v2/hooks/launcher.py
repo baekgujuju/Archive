@@ -21,12 +21,26 @@ PID_FILE = HOOKS_DIR / ".worker.pid"
 LOG_FILE = HOOKS_DIR / "worker.log"
 
 
+def pid_belongs_to_worker(pid):
+    """PID가 persistent_worker.py인지 확인 (PID 재사용 방지)."""
+    try:
+        with open(f"/proc/{pid}/cmdline", "rb") as f:
+            cmdline = f.read().decode("utf-8", errors="ignore")
+            return "persistent_worker.py" in cmdline
+    except (FileNotFoundError, PermissionError):
+        # /proc 접근 불가 시 확인 불가 — 존재만으로 판단
+        return True
+
+
 def get_pid():
+    """실행 중인 워커 PID 반환 (검증됨)."""
     if not PID_FILE.exists():
         return None
     try:
         pid = int(PID_FILE.read_text().strip())
         os.kill(pid, 0)  # 존재 확인
+        if not pid_belongs_to_worker(pid):
+            return None  # PID 재사용됨
         return pid
     except (ValueError, OSError, ProcessLookupError):
         return None
@@ -64,9 +78,21 @@ def stop():
     pid = get_pid()
     if not pid:
         print("워커가 실행 중이 아닙니다")
-        # stale PID 파일 정리
+        # stale PID 파일 정리 (단, 검증된 경우만)
         if PID_FILE.exists():
-            PID_FILE.unlink()
+            try:
+                recorded = int(PID_FILE.read_text().strip())
+                # PID가 존재하지 않거나 워커가 아니면 정리
+                try:
+                    os.kill(recorded, 0)
+                    if not pid_belongs_to_worker(recorded):
+                        PID_FILE.unlink()
+                        print("stale PID 파일 정리됨")
+                except OSError:
+                    PID_FILE.unlink()
+                    print("stale PID 파일 정리됨")
+            except (ValueError, OSError):
+                pass
         return 0
 
     print(f"워커 중지 중 (PID {pid})...")
@@ -95,7 +121,12 @@ def stop():
 def status():
     pid = get_pid()
     if pid:
-        print(f"워커 실행 중 (PID {pid})")
+        # PID가 실제 워커인지 재확인
+        if pid_belongs_to_worker(pid):
+            print(f"워커 실행 중 (PID {pid}, 검증됨)")
+        else:
+            print(f"경고: PID {pid}가 워커가 아님 (PID 재사용 의심)")
+            return 1
         if LOG_FILE.exists():
             # 마지막 로그 5줄
             lines = LOG_FILE.read_text(encoding="utf-8").strip().split("\n")
