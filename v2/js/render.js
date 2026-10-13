@@ -329,11 +329,13 @@ function normalizeArticle(article) {
   a.author = author;
   a.handle = handle;
   if (!Array.isArray(a.topics)) a.topics = [];
+  if(!a.topics.length && !a.category && (a.fullText || a.fullHtml || a.summary)) a.topics=['기타'];
   // 카테고리 → 주제 매핑 (raw category가 topics로 매핑되지 않는 문제 수정)
   // 예: archify 글의 category "AI툴" → topics ["AI툴"]
   if (!a.topics.length && a.category && typeof a.category === 'string') {
-    a.topics = [a.category];
+    a.topics = [a.category === '미수집(빈캡처)' ? '기타' : a.category];
   }
+  if(a.type==='ib'){a.subject=a.subject||(a.topics[0]||'기타');a.category=a.category||(a.topics[1]||'기타');}
   // 미디어 정규화: raw JSON의 media[] ({type, url}) → mediaImages[] ([thumb, full])
   // render.js/articleCard/lightboxesHtml은 mediaImages[]를 읽음
   if (!Array.isArray(a.mediaImages) || !a.mediaImages.length) {
@@ -417,8 +419,9 @@ function articleCard(article, options = {}) {
   const webTitleFallback = !isX && !a.title && text ? sliceCp(text.trim().split('\n')[0], 90) : '';
   const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || webTitleFallback || author;
   // 요약: X 글은 150자 미리보기, 웹글은 summary 필드
-  const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || '';
-  const fullHtml = a.fullHtml; // 인라인 이미지가 포함된 HTML (빌드 시 정제된 신뢰 HTML)
+  const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || sliceCp(text, 150);
+  const fullHtml = a.fullHtml && typeof window !== 'undefined' && window.ArchiveApp?.sanitizeHtml
+    ? window.ArchiveApp.sanitizeHtml(a.fullHtml) : a.fullHtml;
   const fullText = isX ? text || MISSING : text || a.summary || '';
 
   // 연관 게시물 HTML (최대 5개)
@@ -485,10 +488,11 @@ function articleCard(article, options = {}) {
     }
   }
 
-  const url = isX ? a.sourceUrl || '' : a.source_url || '';
+  const rawUrl = a.sourceUrl || a.source_url || '';
+  const url = /^https?:\/\//i.test(rawUrl) ? rawUrl : '';
   const urlInline = urlInlineHtml(a);
   const pinId = String(a.id ?? a.tweetId ?? a.sourceUrl ?? '');
-  const memoId = pinId || String(idx);
+  const memoId = a.memoId || pinId || String(idx);
   const dataIdx = a._idx ?? idx;
 
   return (
@@ -500,7 +504,7 @@ function articleCard(article, options = {}) {
     '<div class="bookmark-colors" hidden></div>' +
     `<div class="spotlight-label"${featured ? '' : ' hidden'}>LATEST PICK · 가장 최근 글</div>` +
     '<div class="card-header">' +
-    `<div class="type-badge">${isX ? '𝕏 · X 게시물' : '웹글 · WEB ARTICLE'}</div>` +
+    `<div class="type-badge">${isX ? '𝕏 · X 게시물' : a.type === 'ib' ? '🎓 IB 자료' : '웹글 · WEB ARTICLE'}</div>` +
     '<div class="card-actions">' +
     memoButtonHtml(memoId, title) +
     '<button type="button" class="bookmark-btn" aria-label="북마크" title="북마크">' +

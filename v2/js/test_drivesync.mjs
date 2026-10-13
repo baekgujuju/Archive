@@ -38,9 +38,17 @@ const ctx = vm.createContext({
   console, setTimeout: () => 0, setInterval: () => 0, fetch: () => Promise.reject(new Error('no network')),
 });
 
-const src = readFileSync(join(__dirname, 'app.js'), 'utf8');
+const src = readFileSync(join(__dirname, 'drive-sync.js'), 'utf8');
 try {
-  new vm.Script(src, { filename: 'app.js' }).runInContext(ctx);
+  new vm.Script(src, { filename: 'drive-sync.js' }).runInContext(ctx);
+} catch (e) {
+  console.log('drive-sync.js 로드 실패:', e.message);
+  process.exit(2);
+}
+
+const src2 = readFileSync(join(__dirname, 'app.js'), 'utf8');
+try {
+  new vm.Script(src2, { filename: 'app.js' }).runInContext(ctx);
 } catch (e) {
   console.log('app.js 로드 실패:', e.message);
   process.exit(2);

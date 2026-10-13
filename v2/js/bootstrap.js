@@ -486,22 +486,12 @@ async function boot() {
   updateLoading('화면 그리는 중...');
   // 큰 HTML 문자열 생성을 다음 프레임으로 양보 (로딩 UI가 먼저 그려지도록)
   await new Promise((resolve) => setTimeout(resolve, 0));
+  try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(ignore){}}
   renderArticles(articles, renderer, container, { offline: false });
+  if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
   showOfflineBadge(false);
   showMain();
 
-  // 6. 셸의 인터랙션 초기화 (검색/필터/메모/북마크 등) — 있으면 호출
-  try {
-    if (
-      typeof window !== 'undefined' &&
-      window.ArchiveApp &&
-      typeof window.ArchiveApp.init === 'function'
-    ) {
-      window.ArchiveApp.init(articles);
-    }
-  } catch (e) {
-    console.warn('[bootstrap] ArchiveApp.init 실패:', e);
-  }
 }
 
 /**
@@ -539,6 +529,10 @@ function loadAllCachedChunks() {
  * @param {boolean} [opts.offline=false] — 오프라인 모드 여부
  */
 function renderArticles(articles, renderer, container, opts = {}) {
+  function dateOf(a){if(a.type==='x'&&/^\d+$/.test(String(a.tweetId||a.id||''))){try{return Number((BigInt(a.tweetId||a.id)>>22n)+1288834974657n);}catch(e){}}return Date.parse(a.date_saved||a.createdAt||a.date||'')||0;}
+  articles=articles.slice().sort((a,b)=>dateOf(b)-dateOf(a));
+  articles = articles.map((article) => renderer.normalizeArticle ? renderer.normalizeArticle(article) : article);
+  try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{if(!a.translation)a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(e){}
   const offline = !!opts.offline;
   let html;
   try {
@@ -582,6 +576,11 @@ function renderArticles(articles, renderer, container, opts = {}) {
 
   if (offline) {
     console.log('[bootstrap] 오프라인 모드: 캐시된 데이터로 렌더링');
+  }
+  // Every render path, including offline cache fallback, gets working controls.
+  if (typeof window !== 'undefined' && window.ArchiveApp) {
+    try { window.ArchiveApp.init(articles); }
+    catch (e) { console.error('[bootstrap] 인터랙션 초기화 실패:', e); showError('화면 기능을 시작하지 못했습니다. 새로고침해 주세요.'); }
   }
 }
 
@@ -643,3 +642,10 @@ if (typeof window !== 'undefined') {
 }
 
 autoStart();
+
+if(typeof window!=='undefined'&&window.addEventListener&&typeof document!=='undefined'){
+  let checking=false,lastVersion=null;
+  window.addEventListener('archive-data-loaded',()=>{const manifest=loadCachedManifest();lastVersion=manifest&&JSON.stringify([manifest.chunks,manifest.translations]);});
+  async function checkUpdates(){if(checking||document.hidden||document.querySelector('dialog[open]'))return;checking=true;try{const next=await fetchManifest(),version=JSON.stringify([next.chunks,next.translations]);if(lastVersion&&version!==lastVersion){booted=false;await boot();const status=document.getElementById('archive-update-status');if(status)status.textContent='새 자료가 자동으로 업데이트되었습니다.';}lastVersion=version;}catch(e){}finally{checking=false;}}
+  setInterval(checkUpdates,60000);window.addEventListener('focus',checkUpdates);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdates();});
+}

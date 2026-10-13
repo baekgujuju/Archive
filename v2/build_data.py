@@ -34,9 +34,18 @@ POSTS_JSON = XBOOKMARKS / "posts.json"
 # v1 웹 글 소스 (index.json, 예: Oliver Kell article-20261011-1048)
 ARCHIVE_DIR = Path.home() / "workspace" / "article-archive"
 WEB_INDEX_JSON = ARCHIVE_DIR / "index.json"
+IB_LIBRARY_JSON = V2_ROOT / "ib-library.json"
 
 # 빌더 버전 (로직 변경 시 증분 → --check가 재빌드 감지)
-BUILDER_VERSION = "1.0.0"
+BUILDER_VERSION = "1.2.0"
+
+
+def source_fingerprint():
+    """Include both article sources so web-only edits trigger a rebuild."""
+    hashes = {}
+    for name, source in (("posts", POSTS_JSON), ("web", WEB_INDEX_JSON), ("ib", IB_LIBRARY_JSON)):
+        hashes[name] = sha256_file(source) if source.exists() else None
+    return hashlib.sha256(json.dumps(hashes, sort_keys=True).encode()).hexdigest()
 
 # 타입 판정용 상수
 X_HOSTS = {'x.com', 'www.x.com', 'twitter.com', 'www.twitter.com', 'mobile.twitter.com'}
@@ -274,6 +283,13 @@ def build_data():
         else:
             posts_web.append(post)
 
+    if IB_LIBRARY_JSON.exists():
+        library = json.loads(IB_LIBRARY_JSON.read_text(encoding="utf-8"))
+        existing = {str(p.get("id") or p.get("tweetId") or "") for p in posts_ib}
+        for record in library.get("posts", []):
+            if isinstance(record, dict) and str(record.get("id") or "") not in existing:
+                posts_ib.append(record)
+
     print(f"  X: {len(posts_x)}개")
     print(f"  Web: {len(posts_web)}개 (posts.json)")
     print(f"  IB: {len(posts_ib)}개")
@@ -290,7 +306,7 @@ def build_data():
     staging_dir = None
     backup_dir = None  # try 블록 밖에서 초기화 (except 핸들러에서 안전하게 참조)
     try:
-        staging_dir = Path(tempfile.mkdtemp(prefix="v2_build_"))
+        staging_dir = Path(tempfile.mkdtemp(prefix="v2_build_", dir=V2_ROOT))
         staging_data = staging_dir / "data"
         staging_data.mkdir(parents=True)
 
@@ -300,13 +316,16 @@ def build_data():
         web_path = process_posts(posts_web, 'web', staging_data)
         ib_path = process_posts(posts_ib, 'ib', staging_data)
 
+        # Keep paragraph translations when the atomic data directory is replaced.
+        translations = DATA_DIR / 'translations.json'
+        if translations.exists():
+            shutil.copy2(translations, staging_data / 'translations.json')
         # 4. manifest 생성 (스테이징에)
         print(f"\n[4/5] manifest.json 생성...")
 
         # 소스 콘텐츠 해시 (변경 감지용)
         # posts.json 전체를 읽어서 해시 (결정적)
-        with open(POSTS_JSON, 'rb') as f:
-            source_hash = hashlib.sha256(f.read()).hexdigest()
+        source_hash = source_fingerprint()
 
         manifest = {
             "version": datetime.now(timezone.utc).isoformat(),
@@ -330,9 +349,11 @@ def build_data():
                     "count": len(posts_ib)
                 },
             },
-            "app_version": "2.0.0"
+            "app_version": "2.2.0"
         }
 
+        if translations.exists():
+            manifest['translations'] = {'file': 'data/translations.json', 'sha256': sha256_file(translations)}
         manifest_path = staging_data / "manifest.json"
         with open(manifest_path, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, ensure_ascii=False, indent=2)
@@ -457,8 +478,7 @@ def check_changes():
         print(f"posts.json 없음: {POSTS_JSON}", file=sys.stderr)
         return 2
 
-    with open(POSTS_JSON, 'rb') as f:
-        current_hash = hashlib.sha256(f.read()).hexdigest()
+    current_hash = source_fingerprint()
 
     if current_hash == manifest["source_hash"]:
         print("변경 없음")
