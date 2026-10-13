@@ -1,1 +1,59 @@
-ewogICJ2ZXJzaW9uIjogIjIwMjYtMTAtMTNUMDY6Mzg6NDAuNDM2ODM4KzAwOjAwIiwKICAiYnVpbGQiOiAidjIiLAogICJzb3VyY2VfaGFzaCI6ICIyMzgxNGU4NWJmNjg5MTA5OTg1OWNkOWE2MzQ5NmJiNWQyNTI1ZWQzNWY3ODQ2MDFiYTdhMmYwMzIyMjNmZTJjIiwKICAiYnVpbGRlcl92ZXJzaW9uIjogIjEuMC4wIiwKICAiY2h1bmtzIjogewogICAgInBvc3RzLXgiOiB7CiAgICAgICJmaWxlIjogImRhdGEvcG9zdHMteC5qc29uIiwKICAgICAgInNoYTI1NiI6ICIyMDg1ODA3ZGVkZGQ0YzAxNGNkODIxMTRjMDA1MDUxNDEzOGIzZmY2ZGIyNjdiMDJjZmRhYzRkZDQ4M2E1YmU0IiwKICAgICAgImNvdW50IjogMTU4CiAgICB9LAogICAgInBvc3RzLXdlYiI6IHsKICAgICAgImZpbGUiOiAiZGF0YS9wb3N0cy13ZWIuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiMmIwNjg5NGRkYjQwMTEzOTNkY2U4Y2IwNGFiODY4NjAyZjdkOGYwMDhmMWFiNTA1NTA4MmYxZjhmYWZlZGY2YSIsCiAgICAgICJjb3VudCI6IDEKICAgIH0sCiAgICAicG9zdHMtaWIiOiB7CiAgICAgICJmaWxlIjogImRhdGEvcG9zdHMtaWIuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiYmU5M2UxNWFiMDk5MDBiZmRiMTM5Y2RiNTQ3MGZlYWRmYjJjMmM3YmJjMTllYmFkYjA4NDBhZmQzMjI4MTk5OSIsCiAgICAgICJjb3VudCI6IDAKICAgIH0KICB9LAogICJhcHBfdmVyc2lvbiI6ICIyLjAuMCIKfQ==
+{
+  "version": "2026-10-13T06:38:40.436838+00:00",
+  "build": "v2",
+  "source_hash": "23814e85bf6891099859cd9a63496bb5d2525ed35f784601ba7a2f032223fe2c",
+  "builder_version": "1.0.0",
+  "chunks": {
+    "posts-web": {
+      "file": "data/posts-web.json",
+      "sha256": "2b06894ddb4011393dce8cb04ab868602f7d8f008f1ab5055082f1f8fafedf6a",
+      "count": 1
+    },
+    "posts-ib": {
+      "file": "data/posts-ib.json",
+      "sha256": "be93e15ab09900bfdb139cdb5470feadfb2c2c7bbc19ebadb0840afd32281999",
+      "count": 0
+    },
+    "posts-x1": {
+      "file": "data/posts-x1.json",
+      "sha256": "be6582fa6d9e9c050e6cb1acb379f88f1d6e8a4926794c7916d283f97e2ec40e",
+      "count": 19
+    },
+    "posts-x2": {
+      "file": "data/posts-x2.json",
+      "sha256": "ad6fa121694d4c76ccf66c0e3fc9467f169a86802815084d5ce4c75b28d18b5b",
+      "count": 19
+    },
+    "posts-x3": {
+      "file": "data/posts-x3.json",
+      "sha256": "1430e07817b28c77c28731a5fb733db9674a832854744f5040118db3a80cfe9b",
+      "count": 19
+    },
+    "posts-x4": {
+      "file": "data/posts-x4.json",
+      "sha256": "5a6811afd908c5014a92f3bf5949e19335cf7ae179492aced62495c1f8e3da9a",
+      "count": 19
+    },
+    "posts-x5": {
+      "file": "data/posts-x5.json",
+      "sha256": "a277e019f049b9658892273dab49a1c0a3583fabf41bf1e52ace226fcf753f8e",
+      "count": 19
+    },
+    "posts-x6": {
+      "file": "data/posts-x6.json",
+      "sha256": "b848c20cdf053f56c8974439b7e54fcf76e9f9e43583e6a69daf26fc835473e8",
+      "count": 19
+    },
+    "posts-x7": {
+      "file": "data/posts-x7.json",
+      "sha256": "aee519ff6b6c621aab6b92ef495819648e20880da7b6902e3ea9b3f50399d408",
+      "count": 19
+    },
+    "posts-x8": {
+      "file": "data/posts-x8.json",
+      "sha256": "6ecb21a64d2c89ebe60b99f8dc637cecc30d42b171d3d4b268ae6730cba48bf4",
+      "count": 25
+    }
+  },
+  "app_version": "2.0.0"
+}
