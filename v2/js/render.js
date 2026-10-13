@@ -329,7 +329,61 @@ function normalizeArticle(article) {
   a.author = author;
   a.handle = handle;
   if (!Array.isArray(a.topics)) a.topics = [];
+  if(!a.topics.length && !a.category && (a.fullText || a.fullHtml || a.summary)) a.topics=['기타'];
+  // 카테고리 → 주제 매핑 (raw category가 topics로 매핑되지 않는 문제 수정)
+  // 예: archify 글의 category "AI툴" → topics ["AI툴"]
+  if (!a.topics.length && a.category && typeof a.category === 'string') {
+    a.topics = [a.category === '미수집(빈캡처)' ? '기타' : a.category];
+  }
+  if(a.type==='ib'){a.subject=a.subject||(a.topics[0]||'기타');a.category=a.category||(a.topics[1]||'기타');}
+  // 미디어 정규화: raw JSON의 media[] ({type, url}) → mediaImages[] ([thumb, full])
+  // render.js/articleCard/lightboxesHtml은 mediaImages[]를 읽음
+  if (!Array.isArray(a.mediaImages) || !a.mediaImages.length) {
+    const rawMedia = a.media;
+    if (Array.isArray(rawMedia) && rawMedia.length) {
+      const pairs = [];
+      for (const m of rawMedia) {
+        const url = typeof m === 'string' ? m : m && (m.url || m.src);
+        if (url) pairs.push([url, url]); // thumb/full 동일 (원격 URL)
+      }
+      if (pairs.length) a.mediaImages = pairs;
+    }
+  }
   return a;
+}
+
+/**
+ * 답글(댓글) HTML 생성. v1 build_mobile.py 598~617행 패턴의 JS 포팅.
+ * `<details class="replies">` 접기/펼치기 구조, 삭제 버튼 포함.
+ *
+ * @param {object} article — 글 객체 (replies 배열 포함 가능)
+ * @returns {string} 답글 섹션 HTML (없으면 "")
+ */
+function repliesHtml(article) {
+  const replies = Array.isArray(article?.replies)
+    ? article.replies.filter((r) => r && typeof r === 'object')
+    : [];
+  if (!replies.length) return '';
+  const items = [];
+  for (const r of replies) {
+    const ra = r.author || {};
+    const rname = ra.name || ra.handle || '';
+    const rtext = String(r.fullText || '');
+    const rwhen = String(r.createdAt || '');
+    const rtid = String(r.tweetId || r.id || '');
+    const badge = r.isThread ? ' <span class="thread-badge">스레드</span>' : '';
+    items.push(
+      `<div class="reply" data-reply-id="${escapeHtml(rtid)}">` +
+        `<div class="reply-head"><span class="reply-author">${escapeHtml(rname)}</span>` +
+        `<span class="reply-time">${escapeHtml(rwhen)}</span>${badge}` +
+        `<button type="button" class="reply-del" data-reply-id="${escapeHtml(rtid)}" aria-label="댓글 삭제" title="댓글 삭제">×</button></div>` +
+        `<p class="reply-text">${escapeHtml(rtext)}</p></div>`
+    );
+  }
+  return (
+    `<details class="replies"><summary>💬 댓글 ${replies.length}개</summary>` +
+    `<div class="reply-list">${items.join('')}</div></details>`
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -361,11 +415,13 @@ function articleCard(article, options = {}) {
   const text = a.fullText || '';
   const MISSING = '본문이 수집되지 않은 게시물입니다. X 원문에서 확인하세요.';
 
-  // 제목: X 글은 첫 줄(90자), 웹글은 title 필드
-  const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || '';
+  // 제목: X 글은 첫 줄(90자), 웹글은 title 필드 → 없으면 fullText 첫 줄에서 유도
+  const webTitleFallback = !isX && !a.title && text ? sliceCp(text.trim().split('\n')[0], 90) : '';
+  const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || webTitleFallback || author;
   // 요약: X 글은 150자 미리보기, 웹글은 summary 필드
-  const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || '';
-  const fullHtml = a.fullHtml; // 인라인 이미지가 포함된 HTML (빌드 시 정제된 신뢰 HTML)
+  const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || sliceCp(text, 150);
+  const fullHtml = a.fullHtml && typeof window !== 'undefined' && window.ArchiveApp?.sanitizeHtml
+    ? window.ArchiveApp.sanitizeHtml(a.fullHtml) : a.fullHtml;
   const fullText = isX ? text || MISSING : text || a.summary || '';
 
   // 연관 게시물 HTML (최대 5개)
@@ -432,10 +488,11 @@ function articleCard(article, options = {}) {
     }
   }
 
-  const url = isX ? a.sourceUrl || '' : a.source_url || '';
+  const rawUrl = a.sourceUrl || a.source_url || '';
+  const url = /^https?:\/\//i.test(rawUrl) ? rawUrl : '';
   const urlInline = urlInlineHtml(a);
   const pinId = String(a.id ?? a.tweetId ?? a.sourceUrl ?? '');
-  const memoId = pinId || String(idx);
+  const memoId = a.memoId || pinId || String(idx);
   const dataIdx = a._idx ?? idx;
 
   return (
@@ -447,7 +504,7 @@ function articleCard(article, options = {}) {
     '<div class="bookmark-colors" hidden></div>' +
     `<div class="spotlight-label"${featured ? '' : ' hidden'}>LATEST PICK · 가장 최근 글</div>` +
     '<div class="card-header">' +
-    `<div class="type-badge">${isX ? '𝕏 · X 게시물' : '웹글 · WEB ARTICLE'}</div>` +
+    `<div class="type-badge">${isX ? '𝕏 · X 게시물' : a.type === 'ib' ? '🎓 IB 자료' : '웹글 · WEB ARTICLE'}</div>` +
     '<div class="card-actions">' +
     memoButtonHtml(memoId, title) +
     '<button type="button" class="bookmark-btn" aria-label="북마크" title="북마크">' +
@@ -461,7 +518,7 @@ function articleCard(article, options = {}) {
     `<p class="summary">${escapeHtml(summary)}</p><div class="tags">${topicsHtml(topics)}</div>` +
     '</summary>' +
     `<div class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
-    `${urlInline}${media}${quotedHtml}${relatedHtml}` +
+    `${urlInline}${media}${quotedHtml}${repliesHtml(a)}${relatedHtml}` +
     `<div class="byline"><span class="author">${escapeHtml(author)}</span>` +
     `<button type="button" class="read-window-btn" data-idx="${idx}">새 창에서 읽기 ⧉</button>` +
     `<a class="read-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">원문 보기 ↗</a></div>` +
@@ -486,6 +543,7 @@ const ArchiveRender = {
   lightboxesHtml,
   urlInlineHtml,
   normalizeArticle,
+  repliesHtml,
   articleCard,
 };
 

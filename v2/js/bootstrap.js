@@ -49,21 +49,28 @@ const LS_MANIFEST_KEY = LS_PREFIX + 'manifest';
 const LS_CHUNK_PREFIX = LS_PREFIX + 'data_';
 
 /**
- * 청크 로드 순서 및 메타 정보.
- * manifest.chunks의 키와 1:1 대응해야 한다.
+ * manifest.chunks에서 동적으로 청크 목록 생성.
+ * 하드코딩된 CHUNK_ORDER 대신 manifest를 single source of truth로 사용.
+ * (빌더가 청크 분할 방식을 바꿔도 manifest만 맞으면 동작)
+ *
+ * @param {object} manifest — manifest.json 객체
+ * @returns {Array<{name: string, type: string, label: string}>} 청크 목록
  */
-const CHUNK_ORDER = [
-  { name: 'posts-x1', type: 'x', label: 'X 게시글 (1/8)' },
-  { name: 'posts-x2', type: 'x', label: 'X 게시글 (2/8)' },
-  { name: 'posts-x3', type: 'x', label: 'X 게시글 (3/8)' },
-  { name: 'posts-x4', type: 'x', label: 'X 게시글 (4/8)' },
-  { name: 'posts-x5', type: 'x', label: 'X 게시글 (5/8)' },
-  { name: 'posts-x6', type: 'x', label: 'X 게시글 (6/8)' },
-  { name: 'posts-x7', type: 'x', label: 'X 게시글 (7/8)' },
-  { name: 'posts-x8', type: 'x', label: 'X 게시글 (8/8)' },
-  { name: 'posts-web', type: 'web', label: '웹글' },
-  { name: 'posts-ib', type: 'ib', label: 'IB 자료' },
-];
+function chunkOrderFromManifest(manifest) {
+  const chunks = (manifest && manifest.chunks) || {};
+  const order = [];
+  for (const name of Object.keys(chunks)) {
+    let type = 'x';
+    let label = name;
+    if (name === 'posts-web' || name.startsWith('posts-web')) { type = 'web'; label = '웹글'; }
+    else if (name === 'posts-ib' || name.startsWith('posts-ib')) { type = 'ib'; label = 'IB 자료'; }
+    else if (name.startsWith('posts-x')) { type = 'x'; label = 'X 게시글'; }
+    order.push({ name, type, label });
+  }
+  // manifest 키 순서를 유지 (빌더가 생성한 순서: x 청크들, web, ib)
+  // localeCompare numeric 정렬은 'posts-x'와 'posts-x1' 혼합 시 순서를 깨뜨림
+  return order;
+}
 
 /* ------------------------------------------------------------------ */
 /* 1. 렌더러 접근                                                     */
@@ -398,7 +405,7 @@ async function boot() {
   const chunkResults = [];
   let usedCacheCount = 0;
 
-  for (const chunk of CHUNK_ORDER) {
+  for (const chunk of chunkOrderFromManifest(manifest)) {
     const info = manifest.chunks[chunk.name];
     if (!info || !info.file) {
       console.warn('[bootstrap] manifest에 청크 정보 없음:', chunk.name);
@@ -479,22 +486,14 @@ async function boot() {
   updateLoading('화면 그리는 중...');
   // 큰 HTML 문자열 생성을 다음 프레임으로 양보 (로딩 UI가 먼저 그려지도록)
   await new Promise((resolve) => setTimeout(resolve, 0));
+  try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(ignore){}}
   renderArticles(articles, renderer, container, { offline: false });
+  if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
   showOfflineBadge(false);
   showMain();
+  const updateStatus=document.getElementById('archive-update-status');
+  if(updateStatus)updateStatus.textContent='자료 변경 자동 확인 · 60초 간격 · '+new Date(manifest.version).toLocaleString('ko-KR');
 
-  // 6. 셸의 인터랙션 초기화 (검색/필터/메모/북마크 등) — 있으면 호출
-  try {
-    if (
-      typeof window !== 'undefined' &&
-      window.ArchiveApp &&
-      typeof window.ArchiveApp.init === 'function'
-    ) {
-      window.ArchiveApp.init(articles);
-    }
-  } catch (e) {
-    console.warn('[bootstrap] ArchiveApp.init 실패:', e);
-  }
 }
 
 /**
@@ -507,7 +506,7 @@ function loadAllCachedChunks() {
   const cachedManifest = loadCachedManifest();
   if (!cachedManifest) return null;
   const articles = [];
-  for (const chunk of CHUNK_ORDER) {
+  for (const chunk of chunkOrderFromManifest(cachedManifest)) {
     const posts = loadCachedChunk(chunk.name);
     if (!posts) return null; // 일부라도 없으면 폴백 불가
     for (const p of posts) {
@@ -532,6 +531,10 @@ function loadAllCachedChunks() {
  * @param {boolean} [opts.offline=false] — 오프라인 모드 여부
  */
 function renderArticles(articles, renderer, container, opts = {}) {
+  function dateOf(a){if(a.type==='x'&&/^\d+$/.test(String(a.tweetId||a.id||''))){try{return Number((BigInt(a.tweetId||a.id)>>22n)+1288834974657n);}catch(e){}}return Date.parse(a.date_saved||a.createdAt||a.date||'')||0;}
+  articles=articles.slice().sort((a,b)=>dateOf(b)-dateOf(a));
+  articles = articles.map((article) => renderer.normalizeArticle ? renderer.normalizeArticle(article) : article);
+  try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{if(!a.translation)a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(e){}
   const offline = !!opts.offline;
   let html;
   try {
@@ -553,6 +556,21 @@ function renderArticles(articles, renderer, container, opts = {}) {
 
   container.innerHTML = html;
 
+  // 라이트박스 섹션 추가 (이미지 확대용, render.js lightboxesHtml)
+  try {
+    if (renderer.lightboxesHtml) {
+      const lbHtml = renderer.lightboxesHtml(articles);
+      if (lbHtml) {
+        const lbWrap = document.createElement('div');
+        lbWrap.id = 'lightboxes';
+        lbWrap.innerHTML = lbHtml;
+        container.appendChild(lbWrap);
+      }
+    }
+  } catch (e) {
+    console.warn('[bootstrap] 라이트박스 생성 실패:', e);
+  }
+
   const countEl = $('article-count');
   if (countEl) {
     countEl.textContent = String(articles.length);
@@ -560,6 +578,11 @@ function renderArticles(articles, renderer, container, opts = {}) {
 
   if (offline) {
     console.log('[bootstrap] 오프라인 모드: 캐시된 데이터로 렌더링');
+  }
+  // Every render path, including offline cache fallback, gets working controls.
+  if (typeof window !== 'undefined' && window.ArchiveApp) {
+    try { window.ArchiveApp.init(articles); }
+    catch (e) { console.error('[bootstrap] 인터랙션 초기화 실패:', e); showError('화면 기능을 시작하지 못했습니다. 새로고침해 주세요.'); }
   }
 }
 
@@ -621,3 +644,10 @@ if (typeof window !== 'undefined') {
 }
 
 autoStart();
+
+if(typeof window!=='undefined'&&window.addEventListener&&typeof document!=='undefined'){
+  let checking=false,lastVersion=null;
+  window.addEventListener('archive-data-loaded',()=>{const manifest=loadCachedManifest();lastVersion=manifest&&JSON.stringify([manifest.chunks,manifest.translations]);});
+  async function checkUpdates(){if(checking||document.hidden||document.querySelector('dialog[open]'))return;checking=true;try{const next=await fetchManifest(),version=JSON.stringify([next.chunks,next.translations]);if(lastVersion&&version!==lastVersion){booted=false;await boot();const status=document.getElementById('archive-update-status');if(status)status.textContent='새 자료가 자동으로 업데이트되었습니다.';}lastVersion=version;}catch(e){}finally{checking=false;}}
+  setInterval(checkUpdates,60000);window.addEventListener('focus',checkUpdates);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdates();});
+}

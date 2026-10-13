@@ -1,0 +1,12 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const root=path.resolve(process.argv[2]||'.');
+const source=fs.readFileSync(path.join(root,'v2/ib-library.json'));
+const library=JSON.parse(source);
+if(library.posts.length!==63)throw Error('Expected 63 original IB records');
+fs.writeFileSync(path.join(root,'v2/data/posts-ib.json'),source);
+const m=JSON.parse(fs.readFileSync(path.join(root,'v2/data/manifest.json')));
+m.chunks['posts-ib'].count=library.posts.length;
+m.chunks['posts-ib'].sha256=crypto.createHash('sha256').update(source).digest('hex');
+m.app_version='2.1.0';
+fs.writeFileSync(path.join(root,'v2/data/manifest.json'),JSON.stringify(m,null,2)+'\n');
+console.log('IB count 63; manifest count',Object.values(m.chunks).reduce((n,c)=>n+c.count,0));
