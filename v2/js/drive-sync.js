@@ -100,8 +100,11 @@ var DriveSync = (function () {
   }
   function tick() { ticks++; if (connected && (hash() !== lastHash || ticks % 15 === 0)) sync(); }
   function init(el) {
-    statusEl = el; if (initialized) return; initialized = true;
-    message('Drive 미연결 · 저장은 이 기기에 유지됩니다');
+    statusEl = el;
+    // 재호출 시 교체된 statusEl에도 현재 상태 표시 (early return 전)
+    message(connected ? '☁️ 동기화 완료 · 변경 2초 / 원격 30초' : 'Drive 미연결 · 저장은 이 기기에 유지됩니다');
+    if (initialized) return;
+    initialized = true;
     if (!document.querySelector('script[src*="accounts.google.com"]')) { var script = document.createElement('script'); script.src = 'https://accounts.google.com/gsi/client'; script.async = true; document.head.appendChild(script); }
     var tries = 0;
     function ready() {

@@ -71,7 +71,7 @@ function loadClassic(ctx, filename) {
 }
 
 console.log('[1] classic script 파싱 검증');
-for (const f of ['render.js', 'bootstrap.js', 'app.js']) {
+for (const f of ['render.js', 'bootstrap.js', 'app.js', 'drive-sync.js', 'image-viewer.js', 'ui.js']) {
   test(`${f} classic 파싱`, () => {
     const { ctx } = createContext();
     try {
