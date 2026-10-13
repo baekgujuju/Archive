@@ -67,8 +67,8 @@ function chunkOrderFromManifest(manifest) {
     else if (name.startsWith('posts-x')) { type = 'x'; label = 'X 게시글'; }
     order.push({ name, type, label });
   }
-  // x 청크는 숫자 순으로 정렬 (posts-x1, posts-x2, ... posts-x10)
-  order.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+  // manifest 키 순서를 유지 (빌더가 생성한 순서: x 청크들, web, ib)
+  // localeCompare numeric 정렬은 'posts-x'와 'posts-x1' 혼합 시 순서를 깨뜨림
   return order;
 }
 

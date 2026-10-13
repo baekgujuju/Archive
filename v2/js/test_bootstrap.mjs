@@ -168,6 +168,30 @@ function runBootstrap(env) {
   check('T1: 글 수 표시', env.elements['article-count'].textContent === '3');
 }
 
+// ---- 테스트 1b: 분할 청크 형식 (x1..x8, 실제 manifest 형식) ----
+{
+  const MANIFEST_SPLIT = {
+    version: '2026-10-13T00:00:00+00:00',
+    chunks: {
+      'posts-x1': { file: 'data/posts-x1.json', sha256: 'a1', count: 2 },
+      'posts-x2': { file: 'data/posts-x2.json', sha256: 'a2', count: 1 },
+      'posts-web': { file: 'data/posts-web.json', sha256: 'bbb', count: 1 },
+    },
+  };
+  const CHUNKS_SPLIT = {
+    'data/posts-x1.json': { posts: [{ tweetId: '1', fullText: 'hello' }, { tweetId: '2', fullText: 'world' }] },
+    'data/posts-x2.json': { posts: [{ tweetId: '3', fullText: 'third' }] },
+    'data/posts-web.json': { posts: [{ title: 'web1' }] },
+  };
+  const env = makeEnv({ manifestRes: MANIFEST_SPLIT, chunkRes: CHUNKS_SPLIT });
+  await runBootstrap(env);
+  check('T1b: 분할 청크 4개 카드 렌더링', env.renderedCards.length === 4);
+  check('T1b: x1 타입 부여', env.renderedCards[0].article.type === 'x');
+  check('T1b: x2 타입 부여', env.renderedCards[2].article.type === 'x');
+  check('T1b: web 타입 부여', env.renderedCards[3].article.type === 'web');
+  check('T1b: 글 수 표시', env.elements['article-count'].textContent === '4');
+}
+
 // ---- 테스트 2: 캐시 히트 시 네트워크 스킵 ----
 {
   const cachedChunks = {

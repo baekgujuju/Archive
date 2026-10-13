@@ -1,10 +1,25 @@
 /**
- * test_render.mjs — render.js 자체 테스트
+ * test_render.mjs — render.js 자체 테스트 (classic script 실행 방식)
+ *
+ * render.js는 classic <script>로 로드되므로, 테스트도 node:vm으로
+ * classic script로 실행한 뒤 window.ArchiveRender 경유로 접근.
+ * (ESM import 방식은 export가 제거되어 동작하지 않음)
  *
  * 실행: node test_render.mjs
  * (v2/js 디렉토리에서 실행)
  */
-import {
+import { readFileSync } from 'node:fs';
+import vm from 'node:vm';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// render.js를 classic script로 실행
+const ctx = vm.createContext({ window: {}, console });
+const src = readFileSync(join(__dirname, 'render.js'), 'utf8');
+new vm.Script(src, { filename: 'render.js' }).runInContext(ctx);
+const {
   escapeHtml,
   sliceCp,
   linkify,
@@ -16,7 +31,7 @@ import {
   urlInlineHtml,
   normalizeArticle,
   articleCard,
-} from './render.js';
+} = ctx.window.ArchiveRender;
 
 let pass = 0;
 let fail = 0;

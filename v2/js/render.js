@@ -329,6 +329,11 @@ function normalizeArticle(article) {
   a.author = author;
   a.handle = handle;
   if (!Array.isArray(a.topics)) a.topics = [];
+  // 카테고리 → 주제 매핑 (raw category가 topics로 매핑되지 않는 문제 수정)
+  // 예: archify 글의 category "AI툴" → topics ["AI툴"]
+  if (!a.topics.length && a.category && typeof a.category === 'string') {
+    a.topics = [a.category];
+  }
   // 미디어 정규화: raw JSON의 media[] ({type, url}) → mediaImages[] ([thumb, full])
   // render.js/articleCard/lightboxesHtml은 mediaImages[]를 읽음
   if (!Array.isArray(a.mediaImages) || !a.mediaImages.length) {
@@ -408,8 +413,9 @@ function articleCard(article, options = {}) {
   const text = a.fullText || '';
   const MISSING = '본문이 수집되지 않은 게시물입니다. X 원문에서 확인하세요.';
 
-  // 제목: X 글은 첫 줄(90자), 웹글은 title 필드
-  const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || '';
+  // 제목: X 글은 첫 줄(90자), 웹글은 title 필드 → 없으면 fullText 첫 줄에서 유도
+  const webTitleFallback = !isX && !a.title && text ? sliceCp(text.trim().split('\n')[0], 90) : '';
+  const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || webTitleFallback || author;
   // 요약: X 글은 150자 미리보기, 웹글은 summary 필드
   const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || '';
   const fullHtml = a.fullHtml; // 인라인 이미지가 포함된 HTML (빌드 시 정제된 신뢰 HTML)
