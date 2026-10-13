@@ -1,1 +1,512 @@
-LyoqCiAqIHJlbmRlci5qcyDigJQg7JWE7Lm07J2067iMIHYyIOy5tOuTnCDroIzrjZTrp4Eg66qo65OICiAqCiAqIGBidWlsZF9kYXNoYm9hcmQucHlg7J2YIOyVhOuemCDtlajsiJjrk6TsnYQgSmF2YVNjcmlwdOuhnCDtj6ztjIU6CiAqICAgLSBlc2NhcGUoKSAgICAgICAgICAgIOKGkiBlc2NhcGVIdG1sKCkKICogICAtIHRvcGljc19vZigpICAgICAgICAg4oaSIChhcnRpY2xlQ2FyZCDrgrTrtoAsIHRvcGljc0h0bWwoKeuhnCDrtoTrpqwpCiAqICAgLSBsaW5raWZ5KCkgICAgICAgICAgIOKGkiBsaW5raWZ5KCkKICogICAtIGxpbmtpZnlfaHRtbCgpICAgICAg4oaSIGxpbmtpZnlIdG1sKCkKICogICAtIHVybF9pbmxpbmVfaHRtbCgpICAg4oaSIHVybElubGluZUh0bWwoKQogKiAgIC0gbWVtb19idXR0b24oKSAgICAgICDihpIgbWVtb0J1dHRvbkh0bWwoKQogKiAgIC0gbGlnaHRib3hfaWQoKSAgICAgICDihpIgbGlnaHRib3hJZCgpCiAqICAgLSBsaWdodGJveGVzX2h0bWwoKSAgIOKGkiBsaWdodGJveGVzSHRtbCgpCiAqICAgLSBhcnRpY2xlX2h0bWwoKSAgICAgIOKGkiBhcnRpY2xlQ2FyZCgpCiAqCiAqIOuztOyViCDsm5DsuZk6IOuqqOuToCDsgqzsmqnsnpAg642w7J207YSw64qUIGlubmVySFRNTCDsgr3snoUg7KCEIOuwmOuTnOyLnCBlc2NhcGVIdG1sKCnroZwKICog7J207Iqk7LyA7J207ZSE7ZWc64ukLiAoZnVsbEh0bWzsnYAg67mM65OcIO2MjOydtO2UhOudvOyduOyXkOyEnCDsoJXsoJztlZwg7Iug66KwIEhUTUzroZwg7Leo6riJKQogKgogKiDsgqzsmqnrspUgKEVTIOuqqOuTiCk6CiAqICAgaW1wb3J0IHsgYXJ0aWNsZUNhcmQgfSBmcm9tICcuL3JlbmRlci5qcyc7CiAqICAgY29udGFpbmVyLmlubmVySFRNTCA9IGFydGljbGVzLm1hcCgoYSwgaSkgPT4gYXJ0aWNsZUNhcmQoYSwgeyBpZHg6IGkgfSkpLmpvaW4oJycpOwogKgogKiDsgqzsmqnrspUgKOydvOuwmCDsiqTtgazrpr3tirgpOgogKiAgIDxzY3JpcHQgc3JjPSJqcy9yZW5kZXIuanMiPjwvc2NyaXB0PgogKiAgIDwhLS0gd2luZG93LkFyY2hpdmVSZW5kZXIuYXJ0aWNsZUNhcmQoLi4uKSDroZwg7KCR6re8IC0tPgogKi8KCid1c2Ugc3RyaWN0JzsKCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwovKiAxLiBlc2NhcGVIdG1sIOKAlCBQeXRob24gaHRtbC5lc2NhcGUocywgcXVvdGU9VHJ1ZSkg7Y+s7YyFICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKLyoqCiAqIEhUTUwg7J207Iqk7LyA7J207ZSELiBQeXRob24gYGh0bWwuZXNjYXBlKHN0cih2YWx1ZSBvciAiIiksIHF1b3RlPVRydWUpYOyZgCDrj5nsnbw6CiAqIGAmYCDihpIgYCZhbXA7YCwgYDxgIOKGkiBgJmx0O2AsIGA+YCDihpIgYCZndDtgLCBgImAg4oaSIGAmcXVvdDtgLCBgJ2Ag4oaSIGAmI3gyNztgCiAqCiAqIEBwYXJhbSB7Kn0gdmFsdWUg4oCUIOydtOyKpOy8gOydtO2UhO2VoCDqsJIgKG51bGwvdW5kZWZpbmVkIOKGkiAiIikKICogQHJldHVybnMge3N0cmluZ30g7J207Iqk7LyA7J207ZSE65CcIOusuOyekOyXtAogKi8KZnVuY3Rpb24gZXNjYXBlSHRtbCh2YWx1ZSkgewogIHJldHVybiBTdHJpbmcodmFsdWUgPz8gJycpCiAgICAucmVwbGFjZSgvJi9nLCAnJmFtcDsnKQogICAgLnJlcGxhY2UoLzwvZywgJyZsdDsnKQogICAgLnJlcGxhY2UoLz4vZywgJyZndDsnKQogICAgLnJlcGxhY2UoLyIvZywgJyZxdW90OycpCiAgICAucmVwbGFjZSgvJy9nLCAnJiN4Mjc7Jyk7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwovKiAxYi4gc2xpY2VDcCDigJQg7L2U65Oc7Y+s7J247Yq4IOq4sOykgCDrrLjsnpDsl7Qg7J6Q66W06riwICAgICAgICAgICAgICAgICAgICAgICAqLwovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KCi8qKgogKiBQeXRob27snZggc3RyWzpuXeqzvCDrj5nsnbztlZjqsowg7L2U65Oc7Y+s7J247Yq4IOuLqOychOuhnCDsnpDrpoQuCiAqIChKUyBTdHJpbmcuc2xpY2XripQgVVRGLTE2IOy9lOuTnOycoOuLmyDri6jsnITrnbwg7J2066qo7KeAIOuTsSBhc3RyYWwg66y47J6Q7JeQ7IScCiAqICBQeXRob27qs7wg6riA7J6QIOyImOqwgCDri6zrnbzsp5ApCiAqCiAqIEBwYXJhbSB7c3RyaW5nfSBzdHIg4oCUIOyeheugpSDrrLjsnpDsl7QKICogQHBhcmFtIHtudW1iZXJ9IG4g4oCUIOyekOulvCDsvZTrk5ztj6zsnbjtirgg7IiYCiAqIEByZXR1cm5zIHtzdHJpbmd9IOyVnuyXkOyEnCBuIOy9lOuTnO2PrOyduO2KuOq5jOyngOydmCDrrLjsnpDsl7QKICovCmZ1bmN0aW9uIHNsaWNlQ3Aoc3RyLCBuKSB7CiAgcmV0dXJuIFsuLi5TdHJpbmcoc3RyID8/ICcnKV0uc2xpY2UoMCwgbikuam9pbignJyk7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwovKiAyLiBsaW5raWZ5IOKAlCBQeXRob24gbGlua2lmeSgpIO2PrO2MhSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKY29uc3QgVVJMX1JFID0gL2h0dHBzPzpcL1wvW15cczw+IicpXF1dKy9nOwpjb25zdCBVUkxfVFJBSUxfQ0hBUlMgPSAnLiw7OiE/4oCmJzsKCi8qKgogKiDsnbzrsJgg7YWN7Iqk7Yq4IOyViOydmCBiYXJlIFVSTOydhCDtlZjsnbTtjbzrp4HtgazroZwg67OA7ZmYLgogKiBYU1Mg7JWI7KCEOiBVUkzsnYQg7ZSM66CI7J207Iqk7ZmA642U66GcIOy5mO2ZmCDihpIg7KCE7LK0IGVzY2FwZSDihpIg7JW17LukIOuzteybkC4KICogVVJMIOuBneydmCDrrLjsnqXrtoDtmLgoLiw7OiE/4oCmKeuKlCDrp4Htgazsl5DshJwg7KCc7Jm47ZWY6rOgIOuSpOyXkCDrtpnsnoQuCiAqIChQeXRob24gbGlua2lmeSgp7JmAIOuPmeydvO2VnCDslYzqs6DrpqzsppgpCiAqCiAqIEBwYXJhbSB7c3RyaW5nfSB0ZXh0IOKAlCDsnbzrsJgg7YWN7Iqk7Yq4CiAqIEByZXR1cm5zIHtzdHJpbmd9IFVSTOydtCDrp4HtgazroZwg67OA7ZmY65CcIEhUTUwKICovCmZ1bmN0aW9uIGxpbmtpZnkodGV4dCkgewogIGNvbnN0IHVybHMgPSBbXTsKICBjb25zdCB0bXAgPSBTdHJpbmcodGV4dCA/PyAnJykucmVwbGFjZShVUkxfUkUsIChtKSA9PiB7CiAgICB1cmxzLnB1c2gobSk7CiAgICByZXR1cm4gYFx1MDAwMFVSTCR7dXJscy5sZW5ndGggLSAxfVx1MDAwMGA7CiAgfSk7CiAgbGV0IG91dCA9IGVzY2FwZUh0bWwodG1wKTsKICB1cmxzLmZvckVhY2goKHUsIGkpID0+IHsKICAgIGxldCBldSA9IGVzY2FwZUh0bWwodSk7CiAgICBsZXQgdHJhaWwgPSAnJzsKICAgIHdoaWxlIChldS5sZW5ndGggPiAwICYmIFVSTF9UUkFJTF9DSEFSUy5pbmNsdWRlcyhldVtldS5sZW5ndGggLSAxXSkpIHsKICAgICAgdHJhaWwgPSBldVtldS5sZW5ndGggLSAxXSArIHRyYWlsOwogICAgICBldSA9IGV1LnNsaWNlKDAsIC0xKTsKICAgIH0KICAgIG91dCA9IG91dC5zcGxpdChgXHUwMDAwVVJMJHtpfVx1MDAwMGApLmpvaW4oCiAgICAgIGA8YSBocmVmPSIke2V1fSIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIiPiR7ZXV9PC9hPiR7ZXNjYXBlSHRtbCh0cmFpbCl9YAogICAgKTsKICB9KTsKICByZXR1cm4gb3V0Owp9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KLyogMy4gbGlua2lmeUh0bWwg4oCUIFB5dGhvbiBsaW5raWZ5X2h0bWwoKSDtj6ztjIUgKOuLqOyInO2ZlCkgICAgICAgICAgICAgICAgKi8KLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCgovKioKICog7Iug66KwIEhUTUwg7JWI7J2YIGJhcmUgVVJM7J2EIO2VmOydtO2NvOunge2BrOuhnCDrs4DtmZguCiAqIOq4sOyhtCA8YT7igKY8L2E+IOu4lOuhneydgCDrs7TtmLjtlZjqs6AsIO2DnOq3uCDrsJTquaUg7YWN7Iqk7Yq4IOuFuOuTnOyXkOunjCBsaW5raWZ5IOyggeyaqS4KICogKFB5dGhvbiBsaW5raWZ5X2h0bWwoKeydmCDri6jsiJztmZQg67KE7KCEIOKAlCDruYzrk5wg7Iuc7KCQ7JeQIOydtOuvuCDsoJXsoJzrkJwgSFRNTCDqsIDsoJUpCiAqCiAqIEBwYXJhbSB7c3RyaW5nfSBodG1sQ29udGVudCDigJQg7Iug66Kw7ZWgIOyImCDsnojripQgSFRNTAogKiBAcmV0dXJucyB7c3RyaW5nfSBiYXJlIFVSTOydtCDrp4HtgazroZwg67OA7ZmY65CcIEhUTUwKICovCmZ1bmN0aW9uIGxpbmtpZnlIdG1sKGh0bWxDb250ZW50KSB7CiAgaWYgKCFodG1sQ29udGVudCkgcmV0dXJuICcnOwogIGNvbnN0IGFuY2hvcnMgPSBbXTsKICAvLyAxKSDquLDsobQgPGE+4oCmPC9hPiDruJTroZ0g7Ya17Ke466GcIOuztO2YuAogIGxldCB0bXAgPSBTdHJpbmcoaHRtbENvbnRlbnQpLnJlcGxhY2UoLzxhXGJbXj5dKj5bXHNcU10qPzxcL2E+L2dpLCAobSkgPT4gewogICAgYW5jaG9ycy5wdXNoKG0pOwogICAgcmV0dXJuIGBcdTAwMDFBJHthbmNob3JzLmxlbmd0aCAtIDF9XHUwMDAxYDsKICB9KTsKICAvLyAyKSDtg5zqt7gg67CU6rmlKOynneyImCDsnbjrjbHsiqQg7IS46re466i87Yq4KeydmCDthY3siqTtirjsl5Drp4wgbGlua2lmeSDsoIHsmqkKICB0bXAgPSB0bXAKICAgIC5zcGxpdCgvKDxbXj5dKj4pL2cpCiAgICAubWFwKChzZWcsIGkpID0+IChpICUgMiA9PT0gMCA/IGxpbmtpZnkoc2VnKSA6IHNlZykpCiAgICAuam9pbignJyk7CiAgLy8gMykg67O07Zi47ZaI642YIDxhPiDruJTroZ0g67O17JuQCiAgYW5jaG9ycy5mb3JFYWNoKChhLCBpKSA9PiB7CiAgICB0bXAgPSB0bXAuc3BsaXQoYFx1MDAwMUEke2l9XHUwMDAxYCkuam9pbihhKTsKICB9KTsKICByZXR1cm4gdG1wOwp9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KLyogNC4gdG9waWNzSHRtbCDigJQg7YOc6re4IOugjOuNlOungSAoUHl0aG9uIGFydGljbGVfaHRtbCgpIOuCtCB0YWdzIOu2gOu2hCkgICAgKi8KLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCgpjb25zdCBUQUdfQ09MT1JTID0gWwogIFsnIzE3Njc1YycsICcjZTRlZmU4J10sCiAgWycjOTc0NzI4JywgJyNmYWU4ZGMnXSwKICBbJyM2NDUyOGInLCAnI2VlZTdmNSddLAogIFsnIzc2NjAxOScsICcjZjVlZGNlJ10sCl07CgovKioKICog7KO87KCcIOusuOyekOyXtOyXkOyEnCDtg5zqt7gg7IOJ7IOBIOyduOuNseyKpOulvCDqs4TsgrAuCiAqIFB5dGhvbjogdGFnX2NvbG9yc1tzdW0obWFwKG9yZCwgdG9waWMpKSAlIGxlbih0YWdfY29sb3JzKV0g7JmAIOuPmeydvC4KICogKGZvcuKApm9mICsgY29kZVBvaW50QXTsnLzroZwgUHl0aG9u7J2YIG9yZCgp7JmAIOqwmeydgCDsvZTrk5ztj6zsnbjtirgg7ZWp7IKwKQogKgogKiBAcGFyYW0ge3N0cmluZ30gdG9waWMg4oCUIOyjvOygnCDrrLjsnpDsl7QKICogQHJldHVybnMge251bWJlcn0gVEFHX0NPTE9SUyDsnbjrjbHsiqQKICovCmZ1bmN0aW9uIHRhZ0NvbG9ySW5kZXgodG9waWMpIHsKICBsZXQgc3VtID0gMDsKICBmb3IgKGNvbnN0IGNoIG9mIFN0cmluZyh0b3BpYykpIHN1bSArPSBjaC5jb2RlUG9pbnRBdCgwKTsKICByZXR1cm4gc3VtICUgVEFHX0NPTE9SUy5sZW5ndGg7Cn0KCi8qKgogKiDso7zsoJwg66qp66Gd7J2EIO2DnOq3uCBIVE1M66GcIOugjOuNlOungS4KICoKICogQHBhcmFtIHtzdHJpbmdbXX0gW3RvcGljc10g4oCUIOyjvOygnCDrrLjsnpDsl7Qg67Cw7Je0ICjsl4bsnLzrqbQg67mIIOusuOyekOyXtCkKICogQHJldHVybnMge3N0cmluZ30gYDxzcGFuIGNsYXNzPSJ0YWciPuKApjwvc3Bhbj5gIOuTpOydhCDsnbTslrTrtpnsnbggSFRNTAogKi8KZnVuY3Rpb24gdG9waWNzSHRtbCh0b3BpY3MpIHsKICBjb25zdCBsaXN0ID0gQXJyYXkuaXNBcnJheSh0b3BpY3MpID8gdG9waWNzIDogW107CiAgcmV0dXJuIGxpc3QKICAgIC5tYXAoKHRvcGljKSA9PiB7CiAgICAgIGNvbnN0IFtpbmssIHBhcGVyXSA9IFRBR19DT0xPUlNbdGFnQ29sb3JJbmRleCh0b3BpYyldOwogICAgICByZXR1cm4gYDxzcGFuIGNsYXNzPSJ0YWciIHN0eWxlPSItLXRhZy1pbms6JHtpbmt9Oy0tdGFnLXBhcGVyOiR7cGFwZXJ9Ij4ke2VzY2FwZUh0bWwodG9waWMpfTwvc3Bhbj5gOwogICAgfSkKICAgIC5qb2luKCcnKTsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIDUuIG1lbW9CdXR0b25IdG1sIOKAlCBQeXRob24gbWVtb19mZWF0dXJlLm1lbW9fYnV0dG9uKCkg7Y+s7YyFICAgICAgICAgKi8KLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCgovKioKICog66mU66qoIOuyhO2KvCBIVE1MICjrtoHrp4jtgawg7JiGIOyVhOydtOy9mCwg66mU66qoIOyeiOydhCDrlYzrp4wg7ZGc7IucKS4KICoKICogQHBhcmFtIHtzdHJpbmd9IG1lbW9JZCDigJQg66mU66qoIOyLneuzhOyekCAocGluLWlk7JmAIOuPmeydvCkKICogQHBhcmFtIHtzdHJpbmd9IFt0aXRsZT0iIl0g4oCUIGRhdGEtbWVtby10aXRsZeyaqSAoNTDsnpAg7KCc7ZWcKQogKiBAcmV0dXJucyB7c3RyaW5nfSDrqZTrqqgg67KE7Yq8IEhUTUwKICovCmZ1bmN0aW9uIG1lbW9CdXR0b25IdG1sKG1lbW9JZCwgdGl0bGUgPSAnJykgewogIGNvbnN0IHNhZmVJZCA9IGVzY2FwZUh0bWwoU3RyaW5nKG1lbW9JZCA/PyAnJykpOwogIGNvbnN0IHNhZmVUaXRsZSA9IGVzY2FwZUh0bWwoc2xpY2VDcCh0aXRsZSA/PyAnJywgNTApKTsKICByZXR1cm4gKAogICAgYDxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0ibWVtby1idG4gbWVtby1pY29uLWJ0biBtZW1vLWhpZGRlbiIgYCArCiAgICBgZGF0YS1tZW1vLWlkPSIke3NhZmVJZH0iIGRhdGEtbWVtby10aXRsZT0iJHtzYWZlVGl0bGV9IiB0aXRsZT0i66mU66qoIj5gICsKICAgIGA8c3ZnIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE0IDJINmEyIDIgMCAwIDAtMiAydjE2YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMlY4bC02LTZ6Ii8+YCArCiAgICBgPHBhdGggZD0iTTE0IDJ2Nmg2Ii8+PHBhdGggZD0iTTkgMTNoNk05IDE3aDQiLz48L3N2Zz48L2J1dHRvbj5gCiAgKTsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIDYuIGxpZ2h0Ym94SWQgLyBsaWdodGJveGVzSHRtbCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAqLwovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KCi8qKgogKiBGTlYtMWEgMzLruYTtirgg7ZW07IucIOKGkiA47J6Q66asIGhleC4KICoKICogQHBhcmFtIHtzdHJpbmd9IHN0ciDigJQg7J6F66ClIOusuOyekOyXtAogKiBAcGFyYW0ge251bWJlcn0gW3NlZWQ9MHg4MTFjOWRjNV0g4oCUIOyLnOuTnAogKiBAcmV0dXJucyB7c3RyaW5nfSA47J6Q66asIGhleCDrrLjsnpDsl7QKICovCmZ1bmN0aW9uIGZudjFhKHN0ciwgc2VlZCA9IDB4ODExYzlkYzUpIHsKICBsZXQgaCA9IHNlZWQgPj4+IDA7CiAgZm9yIChsZXQgaSA9IDA7IGkgPCBzdHIubGVuZ3RoOyBpKyspIHsKICAgIGggXj0gc3RyLmNoYXJDb2RlQXQoaSk7CiAgICBoID0gTWF0aC5pbXVsKGgsIDB4MDEwMDAxOTMpOwogIH0KICByZXR1cm4gKGggPj4+IDApLnRvU3RyaW5nKDE2KS5wYWRTdGFydCg4LCAnMCcpOwp9CgovKioKICog65287J207Yq467CV7IqkIElEIOyDneyEsS4gUHl0aG9uIGxpZ2h0Ym94X2lkKCnsmYAg64+Z7J287ZWcIO2YleyLnQogKiBgbGItPDE2aGV4Pi08aW5kZXg+YCAo7ZW07IucIOyVjOqzoOumrOymmOydgCDri6TrpoQg4oCUIHYyIOuCtOu2gCDsnbzqtIDshLHrp4wg67O07J6lKS4KICoKICogQHBhcmFtIHtvYmplY3R9IGFydGljbGUg4oCUIOq4gCDqsJ3ssrQKICogQHBhcmFtIHtudW1iZXJ9IGluZGV4IOKAlCDsnbTrr7jsp4Ag7J24642x7IqkCiAqIEByZXR1cm5zIHtzdHJpbmd9IOudvOydtO2KuOuwleyKpCBJRAogKi8KZnVuY3Rpb24gbGlnaHRib3hJZChhcnRpY2xlLCBpbmRleCkgewogIGNvbnN0IGtleSA9IFN0cmluZyhhcnRpY2xlPy5pZCA/PyBhcnRpY2xlPy5zb3VyY2VVcmwgPz8gYXJ0aWNsZT8uc291cmNlX3VybCA/PyAnJyk7CiAgcmV0dXJuIGBsYi0ke2ZudjFhKGtleSl9JHtmbnYxYShrZXksIDB4MDEwMDAxOTMpfS0ke2luZGV4fWA7Cn0KCi8qKgogKiDsnbTrr7jsp4Ag7ZmV64yA7JqpIOudvOydtO2KuOuwleyKpCDsmKTrsoTroIjsnbQgSFRNTCDsg53shLEuCiAqIG1lZGlhSW1hZ2VzIO2VreuqqeydgCBbdGh1bWIsIGZ1bGxdIOuwsOyXtCDrmJDripQge3RodW1iLCBmdWxsfSDqsJ3ssrTrpbwg7KeA7JuQLgogKgogKiBAcGFyYW0ge29iamVjdFtdfSBbYXJ0aWNsZXNdIOKAlCDquIAg6rCd7LK0IOuwsOyXtAogKiBAcmV0dXJucyB7c3RyaW5nfSBgPHNlY3Rpb24gY2xhc3M9ImNzcy1saWdodGJveCI+4oCmPC9zZWN0aW9uPmAg65Ok7J2EIOydtOyWtOu2meyduCBIVE1MCiAqLwpmdW5jdGlvbiBsaWdodGJveGVzSHRtbChhcnRpY2xlcykgewogIGNvbnN0IG91dCA9IFtdOwogIGZvciAoY29uc3QgYXJ0aWNsZSBvZiBhcnRpY2xlcyB8fCBbXSkgewogICAgY29uc3QgbWVkaWEgPSBhcnRpY2xlPy5tZWRpYUltYWdlcyB8fCBbXTsKICAgIGNvbnN0IGF1dGhvciA9IGFydGljbGU/LmF1dGhvciB8fCAnJzsKICAgIG1lZGlhLmZvckVhY2goKHBhaXIsIGluZGV4KSA9PiB7CiAgICAgIGNvbnN0IGZ1bGwgPSBBcnJheS5pc0FycmF5KHBhaXIpID8gcGFpclsxXSA6IHBhaXI/LmZ1bGw7CiAgICAgIGlmICghZnVsbCkgcmV0dXJuOwogICAgICBjb25zdCBsaWQgPSBsaWdodGJveElkKGFydGljbGUsIGluZGV4KTsKICAgICAgb3V0LnB1c2goCiAgICAgICAgYDxzZWN0aW9uIGNsYXNzPSJjc3MtbGlnaHRib3giIGlkPSIke2xpZH0iIHJvbGU9ImRpYWxvZyIgYXJpYS1sYWJlbD0i7J2066+47KeAIO2ZleuMgCI+YCArCiAgICAgICAgICBgPGEgaHJlZj0iI2FydGljbGVzIiBjbGFzcz0iY3NzLWxpZ2h0Ym94LWNsb3NlIiBhcmlhLWxhYmVsPSLsnbTrr7jsp4Ag64ur6riwIj7DlzwvYT5gICsKICAgICAgICAgIGA8aW5wdXQgdHlwZT0iY2hlY2tib3giIGNsYXNzPSJjc3MtbGlnaHRib3gtdG9nZ2xlIiBpZD0iJHtsaWR9LXNpemUiPmAgKwogICAgICAgICAgYDxsYWJlbCBmb3I9IiR7bGlkfS1zaXplIj7sm5Drnpgg7YGs6riw66GcIOuztOq4sDwvbGFiZWw+YCArCiAgICAgICAgICBgPGRpdiBjbGFzcz0iY3NzLWxpZ2h0Ym94LXN0YWdlIj48aW1nIHNyYz0iJHtlc2NhcGVIdG1sKGZ1bGwpfSIgYCArCiAgICAgICAgICBgYWx0PSIke2VzY2FwZUh0bWwoYXV0aG9yKX0g6rKM7Iuc66y8IOydtOuvuOyngCAke2luZGV4ICsgMX0g7ZmV64yAIiBsb2FkaW5nPSJsYXp5Ij48L2Rpdj5gICsKICAgICAgICAgIGA8cCBjbGFzcz0iY3NzLWxpZ2h0Ym94LWhlbHAiPuybkOuemCDtgazquLAg7ISg7YOdIO2bhCDsiqTtgazroaTtlZjsl6wg7J6R7J2AIOq4gOyekOulvCDsnb3snYQg7IiYIOyeiOyKteuLiOuLpC48L3A+PC9zZWN0aW9uPmAKICAgICAgKTsKICAgIH0pOwogIH0KICByZXR1cm4gb3V0LmpvaW4oJycpOwp9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KLyogNy4gdXJsSW5saW5lSHRtbCDigJQgUHl0aG9uIHVybF9pbmxpbmVfaHRtbCgpIO2PrO2MhSAgICAgICAgICAgICAgICAgICAqLwovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KCi8qKgogKiDrs7jrrLggVVJMIOyKpO2BrOueqSDrgrTsmqnsnYQg7J2465287J247Jy866GcIO2RnOyLnCAoUHl0aG9uIHVybF9pbmxpbmVfaHRtbCgpIO2PrO2MhSkuCiAqIOuniO2BrOuLpOyatCDquLDtmLgg6rCA67ON6rKMIOygleumrCwg67O466y4IDEyMDDsnpAg7KCc7ZWcLgogKgogKiBAcGFyYW0ge29iamVjdH0gYXJ0aWNsZSDigJQg6riAIOqwneyytCAodXJsQ29udGVudHMg67Cw7Je0IO2PrO2VqCDqsIDriqUpCiAqIEByZXR1cm5zIHtzdHJpbmd9IOyduOudvOyduCBVUkwg7IS57IWYIEhUTUwgKOyXhuycvOuptCAiIikKICovCmZ1bmN0aW9uIHVybElubGluZUh0bWwoYXJ0aWNsZSkgewogIGNvbnN0IGl0ZW1zID0gW107CiAgZm9yIChjb25zdCB1YyBvZiBhcnRpY2xlPy51cmxDb250ZW50cyB8fCBbXSkgewogICAgY29uc3QgdXJsID0gdWM/LnVybCB8fCAnJzsKICAgIGNvbnN0IHRpdGxlID0gU3RyaW5nKHVjPy50aXRsZSB8fCB1cmwpLnRyaW0oKTsKICAgIGxldCBib2R5ID0gU3RyaW5nKHVjPy5jb250ZW50IHx8ICcnKS50cmltKCk7CiAgICBjb25zdCBzdGF0dXMgPSB1Yz8uc3RhdHVzIHx8ICcnOwogICAgaWYgKCFib2R5ICYmIHN0YXR1cyA9PT0gJ3BlbmRpbmcnKSBjb250aW51ZTsKICAgIGlmICghYm9keSkgY29udGludWU7CiAgICAvLyDrp4jtgazri6TsmrQg6riw7Zi4IOqwgOuzjeqyjCDsoJXrpqwgKOydtOuvuOyngC/rp4HtgazripQg7YWN7Iqk7Yq466GcKQogICAgYm9keSA9IGJvZHkucmVwbGFjZSgvIVxbKFteXF1dKilcXVwoW14pXSpcKS9nLCAnW+ydtOuvuOyngDogJDFdJyk7CiAgICBib2R5ID0gYm9keS5yZXBsYWNlKC9cWyhbXlxdXSspXF1cKChbXildKylcKS9nLCAnJDEnKTsKICAgIGJvZHkgPSBib2R5LnJlcGxhY2UoL14jezEsNn1ccysvZ20sICcnKTsKICAgIGJvZHkgPSBib2R5LnRyaW0oKTsKICAgIGlmIChib2R5Lmxlbmd0aCA+IDEyMDApIGJvZHkgPSBzbGljZUNwKGJvZHksIDEyMDApLnRyaW1FbmQoKSArICfigKYnOwogICAgaXRlbXMucHVzaCgKICAgICAgJzxkaXYgY2xhc3M9InVybC1pbmxpbmUtaXRlbSI+JyArCiAgICAgICAgYDxkaXYgY2xhc3M9InVybC1pbmxpbmUtdGl0bGUiPvCfk4QgPGEgaHJlZj0iJHtlc2NhcGVIdG1sKHVybCl9IiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciBub3JlZmVycmVyIj4ke2VzY2FwZUh0bWwodGl0bGUpfTwvYT48L2Rpdj5gICsKICAgICAgICBgPGRpdiBjbGFzcz0idXJsLWlubGluZS11cmwiPiR7ZXNjYXBlSHRtbCh1cmwpfTwvZGl2PmAgKwogICAgICAgIGA8ZGl2IGNsYXNzPSJ1cmwtaW5saW5lLWNvbnRlbnQiPiR7ZXNjYXBlSHRtbChib2R5KX08L2Rpdj5gICsKICAgICAgICAnPC9kaXY+JwogICAgKTsKICB9CiAgaWYgKCFpdGVtcy5sZW5ndGgpIHJldHVybiAnJzsKICByZXR1cm4gJzxkaXYgY2xhc3M9InVybC1pbmxpbmUiPjxkaXYgY2xhc3M9InVybC1pbmxpbmUtaGVhZCI+8J+UlyDrs7jrrLgg66eB7YGsIOuCtOyaqTwvZGl2PicgKyBpdGVtcy5qb2luKCcnKSArICc8L2Rpdj4nOwp9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KLyogN2IuIG5vcm1hbGl6ZUFydGljbGUg4oCUIOu5jOuTnCDtjIzsnbTtlITrnbzsnbgg7KCV6rec7ZmU7J2YIEpTIOuvuOufrCAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKLyoqCiAqIHYxIOu5jOuTnCDtjIzsnbTtlITrnbzsnbgoYnVpbGRfZGFzaGJvYXJkLnB5IDE0Nzd+MTQ4Mu2WiSnsnZggYXV0aG9yIOygleq3nO2ZlOulvAogKiBKU+yXkOyEnCDrr7jrn6zrp4EuIO2MjOydtO2UhOudvOyduOydtCDsnbTrr7gg7KCV6rec7ZmU7ZaI64uk66m0IG5vLW9w7J2064ukLgogKgogKiAgLSBhdXRob3LqsIAge25hbWUsIGhhbmRsZX0g6rCd7LK066m0IG5hbWUvaGFuZGxlIOusuOyekOyXtOuhnCDrtoTrpqwKICogIC0gbmFtZeydtCAiKGhhbmRsZSki66GcIOuBneuCmOuptCDtlbTri7kg67aA67aEIOygnOqxsAogKiAgLSB0b3BpY3PqsIAg7JeG7Jy866m0IOu5iCDrsLDsl7QKICoKICogQHBhcmFtIHtvYmplY3R9IGFydGljbGUg4oCUIOybkOuzuCDquIAg6rCd7LK0ICjsiJjsoJXtlZjsp4Ag7JWK6rOgIOuzteyCrOuzuCDrsJjtmZgpCiAqIEByZXR1cm5zIHtvYmplY3R9IOygleq3nO2ZlOuQnCDquIAg6rCd7LK0IOuzteyCrOuzuAogKi8KZnVuY3Rpb24gbm9ybWFsaXplQXJ0aWNsZShhcnRpY2xlKSB7CiAgY29uc3QgYSA9IE9iamVjdC5hc3NpZ24oe30sIGFydGljbGUgfHwge30pOwogIGxldCBhdXRob3IgPSBhLmF1dGhvcjsKICBsZXQgaGFuZGxlID0gYS5oYW5kbGUgfHwgJyc7CiAgaWYgKGF1dGhvciAmJiB0eXBlb2YgYXV0aG9yID09PSAnb2JqZWN0JyAmJiAhQXJyYXkuaXNBcnJheShhdXRob3IpKSB7CiAgICBoYW5kbGUgPSBhdXRob3IuaGFuZGxlIHx8IGhhbmRsZTsKICAgIGxldCBuYW1lID0gYXV0aG9yLm5hbWUgfHwgaGFuZGxlIHx8ICfsoIDsnpAg66+47ZmV7J24JzsKICAgIG5hbWUgPSBTdHJpbmcobmFtZSk7CiAgICBpZiAoaGFuZGxlICYmIG5hbWUuZW5kc1dpdGgoYCgke2hhbmRsZX0pYCkpIHsKICAgICAgbmFtZSA9IG5hbWUuc2xpY2UoMCwgLShoYW5kbGUubGVuZ3RoICsgMikpLnRyaW0oKTsKICAgIH0KICAgIGF1dGhvciA9IG5hbWUudHJpbSgpOwogIH0gZWxzZSB7CiAgICBhdXRob3IgPSBhdXRob3IgfHwgJyc7CiAgfQogIGEuYXV0aG9yID0gYXV0aG9yOwogIGEuaGFuZGxlID0gaGFuZGxlOwogIGlmICghQXJyYXkuaXNBcnJheShhLnRvcGljcykpIGEudG9waWNzID0gW107CiAgcmV0dXJuIGE7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwovKiA4LiBhcnRpY2xlQ2FyZCDigJQgUHl0aG9uIGFydGljbGVfaHRtbCgpIO2PrO2MhSAo7ZW17IusKSAgICAgICAgICAgICAgICAgKi8KLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCgovKioKICog6riAIOy5tOuTnCBIVE1MIOyDneyEsS4gUHl0aG9uIGBhcnRpY2xlX2h0bWwoYXJ0aWNsZSwgZmVhdHVyZWQsIGlkeCwgcmVsYXRlZClg7J2YCiAqIEphdmFTY3JpcHQg7Y+s7YyFLiDrj5nsnbztlZwg7YG0656Y7Iqk66qFwrdkYXRhIOyGjeyEseydhCDsgqzsmqntlZjsl6wg6riw7KG0IENTU+yZgCDtmLjtmZguCiAqCiAqIHYyIEpTT04g7ZWE65OcIChwb3N0cy14Lmpzb24gLyBwb3N0cy13ZWIuanNvbik6CiAqICAgdHlwZSgieCJ8IndlYiIpLCBhdXRob3IsIGhhbmRsZSwgZnVsbFRleHQsIGZ1bGxIdG1sLCB0aXRsZSwgc3VtbWFyeSwKICogICBjcmVhdGVkQXQsIHNvdXJjZVVybC9zb3VyY2VfdXJsLCBzb3VyY2VfZG9tYWluLCBkYXRlX3NhdmVkLAogKiAgIHRvcGljc1tdLCBtZWRpYUltYWdlc1tbdGh1bWIsZnVsbF3igKZdLCBxdW90ZWR7fSwgdXJsQ29udGVudHNbXSwKICogICBoYXNfY2hhcnQsIGlkL3R3ZWV0SWQsIF9pZHgKICoKICogQHBhcmFtIHtvYmplY3R9IGFydGljbGUg4oCUIOq4gCDqsJ3ssrQKICogQHBhcmFtIHtvYmplY3R9IFtvcHRpb25zXSDigJQg66CM642UIOyYteyFmAogKiBAcGFyYW0ge2Jvb2xlYW59IFtvcHRpb25zLmZlYXR1cmVkPWZhbHNlXSDigJQgTEFURVNUIFBJQ0sg6rCV7KGwIO2RnOyLnAogKiBAcGFyYW0ge251bWJlcn0gW29wdGlvbnMuaWR4PTBdIOKAlCDsubTrk5wg7J24642x7IqkIChyZWFkLXdpbmRvdy1idG4gZGF0YS1pZHgpCiAqIEBwYXJhbSB7b2JqZWN0W119IFtvcHRpb25zLnJlbGF0ZWQ9W11dIOKAlCDsl7DqtIAg6rKM7Iuc66y8ICjstZzrjIAgNeqwnCDtkZzsi5wpCiAqIEByZXR1cm5zIHtzdHJpbmd9IGA8ZGV0YWlscyBjbGFzcz0iYXJ0aWNsZSI+4oCmPC9kZXRhaWxzPmAg7Lm065OcIEhUTUwKICovCmZ1bmN0aW9uIGFydGljbGVDYXJkKGFydGljbGUsIG9wdGlvbnMgPSB7fSkgewogIGNvbnN0IHsgZmVhdHVyZWQgPSBmYWxzZSwgaWR4ID0gMCwgcmVsYXRlZCA9IFtdIH0gPSBvcHRpb25zOwogIGNvbnN0IGEgPSBub3JtYWxpemVBcnRpY2xlKGFydGljbGUpOwogIGNvbnN0IGlzWCA9IGEudHlwZSA9PT0gJ3gnOwogIGNvbnN0IGF1dGhvciA9IGEuYXV0aG9yIHx8ICcnOwogIGNvbnN0IHRleHQgPSBhLmZ1bGxUZXh0IHx8ICcnOwogIGNvbnN0IE1JU1NJTkcgPSAn67O466y47J20IOyImOynkeuQmOyngCDslYrsnYAg6rKM7Iuc66y87J6F64uI64ukLiBYIOybkOusuOyXkOyEnCDtmZXsnbjtlZjshLjsmpQuJzsKCiAgLy8g7KCc66qpOiBYIOq4gOydgCDssqsg7KSEKDkw7J6QKSwg7Ju56riA7J2AIHRpdGxlIO2VhOuTnAogIGNvbnN0IHRpdGxlID0gaXNYID8gc2xpY2VDcCh0ZXh0LnRyaW0oKS5zcGxpdCgnXG4nKVswXSwgOTApIHx8IGF1dGhvciA6IGEudGl0bGUgfHwgJyc7CiAgLy8g7JqU7JW9OiBYIOq4gOydgCAxNTDsnpAg66+466as67O06riwLCDsm7nquIDsnYAgc3VtbWFyeSDtlYTrk5wKICBjb25zdCBzdW1tYXJ5ID0gaXNYID8gKHRleHQgPyBzbGljZUNwKHRleHQsIDE1MCkgKyAodGV4dC5sZW5ndGggPiAxNTAgPyAn4oCmJyA6ICcnKSA6IE1JU1NJTkcpIDogYS5zdW1tYXJ5IHx8ICcnOwogIGNvbnN0IGZ1bGxIdG1sID0gYS5mdWxsSHRtbDsgLy8g7J2465287J24IOydtOuvuOyngOqwgCDtj6ztlajrkJwgSFRNTCAo67mM65OcIOyLnCDsoJXsoJzrkJwg7Iug66KwIEhUTUwpCiAgY29uc3QgZnVsbFRleHQgPSBpc1ggPyB0ZXh0IHx8IE1JU1NJTkcgOiB0ZXh0IHx8IGEuc3VtbWFyeSB8fCAnJzsKCiAgLy8g7Jew6rSAIOqyjOyLnOusvCBIVE1MICjstZzrjIAgNeqwnCkKICBsZXQgcmVsYXRlZEh0bWwgPSAnJzsKICBpZiAocmVsYXRlZCAmJiByZWxhdGVkLmxlbmd0aCkgewogICAgY29uc3QgaXRlbXMgPSBbXTsKICAgIGZvciAoY29uc3QgciBvZiByZWxhdGVkLnNsaWNlKDAsIDUpKSB7CiAgICAgIGNvbnN0IHJUaXRsZSA9CiAgICAgICAgci50eXBlID09PSAneCcgPyBzbGljZUNwKFN0cmluZyhyLmZ1bGxUZXh0IHx8ICcnKS50cmltKCkuc3BsaXQoJ1xuJylbMF0sIDYwKSB8fCByLmF1dGhvciB8fCAnJyA6IHIudGl0bGUgfHwgJyc7CiAgICAgIGNvbnN0IHJBdXRob3IgPSByLmF1dGhvciB8fCAnJzsKICAgICAgLy8gZGF0YS10YXJnZXQtaWR466GcIO2VtOuLuSDsubTrk5wg7LC+6riwIChKU+yXkOyEnCDsiqTtgazroaQg7J2064+ZKQogICAgICBpdGVtcy5wdXNoKAogICAgICAgIGA8bGk+PGEgaHJlZj0iIyIgY2xhc3M9InJlbGF0ZWQtbGluayIgZGF0YS10YXJnZXQtaWR4PSIke2VzY2FwZUh0bWwoU3RyaW5nKHIuX2lkeCA/PyAnJykpfSI+JHtlc2NhcGVIdG1sKHJUaXRsZSl9PC9hPiBgICsKICAgICAgICAgIGA8c3BhbiBjbGFzcz0iYWktYXV0aG9yIj7igJQgJHtlc2NhcGVIdG1sKHJBdXRob3IpfTwvc3Bhbj48L2xpPmAKICAgICAgKTsKICAgIH0KICAgIGlmIChpdGVtcy5sZW5ndGgpIHsKICAgICAgcmVsYXRlZEh0bWwgPSBgPGRpdiBjbGFzcz0icmVsYXRlZC1zZWN0aW9uIj48aDQ+8J+UlyDsl7DqtIAg6rKM7Iuc66y8PC9oND48dWwgY2xhc3M9InJlbGF0ZWQtbGlzdCI+JHtpdGVtcy5qb2luKCcnKX08L3VsPjwvZGl2PmA7CiAgICB9CiAgfQoKICBjb25zdCB0b3BpY3MgPSBBcnJheS5pc0FycmF5KGEudG9waWNzKSA/IGEudG9waWNzIDogW107CiAgY29uc3QgaGFuZGxlID0gaXNYID8gYDxzcGFuIGNsYXNzPSJoYW5kbGUiPiR7ZXNjYXBlSHRtbChhLmhhbmRsZSB8fCAnJyl9PC9zcGFuPmAgOiAnJzsKICBjb25zdCBtZXRhID0gaXNYID8gYOyekeyEsSAke2EuY3JlYXRlZEF0IHx8ICfrgqDsp5wg66+47ZmV7J24J31gIDogYCR7YS5zb3VyY2VfZG9tYWluIHx8ICcnfSDCtyDsoIDsnqUgJHthLmRhdGVfc2F2ZWQgfHwgJyd9YDsKCiAgLy8g7J2066+47KeAICjsjbjrhKTsnbwg4oaSIOudvOydtO2KuOuwleyKpCDrp4HtgawpCiAgY29uc3QgaW1ncyA9IFtdOwogIGNvbnN0IG1lZGlhSW1hZ2VzID0gYS5tZWRpYUltYWdlcyB8fCBbXTsKICBtZWRpYUltYWdlcy5mb3JFYWNoKChwYWlyLCBpbmRleCkgPT4gewogICAgY29uc3QgdGh1bWIgPSBBcnJheS5pc0FycmF5KHBhaXIpID8gcGFpclswXSA6IHBhaXI/LnRodW1iOwogICAgaWYgKCF0aHVtYikgcmV0dXJuOwogICAgY29uc3QgbGlkID0gbGlnaHRib3hJZChhLCBpbmRleCk7CiAgICBpbWdzLnB1c2goCiAgICAgIGA8YSBjbGFzcz0ibWVkaWEtbGluayIgaHJlZj0iIyR7bGlkfSIgYXJpYS1sYWJlbD0i7J2066+47KeAICR7aW5kZXggKyAxfSDtmZXrjIAg67O06riwIj5gICsKICAgICAgICBgPGltZyBzcmM9IiR7ZXNjYXBlSHRtbCh0aHVtYil9IiBhbHQ9IiR7ZXNjYXBlSHRtbChhdXRob3IpfSDqsozsi5zrrLwg7J2066+47KeAICR7aW5kZXggKyAxfSIgbG9hZGluZz0ibGF6eSI+PC9hPmAKICAgICk7CiAgfSk7CiAgY29uc3QgbWVkaWEgPSBpbWdzLmxlbmd0aCA/IGA8ZGl2IGNsYXNzPSJwb3N0LW1lZGlhIj4ke2ltZ3Muam9pbignJyl9PC9kaXY+YCA6ICcnOwoKICAvLyDsnbjsmqnquIAg7IS57IWYIChxdW90ZWQpIOKAlCDquLDrs7gg7ZGc7IucKG9wZW4pLCDsoJHquLAg6rCA64qlCiAgbGV0IHF1b3RlZEh0bWwgPSAnJzsKICBjb25zdCBxID0gYS5xdW90ZWQ7CiAgaWYgKHEgJiYgdHlwZW9mIHEgPT09ICdvYmplY3QnICYmICFBcnJheS5pc0FycmF5KHEpKSB7CiAgICBjb25zdCBxdGV4dCA9IFN0cmluZyhxLmZ1bGxUZXh0IHx8ICcnKS50cmltKCk7CiAgICBjb25zdCBxYXV0aG9yID0gcS5hdXRob3IgfHwge307CiAgICBjb25zdCBxbmFtZSA9IHFhdXRob3IubmFtZSB8fCBxYXV0aG9yLmhhbmRsZSB8fCAnJzsKICAgIGNvbnN0IHF3aGVuID0gcS5jcmVhdGVkQXQgfHwgJyc7CiAgICBjb25zdCBxaW1ncyA9IFtdOwogICAgZm9yIChjb25zdCBtIG9mIHEubWVkaWEgfHwgW10pIHsKICAgICAgY29uc3QgbXUgPSB0eXBlb2YgbSA9PT0gJ3N0cmluZycgPyBtIDogbT8udXJsIHx8IG0/LnNyYyB8fCAnJzsKICAgICAgaWYgKG11KSBxaW1ncy5wdXNoKGA8aW1nIHNyYz0iJHtlc2NhcGVIdG1sKG11KX0iIGxvYWRpbmc9ImxhenkiIGFsdD0i7J247Jqp6riAIOydtOuvuOyngCI+YCk7CiAgICB9CiAgICBjb25zdCBxbWVkaWFIdG1sID0gcWltZ3MubGVuZ3RoID8gYDxkaXYgY2xhc3M9InF1b3RlZC1tZWRpYSI+JHtxaW1ncy5qb2luKCcnKX08L2Rpdj5gIDogJyc7CiAgICBpZiAocXRleHQgfHwgcWltZ3MubGVuZ3RoKSB7CiAgICAgIGNvbnN0IHFsYWJlbCA9IHFuYW1lID8gYPCflJcg7J247Jqp6riAIMK3ICR7ZXNjYXBlSHRtbChxbmFtZSl9YCA6ICfwn5SXIOyduOyaqeq4gCc7CiAgICAgIHF1b3RlZEh0bWwgPQogICAgICAgIGA8ZGV0YWlscyBjbGFzcz0icXVvdGVkIiBvcGVuPjxzdW1tYXJ5PiR7cWxhYmVsfTwvc3VtbWFyeT5gICsKICAgICAgICBgPGRpdiBjbGFzcz0icXVvdGVkLWJvZHkiPmAgKwogICAgICAgIGA8ZGl2PjxzcGFuIGNsYXNzPSJxdW90ZWQtYXV0aG9yIj4ke2VzY2FwZUh0bWwocW5hbWUpfTwvc3Bhbj5gICsKICAgICAgICBgPHNwYW4gY2xhc3M9InF1b3RlZC10aW1lIj4ke2VzY2FwZUh0bWwocXdoZW4pfTwvc3Bhbj48L2Rpdj5gICsKICAgICAgICAocXRleHQgPyBgPHAgY2xhc3M9InF1b3RlZC10ZXh0Ij4ke2VzY2FwZUh0bWwocXRleHQpfTwvcD5gIDogJycpICsKICAgICAgICBxbWVkaWFIdG1sICsKICAgICAgICBgPC9kaXY+PC9kZXRhaWxzPmA7CiAgICB9CiAgfQoKICBjb25zdCB1cmwgPSBpc1ggPyBhLnNvdXJjZVVybCB8fCAnJyA6IGEuc291cmNlX3VybCB8fCAnJzsKICBjb25zdCB1cmxJbmxpbmUgPSB1cmxJbmxpbmVIdG1sKGEpOwogIGNvbnN0IHBpbklkID0gU3RyaW5nKGEuaWQgPz8gYS50d2VldElkID8/IGEuc291cmNlVXJsID8/ICcnKTsKICBjb25zdCBtZW1vSWQgPSBwaW5JZCB8fCBTdHJpbmcoaWR4KTsKICBjb25zdCBkYXRhSWR4ID0gYS5faWR4ID8/IGlkeDsKCiAgcmV0dXJuICgKICAgIGA8ZGV0YWlscyBjbGFzcz0iYXJ0aWNsZSR7ZmVhdHVyZWQgPyAnIGZlYXR1cmVkJyA6ICcnfSR7aXNYID8gJyB4LWNhcmQnIDogJyd9IiBgICsKICAgIGBkYXRhLXR5cGU9IiR7ZXNjYXBlSHRtbChhLnR5cGUpfSIgZGF0YS1hdXRob3I9IiR7ZXNjYXBlSHRtbChhdXRob3IpfSIgYCArCiAgICBgZGF0YS10b3BpY3M9IiR7ZXNjYXBlSHRtbCh0b3BpY3Muam9pbignXG4nKSl9IiBkYXRhLWlkeD0iJHtlc2NhcGVIdG1sKFN0cmluZyhkYXRhSWR4KSl9IiBgICsKICAgIGBkYXRhLXBpbi1pZD0iJHtlc2NhcGVIdG1sKHBpbklkKX0iJHthLmhhc19jaGFydCA/ICcgZGF0YS1jaGFydD0iMSInIDogJyd9PmAgKwogICAgJzxzdW1tYXJ5IGNsYXNzPSJjYXJkLXRvZ2dsZSI+JyArCiAgICAnPGRpdiBjbGFzcz0iYm9va21hcmstY29sb3JzIiBoaWRkZW4+PC9kaXY+JyArCiAgICBgPGRpdiBjbGFzcz0ic3BvdGxpZ2h0LWxhYmVsIiR7ZmVhdHVyZWQgPyAnJyA6ICcgaGlkZGVuJ30+TEFURVNUIFBJQ0sgwrcg6rCA7J6lIOy1nOq3vCDquIA8L2Rpdj5gICsKICAgICc8ZGl2IGNsYXNzPSJjYXJkLWhlYWRlciI+JyArCiAgICBgPGRpdiBjbGFzcz0idHlwZS1iYWRnZSI+JHtpc1ggPyAn8J2VjyDCtyBYIOqyjOyLnOusvCcgOiAn7Ju56riAIMK3IFdFQiBBUlRJQ0xFJ308L2Rpdj5gICsKICAgICc8ZGl2IGNsYXNzPSJjYXJkLWFjdGlvbnMiPicgKwogICAgbWVtb0J1dHRvbkh0bWwobWVtb0lkLCB0aXRsZSkgKwogICAgJzxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0iYm9va21hcmstYnRuIiBhcmlhLWxhYmVsPSLrtoHrp4jtgawiIHRpdGxlPSLrtoHrp4jtgawiPicgKwogICAgJzxzdmcgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNiAzaDEyYTEgMSAwIDAgMSAxIDF2MTdsLTctNC03IDRWNGExIDEgMCAwIDEgMS0xeiIvPjwvc3ZnPjwvYnV0dG9uPicgKwogICAgJzxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0icGluLWJ0biIgYXJpYS1sYWJlbD0i7IOB64uoIOqzoOyglSIgdGl0bGU9IuyDgeuLqCDqs6DsoJUiPicgKwogICAgJzxzdmcgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOSA0aDZsLTEgNyAzIDN2Mkg3di0ybDMtMy0xLTd6Ii8+PHBhdGggZD0iTTEyIDE0djciLz48L3N2Zz48L2J1dHRvbj4nICsKICAgICc8YnV0dG9uIHR5cGU9ImJ1dHRvbiIgY2xhc3M9ImRlbGV0ZS1idG4iIGFyaWEtbGFiZWw9IuyCreygnCIgdGl0bGU9IuyCreygnCI+JyArCiAgICAnPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik00IDdoMTZNOSA3VjVhMSAxIDAgMCAxIDEtMWg0YTEgMSAwIDAgMSAxIDF2Mm0tOSAwIDEgMTNhMSAxIDAgMCAwIDEgMWg4YTEgMSAwIDAgMCAxLTFsMS0xMyIvPjwvc3ZnPjwvYnV0dG9uPicgKwogICAgJzwvZGl2PjwvZGl2PicgKwogICAgYDxoMz4ke2VzY2FwZUh0bWwodGl0bGUpfSR7aGFuZGxlfTwvaDM+PGRpdiBjbGFzcz0ibWV0YSI+JHtlc2NhcGVIdG1sKG1ldGEpfTwvZGl2PmAgKwogICAgYDxwIGNsYXNzPSJzdW1tYXJ5Ij4ke2VzY2FwZUh0bWwoc3VtbWFyeSl9PC9wPjxkaXYgY2xhc3M9InRhZ3MiPiR7dG9waWNzSHRtbCh0b3BpY3MpfTwvZGl2PmAgKwogICAgJzwvc3VtbWFyeT4nICsKICAgIGA8ZGl2IGNsYXNzPSJmdWxsLXRleHQke2Z1bGxIdG1sID8gJyB3ZWItaHRtbCcgOiAnJ30iPiR7ZnVsbEh0bWwgPyBsaW5raWZ5SHRtbChmdWxsSHRtbCkgOiBsaW5raWZ5KGZ1bGxUZXh0KX08L2Rpdj5gICsKICAgIGAke3VybElubGluZX0ke21lZGlhfSR7cXVvdGVkSHRtbH0ke3JlbGF0ZWRIdG1sfWAgKwogICAgYDxkaXYgY2xhc3M9ImJ5bGluZSI+PHNwYW4gY2xhc3M9ImF1dGhvciI+JHtlc2NhcGVIdG1sKGF1dGhvcil9PC9zcGFuPmAgKwogICAgYDxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0icmVhZC13aW5kb3ctYnRuIiBkYXRhLWlkeD0iJHtpZHh9Ij7sg4gg7LC97JeQ7IScIOydveq4sCDip4k8L2J1dHRvbj5gICsKICAgIGA8YSBjbGFzcz0icmVhZC1saW5rIiBocmVmPSIke2VzY2FwZUh0bWwodXJsKX0iIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIG5vcmVmZXJyZXIiPuybkOusuCDrs7TquLAg4oaXPC9hPjwvZGl2PmAgKwogICAgJzwvZGV0YWlscz4nCiAgKTsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIOuCtOuztOuCtOq4sCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKY29uc3QgQXJjaGl2ZVJlbmRlciA9IHsKICBlc2NhcGVIdG1sLAogIHNsaWNlQ3AsCiAgbGlua2lmeSwKICBsaW5raWZ5SHRtbCwKICB0b3BpY3NIdG1sLAogIHRhZ0NvbG9ySW5kZXgsCiAgbWVtb0J1dHRvbkh0bWwsCiAgZm52MWEsCiAgbGlnaHRib3hJZCwKICBsaWdodGJveGVzSHRtbCwKICB1cmxJbmxpbmVIdG1sLAogIG5vcm1hbGl6ZUFydGljbGUsCiAgYXJ0aWNsZUNhcmQsCn07CgpleHBvcnQgewogIGVzY2FwZUh0bWwsCiAgc2xpY2VDcCwKICBsaW5raWZ5LAogIGxpbmtpZnlIdG1sLAogIHRvcGljc0h0bWwsCiAgdGFnQ29sb3JJbmRleCwKICBtZW1vQnV0dG9uSHRtbCwKICBmbnYxYSwKICBsaWdodGJveElkLAogIGxpZ2h0Ym94ZXNIdG1sLAogIHVybElubGluZUh0bWwsCiAgbm9ybWFsaXplQXJ0aWNsZSwKICBhcnRpY2xlQ2FyZCwKICBBcmNoaXZlUmVuZGVyLAp9OwoKLy8g7J2867CYIDxzY3JpcHQ+IOuhnOuTnCDsi5wg7KCE7JetIOygkeq3vOyaqQppZiAodHlwZW9mIHdpbmRvdyAhPT0gJ3VuZGVmaW5lZCcpIHsKICB3aW5kb3cuQXJjaGl2ZVJlbmRlciA9IEFyY2hpdmVSZW5kZXI7Cn0K
+/**
+ * render.js — 아카이브 v2 카드 렌더링 모듈
+ *
+ * `build_dashboard.py`의 아래 함수들을 JavaScript로 포팅:
+ *   - escape()            → escapeHtml()
+ *   - topics_of()         → (articleCard 내부, topicsHtml()로 분리)
+ *   - linkify()           → linkify()
+ *   - linkify_html()      → linkifyHtml()
+ *   - url_inline_html()   → urlInlineHtml()
+ *   - memo_button()       → memoButtonHtml()
+ *   - lightbox_id()       → lightboxId()
+ *   - lightboxes_html()   → lightboxesHtml()
+ *   - article_html()      → articleCard()
+ *
+ * 보안 원칙: 모든 사용자 데이터는 innerHTML 삽입 전 반드시 escapeHtml()로
+ * 이스케이프한다. (fullHtml은 빌드 파이프라인에서 정제한 신뢰 HTML로 취급)
+ *
+ * 사용법 (ES 모듈):
+ *   import { articleCard } from './render.js';
+ *   container.innerHTML = articles.map((a, i) => articleCard(a, { idx: i })).join('');
+ *
+ * 사용법 (일반 스크립트):
+ *   <script src="js/render.js"></script>
+ *   <!-- window.ArchiveRender.articleCard(...) 로 접근 -->
+ */
+
+'use strict';
+
+/* ------------------------------------------------------------------ */
+/* 1. escapeHtml — Python html.escape(s, quote=True) 포팅             */
+/* ------------------------------------------------------------------ */
+
+/**
+ * HTML 이스케이프. Python `html.escape(str(value or ""), quote=True)`와 동일:
+ * `&` → `&amp;`, `<` → `&lt;`, `>` → `&gt;`, `"` → `&quot;`, `'` → `&#x27;`
+ *
+ * @param {*} value — 이스케이프할 값 (null/undefined → "")
+ * @returns {string} 이스케이프된 문자열
+ */
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+/* ------------------------------------------------------------------ */
+/* 1b. sliceCp — 코드포인트 기준 문자열 자르기                       */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Python의 str[:n]과 동일하게 코드포인트 단위로 자름.
+ * (JS String.slice는 UTF-16 코드유닛 단위라 이모지 등 astral 문자에서
+ *  Python과 글자 수가 달라짐)
+ *
+ * @param {string} str — 입력 문자열
+ * @param {number} n — 자를 코드포인트 수
+ * @returns {string} 앞에서 n 코드포인트까지의 문자열
+ */
+function sliceCp(str, n) {
+  return [...String(str ?? '')].slice(0, n).join('');
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. linkify — Python linkify() 포팅                                 */
+/* ------------------------------------------------------------------ */
+
+const URL_RE = /https?:\/\/[^\s<>"')\]]+/g;
+const URL_TRAIL_CHARS = '.,;:!?…';
+
+/**
+ * 일반 텍스트 안의 bare URL을 하이퍼링크로 변환.
+ * XSS 안전: URL을 플레이스홀더로 치환 → 전체 escape → 앵커 복원.
+ * URL 끝의 문장부호(.,;:!?…)는 링크에서 제외하고 뒤에 붙임.
+ * (Python linkify()와 동일한 알고리즘)
+ *
+ * @param {string} text — 일반 텍스트
+ * @returns {string} URL이 링크로 변환된 HTML
+ */
+function linkify(text) {
+  const urls = [];
+  const tmp = String(text ?? '').replace(URL_RE, (m) => {
+    urls.push(m);
+    return `\u0000URL${urls.length - 1}\u0000`;
+  });
+  let out = escapeHtml(tmp);
+  urls.forEach((u, i) => {
+    let eu = escapeHtml(u);
+    let trail = '';
+    while (eu.length > 0 && URL_TRAIL_CHARS.includes(eu[eu.length - 1])) {
+      trail = eu[eu.length - 1] + trail;
+      eu = eu.slice(0, -1);
+    }
+    out = out.split(`\u0000URL${i}\u0000`).join(
+      `<a href="${eu}" target="_blank" rel="noopener">${eu}</a>${escapeHtml(trail)}`
+    );
+  });
+  return out;
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. linkifyHtml — Python linkify_html() 포팅 (단순화)                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * 신뢰 HTML 안의 bare URL을 하이퍼링크로 변환.
+ * 기존 <a>…</a> 블록은 보호하고, 태그 바깥 텍스트 노드에만 linkify 적용.
+ * (Python linkify_html()의 단순화 버전 — 빌드 시점에 이미 정제된 HTML 가정)
+ *
+ * @param {string} htmlContent — 신뢰할 수 있는 HTML
+ * @returns {string} bare URL이 링크로 변환된 HTML
+ */
+function linkifyHtml(htmlContent) {
+  if (!htmlContent) return '';
+  const anchors = [];
+  // 1) 기존 <a>…</a> 블록 통째로 보호
+  let tmp = String(htmlContent).replace(/<a\b[^>]*>[\s\S]*?<\/a>/gi, (m) => {
+    anchors.push(m);
+    return `\u0001A${anchors.length - 1}\u0001`;
+  });
+  // 2) 태그 바깥(짝수 인덱스 세그먼트)의 텍스트에만 linkify 적용
+  tmp = tmp
+    .split(/(<[^>]*>)/g)
+    .map((seg, i) => (i % 2 === 0 ? linkify(seg) : seg))
+    .join('');
+  // 3) 보호했던 <a> 블록 복원
+  anchors.forEach((a, i) => {
+    tmp = tmp.split(`\u0001A${i}\u0001`).join(a);
+  });
+  return tmp;
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. topicsHtml — 태그 렌더링 (Python article_html() 내 tags 부분)    */
+/* ------------------------------------------------------------------ */
+
+const TAG_COLORS = [
+  ['#17675c', '#e4efe8'],
+  ['#974728', '#fae8dc'],
+  ['#64528b', '#eee7f5'],
+  ['#766019', '#f5edce'],
+];
+
+/**
+ * 주제 문자열에서 태그 색상 인덱스를 계산.
+ * Python: tag_colors[sum(map(ord, topic)) % len(tag_colors)] 와 동일.
+ * (for…of + codePointAt으로 Python의 ord()와 같은 코드포인트 합산)
+ *
+ * @param {string} topic — 주제 문자열
+ * @returns {number} TAG_COLORS 인덱스
+ */
+function tagColorIndex(topic) {
+  let sum = 0;
+  for (const ch of String(topic)) sum += ch.codePointAt(0);
+  return sum % TAG_COLORS.length;
+}
+
+/**
+ * 주제 목록을 태그 HTML로 렌더링.
+ *
+ * @param {string[]} [topics] — 주제 문자열 배열 (없으면 빈 문자열)
+ * @returns {string} `<span class="tag">…</span>` 들을 이어붙인 HTML
+ */
+function topicsHtml(topics) {
+  const list = Array.isArray(topics) ? topics : [];
+  return list
+    .map((topic) => {
+      const [ink, paper] = TAG_COLORS[tagColorIndex(topic)];
+      return `<span class="tag" style="--tag-ink:${ink};--tag-paper:${paper}">${escapeHtml(topic)}</span>`;
+    })
+    .join('');
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. memoButtonHtml — Python memo_feature.memo_button() 포팅         */
+/* ------------------------------------------------------------------ */
+
+/**
+ * 메모 버튼 HTML (북마크 옆 아이콘, 메모 있을 때만 표시).
+ *
+ * @param {string} memoId — 메모 식별자 (pin-id와 동일)
+ * @param {string} [title=""] — data-memo-title용 (50자 제한)
+ * @returns {string} 메모 버튼 HTML
+ */
+function memoButtonHtml(memoId, title = '') {
+  const safeId = escapeHtml(String(memoId ?? ''));
+  const safeTitle = escapeHtml(sliceCp(title ?? '', 50));
+  return (
+    `<button type="button" class="memo-btn memo-icon-btn memo-hidden" ` +
+    `data-memo-id="${safeId}" data-memo-title="${safeTitle}" title="메모">` +
+    `<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>` +
+    `<path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></button>`
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. lightboxId / lightboxesHtml                                     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * FNV-1a 32비트 해시 → 8자리 hex.
+ *
+ * @param {string} str — 입력 문자열
+ * @param {number} [seed=0x811c9dc5] — 시드
+ * @returns {string} 8자리 hex 문자열
+ */
+function fnv1a(str, seed = 0x811c9dc5) {
+  let h = seed >>> 0;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return (h >>> 0).toString(16).padStart(8, '0');
+}
+
+/**
+ * 라이트박스 ID 생성. Python lightbox_id()와 동일한 형식
+ * `lb-<16hex>-<index>` (해시 알고리즘은 다름 — v2 내부 일관성만 보장).
+ *
+ * @param {object} article — 글 객체
+ * @param {number} index — 이미지 인덱스
+ * @returns {string} 라이트박스 ID
+ */
+function lightboxId(article, index) {
+  const key = String(article?.id ?? article?.sourceUrl ?? article?.source_url ?? '');
+  return `lb-${fnv1a(key)}${fnv1a(key, 0x01000193)}-${index}`;
+}
+
+/**
+ * 이미지 확대용 라이트박스 오버레이 HTML 생성.
+ * mediaImages 항목은 [thumb, full] 배열 또는 {thumb, full} 객체를 지원.
+ *
+ * @param {object[]} [articles] — 글 객체 배열
+ * @returns {string} `<section class="css-lightbox">…</section>` 들을 이어붙인 HTML
+ */
+function lightboxesHtml(articles) {
+  const out = [];
+  for (const article of articles || []) {
+    const media = article?.mediaImages || [];
+    const author = article?.author || '';
+    media.forEach((pair, index) => {
+      const full = Array.isArray(pair) ? pair[1] : pair?.full;
+      if (!full) return;
+      const lid = lightboxId(article, index);
+      out.push(
+        `<section class="css-lightbox" id="${lid}" role="dialog" aria-label="이미지 확대">` +
+          `<a href="#articles" class="css-lightbox-close" aria-label="이미지 닫기">×</a>` +
+          `<input type="checkbox" class="css-lightbox-toggle" id="${lid}-size">` +
+          `<label for="${lid}-size">원래 크기로 보기</label>` +
+          `<div class="css-lightbox-stage"><img src="${escapeHtml(full)}" ` +
+          `alt="${escapeHtml(author)} 게시물 이미지 ${index + 1} 확대" loading="lazy"></div>` +
+          `<p class="css-lightbox-help">원래 크기 선택 후 스크롤하여 작은 글자를 읽을 수 있습니다.</p></section>`
+      );
+    });
+  }
+  return out.join('');
+}
+
+/* ------------------------------------------------------------------ */
+/* 7. urlInlineHtml — Python url_inline_html() 포팅                   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * 본문 URL 스크랩 내용을 인라인으로 표시 (Python url_inline_html() 포팅).
+ * 마크다운 기호 가볍게 정리, 본문 1200자 제한.
+ *
+ * @param {object} article — 글 객체 (urlContents 배열 포함 가능)
+ * @returns {string} 인라인 URL 섹션 HTML (없으면 "")
+ */
+function urlInlineHtml(article) {
+  const items = [];
+  for (const uc of article?.urlContents || []) {
+    const url = uc?.url || '';
+    const title = String(uc?.title || url).trim();
+    let body = String(uc?.content || '').trim();
+    const status = uc?.status || '';
+    if (!body && status === 'pending') continue;
+    if (!body) continue;
+    // 마크다운 기호 가볍게 정리 (이미지/링크는 텍스트로)
+    body = body.replace(/!\[([^\]]*)\]\([^)]*\)/g, '[이미지: $1]');
+    body = body.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
+    body = body.replace(/^#{1,6}\s+/gm, '');
+    body = body.trim();
+    if (body.length > 1200) body = sliceCp(body, 1200).trimEnd() + '…';
+    items.push(
+      '<div class="url-inline-item">' +
+        `<div class="url-inline-title">📄 <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a></div>` +
+        `<div class="url-inline-url">${escapeHtml(url)}</div>` +
+        `<div class="url-inline-content">${escapeHtml(body)}</div>` +
+        '</div>'
+    );
+  }
+  if (!items.length) return '';
+  return '<div class="url-inline"><div class="url-inline-head">🔗 본문 링크 내용</div>' + items.join('') + '</div>';
+}
+
+/* ------------------------------------------------------------------ */
+/* 7b. normalizeArticle — 빌드 파이프라인 정규화의 JS 미러            */
+/* ------------------------------------------------------------------ */
+
+/**
+ * v1 빌드 파이프라인(build_dashboard.py 1477~1482행)의 author 정규화를
+ * JS에서 미러링. 파이프라인이 이미 정규화했다면 no-op이다.
+ *
+ *  - author가 {name, handle} 객체면 name/handle 문자열로 분리
+ *  - name이 "(handle)"로 끝나면 해당 부분 제거
+ *  - topics가 없으면 빈 배열
+ *
+ * @param {object} article — 원본 글 객체 (수정하지 않고 복사본 반환)
+ * @returns {object} 정규화된 글 객체 복사본
+ */
+function normalizeArticle(article) {
+  const a = Object.assign({}, article || {});
+  let author = a.author;
+  let handle = a.handle || '';
+  if (author && typeof author === 'object' && !Array.isArray(author)) {
+    handle = author.handle || handle;
+    let name = author.name || handle || '저자 미확인';
+    name = String(name);
+    if (handle && name.endsWith(`(${handle})`)) {
+      name = name.slice(0, -(handle.length + 2)).trim();
+    }
+    author = name.trim();
+  } else {
+    author = author || '';
+  }
+  a.author = author;
+  a.handle = handle;
+  if (!Array.isArray(a.topics)) a.topics = [];
+  return a;
+}
+
+/* ------------------------------------------------------------------ */
+/* 8. articleCard — Python article_html() 포팅 (핵심)                 */
+/* ------------------------------------------------------------------ */
+
+/**
+ * 글 카드 HTML 생성. Python `article_html(article, featured, idx, related)`의
+ * JavaScript 포팅. 동일한 클래스명·data 속성을 사용하여 기존 CSS와 호환.
+ *
+ * v2 JSON 필드 (posts-x.json / posts-web.json):
+ *   type("x"|"web"), author, handle, fullText, fullHtml, title, summary,
+ *   createdAt, sourceUrl/source_url, source_domain, date_saved,
+ *   topics[], mediaImages[[thumb,full]…], quoted{}, urlContents[],
+ *   has_chart, id/tweetId, _idx
+ *
+ * @param {object} article — 글 객체
+ * @param {object} [options] — 렌더 옵션
+ * @param {boolean} [options.featured=false] — LATEST PICK 강조 표시
+ * @param {number} [options.idx=0] — 카드 인덱스 (read-window-btn data-idx)
+ * @param {object[]} [options.related=[]] — 연관 게시물 (최대 5개 표시)
+ * @returns {string} `<details class="article">…</details>` 카드 HTML
+ */
+function articleCard(article, options = {}) {
+  const { featured = false, idx = 0, related = [] } = options;
+  const a = normalizeArticle(article);
+  const isX = a.type === 'x';
+  const author = a.author || '';
+  const text = a.fullText || '';
+  const MISSING = '본문이 수집되지 않은 게시물입니다. X 원문에서 확인하세요.';
+
+  // 제목: X 글은 첫 줄(90자), 웹글은 title 필드
+  const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || '';
+  // 요약: X 글은 150자 미리보기, 웹글은 summary 필드
+  const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || '';
+  const fullHtml = a.fullHtml; // 인라인 이미지가 포함된 HTML (빌드 시 정제된 신뢰 HTML)
+  const fullText = isX ? text || MISSING : text || a.summary || '';
+
+  // 연관 게시물 HTML (최대 5개)
+  let relatedHtml = '';
+  if (related && related.length) {
+    const items = [];
+    for (const r of related.slice(0, 5)) {
+      const rTitle =
+        r.type === 'x' ? sliceCp(String(r.fullText || '').trim().split('\n')[0], 60) || r.author || '' : r.title || '';
+      const rAuthor = r.author || '';
+      // data-target-idx로 해당 카드 찾기 (JS에서 스크롤 이동)
+      items.push(
+        `<li><a href="#" class="related-link" data-target-idx="${escapeHtml(String(r._idx ?? ''))}">${escapeHtml(rTitle)}</a> ` +
+          `<span class="ai-author">— ${escapeHtml(rAuthor)}</span></li>`
+      );
+    }
+    if (items.length) {
+      relatedHtml = `<div class="related-section"><h4>🔗 연관 게시물</h4><ul class="related-list">${items.join('')}</ul></div>`;
+    }
+  }
+
+  const topics = Array.isArray(a.topics) ? a.topics : [];
+  const handle = isX ? `<span class="handle">${escapeHtml(a.handle || '')}</span>` : '';
+  const meta = isX ? `작성 ${a.createdAt || '날짜 미확인'}` : `${a.source_domain || ''} · 저장 ${a.date_saved || ''}`;
+
+  // 이미지 (썸네일 → 라이트박스 링크)
+  const imgs = [];
+  const mediaImages = a.mediaImages || [];
+  mediaImages.forEach((pair, index) => {
+    const thumb = Array.isArray(pair) ? pair[0] : pair?.thumb;
+    if (!thumb) return;
+    const lid = lightboxId(a, index);
+    imgs.push(
+      `<a class="media-link" href="#${lid}" aria-label="이미지 ${index + 1} 확대 보기">` +
+        `<img src="${escapeHtml(thumb)}" alt="${escapeHtml(author)} 게시물 이미지 ${index + 1}" loading="lazy"></a>`
+    );
+  });
+  const media = imgs.length ? `<div class="post-media">${imgs.join('')}</div>` : '';
+
+  // 인용글 섹션 (quoted) — 기본 표시(open), 접기 가능
+  let quotedHtml = '';
+  const q = a.quoted;
+  if (q && typeof q === 'object' && !Array.isArray(q)) {
+    const qtext = String(q.fullText || '').trim();
+    const qauthor = q.author || {};
+    const qname = qauthor.name || qauthor.handle || '';
+    const qwhen = q.createdAt || '';
+    const qimgs = [];
+    for (const m of q.media || []) {
+      const mu = typeof m === 'string' ? m : m?.url || m?.src || '';
+      if (mu) qimgs.push(`<img src="${escapeHtml(mu)}" loading="lazy" alt="인용글 이미지">`);
+    }
+    const qmediaHtml = qimgs.length ? `<div class="quoted-media">${qimgs.join('')}</div>` : '';
+    if (qtext || qimgs.length) {
+      const qlabel = qname ? `🔗 인용글 · ${escapeHtml(qname)}` : '🔗 인용글';
+      quotedHtml =
+        `<details class="quoted" open><summary>${qlabel}</summary>` +
+        `<div class="quoted-body">` +
+        `<div><span class="quoted-author">${escapeHtml(qname)}</span>` +
+        `<span class="quoted-time">${escapeHtml(qwhen)}</span></div>` +
+        (qtext ? `<p class="quoted-text">${escapeHtml(qtext)}</p>` : '') +
+        qmediaHtml +
+        `</div></details>`;
+    }
+  }
+
+  const url = isX ? a.sourceUrl || '' : a.source_url || '';
+  const urlInline = urlInlineHtml(a);
+  const pinId = String(a.id ?? a.tweetId ?? a.sourceUrl ?? '');
+  const memoId = pinId || String(idx);
+  const dataIdx = a._idx ?? idx;
+
+  return (
+    `<details class="article${featured ? ' featured' : ''}${isX ? ' x-card' : ''}" ` +
+    `data-type="${escapeHtml(a.type)}" data-author="${escapeHtml(author)}" ` +
+    `data-topics="${escapeHtml(topics.join('\n'))}" data-idx="${escapeHtml(String(dataIdx))}" ` +
+    `data-pin-id="${escapeHtml(pinId)}"${a.has_chart ? ' data-chart="1"' : ''}>` +
+    '<summary class="card-toggle">' +
+    '<div class="bookmark-colors" hidden></div>' +
+    `<div class="spotlight-label"${featured ? '' : ' hidden'}>LATEST PICK · 가장 최근 글</div>` +
+    '<div class="card-header">' +
+    `<div class="type-badge">${isX ? '𝕏 · X 게시물' : '웹글 · WEB ARTICLE'}</div>` +
+    '<div class="card-actions">' +
+    memoButtonHtml(memoId, title) +
+    '<button type="button" class="bookmark-btn" aria-label="북마크" title="북마크">' +
+    '<svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>' +
+    '<button type="button" class="pin-btn" aria-label="상단 고정" title="상단 고정">' +
+    '<svg viewBox="0 0 24 24"><path d="M9 4h6l-1 7 3 3v2H7v-2l3-3-1-7z"/><path d="M12 14v7"/></svg></button>' +
+    '<button type="button" class="delete-btn" aria-label="삭제" title="삭제">' +
+    '<svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-9 0 1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></button>' +
+    '</div></div>' +
+    `<h3>${escapeHtml(title)}${handle}</h3><div class="meta">${escapeHtml(meta)}</div>` +
+    `<p class="summary">${escapeHtml(summary)}</p><div class="tags">${topicsHtml(topics)}</div>` +
+    '</summary>' +
+    `<div class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
+    `${urlInline}${media}${quotedHtml}${relatedHtml}` +
+    `<div class="byline"><span class="author">${escapeHtml(author)}</span>` +
+    `<button type="button" class="read-window-btn" data-idx="${idx}">새 창에서 읽기 ⧉</button>` +
+    `<a class="read-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">원문 보기 ↗</a></div>` +
+    '</details>'
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* 내보내기                                                            */
+/* ------------------------------------------------------------------ */
+
+const ArchiveRender = {
+  escapeHtml,
+  sliceCp,
+  linkify,
+  linkifyHtml,
+  topicsHtml,
+  tagColorIndex,
+  memoButtonHtml,
+  fnv1a,
+  lightboxId,
+  lightboxesHtml,
+  urlInlineHtml,
+  normalizeArticle,
+  articleCard,
+};
+
+export {
+  escapeHtml,
+  sliceCp,
+  linkify,
+  linkifyHtml,
+  topicsHtml,
+  tagColorIndex,
+  memoButtonHtml,
+  fnv1a,
+  lightboxId,
+  lightboxesHtml,
+  urlInlineHtml,
+  normalizeArticle,
+  articleCard,
+  ArchiveRender,
+};
+
+// 일반 <script> 로드 시 전역 접근용
+if (typeof window !== 'undefined') {
+  window.ArchiveRender = ArchiveRender;
+}
