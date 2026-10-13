@@ -553,6 +553,21 @@ function renderArticles(articles, renderer, container, opts = {}) {
 
   container.innerHTML = html;
 
+  // 라이트박스 섹션 추가 (이미지 확대용, render.js lightboxesHtml)
+  try {
+    if (renderer.lightboxesHtml) {
+      const lbHtml = renderer.lightboxesHtml(articles);
+      if (lbHtml) {
+        const lbWrap = document.createElement('div');
+        lbWrap.id = 'lightboxes';
+        lbWrap.innerHTML = lbHtml;
+        container.appendChild(lbWrap);
+      }
+    }
+  } catch (e) {
+    console.warn('[bootstrap] 라이트박스 생성 실패:', e);
+  }
+
   const countEl = $('article-count');
   if (countEl) {
     countEl.textContent = String(articles.length);

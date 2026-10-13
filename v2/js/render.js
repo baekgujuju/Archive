@@ -329,7 +329,54 @@ function normalizeArticle(article) {
   a.author = author;
   a.handle = handle;
   if (!Array.isArray(a.topics)) a.topics = [];
+  // 미디어 정규화: raw JSON의 media[] ({type, url}) → mediaImages[] ([thumb, full])
+  // render.js/articleCard/lightboxesHtml은 mediaImages[]를 읽음
+  if (!Array.isArray(a.mediaImages) || !a.mediaImages.length) {
+    const rawMedia = a.media;
+    if (Array.isArray(rawMedia) && rawMedia.length) {
+      const pairs = [];
+      for (const m of rawMedia) {
+        const url = typeof m === 'string' ? m : m && (m.url || m.src);
+        if (url) pairs.push([url, url]); // thumb/full 동일 (원격 URL)
+      }
+      if (pairs.length) a.mediaImages = pairs;
+    }
+  }
   return a;
+}
+
+/**
+ * 답글(댓글) HTML 생성. v1 build_mobile.py 598~617행 패턴의 JS 포팅.
+ * `<details class="replies">` 접기/펼치기 구조, 삭제 버튼 포함.
+ *
+ * @param {object} article — 글 객체 (replies 배열 포함 가능)
+ * @returns {string} 답글 섹션 HTML (없으면 "")
+ */
+function repliesHtml(article) {
+  const replies = Array.isArray(article?.replies)
+    ? article.replies.filter((r) => r && typeof r === 'object')
+    : [];
+  if (!replies.length) return '';
+  const items = [];
+  for (const r of replies) {
+    const ra = r.author || {};
+    const rname = ra.name || ra.handle || '';
+    const rtext = String(r.fullText || '');
+    const rwhen = String(r.createdAt || '');
+    const rtid = String(r.tweetId || r.id || '');
+    const badge = r.isThread ? ' <span class="thread-badge">스레드</span>' : '';
+    items.push(
+      `<div class="reply" data-reply-id="${escapeHtml(rtid)}">` +
+        `<div class="reply-head"><span class="reply-author">${escapeHtml(rname)}</span>` +
+        `<span class="reply-time">${escapeHtml(rwhen)}</span>${badge}` +
+        `<button type="button" class="reply-del" data-reply-id="${escapeHtml(rtid)}" aria-label="댓글 삭제" title="댓글 삭제">×</button></div>` +
+        `<p class="reply-text">${escapeHtml(rtext)}</p></div>`
+    );
+  }
+  return (
+    `<details class="replies"><summary>💬 댓글 ${replies.length}개</summary>` +
+    `<div class="reply-list">${items.join('')}</div></details>`
+  );
 }
 
 /* ------------------------------------------------------------------ */
@@ -461,7 +508,7 @@ function articleCard(article, options = {}) {
     `<p class="summary">${escapeHtml(summary)}</p><div class="tags">${topicsHtml(topics)}</div>` +
     '</summary>' +
     `<div class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
-    `${urlInline}${media}${quotedHtml}${relatedHtml}` +
+    `${urlInline}${media}${quotedHtml}${repliesHtml(a)}${relatedHtml}` +
     `<div class="byline"><span class="author">${escapeHtml(author)}</span>` +
     `<button type="button" class="read-window-btn" data-idx="${idx}">새 창에서 읽기 ⧉</button>` +
     `<a class="read-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">원문 보기 ↗</a></div>` +
@@ -486,6 +533,7 @@ const ArchiveRender = {
   lightboxesHtml,
   urlInlineHtml,
   normalizeArticle,
+  repliesHtml,
   articleCard,
 };
 
