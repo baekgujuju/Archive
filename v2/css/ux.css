@@ -130,3 +130,12 @@ body.aa-modal-open #archive-manage-btn{display:none}
  .aa-content table{display:table!important;overflow:visible!important;width:100%}
  .aa-content thead{display:table-header-group}
 }
+
+:is(.aa-content,.viewer-text-panel,.web-html) table{border-collapse:collapse;width:100%;margin:20px 0;border:1px solid #b8b0a4}
+:is(.aa-content,.viewer-text-panel,.web-html) :is(th,td){border:1px solid #b8b0a4;padding:10px 12px;text-align:left;vertical-align:top}
+:is(.aa-content,.viewer-text-panel,.web-html) th{background:#eee8dc;font-weight:700}
+@media print{
+ .aa-content table{border-collapse:collapse!important;border:0.6pt solid #777!important}
+ .aa-content :is(th,td){border:0.6pt solid #777!important;padding:6pt 8pt!important;font-size:10pt}
+ .aa-content tr{break-inside:avoid}
+}
