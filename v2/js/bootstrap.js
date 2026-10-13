@@ -49,21 +49,28 @@ const LS_MANIFEST_KEY = LS_PREFIX + 'manifest';
 const LS_CHUNK_PREFIX = LS_PREFIX + 'data_';
 
 /**
- * 청크 로드 순서 및 메타 정보.
- * manifest.chunks의 키와 1:1 대응해야 한다.
+ * manifest.chunks에서 동적으로 청크 목록 생성.
+ * 하드코딩된 CHUNK_ORDER 대신 manifest를 single source of truth로 사용.
+ * (빌더가 청크 분할 방식을 바꿔도 manifest만 맞으면 동작)
+ *
+ * @param {object} manifest — manifest.json 객체
+ * @returns {Array<{name: string, type: string, label: string}>} 청크 목록
  */
-const CHUNK_ORDER = [
-  { name: 'posts-x1', type: 'x', label: 'X 게시글 (1/8)' },
-  { name: 'posts-x2', type: 'x', label: 'X 게시글 (2/8)' },
-  { name: 'posts-x3', type: 'x', label: 'X 게시글 (3/8)' },
-  { name: 'posts-x4', type: 'x', label: 'X 게시글 (4/8)' },
-  { name: 'posts-x5', type: 'x', label: 'X 게시글 (5/8)' },
-  { name: 'posts-x6', type: 'x', label: 'X 게시글 (6/8)' },
-  { name: 'posts-x7', type: 'x', label: 'X 게시글 (7/8)' },
-  { name: 'posts-x8', type: 'x', label: 'X 게시글 (8/8)' },
-  { name: 'posts-web', type: 'web', label: '웹글' },
-  { name: 'posts-ib', type: 'ib', label: 'IB 자료' },
-];
+function chunkOrderFromManifest(manifest) {
+  const chunks = (manifest && manifest.chunks) || {};
+  const order = [];
+  for (const name of Object.keys(chunks)) {
+    let type = 'x';
+    let label = name;
+    if (name === 'posts-web' || name.startsWith('posts-web')) { type = 'web'; label = '웹글'; }
+    else if (name === 'posts-ib' || name.startsWith('posts-ib')) { type = 'ib'; label = 'IB 자료'; }
+    else if (name.startsWith('posts-x')) { type = 'x'; label = 'X 게시글'; }
+    order.push({ name, type, label });
+  }
+  // x 청크는 숫자 순으로 정렬 (posts-x1, posts-x2, ... posts-x10)
+  order.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+  return order;
+}
 
 /* ------------------------------------------------------------------ */
 /* 1. 렌더러 접근                                                     */
@@ -398,7 +405,7 @@ async function boot() {
   const chunkResults = [];
   let usedCacheCount = 0;
 
-  for (const chunk of CHUNK_ORDER) {
+  for (const chunk of chunkOrderFromManifest(manifest)) {
     const info = manifest.chunks[chunk.name];
     if (!info || !info.file) {
       console.warn('[bootstrap] manifest에 청크 정보 없음:', chunk.name);
@@ -507,7 +514,7 @@ function loadAllCachedChunks() {
   const cachedManifest = loadCachedManifest();
   if (!cachedManifest) return null;
   const articles = [];
-  for (const chunk of CHUNK_ORDER) {
+  for (const chunk of chunkOrderFromManifest(cachedManifest)) {
     const posts = loadCachedChunk(chunk.name);
     if (!posts) return null; // 일부라도 없으면 폴백 불가
     for (const p of posts) {

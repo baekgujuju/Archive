@@ -1,8 +1,8 @@
 /* Archive v2 interactions. Classic script: keep implementation names private. */
 var ArchiveApp = (function () {
   'use strict';
-  var colors = { red: '#dc3545', orange: '#ed861c', yellow: '#c5a300', green: '#25854a', blue: '#2878ce', purple: '#8554b8' };
-  var labels = { red: '빨강', orange: '주황', yellow: '노랑', green: '초록', blue: '파랑', purple: '보라' };
+  // v1 호환 hex 스키마: archive-bookmarks에 hex 직접 저장 (덮어쓰기 금지)
+  var colors = { '#e74c3c': '빨강', '#e67e22': '주황', '#f1c40f': '노랑', '#27ae60': '초록', '#3498db': '파랑', '#34495e': '남색', '#9b59b6': '보라' };
   var records = [], pins = [], hidden = [], bookmarks = Object.create(null), controls, list, pinned, readDialog, memoDialog, bookmarkDialog;
   var current, memoId, bookmarkRecord, mode = 'OR', selection, opener, bound = false;
   function esc(value) {
@@ -49,9 +49,35 @@ var ArchiveApp = (function () {
   }
   function articleHtml(a) {
     var url = safeUrl(a.sourceUrl || a.source_url), q = a.quoted;
+    // 답글 HTML (v1 패턴)
+    var repliesHtml = '';
+    var replies = Array.isArray(a.replies) ? a.replies.filter(function (r) { return r && typeof r === 'object'; }) : [];
+    if (replies.length) {
+      var items = replies.map(function (r) {
+        var ra = r.author || {};
+        var rname = ra.name || ra.handle || '';
+        var badge = r.isThread ? ' <span class="thread-badge">스레드</span>' : '';
+        return '<div class="reply"><div class="reply-head"><span class="reply-author">' + esc(rname) +
+          '</span><span class="reply-time">' + esc(r.createdAt || '') + '</span>' + badge + '</div>' +
+          '<p class="reply-text">' + esc(r.fullText || '') + '</p></div>';
+      }).join('');
+      repliesHtml = '<details class="replies" open><summary>💬 댓글 ' + replies.length + '개</summary><div class="reply-list">' + items + '</div></details>';
+    }
+    // URL 인라인 내용
+    var urlHtml = '';
+    var urlContents = Array.isArray(a.urlContents) ? a.urlContents : [];
+    if (urlContents.length) {
+      var uitems = urlContents.map(function (uc) {
+        var u = uc.url || '', t = String(uc.title || u).trim(), b = String(uc.content || '').trim();
+        if (!b || b.length > 1200) b = b.slice(0, 1200) + '…';
+        return '<div class="url-inline-item"><div class="url-inline-title">📄 <a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(t) + '</a></div><div class="url-inline-content">' + esc(b) + '</div></div>';
+      }).join('');
+      if (uitems) urlHtml = '<div class="url-inline"><div class="url-inline-head">🔗 본문 링크 내용</div>' + uitems + '</div>';
+    }
     return '<h1>' + esc(title(a)) + '</h1><p class="meta">' + esc(metadata(a)) + '</p><div class="aa-body">' +
       (a.fullHtml ? cleanHtml(a.fullHtml) : '<p class="aa-text">' + esc(bodyText(a)) + '</p>') + '</div>' + images(a.mediaImages) +
       (q && typeof q === 'object' ? '<blockquote><p>' + esc(author(q)) + '</p><p class="aa-text">' + esc(q.fullText || '') + '</p>' + images(q.media || q.mediaImages) + '</blockquote>' : '') +
+      repliesHtml + urlHtml +
       '<p>' + esc((a.topics || []).join(' · ')) + '</p>' + (url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">원문 보기 ↗</a>' : '');
   }
   function button(text, group, value) { return '<button type="button" data-filter="' + group + '" data-value="' + esc(value) + '" aria-pressed="false">' + esc(text) + '</button>'; }
@@ -66,12 +92,12 @@ var ArchiveApp = (function () {
         (!selection.topic.length || selection.topic.some(function (t) { return r.topics.indexOf(t) >= 0; })) && (!selection.author.length || selection.author.indexOf(r.author) >= 0) &&
         (!selection.bookmark.length || (color && (selection.bookmark.indexOf('all') >= 0 || selection.bookmark.indexOf(color) >= 0)));
       r.card.hidden = !visible;
-      r.card.style.borderLeftColor = colors[color] || '';
+      r.card.style.borderLeftColor = color || '';
       r.card.classList.toggle('aa-bookmarked', !!color);
       var mb = r.card.querySelector('[data-memo-id]'), pb = r.card.querySelector('.pin-btn'), bb = r.card.querySelector('.bookmark-btn'), db = r.card.querySelector('.delete-btn');
       if (mb) { var hasMemo = !!memoValue(mb.dataset.memoId); mb.classList.remove('memo-hidden'); mb.classList.toggle('aa-active', hasMemo); mb.setAttribute('aria-label', hasMemo ? '메모 편집 (메모 있음)' : '메모 추가'); }
       if (pb) { pb.classList.toggle('aa-active', isPinned); pb.setAttribute('aria-pressed', String(isPinned)); pb.title = isPinned ? '상단 고정 해제' : '상단 고정'; }
-      if (bb) { bb.style.color = colors[color] || ''; bb.setAttribute('aria-label', color ? '북마크: ' + labels[color] : '북마크'); }
+      if (bb) { bb.style.color = color || ''; bb.setAttribute('aria-label', color ? '북마크: ' + (colors[color] || color) : '북마크'); }
       if (db) { db.title = isHidden ? '복원' : '숨기기'; db.setAttribute('aria-label', db.title); }
       var parent = isPinned ? pinned.querySelector('.aa-grid') : list;
       if (r.card.parentNode !== parent) parent.appendChild(r.card);
@@ -143,7 +169,8 @@ var ArchiveApp = (function () {
     pins = load('archive-pinned', []); hidden = load('archive-deleted-posts', []);
     pins = Array.isArray(pins) ? pins.map(String) : []; hidden = Array.isArray(hidden) ? hidden.map(String) : [];
     var saved = load('archive-bookmarks', {}); bookmarks = Object.create(null);
-    if (saved && typeof saved === 'object' && !Array.isArray(saved)) Object.keys(saved).forEach(function (id) { if (Object.prototype.hasOwnProperty.call(colors, saved[id])) bookmarks[id] = saved[id]; });
+    // v1 호환: 저장된 hex 값을 그대로 보존 (사전 정의되지 않은 custom 색상도 유지)
+    if (saved && typeof saved === 'object' && !Array.isArray(saved)) Object.keys(saved).forEach(function (id) { if (typeof saved[id] === 'string' && saved[id]) bookmarks[id] = saved[id]; });
     var byIdx = Object.create(null); (articles || []).forEach(function (a, i) { byIdx[String(a._idx == null ? i : a._idx)] = a; });
     records = Array.prototype.map.call(list.querySelectorAll('.article'), function (card) {
       var a = byIdx[card.dataset.idx] || {}, topics = Array.isArray(a.topics) ? a.topics.map(String) : (card.dataset.topics || '').split('\n').filter(Boolean);
@@ -152,15 +179,18 @@ var ArchiveApp = (function () {
     });
     styles(); controls = document.createElement('section'); controls.className = 'aa-controls'; controls.id = 'archive-controls';
     var topics = [], authors = []; records.forEach(function (r) { r.topics.forEach(function (t) { if (topics.indexOf(t) < 0) topics.push(t); }); if (r.author && authors.indexOf(r.author) < 0) authors.push(r.author); });
-    controls.innerHTML = '<div class="aa-search"><input type="search" aria-label="글 검색" placeholder="제목·본문·저자·주제 검색 (쉼표로 구분)"><button type="button" data-action="mode" aria-label="검색 조건 OR, 클릭하여 AND로 변경">OR</button></div><div class="aa-chips" role="group" aria-label="유형">' + button('X 게시물', 'type', 'x') + button('웹글', 'type', 'web') + button('IB', 'type', 'ib') + '</div><div class="aa-chips" role="group" aria-label="주제">' + topics.sort().map(function (t) { return button(t, 'topic', t); }).join('') + '</div><div class="aa-chips" role="group" aria-label="저자">' + authors.sort().map(function (a) { return button(a, 'author', a); }).join('') + '</div><div class="aa-chips" role="group" aria-label="북마크 필터">' + button('북마크 전체', 'bookmark', 'all') + Object.keys(colors).map(function (c) { return button(labels[c], 'bookmark', c); }).join('') + '</div><details><summary>설정 · 숨긴 글 관리</summary><button type="button" data-action="hidden" aria-pressed="false">숨긴 글 보기 / 복원</button></details><p role="status" aria-live="polite"></p>';
+    controls.innerHTML = '<div class="aa-search"><input type="search" aria-label="글 검색" placeholder="제목·본문·저자·주제 검색 (쉼표로 구분)"><button type="button" data-action="mode" aria-label="검색 조건 OR, 클릭하여 AND로 변경">OR</button></div><div class="aa-chips" role="group" aria-label="유형">' + button('X 게시물', 'type', 'x') + button('웹글', 'type', 'web') + button('IB', 'type', 'ib') + '</div><div class="aa-chips" role="group" aria-label="주제">' + topics.sort().map(function (t) { return button(t, 'topic', t); }).join('') + '</div><div class="aa-chips" role="group" aria-label="저자">' + authors.sort().map(function (a) { return button(a, 'author', a); }).join('') + '</div><div class="aa-chips" role="group" aria-label="북마크 필터">' + button('북마크 전체', 'bookmark', 'all') + Object.keys(colors).map(function (c) { return button(colors[c] || c, 'bookmark', c); }).join('') + '</div><details><summary>설정 · 숨긴 글 관리</summary><button type="button" data-action="hidden" aria-pressed="false">숨긴 글 보기 / 복원</button><button type="button" data-action="drive">🔗 Drive 연결</button><span data-drive-status role="status"></span></details><p role="status" aria-live="polite"></p>';
     list.parentNode.insertBefore(controls, list); pinned = document.createElement('section'); pinned.className = 'aa-pinned'; pinned.innerHTML = '<h2>📌 고정한 글</h2><div class="aa-grid"></div>'; list.parentNode.insertBefore(pinned, list);
     controls.addEventListener('input', update); controls.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return;
       if (b.dataset.filter) toggle(selection[b.dataset.filter], b.dataset.value);
       if (b.dataset.action === 'mode') { mode = mode === 'OR' ? 'AND' : 'OR'; b.textContent = mode; b.setAttribute('aria-label', '검색 조건 ' + mode + ', 클릭하여 변경'); }
       if (b.dataset.action === 'hidden') selection.hidden = !selection.hidden;
+      if (b.dataset.action === 'drive') { DriveSync.connect(); return; }
       update();
     });
+    // Drive 동기화 초기화
+    DriveSync.init(controls.querySelector('[data-drive-status]'));
     readDialog = dialog('archive-read-dialog', '글 읽기', '<div class="aa-toolbar"><button type="button" data-close>닫기 ×</button><button type="button" data-share="image">🖼️ 이미지로 공유</button><button type="button" data-share="html">🌐 HTML로 공유</button><button type="button" data-share="print">🖨️ 인쇄</button></div><article class="aa-content"></article>');
     readDialog.addEventListener('click', function (e) { var b = e.target.closest('[data-share]'); if (!b || !current) return; var a = current.article;
       if (b.dataset.share === 'print') window.print();
@@ -169,7 +199,7 @@ var ArchiveApp = (function () {
     });
     memoDialog = dialog('archive-memo-dialog', '메모 편집', '<h2>메모</h2><label for="archive-memo-text">내용</label><textarea id="archive-memo-text"></textarea><div class="aa-chips"><button type="button" data-memo="save">저장</button><button type="button" data-memo="delete">삭제</button><button type="button" data-close>닫기</button></div>');
     memoDialog.addEventListener('click', function (e) { var b = e.target.closest('[data-memo]'); if (!b) return; var value = b.dataset.memo === 'delete' ? null : memoDialog.querySelector('textarea').value; if (persist('archive_memo_' + memoId, value)) { close(memoDialog); update(); } });
-    bookmarkDialog = dialog('archive-bookmark-dialog', '북마크 색상 선택', '<h2>북마크 색상</h2><div class="aa-chips">' + Object.keys(colors).map(function (c) { return '<button type="button" data-color="' + c + '" style="border-color:' + colors[c] + '">' + labels[c] + '</button>'; }).join('') + '<button type="button" data-color="">해제</button><button type="button" data-close>닫기</button></div>');
+    bookmarkDialog = dialog('archive-bookmark-dialog', '북마크 색상 선택', '<h2>북마크 색상</h2><div class="aa-chips">' + Object.keys(colors).map(function (c) { return '<button type="button" data-color="' + c + '" style="border-color:' + c + '">' + (colors[c] || c) + '</button>'; }).join('') + '<button type="button" data-color="">해제</button><button type="button" data-close>닫기</button></div>');
     bookmarkDialog.addEventListener('click', function (e) { var b = e.target.closest('[data-color]'); if (!b || !bookmarkRecord) return; var next = Object.assign(Object.create(null), bookmarks); if (b.dataset.color) next[bookmarkRecord.id] = b.dataset.color; else delete next[bookmarkRecord.id]; if (persist('archive-bookmarks', next)) { bookmarks = next; close(bookmarkDialog); update(); } });
     if (!bound) {
       document.addEventListener('click', cardClick);
@@ -196,6 +226,106 @@ var ArchiveApp = (function () {
     if (e.target.closest('a,input,textarea,select,label')) return;
     e.preventDefault(); openRead(r);
   }
-  return { init: init };
+  return { init: init, DriveSync: DriveSync };
 }());
+
+/* ------------------------------------------------------------------ */
+/* Drive 동기화 (v1 포팅): drive.appdata 스코프, 2초 간격 로컬 변경 업로드 */
+/* 실제 동작: 연결 후 2초마다 로컬 변경사항만 업로드. 지속적인 원격 다운로드는 없음. */
+/* ------------------------------------------------------------------ */
+var DriveSync = (function () {
+  'use strict';
+  var CLIENT_ID = '43687402502-rlid8pjoakcigrn6tpcs58elo357vtfr.apps.googleusercontent.com';
+  var SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
+  var STATE_KEYS = ['archive-pinned', 'archive-bookmarks', 'archive-bookmark-names', 'archive-deleted-replies', 'archive-deleted-posts'];
+  var TS_KEY = 'archive-sync-updatedAt';
+  var tokenClient = null, accessToken = null, fileId = null, connected = false, lastHash = '';
+  var statusEl = null;
+
+  function get(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
+  function set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  function getTs() { try { return localStorage.getItem(TS_KEY) || ''; } catch (e) { return ''; } }
+  function setTs(v) { try { localStorage.setItem(TS_KEY, v); } catch (e) {} }
+  function stateHash() { try { return STATE_KEYS.map(function (k) { return localStorage.getItem(k) || ''; }).join('|'); } catch (e) { return ''; } }
+  function collectState() {
+    return {
+      pinned: get('archive-pinned', []),
+      bookmarks: get('archive-bookmarks', {}),
+      names: get('archive-bookmark-names', {}),
+      deletedReplies: get('archive-deleted-replies', []),
+      deletedPosts: get('archive-deleted-posts', []),
+      updatedAt: new Date().toISOString()
+    };
+  }
+  function setStatus(txt) { if (statusEl) statusEl.textContent = txt; }
+  function api(path, opts) {
+    opts = opts || {};
+    var headers = opts.headers || {};
+    headers.Authorization = 'Bearer ' + accessToken;
+    opts.headers = headers;
+    return fetch('https://www.googleapis.com' + path, opts).then(function (r) {
+      if (!r.ok) throw new Error('Drive API ' + r.status);
+      return r;
+    });
+  }
+  function uploadState(data) {
+    var body = JSON.stringify(data);
+    var done = function () { setTs(data.updatedAt); lastHash = stateHash(); setStatus('☁️ Drive 동기화됨'); };
+    if (fileId) {
+      return api('/upload/drive/v3/files/' + fileId + '?uploadType=media', {
+        method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: body
+      }).then(done);
+    }
+    var metadata = { name: 'archive-state.json', parents: ['appDataFolder'] };
+    var boundary = '-------drive-sync-' + Date.now();
+    var multipart = '--' + boundary + '\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' +
+      JSON.stringify(metadata) + '\r\n--' + boundary + '\r\nContent-Type: application/json\r\n\r\n' +
+      body + '\r\n--' + boundary + '--';
+    return api('/upload/drive/v3/files?uploadType=multipart', {
+      method: 'POST', headers: { 'Content-Type': 'multipart/related; boundary=' + boundary }, body: multipart
+    }).then(function (r) { return r.json(); }).then(function (j) { fileId = j.id; done(); });
+  }
+  function autoSave() {
+    if (!connected || !accessToken) return;
+    var h = stateHash();
+    if (h !== lastHash) {
+      uploadState(collectState()).catch(function () { setStatus('☁️ Drive 오류'); });
+    }
+  }
+  return {
+    init: function (el) {
+      statusEl = el;
+      // Google API 스크립트 로드
+      if (!document.querySelector('script[src*="accounts.google.com"]')) {
+        var s = document.createElement('script');
+        s.src = 'https://accounts.google.com/gsi/client';
+        s.async = true; s.defer = true;
+        document.head.appendChild(s);
+      }
+      var tries = 0;
+      var wait = function () {
+        if (typeof google !== 'undefined' && google.accounts && google.accounts.oauth2) {
+          tokenClient = google.accounts.oauth2.initTokenClient({
+            client_id: CLIENT_ID, scope: SCOPE,
+            callback: function (resp) {
+              if (resp && resp.access_token) {
+                accessToken = resp.access_token; connected = true;
+                setStatus('☁️ Drive 연결됨');
+                lastHash = stateHash();
+                setInterval(autoSave, 2000); // 2초마다 로컬 변경 업로드
+              } else { setStatus('🔗 Drive 연결'); }
+            }
+          });
+          setStatus(getTs() ? '🔗 Drive 연결' : '🔗 Drive 연결');
+        } else if (tries++ < 20) { setTimeout(wait, 500); }
+      };
+      wait();
+    },
+    connect: function () {
+      if (tokenClient) tokenClient.requestAccessToken({ prompt: 'consent' });
+    },
+    isConnected: function () { return connected; }
+  };
+})();
+
 window.ArchiveApp = ArchiveApp;

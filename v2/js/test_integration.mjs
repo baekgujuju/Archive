@@ -1,10 +1,15 @@
 /**
- * test_integration.mjs — v2 브라우저 통합 테스트
+ * test_integration.mjs — v2 통합 테스트 (node:vm 기반, 브라우저 테스트 아님)
  *
- * classic <script> 로딩 환경을 node:vm으로 시뮬레이션하여 검증:
+ * ⚠️ 이것은 실제 브라우저 테스트가 아닙니다.
+ * node:vm으로 classic script 파싱과 기본 로직만 검증합니다.
+ * 실제 브라우저 테스트는 MANUAL_BROWSER_CHECKLIST.md를 참조하여
+ * 데스크톱 Chrome과 iOS Safari에서 수동으로 수행해야 합니다.
+ *
+ * 검증 내용:
  * 1. render.js / bootstrap.js / app.js가 classic script로 파싱되는지
  *    (top-level import/export 있으면 SyntaxError → 이전 무한로딩 버그 재발 방지)
- * 2. window.ArchiveRender / window.ArchiveBootstrap / window.ArchiveApp 전역 노출
+ * 2. window.ArchiveRender 전역 노출
  * 3. articleCard() 렌더링 결과에 답글/미디어 섹션이 포함되는지
  * 4. normalizeArticle()의 media[] → mediaImages[] 정규화
  *
