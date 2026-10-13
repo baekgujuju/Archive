@@ -36,7 +36,7 @@ ARCHIVE_DIR = Path.home() / "workspace" / "article-archive"
 WEB_INDEX_JSON = ARCHIVE_DIR / "index.json"
 
 # 빌더 버전 (로직 변경 시 증분 → --check가 재빌드 감지)
-BUILDER_VERSION = "1.0.0"
+BUILDER_VERSION = "1.1.0"  # 1.1.0: IB 어댑터 병합 + translations.json 보존 + 결합 소스 해시
 
 # 타입 판정용 상수
 X_HOSTS = {'x.com', 'www.x.com', 'twitter.com', 'www.twitter.com', 'mobile.twitter.com'}
@@ -49,6 +49,32 @@ def sha256_file(path):
     with open(path, 'rb') as f:
         for chunk in iter(lambda: f.read(8192), b''):
             h.update(chunk)
+    return h.hexdigest()
+
+
+def combined_source_hash():
+    """정규 소스 전체의 결합 해시 (X + Web + IB) — 변경 감지용.
+
+    posts.json 하나만 보던 기존 방식은 index.json(웹글)이나 IB 소스 변경을
+    놓쳤음. 5분 모니터와 --check가 동일한 기준을 사용하도록 통일.
+    """
+    h = hashlib.sha256()
+    for label, path in [
+        ("posts.json", POSTS_JSON),
+        ("index.json", WEB_INDEX_JSON),
+        ("study_links.json", Path.home() / "workspace/x-bookmarks/study_links.json"),
+        ("rl_index.json", Path.home() / "workspace/x-bookmarks/resource_library/index.json"),
+        ("ib_juwon.json", Path.home() / "workspace/x-bookmarks/resource_library/ib_juwon.json"),
+    ]:
+        h.update(label.encode("utf-8"))
+        h.update(b"\x00")
+        if path.exists():
+            h.update(sha256_file(path).encode("utf-8"))
+        else:
+            h.update(b"<missing>")
+        h.update(b"\x00")
+    # 빌더 로직 변경도 변경으로 취급
+    h.update(BUILDER_VERSION.encode("utf-8"))
     return h.hexdigest()
 
 
@@ -285,6 +311,20 @@ def build_data():
         print(f"  Web 추가 (index.json): {len(web_articles)}개")
     print(f"  Web 합계: {len(posts_web)}개")
 
+    # 2c. 정규 IB 소스 병합 (ib_adapter: study_links/ib_juwon, 안정적 ib_pin_* ID)
+    try:
+        from ib_adapter import load_ib_posts
+        ib_adapted = load_ib_posts()
+        if ib_adapted:
+            # posts.json에서 분류된 IB와 ID 중복 제거 (어댑터 우선)
+            _seen_ib = {p.get("id") for p in ib_adapted}
+            posts_ib = [p for p in posts_ib if p.get("id") not in _seen_ib and p.get("tweetId") not in _seen_ib]
+            posts_ib.extend(ib_adapted)
+            print(f"  IB 추가 (ib_adapter): {len(ib_adapted)}개")
+    except Exception as e:
+        print(f"  IB 어댑터 건너뜀: {e}", file=sys.stderr)
+    print(f"  IB 합계: {len(posts_ib)}개")
+
     # 3. 스테이징 디렉토리에 생성
     print(f"\n[3/5] 스테이징 디렉토리에 생성...")
     staging_dir = None
@@ -304,9 +344,8 @@ def build_data():
         print(f"\n[4/5] manifest.json 생성...")
 
         # 소스 콘텐츠 해시 (변경 감지용)
-        # posts.json 전체를 읽어서 해시 (결정적)
-        with open(POSTS_JSON, 'rb') as f:
-            source_hash = hashlib.sha256(f.read()).hexdigest()
+        # 정규 소스 전체 (X + Web + IB) 결합 해시 — 결정적
+        source_hash = combined_source_hash()
 
         manifest = {
             "version": datetime.now(timezone.utc).isoformat(),
@@ -366,6 +405,14 @@ def build_data():
 
         # 6. 원자적 교체
         print(f"\n[6/6] 원자적 교체...")
+
+        # 번역 캐시 보존: 원자적 교체 시 translations.json이 백업과 함께
+        # 삭제되는 문제를 방지 — 스테이징에 미리 복사해 둠 (2026-10-13)
+        _trans_src = DATA_DIR / "translations.json"
+        _trans_dst = staging_data / "translations.json"
+        if _trans_src.exists() and not _trans_dst.exists():
+            shutil.copy2(str(_trans_src), str(_trans_dst))
+            print(f"  번역 캐시 보존: translations.json → 스테이징")
 
         # 기존 백업 (있을 경우)
         if DATA_DIR.exists():
@@ -452,13 +499,12 @@ def check_changes():
         )
         return 1
 
-    # 소스 해시 비교
+    # 소스 해시 비교 (정규 소스 전체: X + Web + IB)
     if not POSTS_JSON.exists():
         print(f"posts.json 없음: {POSTS_JSON}", file=sys.stderr)
         return 2
 
-    with open(POSTS_JSON, 'rb') as f:
-        current_hash = hashlib.sha256(f.read()).hexdigest()
+    current_hash = combined_source_hash()
 
     if current_hash == manifest["source_hash"]:
         print("변경 없음")
