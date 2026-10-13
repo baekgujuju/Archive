@@ -31,6 +31,9 @@ MEDIA_FULL = V2_ROOT / "media" / "full"
 # 소스 데이터
 XBOOKMARKS = Path.home() / "workspace" / "x-bookmarks"
 POSTS_JSON = XBOOKMARKS / "posts.json"
+# v1 웹 글 소스 (index.json, 예: Oliver Kell article-20261011-1048)
+ARCHIVE_DIR = Path.home() / "workspace" / "article-archive"
+WEB_INDEX_JSON = ARCHIVE_DIR / "index.json"
 
 # 빌더 버전 (로직 변경 시 증분 → --check가 재빌드 감지)
 BUILDER_VERSION = "1.0.0"
@@ -115,6 +118,48 @@ def load_posts():
             print(f"  ... 외 {len(errors) - 10}개", file=sys.stderr)
 
     return valid_posts
+
+
+def load_web_articles():
+    """
+    v1 웹 글 소스 (article-archive/index.json) 로드.
+
+    v1의 웹 카드(예: Oliver Kell article-20261011-1048)는 posts.json이 아닌
+    별도 index.json에 있음. v2에서 누락되지 않도록 병합.
+
+    Returns:
+        list: 정규화된 웹 글 리스트 (v2 스키마 호환)
+    """
+    if not WEB_INDEX_JSON.exists():
+        print(f"  웹 인덱스 없음 (건너뜀): {WEB_INDEX_JSON}", file=sys.stderr)
+        return []
+
+    with open(WEB_INDEX_JSON, encoding='utf-8') as f:
+        data = json.load(f)
+
+    articles = data.get('articles', []) if isinstance(data, dict) else []
+    normalized = []
+    for a in articles:
+        if not isinstance(a, dict):
+            continue
+        # v2 스키마로 정규화 (원본 ID 보존)
+        normalized.append({
+            'id': a.get('id'),  # 원본 ID 보존 (예: article-20261011-1048)
+            'tweetId': a.get('id'),  # 호환용
+            'type': 'web',
+            'title': a.get('title', ''),
+            'author': a.get('author', ''),
+            'source_url': a.get('source_url', ''),  # render.js는 웹글에 source_url 사용
+            'sourceUrl': a.get('source_url', ''),  # 호환용
+            'source_domain': a.get('source_domain', ''),
+            'date_saved': a.get('date_saved', ''),
+            'topics': a.get('topics', []) if isinstance(a.get('topics'), list) else [],
+            'summary': a.get('summary', ''),
+            'fullText': a.get('fullText', ''),
+            'fullHtml': a.get('fullHtml', ''),
+            'category': 'web',
+        })
+    return normalized
 
 
 def classify_post(post):
@@ -230,8 +275,15 @@ def build_data():
             posts_web.append(post)
 
     print(f"  X: {len(posts_x)}개")
-    print(f"  Web: {len(posts_web)}개")
+    print(f"  Web: {len(posts_web)}개 (posts.json)")
     print(f"  IB: {len(posts_ib)}개")
+
+    # 2b. v1 웹 글 병합 (index.json)
+    web_articles = load_web_articles()
+    if web_articles:
+        posts_web.extend(web_articles)
+        print(f"  Web 추가 (index.json): {len(web_articles)}개")
+    print(f"  Web 합계: {len(posts_web)}개")
 
     # 3. 스테이징 디렉토리에 생성
     print(f"\n[3/5] 스테이징 디렉토리에 생성...")
