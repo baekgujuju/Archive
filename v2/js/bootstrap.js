@@ -614,9 +614,8 @@ const ArchiveBootstrap = {
   _loadCachedChunk: loadCachedChunk,
 };
 
-export { boot, clearCache, ArchiveBootstrap };
-
 // 일반 <script> 로드 시 전역 접근용 (render.js와 동일한 패턴)
+// (ES 모듈 export는 classic script에서 SyntaxError를 일으키므로 사용하지 않음)
 if (typeof window !== 'undefined') {
   window.ArchiveBootstrap = ArchiveBootstrap;
 }

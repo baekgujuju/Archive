@@ -489,24 +489,8 @@ const ArchiveRender = {
   articleCard,
 };
 
-export {
-  escapeHtml,
-  sliceCp,
-  linkify,
-  linkifyHtml,
-  topicsHtml,
-  tagColorIndex,
-  memoButtonHtml,
-  fnv1a,
-  lightboxId,
-  lightboxesHtml,
-  urlInlineHtml,
-  normalizeArticle,
-  articleCard,
-  ArchiveRender,
-};
-
 // 일반 <script> 로드 시 전역 접근용
+// (ES 모듈 export는 classic script에서 SyntaxError를 일으키므로 사용하지 않음)
 if (typeof window !== 'undefined') {
   window.ArchiveRender = ArchiveRender;
 }
