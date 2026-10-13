@@ -94,7 +94,7 @@ function linkify(text) {
       eu = eu.slice(0, -1);
     }
     out = out.split(`\u0000URL${i}\u0000`).join(
-      `<a href="${eu}" target="_blank" rel="noopener">${eu}</a>${escapeHtml(trail)}`
+      `<a href="${eu}" target="_self" rel="noopener">${eu}</a>${escapeHtml(trail)}`
     );
   });
   return out;
@@ -286,7 +286,7 @@ function urlInlineHtml(article) {
     if (body.length > 1200) body = sliceCp(body, 1200).trimEnd() + '…';
     items.push(
       '<div class="url-inline-item">' +
-        `<div class="url-inline-title">📄 <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a></div>` +
+        `<div class="url-inline-title">📄 <a href="${escapeHtml(url)}" target="_self" rel="noopener noreferrer">${escapeHtml(title)}</a></div>` +
         `<div class="url-inline-url">${escapeHtml(url)}</div>` +
         `<div class="url-inline-content">${escapeHtml(body)}</div>` +
         '</div>'
@@ -521,7 +521,7 @@ function articleCard(article, options = {}) {
     `${urlInline}${media}${quotedHtml}${repliesHtml(a)}${relatedHtml}` +
     `<div class="byline"><span class="author">${escapeHtml(author)}</span>` +
     `<button type="button" class="read-window-btn" data-idx="${idx}">새 창에서 읽기 ⧉</button>` +
-    `<a class="read-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">원문 보기 ↗</a></div>` +
+    `<a class="read-link" href="${escapeHtml(url)}" target="_self" rel="noopener noreferrer">원문 보기 ↗</a></div>` +
     '</details>'
   );
 }

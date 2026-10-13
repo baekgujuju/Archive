@@ -486,6 +486,7 @@ async function boot() {
   updateLoading('화면 그리는 중...');
   // 큰 HTML 문자열 생성을 다음 프레임으로 양보 (로딩 UI가 먼저 그려지도록)
   await new Promise((resolve) => setTimeout(resolve, 0));
+  try {const mapResponse=await fetch('data/media-map.json',{cache:'no-cache'});if(!mapResponse.ok)throw new Error('Media map unavailable');if(mapResponse.ok){window.ArchiveMediaMap=await mapResponse.json();localStorage.setItem('archive-media-map',JSON.stringify(window.ArchiveMediaMap));}}catch(e){try{window.ArchiveMediaMap=JSON.parse(localStorage.getItem('archive-media-map')||'{}');}catch(ignore){}}
   try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(ignore){}}
   renderArticles(articles, renderer, container, { offline: false });
   if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));

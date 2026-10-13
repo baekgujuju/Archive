@@ -192,6 +192,14 @@ function runBootstrap(env) {
   check('T1b: 글 수 표시', env.elements['article-count'].textContent === '4');
 }
 
+// Media mirror mapping is independent of unchanged article chunk caching.
+{
+  const mediaMap={'https://images.example/chart.png':'media/full/chart.png'};
+  const env=makeEnv({manifestRes:MANIFEST_V1,chunkRes:{...CHUNKS_V1,'data/media-map.json':mediaMap}});
+  await runBootstrap(env);
+  check('미디어 매핑 로드',env.window.ArchiveMediaMap['https://images.example/chart.png']==='media/full/chart.png');
+  check('미디어 매핑 캐시 저장',!!env.localStorage.getItem('archive-media-map'));
+}
 // ---- 테스트 2: 캐시 히트 시 네트워크 스킵 ----
 {
   const cachedChunks = {
@@ -201,7 +209,7 @@ function runBootstrap(env) {
   };
   const env = makeEnv({ manifestRes: MANIFEST_V1, chunkRes: {}, cachedManifest: MANIFEST_V1, cachedChunks });
   await runBootstrap(env);
-  const chunkFetches = env.fetchedUrls.filter((f) => f.url !== 'data/manifest.json');
+  const chunkFetches = env.fetchedUrls.filter((f) => /^data\/posts/.test(f.url));
   check('T2: 변경 없는 청크는 fetch 안 함', chunkFetches.length === 0);
   check('T2: 캐시로 3개 렌더링', env.renderedCards.length === 3);
 }
@@ -217,7 +225,7 @@ function runBootstrap(env) {
   };
   const env = makeEnv({ manifestRes: MANIFEST_V2, chunkRes: CHUNKS_V1, cachedManifest: MANIFEST_V1, cachedChunks });
   await runBootstrap(env);
-  const chunkUrls = env.fetchedUrls.filter((f) => f.url !== 'data/manifest.json').map((f) => f.url);
+  const chunkUrls = env.fetchedUrls.filter((f) => /^data\/posts/.test(f.url)).map((f) => f.url);
   check('T3: 변경된 x 청크만 fetch', chunkUrls.length === 1 && chunkUrls[0] === 'data/posts-x.json');
 }
 
@@ -277,3 +285,4 @@ function runBootstrap(env) {
 
 console.log(`\n결과: ${passed} 통과, ${failed} 실패`);
 process.exit(failed ? 1 : 0);
+

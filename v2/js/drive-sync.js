@@ -2,7 +2,7 @@
 var DriveSync = (function () {
   'use strict';
   var CLIENT_ID = '43687402502-rlid8pjoakcigrn6tpcs58elo357vtfr.apps.googleusercontent.com';
-  var KEYS = {pinned:'archive-pinned',bookmarks:'archive-bookmarks',names:'archive-bookmark-names',deletedReplies:'archive-deleted-replies',deletedPosts:'archive-deleted-posts'};
+  var KEYS = {pinned:'archive-pinned',bookmarks:'archive-bookmarks',names:'archive-bookmark-names',deletedRemovedReplies:'archive-removed-replies',deletedReplies:'archive-deleted-replies',deletedPosts:'archive-deleted-posts'};
   var MEMO = 'archive_memo_', BASE = 'archive-sync-base', BACKUP = 'archive-sync-conflicts';
   var statusEl, tokenClient, token, fileId, timer, busy = false, initialized = false, connected = false, lastHash = '', ticks = 0;
   function get(k, fallback) { try { return JSON.parse(localStorage.getItem(k)) ?? fallback; } catch (_) { return fallback; } }
@@ -21,7 +21,7 @@ var DriveSync = (function () {
   function dictionary(d) { return d !== null && typeof d === 'object' && !Array.isArray(d); }
   function valid(d) {
     if (!dictionary(d)) return false;
-    return ['pinned','deletedReplies','deletedPosts'].every(function (k) { return d[k] === undefined || (Array.isArray(d[k]) && d[k].every(function (x) { return typeof x === 'string'; })); }) &&
+    return ['pinned','deletedReplies','deletedPosts','deletedRemovedReplies'].every(function (k) { return d[k] === undefined || (Array.isArray(d[k]) && d[k].every(function (x) { return typeof x === 'string'; })); }) &&
       ['bookmarks','names','bookmarkNames','memos'].every(function (k) { return d[k] === undefined || (dictionary(d[k]) && Object.keys(d[k]).every(function (id) { return !['__proto__','constructor','prototype'].includes(id) && typeof d[k][id] === 'string'; })); });
   }
   function normalize(d) {

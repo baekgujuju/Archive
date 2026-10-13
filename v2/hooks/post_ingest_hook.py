@@ -199,6 +199,22 @@ def main():
             log("빌드 실패 — 중단")
             return 1
 
+
+        # 2c-2. 미디어 미러 (best-effort)
+        # build_data 성공 후, git 발행 전
+        _mirror = V2_ROOT / "media-mirror.py"
+        if _mirror.exists():
+            log("미디어 미러 시작 (best-effort)...")
+            try:
+                _mr = run([sys.executable, str(_mirror)], timeout=600)
+                if _mr.returncode == 0:
+                    log("미디어 미러 완료")
+                else:
+                    log(f"미디어 미러 실패 (rc={_mr.returncode})")
+            except Exception as _e:
+                log(f"미디어 미러 예외: {_e}")
+        else:
+            log("media-mirror.py 없음")
         # 2d. 번역 캐시 복원/병합
         if backup and backup.exists():
             try:

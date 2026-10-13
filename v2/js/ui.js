@@ -9,7 +9,7 @@ var ArchiveUI = (function () {
   function controls(records, colors, nameOf) {
     var ordinary=records.filter(function(r){return r.type!=='ib';}),topics=count(ordinary,'topics'),people=count(ordinary,'author');
     var peopleHtml=people.slice(0,5).map(function(p){return chip(p[0],'author',p[0],p[1]);}).join('');
-    if(people.length>5)peopleHtml+='<details><summary>전체 인물 ▾</summary><div class="aa-chips">'+people.slice(5).map(function(p){return chip(p[0],'author',p[0],p[1]);}).join('')+'</div></details>';
+    if(people.length>5)peopleHtml+='<details class="all-authors"><summary>전체 인물 ▾</summary><div class="aa-chips">'+people.slice(5).map(function(p){return chip(p[0],'author',p[0],p[1]);}).join('')+'</div></details>';
     return '<div class="search-bar"><div class="aa-search"><input type="search" aria-label="글 검색" placeholder="제목, 본문, 저자, 주제로 검색 (쉼표로 구분)"><button class="search-mode-btn" type="button" data-action="mode" aria-label="검색 조건 OR, 클릭하여 AND로 변경">OR</button><button type="button" class="reset" data-action="reset">전체 보기</button></div></div>'+
       '<details class="filters" aria-label="아카이브 필터"><summary>필터 ▾</summary><div class="filter-line"><span class="label">유형</span><div class="type-tabs aa-chips" role="group" aria-label="유형">'+chip('전체','type','',records.length)+chip('웹글','type','web',records.filter(function(r){return r.type==='web';}).length)+chip('X 게시물','type','x',records.filter(function(r){return r.type==='x';}).length)+chip('IB 주원','type','ib',records.filter(function(r){return r.type==='ib';}).length)+'</div></div>'+
       '<div class="filter-line" data-ordinary-filter><span class="label">주제</span><div class="chips aa-chips" role="group" aria-label="주제">'+chip('전체 주제','topic','')+topics.map(function(t){return chip(t[0],'topic',t[0],t[1]);}).join('')+'</div></div>'+
@@ -35,3 +35,4 @@ var ArchiveUI = (function () {
   }
   return {controls:controls,overview:overview,related:related};
 }());
+
