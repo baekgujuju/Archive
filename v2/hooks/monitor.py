@@ -95,13 +95,22 @@ def main():
         current = current_hashes()
         prev = load_state().get("hashes", {})
 
-        changed = args.force or any(current[k] != prev.get(k) for k in current)
+        # 재시도 마커 확인 (소스 변경 없어도 후크 실행)
+        retry_marker = (
+            (HOOKS_DIR / ".retry_translation").exists() or
+            (HOOKS_DIR / ".retry_commit").exists()
+        )
+        if retry_marker:
+            print("[monitor] 재시도 마커 감지 — 후크 실행")
+
+        changed = args.force or retry_marker or any(current[k] != prev.get(k) for k in current)
         if not changed:
-            save_state(current)  # checked_at 갱신 (해시는 동일)
+            save_state(current)
             return 0
 
-        diffs = [k for k in current if current[k] != prev.get(k)]
-        print(f"[monitor] 변경 감지: {diffs}")
+        if not retry_marker:
+            diffs = [k for k in current if current[k] != prev.get(k)]
+            print(f"[monitor] 변경 감지: {diffs}")
         # 워터마크는 후크 성공 후에만 저장 (실패 시 재시도 보장)
 
         r = subprocess.run(

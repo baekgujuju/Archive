@@ -3,22 +3,19 @@
 v2 업로드-성공 후크: 빌드 → 번역 → 커밋 (게시는 기본 비활성)
 
 동작:
+  0. 미푸시 커밋/Dirty data/ 확인 (소스 해시와 무관하게 처리)
   1. flock排他 락으로 동시 실행 방지
-  2. build_data.py --check 로 변경 감지 (변경 없으면 조용히 종료, 모델 호출 없음)
-     단, 미푸시 커밋이 있으면 푸시 재시도
-  3. 변경 있으면: translations.json 백업 → 전체 빌드 → 복원(안전망)
-     → 신규/변경 영어 글만 translate_posts.py → git 변경 파일 확인 → 명시적 pathspec 커밋
-  4. 게시(git push)는 기본 비활성. 활성화하려면 환경변수 V2_PUBLISH=1
-     (최종 QA 전까지는 절대 켜지 말 것)
-  5. 푸시 대상 브랜치는 V2_PUBLISH_BRANCH 로 명시 (기본값: 현재 브랜치명, HEAD 추적 아님)
+  2. build_data.py --check 로 변경 감지
+  3. 변경 있으면: ib_adapter 병합 → translations.json 백업 → 전체 빌드
+     → translate_posts.py → manifest.translations.sha256 업데이트
+     → git 변경 파일 확인 → 명시적 pathspec 커밋
+  4. 번역 실패 시 재시도 마커 생성 (다음 실행에서 재시도)
+  5. 게시(git push)는 기본 비활성. V2_PUBLISH=1 일 때만.
 
-사용법:
-    python3 post_ingest_hook.py              # 빌드+번역+커밋 (게시 안 함)
-    V2_PUBLISH=1 python3 post_ingest_hook.py # 게시까지 (QA 완료 후에만)
-
-종료 코드: 0=성공/변경없음, 1=빌드 실패, 2=락 획득 실패
+종료 코드: 0=성공/변경없음, 1=실패(재시도 필요), 2=락 획득 실패
 """
 import fcntl
+import hashlib
 import json
 import os
 import shutil
@@ -33,12 +30,12 @@ DATA_DIR = V2_ROOT / "data"
 HOOKS_DIR = V2_ROOT / "hooks"
 LOCK_FILE = HOOKS_DIR / ".post_ingest.lock"
 TRANSLATIONS = DATA_DIR / "translations.json"
-# 커밋 대상 (명시적 pathspec — 무관한 스테이지 파일 혼입 방지)
+MANIFEST = DATA_DIR / "manifest.json"
+RETRY_TRANSLATION = HOOKS_DIR / ".retry_translation"
+RETRY_COMMIT = HOOKS_DIR / ".retry_commit"
 COMMIT_PATHS = ["data/", "media/"]
 
-# 게시 게이트: 명시적 옵트인 없이는 절대 push하지 않음
 PUBLISH_ENABLED = os.environ.get("V2_PUBLISH", "") == "1"
-# 푸시 대상 브랜치 명시 (HEAD 추적 브랜치 오푸시 방지)
 PUBLISH_BRANCH = os.environ.get("V2_PUBLISH_BRANCH", "")
 
 
@@ -57,7 +54,6 @@ def run(cmd, **kw):
 
 
 def git(args, **kw):
-    """git -C V2_ROOT 실행."""
     return run(["git", "-C", str(V2_ROOT)] + args, **kw)
 
 
@@ -66,35 +62,36 @@ def current_branch():
     return r.stdout.strip() if r.returncode == 0 else ""
 
 
-def changed_files():
-    """porcelain v1 정확 파싱 (strip 금지 — 파일명 선행 공백 보존).
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
-    형식: XY<space>path (X=staged, Y=unstaged)
-    """
+
+def changed_files():
+    """porcelain v1 정확 파싱 (data/, media/ 한정)."""
     r = git(["status", "--porcelain=v1", "-z", "--", "data/", "media/"])
     if r.returncode != 0:
         return []
     files = []
-    # -z: NUL 구분, 경로에 따옴표 없음
     for entry in r.stdout.split("\x00"):
         if len(entry) < 4:
             continue
         xy = entry[:2]
         path = entry[3:]
-        # rename/copy의 경우 "orig -> new" 형태 → new 사용
         if " -> " in path:
             path = path.split(" -> ", 1)[1]
-        if xy.strip():  # 변경 있음
+        if xy.strip():
             files.append(path)
     return files
 
 
 def unpushed_commits():
-    """origin/<branch> 대비 미푸시 커밋 수 (없으면 0)."""
     branch = PUBLISH_BRANCH or current_branch()
     if not branch:
         return 0
-    # 원격 브랜치가 없으면 전체를 미푸시로 간주하지 않음 (신규 브랜치는 게시 게이트가 막음)
     r = git(["rev-parse", "--verify", f"origin/{branch}"])
     if r.returncode != 0:
         return 0
@@ -106,7 +103,6 @@ def unpushed_commits():
 
 
 def do_push():
-    """게시 (게이트 통과 시에만 호출)."""
     branch = PUBLISH_BRANCH or current_branch()
     if not branch:
         log("브랜치 확인 불가 — 게시 중단")
@@ -114,6 +110,23 @@ def do_push():
     log(f"게시: origin/{branch} 로 push")
     r = git(["push", "origin", f"HEAD:refs/heads/{branch}"], timeout=300)
     return r.returncode == 0
+
+
+def update_manifest_translation_hash():
+    """번역 후 manifest.translations.sha256 업데이트."""
+    if not MANIFEST.exists() or not TRANSLATIONS.exists():
+        return
+    try:
+        m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        m["translations"] = {
+            "file": "data/translations.json",
+            "sha256": sha256_file(TRANSLATIONS),
+            "count": len(json.loads(TRANSLATIONS.read_text(encoding="utf-8"))),
+        }
+        MANIFEST.write_text(json.dumps(m, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        log(f"manifest.translations.sha256 업데이트: {m['translations']['sha256'][:16]}...")
+    except (OSError, ValueError) as e:
+        log(f"manifest 번역 해시 업데이트 실패: {e}")
 
 
 def main():
@@ -126,92 +139,121 @@ def main():
         return 2
     log("락 획득")
 
+    has_retry_marker = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists()
+    if has_retry_marker:
+        log("재시도 마커 감지 — 소스 변경 여부와 무관하게 처리")
+
     try:
-        # 0. 미푸시 커밋 재시도 (--check가 exit 0이어도 푸시는 재시도)
+        # 0. 미푸시 커밋/Dirty 처리 (소스 해시와 무관)
         pending = unpushed_commits()
+        dirty = changed_files()
         if pending > 0:
-            log(f"미푸시 커밋 {pending}개 감지 — 푸시 재시도")
+            log(f"미푸시 커밋 {pending}개 — 푸시 재시도")
             if not PUBLISH_ENABLED:
-                log("게시 비활성 — 푸시 건너뜀 (커밋은 로컬에 유지)")
+                log("게시 비활성 — 푸시 건너뜀")
             elif do_push():
                 log("미푸시 커밋 게시 완료")
             else:
-                log("푸시 재시도 실패 — 다음 실행에서 재시도")
+                log("푸시 재시도 실패")
                 return 1
+        if dirty and not pending:
+            # Dirty 파일이 있지만 커밋되지 않음 → 커밋 시도
+            log(f"Dirty 파일 감지 (소스 해시 무관): {dirty}")
+            # 아래 3단계로 진행하여 커밋함
 
-        # 1. 변경 감지 (결정적, 모델 호출 없음)
-        r = run([sys.executable, str(V2_ROOT / "build_data.py"), "--check"])
-        if r.returncode == 0:
-            log("변경 없음 — 종료 (모델 호출 없음)")
+        # 1. 변경 감지 (재시도 마커가 있으면 무조건 진행)
+        needs_build = has_retry_marker
+        if not needs_build:
+            r = run([sys.executable, str(V2_ROOT / "build_data.py"), "--check"])
+            if r.returncode == 0 and not dirty:
+                log("변경 없음, Dirty 없음 — 종료 (모델 호출 없음)")
+                # 재시도 마커 정리 (성공적으로 처리됨)
+                RETRY_TRANSLATION.unlink(missing_ok=True)
+                RETRY_COMMIT.unlink(missing_ok=True)
+                return 0
+            if r.returncode not in (0, 1):
+                log(f"--check 비정상 종료 ({r.returncode})")
+                return 1
+            needs_build = (r.returncode == 1) or bool(dirty)
+
+        if not needs_build:
             return 0
-        if r.returncode != 1:
-            log(f"--check 비정상 종료 ({r.returncode})")
-            return 1
-        log("변경 감지됨 — 빌드 시작")
+        log("빌드 필요 — 시작")
 
-        # 2a. translations.json 백업 (원자적 교체 안전망)
+        # 2a. IB 정본 병합 (신규 IB 감지)
+        r = run([sys.executable, str(V2_ROOT / "ib_adapter.py")])
+        if r.returncode != 0:
+            log("IB 어댑터 실패 — 중단")
+            return 1
+
+        # 2b. translations.json 백업
         backup = None
         if TRANSLATIONS.exists():
             backup = Path(tempfile.mkdtemp(prefix="v2_trans_")) / "translations.json"
             shutil.copy2(str(TRANSLATIONS), str(backup))
             log(f"번역 캐시 백업: {backup}")
 
-        # 2b. 전체 빌드
+        # 2c. 전체 빌드
         r = run([sys.executable, str(V2_ROOT / "build_data.py")])
         if r.returncode != 0:
-            log("빌드 실패 — 중단 (백업에서 복원 시도)")
-            if backup and backup.exists():
-                # 빌드 실패 시 이전 data/는 그대로이므로 백업만 정리
-                pass
+            log("빌드 실패 — 중단")
             return 1
 
-        # 2c. 번역 캐시 복원/병합
+        # 2d. 번역 캐시 복원/병합
         if backup and backup.exists():
             try:
                 bak = json.loads(backup.read_text(encoding="utf-8"))
                 cur = json.loads(TRANSLATIONS.read_text(encoding="utf-8")) if TRANSLATIONS.exists() else {}
-                # 합집합 (빌드 후 유실분 복원)
                 merged = dict(cur)
-                restored = 0
+                restored = sum(1 for k, v in bak.items() if k not in merged)
                 for k, v in bak.items():
                     if k not in merged:
                         merged[k] = v
-                        restored += 1
                 if restored or len(merged) != len(cur):
                     TRANSLATIONS.write_text(
                         json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
                     log(f"번역 캐시 병합: {len(cur)}→{len(merged)}개 (복원 {restored}개)")
-                else:
-                    log(f"번역 캐시 유지: {len(cur)}개")
             except (OSError, ValueError) as e:
                 log(f"번역 캐시 검증 실패, 백업으로 복원: {e}")
                 shutil.copy2(str(backup), str(TRANSLATIONS))
             finally:
                 shutil.rmtree(backup.parent, ignore_errors=True)
 
-        # 2d. 번역 (신규/변경분만 — 캐시 히트 시 스킵, 해시 불일치 시 재번역)
+        # 2e. 번역 (실패 시 재시도 마커)
         r = run([sys.executable, str(V2_ROOT / "translate_posts.py")], timeout=1800)
         if r.returncode != 0:
-            log("번역 스크립트 실패 — 다음 실행에서 재시도 (커밋은 계속)")
+            log("번역 실패 — 재시도 마커 생성")
+            RETRY_TRANSLATION.write_text(
+                datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+        else:
+            RETRY_TRANSLATION.unlink(missing_ok=True)
+            log("번역 완료 — 재시도 마커 제거")
 
-        # 3. 변경 파일 확인 → 명시적 pathspec 커밋 (무관 파일 혼입 방지)
+        # 2f. manifest 번역 해시 업데이트 (번역 후)
+        update_manifest_translation_hash()
+
+        # 3. 커밋 (명시적 pathspec)
         files = changed_files()
         if not files:
-            log("커밋할 변경 없음 — 종료")
-            return 0
-        log(f"변경 파일: {files}")
+            log("커밋할 변경 없음")
+            # 번역 재시도 마커가 있으면 실패로 반환 (다음에 재시도)
+            return 1 if RETRY_TRANSLATION.exists() else 0
 
+        log(f"변경 파일: {files}")
         r = git(["add", "--"] + COMMIT_PATHS)
         if r.returncode != 0:
-            log("git add 실패 — 중단")
+            log("git add 실패")
+            RETRY_COMMIT.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
             return 1
-        # 스테이지된 것이 COMMIT_PATHS 뿐인지 재확인
+
+        # 무관한 스테이지 파일 확인
         r = git(["diff", "--cached", "--name-only", "-z"])
         staged = [p for p in r.stdout.split("\x00") if p]
-        if r.returncode != 0:
-            log("스테이지 확인 실패 — 중단")
-            return 1
-        log(f"스테이지됨: {staged}")
+        # data/, media/ 외의 파일이 스테이지되었는지 확인
+        bad = [p for p in staged if not (p.startswith("data/") or p.startswith("media/"))]
+        if bad:
+            log(f"경고: 무관한 파일 스테이지됨 (커밋에서 제외): {bad}")
+            git(["reset", "HEAD", "--"] + bad)
 
         msg = (
             "v2: 자동 빌드 (post-ingest hook)\n\n"
@@ -221,17 +263,19 @@ def main():
         r = git(["-c", "user.name=Muse", "-c", "user.email=muse@local",
                  "commit", "-m", msg, "--"] + COMMIT_PATHS)
         if r.returncode != 0:
-            log("커밋 실패 — 중단")
+            log("커밋 실패 — 재시도 마커 생성")
+            RETRY_COMMIT.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
             return 1
+        RETRY_COMMIT.unlink(missing_ok=True)
         log("커밋 완료")
 
         # 4. 게시 게이트
         if not PUBLISH_ENABLED:
-            log("게시 비활성 (V2_PUBLISH=1 없이 push하지 않음) — QA 완료 전까지 유지")
-            return 0
+            log("게시 비활성 — QA 완료 전까지 유지")
+            return 1 if RETRY_TRANSLATION.exists() else 0
         if do_push():
             log("게시 완료")
-            return 0
+            return 1 if RETRY_TRANSLATION.exists() else 0
         log("푸시 실패 — 다음 실행에서 재시도")
         return 1
 

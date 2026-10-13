@@ -41,10 +41,22 @@ BUILDER_VERSION = "1.2.0"
 
 
 def source_fingerprint():
-    """Include both article sources so web-only edits trigger a rebuild."""
+    """Include both article sources so web-only edits trigger a rebuild.
+
+    IB 정본 소스(study_links, resource_library)도 포함 — 신규 IB 업로드가
+    빌드를 트리거하도록 함. (ib_adapter.canonical_fingerprint)
+    """
     hashes = {}
     for name, source in (("posts", POSTS_JSON), ("web", WEB_INDEX_JSON), ("ib", IB_LIBRARY_JSON)):
         hashes[name] = sha256_file(source) if source.exists() else None
+    # 정본 IB 입력 해시 (텍스트 에셋 포함)
+    try:
+        from ib_adapter import canonical_fingerprint
+        hashes["ib_canonical"] = canonical_fingerprint()
+    except Exception as e:
+        import sys
+        print(f"  경고: IB 정본 해시 실패: {e}", file=sys.stderr)
+        hashes["ib_canonical"] = None
     return hashlib.sha256(json.dumps(hashes, sort_keys=True).encode()).hexdigest()
 
 # 타입 판정용 상수
