@@ -33,6 +33,7 @@ TRANSLATIONS = DATA_DIR / "translations.json"
 MANIFEST = DATA_DIR / "manifest.json"
 RETRY_TRANSLATION = HOOKS_DIR / ".retry_translation"
 RETRY_COMMIT = HOOKS_DIR / ".retry_commit"
+RETRY_MEDIA = HOOKS_DIR / ".retry_media"
 COMMIT_PATHS = ["data/", "media/", "ib-library.json"]
 
 PUBLISH_ENABLED = os.environ.get("V2_PUBLISH", "") == "1"
@@ -139,7 +140,7 @@ def main():
         return 2
     log("락 획득")
 
-    has_retry_marker = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists()
+    has_retry_marker = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists()
     if has_retry_marker:
         log("재시도 마커 감지 — 소스 변경 여부와 무관하게 처리")
 
@@ -208,11 +209,14 @@ def main():
             try:
                 _mr = run([sys.executable, str(_mirror)], timeout=600)
                 if _mr.returncode == 0:
+                    RETRY_MEDIA.unlink(missing_ok=True)
                     log("미디어 미러 완료")
                 else:
-                    log(f"미디어 미러 실패 (rc={_mr.returncode})")
+                    RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+                    log(f"미디어 미러 실패 (rc={_mr.returncode}) — 다음 실행에서 재시도")
             except Exception as _e:
-                log(f"미디어 미러 예외: {_e}")
+                RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+                log(f"미디어 미러 예외: {_e} — 다음 실행에서 재시도")
         else:
             log("media-mirror.py 없음")
         # 2d. 번역 캐시 복원/병합
@@ -253,7 +257,7 @@ def main():
         if not files:
             log("커밋할 변경 없음")
             # 번역 재시도 마커가 있으면 실패로 반환 (다음에 재시도)
-            return 1 if RETRY_TRANSLATION.exists() else 0
+            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists()) else 0
 
         log(f"변경 파일: {files}")
         r = git(["add", "--"] + COMMIT_PATHS)
@@ -281,10 +285,10 @@ def main():
         # 4. 게시 게이트
         if not PUBLISH_ENABLED:
             log("게시 비활성 — QA 완료 전까지 유지")
-            return 1 if RETRY_TRANSLATION.exists() else 0
+            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists()) else 0
         if do_push():
             log("게시 완료")
-            return 1 if RETRY_TRANSLATION.exists() else 0
+            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists()) else 0
         log("푸시 실패 — 다음 실행에서 재시도")
         return 1
 

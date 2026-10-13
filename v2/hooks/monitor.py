@@ -106,7 +106,8 @@ def main():
         # 재시도 마커 확인 (소스 변경 없어도 후크 실행)
         retry_marker = (
             (HOOKS_DIR / ".retry_translation").exists() or
-            (HOOKS_DIR / ".retry_commit").exists()
+            (HOOKS_DIR / ".retry_commit").exists() or
+            (HOOKS_DIR / ".retry_media").exists()
         )
         if retry_marker:
             print("[monitor] 재시도 마커 감지 — 후크 실행")
