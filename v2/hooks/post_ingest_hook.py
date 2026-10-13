@@ -104,7 +104,11 @@ def unpushed_commits():
 
 
 def do_push():
-    branch = PUBLISH_BRANCH or current_branch()
+    checked_out = current_branch()
+    branch = PUBLISH_BRANCH or checked_out
+    if PUBLISH_BRANCH and checked_out != PUBLISH_BRANCH:
+        log(f"게시 차단: 현재 브랜치 {checked_out!r}, 게시 브랜치 {PUBLISH_BRANCH!r} — 검토 브랜치 자동 게시 금지")
+        return False
     if not branch:
         log("브랜치 확인 불가 — 게시 중단")
         return False

@@ -49,6 +49,14 @@ class MirrorPublicationTests(unittest.TestCase):
                     self.assertFalse((root/'hooks/.retry_media').exists())
                     self.assertEqual(publish.call_count,2)
                     self.assertEqual(sum('--check' in cmd for cmd in calls),1)
+    def test_review_branch_cannot_publish_to_main(self):
+        with patch.object(hook,'PUBLISH_BRANCH','main'), patch.object(hook,'current_branch',return_value='review/v2-ux'), patch.object(hook,'git') as git:
+            self.assertFalse(hook.do_push())
+            git.assert_not_called()
+    def test_main_branch_can_publish_to_main(self):
+        with patch.object(hook,'PUBLISH_BRANCH','main'), patch.object(hook,'current_branch',return_value='main'), patch.object(hook,'git',return_value=subprocess.CompletedProcess([],0,'','')) as git:
+            self.assertTrue(hook.do_push())
+            self.assertEqual(git.call_args.args[0],['push','origin','HEAD:refs/heads/main'])
     def test_monitor_retries_media_with_unchanged_sources(self):
         import monitor
         workspace=Path(__file__).resolve().parents[1]/'.qa-test-temp'
