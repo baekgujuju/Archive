@@ -92,8 +92,8 @@ def collect_post_urls(post, urls):
                     urls.add(html.unescape(pair[key]))
                     break
         elif isinstance(pair, (list, tuple)) and len(pair) >= 1:
-            # [full, thumb] 형태 — full 우선
-            urls.add(html.unescape(str(pair[0])))
+            # [thumb, full] 형태 — full 우선 (ArchiveRender 계약)
+            urls.add(html.unescape(str(pair[1] if len(pair)>1 and pair[1] else pair[0])))
         elif isinstance(pair, str):
             urls.add(html.unescape(pair))
 
@@ -134,11 +134,13 @@ def url_to_filename(url, mime_ext=None):
 
 def download_image(url):
     """이미지 다운로드. (성공시 (rel_path, bytes), 실패시 (None, 이유))."""
-    # 파일명 사전 계산 (스킵 확인용)
-    tmp_name = url_to_filename(url)
-    tmp_dest = MEDIA_DIR / tmp_name
-    if tmp_dest.exists() and tmp_dest.stat().st_size > 0:
-        return f"media/full/{tmp_name}", "cached"
+    # Query-format URLs often have no extension. Check all MIME extensions before
+    # opening the network so an existing PNG is not re-downloaded as a JPEG.
+    for ext in set(ALLOWED_MIME.values()):
+        cached_name=url_to_filename(url,ext)
+        cached_path=MEDIA_DIR/cached_name
+        if cached_path.exists() and cached_path.stat().st_size>0:
+            return f"media/full/{cached_name}", "cached"
 
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0 (Archive-Media-Mirror)",
@@ -176,7 +178,9 @@ def download_image(url):
             if dest.exists() and dest.stat().st_size > 0:
                 return rel_path, "cached"
 
-            dest.write_bytes(data)
+            temp=dest.with_suffix(dest.suffix+".tmp")
+            temp.write_bytes(data)
+            temp.replace(dest)
             return rel_path, len(data)
     except Exception as e:
         return None, str(e)[:100]
@@ -224,12 +228,12 @@ def main():
     map_js = "// 자동 생성 (media-mirror.py) — 수정 금지\nwindow.ArchiveMediaMap = " + map_data + ";\n"
     tmp_js = MAP_JS.with_suffix(".tmp")
     tmp_js.write_text(map_js, encoding="utf-8")
-    tmp_js.rename(MAP_JS)
+    tmp_js.replace(MAP_JS)
 
     # 2. data/media-map.json (발행 스테이징용)
     tmp_json = MAP_JSON.with_suffix(".tmp")
     tmp_json.write_text(map_data, encoding="utf-8")
-    tmp_json.rename(MAP_JSON)
+    tmp_json.replace(MAP_JSON)
 
     print(f"\n완료:")
     print(f"  미러됨: {len(url_map) - cached}개 ({total_bytes:,} bytes)")
