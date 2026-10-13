@@ -49,3 +49,23 @@
 - lifecycle: 6 통과
 - integration: 11 통과 (6개 JS classic 파싱)
 - builder: 2 통과
+
+## 2026-10-13 운영 감사 반영
+
+### 스케줄러 변경
+- **이전**: Hatch agent cron (5분마다 어시스턴트 깨움, 288회/일)
+- **현재**: 영속 Python 워커 (`v2/hooks/persistent_worker.py`)
+  - 300초마다 `scheduler_runner.py` 실행
+  - 모델 호출 없음 (순수 Python)
+  - singleton flock + PID 파일
+  - 로그 1MB 로테이션
+  - V2_PUBLISH=1, V2_PUBLISH_BRANCH=main을 자식에 프로그래밍 방식으로 설정
+
+### Watchdog
+- 12h 크론 (`x-drive-inbox-monitor`)이 워커 상태 확인 및 재시작 담당
+- VM 재시작 시 최대 12h 후 복구 (문서화된 한계)
+
+### 타임아웃
+- Drive 인제스트: 600초
+- Monitor: 2400초 (번역 1800초 허용)
+- 전체 실행 flock으로 중복 틱 스킵
