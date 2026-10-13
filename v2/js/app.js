@@ -241,15 +241,32 @@ var DriveSync = (function () {
   var CLIENT_ID = '43687402502-rlid8pjoakcigrn6tpcs58elo357vtfr.apps.googleusercontent.com';
   var SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
   var STATE_KEYS = ['archive-pinned', 'archive-bookmarks', 'archive-bookmark-names', 'archive-deleted-replies', 'archive-deleted-posts'];
+  var MEMO_PREFIX = 'archive_memo_';
   var TS_KEY = 'archive-sync-updatedAt';
   var tokenClient = null, accessToken = null, fileId = null, connected = false, lastHash = '';
-  var statusEl = null;
+  var statusEl = null, timerId = null, inflight = false;
 
   function get(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
   function set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function getTs() { try { return localStorage.getItem(TS_KEY) || ''; } catch (e) { return ''; } }
   function setTs(v) { try { localStorage.setItem(TS_KEY, v); } catch (e) {} }
-  function stateHash() { try { return STATE_KEYS.map(function (k) { return localStorage.getItem(k) || ''; }).join('|'); } catch (e) { return ''; } }
+  function collectMemos() {
+    var memos = {};
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(MEMO_PREFIX) === 0) memos[k.slice(MEMO_PREFIX.length)] = localStorage.getItem(k);
+      }
+    } catch (e) {}
+    return memos;
+  }
+  function stateHash() {
+    try {
+      var parts = STATE_KEYS.map(function (k) { return localStorage.getItem(k) || ''; });
+      parts.push(JSON.stringify(collectMemos()));
+      return parts.join('|');
+    } catch (e) { return ''; }
+  }
   function collectState() {
     return {
       pinned: get('archive-pinned', []),
@@ -257,18 +274,87 @@ var DriveSync = (function () {
       names: get('archive-bookmark-names', {}),
       deletedReplies: get('archive-deleted-replies', []),
       deletedPosts: get('archive-deleted-posts', []),
+      memos: collectMemos(),
       updatedAt: new Date().toISOString()
     };
   }
-  function setStatus(txt) { if (statusEl) statusEl.textContent = txt; }
+  // 원격 데이터 유효성 검증
+  function validateRemote(d) {
+    if (!d || typeof d !== 'object') return false;
+    if (d.pinned !== undefined && !Array.isArray(d.pinned)) return false;
+    if (d.bookmarks !== undefined && (typeof d.bookmarks !== 'object' || Array.isArray(d.bookmarks))) return false;
+    if (d.deletedPosts !== undefined && !Array.isArray(d.deletedPosts)) return false;
+    if (d.deletedReplies !== undefined && !Array.isArray(d.deletedReplies)) return false;
+    if (d.memos !== undefined && (typeof d.memos !== 'object' || Array.isArray(d.memos))) return false;
+    return true;
+  }
+  // 명시적 병합 정책: 로컬+원격 모두 보존 (union)
+  function mergeState(local, remote) {
+    var merged = {
+      pinned: unionArr(local.pinned, remote.pinned),
+      bookmarks: Object.assign({}, remote.bookmarks, local.bookmarks),
+      names: Object.assign({}, remote.names, local.names),
+      deletedReplies: unionArr(local.deletedReplies, remote.deletedReplies),
+      deletedPosts: unionArr(local.deletedPosts, remote.deletedPosts),
+      memos: Object.assign({}, remote.memos, local.memos),
+      updatedAt: new Date().toISOString()
+    };
+    return merged;
+  }
+  function unionArr(a, b) {
+    var seen = {}, out = [];
+    (a || []).concat(b || []).forEach(function (x) {
+      var k = typeof x === 'string' ? x : JSON.stringify(x);
+      if (!seen[k]) { seen[k] = 1; out.push(x); }
+    });
+    return out;
+  }
+  function applyState(d) {
+    if (Array.isArray(d.pinned)) set('archive-pinned', d.pinned);
+    if (d.bookmarks && typeof d.bookmarks === 'object') set('archive-bookmarks', d.bookmarks);
+    var nms = d.names || d.bookmarkNames;
+    if (nms && typeof nms === 'object') set('archive-bookmark-names', nms);
+    if (Array.isArray(d.deletedPosts)) set('archive-deleted-posts', unionArr(get('archive-deleted-posts', []), d.deletedPosts));
+    if (Array.isArray(d.deletedReplies)) set('archive-deleted-replies', d.deletedReplies);
+    if (d.memos && typeof d.memos === 'object') {
+      Object.keys(d.memos).forEach(function (id) {
+        try {
+          var key = MEMO_PREFIX + id;
+          if (!localStorage.getItem(key) && d.memos[id]) localStorage.setItem(key, d.memos[id]);
+        } catch (e) {}
+      });
+    }
+    if (d.updatedAt) setTs(d.updatedAt);
+  }
+  function setStatus(txt, isError) {
+    if (statusEl) {
+      statusEl.textContent = txt;
+      statusEl.style.color = isError ? '#c0392b' : '';
+    }
+  }
   function api(path, opts) {
     opts = opts || {};
     var headers = opts.headers || {};
     headers.Authorization = 'Bearer ' + accessToken;
     opts.headers = headers;
     return fetch('https://www.googleapis.com' + path, opts).then(function (r) {
+      if (r.status === 401 || r.status === 403) throw new Error('AUTH:' + r.status);
       if (!r.ok) throw new Error('Drive API ' + r.status);
       return r;
+    });
+  }
+  // 기존 appData 파일 찾기 (v1 호환)
+  function findFile() {
+    return api('/drive/v3/files?q=' + encodeURIComponent("name='archive-state.json' and 'appDataFolder' in parents") + '&spaces=appDataFolder&fields=files(id,modifiedTime)')
+      .then(function (r) { return r.json(); })
+      .then(function (j) { return (j.files && j.files[0]) || null; });
+  }
+  function downloadState() {
+    return findFile().then(function (f) {
+      if (!f) return null;
+      fileId = f.id;
+      return api('/drive/v3/files/' + f.id + '?alt=media')
+        .then(function (r) { return r.json(); });
     });
   }
   function uploadState(data) {
@@ -288,17 +374,70 @@ var DriveSync = (function () {
       method: 'POST', headers: { 'Content-Type': 'multipart/related; boundary=' + boundary }, body: multipart
     }).then(function (r) { return r.json(); }).then(function (j) { fileId = j.id; done(); });
   }
+  // 초기 동기화: 원격 상태 다운로드 → 검증 → 병합
+  function doSync() {
+    if (!connected || !accessToken || inflight) return;
+    inflight = true;
+    setStatus('☁️ Drive 동기화 중...');
+    downloadState().then(function (remote) {
+      if (remote) {
+        if (!validateRemote(remote)) {
+          setStatus('☁️ Drive 데이터 형식 오류', true);
+          inflight = false;
+          return;
+        }
+        var localTs = getTs();
+        if (remote.updatedAt && (!localTs || remote.updatedAt > localTs)) {
+          // 원격이 newer → 병합 후 적용
+          var merged = mergeState(collectState(), remote);
+          applyState(merged);
+          lastHash = stateHash();
+          setStatus('☁️ Drive 동기화됨 (병합)');
+          if (typeof location !== 'undefined') location.reload();
+        } else {
+          setStatus('☁️ Drive 연결됨');
+          lastHash = stateHash();
+        }
+      } else {
+        // 원격 파일 없음 → 로컬 업로드
+        setStatus('☁️ Drive 연결됨');
+        lastHash = stateHash();
+      }
+      inflight = false;
+    }).catch(function (e) {
+      inflight = false;
+      if (String(e.message).indexOf('AUTH:') === 0) {
+        setStatus('🔗 Drive 인증 필요 (다시 연결)', true);
+        connected = false; accessToken = null;
+      } else {
+        setStatus('☁️ Drive 오류', true);
+      }
+    });
+  }
   function autoSave() {
-    if (!connected || !accessToken) return;
+    if (!connected || !accessToken || inflight) return;
     var h = stateHash();
     if (h !== lastHash) {
-      uploadState(collectState()).catch(function () { setStatus('☁️ Drive 오류'); });
+      inflight = true;
+      // 업로드 전 기존 파일 확인 (fileId가 없으면)
+      var ensure = fileId ? Promise.resolve() : findFile().then(function (f) { if (f) fileId = f.id; });
+      ensure.then(function () {
+        return uploadState(collectState());
+      }).then(function () { inflight = false; })
+      .catch(function (e) {
+        inflight = false;
+        if (String(e.message).indexOf('AUTH:') === 0) {
+          setStatus('🔗 Drive 인증 필요 (다시 연결)', true);
+          connected = false; accessToken = null;
+        } else {
+          setStatus('☁️ Drive 오류', true);
+        }
+      });
     }
   }
   return {
     init: function (el) {
       statusEl = el;
-      // Google API 스크립트 로드
       if (!document.querySelector('script[src*="accounts.google.com"]')) {
         var s = document.createElement('script');
         s.src = 'https://accounts.google.com/gsi/client';
@@ -313,21 +452,28 @@ var DriveSync = (function () {
             callback: function (resp) {
               if (resp && resp.access_token) {
                 accessToken = resp.access_token; connected = true;
-                setStatus('☁️ Drive 연결됨');
-                lastHash = stateHash();
-                setInterval(autoSave, 2000); // 2초마다 로컬 변경 업로드
-              } else { setStatus('🔗 Drive 연결'); }
+                doSync(); // 연결 시 원격 상태 확인 및 병합
+                if (!timerId) timerId = setInterval(autoSave, 2000); // 단일 타이머
+              } else {
+                setStatus('🔗 Drive 연결 실패', true);
+              }
             }
           });
-          setStatus(getTs() ? '🔗 Drive 연결' : '🔗 Drive 연결');
+          setStatus('🔗 Drive 연결');
         } else if (tries++ < 20) { setTimeout(wait, 500); }
+        else { setStatus('🔗 Drive 연결 불가', true); }
       };
       wait();
     },
     connect: function () {
       if (tokenClient) tokenClient.requestAccessToken({ prompt: 'consent' });
+      else setStatus('🔗 Drive 초기화 중...', true);
     },
-    isConnected: function () { return connected; }
+    isConnected: function () { return connected; },
+    // 테스트용 노출
+    _validateRemote: validateRemote,
+    _mergeState: mergeState,
+    _collectMemos: collectMemos
   };
 })();
 
