@@ -129,7 +129,7 @@ var ArchiveApp = (function () {
       var mb = r.card.querySelector('[data-memo-id]'), pb = r.card.querySelector('.pin-btn'), bb = r.card.querySelector('.bookmark-btn'), db = r.card.querySelector('.delete-btn');
       if (mb) { var hasMemo = !!memoValue(mb.dataset.memoId); mb.classList.remove('memo-hidden'); mb.classList.toggle('aa-active', hasMemo); mb.setAttribute('aria-label', hasMemo ? '메모 편집 (메모 있음)' : '메모 추가'); }
       if (pb) { pb.classList.toggle('aa-active', isPinned); pb.setAttribute('aria-pressed', String(isPinned)); pb.title = isPinned ? '상단 고정 해제' : '상단 고정'; }
-      if (bb) { bb.style.color = color || '';var icon=bb.querySelector('svg');if(icon)icon.style.fill=color||'none'; bb.setAttribute('aria-label', color ? '북마크: ' + (colors[color] || color) : '북마크'); }
+      if (bb) { bb.style.color = color || '';var icon=bb.querySelector('svg');if(icon)icon.style.fill=color||'none'; bb.setAttribute('aria-label', color ? '북마크: ' + getBookmarkName(color) : '북마크'); }
       if (db) { db.title = isHidden ? '복원' : '삭제'; db.setAttribute('aria-label', db.title); }
       var parent = isPinned ? pinned.querySelector('.aa-grid') : list;
       if (r.card.parentNode !== parent) parent.appendChild(r.card);
@@ -240,15 +240,15 @@ var ArchiveApp = (function () {
     aiList=document.createElement('section');aiList.className='ai-tools-section';var tools=records.filter(function(r){return r.topics.indexOf('AI툴')>=0;});aiList.innerHTML='<h2>🛠️ AI 도구 모음 ('+tools.length+'건)</h2><ul class="ai-tools-list">'+tools.map(function(r){var url=safeUrl(r.article.sourceUrl||r.article.source_url);return '<li><button type="button" data-read-id="'+esc(r.id)+'">'+esc(title(r.article))+'</button> <span class="ai-author">— '+esc(r.author)+'</span> '+(url?'<a href="'+esc(url)+'" target="_self" rel="noopener noreferrer">원문 ↗</a>':'')+'</li>';}).join('')+'</ul>';list.after(aiList);
     controls.addEventListener('input', update); controls.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return;
-      if(b.dataset.filter==='bookmark'&&suppressBookmarkClick){suppressBookmarkClick=false;return;}if (b.dataset.filter) {var field=b.dataset.filter;selection[field]=b.dataset.value&&selection[field][0]!==b.dataset.value?[b.dataset.value]:[];if(field==='type'){selection.topic=[];selection.author=[];selection.subject=[];selection.category=[];}}
+      if(b.dataset.filter==='bookmark'){if(suppressBookmarkClick){suppressBookmarkClick=false;return;}clearTimeout(bookmarkClickTimer);if(e.detail<2)bookmarkClickTimer=setTimeout(function(){selection.bookmark=b.dataset.value&&selection.bookmark[0]!==b.dataset.value?[b.dataset.value]:[];update();},250);return;}if (b.dataset.filter) {var field=b.dataset.filter;selection[field]=b.dataset.value&&selection[field][0]!==b.dataset.value?[b.dataset.value]:[];if(field==='type'){selection.topic=[];selection.author=[];selection.subject=[];selection.category=[];}}
       if(b.dataset.action==='reset') resetFilters();
       if (b.dataset.action === 'mode') { mode = mode === 'OR' ? 'AND' : 'OR'; b.textContent = mode; b.setAttribute('aria-label', '검색 조건 ' + mode + ', 클릭하여 변경'); }
       if (b.dataset.action === 'hidden') selection.hidden = !selection.hidden;
       if (b.dataset.action === 'drive') { DriveSync.connect(); return; }
       update();
     });
-    var pressTimer,pressOrigin,suppressBookmarkClick=false;
-    function renameBookmark(b){renameHex=b.dataset.value;if(!colors[renameHex])return;renameDialog.querySelector('input').value=getBookmarkName(renameHex);show(renameDialog);}
+    var pressTimer,pressOrigin,bookmarkClickTimer,suppressBookmarkClick=false;
+    function renameBookmark(b){clearTimeout(bookmarkClickTimer);renameHex=b.dataset.value;if(!colors[renameHex])return;renameDialog.querySelector('input').value=getBookmarkName(renameHex);show(renameDialog);}
     controls.addEventListener('pointermove',function(e){if(pressOrigin&&Math.hypot(e.clientX-pressOrigin.x,e.clientY-pressOrigin.y)>12)clearTimeout(pressTimer);});
     controls.addEventListener('dblclick',function(e){var b=e.target.closest('[data-filter=bookmark]');if(b&&colors[b.dataset.value]){e.preventDefault();renameBookmark(b);}});
     controls.addEventListener('contextmenu',function(e){var b=e.target.closest('[data-filter="bookmark"]');if(b&&colors[b.dataset.value]){e.preventDefault();renameBookmark(b);}});
