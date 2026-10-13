@@ -141,3 +141,4 @@ body.aa-modal-open #archive-manage-btn{display:none}
 }
 
 @media(max-width:767px){:is(.aa-content,.viewer-text-panel,.web-html) :is(th,td){padding:8px 5px;font-size:12px;overflow-wrap:anywhere}}
+@media print{.aa-content .checklist{break-inside:avoid}}
