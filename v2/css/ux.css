@@ -81,7 +81,7 @@ body.aa-modal-open #archive-manage-btn{display:none}
 :is(.aa-content,.viewer-text-panel,.web-html) .flow-body :is(strong,b){display:block;margin-bottom:4px}
 :is(.aa-content,.viewer-text-panel,.web-html) .flow-line{margin:0 10px;color:var(--muted)}
 :is(.aa-content,.viewer-text-panel,.web-html) .phase-head{margin-top:18px;font-weight:700}
-@media(min-width:768px) and (max-width:1099px){#articles,.aa-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(min-width:768px) and (max-width:999px){#articles,.aa-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:767px){
  .wrap{padding-left:16px;padding-right:16px}
  #archive-manage-btn{bottom:16px;right:100px}
