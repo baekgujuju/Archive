@@ -39,8 +39,9 @@ CONFIG_PATH = XBM / "drive_archive_config.json"
 TOOLS_DIR = XBM / "tools"
 INGEST_SCRIPT = TOOLS_DIR / "ingest_post_html.py"
 POSTS_JSON = XBM / "posts.json"
-# 12시간 러너와 공유하는 락
-SHARED_LOCK = XBM / ".drive_ingest.lock"
+# 인제스트 락 (5m 폴 자체 중복 실행 방지)
+# 12h 러너는 flock을 사용하지 않음이 확인됨 → 격리된 상태로 충돌 회피
+SHARED_LOCK = HOOKS_DIR / ".drive_poll.lock"
 
 
 def log(msg):
@@ -126,7 +127,9 @@ def main():
         cfg = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
         inbox_id = cfg.get("inbox_folder_id", "")
         local_inbox = Path(cfg.get("local_inbox", str(XBM / "drive_inbox")))
-        state_path = Path(cfg.get("state_file", str(XBM / "drive_inbox_state.json")))
+        # 격리된 상태 파일 (12h 러너는 공유 락을 사용하지 않으므로 별도 관리)
+        # 12h 러너의 drive_inbox_state.json와 충돌 방지
+        state_path = HOOKS_DIR / ".drive_poll_state.json"
         if not inbox_id:
             log("inbox_folder_id 없음")
             return 1
@@ -226,37 +229,64 @@ def main():
                         log("인제스트 출력 없음 — processed에 기록하지 않음")
                     else:
                         new_recs = json.loads(posts_out.read_text(encoding="utf-8"))
-                        # posts.json에 병합 (tweetId 중복 제외)
-                        existing = []
-                        if POSTS_JSON.exists():
-                            existing = json.loads(POSTS_JSON.read_text(encoding="utf-8"))
-                        seen = {r.get("tweetId") for r in existing if r.get("tweetId")}
-                        added = 0
-                        for rec in new_recs:
-                            tid = rec.get("tweetId")
-                            if tid and tid not in seen:
-                                existing.append(rec)
-                                seen.add(tid)
-                                added += 1
-                        if added > 0:
-                            # 원자적 쓰기
-                            tmp_posts = POSTS_JSON.with_suffix(".tmp")
-                            tmp_posts.write_text(
-                                json.dumps(existing, ensure_ascii=False, indent=2),
-                                encoding="utf-8")
-                            tmp_posts.rename(POSTS_JSON)
-                            log(f"posts.json에 {added}개 병합")
-                        else:
-                            log("신규 레코드 없음 (중복)")
+                        # 파싱 결과 검증
+                        valid_recs = []
+                        if isinstance(new_recs, list):
+                            # 유효한 레코드만 필터 (tweetId 필수)
+                            for rec in new_recs:
+                                if not isinstance(rec, dict):
+                                    continue
+                                tid = rec.get("tweetId")
+                                if not tid:
+                                    log(f"  경고: tweetId 없는 레코드 스킵")
+                                    continue
+                                valid_recs.append(rec)
 
-                        # 성공한 파일만 processed에 기록
-                        for f, _ in html_paths:
-                            fid = f.get("id", "")
-                            fp = file_fingerprint(f)
-                            processed[fid] = {
-                                "modifiedTime": fp[1], "size": fp[2],
-                                "at": datetime.now(timezone.utc).isoformat(),
-                            }
+                        if not valid_recs:
+                            log("유효한 레코드 없음 — processed에 기록하지 않음")
+                        else:
+                            # posts.json에 병합 (수정된 tweetId는 교체, 신규는 추가)
+                            existing = []
+                            if POSTS_JSON.exists():
+                                existing = json.loads(POSTS_JSON.read_text(encoding="utf-8"))
+                            # tweetId → 인덱스 맵
+                            idx_by_tid = {}
+                            for i, r in enumerate(existing):
+                                tid = r.get("tweetId") if isinstance(r, dict) else None
+                                if tid:
+                                    idx_by_tid[tid] = i
+                            added = 0
+                            replaced = 0
+                            for rec in valid_recs:
+                                tid = rec.get("tweetId")
+                                if tid in idx_by_tid:
+                                    # 기존 레코드 교체 (수정 반영)
+                                    existing[idx_by_tid[tid]] = rec
+                                    replaced += 1
+                                else:
+                                    existing.append(rec)
+                                    idx_by_tid[tid] = len(existing) - 1
+                                    added += 1
+                            if added > 0 or replaced > 0:
+                                # 원자적 쓰기
+                                tmp_posts = POSTS_JSON.with_suffix(".tmp")
+                                tmp_posts.write_text(
+                                    json.dumps(existing, ensure_ascii=False, indent=2),
+                                    encoding="utf-8")
+                                tmp_posts.rename(POSTS_JSON)
+                                log(f"posts.json에 {added}개 추가, {replaced}개 교체")
+                            else:
+                                log("변경 없음")
+
+                            # 유효한 레코드를 생성한 파일만 processed에 기록
+                            for f, _ in html_paths:
+                                fid = f.get("id", "")
+                                fp = file_fingerprint(f)
+                                processed[fid] = {
+                                    "modifiedTime": fp[1], "size": fp[2],
+                                    "at": datetime.now(timezone.utc).isoformat(),
+                                }
+
         finally:
             shutil.rmtree(tmpdir, ignore_errors=True)
 

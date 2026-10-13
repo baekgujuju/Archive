@@ -106,17 +106,33 @@ def stable_memo_id(url: str) -> str:
     return f"ib_{h}"
 
 
+# 트래킹 파라미터 (제거 대상)
+TRACKING_PARAMS = {
+    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+    "utm_id", "fbclid", "gclid", "msclkid", "igshid", "_ga", "_gid",
+    "mc_cid", "mc_eid", "vero_id", "vero_conv", "yclid", "dclid",
+}
+
 def norm_url(url: str) -> str:
+    """매칭용 URL 정규화: 소문자, 의미있는 쿼리 보존, 트래킹 파라미터만 제거."""
     url = (url or "").strip()
     if not url or url.startswith("ib-local://"):
         return url
     try:
+        from urllib.parse import parse_qsl, urlencode
         p = urlparse(url)
+        # 쿼리 파싱 후 트래킹 파라미터만 제거
+        qsl = parse_qsl(p.query, keep_blank_values=True)
+        filtered = [(k, v) for k, v in qsl
+                    if k.lower() not in TRACKING_PARAMS and not k.lower().startswith("utm_")]
+        # 결정적 순서로 정렬
+        filtered.sort()
+        query = urlencode(filtered)
         return urlunparse((
             p.scheme.lower(),
             p.netloc.lower(),
             p.path.rstrip("/") or "/",
-            "", "", "",
+            "", query, "",
         ))
     except Exception:
         return url.lower().rstrip("/")
@@ -249,28 +265,56 @@ def merge(snapshot, raws):
         if snap:
             # 기존: id/memoId/subject/category 유지
             post = dict(snap)  # 전체 보존
-            # 본문이 더 풍부하면 업데이트 (ID 불변)
+            # 소스 해시 기반 업데이트 (길이가 아닌 변경 감지)
+            # _source_hash: 정본에서 계산한 해시, 없으면 레거시로 간주
             new_text = r.get("full_text") or r.get("description", "")
-            old_text = snap.get("fullText") or snap.get("summary") or ""
-            if new_text and len(new_text) > len(old_text):
+            new_hash = hashlib.sha256(new_text.encode("utf-8")).hexdigest()[:16] if new_text else ""
+            old_hash = snap.get("_source_hash", "")
+            # 해시가 다르면 업데이트 (짧아져도 전파 — 수정 반영)
+            if new_text and new_hash != old_hash:
                 post["fullText"] = new_text
                 post["summary"] = new_text[:300]
+                post["_source_hash"] = new_hash
+                # fullHtml이 UI에서 우선하므로 함께 업데이트하거나 무효화
+                # 새 본문으로 안전한 HTML 생성 (이스케이프)
+                import html as _html
+                safe_html = "".join(
+                    f"<p>{_html.escape(para)}</p>"
+                    for para in new_text.split("\n\n") if para.strip()
+                )
+                post["fullHtml"] = safe_html
                 stats["content_updated"] += 1
             stats["matched"] += 1
         else:
-            # 신규: 안정적 ID
+            # 신규: 안정적 ID (충돌 방지)
             url = r["url"]
+            base_pin = stable_pin_id(url)
+            base_memo = stable_memo_id(url)
+            # ID 충돌 시 접미사로 해소
+            pin_id, memo_id = base_pin, base_memo
+            suffix = 1
+            while pin_id in seen:
+                pin_id = f"{base_pin}_{suffix}"
+                memo_id = f"{base_memo}_{suffix}"
+                suffix += 1
+            subject_key = r.get("subject", "ib")
+            subject_label = SUBJECT_LABELS.get(subject_key, subject_key)
+            full_text = r.get("full_text") or r.get("description", "")
+            new_hash = hashlib.sha256(full_text.encode("utf-8")).hexdigest()[:16] if full_text else ""
             post = {
                 "type": "ib",
-                "id": stable_pin_id(url),
-                "memoId": stable_memo_id(url),
+                "id": pin_id,
+                "memoId": memo_id,
                 "title": r["title"],
-                "summary": (r.get("full_text") or r.get("description", ""))[:300],
-                "fullText": r.get("full_text") or r.get("description", ""),
+                "summary": full_text[:300],
+                "fullText": full_text,
                 "fullHtml": "",
                 "author": r.get("source") or "IB 자료",
                 "source_url": url,
-                "topics": [SUBJECT_LABELS.get(r.get("subject", ""), r.get("subject", ""))],
+                "subject": subject_key,
+                "category": "IB",
+                "topics": [subject_label],
+                "_source_hash": new_hash,
             }
             stats["added"] += 1
 

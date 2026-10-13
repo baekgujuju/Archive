@@ -33,7 +33,7 @@ TRANSLATIONS = DATA_DIR / "translations.json"
 MANIFEST = DATA_DIR / "manifest.json"
 RETRY_TRANSLATION = HOOKS_DIR / ".retry_translation"
 RETRY_COMMIT = HOOKS_DIR / ".retry_commit"
-COMMIT_PATHS = ["data/", "media/"]
+COMMIT_PATHS = ["data/", "media/", "ib-library.json"]
 
 PUBLISH_ENABLED = os.environ.get("V2_PUBLISH", "") == "1"
 PUBLISH_BRANCH = os.environ.get("V2_PUBLISH_BRANCH", "")
@@ -246,15 +246,8 @@ def main():
             RETRY_COMMIT.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
             return 1
 
-        # 무관한 스테이지 파일 확인
-        r = git(["diff", "--cached", "--name-only", "-z"])
-        staged = [p for p in r.stdout.split("\x00") if p]
-        # data/, media/ 외의 파일이 스테이지되었는지 확인
-        bad = [p for p in staged if not (p.startswith("data/") or p.startswith("media/"))]
-        if bad:
-            log(f"경고: 무관한 파일 스테이지됨 (커밋에서 제외): {bad}")
-            git(["reset", "HEAD", "--"] + bad)
-
+        # 명시적 pathspec으로 커밋 — 무관한 스테이지 파일은 자동으로 제외됨
+        # (git commit -- <paths>는 지정된 경로만 커밋, 다른 스테이지 작업 보존)
         msg = (
             "v2: 자동 빌드 (post-ingest hook)\n\n"
             f"변경: {', '.join(files)}\n"

@@ -56,6 +56,13 @@ def current_hashes():
     out = {}
     for name, path in SOURCES.items():
         out[name] = sha256_file(path) if path.exists() else None
+    # IB 정본 해시 (텍스트 에셋 포함) — ib_adapter.canonical_fingerprint()
+    try:
+        sys.path.insert(0, str(V2_ROOT))
+        from ib_adapter import canonical_fingerprint
+        out["ib_canonical_fingerprint"] = canonical_fingerprint()
+    except Exception:
+        out["ib_canonical_fingerprint"] = None
     return out
 
 
