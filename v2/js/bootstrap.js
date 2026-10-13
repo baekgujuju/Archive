@@ -1,1 +1,624 @@
-LyoqCiAqIGJvb3RzdHJhcC5qcyDigJQg7JWE7Lm07J2067iMIHYyIOu2gO2KuOyKpO2KuOueqSDrqqjrk4gKICoKICog642w7J207YSwIOuhnOuUqSDihpIgbG9jYWxTdG9yYWdlIOy6kOyLnCDihpIg66CM642U66eB7J2YIOyghOyytCDtnZDrpoTsnYQg64u064u5LgogKiDsubTrk5wgSFRNTCDsg53shLHsnYAgcmVuZGVyLmpz7J2YIGBhcnRpY2xlQ2FyZCgpYOyXkCDsnITsnoTtlZzri6QuCiAqCiAqIO2dkOumhDoKICogICAxLiBtYW5pZmVzdC5qc29uIGZldGNoIChuby1jYWNoZSkg4oaSIOy1nOyLoCDrsoTsoIQg7ZmV7J24CiAqICAgMi4gbG9jYWxTdG9yYWdlIOy6kOyLnOyZgCDruYTqtZAg4oaSIOuzgOqyveuQnCDssq3tgazrp4wg64uk7IucIGZldGNoCiAqICAgMy4g7LKt7YGsIEpTT04g7YyM7IuxIOKGkiB0eXBlL19pZHgg67aA7JesIOKGkiBhcnRpY2xlQ2FyZCgpIOugjOuNlOungQogKiAgIDQuICNhcnRpY2xlc+yXkCDsgr3snoUg4oaSIOuhnOuUqSBVSSDsiKjquYAg4oaSIG1haW4g7ZGc7IucCiAqCiAqIOyYpO2UhOudvOyduCDrjIDsnZE6CiAqICAgLSDrhKTtirjsm4ztgawg7Iuk7YyoICsg7LqQ7IucIOyeiOydjCDihpIg7LqQ7Iuc66GcIOugjOuNlOungSArIOyYpO2UhOudvOyduCDrsLDsp4AKICogICAtIOuEpO2KuOybjO2BrCDsi6TtjKggKyDsupDsi5wg7JeG7J2MIOKGkiDsl5Drn6wg7ZmU66m0ICsg7J6s7Iuc64+EIOuyhO2KvAogKgogKiDtlYTsiJggRE9NIChpbmRleC5odG1sIOyFuOydtCDsoJzqs7UpOgogKiAgICNsb2FkaW5nICAgICAgICAgIOKAlCDroZzrlKkg7Luo7YWM7J2064SICiAqICAgI2xvYWRpbmctZGV0YWlsICAg4oCUIOuLqOqzhOuzhCDrqZTsi5zsp4AgPHA+CiAqICAgI2FydGljbGVzICAgICAgICAg4oCUIOy5tOuTnCDroIzrjZTrp4Eg64yA7IOBIOy7qO2FjOydtOuEiAogKiAgIG1haW4gICAgICAgICAgICAgIOKAlCDrs7jrrLggKOy0iOq4sCBoaWRkZW4pCiAqCiAqIOyEoO2DnSBET00gKOyeiOycvOuptCDsgqzsmqksIOyXhuyWtOuPhCDrj5nsnpEpOgogKiAgICNlcnJvciwgI2Vycm9yLW1lc3NhZ2UsICNyZXRyeS1idG4g4oCUIOyXkOufrCBVSQogKiAgICNvZmZsaW5lLWJhZGdlICAgIOKAlCDsmKTtlITrnbzsnbgg7ZGc7IucIOuwsOyngAogKiAgICNhcnRpY2xlLWNvdW50ICAgIOKAlCDsoITssrQg6riAIOyImCDtkZzsi5wKICoKICog7IKs7Jqp67KVIChFUyDrqqjrk4gpOgogKiAgIGltcG9ydCB7IGJvb3QgfSBmcm9tICcuL2Jvb3RzdHJhcC5qcyc7CiAqICAgLy8gRE9NQ29udGVudExvYWRlZCDsi5wg7J6Q64+ZIOyLpO2WieuQqC4g7IiY64+ZIOyerOyLnOyekTogYm9vdCgpCiAqCiAqIOyCrOyaqeuylSAo7J2867CYIOyKpO2BrOumve2KuCk6CiAqICAgPHNjcmlwdCBzcmM9ImpzL3JlbmRlci5qcyI+PC9zY3JpcHQ+CiAqICAgPHNjcmlwdCBzcmM9ImpzL2Jvb3RzdHJhcC5qcyI+PC9zY3JpcHQ+CiAqICAgPCEtLSB3aW5kb3cuQXJjaGl2ZUJvb3RzdHJhcC5ib290KCkg66GcIOygkeq3vCAtLT4KICovCgondXNlIHN0cmljdCc7CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KLyogMC4g7IOB7IiYICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKi8KLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCgovKiogbG9jYWxTdG9yYWdlIO2CpCBwcmVmaXggKi8KY29uc3QgTFNfUFJFRklYID0gJ2FyY2hpdmVfdjJfJzsKLyoqIG1hbmlmZXN0IOy6kOyLnCDtgqQgKi8KY29uc3QgTFNfTUFOSUZFU1RfS0VZID0gTFNfUFJFRklYICsgJ21hbmlmZXN0JzsKLyoqIOyyre2BrCDsupDsi5wg7YKkIHByZWZpeCAo65Kk7JeQIOyyre2BrOuqheydhCDrtpnsnoQpICovCmNvbnN0IExTX0NIVU5LX1BSRUZJWCA9IExTX1BSRUZJWCArICdkYXRhXyc7CgovKioKICog7LKt7YGsIOuhnOuTnCDsiJzshJwg67CPIOuplO2DgCDsoJXrs7QuCiAqIG1hbmlmZXN0LmNodW5rc+ydmCDtgqTsmYAgMToxIOuMgOydke2VtOyVvCDtlZzri6QuCiAqLwpjb25zdCBDSFVOS19PUkRFUiA9IFsKICB7IG5hbWU6ICdwb3N0cy14JywgdHlwZTogJ3gnLCBsYWJlbDogJ1gg6rKM7Iuc6riAJyB9LAogIHsgbmFtZTogJ3Bvc3RzLXdlYicsIHR5cGU6ICd3ZWInLCBsYWJlbDogJ+ybueq4gCcgfSwKICB7IG5hbWU6ICdwb3N0cy1pYicsIHR5cGU6ICdpYicsIGxhYmVsOiAnSUIg7J6Q66OMJyB9LApdOwoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIDEuIOugjOuNlOufrCDsoJHqt7wgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKLyoqCiAqIHJlbmRlci5qc+ydmCDroIzrjZQg7ZWo7IiY65Ok7J2EIOqwgOyguOyYqOuLpC4KICog7J2867CYIDxzY3JpcHQ+IOuhnOuTnCDsi5wgd2luZG93LkFyY2hpdmVSZW5kZXLsl5Ag7ISk7KCV65CY7Ja0IOyeiOyWtOyVvCDtlZzri6QuCiAqCiAqIEByZXR1cm5zIHtvYmplY3R8bnVsbH0gQXJjaGl2ZVJlbmRlciDrhKTsnoTsiqTtjpjsnbTsiqQsIOyXhuycvOuptCBudWxsCiAqLwpmdW5jdGlvbiBnZXRSZW5kZXJlcigpIHsKICBpZiAodHlwZW9mIHdpbmRvdyAhPT0gJ3VuZGVmaW5lZCcgJiYgd2luZG93LkFyY2hpdmVSZW5kZXIpIHsKICAgIHJldHVybiB3aW5kb3cuQXJjaGl2ZVJlbmRlcjsKICB9CiAgcmV0dXJuIG51bGw7Cn0KCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwovKiAyLiBET00g7Zes7Y28ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAqLwovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KCi8qKgogKiBAcGFyYW0ge3N0cmluZ30gaWQg4oCUIOyalOyGjCBpZAogKiBAcmV0dXJucyB7SFRNTEVsZW1lbnR8bnVsbH0KICovCmZ1bmN0aW9uICQoaWQpIHsKICByZXR1cm4gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpOwp9CgovKioKICog66Gc65SpIOyDgeyEuCDrqZTsi5zsp4Drpbwg7JeF642w7J207Yq47ZWc64ukLgogKgogKiBAcGFyYW0ge3N0cmluZ30gbXNnIOKAlCDtkZzsi5ztlaAg66mU7Iuc7KeACiAqLwpmdW5jdGlvbiB1cGRhdGVMb2FkaW5nKG1zZykgewogIGNvbnN0IGVsID0gJCgnbG9hZGluZy1kZXRhaWwnKTsKICBpZiAoZWwpIGVsLnRleHRDb250ZW50ID0gbXNnOwp9CgovKioKICog66Gc65SpIFVJ66W8IOyIqOq4sOqzoCDrs7jrrLjsnYQg7ZGc7Iuc7ZWc64ukLgogKi8KZnVuY3Rpb24gc2hvd01haW4oKSB7CiAgY29uc3QgbG9hZGluZyA9ICQoJ2xvYWRpbmcnKTsKICBpZiAobG9hZGluZykgbG9hZGluZy5oaWRkZW4gPSB0cnVlOwogIGNvbnN0IG1haW4gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdtYWluJyk7CiAgaWYgKG1haW4pIG1haW4uaGlkZGVuID0gZmFsc2U7Cn0KCi8qKgogKiDsl5Drn6wgVUnrpbwg7ZGc7Iuc7ZWc64ukLiAjZXJyb3Ig7JqU7IaM6rCAIOyXhuycvOuptCBhbGVydOuhnCDtj7TrsLHtlZjsp4Ag7JWK6rOgCiAqIOuhnOuUqSDsmIHsl63sl5Ag66mU7Iuc7KeA66W8IOyngeygkSDtkZzsi5ztlZzri6QgKOyhsOyaqe2VnCDsi6TtjKgg67Cp7KeAKS4KICoKICogQHBhcmFtIHtzdHJpbmd9IG1lc3NhZ2Ug4oCUIOyCrOyaqeyekOyXkOqyjCDrs7Tsl6zspIQg66mU7Iuc7KeACiAqLwpmdW5jdGlvbiBzaG93RXJyb3IobWVzc2FnZSkgewogIGNvbnN0IGxvYWRpbmcgPSAkKCdsb2FkaW5nJyk7CiAgaWYgKGxvYWRpbmcpIGxvYWRpbmcuaGlkZGVuID0gdHJ1ZTsKCiAgY29uc3QgZXJyb3JCb3ggPSAkKCdlcnJvcicpOwogIGNvbnN0IGVycm9yTXNnID0gJCgnZXJyb3ItbWVzc2FnZScpOwogIGlmIChlcnJvckJveCAmJiBlcnJvck1zZykgewogICAgZXJyb3JNc2cudGV4dENvbnRlbnQgPSBtZXNzYWdlOwogICAgZXJyb3JCb3guaGlkZGVuID0gZmFsc2U7CiAgfSBlbHNlIGlmIChsb2FkaW5nKSB7CiAgICAvLyDtj7TrsLE6IOuhnOuUqSDsmIHsl63snYQg7JeQ65+sIO2RnOyLnOuhnCDsnqzsgqzsmqkKICAgIGxvYWRpbmcuaGlkZGVuID0gZmFsc2U7CiAgICBsb2FkaW5nLmlubmVySFRNTCA9CiAgICAgICc8cCBzdHlsZT0iY29sb3I6I2M2MjgyOCI+4pqg77iPICcgKwogICAgICBlc2NhcGVGb3JGYWxsYmFjayhtZXNzYWdlKSArCiAgICAgICc8L3A+JyArCiAgICAgICc8YnV0dG9uIGlkPSJyZXRyeS1idG4tZmFsbGJhY2siIHR5cGU9ImJ1dHRvbiI+64uk7IucIOyLnOuPhDwvYnV0dG9uPic7CiAgICBjb25zdCBidG4gPSAkKCdyZXRyeS1idG4tZmFsbGJhY2snKTsKICAgIGlmIChidG4pIGJ0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IGJvb3QoKSk7CiAgfQp9CgovKioKICogc2hvd0Vycm9yIO2PtOuwsSDqsr3roZzsl5DshJzrp4wg7IKs7Jqp7ZWY64qUIOy1nOyGjCDsnbTsiqTsvIDsnbTtlIQuCiAqIChyZW5kZXIuanPqsIAg66Gc65Oc65CY7KeAIOyViuydgCDsg4Htmansl5DshJzrj4Qg64+Z7J6R7ZW07JW8IO2VmOuvgOuhnCDsnpDssrQg6rWs7ZiEKQogKgogKiBAcGFyYW0geyp9IHZhbHVlCiAqIEByZXR1cm5zIHtzdHJpbmd9CiAqLwpmdW5jdGlvbiBlc2NhcGVGb3JGYWxsYmFjayh2YWx1ZSkgewogIHJldHVybiBTdHJpbmcodmFsdWUgPz8gJycpCiAgICAucmVwbGFjZSgvJi9nLCAnJmFtcDsnKQogICAgLnJlcGxhY2UoLzwvZywgJyZsdDsnKQogICAgLnJlcGxhY2UoLz4vZywgJyZndDsnKQogICAgLnJlcGxhY2UoLyIvZywgJyZxdW90OycpOwp9CgovKioKICog7JeQ65+sIFVJ66W8IOyIqOq4tOuLpC4KICovCmZ1bmN0aW9uIGhpZGVFcnJvcigpIHsKICBjb25zdCBlcnJvckJveCA9ICQoJ2Vycm9yJyk7CiAgaWYgKGVycm9yQm94KSBlcnJvckJveC5oaWRkZW4gPSB0cnVlOwp9CgovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KLyogMy4gbG9jYWxTdG9yYWdlIOy6kOyLnCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKLyoqCiAqIGxvY2FsU3RvcmFnZSDsk7DquLAuIOyaqeufiSDstIjqs7woUXVvdGFFeGNlZWRlZEVycm9yKSDsi5wgZmFsc2Xrpbwg67CY7ZmY7ZWY6rOgCiAqIOydtO2bhCDsupDsi5wg7JOw6riw66W8IOqxtOuEiOubuCDsiJgg7J6I64+E66GdIO2YuOy2nOyekOqwgCDtjJDri6jtlZzri6QuCiAqCiAqIEBwYXJhbSB7c3RyaW5nfSBrZXkKICogQHBhcmFtIHtzdHJpbmd9IHZhbHVlCiAqIEByZXR1cm5zIHtib29sZWFufSDshLHqs7Ug7Jes67aACiAqLwpmdW5jdGlvbiBsc1NldChrZXksIHZhbHVlKSB7CiAgdHJ5IHsKICAgIGxvY2FsU3RvcmFnZS5zZXRJdGVtKGtleSwgdmFsdWUpOwogICAgcmV0dXJuIHRydWU7CiAgfSBjYXRjaCAoZSkgewogICAgLy8gUXVvdGFFeGNlZWRlZEVycm9yIChpT1MgU2FmYXJpIH41TUIpIOuYkOuKlCDruYTqs7XqsJwg66qo65OcIOuTsQogICAgaWYgKGUgJiYgKGUubmFtZSA9PT0gJ1F1b3RhRXhjZWVkZWRFcnJvcicgfHwgZS5jb2RlID09PSAyMikpIHsKICAgICAgY29uc29sZS53YXJuKCdbYm9vdHN0cmFwXSBsb2NhbFN0b3JhZ2Ug7Jqp65+JIOy0iOqzvCwg7LqQ7IucIOyXhuydtCDsp4Ttlok6Jywga2V5KTsKICAgIH0gZWxzZSB7CiAgICAgIGNvbnNvbGUud2FybignW2Jvb3RzdHJhcF0gbG9jYWxTdG9yYWdlIOyTsOq4sCDsi6TtjKg6JywgZSk7CiAgICB9CiAgICByZXR1cm4gZmFsc2U7CiAgfQp9CgovKioKICogbG9jYWxTdG9yYWdlIOydveq4sC4KICoKICogQHBhcmFtIHtzdHJpbmd9IGtleQogKiBAcmV0dXJucyB7c3RyaW5nfG51bGx9CiAqLwpmdW5jdGlvbiBsc0dldChrZXkpIHsKICB0cnkgewogICAgcmV0dXJuIGxvY2FsU3RvcmFnZS5nZXRJdGVtKGtleSk7CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS53YXJuKCdbYm9vdHN0cmFwXSBsb2NhbFN0b3JhZ2Ug7J296riwIOyLpO2MqDonLCBlKTsKICAgIHJldHVybiBudWxsOwogIH0KfQoKLyoqCiAqIOy6kOyLnOuQnCBtYW5pZmVzdOulvCDtjIzsi7HtlbTshJwg67CY7ZmY7ZWc64ukLgogKgogKiBAcmV0dXJucyB7b2JqZWN0fG51bGx9IG1hbmlmZXN0IOqwneyytCwg7JeG6rGw64KYIOq5qOyhjOycvOuptCBudWxsCiAqLwpmdW5jdGlvbiBsb2FkQ2FjaGVkTWFuaWZlc3QoKSB7CiAgY29uc3QgcmF3ID0gbHNHZXQoTFNfTUFOSUZFU1RfS0VZKTsKICBpZiAoIXJhdykgcmV0dXJuIG51bGw7CiAgdHJ5IHsKICAgIGNvbnN0IG0gPSBKU09OLnBhcnNlKHJhdyk7CiAgICBpZiAobSAmJiB0eXBlb2YgbSA9PT0gJ29iamVjdCcgJiYgbS5jaHVua3MgJiYgdHlwZW9mIG0uY2h1bmtzID09PSAnb2JqZWN0JykgewogICAgICByZXR1cm4gbTsKICAgIH0KICAgIHJldHVybiBudWxsOwogIH0gY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUud2FybignW2Jvb3RzdHJhcF0g7LqQ7Iuc65CcIG1hbmlmZXN0IO2MjOyLsSDsi6TtjKg6JywgZSk7CiAgICByZXR1cm4gbnVsbDsKICB9Cn0KCi8qKgogKiDsupDsi5zrkJwg7LKt7YGsIOuNsOydtO2EsOulvCDtjIzsi7HtlbTshJwg67CY7ZmY7ZWc64ukLgogKgogKiBAcGFyYW0ge3N0cmluZ30gY2h1bmtOYW1lIOKAlCDsmIg6ICdwb3N0cy14JwogKiBAcmV0dXJucyB7b2JqZWN0W118bnVsbH0g6riAIOuwsOyXtCwg7JeG6rGw64KYIOq5qOyhjOycvOuptCBudWxsCiAqLwpmdW5jdGlvbiBsb2FkQ2FjaGVkQ2h1bmsoY2h1bmtOYW1lKSB7CiAgY29uc3QgcmF3ID0gbHNHZXQoTFNfQ0hVTktfUFJFRklYICsgY2h1bmtOYW1lKTsKICBpZiAoIXJhdykgcmV0dXJuIG51bGw7CiAgdHJ5IHsKICAgIGNvbnN0IGQgPSBKU09OLnBhcnNlKHJhdyk7CiAgICBpZiAoZCAmJiBBcnJheS5pc0FycmF5KGQucG9zdHMpKSB7CiAgICAgIHJldHVybiBkLnBvc3RzOwogICAgfQogICAgcmV0dXJuIG51bGw7CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS53YXJuKCdbYm9vdHN0cmFwXSDsupDsi5zrkJwg7LKt7YGsIO2MjOyLsSDsi6TtjKg6JywgY2h1bmtOYW1lLCBlKTsKICAgIHJldHVybiBudWxsOwogIH0KfQoKLyoqCiAqIHYyIOy6kOyLnCDsoITssrQg7IKt7KCcICjrlJTrsoTqt7gv66y47KCcIO2VtOqysOyaqSkuCiAqLwpmdW5jdGlvbiBjbGVhckNhY2hlKCkgewogIHRyeSB7CiAgICBjb25zdCBrZXlzID0gW107CiAgICBmb3IgKGxldCBpID0gMDsgaSA8IGxvY2FsU3RvcmFnZS5sZW5ndGg7IGkrKykgewogICAgICBjb25zdCBrID0gbG9jYWxTdG9yYWdlLmtleShpKTsKICAgICAgaWYgKGsgJiYgay5zdGFydHNXaXRoKExTX1BSRUZJWCkpIGtleXMucHVzaChrKTsKICAgIH0KICAgIGtleXMuZm9yRWFjaCgoaykgPT4gbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oaykpOwogICAgY29uc29sZS5sb2coJ1tib290c3RyYXBdIOy6kOyLnCDsgq3soJzrkKg6Jywga2V5cy5sZW5ndGgsICfqsJwnKTsKICB9IGNhdGNoIChlKSB7CiAgICBjb25zb2xlLndhcm4oJ1tib290c3RyYXBdIOy6kOyLnCDsgq3soJwg7Iuk7YyoOicsIGUpOwogIH0KfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIDQuIOuEpO2KuOybjO2BrCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKLyoqCiAqIG1hbmlmZXN0Lmpzb27snYQg64Sk7Yq47JuM7YGs7JeQ7IScIOqwgOyguOyYqOuLpC4g7ZWt7IOBIOy1nOyLoCDrsoTsoITsnYQg7ZmV7J247ZW07JW8CiAqIO2VmOuvgOuhnCBIVFRQIOy6kOyLnOulvCDsgqzsmqntlZjsp4Ag7JWK64qU64ukLgogKgogKiBAcmV0dXJucyB7UHJvbWlzZTxvYmplY3Q+fSBtYW5pZmVzdCDqsJ3ssrQKICogQHRocm93cyB7RXJyb3J9IOuEpO2KuOybjO2BrCDsi6TtjKjCt0hUVFAg7Jik66WYwrdKU09OIO2MjOyLsSDsi6TtjKgg7IucCiAqLwphc3luYyBmdW5jdGlvbiBmZXRjaE1hbmlmZXN0KCkgewogIGxldCByZXM7CiAgdHJ5IHsKICAgIHJlcyA9IGF3YWl0IGZldGNoKCdkYXRhL21hbmlmZXN0Lmpzb24nLCB7IGNhY2hlOiAnbm8tY2FjaGUnIH0pOwogIH0gY2F0Y2ggKGUpIHsKICAgIHRocm93IG5ldyBFcnJvcign64Sk7Yq47JuM7YGsIOyYpOulmDogbWFuaWZlc3Trpbwg67aI65+s7Jik7KeAIOuqu+2WiOyKteuLiOuLpC4gKCcgKyBlLm1lc3NhZ2UgKyAnKScpOwogIH0KICBpZiAoIXJlcy5vaykgewogICAgdGhyb3cgbmV3IEVycm9yKCdtYW5pZmVzdCDroZzrk5wg7Iuk7YyoOiBIVFRQICcgKyByZXMuc3RhdHVzKTsKICB9CiAgbGV0IG1hbmlmZXN0OwogIHRyeSB7CiAgICBtYW5pZmVzdCA9IGF3YWl0IHJlcy5qc29uKCk7CiAgfSBjYXRjaCAoZSkgewogICAgdGhyb3cgbmV3IEVycm9yKCdtYW5pZmVzdCBKU09OIO2MjOyLsSDsi6TtjKg6ICcgKyBlLm1lc3NhZ2UpOwogIH0KICBpZiAoIW1hbmlmZXN0IHx8IHR5cGVvZiBtYW5pZmVzdCAhPT0gJ29iamVjdCcgfHwgIW1hbmlmZXN0LmNodW5rcykgewogICAgdGhyb3cgbmV3IEVycm9yKCdtYW5pZmVzdCDqtazsobDqsIAg7Jis67CU66W07KeAIOyViuyKteuLiOuLpC4nKTsKICB9CiAgcmV0dXJuIG1hbmlmZXN0Owp9CgovKioKICog7LKt7YGsIEpTT07snYQg64Sk7Yq47JuM7YGs7JeQ7IScIOqwgOyguOyYqOuLpC4KICoKICogQHBhcmFtIHtzdHJpbmd9IGZpbGUg4oCUIG1hbmlmZXN07JeQIOq4sOuhneuQnCDtjIzsnbwg6rK966GcICjsmIg6ICdkYXRhL3Bvc3RzLXguanNvbicpCiAqIEBwYXJhbSB7c3RyaW5nfSBsYWJlbCDigJQg66Gc65SpIFVJ7JqpIO2RnOyLnOuqhQogKiBAcmV0dXJucyB7UHJvbWlzZTxvYmplY3RbXT59IOq4gCDrsLDsl7QKICogQHRocm93cyB7RXJyb3J9IOuEpO2KuOybjO2BrCDsi6TtjKjCt0hUVFAg7Jik66WYwrfqtazsobAg7J207IOBIOyLnAogKi8KYXN5bmMgZnVuY3Rpb24gZmV0Y2hDaHVuayhmaWxlLCBsYWJlbCkgewogIGxldCByZXM7CiAgdHJ5IHsKICAgIC8vIOyyre2BrOuKlCBzaGEg67OA6rK9IOyLnOyXkOunjCDri6Tsi5wg67Cb7Jy866+A66GcIEhUVFAg7LqQ7IucIOustO2aqO2ZlOuhnCDsi6DshKDrj4Qg67O07J6lCiAgICByZXMgPSBhd2FpdCBmZXRjaChmaWxlLCB7IGNhY2hlOiAnbm8tY2FjaGUnIH0pOwogIH0gY2F0Y2ggKGUpIHsKICAgIHRocm93IG5ldyBFcnJvcign64Sk7Yq47JuM7YGsIOyYpOulmDogJyArIGxhYmVsICsgJ+ydhCjrpbwpIOu2iOufrOyYpOyngCDrqrvtlojsirXri4jri6QuJyk7CiAgfQogIGlmICghcmVzLm9rKSB7CiAgICB0aHJvdyBuZXcgRXJyb3IobGFiZWwgKyAnIOuhnOuTnCDsi6TtjKg6IEhUVFAgJyArIHJlcy5zdGF0dXMpOwogIH0KICBsZXQgZGF0YTsKICB0cnkgewogICAgZGF0YSA9IGF3YWl0IHJlcy5qc29uKCk7CiAgfSBjYXRjaCAoZSkgewogICAgdGhyb3cgbmV3IEVycm9yKGxhYmVsICsgJyBKU09OIO2MjOyLsSDsi6TtjKg6ICcgKyBlLm1lc3NhZ2UpOwogIH0KICBpZiAoIWRhdGEgfHwgIUFycmF5LmlzQXJyYXkoZGF0YS5wb3N0cykpIHsKICAgIHRocm93IG5ldyBFcnJvcihsYWJlbCArICcg642w7J207YSwIOq1rOyhsOqwgCDsmKzrsJTrpbTsp4Ag7JWK7Iq164uI64ukLicpOwogIH0KICByZXR1cm4gZGF0YS5wb3N0czsKfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIDUuIOu2gO2KuOyKpO2KuOueqSDrs7jssrQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCi8qIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAqLwoKbGV0IGJvb3RlZCA9IGZhbHNlOyAvLyDspJHrs7Ug7Iuk7ZaJIOuwqeyngApsZXQgY2FjaGVXcml0YWJsZSA9IHRydWU7IC8vIGxvY2FsU3RvcmFnZSDsk7DquLAg6rCA64qlIOyXrOu2gCAo7Jqp65+JIOy0iOqzvCDsi5wgZmFsc2UpCgovKioKICog67aA7Yq47Iqk7Yq4656pIOynhOyeheygkC4gbWFuaWZlc3Qg7ZmV7J24IOKGkiDssq3tgawg66Gc65OcKOy6kOyLnCDtmZzsmqkpIOKGkiDroIzrjZTrp4EuCiAqIOyerOyLnOuPhCDrsoTtirzsl5DshJzrj4Qg7Zi47Lac65CY66+A66GcIOyXrOufrCDrsogg7Zi47Lac64+864+EIOyViOyghO2VtOyVvCDtlZzri6QuCiAqLwphc3luYyBmdW5jdGlvbiBib290KCkgewogIGlmIChib290ZWQpIHsKICAgIGNvbnNvbGUubG9nKCdbYm9vdHN0cmFwXSDsnbTrr7gg7Iuk7ZaJIOykkeydtOqxsOuCmCDsmYTro4zrkKgsIOykkeuztSDtmLjstpwg66y07IucJyk7CiAgICByZXR1cm47CiAgfQogIGJvb3RlZCA9IHRydWU7CgogIGNvbnN0IHJlbmRlcmVyID0gZ2V0UmVuZGVyZXIoKTsKICBpZiAoIXJlbmRlcmVyIHx8IHR5cGVvZiByZW5kZXJlci5hcnRpY2xlQ2FyZCAhPT0gJ2Z1bmN0aW9uJykgewogICAgc2hvd0Vycm9yKCfroIzrjZTrp4Eg66qo65OIKHJlbmRlci5qcynsnYQg67aI65+s7Jik7KeAIOuqu+2WiOyKteuLiOuLpC4g7Y6Y7J207KeA66W8IOyDiOuhnOqzoOy5qO2VtCDso7zshLjsmpQuJyk7CiAgICBib290ZWQgPSBmYWxzZTsKICAgIHJldHVybjsKICB9CgogIGhpZGVFcnJvcigpOwogIGNvbnN0IGxvYWRpbmcgPSAkKCdsb2FkaW5nJyk7CiAgaWYgKGxvYWRpbmcpIGxvYWRpbmcuaGlkZGVuID0gZmFsc2U7CgogIGNvbnN0IGNvbnRhaW5lciA9ICQoJ2FydGljbGVzJyk7CiAgaWYgKCFjb250YWluZXIpIHsKICAgIHNob3dFcnJvcign7ZmU66m0IOq1rOyhsCgjYXJ0aWNsZXMp66W8IOywvuyngCDrqrvtlojsirXri4jri6QuIO2OmOydtOyngOulvCDsg4jroZzqs6DsuajtlbQg7KO87IS47JqULicpOwogICAgYm9vdGVkID0gZmFsc2U7CiAgICByZXR1cm47CiAgfQoKICAvLyAxLiBtYW5pZmVzdCDtmZXsnbgKICB1cGRhdGVMb2FkaW5nKCfrsoTsoIQg7ZmV7J24IOykkS4uLicpOwogIGxldCBtYW5pZmVzdCA9IG51bGw7CiAgbGV0IG1hbmlmZXN0RnJvbU5ldHdvcmsgPSBmYWxzZTsKICBjb25zdCBjYWNoZWRNYW5pZmVzdCA9IGxvYWRDYWNoZWRNYW5pZmVzdCgpOwoKICB0cnkgewogICAgbWFuaWZlc3QgPSBhd2FpdCBmZXRjaE1hbmlmZXN0KCk7CiAgICBtYW5pZmVzdEZyb21OZXR3b3JrID0gdHJ1ZTsKICB9IGNhdGNoIChlKSB7CiAgICBjb25zb2xlLndhcm4oJ1tib290c3RyYXBdJywgZS5tZXNzYWdlKTsKICAgIC8vIOuEpO2KuOybjO2BrCDsi6TtjKgg4oaSIOy6kOyLnCDtj7TrsLEg7Iuc64+ECiAgICBpZiAoY2FjaGVkTWFuaWZlc3QpIHsKICAgICAgY29uc3QgY2FjaGVkID0gbG9hZEFsbENhY2hlZENodW5rcygpOwogICAgICBpZiAoY2FjaGVkKSB7CiAgICAgICAgcmVuZGVyQXJ0aWNsZXMoY2FjaGVkLmFydGljbGVzLCByZW5kZXJlciwgY29udGFpbmVyLCB7IG9mZmxpbmU6IHRydWUgfSk7CiAgICAgICAgc2hvd09mZmxpbmVCYWRnZSh0cnVlKTsKICAgICAgICBzaG93TWFpbigpOwogICAgICAgIHJldHVybjsKICAgICAgfQogICAgfQogICAgc2hvd0Vycm9yKAogICAgICAn642w7J207YSw66W8IOu2iOufrOyYpOyngCDrqrvtlojsirXri4jri6QuIOyduO2EsOuEtyDsl7DqsrDsnYQg7ZmV7J247ZWcIOuSpCDri6Tsi5wg7Iuc64+E7ZW0IOyjvOyEuOyalC4nCiAgICApOwogICAgYm9vdGVkID0gZmFsc2U7CiAgICByZXR1cm47CiAgfQoKICAvLyAyLiDssq3tgazrs4Q6IOy6kOyLnCDsnKDtmqjtlZjrqbQg7IKs7JqpLCDslYTri4jrqbQgZmV0Y2gKICAvKiogQHR5cGUge0FycmF5PHtwb3N0czogb2JqZWN0W10sIHR5cGU6IHN0cmluZ30+fSAqLwogIGNvbnN0IGNodW5rUmVzdWx0cyA9IFtdOwogIGxldCB1c2VkQ2FjaGVDb3VudCA9IDA7CgogIGZvciAoY29uc3QgY2h1bmsgb2YgQ0hVTktfT1JERVIpIHsKICAgIGNvbnN0IGluZm8gPSBtYW5pZmVzdC5jaHVua3NbY2h1bmsubmFtZV07CiAgICBpZiAoIWluZm8gfHwgIWluZm8uZmlsZSkgewogICAgICBjb25zb2xlLndhcm4oJ1tib290c3RyYXBdIG1hbmlmZXN07JeQIOyyre2BrCDsoJXrs7Qg7JeG7J2MOicsIGNodW5rLm5hbWUpOwogICAgICBjb250aW51ZTsKICAgIH0KCiAgICAvLyDsupDsi5wg7Jyg7Zqo7ISxOiDsnbTsoIQgbWFuaWZlc3TsnZggc2hhMjU26rO8IOuPmeydvCArIOuNsOydtO2EsCDsobTsnqwKICAgIGNvbnN0IGNhY2hlZEluZm8gPSBjYWNoZWRNYW5pZmVzdCAmJiBjYWNoZWRNYW5pZmVzdC5jaHVua3MKICAgICAgPyBjYWNoZWRNYW5pZmVzdC5jaHVua3NbY2h1bmsubmFtZV0KICAgICAgOiBudWxsOwogICAgbGV0IHBvc3RzID0gbnVsbDsKICAgIGlmICgKICAgICAgY2FjaGVkSW5mbyAmJgogICAgICBjYWNoZWRJbmZvLnNoYTI1NiAmJgogICAgICBpbmZvLnNoYTI1NiAmJgogICAgICBjYWNoZWRJbmZvLnNoYTI1NiA9PT0gaW5mby5zaGEyNTYKICAgICkgewogICAgICBwb3N0cyA9IGxvYWRDYWNoZWRDaHVuayhjaHVuay5uYW1lKTsKICAgICAgaWYgKHBvc3RzKSB1c2VkQ2FjaGVDb3VudCsrOwogICAgfQoKICAgIGlmICghcG9zdHMpIHsKICAgICAgY29uc3QgY291bnQgPSBpbmZvLmNvdW50ID8gJyAoJyArIGluZm8uY291bnQgKyAn6rCcKScgOiAnJzsKICAgICAgdXBkYXRlTG9hZGluZyhjaHVuay5sYWJlbCArICcg66Gc65SpIOykkS4uLicgKyBjb3VudCk7CiAgICAgIHRyeSB7CiAgICAgICAgcG9zdHMgPSBhd2FpdCBmZXRjaENodW5rKGluZm8uZmlsZSwgY2h1bmsubGFiZWwpOwogICAgICB9IGNhdGNoIChlKSB7CiAgICAgICAgY29uc29sZS53YXJuKCdbYm9vdHN0cmFwXScsIGUubWVzc2FnZSk7CiAgICAgICAgLy8g6rCc67OEIOyyre2BrCDsi6TtjKgg4oaSIOy6kOyLnCDtj7TrsLEsIOy6kOyLnOuPhCDsl4bsnLzrqbQg7ZW064u5IOyyre2BrCDqsbTrhIjrnIAKICAgICAgICBwb3N0cyA9IGxvYWRDYWNoZWRDaHVuayhjaHVuay5uYW1lKTsKICAgICAgICBpZiAoIXBvc3RzKSB7CiAgICAgICAgICBjb25zb2xlLmVycm9yKCdbYm9vdHN0cmFwXSDssq3tgawg66Gc65OcIOyLpO2MqCwg6rG064SI65yAOicsIGNodW5rLm5hbWUpOwogICAgICAgICAgY29udGludWU7CiAgICAgICAgfQogICAgICB9CiAgICAgIC8vIOyDiOuhnCDrsJvsnYAg7LKt7YGs64qUIOy6kOyLnOyXkCDsoIDsnqUg7Iuc64+ECiAgICAgIGlmIChjYWNoZVdyaXRhYmxlKSB7CiAgICAgICAgY29uc3Qgb2sgPSBsc1NldChMU19DSFVOS19QUkVGSVggKyBjaHVuay5uYW1lLCBKU09OLnN0cmluZ2lmeSh7IHBvc3RzIH0pKTsKICAgICAgICBpZiAoIW9rKSBjYWNoZVdyaXRhYmxlID0gZmFsc2U7IC8vIOyaqeufiSDstIjqs7wg7IucIOydtO2bhCDsk7DquLAg7IOd6561CiAgICAgIH0KICAgIH0KCiAgICBjaHVua1Jlc3VsdHMucHVzaCh7IHBvc3RzLCB0eXBlOiBjaHVuay50eXBlIH0pOwogIH0KCiAgLy8gMy4gbWFuaWZlc3Qg7LqQ7IucIOyggOyepSAo7LKt7YGsIHNoYSDruYTqtZAg6riw7KSA7KCQKQogIGlmIChjYWNoZVdyaXRhYmxlKSB7CiAgICBjb25zdCBvayA9IGxzU2V0KExTX01BTklGRVNUX0tFWSwgSlNPTi5zdHJpbmdpZnkobWFuaWZlc3QpKTsKICAgIGlmICghb2spIGNhY2hlV3JpdGFibGUgPSBmYWxzZTsKICB9CgogIGlmIChjaHVua1Jlc3VsdHMubGVuZ3RoID09PSAwKSB7CiAgICBzaG93RXJyb3IoJ+u2iOufrOyYqCDrjbDsnbTthLDqsIAg7JeG7Iq164uI64ukLiDri6Tsi5wg7Iuc64+E7ZW0IOyjvOyEuOyalC4nKTsKICAgIGJvb3RlZCA9IGZhbHNlOwogICAgcmV0dXJuOwogIH0KCiAgLy8gNC4g7ZWp7LmY6riwICsgdHlwZS9faWR4IOu2gOyXrAogIC8qKiBAdHlwZSB7b2JqZWN0W119ICovCiAgY29uc3QgYXJ0aWNsZXMgPSBbXTsKICBmb3IgKGNvbnN0IGNyIG9mIGNodW5rUmVzdWx0cykgewogICAgZm9yIChjb25zdCBwIG9mIGNyLnBvc3RzKSB7CiAgICAgIGlmIChwICYmIHR5cGVvZiBwID09PSAnb2JqZWN0JykgewogICAgICAgIC8vIOy6kOyLnC/sm5Drs7gg6rCd7LK066W8IOyngeygkSDsiJjsoJXtlZjsp4Ag7JWK64+E66GdIOyWleydgCDrs7XsgqwKICAgICAgICBjb25zdCBhID0gT2JqZWN0LmFzc2lnbih7fSwgcCk7CiAgICAgICAgaWYgKCFhLnR5cGUpIGEudHlwZSA9IGNyLnR5cGU7CiAgICAgICAgYS5faWR4ID0gYXJ0aWNsZXMubGVuZ3RoOwogICAgICAgIGFydGljbGVzLnB1c2goYSk7CiAgICAgIH0KICAgIH0KICB9CgogIGNvbnNvbGUubG9nKAogICAgJ1tib290c3RyYXBdIOuhnOuTnCDsmYTro4w6ICcgKyBhcnRpY2xlcy5sZW5ndGggKyAn6rCcICjsupDsi5wgJyArIHVzZWRDYWNoZUNvdW50ICsgJ+yyre2BrCDsgqzsmqkpJwogICk7CgogIC8vIDUuIOugjOuNlOungQogIHVwZGF0ZUxvYWRpbmcoJ+2ZlOuptCDqt7jrpqzripQg7KSRLi4uJyk7CiAgLy8g7YGwIEhUTUwg66y47J6Q7Je0IOyDneyEseydhCDri6TsnYwg7ZSE66CI7J6E7Jy866GcIOyWkeuztCAo66Gc65SpIFVJ6rCAIOuovOyggCDqt7jroKTsp4Drj4TroZ0pCiAgYXdhaXQgbmV3IFByb21pc2UoKHJlc29sdmUpID0+IHNldFRpbWVvdXQocmVzb2x2ZSwgMCkpOwogIHJlbmRlckFydGljbGVzKGFydGljbGVzLCByZW5kZXJlciwgY29udGFpbmVyLCB7IG9mZmxpbmU6IGZhbHNlIH0pOwogIHNob3dPZmZsaW5lQmFkZ2UoZmFsc2UpOwogIHNob3dNYWluKCk7CgogIC8vIDYuIOyFuOydmCDsnbjthLDrnpnshZgg7LSI6riw7ZmUICjqsoDsg4kv7ZWE7YSwL+uplOuqqC/rtoHrp4jtgawg65OxKSDigJQg7J6I7Jy866m0IO2YuOy2nAogIHRyeSB7CiAgICBpZiAoCiAgICAgIHR5cGVvZiB3aW5kb3cgIT09ICd1bmRlZmluZWQnICYmCiAgICAgIHdpbmRvdy5BcmNoaXZlQXBwICYmCiAgICAgIHR5cGVvZiB3aW5kb3cuQXJjaGl2ZUFwcC5pbml0ID09PSAnZnVuY3Rpb24nCiAgICApIHsKICAgICAgd2luZG93LkFyY2hpdmVBcHAuaW5pdChhcnRpY2xlcyk7CiAgICB9CiAgfSBjYXRjaCAoZSkgewogICAgY29uc29sZS53YXJuKCdbYm9vdHN0cmFwXSBBcmNoaXZlQXBwLmluaXQg7Iuk7YyoOicsIGUpOwogIH0KfQoKLyoqCiAqIOy6kOyLnOuQnCBtYW5pZmVzdCDquLDspIDsnLzroZwg66qo65OgIOyyre2BrOulvCDsupDsi5zsl5DshJwg66Gc65Oc7ZWc64ukLgogKiAo7Jik7ZSE65287J24IO2PtOuwseyaqSkKICoKICogQHJldHVybnMge3thcnRpY2xlczogb2JqZWN0W119fG51bGx9IOyEseqztSDsi5wg6riAIOuwsOyXtCwg7ZWY64KY652864+EIOyXhuycvOuptCBudWxsCiAqLwpmdW5jdGlvbiBsb2FkQWxsQ2FjaGVkQ2h1bmtzKCkgewogIGNvbnN0IGNhY2hlZE1hbmlmZXN0ID0gbG9hZENhY2hlZE1hbmlmZXN0KCk7CiAgaWYgKCFjYWNoZWRNYW5pZmVzdCkgcmV0dXJuIG51bGw7CiAgY29uc3QgYXJ0aWNsZXMgPSBbXTsKICBmb3IgKGNvbnN0IGNodW5rIG9mIENIVU5LX09SREVSKSB7CiAgICBjb25zdCBwb3N0cyA9IGxvYWRDYWNoZWRDaHVuayhjaHVuay5uYW1lKTsKICAgIGlmICghcG9zdHMpIHJldHVybiBudWxsOyAvLyDsnbzrtoDrnbzrj4Qg7JeG7Jy866m0IO2PtOuwsSDrtojqsIAKICAgIGZvciAoY29uc3QgcCBvZiBwb3N0cykgewogICAgICBpZiAocCAmJiB0eXBlb2YgcCA9PT0gJ29iamVjdCcpIHsKICAgICAgICBjb25zdCBhID0gT2JqZWN0LmFzc2lnbih7fSwgcCk7CiAgICAgICAgaWYgKCFhLnR5cGUpIGEudHlwZSA9IGNodW5rLnR5cGU7CiAgICAgICAgYS5faWR4ID0gYXJ0aWNsZXMubGVuZ3RoOwogICAgICAgIGFydGljbGVzLnB1c2goYSk7CiAgICAgIH0KICAgIH0KICB9CiAgcmV0dXJuIGFydGljbGVzLmxlbmd0aCA/IHsgYXJ0aWNsZXMgfSA6IG51bGw7Cn0KCi8qKgogKiDquIAg67Cw7Je07J2EIGFydGljbGVDYXJkKCnroZwg66CM642U66eB7ZW07IScIOy7qO2FjOydtOuEiOyXkCDsgr3snoXtlZzri6QuCiAqCiAqIEBwYXJhbSB7b2JqZWN0W119IGFydGljbGVzIOKAlCB0eXBlL19pZHjqsIAg67aA7Jes65CcIOq4gCDrsLDsl7QKICogQHBhcmFtIHtvYmplY3R9IHJlbmRlcmVyIOKAlCB3aW5kb3cuQXJjaGl2ZVJlbmRlcgogKiBAcGFyYW0ge0hUTUxFbGVtZW50fSBjb250YWluZXIg4oCUICNhcnRpY2xlcwogKiBAcGFyYW0ge29iamVjdH0gW29wdHNdCiAqIEBwYXJhbSB7Ym9vbGVhbn0gW29wdHMub2ZmbGluZT1mYWxzZV0g4oCUIOyYpO2UhOudvOyduCDrqqjrk5wg7Jes67aACiAqLwpmdW5jdGlvbiByZW5kZXJBcnRpY2xlcyhhcnRpY2xlcywgcmVuZGVyZXIsIGNvbnRhaW5lciwgb3B0cyA9IHt9KSB7CiAgY29uc3Qgb2ZmbGluZSA9ICEhb3B0cy5vZmZsaW5lOwogIGxldCBodG1sOwogIHRyeSB7CiAgICBodG1sID0gYXJ0aWNsZXMKICAgICAgLm1hcCgoYSwgaSkgPT4gewogICAgICAgIHRyeSB7CiAgICAgICAgICByZXR1cm4gcmVuZGVyZXIuYXJ0aWNsZUNhcmQoYSwgeyBpZHg6IGEuX2lkeCAhPSBudWxsID8gYS5faWR4IDogaSB9KTsKICAgICAgICB9IGNhdGNoIChlKSB7CiAgICAgICAgICBjb25zb2xlLndhcm4oJ1tib290c3RyYXBdIOy5tOuTnCDroIzrjZTrp4Eg7Iuk7YyoIChpZHggJyArIGkgKyAnKTonLCBlKTsKICAgICAgICAgIHJldHVybiAnJzsKICAgICAgICB9CiAgICAgIH0pCiAgICAgIC5qb2luKCcnKTsKICB9IGNhdGNoIChlKSB7CiAgICBzaG93RXJyb3IoJ+2ZlOuptOydhCDqt7jrpqzripQg7KSRIOyYpOulmOqwgCDrsJzsg53tlojsirXri4jri6Q6ICcgKyBlLm1lc3NhZ2UpOwogICAgYm9vdGVkID0gZmFsc2U7CiAgICByZXR1cm47CiAgfQoKICBjb250YWluZXIuaW5uZXJIVE1MID0gaHRtbDsKCiAgY29uc3QgY291bnRFbCA9ICQoJ2FydGljbGUtY291bnQnKTsKICBpZiAoY291bnRFbCkgewogICAgY291bnRFbC50ZXh0Q29udGVudCA9IFN0cmluZyhhcnRpY2xlcy5sZW5ndGgpOwogIH0KCiAgaWYgKG9mZmxpbmUpIHsKICAgIGNvbnNvbGUubG9nKCdbYm9vdHN0cmFwXSDsmKTtlITrnbzsnbgg66qo65OcOiDsupDsi5zrkJwg642w7J207YSw66GcIOugjOuNlOungScpOwogIH0KfQoKLyoqCiAqIOyYpO2UhOudvOyduCDrsLDsp4Ag7ZGc7IucL+yIqOq5gC4KICoKICogQHBhcmFtIHtib29sZWFufSBzaG93CiAqLwpmdW5jdGlvbiBzaG93T2ZmbGluZUJhZGdlKHNob3cpIHsKICBjb25zdCBiYWRnZSA9ICQoJ29mZmxpbmUtYmFkZ2UnKTsKICBpZiAoYmFkZ2UpIGJhZGdlLmhpZGRlbiA9ICFzaG93Owp9CgovKioKICog7J6s7Iuc64+EIOuyhO2KvCDrsJTsnbjrlKkuIOyFuOyXkCAjcmV0cnktYnRu7J20IOyeiOycvOuptCBib290KCnrpbwg7Jew6rKw7ZWc64ukLgogKi8KZnVuY3Rpb24gYmluZFJldHJ5KCkgewogIGNvbnN0IGJ0biA9ICQoJ3JldHJ5LWJ0bicpOwogIGlmIChidG4pIHsKICAgIGJ0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IHsKICAgICAgYm9vdGVkID0gZmFsc2U7IC8vIOyerOyLnOuPhCDtl4jsmqkKICAgICAgaGlkZUVycm9yKCk7CiAgICAgIGJvb3QoKTsKICAgIH0pOwogIH0KfQoKLyogLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tICovCi8qIDYuIOyLnOyekSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAqLwovKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi8KCi8qKgogKiBET00g7KSA67mEIO2bhCDsnpDrj5kg7Iuc7J6RLiDsiqTtgazrpr3tirjqsIAgRE9NQ29udGVudExvYWRlZCDsnbTtm4Tsl5AKICog66Gc65Oc65CcIOqyveyasOulvCDrjIDruYTtlbQgcmVhZHlTdGF0ZeuPhCDtmZXsnbjtlZzri6QuCiAqLwpmdW5jdGlvbiBhdXRvU3RhcnQoKSB7CiAgYmluZFJldHJ5KCk7CiAgaWYgKGRvY3VtZW50LnJlYWR5U3RhdGUgPT09ICdsb2FkaW5nJykgewogICAgZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsICgpID0+IGJvb3QoKSk7CiAgfSBlbHNlIHsKICAgIGJvb3QoKTsKICB9Cn0KCi8qIOuCtOuztOuCtOq4sCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICovCgpjb25zdCBBcmNoaXZlQm9vdHN0cmFwID0gewogIGJvb3QsCiAgY2xlYXJDYWNoZSwKICAvLyDthYzsiqTtirjsmqkg64K067aAIO2VqOyImCDrhbjstpwKICBfbG9hZENhY2hlZE1hbmlmZXN0OiBsb2FkQ2FjaGVkTWFuaWZlc3QsCiAgX2xvYWRDYWNoZWRDaHVuazogbG9hZENhY2hlZENodW5rLAp9OwoKZXhwb3J0IHsgYm9vdCwgY2xlYXJDYWNoZSwgQXJjaGl2ZUJvb3RzdHJhcCB9OwoKLy8g7J2867CYIDxzY3JpcHQ+IOuhnOuTnCDsi5wg7KCE7JetIOygkeq3vOyaqSAocmVuZGVyLmpz7JmAIOuPmeydvO2VnCDtjKjthLQpCmlmICh0eXBlb2Ygd2luZG93ICE9PSAndW5kZWZpbmVkJykgewogIHdpbmRvdy5BcmNoaXZlQm9vdHN0cmFwID0gQXJjaGl2ZUJvb3RzdHJhcDsKfQoKYXV0b1N0YXJ0KCk7Cg==
+/**
+ * bootstrap.js — 아카이브 v2 부트스트랩 모듈
+ *
+ * 데이터 로딩 → localStorage 캐시 → 렌더링의 전체 흐름을 담당.
+ * 카드 HTML 생성은 render.js의 `articleCard()`에 위임한다.
+ *
+ * 흐름:
+ *   1. manifest.json fetch (no-cache) → 최신 버전 확인
+ *   2. localStorage 캐시와 비교 → 변경된 청크만 다시 fetch
+ *   3. 청크 JSON 파싱 → type/_idx 부여 → articleCard() 렌더링
+ *   4. #articles에 삽입 → 로딩 UI 숨김 → main 표시
+ *
+ * 오프라인 대응:
+ *   - 네트워크 실패 + 캐시 있음 → 캐시로 렌더링 + 오프라인 배지
+ *   - 네트워크 실패 + 캐시 없음 → 에러 화면 + 재시도 버튼
+ *
+ * 필수 DOM (index.html 셸이 제공):
+ *   #loading          — 로딩 컨테이너
+ *   #loading-detail   — 단계별 메시지 <p>
+ *   #articles         — 카드 렌더링 대상 컨테이너
+ *   main              — 본문 (초기 hidden)
+ *
+ * 선택 DOM (있으면 사용, 없어도 동작):
+ *   #error, #error-message, #retry-btn — 에러 UI
+ *   #offline-badge    — 오프라인 표시 배지
+ *   #article-count    — 전체 글 수 표시
+ *
+ * 사용법 (ES 모듈):
+ *   import { boot } from './bootstrap.js';
+ *   // DOMContentLoaded 시 자동 실행됨. 수동 재시작: boot()
+ *
+ * 사용법 (일반 스크립트):
+ *   <script src="js/render.js"></script>
+ *   <script src="js/bootstrap.js"></script>
+ *   <!-- window.ArchiveBootstrap.boot() 로 접근 -->
+ */
+
+'use strict';
+
+/* ------------------------------------------------------------------ */
+/* 0. 상수                                                            */
+/* ------------------------------------------------------------------ */
+
+/** localStorage 키 prefix */
+const LS_PREFIX = 'archive_v2_';
+/** manifest 캐시 키 */
+const LS_MANIFEST_KEY = LS_PREFIX + 'manifest';
+/** 청크 캐시 키 prefix (뒤에 청크명을 붙임) */
+const LS_CHUNK_PREFIX = LS_PREFIX + 'data_';
+
+/**
+ * 청크 로드 순서 및 메타 정보.
+ * manifest.chunks의 키와 1:1 대응해야 한다.
+ */
+const CHUNK_ORDER = [
+  { name: 'posts-x1', type: 'x', label: 'X 게시글 (1/8)' },
+  { name: 'posts-x2', type: 'x', label: 'X 게시글 (2/8)' },
+  { name: 'posts-x3', type: 'x', label: 'X 게시글 (3/8)' },
+  { name: 'posts-x4', type: 'x', label: 'X 게시글 (4/8)' },
+  { name: 'posts-x5', type: 'x', label: 'X 게시글 (5/8)' },
+  { name: 'posts-x6', type: 'x', label: 'X 게시글 (6/8)' },
+  { name: 'posts-x7', type: 'x', label: 'X 게시글 (7/8)' },
+  { name: 'posts-x8', type: 'x', label: 'X 게시글 (8/8)' },
+  { name: 'posts-web', type: 'web', label: '웹글' },
+  { name: 'posts-ib', type: 'ib', label: 'IB 자료' },
+];
+
+/* ------------------------------------------------------------------ */
+/* 1. 렌더러 접근                                                     */
+/* ------------------------------------------------------------------ */
+
+/**
+ * render.js의 렌더 함수들을 가져온다.
+ * 일반 <script> 로드 시 window.ArchiveRender에 설정되어 있어야 한다.
+ *
+ * @returns {object|null} ArchiveRender 네임스페이스, 없으면 null
+ */
+function getRenderer() {
+  if (typeof window !== 'undefined' && window.ArchiveRender) {
+    return window.ArchiveRender;
+  }
+  return null;
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. DOM 헬퍼                                                        */
+/* ------------------------------------------------------------------ */
+
+/**
+ * @param {string} id — 요소 id
+ * @returns {HTMLElement|null}
+ */
+function $(id) {
+  return document.getElementById(id);
+}
+
+/**
+ * 로딩 상세 메시지를 업데이트한다.
+ *
+ * @param {string} msg — 표시할 메시지
+ */
+function updateLoading(msg) {
+  const el = $('loading-detail');
+  if (el) el.textContent = msg;
+}
+
+/**
+ * 로딩 UI를 숨기고 본문을 표시한다.
+ */
+function showMain() {
+  const loading = $('loading');
+  if (loading) loading.hidden = true;
+  const main = document.querySelector('main');
+  if (main) main.hidden = false;
+}
+
+/**
+ * 에러 UI를 표시한다. #error 요소가 없으면 alert로 폴백하지 않고
+ * 로딩 영역에 메시지를 직접 표시한다 (조용한 실패 방지).
+ *
+ * @param {string} message — 사용자에게 보여줄 메시지
+ */
+function showError(message) {
+  const loading = $('loading');
+  if (loading) loading.hidden = true;
+
+  const errorBox = $('error');
+  const errorMsg = $('error-message');
+  if (errorBox && errorMsg) {
+    errorMsg.textContent = message;
+    errorBox.hidden = false;
+  } else if (loading) {
+    // 폴백: 로딩 영역을 에러 표시로 재사용
+    loading.hidden = false;
+    loading.innerHTML =
+      '<p style="color:#c62828">⚠️ ' +
+      escapeForFallback(message) +
+      '</p>' +
+      '<button id="retry-btn-fallback" type="button">다시 시도</button>';
+    const btn = $('retry-btn-fallback');
+    if (btn) btn.addEventListener('click', () => boot());
+  }
+}
+
+/**
+ * showError 폴백 경로에서만 사용하는 최소 이스케이프.
+ * (render.js가 로드되지 않은 상황에서도 동작해야 하므로 자체 구현)
+ *
+ * @param {*} value
+ * @returns {string}
+ */
+function escapeForFallback(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/**
+ * 에러 UI를 숨긴다.
+ */
+function hideError() {
+  const errorBox = $('error');
+  if (errorBox) errorBox.hidden = true;
+}
+
+/* ------------------------------------------------------------------ */
+/* 3. localStorage 캐시                                                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * localStorage 쓰기. 용량 초과(QuotaExceededError) 시 false를 반환하고
+ * 이후 캐시 쓰기를 건너뛸 수 있도록 호출자가 판단한다.
+ *
+ * @param {string} key
+ * @param {string} value
+ * @returns {boolean} 성공 여부
+ */
+function lsSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch (e) {
+    // QuotaExceededError (iOS Safari ~5MB) 또는 비공개 모드 등
+    if (e && (e.name === 'QuotaExceededError' || e.code === 22)) {
+      console.warn('[bootstrap] localStorage 용량 초과, 캐시 없이 진행:', key);
+    } else {
+      console.warn('[bootstrap] localStorage 쓰기 실패:', e);
+    }
+    return false;
+  }
+}
+
+/**
+ * localStorage 읽기.
+ *
+ * @param {string} key
+ * @returns {string|null}
+ */
+function lsGet(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    console.warn('[bootstrap] localStorage 읽기 실패:', e);
+    return null;
+  }
+}
+
+/**
+ * 캐시된 manifest를 파싱해서 반환한다.
+ *
+ * @returns {object|null} manifest 객체, 없거나 깨졌으면 null
+ */
+function loadCachedManifest() {
+  const raw = lsGet(LS_MANIFEST_KEY);
+  if (!raw) return null;
+  try {
+    const m = JSON.parse(raw);
+    if (m && typeof m === 'object' && m.chunks && typeof m.chunks === 'object') {
+      return m;
+    }
+    return null;
+  } catch (e) {
+    console.warn('[bootstrap] 캐시된 manifest 파싱 실패:', e);
+    return null;
+  }
+}
+
+/**
+ * 캐시된 청크 데이터를 파싱해서 반환한다.
+ *
+ * @param {string} chunkName — 예: 'posts-x'
+ * @returns {object[]|null} 글 배열, 없거나 깨졌으면 null
+ */
+function loadCachedChunk(chunkName) {
+  const raw = lsGet(LS_CHUNK_PREFIX + chunkName);
+  if (!raw) return null;
+  try {
+    const d = JSON.parse(raw);
+    if (d && Array.isArray(d.posts)) {
+      return d.posts;
+    }
+    return null;
+  } catch (e) {
+    console.warn('[bootstrap] 캐시된 청크 파싱 실패:', chunkName, e);
+    return null;
+  }
+}
+
+/**
+ * v2 캐시 전체 삭제 (디버그/문제 해결용).
+ */
+function clearCache() {
+  try {
+    const keys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith(LS_PREFIX)) keys.push(k);
+    }
+    keys.forEach((k) => localStorage.removeItem(k));
+    console.log('[bootstrap] 캐시 삭제됨:', keys.length, '개');
+  } catch (e) {
+    console.warn('[bootstrap] 캐시 삭제 실패:', e);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 4. 네트워크                                                         */
+/* ------------------------------------------------------------------ */
+
+/**
+ * manifest.json을 네트워크에서 가져온다. 항상 최신 버전을 확인해야
+ * 하므로 HTTP 캐시를 사용하지 않는다.
+ *
+ * @returns {Promise<object>} manifest 객체
+ * @throws {Error} 네트워크 실패·HTTP 오류·JSON 파싱 실패 시
+ */
+async function fetchManifest() {
+  let res;
+  try {
+    res = await fetch('data/manifest.json', { cache: 'no-cache' });
+  } catch (e) {
+    throw new Error('네트워크 오류: manifest를 불러오지 못했습니다. (' + e.message + ')');
+  }
+  if (!res.ok) {
+    throw new Error('manifest 로드 실패: HTTP ' + res.status);
+  }
+  let manifest;
+  try {
+    manifest = await res.json();
+  } catch (e) {
+    throw new Error('manifest JSON 파싱 실패: ' + e.message);
+  }
+  if (!manifest || typeof manifest !== 'object' || !manifest.chunks) {
+    throw new Error('manifest 구조가 올바르지 않습니다.');
+  }
+  return manifest;
+}
+
+/**
+ * 청크 JSON을 네트워크에서 가져온다.
+ *
+ * @param {string} file — manifest에 기록된 파일 경로 (예: 'data/posts-x.json')
+ * @param {string} label — 로딩 UI용 표시명
+ * @returns {Promise<object[]>} 글 배열
+ * @throws {Error} 네트워크 실패·HTTP 오류·구조 이상 시
+ */
+async function fetchChunk(file, label) {
+  let res;
+  try {
+    // 청크는 sha 변경 시에만 다시 받으므로 HTTP 캐시 무효화로 신선도 보장
+    res = await fetch(file, { cache: 'no-cache' });
+  } catch (e) {
+    throw new Error('네트워크 오류: ' + label + '을(를) 불러오지 못했습니다.');
+  }
+  if (!res.ok) {
+    throw new Error(label + ' 로드 실패: HTTP ' + res.status);
+  }
+  let data;
+  try {
+    data = await res.json();
+  } catch (e) {
+    throw new Error(label + ' JSON 파싱 실패: ' + e.message);
+  }
+  if (!data || !Array.isArray(data.posts)) {
+    throw new Error(label + ' 데이터 구조가 올바르지 않습니다.');
+  }
+  return data.posts;
+}
+
+/* ------------------------------------------------------------------ */
+/* 5. 부트스트랩 본체                                                  */
+/* ------------------------------------------------------------------ */
+
+let booted = false; // 중복 실행 방지
+let cacheWritable = true; // localStorage 쓰기 가능 여부 (용량 초과 시 false)
+
+/**
+ * 부트스트랩 진입점. manifest 확인 → 청크 로드(캐시 활용) → 렌더링.
+ * 재시도 버튼에서도 호출되므로 여러 번 호출돼도 안전해야 한다.
+ */
+async function boot() {
+  if (booted) {
+    console.log('[bootstrap] 이미 실행 중이거나 완료됨, 중복 호출 무시');
+    return;
+  }
+  booted = true;
+
+  const renderer = getRenderer();
+  if (!renderer || typeof renderer.articleCard !== 'function') {
+    showError('렌더링 모듈(render.js)을 불러오지 못했습니다. 페이지를 새로고침해 주세요.');
+    booted = false;
+    return;
+  }
+
+  hideError();
+  const loading = $('loading');
+  if (loading) loading.hidden = false;
+
+  const container = $('articles');
+  if (!container) {
+    showError('화면 구조(#articles)를 찾지 못했습니다. 페이지를 새로고침해 주세요.');
+    booted = false;
+    return;
+  }
+
+  // 1. manifest 확인
+  updateLoading('버전 확인 중...');
+  let manifest = null;
+  let manifestFromNetwork = false;
+  const cachedManifest = loadCachedManifest();
+
+  try {
+    manifest = await fetchManifest();
+    manifestFromNetwork = true;
+  } catch (e) {
+    console.warn('[bootstrap]', e.message);
+    // 네트워크 실패 → 캐시 폴백 시도
+    if (cachedManifest) {
+      const cached = loadAllCachedChunks();
+      if (cached) {
+        renderArticles(cached.articles, renderer, container, { offline: true });
+        showOfflineBadge(true);
+        showMain();
+        return;
+      }
+    }
+    showError(
+      '데이터를 불러오지 못했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요.'
+    );
+    booted = false;
+    return;
+  }
+
+  // 2. 청크별: 캐시 유효하면 사용, 아니면 fetch
+  /** @type {Array<{posts: object[], type: string}>} */
+  const chunkResults = [];
+  let usedCacheCount = 0;
+
+  for (const chunk of CHUNK_ORDER) {
+    const info = manifest.chunks[chunk.name];
+    if (!info || !info.file) {
+      console.warn('[bootstrap] manifest에 청크 정보 없음:', chunk.name);
+      continue;
+    }
+
+    // 캐시 유효성: 이전 manifest의 sha256과 동일 + 데이터 존재
+    const cachedInfo = cachedManifest && cachedManifest.chunks
+      ? cachedManifest.chunks[chunk.name]
+      : null;
+    let posts = null;
+    if (
+      cachedInfo &&
+      cachedInfo.sha256 &&
+      info.sha256 &&
+      cachedInfo.sha256 === info.sha256
+    ) {
+      posts = loadCachedChunk(chunk.name);
+      if (posts) usedCacheCount++;
+    }
+
+    if (!posts) {
+      const count = info.count ? ' (' + info.count + '개)' : '';
+      updateLoading(chunk.label + ' 로딩 중...' + count);
+      try {
+        posts = await fetchChunk(info.file, chunk.label);
+      } catch (e) {
+        console.warn('[bootstrap]', e.message);
+        // 개별 청크 실패 → 캐시 폴백, 캐시도 없으면 해당 청크 건너뜀
+        posts = loadCachedChunk(chunk.name);
+        if (!posts) {
+          console.error('[bootstrap] 청크 로드 실패, 건너뜀:', chunk.name);
+          continue;
+        }
+      }
+      // 새로 받은 청크는 캐시에 저장 시도
+      if (cacheWritable) {
+        const ok = lsSet(LS_CHUNK_PREFIX + chunk.name, JSON.stringify({ posts }));
+        if (!ok) cacheWritable = false; // 용량 초과 시 이후 쓰기 생략
+      }
+    }
+
+    chunkResults.push({ posts, type: chunk.type });
+  }
+
+  // 3. manifest 캐시 저장 (청크 sha 비교 기준점)
+  if (cacheWritable) {
+    const ok = lsSet(LS_MANIFEST_KEY, JSON.stringify(manifest));
+    if (!ok) cacheWritable = false;
+  }
+
+  if (chunkResults.length === 0) {
+    showError('불러온 데이터가 없습니다. 다시 시도해 주세요.');
+    booted = false;
+    return;
+  }
+
+  // 4. 합치기 + type/_idx 부여
+  /** @type {object[]} */
+  const articles = [];
+  for (const cr of chunkResults) {
+    for (const p of cr.posts) {
+      if (p && typeof p === 'object') {
+        // 캐시/원본 객체를 직접 수정하지 않도록 얕은 복사
+        const a = Object.assign({}, p);
+        if (!a.type) a.type = cr.type;
+        a._idx = articles.length;
+        articles.push(a);
+      }
+    }
+  }
+
+  console.log(
+    '[bootstrap] 로드 완료: ' + articles.length + '개 (캐시 ' + usedCacheCount + '청크 사용)'
+  );
+
+  // 5. 렌더링
+  updateLoading('화면 그리는 중...');
+  // 큰 HTML 문자열 생성을 다음 프레임으로 양보 (로딩 UI가 먼저 그려지도록)
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  renderArticles(articles, renderer, container, { offline: false });
+  showOfflineBadge(false);
+  showMain();
+
+  // 6. 셸의 인터랙션 초기화 (검색/필터/메모/북마크 등) — 있으면 호출
+  try {
+    if (
+      typeof window !== 'undefined' &&
+      window.ArchiveApp &&
+      typeof window.ArchiveApp.init === 'function'
+    ) {
+      window.ArchiveApp.init(articles);
+    }
+  } catch (e) {
+    console.warn('[bootstrap] ArchiveApp.init 실패:', e);
+  }
+}
+
+/**
+ * 캐시된 manifest 기준으로 모든 청크를 캐시에서 로드한다.
+ * (오프라인 폴백용)
+ *
+ * @returns {{articles: object[]}|null} 성공 시 글 배열, 하나라도 없으면 null
+ */
+function loadAllCachedChunks() {
+  const cachedManifest = loadCachedManifest();
+  if (!cachedManifest) return null;
+  const articles = [];
+  for (const chunk of CHUNK_ORDER) {
+    const posts = loadCachedChunk(chunk.name);
+    if (!posts) return null; // 일부라도 없으면 폴백 불가
+    for (const p of posts) {
+      if (p && typeof p === 'object') {
+        const a = Object.assign({}, p);
+        if (!a.type) a.type = chunk.type;
+        a._idx = articles.length;
+        articles.push(a);
+      }
+    }
+  }
+  return articles.length ? { articles } : null;
+}
+
+/**
+ * 글 배열을 articleCard()로 렌더링해서 컨테이너에 삽입한다.
+ *
+ * @param {object[]} articles — type/_idx가 부여된 글 배열
+ * @param {object} renderer — window.ArchiveRender
+ * @param {HTMLElement} container — #articles
+ * @param {object} [opts]
+ * @param {boolean} [opts.offline=false] — 오프라인 모드 여부
+ */
+function renderArticles(articles, renderer, container, opts = {}) {
+  const offline = !!opts.offline;
+  let html;
+  try {
+    html = articles
+      .map((a, i) => {
+        try {
+          return renderer.articleCard(a, { idx: a._idx != null ? a._idx : i });
+        } catch (e) {
+          console.warn('[bootstrap] 카드 렌더링 실패 (idx ' + i + '):', e);
+          return '';
+        }
+      })
+      .join('');
+  } catch (e) {
+    showError('화면을 그리는 중 오류가 발생했습니다: ' + e.message);
+    booted = false;
+    return;
+  }
+
+  container.innerHTML = html;
+
+  const countEl = $('article-count');
+  if (countEl) {
+    countEl.textContent = String(articles.length);
+  }
+
+  if (offline) {
+    console.log('[bootstrap] 오프라인 모드: 캐시된 데이터로 렌더링');
+  }
+}
+
+/**
+ * 오프라인 배지 표시/숨김.
+ *
+ * @param {boolean} show
+ */
+function showOfflineBadge(show) {
+  const badge = $('offline-badge');
+  if (badge) badge.hidden = !show;
+}
+
+/**
+ * 재시도 버튼 바인딩. 셸에 #retry-btn이 있으면 boot()를 연결한다.
+ */
+function bindRetry() {
+  const btn = $('retry-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      booted = false; // 재시도 허용
+      hideError();
+      boot();
+    });
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* 6. 시작                                                             */
+/* ------------------------------------------------------------------ */
+
+/**
+ * DOM 준비 후 자동 시작. 스크립트가 DOMContentLoaded 이후에
+ * 로드된 경우를 대비해 readyState도 확인한다.
+ */
+function autoStart() {
+  bindRetry();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => boot());
+  } else {
+    boot();
+  }
+}
+
+/* 내보내기                                                            */
+
+const ArchiveBootstrap = {
+  boot,
+  clearCache,
+  // 테스트용 내부 함수 노출
+  _loadCachedManifest: loadCachedManifest,
+  _loadCachedChunk: loadCachedChunk,
+};
+
+export { boot, clearCache, ArchiveBootstrap };
+
+// 일반 <script> 로드 시 전역 접근용 (render.js와 동일한 패턴)
+if (typeof window !== 'undefined') {
+  window.ArchiveBootstrap = ArchiveBootstrap;
+}
+
+autoStart();
