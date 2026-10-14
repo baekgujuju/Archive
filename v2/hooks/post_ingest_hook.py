@@ -234,8 +234,10 @@ def main():
                 if _er.returncode == 0:
                     log("AI툴 분류 완료")
                 else:
+                    RETRY_ENRICH.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
                     log(f"AI툴 분류 실패 (rc={_er.returncode}) — 다음 실행에서 재시도")
             except Exception as _e:
+                RETRY_ENRICH.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
                 log(f"AI툴 분류 예외: {_e} — 다음 실행에서 재시도")
         else:
             log("enrich_tools.py 없음")
@@ -277,7 +279,7 @@ def main():
         if not files:
             log("커밋할 변경 없음")
             # 번역 재시도 마커가 있으면 실패로 반환 (다음에 재시도)
-            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists()) else 0
+            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()) else 0
 
         log(f"변경 파일: {files}")
         r = git(["add", "--"] + COMMIT_PATHS)
@@ -305,10 +307,10 @@ def main():
         # 4. 게시 게이트
         if not PUBLISH_ENABLED:
             log("게시 비활성 — QA 완료 전까지 유지")
-            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists()) else 0
+            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()) else 0
         if do_push():
             log("게시 완료")
-            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists()) else 0
+            return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()) else 0
         log("푸시 실패 — 다음 실행에서 재시도")
         return 1
 

@@ -151,7 +151,7 @@ def collect_screenshots():
             if isinstance(quoted, dict):
                 post_text += "\n"+str(quoted.get("fullText") or "")+"\n"+str(quoted.get("fullHtml") or "")
             from html import unescape
-            for html_text in [post.get("fullHtml") or "", (quoted or {}).get("fullHtml") or ""]:
+            for html_text in [post.get("fullHtml") or "", (quoted if isinstance(quoted,dict) else {}).get("fullHtml") or ""]:
                 media_items.extend(unescape(u) for u in re.findall(r'<img[^>]+src=["\']([^"\']+)', html_text, re.I))
             seen_urls = set()
             for m in media_items:
@@ -539,6 +539,13 @@ def update_manifest():
     log(f"manifest.ai_tools 업데이트: count={len(tools)}")
 
 
+def valid_analysis(value):
+    return (isinstance(value,dict) and isinstance(value.get("is_github"),bool)
+            and isinstance(value.get("github_urls"),list)
+            and all(isinstance(u,str) for u in value["github_urls"])
+            and all(isinstance(value.get(k,""),str) for k in
+                    ("title","description_ko","category_ko","owner_hint")))
+
 def run_backfill(max_items=None, dry_run=False, batch_size=8):
     """Resume from matching fingerprints; failed/changed entries never count as done."""
     tools_data = load_json(TOOLS_JSON, {})
@@ -593,7 +600,7 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
                 continue
             ikey = ANALYZER_VERSION+":"+sha256_file(image)
             analysis = vision_cache.get(ikey)
-            if isinstance(analysis, dict):
+            if valid_analysis(analysis):
                 image_memo[fingerprint(image, text, url)] = analysis
             else:
                 needed.setdefault(ikey, image)
@@ -602,7 +609,7 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
             model_calls[0] += 1
             for ikey, image in needed.items():
                 analysis = result.get(str(image))
-                if isinstance(analysis, dict) and isinstance(analysis.get("is_github"), bool):
+                if valid_analysis(analysis):
                     vision_cache[ikey] = analysis
                 else:
                     analysis = None

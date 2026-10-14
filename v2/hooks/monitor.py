@@ -107,7 +107,8 @@ def main():
         retry_marker = (
             (HOOKS_DIR / ".retry_translation").exists() or
             (HOOKS_DIR / ".retry_commit").exists() or
-            (HOOKS_DIR / ".retry_media").exists()
+            (HOOKS_DIR / ".retry_media").exists() or
+            (HOOKS_DIR / ".retry-enrich").exists()
         )
         if retry_marker:
             print("[monitor] 재시도 마커 감지 — 후크 실행")

@@ -163,6 +163,12 @@ class ResumeIntegrationTest(unittest.TestCase):
             self.assertTrue(et.RETRY_MARKER.exists())
             second=et.run_backfill(); self.assertEqual(second["temporary_failures"],1)
             self.assertEqual(analyze.call_count,2)
+    def test_malformed_analysis_is_not_cached(self):
+        bad={str(self.image):{"is_github":True,"github_urls":None}}
+        with patch.object(et,"analyze_image_batch",return_value=bad):
+            result=et.run_backfill()
+        self.assertEqual(result["temporary_failures"],1)
+        self.assertEqual(et.load_json(self.root/"ai-tools-vision-cache.json",{}),{})
     def test_dry_run_no_writes(self):
         with patch.object(et,"analyze_image_batch",return_value={}): et.run_backfill(dry_run=True)
         self.assertFalse(et.RETRY_MARKER.exists()); self.assertFalse(et.TOOLS_JSON.exists())
@@ -173,6 +179,21 @@ class ResumeIntegrationTest(unittest.TestCase):
         et.save_json_atomic(et.CACHE_JSON,{"post:picture.png":{"version":et.CACHE_VERSION,"fingerprint":fp,"entry":entry}})
         with patch.object(et,"analyze_image_batch") as analyze: et.run_backfill(); analyze.assert_not_called()
         self.assertEqual(et.load_json(et.TOOLS_JSON,{})["post"]["fingerprint"],fp)
+
+class MonitorRetryTest(unittest.TestCase):
+    def test_no_source_change_enrichment_marker_retries_hook(self):
+        import importlib.util, types, subprocess, os
+        fake = types.SimpleNamespace(LOCK_EX=2, LOCK_NB=4, LOCK_UN=8, flock=lambda *args:None)
+        module_spec = importlib.util.spec_from_file_location("monitor_under_test", Path(__file__).with_name("monitor.py"))
+        module = importlib.util.module_from_spec(module_spec)
+        with patch.dict(sys.modules, {"fcntl":fake}): module_spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root/".retry-enrich").write_text("pending")
+            with patch.object(module,"HOOKS_DIR",root), patch.object(module,"LOCK_FILE",root/"lock"), patch.object(module,"current_hashes",return_value={"posts":"same"}), patch.object(module,"load_state",return_value={"hashes":{"posts":"same"}}), patch.object(module,"save_state") as save, patch.object(sys,"argv",["monitor"]), patch.object(module.subprocess,"run",side_effect=[subprocess.CompletedProcess([],0,"",""),subprocess.CompletedProcess([],0,"0",""),subprocess.CompletedProcess([],1,"retry needed","")]) as run:
+                self.assertEqual(module.main(),1)
+                self.assertEqual(run.call_count,3)
+                self.assertIn("post_ingest_hook.py",str(run.call_args_list[-1]))
+                save.assert_not_called()
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

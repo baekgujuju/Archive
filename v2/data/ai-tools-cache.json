@@ -1279,5 +1279,37 @@
       "fingerprint": "3a9e20ab3e7bd6a23469ce873f7d07c4c1f18cacc6982fa9ee4526384b72a9c6"
     },
     "version": 3
+  },
+  "2089327156274790890:8552a9e4d437d224.jpg": {
+    "fingerprint": "568bd6ccb2925a78252e9d87f95e693b7e8929e16c655258f522944ea6cc20c7",
+    "entry": {
+      "title": "Moli Browser",
+      "summary_ko": "Moli는 AI 에이전트가 웹페이지를 탐색하고 상호작용할 수 있도록 Rust로 개발된 헤드리스 브라우저입니다. 가벼운 실행 환경과 빠른 속도, 높은 웹 호환성을 지향합니다.",
+      "category": "AI 에이전트용 헤드리스 브라우저",
+      "repo_url": "https://github.com/lexmount/moli",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:moli browser structure",
+        "user-web-search:lexmount/moli"
+      ],
+      "fingerprint": "568bd6ccb2925a78252e9d87f95e693b7e8929e16c655258f522944ea6cc20c7"
+    },
+    "version": 3
+  },
+  "2089327477214593238:8552a9e4d437d224.jpg": {
+    "fingerprint": "b5e7472b8837f7d191edd4972a3650fd7cb8a5a607582a41dbd6c8af6c075c92",
+    "entry": {
+      "title": "Moli Browser",
+      "summary_ko": "Moli는 AI 에이전트가 웹페이지를 탐색하고 상호작용할 수 있도록 Rust로 개발된 헤드리스 브라우저입니다. 가벼운 실행 환경과 빠른 속도, 높은 웹 호환성을 지향합니다.",
+      "category": "AI 에이전트용 헤드리스 브라우저",
+      "repo_url": "https://github.com/lexmount/moli",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:moli browser structure",
+        "user-web-search:lexmount/moli"
+      ],
+      "fingerprint": "b5e7472b8837f7d191edd4972a3650fd7cb8a5a607582a41dbd6c8af6c075c92"
+    },
+    "version": 3
   }
 }
