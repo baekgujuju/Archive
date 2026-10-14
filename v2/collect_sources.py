@@ -34,8 +34,13 @@ def log(msg):
 
 
 def is_naver_url(url):
-    """네이버 도메인 여부."""
-    return "naver.com" in url or "naver.me" in url
+    """네이버 도메인 여부 (hostname 기반)."""
+    from urllib.parse import urlparse
+    try:
+        host = urlparse(url).hostname or ""
+        return host.endswith("naver.com") or host == "naver.me"
+    except Exception:
+        return False
 
 
 def is_navigation_content(text):
@@ -101,11 +106,24 @@ def main():
         out_md = out_dir / "article.md"
 
         log(f"수집 중: {tid} ({title[:30]})")
+        # 이전 수집 파일 삭제 (stale 재사용 방지)
+        if out_md.exists():
+            out_md.unlink()
         try:
             r = subprocess.run(
                 ["bash", str(FETCH_SH), url, "--output", str(out_md), "--download-media"],
                 capture_output=True, text=True, timeout=180
             )
+            # returncode 확인 (실패 시 stale 파일 사용 금지)
+            if r.returncode != 0:
+                results[tid] = {
+                    "status": "failed",
+                    "reason": f"fetch exit code {r.returncode}",
+                    "url": url,
+                }
+                log(f"  -> FAILED (exit code {r.returncode})")
+                json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+                continue
             if out_md.exists():
                 size = out_md.stat().st_size
                 text = out_md.read_text(encoding="utf-8", errors="ignore")
@@ -128,27 +146,52 @@ def main():
                     json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
                     continue  # fall-through 방지
 
-                # source_quality 게이트
-                quality = None
+                # source_quality 게이트 (fail-closed)
+                # 시그니처: assess_capture(record, capture)
                 if HAS_QUALITY_GATE:
                     try:
-                        quality = assess_capture(
-                            text=body_stripped,
-                            title=title,
-                            url=url,
-                            image_count=len(images),
-                        )
+                        record = {"title": title, "source_url": url}
+                        capture = {
+                            "body_text": body_stripped,
+                            "extraction_scope": "article",
+                            "content_selector": ".article-body",
+                            "paragraphs": paras,
+                            "capture_complete": chars > 500,
+                            "images": len(images),
+                        }
+                        quality = assess_capture(record, capture)
+                        q_status = quality.get("status", "needs_review")
+                        # 게이트 상태가 collected가 아니면 그대로 반영 (fail-closed)
+                        if q_status != "collected":
+                            results[tid] = {
+                                "status": q_status,
+                                "reason": f"quality gate: {quality.get('reasons', [])}",
+                                "url": url,
+                                "chars": chars,
+                                "paragraphs": paras,
+                                "images": len(images),
+                            }
+                            log(f"  -> {q_status.upper()} (quality gate)")
+                            json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+                            continue
                     except Exception as e:
-                        log(f"  quality gate error: {e}")
+                        # 게이트 예외 시 fail-closed: error로 기록, collected 금지
+                        results[tid] = {
+                            "status": "error",
+                            "reason": f"quality gate exception: {str(e)[:100]}",
+                            "url": url,
+                        }
+                        log(f"  -> ERROR (quality gate failed closed): {e}")
+                        json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+                        continue
 
                 results[tid] = {
-                    "status": "collected" if chars > 500 else "short",
+                    "status": "collected",
                     "url": url,
                     "chars": chars,
                     "paragraphs": paras,
                     "images": len(images),
                     "bytes": size,
-                    "quality": quality,
                 }
                 log(f"  -> {chars}자, {paras}단락, 이미지 {len(images)}개")
             else:
