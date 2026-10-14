@@ -1,0 +1,5 @@
+# Private sources - 절대 커밋 금지 (2026-10-14)
+v2/data/private-sources/
+**/private-sources/
+*.private.*
+__pycache__/

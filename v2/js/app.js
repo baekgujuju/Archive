@@ -61,7 +61,16 @@ var ArchiveApp = (function () {
       return url ? '<img tabindex="0" title="이미지 확대" src="' + esc(url) + '" alt="게시물 이미지" loading="lazy">' : '';
     }).join('');
   }
-  function translatedBody(a){var tr=a.translation,original=bodyText(a),base=a.fullHtml?cleanHtml(a.fullHtml):'<p class="aa-text">'+linkText(original)+'</p>';if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return base;var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};if(compact(original)!==compact(tr.paragraphs.join(' ')))return base;if(!a.fullHtml)return tr.paragraphs.map(function(t,i){return '<section class="translation-pair"><p class="translation-original">'+esc(t)+'</p><p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(tr.translated[i])+'</p></section>';}).join('');var doc=new DOMParser().parseFromString(base,'text/html');tr.paragraphs.forEach(function(t,i){var nodes=Array.from(doc.body.querySelectorAll('p,h1,h2,h3,li,blockquote'));var node=nodes.find(function(n){return compact(n.textContent)===compact(t);});if(node){var ko=doc.createElement('p');ko.className='translation-ko';ko.textContent=tr.translated[i];node.after(ko);} });return doc.body.innerHTML;}
+  function articleBodyHtml(a){
+    var html=cleanHtml(a.fullHtml),source=canonicalSource(a);
+    if(!source)return html;
+    var doc=new DOMParser().parseFromString(html,'text/html');
+    doc.body.querySelectorAll('a[href]').forEach(function(link){
+      if(link.classList.contains('ib-card-link')||(/^원문\s*보기\s*[↗→]?\s*$/.test(link.textContent.trim())&&safeUrl(link.getAttribute('href'))===source))link.remove();
+    });
+    return doc.body.innerHTML;
+  }
+  function translatedBody(a){var tr=a.translation,original=bodyText(a),base=a.fullHtml?articleBodyHtml(a):'<p class="aa-text">'+linkText(original)+'</p>';if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return base;var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};if(compact(original)!==compact(tr.paragraphs.join(' ')))return base;if(!a.fullHtml)return tr.paragraphs.map(function(t,i){return '<section class="translation-pair"><p class="translation-original">'+esc(t)+'</p><p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(tr.translated[i])+'</p></section>';}).join('');var doc=new DOMParser().parseFromString(base,'text/html');tr.paragraphs.forEach(function(t,i){var nodes=Array.from(doc.body.querySelectorAll('p,h1,h2,h3,li,blockquote'));var node=nodes.find(function(n){return compact(n.textContent)===compact(t);});if(node){var ko=doc.createElement('p');ko.className='translation-ko';ko.textContent=tr.translated[i];node.after(ko);} });return doc.body.innerHTML;}
   function renderReplies(a){
     // 답글 HTML (v1 패턴)
     var repliesHtml = '';
