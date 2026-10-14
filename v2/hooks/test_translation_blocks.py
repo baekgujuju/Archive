@@ -19,6 +19,14 @@ class ParagraphTests(unittest.TestCase):
             self.assertFalse(module.is_english_only(value),value)
         self.assertTrue(module.is_english_only('$HPE\nTrend Continuation'))
         self.assertTrue(module.is_english_only('东芝扩产HDD'))
+    def test_codex_uses_stdin_readonly_and_file_output(self):
+        def fake_run(args,**kw):
+            self.assertIn('--ephemeral',args);self.assertIn('read-only',args);self.assertEqual(args[-1],'-')
+            self.assertIn('input',kw);self.assertNotIn('shell',kw)
+            Path(args[args.index('-o')+1]).write_text('[1] 검증한 번역',encoding='utf-8')
+            return type('Result',(),{'returncode':0})()
+        with patch.dict(module.os.environ,{'ARCHIVE_TRANSLATOR':'codex','ARCHIVE_CODEX_BIN':'codex-test'}),patch.object(module.subprocess,'run',side_effect=fake_run):
+            self.assertEqual(module.translate_paragraphs(['Verified translation.']),['검증한 번역'])
     def test_failed_refresh_keeps_previous_success(self):
         with tempfile.TemporaryDirectory(prefix='translation-test-',dir=module.V2_ROOT) as tmp:
             root=Path(tmp);cache=root/'translations.json'

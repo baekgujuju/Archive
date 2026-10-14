@@ -23,6 +23,11 @@
 
 ## Muse 검토 지침
 1. 공개 main은 기존 운영 상태를 유지하고 소스 수정만 검토 브랜치에서 비교하세요. 카페 원문 자동 수집/반영은 보류합니다.
-2. 변경된 번역 코드로 외국어 글 캐시를 갱신할 필요가 있습니다. 원문 데이터나 기존 정상 번역을 삭제하지 말고 실패 시 이전 데이터를 유지하세요.
+2. 변경된 번역 코드로 외국어 글 캐시를 갱신합니다. 이번에는 `python3 v2/translate_posts.py --chunks posts-x.json posts-web.json`으로 카페가 포함된 IB 청크를 제외합니다. 원문 데이터나 기존 정상 번역은 보존합니다. 연속 실패 2회면 종료하며 다음 실행 때 재시도합니다.
 3. 브라우저에서 읽기 창과 인라인 각각 인쇄 버튼을 실제 클릭해서 이미지 대기/단일 글 출력/종료 후 화면 복구를 확인하세요. 기존 PDF 검증 근거는 이전 버전의 근거이며 새 수정 검증을 대신하지 않습니다.
 4. 실제 iPhone Safari/물리 iPad/폴더블/카카오톡 수신은 아직 검증했다고 보고하지 않습니다. 단순 viewport 검사는 실제 기기 확인과 구분합니다.
+
+## 번역 실행 경로
+`ARCHIVE_TRANSLATOR=auto`는 기존 로그인된 Codex CLI가 설치돼 있으면 이를 사용합니다. Muse의 최신 설치 경로 `~/workspace/.npm-global/bin/codex`를 우선하며 `ARCHIVE_CODEX_BIN`으로 지정할 수 있습니다. 모델 기본값은 사용자가 기존에 확인한 `gpt-6.1-sol`이며 `ARCHIVE_TRANSLATION_MODEL`로 설정합니다. 개인 Muse 실행 호스트의 기존 인증을 재사용하고 인증 파일을 복사하거나 GitHub Actions로 옮기지 않습니다. stdin으로 원문을 보내고 읽기 전용·일회 실행의 결과 파일만 읽습니다. 한 호출 제한120초. CLI가 없으면 기존 Gemini 설정을 사용하며 명시적인 `ARCHIVE_TRANSLATOR=gemini`도 지원합니다.
+
+공식 CLI 근거: https://learn.chatgpt.com/docs/non-interactive-mode
