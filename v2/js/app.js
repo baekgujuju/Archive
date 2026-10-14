@@ -125,6 +125,8 @@ var ArchiveApp = (function () {
       if(defaultView&&r.topics.indexOf('AI툴')>=0&&!isPinned)visible=false;
       r.card.hidden = !visible;
       r.card.style.borderLeftColor = color || '';
+      r.card.style.borderTopColor = color || '';
+      r.card.style.borderTopWidth = color ? '3px' : ''; 
       r.card.classList.toggle('aa-bookmarked', !!color);
       var mb = r.card.querySelector('[data-memo-id]'), pb = r.card.querySelector('.pin-btn'), bb = r.card.querySelector('.bookmark-btn'), db = r.card.querySelector('.delete-btn');
       if (mb) { var hasMemo = !!memoValue(mb.dataset.memoId); mb.classList.remove('memo-hidden'); mb.classList.toggle('aa-active', hasMemo); mb.setAttribute('aria-label', hasMemo ? '메모 편집 (메모 있음)' : '메모 추가'); }
@@ -249,22 +251,22 @@ var ArchiveApp = (function () {
       update();
     });
     var pressTimer,pressOrigin,bookmarkClickTimer,suppressBookmarkClick=false;
-    function renameBookmark(b){clearTimeout(bookmarkClickTimer);renameHex=b.dataset.value;if(!colors[renameHex])return;renameDialog.querySelector('input').value=getBookmarkName(renameHex);show(renameDialog);}
+    function renameBookmark(b){clearTimeout(bookmarkClickTimer);renameHex=b.dataset.value;if(!colors[renameHex])return;renameDialog.querySelector('input').value=getBookmarkName(renameHex);show(renameDialog);var input=renameDialog.querySelector('input');var selection=window.getSelection();if(selection)selection.removeAllRanges();input.focus({preventScroll:true});input.setSelectionRange(0,input.value.length);}
     controls.addEventListener('pointermove',function(e){if(pressOrigin&&Math.hypot(e.clientX-pressOrigin.x,e.clientY-pressOrigin.y)>12)clearTimeout(pressTimer);});
     controls.addEventListener('dblclick',function(e){var b=e.target.closest('[data-filter=bookmark]');if(b&&colors[b.dataset.value]){e.preventDefault();renameBookmark(b);}});
     controls.addEventListener('contextmenu',function(e){var b=e.target.closest('[data-filter="bookmark"]');if(b&&colors[b.dataset.value]){e.preventDefault();renameBookmark(b);}});
     controls.addEventListener('pointerdown',function(e){var b=e.target.closest('[data-filter="bookmark"]');if(b&&colors[b.dataset.value]){pressOrigin={x:e.clientX,y:e.clientY};pressTimer=setTimeout(function(){suppressBookmarkClick=true;document.addEventListener('pointerup',function(){setTimeout(function(){suppressBookmarkClick=false;},0);},{once:true,capture:true});renameBookmark(b);},550);}});
-    ['pointerup','pointercancel'].forEach(function(event){controls.addEventListener(event,function(){clearTimeout(pressTimer);});});
+    ['pointerup','pointercancel'].forEach(function(event){controls.addEventListener(event,function(){clearTimeout(pressTimer);if(event==='pointerup'&&renameDialog&&renameDialog.open){var range=window.getSelection();if(range)range.removeAllRanges();var input=renameDialog.querySelector('input');input.focus({preventScroll:true});input.setSelectionRange(0,input.value.length);}});});
     // Drive 동기화 초기화
     DriveSync.init(controls.querySelector('[data-drive-status]'));
     var backupButton = document.createElement('button'); backupButton.type = 'button'; backupButton.textContent = '저장 데이터 백업';
     backupButton.onclick = function () { download(new Blob([JSON.stringify(DriveSync._exportState(), null, 2)], {type:'application/json'}), 'archive-state.json'); };
-    controls.querySelector('.archive-settings').appendChild(backupButton);
-    var restoreReplies=document.createElement('button');restoreReplies.textContent='숨긴 댓글 모두 복원';restoreReplies.onclick=function(){persist('archive-deleted-replies',[]);document.querySelectorAll('[data-reply-id]').forEach(function(r){r.hidden=false;});status('숨긴 댓글을 복원했습니다.');};controls.querySelector('.archive-settings').appendChild(restoreReplies);
-    var importLabel=document.createElement('label');importLabel.textContent=' 백업 복원 ';var importInput=document.createElement('input');importInput.type='file';importInput.accept='.json,application/json';importInput.setAttribute('aria-label','백업 파일 복원');importLabel.appendChild(importInput);controls.querySelector('.archive-settings').appendChild(importLabel);
+    controls.querySelector('[data-settings-backup]').appendChild(backupButton);
+    var restoreReplies=document.createElement('button');restoreReplies.textContent='숨긴 댓글 모두 복원';restoreReplies.onclick=function(){persist('archive-deleted-replies',[]);document.querySelectorAll('[data-reply-id]').forEach(function(r){r.hidden=false;});status('숨긴 댓글을 복원했습니다.');};controls.querySelector('[data-settings-hidden]').appendChild(restoreReplies);
+    var importLabel=document.createElement('label');importLabel.className='backup-file';importLabel.textContent='백업 파일로 복원';var importInput=document.createElement('input');importInput.type='file';importInput.accept='.json,application/json';importInput.setAttribute('aria-label','백업 파일 복원');importLabel.appendChild(importInput);controls.querySelector('[data-settings-backup]').appendChild(importLabel);
     importInput.onchange=async function(){var file=importInput.files[0];if(!file)return;try{var state=JSON.parse(await file.text());if(!DriveSync._validateRemote(state))throw new Error('올바른 아카이브 백업이 아닙니다.');if(!await askConfirm('현재 저장 내용을 백업한 후 선택한 파일로 복원할까요?'))return;localStorage.setItem('archive-before-import',JSON.stringify(DriveSync._exportState()));DriveSync.importState(state);refreshSavedState();status('백업 복원 완료');}catch(e){window.alert(e.message);}finally{importInput.value='';}};
 
-    readDialog = dialog('archive-read-dialog', '글 읽기', '<header class="aa-reader-header"><button type="button" data-reader-back hidden>← 이전 글</button><strong data-reader-title></strong><button type="button" data-close>닫기 ×</button><div class="aa-toolbar"><button type="button" data-share="text">텍스트 복사</button><button type="button" data-share="image">이미지로 공유</button><details class="html-actions"><summary>HTML ▾</summary><div><button type="button" data-share="html">HTML 공유</button><button type="button" data-share="html-download">HTML 다운로드</button></div></details><button type="button" data-share="print">인쇄</button></div></header><article class="aa-content"></article>');
+    readDialog = dialog('archive-read-dialog', '글 읽기', '<header class="aa-reader-header"><button type="button" data-reader-back hidden>← 이전 글</button><strong data-reader-title></strong><button type="button" data-close>닫기 ×</button><div class="aa-toolbar"><button type="button" data-share="text">텍스트 복사</button><button type="button" data-share="image">이미지로 공유</button><details class="html-actions"><summary>HTML</summary><div><button type="button" data-share="html">HTML 공유</button><button type="button" data-share="html-download">HTML 다운로드</button></div></details><button type="button" data-share="print">인쇄</button></div></header><article class="aa-content"></article>');
     readDialog.addEventListener('keydown',function(e){if(e.target.tagName==='IMG'&&(e.key==='Enter'||e.key===' ')){e.preventDefault();ArchiveImages.open(e.target,readDialog.querySelector('.aa-content'));}});
     var swipeY;readDialog.querySelector('header').addEventListener('touchstart',function(e){swipeY=e.touches[0].clientY;},{passive:true});readDialog.querySelector('header').addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-swipeY>80)close(readDialog);},{passive:true});
     readDialog.addEventListener('click', function (e) {
@@ -272,19 +274,17 @@ var ArchiveApp = (function () {
       if(e.target.closest('[data-reader-back]')){var previous=readerHistory.pop();if(previous)openRead(previous,true);return;}
       if (e.target.tagName === 'IMG') { e.preventDefault(); ArchiveImages.open(e.target,readDialog.querySelector('.aa-content')); return; }
       var b = e.target.closest('[data-share]'); if (!b || !current) return; var a = current.article;var menu=b.closest('.html-actions');if(menu)menu.open=false;
-      if (b.dataset.share === 'print') window.print();
-      if (b.dataset.share === 'text') { var text = title(a) + '\n\n' + bodyText(a) + '\n\n' + (canonicalSource(a) || ''); navigator.clipboard.writeText(text).then(function () { b.textContent = '복사 완료'; }).catch(function () { download(new Blob([text], {type:'text/plain;charset=utf-8'}), 'archive.txt'); }); }
-      if (b.dataset.share === 'image') shareImage(a);
-      if (b.dataset.share === 'html'||b.dataset.share==='html-download') shareHtml(a,b.dataset.share==='html-download');
+      runArticleAction(b.dataset.share,current,b,false);
     });
     var readerMemo=document.createElement('button');readerMemo.type='button';readerMemo.dataset.readerMemo='';readerMemo.textContent='메모';readDialog.querySelector('.aa-toolbar').prepend(readerMemo);
+    records.forEach(function(r){var toolbar=readDialog.querySelector('.aa-toolbar').cloneNode(true);toolbar.classList.add('aa-inline-toolbar');toolbar.setAttribute('aria-label','게시글 도구');r.card.querySelector('summary.card-toggle').after(toolbar);});
     memoDialog = dialog('archive-memo-dialog', '메모 편집', '<h2>메모</h2><label for="archive-memo-text">내용</label><textarea id="archive-memo-text"></textarea><div class="aa-chips"><button type="button" data-memo="save">저장</button><button type="button" data-memo="delete">삭제</button><button type="button" data-close>닫기</button></div>');
     memoDialog.addEventListener('click', function (e) { var b = e.target.closest('[data-memo]'); if (!b) return; var value = b.dataset.memo === 'delete' ? null : memoDialog.querySelector('textarea').value; if (persist('archive_memo_' + memoId, value)) { close(memoDialog); update(); } });
     bookmarkDialog = dialog('archive-bookmark-dialog', '북마크 색상 선택', '<h2>북마크 색상</h2><div class="aa-chips">' + Object.keys(colors).map(function (c) { return '<button type="button" data-color="' + c + '" style="border-color:' + c + '">' + (getBookmarkName(c) || c) + '</button>'; }).join('') + '<button type="button" data-color="">해제</button><button type="button" data-close>닫기</button></div>');
     bookmarkDialog.addEventListener('click', function (e) { var b = e.target.closest('[data-color]'); if (!b || !bookmarkRecord) return; var next = Object.assign(Object.create(null), bookmarks); if (b.dataset.color) next[bookmarkRecord.id] = b.dataset.color; else delete next[bookmarkRecord.id]; if (persist('archive-bookmarks', next)) { bookmarks = next; close(bookmarkDialog); update(); } });
     renameDialog=dialog('archive-rename-dialog','북마크 이름 변경','<h2>북마크 이름</h2><label for="archive-color-name">이름</label><input id="archive-color-name" maxlength="30"><div class="aa-chips"><button type="button" data-save-name>저장</button><button type="button" data-close>취소</button></div>');
     function saveName(){var name=renameDialog.querySelector('input').value.trim()||colors[renameHex],names=load('archive-bookmark-names',{});names[renameHex]=name;if(persist('archive-bookmark-names',names)){controls.querySelectorAll('[data-filter=bookmark]').forEach(function(b){if(b.dataset.value===renameHex){b.textContent=name;b.setAttribute('aria-label',name);}});close(renameDialog);}}
-    renameDialog.addEventListener('click',function(e){if(e.target.closest('[data-save-name]'))saveName();});renameDialog.querySelector('input').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();saveName();}});
+    renameDialog.addEventListener('click',function(e){if(e.target.closest('[data-save-name]'))saveName();});renameDialog.addEventListener('pointerup',function(e){if(e.target.tagName!=='INPUT'){var input=renameDialog.querySelector('input');input.focus({preventScroll:true});input.setSelectionRange(0,input.value.length);}});renameDialog.querySelector('input').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();saveName();}});
     exportDialog=dialog('archive-export-dialog','Drive 내보내기 확인','<h2>Drive로 내보내기</h2><p>이 기기의 메모·북마크·삭제 상태를 Drive에 반영합니다. 내보낼 때마다 비밀번호가 필요합니다.</p><label for="archive-export-password">비밀번호</label><input type="password" id="archive-export-password" autocomplete="off" maxlength="128"><p data-export-error role="status"></p><div class="aa-chips"><button type="button" data-export-submit>확인 · 내보내기</button><button type="button" data-close>취소</button></div>');
     var exportPending=false;
     async function submitExport(){if(exportPending)return;exportPending=true;var input=exportDialog.querySelector('input'),button=exportDialog.querySelector('[data-export-submit]'),password=input.value;input.value='';button.disabled=true;exportDialog.querySelector('[data-export-error]').textContent='';try{await DriveSync.exportWithPassword(password);close(exportDialog);}catch(e){exportDialog.querySelector('[data-export-error]').textContent=e.message;input.focus();}finally{password='';exportPending=false;button.disabled=false;}}
@@ -306,6 +306,19 @@ var ArchiveApp = (function () {
     if(previous){selection=previous.selection;mode=previous.mode;controls.querySelector('input').value=previous.query;controls.querySelector('[data-action="mode"]').textContent=mode;}
     update();if(previous)window.scrollTo(0,previous.scroll);
   }
+  function runArticleAction(action,r,button,inline){
+    var a=r.article,menu=button.closest('.html-actions');if(menu)menu.open=false;
+    if(action==='text'){var text=title(a)+'\n\n'+bodyText(a)+'\n\n'+(canonicalSource(a)||'');navigator.clipboard.writeText(text).then(function(){button.textContent='복사 완료';setTimeout(function(){if(button.isConnected)button.textContent='텍스트 복사';},2000);}).catch(function(){download(new Blob([text],{type:'text/plain;charset=utf-8'}),'archive.txt');});}
+    if(action==='image')shareImage(a);
+    if(action==='html'||action==='html-download')shareHtml(a,action==='html-download');
+    if(action==='print'){
+      if(!inline){window.print();return;}
+      var old=document.getElementById('archive-inline-print');if(old)old.remove();
+      var printArea=document.createElement('article');printArea.id='archive-inline-print';printArea.className='aa-content';printArea.innerHTML=articleHtml(a);document.body.appendChild(printArea);formatContent(printArea);document.body.classList.add('aa-inline-print');
+      function cleanup(){printArea.remove();document.body.classList.remove('aa-inline-print');window.removeEventListener('afterprint',cleanup);}
+      window.addEventListener('afterprint',cleanup,{once:true});try{window.print();}catch(e){cleanup();throw e;}
+    }
+  }
   async function cardClick(e) {
     var toolButton=e.target.closest('[data-read-id]');if(toolButton){var tool=records.find(function(r){return r.id===toolButton.dataset.readId;});if(tool)openRead(tool);return;}
     var relatedButton=e.target.closest('[data-related-id]');if(relatedButton){e.preventDefault();var next=records.find(function(r){return r.id===relatedButton.dataset.relatedId;});if(next){ArchiveImages.close();openRead(next);}return;}
@@ -320,8 +333,11 @@ var ArchiveApp = (function () {
     }
     var card = e.target.closest('.article'); if (!card) return; var r = records.filter(function (item) { return item.card === card; })[0]; if (!r) return;
     var b = e.target.closest('button');
+    if(e.target.closest('.aa-inline-toolbar')&&!b)return;
     if (b) {
       e.preventDefault();
+      if(b.hasAttribute('data-share')){runArticleAction(b.dataset.share,r,b,true);return;}
+      if(b.hasAttribute('data-reader-memo')){memoId=r.card.querySelector('[data-memo-id]').dataset.memoId;memoDialog.querySelector('textarea').value=memoValue(memoId);show(memoDialog);return;}
       if (b.hasAttribute('data-memo-id')) { memoId = b.dataset.memoId; memoDialog.querySelector('textarea').value = memoValue(memoId); show(memoDialog); }
       else if (b.classList.contains('bookmark-btn')) { bookmarkRecord = r;bookmarkDialog.querySelectorAll('[data-color]').forEach(function(el){if(el.dataset.color)el.textContent=getBookmarkName(el.dataset.color);}); show(bookmarkDialog); }
       else if (b.classList.contains('pin-btn')) { var nextPins = pins.slice(); toggle(nextPins, r.id); if (persist('archive-pinned', nextPins)) { pins = nextPins; update(); } }
