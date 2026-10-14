@@ -533,7 +533,24 @@ function loadAllCachedChunks() {
  * @param {boolean} [opts.offline=false] — 오프라인 모드 여부
  */
 function applyToolMetadata(articles,toolMap){
-    try{articles.forEach(a=>{const t=toolMap[String(a.tweetId||a.id||a.pinId||'')];if(!t||t.status!=='verified'||typeof t.summary_ko!=='string'||!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(?:\/|$)/.test(t.repo_url||''))return;a.topics=Array.from(new Set([...(Array.isArray(a.topics)?a.topics:[]).filter(t=>t!=='기타'),'AI툴']));a.toolDescription=t.summary_ko.slice(0,240);a.toolCategory=String(t.category||'AI 도구').slice(0,40);a.toolLinks=[{url:t.repo_url,title:String(t.title||'GitHub 저장소').slice(0,100)}];if(!a.title||/click\s+to\s+(follow|subscribe)/i.test(a.title||a.fullText||''))a.title=String(t.title||'GitHub 도구').slice(0,100);});}catch(e){}
+    try{articles.forEach(a=>{
+      const t=toolMap[String(a.tweetId||a.id||a.pinId||'')];
+      if(!t||t.status!=='verified'||typeof t.summary_ko!=='string')return;
+      const candidates=Array.isArray(t.repo_links)&&t.repo_links.length?t.repo_links:[{url:t.repo_url,title:t.link_title||t.title}];
+      const seen=new Set(),links=[];
+      candidates.forEach(link=>{
+        if(!link||typeof link.url!=='string')return;
+        let u;try{u=new URL(link.url);}catch(e){return;}
+        if(u.protocol!=='https:'||u.hostname!=='github.com'||u.username||u.password||!/^\/[\w.-]+\/[\w.-]+\/?$/.test(u.pathname)||u.search||u.hash)return;
+        const url=u.href.replace(/\/$/,'').replace(/\.git$/,'');
+        if(seen.has(url.toLowerCase()))return;seen.add(url.toLowerCase());
+        links.push({url,title:String(link.title||t.title||'GitHub 저장소').slice(0,100)});
+      });
+      if(!links.length)return;
+      a.topics=Array.from(new Set([...(Array.isArray(a.topics)?a.topics:[]).filter(t=>t!=='기타'),'AI툴']));
+      a.toolDescription=t.summary_ko.slice(0,240);a.toolCategory=String(t.category||'AI 도구').slice(0,40);a.toolLinks=links;
+      if(!a.title||/click\s+to\s+(follow|subscribe)/i.test(a.title||a.fullText||''))a.title=String(t.title||'GitHub 도구').slice(0,100);
+    });}catch(e){}
 }
 
 function renderArticles(articles, renderer, container, opts = {}) {

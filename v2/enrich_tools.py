@@ -347,7 +347,7 @@ def korean_summary_from_readme(owner, repo, description):
     try:
         result = subprocess.run(
             [str(codex_bin), "exec", "-m", "gpt-6.1-sol",
-             "--sandbox", "read-only", "--skip-git-repo-check", "-"],
+             "--sandbox", "read-only", "--skip-git-repo-check", "-c", 'model_reasoning_effort="low"', "-"],
             input=prompt, capture_output=True, text=True, timeout=60, cwd="/tmp",
         )
         json_match = re.search(r"\{.*\}", result.stdout, re.DOTALL)
@@ -383,7 +383,7 @@ def analyze_image_batch(image_paths, timeout=180):
             "Even without visible URL, set is_github=true if title looks like a GitHub project.",
         ]
         args = [str(codex_bin), "exec", "-m", "gpt-6.1-sol",
-                "--sandbox", "read-only", "--skip-git-repo-check"]
+                "--sandbox", "read-only", "--skip-git-repo-check", "-c", 'model_reasoning_effort="low"']
         for img in batch:
             args.extend(["-i", str(img)])
         args.append("-")
