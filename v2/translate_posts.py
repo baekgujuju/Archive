@@ -29,6 +29,7 @@ import re
 import subprocess
 import sys
 import time
+from html.parser import HTMLParser
 from pathlib import Path
 
 V2_ROOT = Path(__file__).parent
@@ -81,7 +82,7 @@ def translate_paragraphs(paragraphs):
         raise FileNotFoundError("Gemini API key not found")
 
     numbered = "\n".join(f"[{i+1}] {p}" for i, p in enumerate(paragraphs))
-    prompt = f"""다음 영어 문단들을 한국어로 번역해주세요.
+    prompt = f"""다음 외국어 문단들을 한국어로 번역해주세요.
 각 문단 번호를 유지하고, 번역만 출력하세요.
 형식: [번호] 번역문
 번역문이 여러 줄이어도 됩니다. 다음 번호가 나오기 전까지가 하나의 번역문입니다.
@@ -136,12 +137,40 @@ def translate_paragraphs(paragraphs):
 
 def get_post_text(post):
     """포스트에서 번역 대상 텍스트 추출."""
+    if post.get('fullHtml'):
+        parser = ArticleParagraphs()
+        parser.feed(post['fullHtml'])
+        if parser.paragraphs:
+            return '\n\n'.join(parser.paragraphs)
     # IB는 fullText, X는 fullText, Web은 fullText/text
     for key in ("fullText", "text", "summary"):
         t = post.get(key, "")
         if t and isinstance(t, str) and t.strip():
             return t
     return ""
+
+
+class ArticleParagraphs(HTMLParser):
+    """Leaf prose blocks: preserve actual HTML paragraph boundaries."""
+    BLOCKS = {'p','h1','h2','h3','h4','h5','h6','li','blockquote','figcaption','td','th'}
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.stack, self.paragraphs, self.skip = [], [], 0
+    def handle_starttag(self, tag, attrs):
+        if tag in {'script','style'}: self.skip += 1
+        if tag in self.BLOCKS:
+            for block in self.stack: block['nested'] = True
+            self.stack.append({'tag':tag,'parts':[],'nested':False})
+        if tag == 'br': self.handle_data('\n')
+    def handle_data(self, data):
+        if not self.skip:
+            for block in self.stack: block['parts'].append(data)
+    def handle_endtag(self, tag):
+        if tag in {'script','style'}: self.skip = max(0,self.skip-1)
+        if self.stack and self.stack[-1]['tag'] == tag:
+            block=self.stack.pop()
+            value=''.join(block['parts']).strip()
+            if value and not block['nested']: self.paragraphs.append(value)
 
 
 def main():
@@ -174,7 +203,7 @@ def main():
             if not post_id:
                 continue
             text = get_post_text(post)
-            if not is_english_only(text):
+            if not any(is_english_only(p) and not is_placeholder(p) for p in split_paragraphs(text)):
                 skipped_ko += 1
                 continue
 
@@ -182,7 +211,11 @@ def main():
             cached = cache.get(post_id)
             if cached and not args.force:
                 # 해시 일치 시 스킵, 불일치 시 재번역
-                if cached.get("content_hash") == h and cached.get("status") == "ok":
+                valid_cached = (cached.get('paragraphs') == split_paragraphs(text)
+                                and isinstance(cached.get('translated'), list)
+                                and len(cached['translated']) == len(cached['paragraphs'])
+                                and all(isinstance(t,str) and t.strip() for t in cached['translated']))
+                if cached.get("content_hash") == h and cached.get("status") == "ok" and valid_cached:
                     skipped_hash += 1
                     continue
                 if cached.get("content_hash") != h:
@@ -201,7 +234,7 @@ def main():
         print(f"\n[{i+1}/{len(to_translate)}] [{chunk_name}] {post_id[:40]}...")
         paragraphs = split_paragraphs(text)
         # 플레이스홀더 제외 (번역은 하되 마킹)
-        real_paras = [p for p in paragraphs if not is_placeholder(p)]
+        real_paras = [p for p in paragraphs if is_english_only(p) and not is_placeholder(p)]
         skipped_ph = len(paragraphs) - len(real_paras)
         if skipped_ph:
             print(f"  플레이스홀더 제외: {skipped_ph}개")
@@ -212,11 +245,13 @@ def main():
 
         try:
             translated = translate_paragraphs(real_paras)
+            if len(translated) != len(real_paras) or any(not p.strip() for p in translated):
+                raise RuntimeError('번역 문단 누락: 완료로 기록하지 않고 재시도합니다.')
             # 원문 순서대로 매핑 (플레이스홀더는 원문 유지)
             full_translated = []
             ri = 0
             for p in paragraphs:
-                if is_placeholder(p):
+                if is_placeholder(p) or not is_english_only(p):
                     full_translated.append(p)  # 플레이스홀더는 번역하지 않음
                 else:
                     full_translated.append(translated[ri] if ri < len(translated) else "")

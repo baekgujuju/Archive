@@ -19,6 +19,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ctx = vm.createContext({ window: {}, console });
 const src = readFileSync(join(__dirname, 'render.js'), 'utf8');
 new vm.Script(src, { filename: 'render.js' }).runInContext(ctx);
+if (ctx.window.ArchiveRender.publishedLabel('655') !== '' || ctx.window.ArchiveRender.publishedLabel('156K') !== '') throw new Error('engagement counts must never render as publication dates');
+if (ctx.window.ArchiveRender.publishedLabel('Last editedOpens edit history7:34 PM · May 30, 2026') !== '7:34 PM · May 30, 2026') throw new Error('publication date UI labels must be removed');
+if (ctx.window.ArchiveRender.publishedLabel('2024-07-08T22:26:00+09:00') !== '2024-07-08') throw new Error('ISO publication dates must remain valid');
 const {
   escapeHtml,
   sliceCp,
