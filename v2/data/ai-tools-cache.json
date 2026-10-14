@@ -81,7 +81,18 @@
   },
   "2042091141328466156:4fb1012be889a4f4.png": {
     "fingerprint": "f25bdfc91f076314daf46d05c884dad192be135c4a3073f1be75873181c75440",
-    "entry": null,
+    "entry": {
+      "title": "Ollama",
+      "summary_ko": "로컬에서 대규모 언어 모델을 실행하는 도구",
+      "category": "로컬 LLM 실행 도구",
+      "repo_url": "https://github.com/ollama/ollama",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:ollama/ollama",
+        "api-verified"
+      ],
+      "fingerprint": "f25bdfc91f076314daf46d05c884dad192be135c4a3073f1be75873181c75440"
+    },
     "version": 3
   },
   "2042412982106554632:877720d2f33f5664.jpg": {
@@ -1310,6 +1321,282 @@
       ],
       "fingerprint": "b5e7472b8837f7d191edd4972a3650fd7cb8a5a607582a41dbd6c8af6c075c92"
     },
+    "version": 3
+  },
+  "2041704624529228093:2285fbb0b53bf3ed.png": {
+    "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc",
+    "entry": {
+      "title": "TimesFM",
+      "summary_ko": "구글 리서치의 시계열 예측 파운데이션 모델",
+      "category": "시계열 예측·AI 모델",
+      "repo_url": "https://github.com/google-research/timesfm",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:google-research/timesfm",
+        "api-verified"
+      ],
+      "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc"
+    },
+    "version": 3
+  },
+  "2042091141328466156:2031da7b5558dbb2.png": {
+    "fingerprint": "14b0bf705776a0c1e5e7c32fdd8896544819c29931cfdebd1fea44d8392427da",
+    "entry": {
+      "title": "Ollama",
+      "summary_ko": "로컬에서 대규모 언어 모델을 실행하는 도구",
+      "category": "로컬 LLM 실행 도구",
+      "repo_url": "https://github.com/ollama/ollama",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:ollama/ollama",
+        "api-verified"
+      ],
+      "fingerprint": "14b0bf705776a0c1e5e7c32fdd8896544819c29931cfdebd1fea44d8392427da"
+    },
+    "version": 3
+  },
+  "2043699713883701640:a5e204ad569f28c5.jpg": {
+    "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a",
+    "entry": {
+      "title": "Public APIs",
+      "summary_ko": "무료 공개 API 모음집",
+      "category": "개발자 리소스·API 모음",
+      "repo_url": "https://github.com/public-apis/public-apis",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:public-apis/public-apis",
+        "api-verified"
+      ],
+      "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a"
+    },
+    "version": 3
+  },
+  "2044745496141734314:0dd86f479501e82e.png": {
+    "fingerprint": "566e1487d21c982216d68e8f83a59116d5b072dacfcd78b07554b1ce7f0e3053",
+    "entry": {
+      "title": "rhwp",
+      "summary_ko": "HWP 문서 프로토콜 분석 도구",
+      "category": "문서 포맷 분석 도구",
+      "repo_url": "https://github.com/edwardkim/rhwp",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:edwardkim/rhwp",
+        "api-verified"
+      ],
+      "fingerprint": "566e1487d21c982216d68e8f83a59116d5b072dacfcd78b07554b1ce7f0e3053"
+    },
+    "version": 3
+  },
+  "2056043954421039302:3c0e0b8d4dabf490.jpg": {
+    "fingerprint": "c5548291d4e2f6428c09be6e0026f5ed1188652f56edeb98cc5feec25e53395c",
+    "entry": {
+      "title": "Dead Simple VPN",
+      "summary_ko": "간단한 자체 호스팅 VPN",
+      "category": "네트워크·VPN 도구",
+      "repo_url": "https://github.com/jedisct1/dsvpn",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:jedisct1/dsvpn",
+        "api-verified"
+      ],
+      "fingerprint": "c5548291d4e2f6428c09be6e0026f5ed1188652f56edeb98cc5feec25e53395c"
+    },
+    "version": 3
+  },
+  "2077936537170542655:e1700757bc8a6994.jpg": {
+    "fingerprint": "54d78d2cd77d90d410fc47b7ab24a35d062955b8ae68a3cb5512688940e0f526",
+    "entry": {
+      "title": "AI Hedge Fund",
+      "summary_ko": "AI 기반 헤지펀드 시뮬레이션",
+      "category": "AI 트레이딩·금융",
+      "repo_url": "https://github.com/virattt/ai-hedge-fund",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:virattt/ai-hedge-fund",
+        "api-verified"
+      ],
+      "fingerprint": "54d78d2cd77d90d410fc47b7ab24a35d062955b8ae68a3cb5512688940e0f526"
+    },
+    "version": 3
+  },
+  "2089574903523749987:bd6d980071ac7d72.jpg": {
+    "fingerprint": "71ec9fa9f0632b4d2746af17b677695544a8e025746d210155593eb830fe5e61",
+    "entry": {
+      "title": "Public APIs",
+      "summary_ko": "무료 공개 API 모음집 (한글 README)",
+      "category": "개발자 리소스·API 모음",
+      "repo_url": "https://github.com/public-apis/public-apis",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:public-apis/public-apis",
+        "api-verified"
+      ],
+      "fingerprint": "71ec9fa9f0632b4d2746af17b677695544a8e025746d210155593eb830fe5e61"
+    },
+    "version": 3
+  },
+  "2089574903523749987:eb78cb1742206670.jpg": {
+    "fingerprint": "496c70f709a204d099ee622182a27f1674494a630b49be1a2be6ef0ebfe70bc7",
+    "entry": {
+      "title": "Public APIs",
+      "summary_ko": "무료 공개 API 모음집 (한글 README)",
+      "category": "개발자 리소스·API 모음",
+      "repo_url": "https://github.com/public-apis/public-apis",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:public-apis/public-apis",
+        "api-verified"
+      ],
+      "fingerprint": "496c70f709a204d099ee622182a27f1674494a630b49be1a2be6ef0ebfe70bc7"
+    },
+    "version": 3
+  },
+  "2107365492797346155:f30bea55c962816e.png": {
+    "fingerprint": "2144fb1ede4e6a1842769104cfc7ccf72214dec8500d331eb0c2fd9d0ae6b1af",
+    "entry": {
+      "title": "Ledge",
+      "summary_ko": "실행 가능한 마크다운 (shell/code/SQL)",
+      "category": "개발자 도구·문서",
+      "repo_url": "https://github.com/ledgesh/ledge",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:ledgesh/ledge",
+        "api-verified"
+      ],
+      "fingerprint": "2144fb1ede4e6a1842769104cfc7ccf72214dec8500d331eb0c2fd9d0ae6b1af"
+    },
+    "version": 3
+  },
+  "2108173081441435912:e712ec45c1a5367f.jpg": {
+    "fingerprint": "901eb54c356de45e5a1127e00798c76a70f8d476f7e258bd1783d4cc8f4ff3b7",
+    "entry": {
+      "title": "Tracearr",
+      "summary_ko": "미디어 관리 도구 (공식 tracearr.com 링크 확인)",
+      "category": "미디어 관리 도구",
+      "repo_url": "https://github.com/connorgallopo/tracearr",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:connorgallopo/tracearr",
+        "api-verified"
+      ],
+      "fingerprint": "901eb54c356de45e5a1127e00798c76a70f8d476f7e258bd1783d4cc8f4ff3b7"
+    },
+    "version": 3
+  },
+  "2108316536394191045:be69e2a500aca10e.jpg": {
+    "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de",
+    "entry": {
+      "title": "CAMEL",
+      "summary_ko": "확장 가능한 AI 에이전트 프레임워크",
+      "category": "AI 에이전트 프레임워크",
+      "repo_url": "https://github.com/camel-ai/camel",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:camel-ai/camel",
+        "api-verified"
+      ],
+      "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de"
+    },
+    "version": 3
+  },
+  "2107674791243325659:753e659bcbbcec09.jpg": {
+    "fingerprint": "b73854ef5e81f4145dd1f7bdf72e8b8d0ad7f53607488267323f9ed12cfe086d",
+    "entry": {
+      "title": "OpenFrame CLI",
+      "summary_ko": "Flamingo 스택의 OpenFrame CLI",
+      "category": "개발자 CLI 도구",
+      "repo_url": "https://github.com/flamingo-stack/openframe-cli",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:flamingo-stack/openframe-cli",
+        "api-verified"
+      ],
+      "fingerprint": "b73854ef5e81f4145dd1f7bdf72e8b8d0ad7f53607488267323f9ed12cfe086d"
+    },
+    "version": 3
+  },
+  "2107886190087266427:c089b9f9d0143ddf.jpg": {
+    "fingerprint": "35b1e5b4aaf49829ce35630f0311e5e71ff2a261385b35609818bd9f41086347",
+    "entry": {
+      "title": "Pimcore",
+      "summary_ko": "오픈소스 디지털 경험 플랫폼",
+      "category": "CMS·디지털 플랫폼",
+      "repo_url": "https://github.com/pimcore/pimcore",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:pimcore/pimcore",
+        "api-verified"
+      ],
+      "fingerprint": "35b1e5b4aaf49829ce35630f0311e5e71ff2a261385b35609818bd9f41086347"
+    },
+    "version": 3
+  },
+  "2108218393568719269:38a4dc8f85067a37.jpg": {
+    "fingerprint": "ce2089169e2b0c32b2d93ac9ecc199bd73805f906acf63766b5ce55739feb711",
+    "entry": {
+      "title": "Mercury Agent",
+      "summary_ko": "Soul 기반 AI 에이전트",
+      "category": "AI 에이전트",
+      "repo_url": "https://github.com/cosmicstack-labs/mercury-agent",
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:cosmicstack-labs/mercury-agent",
+        "api-verified"
+      ],
+      "fingerprint": "ce2089169e2b0c32b2d93ac9ecc199bd73805f906acf63766b5ce55739feb711"
+    },
+    "version": 3
+  },
+  "2107859139938660811:082932b84c760a20.jpg": {
+    "fingerprint": "ca326a2013b6d36f37fa0442f2eaa685f9ecf3500a951cb1136119d1ab24eebb",
+    "entry": {
+      "title": "AI 코딩·디자인 스킬 모음",
+      "summary_ko": "AI 코딩과 디자인을 위한 스킬 모음 6종",
+      "category": "AI 스킬 모음",
+      "repo_url": "https://github.com/obra/superpowers",
+      "repo_links": [
+        {
+          "url": "https://github.com/obra/superpowers",
+          "title": "Superpowers"
+        },
+        {
+          "url": "https://github.com/anthropics/skills",
+          "title": "Anthropic Skills"
+        },
+        {
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+          "title": "UI/UX Pro Max Skill"
+        },
+        {
+          "url": "https://github.com/pbakaus/impeccable",
+          "title": "Impeccable"
+        },
+        {
+          "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+          "title": "Awesome Claude Skills"
+        },
+        {
+          "url": "https://github.com/heygen-com/hyperframes",
+          "title": "Hyperframes"
+        }
+      ],
+      "status": "verified",
+      "evidence": [
+        "user-visual-inspection:6-skill-aggregate",
+        "api-verified"
+      ],
+      "fingerprint": "ca326a2013b6d36f37fa0442f2eaa685f9ecf3500a951cb1136119d1ab24eebb"
+    },
+    "version": 3
+  },
+  "2107836535995568551:c57a5ab436a808fa.jpg": {
+    "fingerprint": "32f5ff3c1377c95177e431cb9682a98df4a78a6593b2aac71c5f21ed608f08b8",
+    "entry": null,
+    "version": 3
+  },
+  "2108854476367139013:faccd584d1a73e22.jpg": {
+    "fingerprint": "0979966c8f9a9bf0ae444d66976d040243cc911861b27505e1ea4938e26dba46",
+    "entry": null,
     "version": 3
   }
 }

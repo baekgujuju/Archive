@@ -166,5 +166,199 @@
       "user-web-search:lexmount/moli"
     ],
     "fingerprint": "b5e7472b8837f7d191edd4972a3650fd7cb8a5a607582a41dbd6c8af6c075c92"
+  },
+  "2041704624529228093": {
+    "title": "TimesFM",
+    "summary_ko": "구글 리서치의 시계열 예측 파운데이션 모델",
+    "category": "시계열 예측·AI 모델",
+    "repo_url": "https://github.com/google-research/timesfm",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:google-research/timesfm",
+      "api-verified"
+    ],
+    "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc"
+  },
+  "2042091141328466156": {
+    "title": "Ollama",
+    "summary_ko": "로컬에서 대규모 언어 모델을 실행하는 도구",
+    "category": "로컬 LLM 실행 도구",
+    "repo_url": "https://github.com/ollama/ollama",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:ollama/ollama",
+      "api-verified"
+    ],
+    "fingerprint": "14b0bf705776a0c1e5e7c32fdd8896544819c29931cfdebd1fea44d8392427da"
+  },
+  "2043699713883701640": {
+    "title": "Public APIs",
+    "summary_ko": "무료 공개 API 모음집",
+    "category": "개발자 리소스·API 모음",
+    "repo_url": "https://github.com/public-apis/public-apis",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:public-apis/public-apis",
+      "api-verified"
+    ],
+    "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a"
+  },
+  "2044745496141734314": {
+    "title": "rhwp",
+    "summary_ko": "HWP 문서 프로토콜 분석 도구",
+    "category": "문서 포맷 분석 도구",
+    "repo_url": "https://github.com/edwardkim/rhwp",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:edwardkim/rhwp",
+      "api-verified"
+    ],
+    "fingerprint": "566e1487d21c982216d68e8f83a59116d5b072dacfcd78b07554b1ce7f0e3053"
+  },
+  "2056043954421039302": {
+    "title": "Dead Simple VPN",
+    "summary_ko": "간단한 자체 호스팅 VPN",
+    "category": "네트워크·VPN 도구",
+    "repo_url": "https://github.com/jedisct1/dsvpn",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:jedisct1/dsvpn",
+      "api-verified"
+    ],
+    "fingerprint": "c5548291d4e2f6428c09be6e0026f5ed1188652f56edeb98cc5feec25e53395c"
+  },
+  "2077936537170542655": {
+    "title": "AI Hedge Fund",
+    "summary_ko": "AI 기반 헤지펀드 시뮬레이션",
+    "category": "AI 트레이딩·금융",
+    "repo_url": "https://github.com/virattt/ai-hedge-fund",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:virattt/ai-hedge-fund",
+      "api-verified"
+    ],
+    "fingerprint": "54d78d2cd77d90d410fc47b7ab24a35d062955b8ae68a3cb5512688940e0f526"
+  },
+  "2089574903523749987": {
+    "title": "Public APIs",
+    "summary_ko": "무료 공개 API 모음집 (한글 README)",
+    "category": "개발자 리소스·API 모음",
+    "repo_url": "https://github.com/public-apis/public-apis",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:public-apis/public-apis",
+      "api-verified"
+    ],
+    "fingerprint": "496c70f709a204d099ee622182a27f1674494a630b49be1a2be6ef0ebfe70bc7"
+  },
+  "2107365492797346155": {
+    "title": "Ledge",
+    "summary_ko": "실행 가능한 마크다운 (shell/code/SQL)",
+    "category": "개발자 도구·문서",
+    "repo_url": "https://github.com/ledgesh/ledge",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:ledgesh/ledge",
+      "api-verified"
+    ],
+    "fingerprint": "2144fb1ede4e6a1842769104cfc7ccf72214dec8500d331eb0c2fd9d0ae6b1af"
+  },
+  "2108173081441435912": {
+    "title": "Tracearr",
+    "summary_ko": "미디어 관리 도구 (공식 tracearr.com 링크 확인)",
+    "category": "미디어 관리 도구",
+    "repo_url": "https://github.com/connorgallopo/tracearr",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:connorgallopo/tracearr",
+      "api-verified"
+    ],
+    "fingerprint": "901eb54c356de45e5a1127e00798c76a70f8d476f7e258bd1783d4cc8f4ff3b7"
+  },
+  "2108316536394191045": {
+    "title": "CAMEL",
+    "summary_ko": "확장 가능한 AI 에이전트 프레임워크",
+    "category": "AI 에이전트 프레임워크",
+    "repo_url": "https://github.com/camel-ai/camel",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:camel-ai/camel",
+      "api-verified"
+    ],
+    "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de"
+  },
+  "2107674791243325659": {
+    "title": "OpenFrame CLI",
+    "summary_ko": "Flamingo 스택의 OpenFrame CLI",
+    "category": "개발자 CLI 도구",
+    "repo_url": "https://github.com/flamingo-stack/openframe-cli",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:flamingo-stack/openframe-cli",
+      "api-verified"
+    ],
+    "fingerprint": "b73854ef5e81f4145dd1f7bdf72e8b8d0ad7f53607488267323f9ed12cfe086d"
+  },
+  "2107886190087266427": {
+    "title": "Pimcore",
+    "summary_ko": "오픈소스 디지털 경험 플랫폼",
+    "category": "CMS·디지털 플랫폼",
+    "repo_url": "https://github.com/pimcore/pimcore",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:pimcore/pimcore",
+      "api-verified"
+    ],
+    "fingerprint": "35b1e5b4aaf49829ce35630f0311e5e71ff2a261385b35609818bd9f41086347"
+  },
+  "2108218393568719269": {
+    "title": "Mercury Agent",
+    "summary_ko": "Soul 기반 AI 에이전트",
+    "category": "AI 에이전트",
+    "repo_url": "https://github.com/cosmicstack-labs/mercury-agent",
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:cosmicstack-labs/mercury-agent",
+      "api-verified"
+    ],
+    "fingerprint": "ce2089169e2b0c32b2d93ac9ecc199bd73805f906acf63766b5ce55739feb711"
+  },
+  "2107859139938660811": {
+    "title": "AI 코딩·디자인 스킬 모음",
+    "summary_ko": "AI 코딩과 디자인을 위한 스킬 모음 6종",
+    "category": "AI 스킬 모음",
+    "repo_url": "https://github.com/obra/superpowers",
+    "repo_links": [
+      {
+        "url": "https://github.com/obra/superpowers",
+        "title": "Superpowers"
+      },
+      {
+        "url": "https://github.com/anthropics/skills",
+        "title": "Anthropic Skills"
+      },
+      {
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "title": "UI/UX Pro Max Skill"
+      },
+      {
+        "url": "https://github.com/pbakaus/impeccable",
+        "title": "Impeccable"
+      },
+      {
+        "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+        "title": "Awesome Claude Skills"
+      },
+      {
+        "url": "https://github.com/heygen-com/hyperframes",
+        "title": "Hyperframes"
+      }
+    ],
+    "status": "verified",
+    "evidence": [
+      "user-visual-inspection:6-skill-aggregate",
+      "api-verified"
+    ],
+    "fingerprint": "ca326a2013b6d36f37fa0442f2eaa685f9ecf3500a951cb1136119d1ab24eebb"
   }
 }
