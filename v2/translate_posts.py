@@ -52,7 +52,12 @@ def is_english_only(text):
     """한국어가 전혀 없는 텍스트인지."""
     if not text or not text.strip():
         return False
-    return not KO_PAT.search(text)
+    if KO_PAT.search(text):
+        return False
+    prose=re.sub(r'https?://[^\s]+|www\.[^\s]+|\$[A-Z][A-Z0-9.]*','',text)
+    letters=[c for c in prose if c.isalpha()]
+    # URLs, stock tickers, separators and referral numbers are not prose.
+    return len(letters)>=4 or (len(letters)>=2 and any(ord(c)>127 for c in letters))
 
 
 def is_placeholder(para):
@@ -84,6 +89,7 @@ def translate_paragraphs(paragraphs):
     numbered = "\n".join(f"[{i+1}] {p}" for i, p in enumerate(paragraphs))
     prompt = f"""다음 외국어 문단들을 한국어로 번역해주세요.
 각 문단 번호를 유지하고, 번역만 출력하세요.
+URL과 종목 기호는 원문 그대로 보존하세요.
 형식: [번호] 번역문
 번역문이 여러 줄이어도 됩니다. 다음 번호가 나오기 전까지가 하나의 번역문입니다.
 

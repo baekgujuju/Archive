@@ -14,6 +14,11 @@ class ParagraphTests(unittest.TestCase):
         self.assertEqual([p for p in ps if module.is_english_only(p)],['The original English paragraph.'])
     def test_no_script_text(self):
         self.assertEqual(module.get_post_text({'fullHtml':'<p>Actual text<script>BAD()</script></p>'}),'Actual text')
+    def test_nonprose_does_not_trigger_translation(self):
+        for value in ['https://naver.me/F1atsZoX','─────────────────','$ANET\n$CSCO\n$HPE','952M22','-']:
+            self.assertFalse(module.is_english_only(value),value)
+        self.assertTrue(module.is_english_only('$HPE\nTrend Continuation'))
+        self.assertTrue(module.is_english_only('东芝扩产HDD'))
     def test_failed_refresh_keeps_previous_success(self):
         with tempfile.TemporaryDirectory(prefix='translation-test-',dir=module.V2_ROOT) as tmp:
             root=Path(tmp);cache=root/'translations.json'
