@@ -139,7 +139,7 @@ const webArticle = {
   id: 'web1',
 };
 const wcard = articleCard(webArticle, { idx: 0 });
-check('web card 뱃지', wcard.includes('웹글 · WEB ARTICLE'));
+check('web card 출처 유형 배지 생략', !wcard.includes('type-badge'));
 check('web card meta', wcard.includes('example.com · 저장 2026-10-13'));
 check('web card x-card 없음', !wcard.includes('x-card'));
 

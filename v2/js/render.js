@@ -190,8 +190,8 @@ function memoButtonHtml(memoId, title = '') {
   return (
     `<button type="button" class="memo-btn memo-icon-btn memo-hidden" ` +
     `data-memo-id="${safeId}" data-memo-title="${safeTitle}" title="메모">` +
-    `<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>` +
-    `<path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></button>`
+    `<svg viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5z"/>` +
+    `<path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></button>`
   );
 }
 
@@ -504,17 +504,17 @@ function articleCard(article, options = {}) {
     '<div class="bookmark-colors" hidden></div>' +
     `<div class="spotlight-label"${featured ? '' : ' hidden'}>LATEST PICK · 가장 최근 글</div>` +
     '<div class="card-header">' +
-    `<div class="type-badge">${isX ? '𝕏 · X 게시물' : a.type === 'ib' ? '🎓 IB 자료' : '웹글 · WEB ARTICLE'}</div>` +
+    (a.type === 'ib' ? '<div class="type-badge">IB 자료</div>' : '') +
     '<div class="card-actions">' +
     memoButtonHtml(memoId, title) +
     '<button type="button" class="bookmark-btn" aria-label="북마크" title="북마크">' +
     '<svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg></button>' +
     '<button type="button" class="pin-btn" aria-label="상단 고정" title="상단 고정">' +
-    '<svg viewBox="0 0 24 24"><path d="M9 4h6l-1 7 3 3v2H7v-2l3-3-1-7z"/><path d="M12 14v7"/></svg></button>' +
+    '<svg viewBox="0 0 24 24"><path d="M8 3h8l-1 7 4 4v2H5v-2l4-4-1-7z"/><path d="M12 16v5"/></svg></button>' +
     '<button type="button" class="delete-btn" aria-label="삭제" title="삭제">' +
-    '<svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-9 0 1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></button>' +
+    '<svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-9 0 1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></button>' +
     '</div></div>' +
-    `<h3>${escapeHtml(title)}${handle}</h3><div class="meta">${escapeHtml(meta)}</div>` +
+    `<h3>${escapeHtml(title)}</h3>${handle}<div class="meta">${escapeHtml(meta)}</div>` +
     `<p class="summary">${escapeHtml(summary)}</p><div class="tags">${topicsHtml(topics)}</div>` +
     '</summary>' +
     `<div class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
