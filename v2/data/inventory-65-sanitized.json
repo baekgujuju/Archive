@@ -2,7 +2,7 @@
   {
     "id": "ib_pin_494947",
     "title": "PirateIB - IB Past Papers (과목별)",
-    "url": "",
+    "canonical_url": "https://dl.pirateib.sh/IB%20PAST%20PAPERS%20-%20SUBJECT/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -10,7 +10,7 @@
   {
     "id": "ib_pin_826668",
     "title": "PirateIB - IB Past Papers (연도별)",
-    "url": "",
+    "canonical_url": "https://dl.pirateib.sh/IB%20PAST%20PAPERS%20-%20YEAR/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -18,7 +18,7 @@
   {
     "id": "ib_pin_896124",
     "title": "PirateIB - IB Questionbanks",
-    "url": "",
+    "canonical_url": "https://dl.pirateib.sh/IB%20QUESTIONBANKS/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -26,7 +26,7 @@
   {
     "id": "ib_pin_753301",
     "title": "PirateIB - IB Specimen Papers",
-    "url": "",
+    "canonical_url": "https://dl.pirateib.sh/IB%20SPECIMEN%20PAPERS/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -34,7 +34,7 @@
   {
     "id": "ib_pin_823263",
     "title": "PirateIB - IB 교재",
-    "url": "",
+    "canonical_url": "https://dl.pirateib.sh/IB%20BOOKS/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -42,15 +42,15 @@
   {
     "id": "ib_pin_640908",
     "title": "IB 만점자가 말해주는 IB 공부방법",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/83104?tc=shared_link",
     "status": "verified-structure",
     "chars": 0,
     "images": 0
   },
   {
     "id": "ib_pin_349845",
-    "title": "[IB만점자가 알려줍니다] IB Biology, Chemistry는 어떻게 공부해야 할까요",
-    "url": "",
+    "title": "[IB만점자가 알려줍니다] IB Biology, Chemistry는 어떻게 공부해야 할까요?",
+    "canonical_url": "https://m.cafe.naver.com/ca-fe/web/cafes/tatoobbc/articles/84168?art=ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6InRhdG9vYmJjIiwiYXJ0aWNsZUlkIjo4NDE2OCwiaXNzdWVkQXQiOjE3MzI0OTE4NDIzMjl9.WhzLRDsTHuLCX4vdASPyXeG23-ERZI6VAi8n8TdaPgQ&useCafeId=false&tc=naver_search&query=cambridge%2Bchemistry%2Bib",
     "status": "short",
     "chars": 6,
     "images": 0
@@ -58,7 +58,7 @@
   {
     "id": "ib_pin_275327",
     "title": "IB DP 개인적 고찰",
-    "url": "",
+    "canonical_url": "https://m.cafe.naver.com/ca-fe/web/cafes/tatoobbc/articles/105930?art=aW50ZXJuYWwtY2FmZS1hcnRpY2xlLXJlYWQtc2hhcmUtbGluaw.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYWZlVHlwZSI6IkNBRkVfSUQiLCJhcnRpY2xlSWQiOjEwNTkzMCwiaXNzdWVkQXQiOjE3OTEzMDkxODE5MDEsImNhZmVJZCI6MjUzNDI0Nzd9.B-Hf9oVf42jLZlzoWuCK5dr73BLkMNzKkEiLnxWIorE&useCafeId=false&tc",
     "status": "collected",
     "chars": 9113,
     "images": 0
@@ -66,7 +66,7 @@
   {
     "id": "ib_pin_372283",
     "title": "IB DP 개인적 고찰",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/134",
     "status": "collected",
     "chars": 14855,
     "images": 0
@@ -74,7 +74,7 @@
   {
     "id": "ib_pin_417196",
     "title": "외국인학교 교육과정과 과목선정",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/PostView.naver?blogId=paretoprepib&logNo=223646737428&proxyReferer=&noTrackingCode=true",
     "status": "collected",
     "chars": 3974,
     "images": 0
@@ -82,7 +82,7 @@
   {
     "id": "ib_pin_822368",
     "title": "외국인학교 교육과정과 과목선정",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/PostView.naver?blogId=paretoprepib&logNo=223668556486&proxyReferer=&noTrackingCode=true",
     "status": "collected",
     "chars": 1191,
     "images": 0
@@ -90,7 +90,7 @@
   {
     "id": "ib_pin_502316",
     "title": "외국인학교 교육과정과 과목선정_2",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/PostView.naver?blogId=paretoprepib&logNo=223646737428&proxyReferer=&noTrackin",
     "status": "collected",
     "chars": 3974,
     "images": 0
@@ -98,7 +98,7 @@
   {
     "id": "ib_pin_44259",
     "title": "외국인학교 교육과정과 과목선정_2",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/PostView.naver?blogId=paretoprepib&logNo=223668556486&proxyReferer=&noTrackin",
     "status": "collected",
     "chars": 1181,
     "images": 0
@@ -106,7 +106,7 @@
   {
     "id": "ib_pin_182636",
     "title": "외국인학교 교육과정과 과목선정",
-    "url": "",
+    "canonical_url": "https://youtube.com/@paretoprepib?si=p1lCWTG4CFtBKNpO",
     "status": "short",
     "chars": 56,
     "images": 0
@@ -114,7 +114,7 @@
   {
     "id": "ib_pin_213342",
     "title": "Pareto Prep IB Blog",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/PostView.naver?blogId=paretoprepib&logNo=223646737428",
     "status": "collected",
     "chars": 3974,
     "images": 0
@@ -122,7 +122,7 @@
   {
     "id": "ib_pin_657015",
     "title": "IB Chemistry IA는 이렇게",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/90855?tc=shared_link",
     "status": "collected",
     "chars": 15025,
     "images": 0
@@ -130,7 +130,7 @@
   {
     "id": "ib_pin_629031",
     "title": "미국 대학 장학금 알아보기 - 각 대학별 장학금",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/92014?tc=shared_link",
     "status": "collected",
     "chars": 15025,
     "images": 0
@@ -138,7 +138,7 @@
   {
     "id": "ib_pin_33203",
     "title": "Stanford early 합격 후 입시 경험 공유",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/anyounghwa/58248?tc=shared_link",
     "status": "collected",
     "chars": 6487,
     "images": 0
@@ -146,7 +146,7 @@
   {
     "id": "ib_pin_575535",
     "title": "주요 대학의 외국인 입학생 스토리를 모은 사이트가 있네요",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/87097?tc=shared_link",
     "status": "collected",
     "chars": 15025,
     "images": 0
@@ -154,7 +154,7 @@
   {
     "id": "ib_pin_517778",
     "title": "미국 대학 입학 컨설팅 후기",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/92030?tc=shared_link",
     "status": "collected",
     "chars": 15025,
     "images": 0
@@ -162,7 +162,7 @@
   {
     "id": "ib_pin_70268",
     "title": "아무도 안 알려주는 고등학생이 논문 1저자로 활동하는 방법",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/100688?art=aW50ZXJuYWwtY2FmZS1hcnRpY2xlLXJlYWQtc2hhcmUtbGluaw.eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjYWZlVHlwZSI6IkNBRkVfSUQiLCJhcnRpY2xlSWQiOjEwMDY4OCwiaXNzdWVkQXQiOjE3NzIxODIxMDA0MjksImNhZmVJZCI6MjUzNDI0Nzd9.3URqHg470_G7jn_sJI-oa8WLe92X5CX8MsmzVlg9xfM&tc=shared_link",
     "status": "collected",
     "chars": 21415,
     "images": 0
@@ -170,7 +170,7 @@
   {
     "id": "ib_pin_775484",
     "title": "IB 줌과외 블로그 (colourfulconghee)",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/PostList.naver?blogId=colourfulconghee&tab=1",
     "status": "collected",
     "chars": 8766,
     "images": 0
@@ -178,7 +178,7 @@
   {
     "id": "ib_pin_761528",
     "title": "2년만에 와보니 교육의 끝에 대한 고민은 변하지 않는 것 같습니다",
-    "url": "",
+    "canonical_url": "https://cafe.naver.com/tatoobbc/88937?tc=shared_link",
     "status": "collected",
     "chars": 15025,
     "images": 0
@@ -186,7 +186,7 @@
   {
     "id": "ib_pin_325208",
     "title": "Primary 4 Maths Free Test Papers 2021",
-    "url": "",
+    "canonical_url": "https://www.sgtestpaper.com/primary/y21p4maths.html",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -194,7 +194,7 @@
   {
     "id": "ib_pin_967767",
     "title": "Competition Papers - UKMT",
-    "url": "",
+    "canonical_url": "https://ukmt.org.uk/competition-papers",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -202,7 +202,7 @@
   {
     "id": "ib_pin_175145",
     "title": "Math Olympiad Contest Problems Volume 1",
-    "url": "",
+    "canonical_url": "https://moems.org/product/math-olympiad-contest-problems-volume-1/",
     "status": "short",
     "chars": 82,
     "images": 0
@@ -210,7 +210,7 @@
   {
     "id": "ib_pin_367026",
     "title": "Art of Problem Solving",
-    "url": "",
+    "canonical_url": "https://artofproblemsolving.com/",
     "status": "collected",
     "chars": 2873,
     "images": 0
@@ -218,23 +218,23 @@
   {
     "id": "ib_pin_214830",
     "title": "영국수학경시대회 UKMT 놓치면 안되는 이유! - 참가자 40%수상 STEM전공 필수스펙",
-    "url": "",
+    "canonical_url": "https://naver.me/Fio70JfE",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
   },
   {
     "id": "ib_pin_379164",
-    "title": "해외 국제학교 수학 경시대회 정리 (ISMTF, AMC, MOEMS, Kangaroo, U",
-    "url": "",
+    "title": "해외 국제학교 수학 경시대회 정리 (ISMTF, AMC, MOEMS, Kangaroo, UKMT, JMC, ",
+    "canonical_url": "https://naver.me/5k7ZllmQ",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
   },
   {
     "id": "ib_pin_723872",
-    "title": "AMC / UKMT / Math Kangaroo / Waterloo Math 각 경시별 차",
-    "url": "",
+    "title": "AMC / UKMT / Math Kangaroo / Waterloo Math 각 경시별 차이점",
+    "canonical_url": "https://naver.me/xnhJ0irh",
     "status": "short",
     "chars": 6,
     "images": 0
@@ -242,7 +242,7 @@
   {
     "id": "ib_pin_552160",
     "title": "국제 수학 경시대회 안내!",
-    "url": "",
+    "canonical_url": "https://m.blog.naver.com/macs5320858/223724131051?recommendCode=0&recommendTrackingCode=0&searchKeyword=ukmt%20jmc",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -250,23 +250,23 @@
   {
     "id": "ib_pin_988362",
     "title": "Best resources for AMC 8, AMC 10 and AMC 12 prep?",
-    "url": "",
+    "canonical_url": "https://www.reddit.com/r/MathOlympiad/comments/1n1fv2a/best_resources_for_amc_8_amc_10_and_amc_12_prep/?solution=0717499a5f9c775b0717499a5f9c775b&js_challenge=1&token=7afd7253fec22262ff1c52b1703fe9ec5b178eb8bf2b4aaf1a52b997271ee466&jsc_orig_r=",
     "status": "collected",
     "chars": 15840,
     "images": 0
   },
   {
     "id": "ib_pin_218680",
-    "title": "AMC / UKMT / Math Kangaroo / Waterloo Math 각 경시별 차",
-    "url": "",
+    "title": "AMC / UKMT / Math Kangaroo / Waterloo Math 각 경시별 차이점",
+    "canonical_url": "https://m.blog.naver.com/edenblaze/223750092471?recommendCode=0&recommendTrackingCode=0&searchKeyword=ukmt%20jmc",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
   },
   {
     "id": "ib_pin_633658",
-    "title": "고등학교 수학의 최종 보스: Linear Algebra / Multivariable Cal",
-    "url": "",
+    "title": "고등학교 수학의 최종 보스: Linear Algebra / Multivariable Calculus 이야기",
+    "canonical_url": "https://naver.me/FK5u3QBH",
     "status": "short",
     "chars": 6,
     "images": 0
@@ -274,7 +274,7 @@
   {
     "id": "ib_pin_399738",
     "title": "Khan Academy",
-    "url": "",
+    "canonical_url": "https://www.khanacademy.org/",
     "status": "collected",
     "chars": 7693,
     "images": 0
@@ -282,7 +282,7 @@
   {
     "id": "ib_pin_827745",
     "title": "Random Math Wiki",
-    "url": "",
+    "canonical_url": "https://wiki.randommath.com/",
     "status": "short",
     "chars": 11,
     "images": 0
@@ -290,7 +290,7 @@
   {
     "id": "ib_pin_285889",
     "title": "Inquiry Maths",
-    "url": "",
+    "canonical_url": "https://www.inquirymaths.com/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -298,7 +298,7 @@
   {
     "id": "ib_pin_307816",
     "title": "MIT MathNet",
-    "url": "",
+    "canonical_url": "https://mathnet.csail.mit.edu/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -306,7 +306,7 @@
   {
     "id": "ib_pin_266720",
     "title": "Yummy Math",
-    "url": "",
+    "canonical_url": "https://www.yummymath.com/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -314,7 +314,7 @@
   {
     "id": "ib_pin_974365",
     "title": "Open Middle",
-    "url": "",
+    "canonical_url": "https://www.openmiddle.com/",
     "status": "collected",
     "chars": 662,
     "images": 0
@@ -322,7 +322,7 @@
   {
     "id": "ib_pin_596788",
     "title": "NRICH (Cambridge)",
-    "url": "",
+    "canonical_url": "https://nrich.maths.org/",
     "status": "collected",
     "chars": 1083,
     "images": 0
@@ -330,7 +330,7 @@
   {
     "id": "ib_pin_713515",
     "title": "국제학교 수학선생님들이 주로 사용하시는 수업 자료 싸이트 공유드립니다~!",
-    "url": "",
+    "canonical_url": "https://naver.me/F5swOqb3?tc=shared_link",
     "status": "short",
     "chars": 6,
     "images": 0
@@ -338,7 +338,7 @@
   {
     "id": "ib_pin_709031",
     "title": "Science News Explores",
-    "url": "",
+    "canonical_url": "https://www.snexplores.org/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -346,15 +346,15 @@
   {
     "id": "ib_pin_512922",
     "title": "PhET Interactive Simulations",
-    "url": "",
+    "canonical_url": "https://phet.colorado.edu/",
     "status": "collected",
     "chars": 2404,
     "images": 0
   },
   {
     "id": "ib_pin_265637",
-    "title": "Learn English with Free News Articles - Level 4 (A",
-    "url": "",
+    "title": "Learn English with Free News Articles - Level 4 (Advanced)",
+    "canonical_url": "https://englishdiary.net/category/english-newsroom/english-newsroom-level-4-advanced/",
     "status": "collected",
     "chars": 20339,
     "images": 0
@@ -362,7 +362,7 @@
   {
     "id": "ib_pin_799491",
     "title": "Breaking News English",
-    "url": "",
+    "canonical_url": "https://breakingnewsenglish.com/",
     "status": "failed",
     "chars": 0,
     "images": 0
@@ -370,7 +370,7 @@
   {
     "id": "ib_pin_107821",
     "title": "News in Levels",
-    "url": "",
+    "canonical_url": "https://www.newsinlevels.com/",
     "status": "collected",
     "chars": 1323,
     "images": 0
@@ -378,7 +378,7 @@
   {
     "id": "ib_pin_767505",
     "title": "CNN으로 배우는 무료 영어 학습",
-    "url": "",
+    "canonical_url": "https://cnn.ybmnet.co.kr/list/news10",
     "status": "short",
     "chars": 34,
     "images": 0
@@ -386,15 +386,15 @@
   {
     "id": "ib_pin_523938",
     "title": "2012 HSK grammar points - Chinese Grammar Wiki",
-    "url": "",
+    "canonical_url": "https://resources.allsetlearning.com/chinese/grammar/HSK",
     "status": "collected",
     "chars": 4017,
     "images": 0
   },
   {
     "id": "ib_pin_770339",
-    "title": "Learn Chinese Characters: Chinese Character Course",
-    "url": "",
+    "title": "Learn Chinese Characters: Chinese Character Course (Level 1)",
+    "canonical_url": "https://youtube.com/playlist?list=PLx1Agzx9HiRoL8kVdMbIOMtpIJ_cpRDZT&si=pKqzOyQZswufKJ75",
     "status": "short",
     "chars": 106,
     "images": 0
@@ -402,7 +402,7 @@
   {
     "id": "ib_pin_34418",
     "title": "에세이컨설팅 회사대표들이 추천하는 학년별 에세이대회",
-    "url": "",
+    "canonical_url": "https://youtu.be/J5FFj4ofM8I?si=zaYEvTD",
     "status": "collected",
     "chars": 14841,
     "images": 0
@@ -410,7 +410,7 @@
   {
     "id": "ib_pin_64379",
     "title": "접속 불가",
-    "url": "",
+    "canonical_url": "https://writing.wisc.edu/handbook/transitions",
     "status": "collected",
     "chars": 1456,
     "images": 0
@@ -418,15 +418,15 @@
   {
     "id": "ib_pin_989223",
     "title": "Transitions – The Writing Center",
-    "url": "",
+    "canonical_url": "https://writingcenter.unc.edu/tips-and-tools/transitions/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
   },
   {
     "id": "ib_pin_323037",
-    "title": "Brown Supplemental Essays: Prompts and How to Answ",
-    "url": "",
+    "title": "Brown Supplemental Essays: Prompts and How to Answer",
+    "canonical_url": "https://ingeniusprep.com/blog/how-to-write-the-brown-supplemental-essays/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -434,15 +434,15 @@
   {
     "id": "ib_pin_833566",
     "title": "Why Do Colleges Reject Good Students?",
-    "url": "",
+    "canonical_url": "https://www.solomonadmissions.com/post/why-do-colleges-reject-good-students/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
   },
   {
     "id": "ib_pin_93604",
-    "title": "USA Scholarships for International Students 2026-2",
-    "url": "",
+    "title": "USA Scholarships for International Students 2026-2027",
+    "canonical_url": "https://www.scholars4dev.com/category/country/usa-scholarships/",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -450,7 +450,7 @@
   {
     "id": "ib_pin_486879",
     "title": "Podcast | Undergraduate Admissions",
-    "url": "",
+    "canonical_url": "https://admissions.yale.edu/podcast",
     "status": "collected",
     "chars": 4314,
     "images": 0
@@ -458,7 +458,7 @@
   {
     "id": "ib_pin_392074",
     "title": "International Admission Statistics",
-    "url": "",
+    "canonical_url": "https://www.collegetransitions.com/dataverse/international-admission",
     "status": "not-attempted",
     "chars": 0,
     "images": 0
@@ -466,7 +466,7 @@
   {
     "id": "ib_pin_347202",
     "title": "접속 불가",
-    "url": "",
+    "canonical_url": "https://nces.ed.gov/collegenavigator/?q=brown&s=all&id=217156#admsns",
     "status": "collected",
     "chars": 4393,
     "images": 0
@@ -474,7 +474,7 @@
   {
     "id": "ib_pin_425170",
     "title": "네이버 카페 (anycallusershow) 글 (제목 확인 중)",
-    "url": "",
+    "canonical_url": "https://naver.me/5ECrLQIT?tc=shared_link",
     "status": "short",
     "chars": 6,
     "images": 0
@@ -482,7 +482,7 @@
   {
     "id": "ib_pin_960873",
     "title": "네이버 카페 (anycallusershow) 글 (제목 확인 중)",
-    "url": "",
+    "canonical_url": "https://naver.me/FlBFrPcN?tc=shared_link",
     "status": "collected",
     "chars": 627,
     "images": 0
@@ -490,7 +490,7 @@
   {
     "id": "ib_pin_336558",
     "title": "네이버 카페 (anycallusershow) 글 (제목 확인 중)",
-    "url": "",
+    "canonical_url": "https://naver.me/IDkOD1hA?tc=shared_link",
     "status": "collected",
     "chars": 627,
     "images": 0
@@ -498,7 +498,7 @@
   {
     "id": "ib_pin_898377",
     "title": "Coursera",
-    "url": "",
+    "canonical_url": "https://www.coursera.org/",
     "status": "collected",
     "chars": 5193,
     "images": 0
@@ -506,14 +506,14 @@
   {
     "id": "web_unknown",
     "title": "",
-    "url": "",
+    "canonical_url": "",
     "status": "not-attempted",
     "chars": 0
   },
   {
     "id": "article-20261011-1048",
     "title": "Cycle Of Price Action",
-    "url": "",
+    "canonical_url": "https://www.traderlion.com",
     "status": "not-attempted",
     "chars": 0
   }
