@@ -34,6 +34,7 @@ MANIFEST = DATA_DIR / "manifest.json"
 RETRY_TRANSLATION = HOOKS_DIR / ".retry_translation"
 RETRY_COMMIT = HOOKS_DIR / ".retry_commit"
 RETRY_MEDIA = HOOKS_DIR / ".retry_media"
+RETRY_ENRICH = HOOKS_DIR / ".retry-enrich"
 COMMIT_PATHS = ["data/", "media/", "ib-library.json"]
 
 PUBLISH_ENABLED = os.environ.get("V2_PUBLISH", "") == "1"
@@ -144,7 +145,7 @@ def main():
         return 2
     log("락 획득")
 
-    has_retry_marker = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists()
+    has_retry_marker = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()
     if has_retry_marker:
         log("재시도 마커 감지 — 소스 변경 여부와 무관하게 처리")
 

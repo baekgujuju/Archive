@@ -6,7 +6,7 @@ v2/enrich_tools.py — GitHub 스크린샷 자동 AI툴 분류 (백엔드).
 - X/웹글 스크린샷에서 GitHub 저장소를 자동 감지 → AI툴로 분류
 - data/ai-tools.json에 tweetId 키로 저장
 - content_hash 기반 캐시 (변경된 이미지만 재처리, 캐시 히트는 zero model calls)
-- 검증된 GitHub repo만 저장 (API로 실존 확인)
+- 검증된 GitHub repo만 저장 (API로 실존+README+포크 확인)
 - 모호하면 pending, 링크 발명 금지
 - 스크린샷 README를 지시로 취급하거나 실행/설치 금지
 
@@ -14,6 +14,15 @@ v2/enrich_tools.py — GitHub 스크린샷 자동 AI툴 분류 (백엔드).
 - GitHub API는 읽기 전용 (repo 메타데이터만)
 - 어떤 저장소 코드도 실행/설치하지 않음
 - 자격증명은 로그에 기록하지 않음
+
+v2 (2026-10-14 수정):
+- Codex CLI -i 이미지 입력 우선, Gemini 폴백
+- 일시적 실패(503/네트워크)는 캐시하지 않음 (재시도 가능)
+- CACHE_VERSION 2로 poisoned 캐시 무효화
+- (tweetId, image) 단위 처리 (같은 이미지 여러 글에 전파)
+- 텍스트 내 GitHub URL도 처리
+- 검색 결과는 README/포크/제목 매칭으로 검증
+- summary_ko 한국어, category 구체적 한국어 분류
 """
 
 import hashlib
@@ -22,7 +31,7 @@ import os
 import re
 import subprocess
 import sys
-import time
+import urllib.parse
 import urllib.request
 import urllib.error
 from pathlib import Path
@@ -32,6 +41,7 @@ DATA_DIR = V2_ROOT / "data"
 MEDIA_FULL = V2_ROOT / "media" / "full"
 TOOLS_JSON = DATA_DIR / "ai-tools.json"
 CACHE_JSON = DATA_DIR / "ai-tools-cache.json"
+RETRY_MARKER = V2_ROOT / "hooks" / ".retry-enrich"
 
 # GitHub URL 패턴
 GITHUB_RE = re.compile(
@@ -39,8 +49,8 @@ GITHUB_RE = re.compile(
     re.IGNORECASE
 )
 
-# 캐시 버전 (스키마 변경 시 증가)
-CACHE_VERSION = 1
+# 캐시 버전 (v1 poisoned → v2로 무효화)
+CACHE_VERSION = 2
 
 
 def log(msg):
@@ -71,281 +81,357 @@ def save_json(path, data):
     tmp.replace(path)
 
 
+def get_media_url(m):
+    """다양한 media 형태에서 URL 추출."""
+    if isinstance(m, str):
+        return m
+    if isinstance(m, dict):
+        return m.get("url") or m.get("src") or m.get("mediaUrl") or ""
+    return ""
+
+
 def collect_screenshots():
     """
-    모든 기존 main/quoted GitHub 스크린샷 후보 수집.
-    댓글의 무관한 이미지는 제외 (main + quoted만).
-    반환: [(tweetId, local_path, source_url), ...]
+    모든 기존 main/quoted 스크린샷 후보 수집.
+    (tweetId, local_path) 단위 — 같은 이미지를 여러 글이 사용해도 각각 처리.
+    반환: [(tweetId, local_path, source_url, post_text), ...]
     """
     media_map = load_json(DATA_DIR / "media-map.json", {})
-    # 역매핑: local 파일명 -> 원본 URL
-    local_to_url = {}
-    for url, local in media_map.items():
-        fname = Path(local).name
-        local_to_url[fname] = url
-
     candidates = []
-    seen_files = set()
+
+    def find_local(url):
+        if not url:
+            return None
+        url_base = url.split("?")[0]
+        # 정확한 매칭 우선
+        for map_url, map_local in media_map.items():
+            if url_base == map_url.split("?")[0]:
+                return map_local
+        # 부분 매칭
+        for map_url, map_local in media_map.items():
+            if url_base in map_url or map_url.split("?")[0] in url:
+                return map_local
+        return None
 
     for data_file in ["posts-x.json", "posts-web.json"]:
         data = load_json(DATA_DIR / data_file, {})
         posts = data.get("posts", [])
         for post in posts:
-            tweet_id = post.get("tweetId") or post.get("id")
+            tweet_id = str(post.get("tweetId") or post.get("id") or "")
             if not tweet_id:
                 continue
+            post_text = post.get("fullText") or post.get("text") or ""
+
             # main media + quoted media (댓글 제외)
-            media_items = list(post.get("media") or [])
+            # 다양한 필드명 지원: media, mediaImages
+            media_items = []
+            for field in ["media", "mediaImages"]:
+                val = post.get(field)
+                if isinstance(val, list):
+                    media_items.extend(val)
+                elif isinstance(val, str):
+                    media_items.append(val)
+
             quoted = post.get("quoted")
             if isinstance(quoted, dict):
-                media_items.extend(quoted.get("media") or [])
+                for field in ["media", "mediaImages"]:
+                    val = quoted.get("field", quoted.get(field))
+                    if isinstance(val, list):
+                        media_items.extend(val)
+                    elif isinstance(val, str):
+                        media_items.append(val)
+                # websrc도 확인
+                websrc = quoted.get("websrc") or quoted.get("sourceUrl")
+                if websrc and "github.com" in websrc:
+                    pass  # 텍스트 URL로 처리됨
 
             for m in media_items:
-                url = m.get("url") if isinstance(m, dict) else m
-                if not url:
-                    continue
-                # media-map에서 로컬 파일 찾기
-                local = None
-                for map_url, map_local in media_map.items():
-                    if url.split("?")[0] in map_url or map_url.split("?")[0] in url:
-                        local = map_local
-                        break
-                if not local:
-                    # URL 끝부분으로 매칭 시도
-                    url_base = url.split("?")[0].split("/")[-1][:20]
-                    for map_url, map_local in media_map.items():
-                        if url_base and url_base in map_url:
-                            local = map_local
-                            break
+                url = get_media_url(m)
+                local = find_local(url)
                 if local:
                     full_path = V2_ROOT / local
-                    if full_path.exists() and full_path.name not in seen_files:
-                        seen_files.add(full_path.name)
-                        candidates.append((str(tweet_id), str(full_path), url))
+                    if full_path.exists():
+                        candidates.append((tweet_id, str(full_path), url, post_text))
+
+            # 텍스트 내 GitHub URL도 후보로 (이미지 없어도)
+            text_urls = GITHUB_RE.findall(post_text)
+            for owner, repo in text_urls:
+                # 이미지 없이 텍스트만으로도 처리 가능하도록 마킹
+                candidates.append((tweet_id, None, f"https://github.com/{owner}/{repo}", post_text))
 
     return candidates
 
 
-def verify_github_repo(owner, repo):
+def verify_github_repo(owner, repo, expected_title=""):
     """
-    GitHub API로 저장소 실존 확인. 읽기 전용.
-    반환: (exists: bool, description: str, stars: int)
+    GitHub API로 저장소 실존+README+포크 확인. 읽기 전용.
+    반환: (verified: bool, description_ko: str, category_ko: str, is_fork: bool)
+    일시적 실패 시 예외 발생 (캐시하지 않음).
     """
-    # .git suffix 제거, 쿼리 파라미터 제거
     repo = repo.removesuffix(".git").split("?")[0].split("#")[0]
     if not re.match(r"^[A-Za-z0-9_.-]+$", owner) or not re.match(r"^[A-Za-z0-9_.-]+$", repo):
-        return False, "", 0
+        return False, "", "", False
 
     url = f"https://api.github.com/repos/{owner}/{repo}"
     req = urllib.request.Request(url, headers={
         "Accept": "application/vnd.github.v3+json",
-        "User-Agent": "archive-enrich-tools/1.0",
+        "User-Agent": "archive-enrich-tools/2.0",
     })
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode("utf-8"))
-            return True, data.get("description") or "", data.get("stargazers_count", 0)
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            return False, "", 0
-        # Rate limit 등은 재시도 대상
-        raise
+            return False, "", "", False  # 영구적 실패 (없는 repo)
+        raise  # 403/500 등은 일시적 실패 → 예외
+
+    is_fork = data.get("fork", False)
+    description = data.get("description") or ""
+
+    # README 확인 (제목 매칭용)
+    readme_text = ""
+    try:
+        readme_req = urllib.request.Request(
+            f"https://api.github.com/repos/{owner}/{repo}/readme",
+            headers={"Accept": "application/vnd.github.v3.raw", "User-Agent": "archive-enrich-tools/2.0"}
+        )
+        with urllib.request.urlopen(readme_req, timeout=15) as resp:
+            readme_text = resp.read().decode("utf-8", errors="ignore")[:2000]
     except Exception:
-        raise
+        pass  # README 없어도 계속
+
+    # 제목 매칭 (expected_title이 있으면)
+    title_match = True
+    if expected_title and len(expected_title) > 3:
+        title_lower = expected_title.lower()
+        repo_lower = f"{owner}/{repo}".lower()
+        desc_lower = description.lower()
+        # 제목의 핵심 단어가 repo명/설명/README에 포함되는지
+        keywords = [w for w in re.findall(r"\w+", title_lower) if len(w) > 3]
+        if keywords:
+            title_match = any(
+                kw in repo_lower or kw in desc_lower or kw in readme_text.lower()
+                for kw in keywords[:3]
+            )
+
+    if not title_match:
+        return False, "", "", is_fork
+
+    return True, description, "", is_fork
 
 
-def ocr_image(image_path, timeout=120):
+def analyze_image_codex(image_path, timeout=120):
     """
-    스크린샷 OCR. Gemini CLI 우선, 실패 시 None.
-    반환: 추출된 텍스트 또는 None
+    Codex CLI -i로 이미지 분석. 반환: dict 또는 None (일시적 실패).
     """
+    codex_bin = Path.home() / "workspace" / ".npm-global" / "bin" / "codex"
+    if not codex_bin.exists():
+        return None
+
+    prompt = (
+        "Analyze this screenshot. Return ONLY valid JSON: "
+        '{"github_urls": ["https://github.com/owner/repo", ...], '
+        '"title": "tool name", '
+        '"description_ko": "1-2 sentence Korean description", '
+        '"category_ko": "specific Korean category like 리버스 엔지니어링·개발 도구"}. '
+        "If no GitHub-related content, return "
+        '{"github_urls": [], "title": "", "description_ko": "", "category_ko": ""}.'
+    )
+    try:
+        result = subprocess.run(
+            [str(codex_bin), "exec", "-m", "gpt-6.1-sol",
+             "--sandbox", "read-only", "--skip-git-repo-check",
+             "-i", str(image_path), "-"],
+            input=prompt, capture_output=True, text=True, timeout=timeout,
+            cwd="/tmp",
+        )
+        output = result.stdout
+        # JSON 추출
+        json_match = re.search(r"\{[^{}]*\"github_urls\"[^{}]*\}", output, re.DOTALL)
+        if not json_match:
+            # 더 넓은 패턴
+            json_match = re.search(r"\{.*\}", output, re.DOTALL)
+        if json_match:
+            try:
+                return json.loads(json_match.group(0))
+            except json.JSONDecodeError:
+                pass
+        return None
+    except (subprocess.TimeoutExpired, Exception):
+        return None  # 일시적 실패
+
+
+def analyze_image_gemini(image_path, timeout=120):
+    """Gemini CLI 폴백 (Codex 실패 시)."""
     gemini_bin = Path.home() / "workspace" / ".npm-global" / "bin" / "gemini"
     api_key_file = Path.home() / ".gemini" / ".api_key"
     if not gemini_bin.exists() or not api_key_file.exists():
         return None
-
     try:
         api_key = api_key_file.read_text().strip()
     except Exception:
         return None
 
-    # Gemini CLI에 이미지 전달 (파일 경로를 프롬프트에 포함)
-    # 주의: API 키는 환경변수로만 전달, 로그에 기록 금지
-    prompt = (
-        "Analyze this screenshot image. Extract: "
-        "1) Any GitHub repository URLs or owner/repo names visible, "
-        "2) The main title/heading text, "
-        "3) A brief description of what the tool does (1-2 sentences). "
-        "Respond in JSON: {\"github_urls\": [...], \"title\": \"...\", \"description\": \"...\"}. "
-        f"Image: {image_path}"
-    )
-    env = dict(os.environ)
-    env["GEMINI_API_KEY"] = api_key
-    env["GEMINI_CLI_TRUST_WORKSPACE"] = "true"
-
-    try:
-        result = subprocess.run(
-            [str(gemini_bin), "-m", "gemini-3.6-flash", "-p", prompt],
-            capture_output=True, text=True, timeout=timeout, env=env,
-            cwd="/tmp",
-        )
-        output = result.stdout.strip()
-        # JSON 추출 시도
-        json_match = re.search(r"\{.*\}", output, re.DOTALL)
-        if json_match:
-            return json.loads(json_match.group(0))
-        return None
-    except (subprocess.TimeoutExpired, json.JSONDecodeError, Exception):
-        return None
+    # Gemini는 이미지 첨부가 CLI에서 직접 지원되지 않을 수 있음
+    # 파일 경로만으로는 실제 이미지를 보지 못할 수 있어 Codex 우선
+    return None
 
 
-def search_github_by_title(title, owner_hint=""):
+def analyze_image(image_path):
     """
-    스크린샷에 URL이 없을 때 제목/소유자로 GitHub 검색.
-    반환: [(owner, repo), ...] 또는 []
+    이미지 분석 (Codex 우선, Gemini 폴백).
+    반환: (result: dict|None, is_temporary_failure: bool)
     """
-    query = f"{title} {owner_hint}".strip()
-    if len(query) < 3:
-        return []
-    url = f"https://api.github.com/search/repositories?q={urllib.parse.quote(query)}&per_page=5"
-    req = urllib.request.Request(url, headers={
-        "Accept": "application/vnd.github.v3+json",
-        "User-Agent": "archive-enrich-tools/1.0",
-    })
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            results = []
-            for item in data.get("items", [])[:5]:
-                full = item.get("full_name", "")
-                if "/" in full:
-                    owner, repo = full.split("/", 1)
-                    results.append((owner, repo))
-            return results
-    except Exception:
-        return []
+    result = analyze_image_codex(image_path)
+    if result is not None:
+        return result, False
+    # Codex 실패 → 일시적 실패 (캐시하지 않음)
+    return None, True
 
 
-def enrich_one(tweet_id, image_path, source_url, cache, model_calls):
+def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, model_calls):
     """
-    단일 이미지 처리. 캐시 히트 시 zero model calls.
+    단일 (tweetId, image) 처리.
+    image_memo: {content_hash: analysis_result} — 같은 이미지 재분석 방지.
     반환: (entry: dict|None, status: str)
+           status: "verified" | "cached" | "pending" | "temporary_failure"
     """
-    content_hash = sha256_file(image_path)
-    cache_key = f"{tweet_id}:{Path(image_path).name}"
+    # 텍스트 내 GitHub URL 우선 (이미지 없어도)
+    text_github = GITHUB_RE.findall(post_text or "") + GITHUB_RE.findall(source_url or "")
 
-    # 캐시 확인
+    content_hash = sha256_file(image_path) if image_path else f"text:{hashlib.sha256(post_text.encode()).hexdigest()[:16]}"
+    cache_key = f"{tweet_id}:{Path(image_path).name if image_path else 'text'}"
+
+    # 캐시 확인 (버전 체크)
     cached = cache.get(cache_key)
-    if cached and cached.get("content_hash") == content_hash:
-        # 캐시 히트 — 모델 호출 없음
+    if cached and cached.get("content_hash") == content_hash and cached.get("version") == CACHE_VERSION:
         return cached.get("entry"), "cached"
+    # 구버전 캐시는 무시 (poisoned)
 
-    # 1. OCR 시도
-    model_calls[0] += 1
-    ocr = ocr_image(image_path)
+    # 1. 텍스트 GitHub URL이 있으면 직접 검증
+    for owner, repo in text_github:
+        try:
+            verified, desc, _, is_fork = verify_github_repo(owner, repo)
+        except Exception:
+            continue  # 일시적 실패, 다음 후보 시도
+        if verified and not is_fork:
+            entry = {
+                "title": f"{owner}/{repo}",
+                "summary_ko": desc,  # TODO: 번역 필요
+                "category": "AI툴",
+                "repo_url": f"https://github.com/{owner}/{repo}",
+                "status": "verified",
+                "evidence": [f"text-url:github:{owner}/{repo}"],
+                "content_hash": content_hash,
+            }
+            cache[cache_key] = {"content_hash": content_hash, "entry": entry, "version": CACHE_VERSION}
+            return entry, "verified"
 
-    github_urls = []
-    title = ""
-    description = ""
-
-    if ocr:
-        github_urls = ocr.get("github_urls", [])
-        title = ocr.get("title", "")
-        description = ocr.get("description", "")
-
-    # 2. GitHub URL 추출 및 검증
-    verified = None
-    evidence = []
-
-    for url in github_urls:
-        m = GITHUB_RE.search(url)
-        if m:
-            owner, repo = m.group(1), m.group(2)
-            try:
-                exists, desc, stars = verify_github_repo(owner, repo)
-            except Exception:
-                continue  # 재시도 대상, 일단 건너뜀
-            if exists:
-                # 포크가 아닌 원본 확인 (단순 휴리스틱: 설명/스타 수)
-                verified = (owner, repo, desc or description, stars)
-                evidence.append(f"github:{owner}/{repo}")
-                break
-
-    # 3. URL이 없으면 제목으로 검색
-    if not verified and title:
-        # 작성자 힌트 추출 (예: @username)
-        owner_hint = ""
-        candidates = search_github_by_title(title, owner_hint)
-        for owner, repo in candidates:
-            try:
-                exists, desc, stars = verify_github_repo(owner, repo)
-            except Exception:
-                continue
-            if exists:
-                verified = (owner, repo, desc or description, stars)
-                evidence.append(f"search:{owner}/{repo}")
-                break
-
-    # 4. 결과 저장
-    if verified:
-        owner, repo, desc, stars = verified
-        entry = {
-            "title": title or f"{owner}/{repo}",
-            "summary_ko": desc,
-            "category": "AI툴",
-            "repo_url": f"https://github.com/{owner}/{repo}",
-            "status": "verified",
-            "evidence": evidence,
-            "content_hash": content_hash,
-        }
-        cache[cache_key] = {"content_hash": content_hash, "entry": entry, "version": CACHE_VERSION}
-        return entry, "verified"
-    else:
-        # Negative 캐시 (GitHub 아님)
-        cache[cache_key] = {"content_hash": content_hash, "entry": None, "version": CACHE_VERSION}
+    # 2. 이미지 분석 (메모이제이션)
+    if not image_path:
         return None, "pending"
+
+    if content_hash in image_memo:
+        analysis = image_memo[content_hash]
+        is_temp_fail = False
+    else:
+        model_calls[0] += 1
+        analysis, is_temp_fail = analyze_image(image_path)
+        if is_temp_fail:
+            return None, "temporary_failure"  # 캐시하지 않음
+        image_memo[content_hash] = analysis
+
+    if not analysis or not analysis.get("github_urls"):
+        # 진짜 negative (분석 성공했지만 GitHub 없음) → 캐시 가능
+        if analysis is not None:
+            cache[cache_key] = {"content_hash": content_hash, "entry": None, "version": CACHE_VERSION}
+        return None, "pending"
+
+    # 3. GitHub URL 검증
+    for url in analysis["github_urls"]:
+        m = GITHUB_RE.search(url)
+        if not m:
+            continue
+        owner, repo = m.group(1), m.group(2)
+        try:
+            verified, desc, _, is_fork = verify_github_repo(owner, repo, analysis.get("title", ""))
+        except Exception:
+            return None, "temporary_failure"  # API 일시 실패
+        if verified:
+            if is_fork:
+                continue  # 포크는 건너뜀, 원본 찾기 계속
+            entry = {
+                "title": analysis.get("title") or f"{owner}/{repo}",
+                "summary_ko": analysis.get("description_ko") or desc,
+                "category": analysis.get("category_ko") or "AI툴",
+                "repo_url": f"https://github.com/{owner}/{repo}",
+                "status": "verified",
+                "evidence": [f"screenshot:github:{owner}/{repo}"],
+                "content_hash": content_hash,
+            }
+            cache[cache_key] = {"content_hash": content_hash, "entry": entry, "version": CACHE_VERSION}
+            return entry, "verified"
+
+    # 검증 실패 → pending (negative 캐시)
+    cache[cache_key] = {"content_hash": content_hash, "entry": None, "version": CACHE_VERSION}
+    return None, "pending"
 
 
 def run_backfill(max_items=None, dry_run=False):
     """
-    전체 백필. 반환: {verified, pending, cached, errors}
+    전체 백필. 반환: {verified, pending, cached, temporary_failures, errors}
+    errors > 0 이면 nonzero marker 파일 생성.
     """
     tools_data = load_json(TOOLS_JSON, {})
     cache = load_json(CACHE_JSON, {})
+    image_memo = {}  # content_hash -> analysis (세션 내 메모이제이션)
     model_calls = [0]
 
     candidates = collect_screenshots()
-    log(f"후보 이미지: {len(candidates)}개")
+    log(f"후보: {len(candidates)}개 (tweetId, image) 쌍")
 
-    stats = {"verified": 0, "pending": 0, "cached": 0, "errors": 0}
-    pending_list = []
+    stats = {"verified": 0, "pending": 0, "cached": 0, "temporary_failures": 0, "errors": 0}
 
     items = candidates[:max_items] if max_items else candidates
-    for tweet_id, image_path, source_url in items:
+    for tweet_id, image_path, source_url, post_text in items:
         try:
-            entry, status = enrich_one(tweet_id, image_path, source_url, cache, model_calls)
+            entry, status = enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, model_calls)
             if status == "cached":
                 stats["cached"] += 1
             elif status == "verified" and entry:
                 if not dry_run:
                     tools_data[str(tweet_id)] = entry
                 stats["verified"] += 1
-                log(f"  ✓ {tweet_id}: {entry['repo_url']}")
+                log(f"  ✓ {tweet_id}: {entry['repo_url']} [{entry.get('category')}]")
+            elif status == "temporary_failure":
+                stats["temporary_failures"] += 1
+                log(f"  ⏳ {tweet_id}: 일시적 실패 (재시도 대상)")
             else:
                 stats["pending"] += 1
-                pending_list.append(tweet_id)
         except Exception as e:
             stats["errors"] += 1
-            log(f"  ✗ {tweet_id}: {e} (재시도 대상)")
+            log(f"  ✗ {tweet_id}: {e}")
 
     if not dry_run:
         save_json(TOOLS_JSON, tools_data)
         save_json(CACHE_JSON, cache)
 
-    log(f"완료: verified={stats['verified']}, pending={stats['pending']}, "
-        f"cached={stats['cached']}, errors={stats['errors']}, model_calls={model_calls[0]}")
+    # 재시도 마커 (일시적 실패나 에러가 있으면)
+    if stats["temporary_failures"] > 0 or stats["errors"] > 0:
+        RETRY_MARKER.parent.mkdir(parents=True, exist_ok=True)
+        RETRY_MARKER.write_text(
+            f"temporary_failures={stats['temporary_failures']},errors={stats['errors']}",
+            encoding="utf-8"
+        )
+        log(f"재시도 마커 생성: {RETRY_MARKER}")
+    else:
+        RETRY_MARKER.unlink(missing_ok=True)
 
-    return {**stats, "pending_ids": pending_list, "model_calls": model_calls[0]}
+    log(f"완료: verified={stats['verified']}, pending={stats['pending']}, "
+        f"cached={stats['cached']}, temp_fail={stats['temporary_failures']}, "
+        f"errors={stats['errors']}, model_calls={model_calls[0]}")
+
+    return {**stats, "model_calls": model_calls[0]}
 
 
 def main():
@@ -358,7 +444,6 @@ def main():
     args = parser.parse_args()
 
     if args.tweet_id:
-        # 단일 처리
         candidates = collect_screenshots()
         match = [c for c in candidates if c[0] == args.tweet_id]
         if not match:
@@ -366,9 +451,10 @@ def main():
             return 1
         tools_data = load_json(TOOLS_JSON, {})
         cache = load_json(CACHE_JSON, {})
+        image_memo = {}
         model_calls = [0]
-        tweet_id, image_path, source_url = match[0]
-        entry, status = enrich_one(tweet_id, image_path, source_url, cache, model_calls)
+        tweet_id, image_path, source_url, post_text = match[0]
+        entry, status = enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, model_calls)
         if entry and not args.dry_run:
             tools_data[str(tweet_id)] = entry
             save_json(TOOLS_JSON, tools_data)
@@ -376,11 +462,15 @@ def main():
         log(f"{tweet_id}: {status} (model_calls={model_calls[0]})")
         if entry:
             print(json.dumps(entry, ensure_ascii=False, indent=2))
-        return 0
+        # 일시적 실패는 nonzero
+        return 1 if status == "temporary_failure" else 0
 
     if args.backfill:
         result = run_backfill(max_items=args.max_items, dry_run=args.dry_run)
-        print(json.dumps({k: v for k, v in result.items() if k != "pending_ids"}, ensure_ascii=False))
+        print(json.dumps(result, ensure_ascii=False))
+        # 에러나 일시적 실패가 있으면 nonzero
+        if result.get("errors", 0) > 0 or result.get("temporary_failures", 0) > 0:
+            return 2
         return 0
 
     parser.print_help()

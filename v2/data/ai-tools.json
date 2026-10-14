@@ -1,26 +1,14 @@
 {
-  "2089327156274790890": {
-    "title": "REA — Reverse Engineer Anything",
-    "summary_ko": "에이전트로 앱 동작부터 네이티브 바이너리까지 리버스 엔지니어링하는 도구.",
-    "category": "AI툴",
+  "2108245653843509415": {
+    "title": "REA: Reverse Engineer Anything",
+    "summary_ko": "바이너리, 애플리케이션, 런타임 동작을 분석하는 리버스 엔지니어링 MCP 도구입니다.",
+    "category": "리버스 엔지니어링·개발 도구",
     "repo_url": "https://github.com/morluto/rea",
     "status": "verified",
     "evidence": [
-      "user-verified:github:morluto/rea",
-      "screenshot:media/full/8552a9e4d437d224.jpg"
+      "screenshot:media/full/86475eac4c71ca84.jpg",
+      "github-api:morluto/rea"
     ],
-    "content_hash": "3ff67c4d1bc31a5fb412871fef6f3f049eb136a417cd29023cce9e417b9dfb87"
-  },
-  "2089327477214593238": {
-    "title": "REA — Reverse Engineer Anything",
-    "summary_ko": "에이전트로 앱 동작부터 네이티브 바이너리까지 리버스 엔지니어링하는 도구.",
-    "category": "AI툴",
-    "repo_url": "https://github.com/morluto/rea",
-    "status": "verified",
-    "evidence": [
-      "user-verified:github:morluto/rea",
-      "screenshot:media/full/8552a9e4d437d224.jpg"
-    ],
-    "content_hash": "3ff67c4d1bc31a5fb412871fef6f3f049eb136a417cd29023cce9e417b9dfb87"
+    "content_hash": "da7a8be05c8e93559dd4d53f8c21725da58d23f52795d79cff1a0c9337ef337d"
   }
 }
