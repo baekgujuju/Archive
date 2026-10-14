@@ -143,3 +143,14 @@ body.aa-modal-open #archive-manage-btn{display:none}
 @media(max-width:767px){:is(.aa-content,.viewer-text-panel,.web-html) :is(th,td){padding:8px 5px;font-size:12px;overflow-wrap:anywhere}}
 @media print{.aa-content .checklist{break-inside:avoid}}
 .aa-reader-header{touch-action:none}
+
+/* Narrow tablets and unfolded phones need the whole image, with optional original text. */
+@media (min-width:768px) and (max-width:999px){
+ .viewer-text-panel{display:none;width:100%}
+ .viewer-text-toggle{display:block}
+ .viewer-show-text .viewer-text-panel{display:block}
+ .viewer-show-text .viewer-image-panel{display:none}
+}
+@media (pointer:coarse){.aa-toolbar button,.html-actions>summary,.viewer-toolbar button{min-height:44px}}
+.aa-dialog input[type=password]{width:100%;max-width:100%;min-height:44px;font-size:16px}
+@media (max-height:500px){#archive-read-dialog,#archive-image-viewer{height:96dvh;max-height:96dvh}.aa-reader-header{padding:6px 10px}.aa-reader-header strong{max-height:2.8em;overflow:hidden}.viewer-thumbnails{max-height:48px;min-height:48px}.viewer-thumbnails img{height:30px}}

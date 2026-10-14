@@ -3,7 +3,7 @@ var ArchiveApp = (function () {
   'use strict';
   // v1 호환 hex 스키마: archive-bookmarks에 hex 직접 저장 (덮어쓰기 금지)
   var colors = { '#e74c3c': '빨강', '#e67e22': '주황', '#f1c40f': '노랑', '#27ae60': '초록', '#3498db': '파랑', '#34495e': '남색', '#9b59b6': '보라' };
-  var records = [], pins = [], hidden = [], bookmarks = Object.create(null), controls, list, pinned, readDialog, memoDialog, bookmarkDialog, renameDialog, renameHex, confirmDialog, confirmResolve;
+  var records = [], pins = [], hidden = [], bookmarks = Object.create(null), controls, list, pinned, readDialog, memoDialog, bookmarkDialog, renameDialog, renameHex, confirmDialog, confirmResolve, exportDialog;
   var current, memoId, bookmarkRecord, mode = 'OR', selection, opener, bound = false, imageDialog, aiList;
   function esc(value) {
     return String(value == null ? '' : value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
@@ -212,7 +212,7 @@ var ArchiveApp = (function () {
     var previous=controls?{selection:selection,mode:mode,query:controls.querySelector('input').value,scroll:window.scrollY}:null;
     list = document.getElementById('articles'); if (!list) return;
     document.body.classList.remove('aa-modal-open');
-    [controls, pinned, readDialog, memoDialog, bookmarkDialog, renameDialog, confirmDialog, imageDialog, aiList].forEach(function (el) { if (el) el.remove(); });
+    [controls, pinned, readDialog, memoDialog, bookmarkDialog, renameDialog, confirmDialog, exportDialog, imageDialog, aiList].forEach(function (el) { if (el) el.remove(); });
     selection = { type: [], topic: [], author: [], bookmark: [], subject: [], category: [], hidden: false }; mode = 'OR'; current = null;
     pins = load('archive-pinned', []); hidden = load('archive-deleted-posts', []);
     pins = Array.isArray(pins) ? pins.map(String) : []; hidden = Array.isArray(hidden) ? hidden.map(String) : [];
@@ -244,6 +244,7 @@ var ArchiveApp = (function () {
       if(b.dataset.action==='reset') resetFilters();
       if (b.dataset.action === 'mode') { mode = mode === 'OR' ? 'AND' : 'OR'; b.textContent = mode; b.setAttribute('aria-label', '검색 조건 ' + mode + ', 클릭하여 변경'); }
       if (b.dataset.action === 'hidden') selection.hidden = !selection.hidden;
+      if (b.dataset.action === 'drive-export') { if(!DriveSync.isConnected()){window.alert('먼저 Drive를 연결해 주세요.');return;} show(exportDialog); return; }
       if (b.dataset.action === 'drive') { DriveSync.connect(); return; }
       update();
     });
@@ -284,11 +285,17 @@ var ArchiveApp = (function () {
     renameDialog=dialog('archive-rename-dialog','북마크 이름 변경','<h2>북마크 이름</h2><label for="archive-color-name">이름</label><input id="archive-color-name" maxlength="30"><div class="aa-chips"><button type="button" data-save-name>저장</button><button type="button" data-close>취소</button></div>');
     function saveName(){var name=renameDialog.querySelector('input').value.trim()||colors[renameHex],names=load('archive-bookmark-names',{});names[renameHex]=name;if(persist('archive-bookmark-names',names)){controls.querySelectorAll('[data-filter=bookmark]').forEach(function(b){if(b.dataset.value===renameHex){b.textContent=name;b.setAttribute('aria-label',name);}});close(renameDialog);}}
     renameDialog.addEventListener('click',function(e){if(e.target.closest('[data-save-name]'))saveName();});renameDialog.querySelector('input').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();saveName();}});
+    exportDialog=dialog('archive-export-dialog','Drive 내보내기 확인','<h2>Drive로 내보내기</h2><p>이 기기의 메모·북마크·삭제 상태를 Drive에 반영합니다. 내보낼 때마다 비밀번호가 필요합니다.</p><label for="archive-export-password">비밀번호</label><input type="password" id="archive-export-password" autocomplete="off" maxlength="128"><p data-export-error role="status"></p><div class="aa-chips"><button type="button" data-export-submit>확인 · 내보내기</button><button type="button" data-close>취소</button></div>');
+    var exportPending=false;
+    async function submitExport(){if(exportPending)return;exportPending=true;var input=exportDialog.querySelector('input'),button=exportDialog.querySelector('[data-export-submit]'),password=input.value;input.value='';button.disabled=true;exportDialog.querySelector('[data-export-error]').textContent='';try{await DriveSync.exportWithPassword(password);close(exportDialog);}catch(e){exportDialog.querySelector('[data-export-error]').textContent=e.message;input.focus();}finally{password='';exportPending=false;button.disabled=false;}}
+    exportDialog.addEventListener('click',function(e){if(e.target.closest('[data-export-submit]'))submitExport();});
+    exportDialog.querySelector('input').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();submitExport();}});
+    exportDialog.addEventListener('close',function(){exportDialog.querySelector('input').value='';exportDialog.querySelector('[data-export-error]').textContent='';});
     confirmDialog=dialog('archive-confirm-dialog','작업 확인','<h2>확인</h2><p></p><div class="aa-chips"><button type="button" data-confirm-no>아니오</button><button type="button" data-confirm-yes>예</button></div>');
     confirmDialog.addEventListener('click',function(e){if(e.target.closest('[data-confirm-no],[data-confirm-yes]')){var resolve=confirmResolve;confirmResolve=null;var yes=!!e.target.closest('[data-confirm-yes]');close(confirmDialog);if(resolve)resolve(yes);}});confirmDialog.addEventListener('close',function(){if(confirmResolve){var resolve=confirmResolve;confirmResolve=null;resolve(false);}});
     if (!bound) {
       document.addEventListener('pointerdown',function(){document.body.classList.remove('using-keyboard');},true);document.addEventListener('keydown',function(e){if(e.key==='Tab')document.body.classList.add('using-keyboard');},true);document.addEventListener('click',function(e){document.querySelectorAll('.html-actions[open]').forEach(function(el){if(!el.contains(e.target))el.open=false;});});document.addEventListener('click', cardClick);
-      document.addEventListener('keydown', function (e) { var d = [confirmDialog,renameDialog,imageDialog, memoDialog, bookmarkDialog, readDialog].filter(function (item) { return item && item.hasAttribute('open'); })[0]; if (!d) return;
+      document.addEventListener('keydown', function (e) { var d = [exportDialog,confirmDialog,renameDialog,imageDialog, memoDialog, bookmarkDialog, readDialog].filter(function (item) { return item && item.hasAttribute('open'); })[0]; if (!d) return;
         if (e.key === 'Escape') { e.preventDefault(); close(d); }
         if (e.key === 'Tab' && typeof d.showModal !== 'function') { var els = d.querySelectorAll('button,textarea,a[href]'), first = els[0], last = els[els.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } }
       });

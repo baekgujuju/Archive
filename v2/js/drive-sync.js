@@ -4,6 +4,8 @@ var DriveSync = (function () {
   var CLIENT_ID = '43687402502-rlid8pjoakcigrn6tpcs58elo357vtfr.apps.googleusercontent.com';
   var KEYS = {pinned:'archive-pinned',bookmarks:'archive-bookmarks',names:'archive-bookmark-names',deletedRemovedReplies:'archive-removed-replies',deletedReplies:'archive-deleted-replies',deletedPosts:'archive-deleted-posts'};
   var MEMO = 'archive_memo_', BASE = 'archive-sync-base', BACKUP = 'archive-sync-conflicts';
+  var WRITE_PIN_HASH = '2ffb3371badee194e734205ebe9e870bb9e1857feb1e8d1984ba72231894faa6';
+  var writePermit = {}, passwordBusy = false;
   var statusEl, tokenClient, token, fileId, timer, busy = false, initialized = false, connected = false, lastHash = '', ticks = 0;
   function get(k, fallback) { try { return JSON.parse(localStorage.getItem(k)) ?? fallback; } catch (_) { return fallback; } }
   function put(k, value) { localStorage.setItem(k, JSON.stringify(value)); }
@@ -73,7 +75,8 @@ var DriveSync = (function () {
     var d = await (await api('/drive/v3/files/' + encodeURIComponent(fileId) + '?alt=media')).json();
     if (!valid(d)) throw new Error('Drive 데이터 형식 오류: 기존 파일을 변경하지 않았습니다.'); return d;
   }
-  async function upload(d) {
+  async function upload(d, permit) {
+    if (permit !== writePermit) throw new Error('Drive 내보내기는 비밀번호 확인이 필요합니다.');
     if (fileId) await api('/upload/drive/v3/files/' + encodeURIComponent(fileId) + '?uploadType=media', {method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
     else {
       var boundary = 'archive-' + Date.now();
@@ -82,27 +85,48 @@ var DriveSync = (function () {
       if (!result.id) throw new Error('Drive 파일 생성 실패'); fileId = result.id;
     }
   }
-  async function sync() {
-    if (!connected || busy) return; busy = true; message('☁️ 동기화 중…');
+  async function sync(permit) {
+    if (!connected) throw new Error('먼저 Drive를 연결해 주세요.');
+    if (busy) throw new Error('동기화 중입니다. 잠시 후 다시 시도해 주세요.');
+    busy = true; var writing = permit === writePermit;
+    message(writing ? '☁️ Drive로 내보내는 중…' : '☁️ 내려받기 확인 중…');
     try {
       var remote = await remoteState(), local = collect(), base = get(BASE, null);
       var merged = remote ? merge(local, remote, valid(base) ? base : null) : merge(local, {}, null);
       if (merged._conflicts.length) put(BACKUP, {remote:remote,local:local,fields:merged._conflicts,at:merged.updatedAt});
-      // Apply before upload; failed uploads retain local edits and retry.
-      apply(merged); await upload(merged);
-      put(BASE, normalize(merged)); localStorage.setItem('archive-sync-updatedAt', merged.updatedAt);
+      // Reading never writes to Drive. Preserve local edits and baseline the actual remote.
+      // A password authorizes this single transaction, never a timer or future edit.
+      if (writing) await upload(merged, permit);
+      apply(merged);
+      put(BASE, normalize(writing ? merged : remote || {}));
+      if (writing) localStorage.setItem('archive-sync-updatedAt', merged.updatedAt);
       lastHash = hash(normalize(merged));
-      message(merged._conflicts.length ? '☁️ 동기화 완료 · 충돌 사본 보존' : '☁️ 동기화 완료 · 변경 2초 / 원격 30초');
+      message(writing ? '☁️ 내보내기 완료 · 다시 잠김' : '☁️ 내려받기 연결됨 · 내보내기 잠김');
+      return true;
     } catch (e) {
       message(e.auth ? 'Drive 인증 만료 · 다시 연결해 주세요' : e.message + ' · 로컬 데이터는 유지됩니다');
       if (e.auth) { connected = false; token = null; }
+      if (writing) throw e;
+      return false;
     } finally { busy = false; }
   }
-  function tick() { ticks++; if (connected && (hash() !== lastHash || ticks % 15 === 0)) sync(); }
+  async function exportWithPassword(password) {
+    if (passwordBusy) throw new Error('비밀번호 확인 중입니다.');
+    passwordBusy = true;
+    try {
+      if (!connected) throw new Error('먼저 Drive를 연결해 주세요.');
+      if (!window.crypto || !window.crypto.subtle) throw new Error('HTTPS에서 다시 열어 주세요.');
+      var bytes = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(password)));
+      var digest = Array.from(new Uint8Array(bytes)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+      if (digest !== WRITE_PIN_HASH) throw new Error('비밀번호가 맞지 않습니다. 내보내지 않았습니다.');
+      return await sync(writePermit);
+    } finally { passwordBusy = false; }
+  }
+  function tick() { ticks++; if (connected && (hash() !== lastHash || ticks % 15 === 0)) sync().catch(function(){}); }
   function init(el) {
     statusEl = el;
     // 재호출 시 교체된 statusEl에도 현재 상태 표시 (early return 전)
-    message(connected ? '☁️ 동기화 완료 · 변경 2초 / 원격 30초' : 'Drive 미연결 · 저장은 이 기기에 유지됩니다');
+    message(connected ? '☁️ 내려받기 연결됨 · 내보내기 잠김' : 'Drive 미연결 · 저장은 이 기기에 유지됩니다');
     if (initialized) return;
     initialized = true;
     if (!document.querySelector('script[src*="accounts.google.com"]')) { var script = document.createElement('script'); script.src = 'https://accounts.google.com/gsi/client'; script.async = true; document.head.appendChild(script); }
@@ -111,7 +135,7 @@ var DriveSync = (function () {
       if (typeof google !== 'undefined' && google.accounts && google.accounts.oauth2) {
         tokenClient = google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:'https://www.googleapis.com/auth/drive.appdata',error_callback:function () { message('Google 연결이 취소되었거나 차단되었습니다'); },callback:function (resp) {
           if (!resp.access_token) { message('Drive 연결 실패 · 다시 연결해 주세요'); return; }
-          token = resp.access_token; connected = true; if (!timer) timer = setInterval(tick, 2000); sync();
+          token = resp.access_token; connected = true; if (!timer) timer = setInterval(tick, 2000); sync().catch(function(){});
         }});
       } else if (tries++ < 20) setTimeout(ready, 500);
       else { initialized = false; message('Google 연결을 불러오지 못했습니다 · 다시 시도해 주세요'); }
@@ -119,6 +143,6 @@ var DriveSync = (function () {
     ready();
   }
   function connect() { if (tokenClient) tokenClient.requestAccessToken({prompt:''}); else { initialized = false; init(statusEl); message('Google 연결 준비 중 · 잠시 후 다시 눌러 주세요'); } }
-  return {init:init,connect:connect,importState:function(state){if(!valid(state))throw new Error("올바른 백업이 아닙니다");apply(normalize(state));},isConnected:function () { return connected; },_validateRemote:valid,_mergeState:merge,_collectMemos:memoState,_exportState:function () { var state = collect(); state.exportedAt = new Date().toISOString(); state.conflicts = get(BACKUP, null); return state; }};
+  return {init:init,connect:connect,exportWithPassword:exportWithPassword,importState:function(state){if(!valid(state))throw new Error("올바른 백업이 아닙니다");apply(normalize(state));},isConnected:function () { return connected; },_validateRemote:valid,_mergeState:merge,_collectMemos:memoState,_exportState:function () { var state = collect(); state.exportedAt = new Date().toISOString(); state.conflicts = get(BACKUP, null); return state; }};
 }());
 window.DriveSync = DriveSync;

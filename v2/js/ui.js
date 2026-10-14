@@ -18,7 +18,7 @@ var ArchiveUI = (function () {
       '<section class="spotlight" data-ordinary-filter><h2>인물 스포트라이트</h2><div class="rail">'+people.slice(0,5).map(function(p){return '<button type="button" class="filter-card" data-filter="author" data-value="'+esc(p[0])+'" aria-pressed="false"><span class="avatar">'+esc(p[0].slice(0,2))+'</span><span><strong>'+esc(p[0])+'</strong><small>'+p[1]+'건</small></span></button>';}).join('')+'</div></section>'+
       '<section class="aa-ib-nav" hidden><h2>🎓 IB 주원</h2><div class="aa-chips" role="group" aria-label="IB 과목"></div><div class="aa-chips" role="group" aria-label="IB 분류"></div></section>'+
       '<div class="list-heading archive-reset"><h2>아카이브 탐색</h2><button type="button" class="reset" data-action="reset">초기화 · 전체 보기</button></div><p class="status" data-results-status role="status" aria-live="polite"></p>'+
-      '<details class="archive-settings"><summary>백업 · 복원 · Drive · 숨긴 글 관리 ▾</summary><p>메모·핀·북마크는 이 기기에 저장됩니다. Drive 연결 후 기기 간 동기화됩니다.</p><button type="button" data-action="hidden" aria-pressed="false">숨긴 글 보기 / 복원</button><button type="button" data-action="drive">🔗 Drive 연결</button><span data-drive-status role="status"></span></details>';
+      '<details class="archive-settings"><summary>백업 · 복원 · Drive · 숨긴 글 관리 ▾</summary><p>메모·핀·북마크는 이 기기에 저장됩니다. Drive 연결 시 내려받기만 자동으로 진행됩니다. 변경사항은 비밀번호를 입력하고 내보내야 다른 기기에 반영됩니다.</p><button type="button" data-action="hidden" aria-pressed="false">숨긴 글 보기 / 복원</button><button type="button" data-action="drive">🔗 Drive 연결</button><button type="button" data-action="drive-export">Drive로 내보내기 🔒</button><span data-drive-status role="status"></span></details>';
   }
   function overview(records) {
     var stats=document.getElementById('archive-stats'); if(!stats)return;
