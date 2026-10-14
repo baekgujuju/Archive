@@ -223,6 +223,21 @@ def main():
                 log(f"미디어 미러 예외: {_e} — 다음 실행에서 재시도")
         else:
             log("media-mirror.py 없음")
+        # 2c-3. GitHub 스크린샷 AI툴 자동 분류 (best-effort, 캐시 기반)
+        # 미디어 미러 후, git 커밋 전. 실패해도 전체 흐름은 계속.
+        _enrich = V2_ROOT / "enrich_tools.py"
+        if _enrich.exists():
+            log("AI툴 스크린샷 분류 시작 (best-effort)...")
+            try:
+                _er = run([sys.executable, str(_enrich), "--backfill"], timeout=900)
+                if _er.returncode == 0:
+                    log("AI툴 분류 완료")
+                else:
+                    log(f"AI툴 분류 실패 (rc={_er.returncode}) — 다음 실행에서 재시도")
+            except Exception as _e:
+                log(f"AI툴 분류 예외: {_e} — 다음 실행에서 재시도")
+        else:
+            log("enrich_tools.py 없음")
         # 2d. 번역 캐시 복원/병합
         if backup and backup.exists():
             try:
