@@ -306,7 +306,7 @@ var ArchiveApp = (function () {
     if(previous){selection=previous.selection;mode=previous.mode;controls.querySelector('input').value=previous.query;controls.querySelector('[data-action="mode"]').textContent=mode;}
     update();if(previous)window.scrollTo(0,previous.scroll);
   }
-  function runArticleAction(action,r,button,inline){
+  async function runArticleAction(action,r,button,inline){
     var a=r.article,menu=button.closest('.html-actions');if(menu)menu.open=false;
     if(action==='text'){var text=title(a)+'\n\n'+bodyText(a)+'\n\n'+(canonicalSource(a)||'');navigator.clipboard.writeText(text).then(function(){button.textContent='복사 완료';setTimeout(function(){if(button.isConnected)button.textContent='텍스트 복사';},2000);}).catch(function(){download(new Blob([text],{type:'text/plain;charset=utf-8'}),'archive.txt');});}
     if(action==='image')shareImage(a);
@@ -316,7 +316,12 @@ var ArchiveApp = (function () {
       var old=document.getElementById('archive-inline-print');if(old)old.remove();
       var printArea=document.createElement('article');printArea.id='archive-inline-print';printArea.className='aa-content';printArea.innerHTML=articleHtml(a);document.body.appendChild(printArea);formatContent(printArea);document.body.classList.add('aa-inline-print');
       function cleanup(){printArea.remove();document.body.classList.remove('aa-inline-print');window.removeEventListener('afterprint',cleanup);}
-      window.addEventListener('afterprint',cleanup,{once:true});try{window.print();}catch(e){cleanup();throw e;}
+      window.addEventListener('afterprint',cleanup,{once:true});button.disabled=true;
+      try{
+        await Promise.all(Array.from(printArea.querySelectorAll('img')).map(function(img){img.loading='eager';if(img.complete&&img.naturalWidth)return Promise.resolve();return new Promise(function(resolve,reject){var timeout=setTimeout(function(){done(new Error('이미지 로딩 시간 초과'));},15000);function done(error){clearTimeout(timeout);img.removeEventListener('load',loaded);img.removeEventListener('error',failed);if(error)reject(error);else resolve();}function loaded(){done();}function failed(){done(new Error('이미지를 불러오지 못했습니다'));}img.addEventListener('load',loaded,{once:true});img.addEventListener('error',failed,{once:true});});}));
+        window.print();
+      }catch(e){cleanup();window.alert('인쇄 준비 실패: '+e.message+'. 다시 시도해 주세요.');}finally{button.disabled=false;}
+
     }
   }
   async function cardClick(e) {

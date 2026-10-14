@@ -203,3 +203,5 @@ body.aa-modal-open #archive-manage-btn{display:none}
  body.aa-inline-print> :not(#archive-inline-print){display:none!important}
  body.aa-inline-print #archive-inline-print{display:block!important;max-width:none!important;width:auto!important;height:auto!important;padding:0!important;margin:0!important;overflow:visible!important;background:white!important}
 }
+
+@media print{body.aa-inline-print{zoom:1!important}}
