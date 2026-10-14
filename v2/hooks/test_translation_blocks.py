@@ -1,5 +1,7 @@
 import importlib.util
 import unittest
+import tempfile,json,sys
+from unittest.mock import patch
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('translate_posts',Path(__file__).resolve().parents[1]/'translate_posts.py')
 module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
@@ -12,4 +14,16 @@ class ParagraphTests(unittest.TestCase):
         self.assertEqual([p for p in ps if module.is_english_only(p)],['The original English paragraph.'])
     def test_no_script_text(self):
         self.assertEqual(module.get_post_text({'fullHtml':'<p>Actual text<script>BAD()</script></p>'}),'Actual text')
+    def test_failed_refresh_keeps_previous_success(self):
+        with tempfile.TemporaryDirectory(prefix='translation-test-',dir=module.V2_ROOT) as tmp:
+            root=Path(tmp);cache=root/'translations.json'
+            self.assertTrue(root.resolve().is_relative_to(module.V2_ROOT.resolve()))
+            prior={'paragraphs':['Old text.'],'translated':['이전 번역.'],'content_hash':'old','status':'ok'}
+            cache.write_text(json.dumps({'qa':prior}),encoding='utf-8')
+            (root/'posts.json').write_text(json.dumps({'posts':[{'id':'qa','fullText':'New English text.'}]}),encoding='utf-8')
+            with patch.object(module,'DATA_DIR',root),patch.object(module,'CACHE_FILE',cache),patch.object(module,'TARGET_CHUNKS',['posts.json']),patch.object(module,'translate_paragraphs',side_effect=RuntimeError('temporary outage')),patch.object(module.time,'sleep'),patch.object(sys,'argv',['translate_posts.py']):
+                self.assertEqual(module.main(),1)
+            saved=json.loads(cache.read_text(encoding='utf-8'))['qa']
+            self.assertEqual(saved['translated'],prior['translated'])
+            self.assertEqual(saved['last_attempt']['status'],'failed')
 if __name__=='__main__':unittest.main()

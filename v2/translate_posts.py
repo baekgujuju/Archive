@@ -279,13 +279,19 @@ def main():
             print(f"  ✗ 실패: {e}", file=sys.stderr)
             failed += 1
             # 실패 기록 (다음 실행에서 재시도)
-            cache[post_id] = {
+            failure = {
                 "paragraphs": paragraphs,
                 "translated": [],
                 "content_hash": content_hash(text),
                 "status": "failed",
                 "error": str(e)[:200],
             }
+            previous=cache.get(post_id)
+            if previous and previous.get('status') == 'ok':
+                # Keep the last successful version; its old hash still triggers a retry.
+                cache[post_id] = dict(previous, last_attempt=failure)
+            else:
+                cache[post_id] = failure
             time.sleep(5)
 
     with open(CACHE_FILE, 'w', encoding='utf-8') as f:
