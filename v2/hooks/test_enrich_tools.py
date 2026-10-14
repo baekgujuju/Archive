@@ -138,5 +138,41 @@ class EnrichToolsTest(unittest.TestCase):
         self.assertEqual(et.get_media_url(None), "")
 
 
+class ResumeIntegrationTest(unittest.TestCase):
+    def setUp(self):
+        import contextlib
+        self.stack = contextlib.ExitStack()
+        self.addCleanup(self.stack.close)
+        self.root = Path(self.stack.enter_context(tempfile.TemporaryDirectory()))
+        self.image = self.root / "picture.png"
+        self.image.write_bytes(b"first-image")
+        for name, value in {"DATA_DIR": self.root, "TOOLS_JSON":self.root/"ai-tools.json", "CACHE_JSON":self.root/"cache.json", "PROGRESS_JSON":self.root/"progress.json", "RETRY_MARKER":self.root/"retry", "MANIFEST":self.root/"manifest.json"}.items():
+            self.stack.enter_context(patch.object(et,name,value,create=True))
+        self.stack.enter_context(patch.object(et,"collect_screenshots",return_value=[("post",str(self.image),"https://example.test/image","text")]))
+        self.stack.enter_context(patch.object(et,"update_manifest"))
+    def test_cache_zero_calls_and_image_change(self):
+        negative={str(self.image):{"is_github":False,"github_urls":[]}}
+        with patch.object(et,"analyze_image_batch",return_value=negative) as analyze:
+            et.run_backfill(); self.assertEqual(analyze.call_count,1)
+            et.run_backfill(); self.assertEqual(analyze.call_count,1)
+            self.image.write_bytes(b"changed-image")
+            et.run_backfill(); self.assertEqual(analyze.call_count,2)
+    def test_failure_retries_even_progress_exists(self):
+        with patch.object(et,"analyze_image_batch",return_value={}) as analyze:
+            first=et.run_backfill(); self.assertEqual(first["temporary_failures"],1)
+            self.assertTrue(et.RETRY_MARKER.exists())
+            second=et.run_backfill(); self.assertEqual(second["temporary_failures"],1)
+            self.assertEqual(analyze.call_count,2)
+    def test_dry_run_no_writes(self):
+        with patch.object(et,"analyze_image_batch",return_value={}): et.run_backfill(dry_run=True)
+        self.assertFalse(et.RETRY_MARKER.exists()); self.assertFalse(et.TOOLS_JSON.exists())
+    def test_cached_entry_reapplied_and_all_current_images_valid(self):
+        import json
+        fp=et.fingerprint(str(self.image),"text","https://example.test/image")
+        entry={"fingerprint":fp,"repo_url":"https://github.com/example/tool","status":"verified"}
+        et.save_json_atomic(et.CACHE_JSON,{"post:picture.png":{"version":et.CACHE_VERSION,"fingerprint":fp,"entry":entry}})
+        with patch.object(et,"analyze_image_batch") as analyze: et.run_backfill(); analyze.assert_not_called()
+        self.assertEqual(et.load_json(et.TOOLS_JSON,{})["post"]["fingerprint"],fp)
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

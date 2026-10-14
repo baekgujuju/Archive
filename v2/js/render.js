@@ -417,9 +417,9 @@ function articleCard(article, options = {}) {
 
   // 제목: X 글은 첫 줄(90자), 웹글은 title 필드 → 없으면 fullText 첫 줄에서 유도
   const webTitleFallback = !isX && !a.title && text ? sliceCp(text.trim().split('\n')[0], 90) : '';
-  const title = isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || webTitleFallback || author;
+  const title = a.toolLinks && a.title ? a.title : isX ? sliceCp(text.trim().split('\n')[0], 90) || author : a.title || webTitleFallback || author;
   // 요약: X 글은 150자 미리보기, 웹글은 summary 필드
-  const summary = isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || sliceCp(text, 150);
+  const summary = a.toolDescription && /^click\s+to\s+(follow|subscribe)/i.test(text.trim()) ? '' : isX ? (text ? sliceCp(text, 150) + (text.length > 150 ? '…' : '') : MISSING) : a.summary || sliceCp(text, 150);
   const fullHtml = a.fullHtml && typeof window !== 'undefined' && window.ArchiveApp?.sanitizeHtml
     ? window.ArchiveApp.sanitizeHtml(a.fullHtml) : a.fullHtml;
   const fullText = isX ? text || MISSING : text || a.summary || '';
@@ -514,11 +514,11 @@ function articleCard(article, options = {}) {
     '<button type="button" class="delete-btn" aria-label="삭제" title="삭제">' +
     '<svg viewBox="0 0 24 24"><path d="M5 7h14M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m-9 0 1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></button>' +
     '</div></div>' +
-    `<h3>${escapeHtml(title)}</h3>${handle}<div class="meta">${escapeHtml(meta)}</div>` +
+    `<h3>${escapeHtml(title)}</h3>${a.toolDescription ? '<p class="tool-description">'+escapeHtml(a.toolCategory||'AI 도구')+' · '+escapeHtml(a.toolDescription)+'</p>' : ''}${handle}<div class="meta">${escapeHtml(meta)}</div>` +
     `<p class="summary">${escapeHtml(summary)}</p><div class="tags">${topicsHtml(topics)}</div>` +
     '</summary>' +
     `<div class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
-    `${urlInline}${media}${quotedHtml}${repliesHtml(a)}${relatedHtml}` +
+    `${(a.toolLinks||[]).filter(t=>/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(?:\/|$)/.test(t.url||'')).map(t=>'<p class="tool-shortcut"><a href="'+escapeHtml(t.url)+'" target="_self" rel="noopener noreferrer">↗ '+escapeHtml(t.title||'GitHub 바로가기')+'</a></p>').join('')}${urlInline}${media}${quotedHtml}${repliesHtml(a)}${relatedHtml}` +
     `<div class="byline"><span class="author">${escapeHtml(author)}</span>` +
     `<button type="button" class="read-window-btn" data-idx="${idx}">새 창에서 읽기 ⧉</button>` +
     `<a class="read-link" href="${escapeHtml(url)}" target="_self" rel="noopener noreferrer">원문 보기 ↗</a></div>` +

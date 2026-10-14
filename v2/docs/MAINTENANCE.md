@@ -156,3 +156,16 @@ Muse는 이 문서를 저장소 v2/docs/MAINTENANCE.md에 보관하고 MEMORY에
 일반 카드에서 X/웹 출처 배지는 생략하며 필터는 아카이브/IB 주원만 구분합니다. 출처 URL·저자·날짜·주제 및 원문 링크는 유지합니다. 메모 존재는 기존 금색 메모 아이콘으로만 표시하고 추가 점은 표시하지 않습니다.
 
 로컬 검토 HTTP 서버는 .jpg/.jpeg=image/jpeg, .png=image/png, .webp=image/webp, .gif=image/gif로 응답해야 합니다. 잘못된 application/octet-stream은 브라우저에서 그림이 보이더라도 공유 Blob 검증에서 실패합니다. 문제 재현 글은 tweetId 2108875238796583045 (AmeetRai)이며 본문 자체는 이미지가 없고 댓글에 JPG 1개가 있습니다. 전체 글 공유에 포함되는 그 이미지의 미러 경로는 media/full/8552a9e4d437d224.jpg입니다. 테스트 공유는 PNG 1개+JPG 1개, files만 전달(text/title 없음)으로 확인해야 합니다. 운영 HTTP 서버 역시 미러 파일의 올바른 Content-Type을 확인합니다. 이미지 누락 실패 차단 자체를 제거하여 결함을 숨기지 않습니다.
+
+
+## 14. v2.5.4 AI 스킬·GitHub 스크린샷 정리
+
+AI 스킬 탭은 기존 AI툴 자료와 하단 도구 모음에 연결됩니다. 인물 펼치기는 이름 바로 옆에 붙입니다. 접힌 카드 상단과 높이를 36px 줄여 PC314px/모바일304px로 표시합니다.
+
+수집 후 미디어 미러 다음 enrich_tools.py --backfill을 실행합니다. 원문·인용의 이미지와 GitHub URL에서 후보를 모으고, Codex CLI의 읽기 전용 이미지 입력으로 분석합니다. 이미지에 URL이 없으면 제목/소유자 힌트로 저장소를 검색하고 실제 README와 포크 여부를 확인합니다. 모호한 경우 링크를 만들지 않습니다. 결과 data/ai-tools.json의 안정적인 글 ID 아래에 verified 제목·한국어 설명·구체적 분류·repo_url·근거·지문을 저장하며, 원문은 보존합니다. 프런트는 검증된 GitHub URL만 바로가기로 표시하고 설명도 검색에 포함합니다.
+
+단순 progress의 완료 목록을 신뢰하지 않습니다. 현재 이미지+본문+URL+분석기 버전 지문과 일치하는 성공 캐시만 재사용합니다. 이미지 변경과 실패는 다시 처리합니다. 이미지 분석 자체는 내용 해시별 vision 캐시로 재사용합니다. 배치마다 tools/cache/progress 및 manifest.ai_tools 해시를 저장하여 타임아웃 이후에도 이어서 처리합니다. GitHub처럼 보이나 미확인인 자료와 일시 오류는 재시도 마커를 유지합니다. dry-run은 파일/마커를 쓰지 않습니다. 새 원문이 없어도 .retry-enrich가 후크를 다시 실행해야 합니다. 운영 워커 후크와 수동 백필을 같은 checkout에서 동시에 실행하지 않습니다.
+
+검사 명령: python3 hooks/test_enrich_tools.py (15개: 실제 run_backfill의 캐시 무호출·이미지 변경·실패 다음 실행·dry-run 무쓰기 포함), node js/test_tool_metadata.mjs. 실제 검증 시 fresh URL 없는 이미지 분석/검색, 공유 이미지 하나를 여러 글에 연결, 모호한 후보 설명, 기존 자료 전체 처리 건수, 같은 입력의 모델 무호출을 기록합니다. 전체 검사와 실제 백필 완료를 구분합니다. fork와 복제 저장소가 여럿인 경우 공식 원본 근거를 추가 확인합니다.
+
+예시: MatthewBerman 글2108245653843509415, 이미지86475eac4c71ca84.jpg → morluto/rea. 8552a9e4d437d224.jpg와 Lexmount 글2089327156274790890은 Moli Browser이며 REA가 아닙니다. 잘못된 자동 매칭은 원문을 수정하지 않고 근거/지문을 재검증하여 정리합니다.

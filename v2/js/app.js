@@ -97,11 +97,14 @@ var ArchiveApp = (function () {
     }
     return urlHtml;
   }
+  function toolInfo(a) {
+    return (a.toolDescription?'<p class="tool-description">'+esc(a.toolCategory||'AI 도구')+' · '+esc(a.toolDescription)+'</p>':'')+(a.toolLinks||[]).map(function(t){var u=safeUrl(t.url);return u&&/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+/.test(u)?'<p class="tool-shortcut"><a href="'+esc(u)+'" target="_self" rel="noopener noreferrer">↗ '+esc(t.title||'GitHub 바로가기')+'</a></p>':'';}).join('');
+  }
   function articleHtml(a) {
     var url = canonicalSource(a), q = a.quoted;
     var repliesHtml=renderReplies(a);
     var urlHtml=renderUrlContents(a);
-    return '<h1>' + esc(title(a)) + '</h1><p class="meta">' + esc(metadata(a)) + '</p><div class="aa-body">' +
+    return '<h1>' + esc(title(a)) + '</h1>'+toolInfo(a)+'<p class="meta">' + esc(metadata(a)) + '</p><div class="aa-body">' +
       translatedBody(a) + '</div>' + images(a.mediaImages) +
       (q && typeof q === 'object' ? '<details class="quoted" open><summary>인용 게시글</summary><blockquote><p>' + esc(author(q)) + '</p><p class="aa-text">' + esc(q.fullText || '') + '</p>' + images(q.media || q.mediaImages) + '</blockquote></details>' : '') +
       repliesHtml + urlHtml +
@@ -114,11 +117,11 @@ var ArchiveApp = (function () {
     var modeButton=controls.querySelector('[data-action="mode"]');modeButton.textContent=mode;modeButton.setAttribute('aria-label','검색 조건 '+mode+', 클릭하여 변경');modeButton.setAttribute('aria-pressed',String(mode==='AND'));
     var words = controls.querySelector('input').value.toLowerCase().split(',').map(function (s) { return s.trim(); }).filter(Boolean), count = 0, pinCount = 0;
     var defaultView=!words.length&&!selection.hidden&&!selection.type.length&&!selection.topic.length&&!selection.author.length&&!selection.bookmark.length;
-    if(aiList)aiList.hidden=!defaultView;
+    if(aiList)aiList.hidden=!(defaultView||selection.type[0]==='ai');
     records.forEach(function (r) {
       var isHidden = hidden.indexOf(r.id) >= 0, color = bookmarks[r.id], isPinned = pins.indexOf(r.id) >= 0;
       var match = !words.length || (mode === 'AND' ? words.every(function (w) { return r.search.indexOf(w) >= 0; }) : words.some(function (w) { return r.search.indexOf(w) >= 0; }));
-      var visible = match && (selection.hidden ? isHidden : !isHidden) && (!selection.type.length || selection.type.indexOf(r.type) >= 0) &&
+      var visible = match && (selection.hidden ? isHidden : !isHidden) && (!selection.type.length || selection.type.indexOf(r.type) >= 0 || (selection.type[0]==='ai'&&r.topics.indexOf('AI툴')>=0)) &&
         (!selection.topic.length || selection.topic.some(function (t) { return r.topics.indexOf(t) >= 0; })) && (!selection.author.length || selection.author.indexOf(r.author) >= 0) &&
         (!selection.subject.length || selection.subject[0]===r.article.subject) && (!selection.category.length || selection.category[0]===r.article.category) && (!selection.bookmark.length || (color && (selection.bookmark.indexOf('all') >= 0 || selection.bookmark.indexOf(color) >= 0)));
       if(!selection.type.length&&r.type==='ib')visible=false;
@@ -148,7 +151,7 @@ var ArchiveApp = (function () {
     var ind = controls.querySelector('[data-author-indicator]');
     if (ind) ind.textContent = selection.author.length ? '(' + selection.author.length + '명 선택)' : '';
     status(count ? count + '개 글 표시' : '조건에 맞는 글이 없습니다.');
-    if(aiList)aiList.querySelectorAll('[data-read-id]').forEach(function(b){b.closest('li').hidden=hidden.indexOf(b.dataset.readId)>=0;});
+    if(aiList)aiList.querySelectorAll('[data-read-id]').forEach(function(b){var record=records.find(function(r){return r.id===b.dataset.readId;});b.closest('li').hidden=hidden.indexOf(b.dataset.readId)>=0||(selection.type[0]==='ai'&&record&&record.card.hidden);});
   }
   function dialog(id, label, html) {
     var d = document.createElement('dialog'); d.id = id; d.className = 'aa-dialog'; d.setAttribute('aria-label', label); d.innerHTML = html; document.body.appendChild(d);
@@ -225,7 +228,7 @@ var ArchiveApp = (function () {
     records = Array.prototype.map.call(list.querySelectorAll('.article'), function (card) {
       var a = byIdx[card.dataset.idx] || {}, topics = Array.isArray(a.topics) ? a.topics.map(String) : (card.dataset.topics || '').split('\n').filter(Boolean);
       return { card: card, id: card.dataset.pinId || card.dataset.idx, article: a, author: card.dataset.author || author(a), type: card.dataset.type || a.type, topics: topics,
-        search: [title(a), bodyText(a), a.summary, author(a), a.handle, topics.join(' ')].join(' ').toLowerCase() };
+        search: [title(a), bodyText(a), a.summary, a.toolDescription, a.toolCategory, author(a), a.handle, topics.join(' ')].join(' ').toLowerCase() };
     });
     if (!localStorage.getItem('archive-ib-pins-migrated')) {
       records.forEach(function (r) { if (r.type === 'ib' && localStorage.getItem(r.id) === '1' && pins.indexOf(r.id) < 0) pins.push(r.id); });
@@ -239,7 +242,7 @@ var ArchiveApp = (function () {
     var ibRecords=records.filter(function(r){return r.type==='ib';});
     ['subject','category'].forEach(function(field,n){var values=Array.from(new Set(ibRecords.map(function(r){return r.article[field]||'';}).filter(Boolean)));controls.querySelectorAll('.aa-ib-nav .aa-chips')[n].innerHTML=button('전체',field,'')+values.map(function(v){return button(v,field,v);}).join('');});
     list.parentNode.insertBefore(controls, list); pinned = document.createElement('section'); pinned.className = 'aa-pinned'; pinned.innerHTML = '<h2>📌 고정한 글</h2><div class="aa-grid"></div>'; list.parentNode.insertBefore(pinned, list);
-    aiList=document.createElement('section');aiList.className='ai-tools-section';var tools=records.filter(function(r){return r.topics.indexOf('AI툴')>=0;});aiList.innerHTML='<h2>🛠️ AI 도구 모음 ('+tools.length+'건)</h2><ul class="ai-tools-list">'+tools.map(function(r){var url=safeUrl(r.article.sourceUrl||r.article.source_url);return '<li><button type="button" data-read-id="'+esc(r.id)+'">'+esc(title(r.article))+'</button> <span class="ai-author">— '+esc(r.author)+'</span> '+(url?'<a href="'+esc(url)+'" target="_self" rel="noopener noreferrer">원문 ↗</a>':'')+'</li>';}).join('')+'</ul>';list.after(aiList);
+    aiList=document.createElement('section');aiList.className='ai-tools-section';var tools=records.filter(function(r){return r.topics.indexOf('AI툴')>=0;});aiList.innerHTML='<h2>AI 스킬 · 도구 모음</h2><ul class="ai-tools-list">'+tools.map(function(r){var url=safeUrl(r.article.sourceUrl||r.article.source_url);return '<li><button type="button" data-read-id="'+esc(r.id)+'">'+esc(title(r.article))+'</button> <span class="ai-author">— '+esc(r.author)+'</span> '+(url?'<a href="'+esc(url)+'" target="_self" rel="noopener noreferrer">원문 ↗</a>':'')+'</li>';}).join('')+'</ul>';list.after(aiList);
     controls.addEventListener('input', update); controls.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return;
       if(b.dataset.filter==='bookmark'){if(suppressBookmarkClick){suppressBookmarkClick=false;return;}clearTimeout(bookmarkClickTimer);if(e.detail<2)bookmarkClickTimer=setTimeout(function(){selection.bookmark=b.dataset.value&&selection.bookmark[0]!==b.dataset.value?[b.dataset.value]:[];update();},250);return;}if (b.dataset.filter) {var field=b.dataset.filter;selection[field]=b.dataset.value&&selection[field][0]!==b.dataset.value?[b.dataset.value]:[];if(field==='type'){selection.topic=[];selection.author=[];selection.subject=[];selection.category=[];}}

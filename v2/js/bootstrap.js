@@ -488,6 +488,7 @@ async function boot() {
   await new Promise((resolve) => setTimeout(resolve, 0));
   try {const mapResponse=await fetch('data/media-map.json',{cache:'no-cache'});if(!mapResponse.ok)throw new Error('Media map unavailable');if(mapResponse.ok){window.ArchiveMediaMap=await mapResponse.json();localStorage.setItem('archive-media-map',JSON.stringify(window.ArchiveMediaMap));}}catch(e){try{window.ArchiveMediaMap=JSON.parse(localStorage.getItem('archive-media-map')||'{}');}catch(ignore){}}
   try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(ignore){}}
+  try{const response=await fetch('data/ai-tools.json',{cache:'no-cache'});if(response.ok){window.ArchiveToolMap=await response.json();localStorage.setItem('archive-ai-tools',JSON.stringify(window.ArchiveToolMap));}}catch(e){}
   renderArticles(articles, renderer, container, { offline: false });
   if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
   showOfflineBadge(false);
@@ -531,7 +532,13 @@ function loadAllCachedChunks() {
  * @param {object} [opts]
  * @param {boolean} [opts.offline=false] — 오프라인 모드 여부
  */
+function applyToolMetadata(articles,toolMap){
+    try{articles.forEach(a=>{const t=toolMap[String(a.tweetId||a.id||a.pinId||'')];if(!t||t.status!=='verified'||typeof t.summary_ko!=='string'||!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(?:\/|$)/.test(t.repo_url||''))return;a.topics=Array.from(new Set([...(Array.isArray(a.topics)?a.topics:[]).filter(t=>t!=='기타'),'AI툴']));a.toolDescription=t.summary_ko.slice(0,240);a.toolCategory=String(t.category||'AI 도구').slice(0,40);a.toolLinks=[{url:t.repo_url,title:String(t.title||'GitHub 저장소').slice(0,100)}];if(!a.title||/click\s+to\s+(follow|subscribe)/i.test(a.title||a.fullText||''))a.title=String(t.title||'GitHub 도구').slice(0,100);});}catch(e){}
+}
+
 function renderArticles(articles, renderer, container, opts = {}) {
+  try{applyToolMetadata(articles,(typeof window!=='undefined'&&window.ArchiveToolMap)||JSON.parse(localStorage.getItem('archive-ai-tools')||'{}'));}catch(e){}
+
   function dateOf(a){if(a.type==='x'&&/^\d+$/.test(String(a.tweetId||a.id||''))){try{return Number((BigInt(a.tweetId||a.id)>>22n)+1288834974657n);}catch(e){}}return Date.parse(a.date_saved||a.createdAt||a.date||'')||0;}
   articles=articles.slice().sort((a,b)=>dateOf(b)-dateOf(a));
   articles = articles.map((article) => renderer.normalizeArticle ? renderer.normalizeArticle(article) : article);
@@ -648,7 +655,7 @@ autoStart();
 
 if(typeof window!=='undefined'&&window.addEventListener&&typeof document!=='undefined'){
   let checking=false,lastVersion=null;
-  window.addEventListener('archive-data-loaded',()=>{const manifest=loadCachedManifest();lastVersion=manifest&&JSON.stringify([manifest.chunks,manifest.translations]);});
-  async function checkUpdates(){if(checking||document.hidden||document.querySelector('dialog[open]'))return;checking=true;try{const next=await fetchManifest(),version=JSON.stringify([next.chunks,next.translations]);if(lastVersion&&version!==lastVersion){booted=false;await boot();const status=document.getElementById('archive-update-status');if(status)status.textContent='새 자료가 자동으로 업데이트되었습니다.';}lastVersion=version;}catch(e){}finally{checking=false;}}
+  window.addEventListener('archive-data-loaded',()=>{const manifest=loadCachedManifest();lastVersion=manifest&&JSON.stringify([manifest.chunks,manifest.translations,manifest.ai_tools]);});
+  async function checkUpdates(){if(checking||document.hidden||document.querySelector('dialog[open]'))return;checking=true;try{const next=await fetchManifest(),version=JSON.stringify([next.chunks,next.translations,next.ai_tools]);if(lastVersion&&version!==lastVersion){booted=false;await boot();const status=document.getElementById('archive-update-status');if(status)status.textContent='새 자료가 자동으로 업데이트되었습니다.';}lastVersion=version;}catch(e){}finally{checking=false;}}
   setInterval(checkUpdates,60000);window.addEventListener('focus',checkUpdates);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdates();});
 }
