@@ -34,7 +34,7 @@ var ArchiveApp = (function () {
       if (!allowed.test(node.tagName)) return content;
       var tag = node.tagName.toLowerCase(), attrs = ''; var cls=node.getAttribute('class');if(cls&&/^[a-z0-9 _-]+$/i.test(cls))attrs=' class="'+esc(cls)+'"';
       if (tag === 'a') { var href = safeUrl(node.getAttribute('href')); if (href) attrs += ' href="' + esc(href) + '" target="_self" rel="noopener noreferrer"'; }
-      if (tag === 'img') { var raw = node.getAttribute('src') || ''; var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)raw=new URL(mapped,document.baseURI).href; var src = /^data:image\/(png|jpeg|gif|webp);base64,[a-z0-9+/=\s]+$/i.test(raw) ? raw : safeUrl(raw); return src ? '<img tabindex="0" title="이미지 확대" src="' + esc(src) + '" alt="' + esc(node.getAttribute('alt') || '') + '" loading="lazy">' : ''; }
+      if (tag === 'img') { var raw = node.getAttribute('src') || ''; var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)raw=new URL(mapped,document.baseURI).href; var src = /^data:image\/(png|jpeg|gif|webp);base64,[a-z0-9+/=\s]+$/i.test(raw) ? raw : safeUrl(raw); return src ? '<img tabindex="0" title="이미지 확대" src="' + esc(src) + '" alt="' + esc(node.getAttribute('alt') || '') + '"' + ['width','height'].map(function(k){var v=node.getAttribute(k)||'';return /^[1-9][0-9]{0,4}$/.test(v)?' '+k+'="'+v+'"':'';}).join('') + ' loading="lazy">' : ''; }
       return '<' + tag + attrs + '>' + content + (/^(br|hr)$/.test(tag) ? '' : '</' + tag + '>');
     }
     return Array.prototype.map.call(doc.body.childNodes, walk).join('');

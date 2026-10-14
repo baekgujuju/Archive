@@ -11,6 +11,7 @@ fetch.sh는 비인증 프로필이므로 네이버 URL에 사용 금지.
 import json
 import subprocess
 import sys
+from urllib.parse import urlparse
 from pathlib import Path
 
 V2_ROOT = Path(__file__).resolve().parent
@@ -34,13 +35,9 @@ def log(msg):
 
 
 def is_naver_url(url):
-    """네이버 도메인 여부 (hostname 기반)."""
-    from urllib.parse import urlparse
-    try:
-        host = urlparse(url).hostname or ""
-        return host.endswith("naver.com") or host == "naver.me"
-    except Exception:
-        return False
+    """네이버 도메인 여부."""
+    host = (urlparse(url).hostname or '').lower()
+    return host == 'naver.me' or host == 'naver.com' or host.endswith('.naver.com')
 
 
 def is_navigation_content(text):
@@ -57,26 +54,21 @@ def validate_article_body(text, expected_title=""):
     """
     실제 글 본문인지 검증.
     - 네비게이션이면 False
-    - 본문이 500자 미만이면 False
-    - expected_title이 있으면 제목 포함 여부 확인
+    - 본문이 비어 있으면 False
+    - 제목은 실제 source_title 증거로 quality gate에서 대조
     """
-    if not text or len(text.strip()) < 500:
+    if not text or not text.strip():
         return False
     if is_navigation_content(text):
         return False
-    if expected_title and len(expected_title) > 5:
-        # 제목의 핵심 단어가 본문에 있는지 확인
-        title_words = [w for w in expected_title.split() if len(w) > 1][:3]
-        if title_words and not any(w in text[:2000] for w in title_words):
-            return False
     return True
 
 
 def main():
-    targets = json.load(open(TARGETS_JSON))
+    targets = json.loads(TARGETS_JSON.read_text(encoding="utf-8"))
     results = {}
     if RESULTS_JSON.exists():
-        results = json.load(open(RESULTS_JSON))
+        results = json.loads(RESULTS_JSON.read_text(encoding="utf-8"))
 
     pending = [t for t in targets if t.get("id") and t["id"] not in results]
     log(f"전체 {len(targets)}, 완료 {len(results)}, 남은 {len(pending)}")
@@ -98,7 +90,7 @@ def main():
                 "title": title,
             }
             log(f"  {tid}: 네이버 URL, 인증 브라우저 대기")
-            json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+            RESULTS_JSON.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
             continue
 
         out_dir = PRIVATE_DIR / tid
@@ -106,23 +98,14 @@ def main():
         out_md = out_dir / "article.md"
 
         log(f"수집 중: {tid} ({title[:30]})")
-        # 이전 수집 파일 삭제 (stale 재사용 방지)
-        if out_md.exists():
-            out_md.unlink()
         try:
             r = subprocess.run(
                 ["bash", str(FETCH_SH), url, "--output", str(out_md), "--download-media"],
                 capture_output=True, text=True, timeout=180
             )
-            # returncode 확인 (실패 시 stale 파일 사용 금지)
             if r.returncode != 0:
-                results[tid] = {
-                    "status": "failed",
-                    "reason": f"fetch exit code {r.returncode}",
-                    "url": url,
-                }
-                log(f"  -> FAILED (exit code {r.returncode})")
-                json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+                results[tid] = {"status": "failed", "reason": "fetch_process_failed", "url": url}
+                RESULTS_JSON.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
                 continue
             if out_md.exists():
                 size = out_md.stat().st_size
@@ -143,55 +126,21 @@ def main():
                         "chars": chars,
                     }
                     log(f"  -> POISONED (네비게이션), 재수집 필요")
-                    json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+                    RESULTS_JSON.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
                     continue  # fall-through 방지
 
-                # source_quality 게이트 (fail-closed)
-                # 시그니처: assess_capture(record, capture)
-                if HAS_QUALITY_GATE:
-                    try:
-                        record = {"title": title, "source_url": url}
-                        capture = {
-                            "body_text": body_stripped,
-                            "extraction_scope": "article",
-                            "content_selector": ".article-body",
-                            "paragraphs": paras,
-                            "capture_complete": chars > 500,
-                            "images": len(images),
-                        }
-                        quality = assess_capture(record, capture)
-                        q_status = quality.get("status", "needs_review")
-                        # 게이트 상태가 collected가 아니면 그대로 반영 (fail-closed)
-                        if q_status != "collected":
-                            results[tid] = {
-                                "status": q_status,
-                                "reason": f"quality gate: {quality.get('reasons', [])}",
-                                "url": url,
-                                "chars": chars,
-                                "paragraphs": paras,
-                                "images": len(images),
-                            }
-                            log(f"  -> {q_status.upper()} (quality gate)")
-                            json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
-                            continue
-                    except Exception as e:
-                        # 게이트 예외 시 fail-closed: error로 기록, collected 금지
-                        results[tid] = {
-                            "status": "error",
-                            "reason": f"quality gate exception: {str(e)[:100]}",
-                            "url": url,
-                        }
-                        log(f"  -> ERROR (quality gate failed closed): {e}")
-                        json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
-                        continue
-
+                # Missing or incompatible evidence must never pass the gate.
+                evidence_path = out_dir / "capture-evidence.json"
+                capture = json.loads(evidence_path.read_text(encoding="utf-8")) if evidence_path.exists() else {}
+                capture["body_text"] = body_stripped
+                if not HAS_QUALITY_GATE:
+                    quality = {"status": "needs_review", "reasons": ["quality_gate_unavailable"]}
+                else:
+                    quality = assess_capture({"title": title, "source_url": url}, capture)
                 results[tid] = {
-                    "status": "collected",
-                    "url": url,
-                    "chars": chars,
-                    "paragraphs": paras,
-                    "images": len(images),
-                    "bytes": size,
+                    "status": quality["status"], "url": url, "chars": chars,
+                    "paragraphs": paras, "images": len(images), "bytes": size,
+                    "quality": quality, "collector_revision": "fail-closed-255",
                 }
                 log(f"  -> {chars}자, {paras}단락, 이미지 {len(images)}개")
             else:
@@ -205,7 +154,7 @@ def main():
             log(f"  -> ERROR: {e}")
 
         # 즉시 저장 (resume)
-        json.dump(results, open(RESULTS_JSON, "w"), ensure_ascii=False, indent=2)
+        RESULTS_JSON.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # 최종 통계
     from collections import Counter
