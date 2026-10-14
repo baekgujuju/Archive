@@ -33,8 +33,11 @@ var ArchiveApp = (function () {
       var content = Array.prototype.map.call(node.childNodes, walk).join('');
       if (!allowed.test(node.tagName)) return content;
       var tag = node.tagName.toLowerCase(), attrs = ''; var cls=node.getAttribute('class');if(cls&&/^[a-z0-9 _-]+$/i.test(cls))attrs=' class="'+esc(cls)+'"';
+      if (/^(td|th)$/.test(tag)) ['colspan','rowspan'].forEach(function(k){var v=node.getAttribute(k)||'';if(/^[1-9][0-9]{0,2}$/.test(v))attrs+=' '+k+'="'+v+'"';});
+      if (tag === 'ol') {var start=node.getAttribute('start')||'';if(/^-?[0-9]{1,6}$/.test(start))attrs+=' start="'+start+'"';}
+      if (tag === 'li') {var value=node.getAttribute('value')||'';if(/^-?[0-9]{1,6}$/.test(value))attrs+=' value="'+value+'"';}
       if (tag === 'a') { var href = safeUrl(node.getAttribute('href')); if (href) attrs += ' href="' + esc(href) + '" target="_self" rel="noopener noreferrer"'; }
-      if (tag === 'img') { var raw = node.getAttribute('src') || ''; var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)raw=new URL(mapped,document.baseURI).href; var src = /^data:image\/(png|jpeg|gif|webp);base64,[a-z0-9+/=\s]+$/i.test(raw) ? raw : safeUrl(raw); return src ? '<img tabindex="0" title="이미지 확대" src="' + esc(src) + '" alt="' + esc(node.getAttribute('alt') || '') + '" loading="lazy">' : ''; }
+      if (tag === 'img') { var raw = node.getAttribute('src') || ''; var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)raw=new URL(mapped,document.baseURI).href; var src = /^data:image\/(png|jpeg|gif|webp);base64,[a-z0-9+/=\s]+$/i.test(raw) ? raw : safeUrl(raw); return src ? '<img tabindex="0" title="이미지 확대" src="' + esc(src) + '" alt="' + esc(node.getAttribute('alt') || '') + '"' + ['width','height'].map(function(k){var v=node.getAttribute(k)||'';return /^[1-9][0-9]{0,4}$/.test(v)?' '+k+'="'+v+'"':'';}).join('') + ' loading="lazy">' : ''; }
       return '<' + tag + attrs + '>' + content + (/^(br|hr)$/.test(tag) ? '' : '</' + tag + '>');
     }
     return Array.prototype.map.call(doc.body.childNodes, walk).join('');
@@ -53,7 +56,7 @@ var ArchiveApp = (function () {
   }
   function title(a) { return String(a.title || bodyText(a).split('\n')[0].slice(0, 90) || a.author || '글'); }
   function author(a) { return String(a.author && typeof a.author === 'object' ? a.author.name || a.author.handle || '' : a.author || ''); }
-  function metadata(a) { return [author(a), a.handle, a.createdAt, a.source_domain, a.date_saved].filter(Boolean).join(' · '); }
+  function metadata(a) { var date=window.ArchiveRender&&window.ArchiveRender.publishedLabel(a.published_at||a.createdAt);return [author(a), a.handle,date?'작성 '+date:'',a.source_domain,a.date_saved?'저장 '+a.date_saved:''].filter(Boolean).join(' · '); }
   function images(media) {
     return (Array.isArray(media) ? media : []).map(function (pair) {
       var raw = Array.isArray(pair) ? pair[1] || pair[0] : typeof pair === 'string' ? pair : pair && (pair.full || pair.url || pair.src || pair.thumb);
@@ -61,7 +64,33 @@ var ArchiveApp = (function () {
       return url ? '<img tabindex="0" title="이미지 확대" src="' + esc(url) + '" alt="게시물 이미지" loading="lazy">' : '';
     }).join('');
   }
-  function translatedBody(a){var tr=a.translation,original=bodyText(a),base=a.fullHtml?cleanHtml(a.fullHtml):'<p class="aa-text">'+linkText(original)+'</p>';if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return base;var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};if(compact(original)!==compact(tr.paragraphs.join(' ')))return base;if(!a.fullHtml)return tr.paragraphs.map(function(t,i){return '<section class="translation-pair"><p class="translation-original">'+esc(t)+'</p><p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(tr.translated[i])+'</p></section>';}).join('');var doc=new DOMParser().parseFromString(base,'text/html');tr.paragraphs.forEach(function(t,i){var nodes=Array.from(doc.body.querySelectorAll('p,h1,h2,h3,li,blockquote'));var node=nodes.find(function(n){return compact(n.textContent)===compact(t);});if(node){var ko=doc.createElement('p');ko.className='translation-ko';ko.textContent=tr.translated[i];node.after(ko);} });return doc.body.innerHTML;}
+  function articleBodyHtml(a){
+    var html=cleanHtml(a.fullHtml),source=canonicalSource(a);
+    if(!source)return html;
+    var doc=new DOMParser().parseFromString(html,'text/html');
+    doc.body.querySelectorAll('a[href]').forEach(function(link){
+      if(link.classList.contains('ib-card-link')||(/^원문\s*보기\s*[↗→]?\s*$/.test(link.textContent.trim())&&safeUrl(link.getAttribute('href'))===source))link.remove();
+    });
+    return doc.body.innerHTML;
+  }
+  function translatedBody(a){
+    var tr=a.translation,original=bodyText(a),base=a.fullHtml?articleBodyHtml(a):'<p class="aa-text">'+linkText(original)+'</p>';
+    if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return base;
+    var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};
+    if(!a.fullHtml){
+      if(compact(original)!==compact(tr.paragraphs.join(' ')))return base;
+      return tr.paragraphs.map(function(t,i){var ko=String(tr.translated[i]||'').trim();return '<section class="translation-pair"><p class="translation-original">'+esc(t)+'</p>'+(ko&&compact(ko)!==compact(t)?'<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(ko)+'</p>':'')+'</section>';}).join('');
+    }
+    var doc=new DOMParser().parseFromString(base,'text/html'),used=new Set(),matched=0,needed=0;
+    tr.paragraphs.forEach(function(t,i){
+      var translated=String(tr.translated[i]||'').trim();if(!translated||compact(translated)===compact(t))return;needed++;
+      var nodes=Array.from(doc.body.querySelectorAll('p,h1,h2,h3,h4,h5,h6,li,blockquote,figcaption,td,th')).filter(function(n){return !n.closest('.translation-ko')&&!used.has(n)&&compact(n.textContent)===compact(t);});
+      var node=nodes.find(function(n){return !nodes.some(function(child){return child!==n&&n.contains(child);});});
+      if(node){var ko=doc.createElement('p');ko.className='translation-ko';ko.textContent=translated;if(/^(TD|TH)$/.test(node.tagName))node.appendChild(ko);else node.after(ko);used.add(node);matched++;}
+    });
+    if(matched<needed){var notice=doc.createElement('p');notice.className='translation-notice';notice.textContent='일부 문단의 번역을 다시 확인해야 합니다. 원문은 그대로 표시합니다.';doc.body.appendChild(notice);}
+    return doc.body.innerHTML;
+  }
   function renderReplies(a){
     // 답글 HTML (v1 패턴)
     var repliesHtml = '';
@@ -315,7 +344,7 @@ var ArchiveApp = (function () {
     if(action==='image')shareImage(a);
     if(action==='html'||action==='html-download')shareHtml(a,action==='html-download');
     if(action==='print'){
-      if(!inline){window.print();return;}
+      // Reader and inline actions share the same isolated print target and image wait.
       var old=document.getElementById('archive-inline-print');if(old)old.remove();
       var printArea=document.createElement('article');printArea.id='archive-inline-print';printArea.className='aa-content';printArea.innerHTML=articleHtml(a);document.body.appendChild(printArea);formatContent(printArea);document.body.classList.add('aa-inline-print');
       function cleanup(){printArea.remove();document.body.classList.remove('aa-inline-print');window.removeEventListener('afterprint',cleanup);}

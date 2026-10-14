@@ -20,10 +20,10 @@
       "count": 63
     }
   },
-  "app_version": "2.2.0",
+  "app_version": "2.5.6",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "38e226ad680f5c510c883ff3cb69abee351350759f6ab38b7fc85909249cdb60"
+    "sha256": "42f1cddde6650c606f4de3c19d16aad428c8e303e52cb3a21c3f43eac9a15de8"
   },
   "ai_tools": {
     "file": "data/ai-tools.json",

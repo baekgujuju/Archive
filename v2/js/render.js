@@ -46,6 +46,13 @@ function escapeHtml(value) {
     .replace(/'/g, '&#x27;');
 }
 
+function publishedLabel(value) {
+  const raw=String(value||'').replace(/^Last edited\s*(?:Opens edit history)?\s*/i,'').trim();
+  if (/^\d{4}-\d{2}-\d{2}(?:T|\s|$)/.test(raw)) return raw.slice(0,10);
+  if (/\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i.test(raw) || /^\d{4}[./]\s*\d{1,2}[./]\s*\d{1,2}/.test(raw)) return raw;
+  return '';
+}
+
 /* ------------------------------------------------------------------ */
 /* 1b. sliceCp — 코드포인트 기준 문자열 자르기                       */
 /* ------------------------------------------------------------------ */
@@ -445,7 +452,8 @@ function articleCard(article, options = {}) {
 
   const topics = Array.isArray(a.topics) ? a.topics : [];
   const handle = isX ? `<span class="handle">${escapeHtml(a.handle || '')}</span>` : '';
-  const meta = isX ? `작성 ${a.createdAt || '날짜 미확인'}` : `${a.source_domain || ''} · 저장 ${a.date_saved || ''}`;
+  const published = publishedLabel(a.published_at || a.createdAt);
+  const meta = isX ? `작성 ${published || '날짜 미확인'}` : [a.source_domain, published ? `작성 ${published}` : '', a.date_saved ? `저장 ${a.date_saved}` : ''].filter(Boolean).join(' · ') || '작성 날짜 미확인';
 
   // 이미지 (썸네일 → 라이트박스 링크)
   const imgs = [];
@@ -531,6 +539,7 @@ function articleCard(article, options = {}) {
 /* ------------------------------------------------------------------ */
 
 const ArchiveRender = {
+  publishedLabel,
   escapeHtml,
   sliceCp,
   linkify,
