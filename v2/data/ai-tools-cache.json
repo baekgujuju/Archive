@@ -81,18 +81,7 @@
   },
   "2042091141328466156:4fb1012be889a4f4.png": {
     "fingerprint": "f25bdfc91f076314daf46d05c884dad192be135c4a3073f1be75873181c75440",
-    "entry": {
-      "title": "Ollama",
-      "summary_ko": "로컬에서 대규모 언어 모델을 실행하는 도구",
-      "category": "로컬 LLM 실행 도구",
-      "repo_url": "https://github.com/ollama/ollama",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:ollama/ollama",
-        "api-verified"
-      ],
-      "fingerprint": "f25bdfc91f076314daf46d05c884dad192be135c4a3073f1be75873181c75440"
-    },
+    "entry": null,
     "version": 3
   },
   "2042412982106554632:877720d2f33f5664.jpg": {
@@ -104,7 +93,7 @@
     "fingerprint": "b335114494a6e33d9d41c46408d9e17e72e710da221e711dd46dbba945e2022f",
     "entry": {
       "title": "Developer-Y/math-science-video-lectures",
-      "summary_ko": "과학과 수학 분야의 강좌 및 동영상 강의 링크를 모아 제공하는 저장소입니다. 물리학 등 분야별로 정리된 목록에서 학습할 강의를 찾을 수 있습니다.",
+      "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 정리한 저장소입니다. 물리학 등 분야별로 강좌 정보와 강의 영상 링크를 제공합니다.",
       "category": "과학·수학 온라인 강의 모음",
       "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
       "status": "verified",
@@ -119,7 +108,7 @@
     "fingerprint": "f60ad44d5ce05b2fcdf8e9c6ffd712cfd0393ea736e70dd772262094bbf24e53",
     "entry": {
       "title": "Developer-Y/math-science-video-lectures",
-      "summary_ko": "과학과 수학 분야의 동영상 강의가 제공되는 강좌를 주제별로 정리한 목록입니다. 물리학 등 다양한 분야의 강의와 재생목록 링크를 모아 학습 자료를 쉽게 찾을 수 있도록 돕습니다.",
+      "summary_ko": "과학과 수학 분야의 동영상 강의와 강좌 링크를 주제별로 모아 제공하는 저장소입니다. 물리학 등 다양한 분야의 온라인 강의를 찾아 학습하는 데 활용할 수 있습니다.",
       "category": "과학·수학 온라인 강의 모음",
       "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
       "status": "verified",
@@ -194,8 +183,8 @@
     "fingerprint": "b57c1a6d9d74ffa652ce4d1ebd57d92a780aae0123fa9e93290a4c2047b25175",
     "entry": {
       "title": "steipete/agent-scripts.git",
-      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용할 작업 지침, 재사용 가능한 스킬, 보조 스크립트를 모은 도구입니다. 스킬 동기화와 검증, 문서 목록 생성, 브라우저 작업을 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
-      "category": "AI 코딩 에이전트용 워크플로 자동화 도구",
+      "summary_ko": "여러 저장소에서 공통으로 사용하는 AI 에이전트용 스크립트 모음입니다. 에이전트의 개발 작업을 지원하는 도구를 공유하고 재사용할 수 있게 합니다.",
+      "category": "AI 코딩 에이전트용 개발 지원 스크립트",
       "repo_url": "https://github.com/steipete/agent-scripts.git",
       "status": "verified",
       "evidence": [
@@ -209,8 +198,8 @@
     "fingerprint": "39e1b374d8c43dbcb5660a469f2eaa64d432d68ee73250c97ef2b4c75d4de048",
     "entry": {
       "title": "steipete/agent-scripts.git",
-      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화·검증과 문서 탐색 등 개발 작업을 지원합니다. ([저장소](https://github.com/steipete/agent-scripts))",
-      "category": "AI 코딩 에이전트용 개발 자동화 스크립트",
+      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 개발 보조 스크립트 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 조작 등 반복 작업을 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
+      "category": "AI 코딩 에이전트용 워크플로 자동화 도구",
       "repo_url": "https://github.com/steipete/agent-scripts.git",
       "status": "verified",
       "evidence": [
@@ -224,8 +213,8 @@
     "fingerprint": "321079e36521d9a188bacb702ea8656a53926bfd519d942de6bf135bda43fa70",
     "entry": {
       "title": "steipete/agent-scripts.git",
-      "summary_ko": "AI 코딩 에이전트가 여러 저장소에서 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 개발 보조 스크립트 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 제어 등을 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
-      "category": "AI 코딩 에이전트용 워크플로 자동화 도구",
+      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트 모음입니다. 스킬 동기화와 검증, 문서 목록 생성, 브라우저 제어 등 개발 작업을 지원합니다. ([저장소](https://github.com/steipete/agent-scripts))",
+      "category": "AI 코딩 에이전트용 공통 스크립트·스킬 도구 모음",
       "repo_url": "https://github.com/steipete/agent-scripts.git",
       "status": "verified",
       "evidence": [
@@ -399,8 +388,8 @@
     "fingerprint": "ea071cba858451089037b501257f7f80d32031f5dc4f0c9a3d2a76dc5ef7c269",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 모아 놓은 목록입니다. 필요한 Mac 앱을 쉽게 검색하고 찾아볼 수 있도록 돕습니다.",
-      "category": "macOS 앱 큐레이션 목록",
+      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac 앱을 분야별로 쉽게 찾아볼 수 있습니다.",
+      "category": "macOS 앱 추천 및 소프트웨어 디렉터리",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -414,8 +403,8 @@
     "fingerprint": "6b7383412e1d71fef98aec34a76358821f057fb9c41a4335e4fb7bc28a9bad3a",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 체계적으로 정리해 쉽게 찾고 탐색할 수 있도록 제공하는 목록입니다.",
-      "category": "macOS 소프트웨어 모음",
+      "summary_ko": "다양한 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 사용자가 필요한 Mac 앱을 쉽게 탐색하고 찾을 수 있도록 돕습니다.",
+      "category": "macOS 앱 추천 및 소프트웨어 디렉터리",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -429,8 +418,8 @@
     "fingerprint": "072711840093e2517930ccef89081942d7428dc8dbde67ed4512726054914893",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "고품질 macOS 소프트웨어를 용도별로 체계적으로 분류해 소개하는 목록입니다. 사용자가 필요한 Mac 앱을 쉽게 탐색하고 찾을 수 있도록 돕습니다.",
-      "category": "macOS 소프트웨어 추천 목록",
+      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac 앱을 쉽게 검색하고 찾아볼 수 있도록 돕습니다.",
+      "category": "macOS 앱 큐레이션 목록",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -444,7 +433,7 @@
     "fingerprint": "83f40cfa2812f955b9627de47c636fea95f38305bcab24b821f97551ca75ef94",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 모아 둔 목록입니다. 필요한 Mac 앱을 쉽게 검색하고 발견할 수 있도록 돕습니다.",
+      "summary_ko": "고품질 macOS 소프트웨어를 용도별로 분류해 모아 놓은 큐레이션 목록입니다. 다양한 Mac 앱을 카테고리별로 탐색하고 필요한 도구를 찾을 수 있습니다.",
       "category": "macOS 소프트웨어 큐레이션 목록",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
@@ -459,7 +448,7 @@
     "fingerprint": "62ff2fc955e5bc8d632118d8a4465560e00991004b9044124802268a524f0122",
     "entry": {
       "title": "thaw-app/Thaw",
-      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 정리하고 관리하는 오픈 소스 도구입니다.",
+      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리할 수 있는 오픈 소스 도구입니다.",
       "category": "macOS 메뉴 막대 관리 도구",
       "repo_url": "https://github.com/thaw-app/Thaw",
       "status": "verified",
@@ -474,7 +463,7 @@
     "fingerprint": "1fd89d5b42ee233802b1be138111c8333bc7a5caaebb0924091ec390777df3e0",
     "entry": {
       "title": "thaw-app/Thaw",
-      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기거나 정리해 깔끔하게 관리할 수 있는 오픈 소스 도구입니다.",
+      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리할 수 있는 오픈 소스 메뉴 막대 관리 도구입니다.",
       "category": "macOS 메뉴 막대 관리 도구",
       "repo_url": "https://github.com/thaw-app/Thaw",
       "status": "verified",
@@ -624,7 +613,7 @@
     "fingerprint": "a089f0a86eadd370af6a910082971d08ea7d6dac6fccd1c16c6b587cb8d487d8",
     "entry": {
       "title": "Nanako0129/sepia",
-      "summary_ko": "AI 특유의 문체를 줄이는 에이전트용 글쓰기 스킬 프로젝트의 GitHub 미리보기. 기여자, 이슈, 스타, 포크 수가 표시되어 있다.",
+      "summary_ko": "AI 특유의 문체를 줄이는 글쓰기 스킬 프로젝트의 GitHub 소개 카드다. Agent Skills 호환 에이전트와 Claude Code·Codex용 플러그인 지원을 소개하며 기여자, 이슈, 스타, 포크 수가 표시되어 있다.",
       "category": "GitHub 프로젝트",
       "repo_url": "https://github.com/Nanako0129/sepia",
       "status": "verified",
@@ -674,8 +663,8 @@
     "fingerprint": "b7dba3800a0bc219ca785e59ad7949ded337254a2245c2e095c03867ce0f4631",
     "entry": {
       "title": "AgentMemoryRepo/agentmemoryrepo",
-      "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도의 저장소에 저장하고, 여러 세션에 걸쳐 기억을 유지하도록 하는 명세입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
-      "category": "AI 에이전트의 세션 간 장기 기억 관리",
+      "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도 저장소에 기록하고, 여러 세션에 걸쳐 활용하도록 하는 메모리 저장소 규격입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
+      "category": "AI 에이전트 장기 기억 관리 규격",
       "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
       "status": "verified",
       "evidence": [
@@ -689,8 +678,8 @@
     "fingerprint": "664d9caacf8d72219112aa09394c242a2ffc5ac38043c815ca6c9eff8cff45e5",
     "entry": {
       "title": "AgentMemoryRepo/agentmemoryrepo",
-      "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도의 저장소에 기록하고, 세션이 바뀌어도 활용할 수 있도록 하는 메모리 저장소 규격입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
-      "category": "AI 에이전트 장기 기억 관리",
+      "summary_ko": "에이전트가 사용자에게서 배운 정보를 별도 저장소에 기록하고, 여러 세션에 걸쳐 기억을 유지하도록 하는 명세입니다. 기억들을 위키처럼 서로 연결해 필요한 정보를 탐색할 수 있게 합니다.",
+      "category": "AI 에이전트 장기 기억 관리 명세",
       "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
       "status": "verified",
       "evidence": [
@@ -709,8 +698,8 @@
     "fingerprint": "bc1e6e0ed358eb8b4620a1b19a0e8fb9747680c9c4c357dabe2a3de04ac97fa3",
     "entry": {
       "title": "atilaahmettaner/tradingview-mcp",
-      "summary_ko": "TradingView의 실시간 시장 데이터와 기술적 분석, 종목 스크리닝, 백테스팅 기능을 AI 어시스턴트에 연결하는 MCP 서버입니다. 전 세계 거래소의 주식·암호화폐·외환·선물을 지원하며, 호스팅 서비스나 자체 서버로 이용할 수 있습니다.",
-      "category": "금융 시장 데이터·기술적 분석 MCP 서버",
+      "summary_ko": "암호화폐, 주식, 외환, 선물 시장의 스크리닝, 다중 시간대 기술적 분석, 백테스트와 시장 심리 분석을 AI 어시스턴트에서 수행하도록 지원하는 MCP 서버입니다. 39개 도구를 제공하며 무료 자체 호스팅 또는 TradingMCP 호스팅 서비스로 사용할 수 있습니다.",
+      "category": "금융 시장 데이터 및 기술적 분석 MCP 서버",
       "repo_url": "https://github.com/atilaahmettaner/tradingview-mcp",
       "status": "verified",
       "evidence": [
@@ -899,8 +888,8 @@
     "fingerprint": "54f7dcacbec604b2c609700254ff6f2d6b2b098f3436b6dadba6716265aed618",
     "entry": {
       "title": "Helm Dashboard",
-      "summary_ko": "Helm Dashboard의 GitHub README 화면이다. Helm 작업을 간소화하는 도구로 소개하며 프로젝트 상태 배지와 배포 리비전, 리소스 상태, 업그레이드 및 롤백 기능을 보여준다.",
-      "category": "쿠버네티스 및 Helm 관리 도구",
+      "summary_ko": "Helm Dashboard의 GitHub README 화면이다. Helm 작업을 간소화하는 도구로 소개하며 프로젝트 통계, Apache-2.0 라이선스, 배포 이력과 Kubernetes 리소스를 확인하는 대시보드 예시를 보여준다.",
+      "category": "Kubernetes 및 Helm 관리 도구",
       "repo_url": "https://github.com/komodorio/helm-dashboard",
       "status": "verified",
       "evidence": [
@@ -922,680 +911,6 @@
   },
   "2108117689524986220:8452892bb620a7de.png": {
     "fingerprint": "5415075ba1fe0f05c91b89344f8741560e3986c0006881f4cdf37fc71499c49b",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:12b4880e04ca8660.png": {
-    "fingerprint": "19053ae72def9559010d4a43a7d1f83bdb552572e7b197d64a21ad37691a62c6",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:387e29f6dcd693e2.png": {
-    "fingerprint": "555547b27f1b78454f05746ce8d0d1baa8d76e9859edc7510d0f2c100bb95eaf",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:708bec74cb974b40.png": {
-    "fingerprint": "3db2b4681b601392c9fdaddb65b17f38d846c373cf151f2b2c6c9140f13ad34d",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:82dabf481741371f.png": {
-    "fingerprint": "9c83be1596b687563d79d7c0f0aef6cb1deac0f349e7b87c5440b7316839cb5c",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:00961f58b4d72b07.png": {
-    "fingerprint": "7a500d91cc29bce1aec11242eed2a8f85d1dcdfdbef07dbf88675ae9b2c3cd29",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:399dd944a3f16497.png": {
-    "fingerprint": "3c2a94703121176f8e473260a1d20dd815654f33b95b4e382e77a67eebf87671",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:658504020de8c00f.png": {
-    "fingerprint": "af9afa8f86c922b05bc7187a248189c750ff70d0d7a84b70dd659cdcedbe7f19",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:55b57ce96408363a.png": {
-    "fingerprint": "9cb2a2bc6e0711f394c079e960702edd85128722f0576b3a2cc21afa2c269c70",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:a2998bcdb2ee908c.png": {
-    "fingerprint": "69aa5217e1b42fe11ebe31154e541b141c82362f8010a7258b73c08b576e218f",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:c11a0d4aadd7040d.png": {
-    "fingerprint": "00dc60c976a12ab731f8b334836bb301e9d52e54423d9af06090440ecda1f795",
-    "entry": null,
-    "version": 3
-  },
-  "2108124964285243888:b9e9f9e3a3237068.png": {
-    "fingerprint": "e4de59fc6f14b47334259140d0c38b822b6bf5e76241746c98bc38b803fcf542",
-    "entry": null,
-    "version": 3
-  },
-  "2108124964285243888:d3c444251c791148.png": {
-    "fingerprint": "6fa81f8b5dbc902fbcc4c262ea8b400702a62a6caa6398ec1af5683bf86ddbec",
-    "entry": null,
-    "version": 3
-  },
-  "2108135060176294343:text-6ec202e3b4b5c45d": {
-    "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808",
-    "entry": {
-      "title": "feitangyuan/onetake",
-      "summary_ko": "제품 출시 영상, 티저, 기능 데모를 하나의 연속된 카메라 흐름으로 제작하도록 코딩 에이전트를 돕는 도구입니다. 각 장면이 앞 장면에서 자연스럽게 이어지는 모션 영상을 만들고, 오라클로 시각적 연속성을 평가합니다.",
-      "category": "코딩 에이전트용 연속 모션 영상 제작 도구",
-      "repo_url": "https://github.com/feitangyuan/onetake",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808"
-    },
-    "version": 3
-  },
-  "2108196720706478249:f8c0025c04175532.png": {
-    "fingerprint": "629d2acfaa2eb01760f7641e97460c77d7075d747bc30408c7095c50e8682ca6",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:326cbf781f62626f.png": {
-    "fingerprint": "e675d0b5dcd56267a1313e4b46a041c32ae1ae8264e6955867d568416c55a778",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:c992605d310f3d0c.jpg": {
-    "fingerprint": "1bf13a023a9a3fa2f9610f00cec69ce4f95f6a0da250b460ad58de2c3e4cee94",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:6cd8ffb91b91f3ed.png": {
-    "fingerprint": "305ec8ba840c9c1faa6ef32bae20a867fb0fc0a4b5260bc72c6f159987be1fdd",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:d3c444251c791148.png": {
-    "fingerprint": "6ced22c2e3fe5e2fe664ba71fb3da63af04892973a1b039f5d205cb1fabecbdc",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:b9e9f9e3a3237068.png": {
-    "fingerprint": "772b77eb8f709036f015c207a8632d5b69378afde8288b631e6a7a6978a4c16e",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:ead79ff3d3f2a378.png": {
-    "fingerprint": "7383365f4294fdfc9887c5b156750ae6d368ab42fbfdd89ce508e69385bb60ec",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:d7013183a3f765f5.png": {
-    "fingerprint": "646c4b0cea59b1bc52db54f7c769614d7247d325b57fe54b430aafe4a0715f81",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:810791fff0bbc880.png": {
-    "fingerprint": "03ccaeb3e203da4851fee658709d47306fe2acd83e4f6100c622bea18eb6998f",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:93d2ebe7edf28a34.png": {
-    "fingerprint": "5c5b3e2fd22205d826c31f2daa05f74530f3fca2c90ae393c69ba56bbed60580",
-    "entry": null,
-    "version": 3
-  },
-  "2108205259533451648:1b2aa431d0825eb5.jpg": {
-    "fingerprint": "ab17c7650611cc9a913812ef5c4bd7df7885cc07409344a3291e03e4a1a9cbaa",
-    "entry": null,
-    "version": 3
-  },
-  "2108205259533451648:df0e98603970521b.png": {
-    "fingerprint": "4473f0c0f114e5c21875ca458d31810ed57d24c6526df52259c601e5eef0900a",
-    "entry": null,
-    "version": 3
-  },
-  "2108216456597103032:db4e214785d0fac6.jpg": {
-    "fingerprint": "46995258bad4500feaa0666356832d8f62042064d5ee411cd68a53b6e31cf382",
-    "entry": null,
-    "version": 3
-  },
-  "2108216456597103032:dd98ec4bf4836b98.jpg": {
-    "fingerprint": "b93c73073995252ff40ab4ef3096fb322234df233fb8009f33c6741dc06ac4ab",
-    "entry": null,
-    "version": 3
-  },
-  "2108216456597103032:bba87dffe87e6c1b.png": {
-    "fingerprint": "203a5d84c8cc480f3f542d2ca5e85d63515d60e51f8eb98b0140196fe4c8bdaa",
-    "entry": null,
-    "version": 3
-  },
-  "2108216456597103032:da60784c6631a5d6.png": {
-    "fingerprint": "745e697e812081871ac03e8c084cc9f4517cd4eca378e15a39fbfa44a1acf5c0",
-    "entry": null,
-    "version": 3
-  },
-  "2108229808094400736:46caa922a6f8e7c5.jpg": {
-    "fingerprint": "4fc6e71d3d1648ffa8f07a6d4ad70d19a8fe6262dd69118cd0937eb703045d10",
-    "entry": {
-      "title": "koala-1234/penny-chart",
-      "summary_ko": "Penny Chart는 AI 동료 Penny와 함께 차트를 분석하는 Windows용 데스크톱 앱입니다. 조건 검색, 백테스트, 사용자 정의 지표, 가격·지표 알림과 차트 캡처·녹화를 지원합니다.",
-      "category": "AI 기반 금융 차트 분석 데스크톱 앱",
-      "repo_url": "https://github.com/koala-1234/penny-chart",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "4fc6e71d3d1648ffa8f07a6d4ad70d19a8fe6262dd69118cd0937eb703045d10"
-    },
-    "version": 3
-  },
-  "2108229808094400736:text-ef1c7406fa4c8178": {
-    "fingerprint": "f36ffa153a8e44af893ef5b813036c328b51398be3c5cfbf52e0fb5a68e089e8",
-    "entry": {
-      "title": "koala-1234/penny-chart",
-      "summary_ko": "Penny Chart는 AI 동료 Penny와 함께 차트를 확인하고 분석하는 Windows용 데스크톱 앱입니다. 조건 검색, 백테스트, 사용자 지표, 가격·지표 알림과 차트 촬영·화면 녹화 기능을 제공합니다.",
-      "category": "AI 기반 금융 차트 분석 앱",
-      "repo_url": "https://github.com/koala-1234/penny-chart",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "f36ffa153a8e44af893ef5b813036c328b51398be3c5cfbf52e0fb5a68e089e8"
-    },
-    "version": 3
-  },
-  "2108439287377363260:dd98ec4bf4836b98.jpg": {
-    "fingerprint": "8e0f82d0c724275191669f306a67aae8d47c26a60c76426f81b45e36141a1890",
-    "entry": null,
-    "version": 3
-  },
-  "2108439287377363260:bba87dffe87e6c1b.png": {
-    "fingerprint": "2de7eb3fc7b21e7f855b6d85be79b67a46949818f26ca3c62a5287cc5d2dacba",
-    "entry": null,
-    "version": 3
-  },
-  "2108439287377363260:da60784c6631a5d6.png": {
-    "fingerprint": "a18b3280dd136367f31284dba3f5cdcc7808fc8a0b450dc518c8c71a0ec4d62b",
-    "entry": null,
-    "version": 3
-  },
-  "2108439287377363260:db4e214785d0fac6.jpg": {
-    "fingerprint": "db0b9ac2682c05626386b6d6fa31567d20321a946ecf7a3d6c4db2c54fb5753b",
-    "entry": null,
-    "version": 3
-  },
-  "2108132673894195668:e3210e9e1190f716.jpg": {
-    "fingerprint": "ae610385dd52dd9eb8fa8430c5aa291b7056e75c102709f8e12a3f450331e586",
-    "entry": null,
-    "version": 3
-  },
-  "2108557751769321771:beaff73c3f6437e1.jpg": {
-    "fingerprint": "4d3aaec6eb9cc7e93d1906c388a4c964938bb1e8966530c440f803ac96fdd636",
-    "entry": null,
-    "version": 3
-  },
-  "2108557751769321771:445709fe97f62a5e.jpg": {
-    "fingerprint": "f74d68cb972b5a3c99a80e44b6e016c0d70b1e93bb45ee23852fff1164bb4fed",
-    "entry": null,
-    "version": 3
-  },
-  "2108561333902004307:2fd3ac359d97d580.jpg": {
-    "fingerprint": "a9cbb4d0138b9f73c15c5a6f83e0a5cd06b8d3938bbcd877035aa048ab01b221",
-    "entry": null,
-    "version": 3
-  },
-  "2108561333902004307:b2efe2299cc0edeb.jpg": {
-    "fingerprint": "44f93fcc6fa95948976e96b21d1fe5757f1595bca043f0adce4b37c308710cc9",
-    "entry": null,
-    "version": 3
-  },
-  "2108567811530658011:74eca38d6f773efd.jpg": {
-    "fingerprint": "5594e708acf055ee17308aa9e40fb026b512d754c42115c4433c754bef067482",
-    "entry": null,
-    "version": 3
-  },
-  "2108567811530658011:2ee3005c1bb78a4b.jpg": {
-    "fingerprint": "152edcd55bebead267a9224b50297ca088b5d6f671c4e0c70b96f8b8c12f96a5",
-    "entry": null,
-    "version": 3
-  },
-  "2108567811530658011:b218366f048310f6.jpg": {
-    "fingerprint": "2242c42e91ae60795ed87e35b112ea26c5371c046a9b146d101d25a0508b82b5",
-    "entry": null,
-    "version": 3
-  },
-  "2108567811530658011:ed3fa23a6a1905e1.jpg": {
-    "fingerprint": "030c0708f6c32566a7e40d0d69006363752c292c45189aa9d2d606145e203881",
-    "entry": null,
-    "version": 3
-  },
-  "2108702865288265881:cce9d2ae3cab7bfc.jpg": {
-    "fingerprint": "2370a3e720ad72f90a1732c2dd8d253fab5513fe44a61a3a3b2f802e469e89e0",
-    "entry": null,
-    "version": 3
-  },
-  "2108769590671294736:6aa489313140eac8.jpg": {
-    "fingerprint": "03dc328da66f760c10f56f2e82e429eca642d48dab7207539d3dfd1d4958a5f7",
-    "entry": {
-      "title": "TensorFold — Living Weights",
-      "summary_ko": "TensorFold라는 프로젝트명과 'Living Weights', 'The Evolution of Open Weights' 문구가 있는 홍보 이미지다. 공개 모델이 스스로 학습하고 가중치를 갱신할 수 있는지 질문하며, 빛나는 네트워크 파동을 배경으로 사용한다. GitHub URL은 보이지 않는다.",
-      "category": "인공지능 / 오픈 모델 프로젝트",
-      "repo_url": "https://github.com/jimthedj65/living-weights-harness",
-      "status": "verified",
-      "evidence": [
-        "search:phrase:tensorfold living weights"
-      ],
-      "fingerprint": "03dc328da66f760c10f56f2e82e429eca642d48dab7207539d3dfd1d4958a5f7"
-    },
-    "version": 3
-  },
-  "2108962705319317665:3abec07a6dca3d52.jpg": {
-    "fingerprint": "bc3aa8738a2111bee1d9ecf022af13f0a8558f96e3098b6095f860498f2f5998",
-    "entry": null,
-    "version": 3
-  },
-  "2108977796576109007:3c6e611dc5e9eaca.png": {
-    "fingerprint": "ed0b9bd29d51bc094b8fe315eaf03a49857dd35af83c1ff33699e8d7e70449df",
-    "entry": null,
-    "version": 3
-  },
-  "2108977796576109007:235c5f01fb9f3e29.jpg": {
-    "fingerprint": "1ea90988af673ebf8372b610053f522a2d5938a1b046c526ede547f5daba5237",
-    "entry": null,
-    "version": 3
-  },
-  "2108977796576109007:3abec07a6dca3d52.jpg": {
-    "fingerprint": "9469a3517b980b3f25b81907a235288820f6d934cd0d8f96276a8c528fcf8a87",
-    "entry": null,
-    "version": 3
-  },
-  "2109146328798507383:3abec07a6dca3d52.jpg": {
-    "fingerprint": "db6c73eda6554cbae73c809670eadf967f96330405dcb3eac0e9da849b106f0f",
-    "entry": null,
-    "version": 3
-  },
-  "2109246942660456770:6e03b35bd8bbe987.jpg": {
-    "fingerprint": "fcce1514cc04d7c6ae94b57a622b431ff521ac9809b323bae9a8ea078a544a90",
-    "entry": null,
-    "version": 3
-  },
-  "2109257204348145817:b06ea8ba8dce5dae.jpg": {
-    "fingerprint": "98f9470c2c3663351da627281f049b515e4cd052c7823b6e3e0418188fa31eaa",
-    "entry": {
-      "title": "storytold/filmcraft",
-      "summary_ko": "FilmCraft는 순수 Rust로 개발된 오픈소스 비선형 영상 편집기로, 영상 편집과 색 보정, 사운드 작업을 지원합니다. Adobe Premiere Pro와 유사한 작업 흐름을 제공하며 macOS, Windows, Linux와 WebAssembly 기반 브라우저 환경에서 사용할 수 있습니다.",
-      "category": "비선형 영상 편집 소프트웨어",
-      "repo_url": "https://github.com/storytold/filmcraft",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "98f9470c2c3663351da627281f049b515e4cd052c7823b6e3e0418188fa31eaa"
-    },
-    "version": 3
-  },
-  "2109257204348145817:text-14b81a5414bbd18e": {
-    "fingerprint": "0735803b5a3305396c3017b42233575f91f94b573425da7e407132e28e7675d5",
-    "entry": {
-      "title": "storytold/filmcraft",
-      "summary_ko": "FilmCraft는 Rust로 작성된 오픈소스 비선형 영상 편집기로, 영상 편집과 색상 보정, 사운드 작업을 지원합니다. Adobe Premiere Pro와 유사한 작업 흐름을 제공하며 macOS, Windows, Linux와 WebAssembly 기반 브라우저 환경을 대상으로 합니다.",
-      "category": "비선형 영상 편집 소프트웨어",
-      "repo_url": "https://github.com/storytold/filmcraft",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "0735803b5a3305396c3017b42233575f91f94b573425da7e407132e28e7675d5"
-    },
-    "version": 3
-  },
-  "2109298980454850615:6c7fca6b6277b943.jpg": {
-    "fingerprint": "7195c6df212bbf9a0d2b00b940b6cd94c89ff6a60580acfc9bbe3dc2c3a89109",
-    "entry": null,
-    "version": 3
-  },
-  "2109426928570819047:e671fe79987e30b7.jpg": {
-    "fingerprint": "959bcc8711e60013ae5f7a83b3c7c1034e6e20db4cbb4f4596c2fc3987af9526",
-    "entry": null,
-    "version": 3
-  },
-  "2109427683440701673:1cbac9705b1479d9.jpg": {
-    "fingerprint": "2e24e434b781fc8278eea1e61dad435cfd388040739a71ac92bc4d016db3e245",
-    "entry": null,
-    "version": 3
-  },
-  "2109427683440701673:fa32d82991c61e39.jpg": {
-    "fingerprint": "03705e9d49aa5a79dc5ac3c10c2b7855d79868b3baec1e2aca83a7dae04eda1e",
-    "entry": null,
-    "version": 3
-  },
-  "2108245653843509415:86475eac4c71ca84.jpg": {
-    "fingerprint": "3a9e20ab3e7bd6a23469ce873f7d07c4c1f18cacc6982fa9ee4526384b72a9c6",
-    "entry": {
-      "title": "REA: Reverse Engineer Anything",
-      "summary_ko": "REA는 에이전트를 활용해 애플리케이션의 동작부터 네이티브 바이너리 내부까지 분석하는 리버스 엔지니어링 도구입니다.",
-      "category": "에이전트 기반 리버스 엔지니어링 도구",
-      "repo_url": "https://github.com/morluto/rea",
-      "status": "verified",
-      "evidence": [
-        "screenshot:phrase:rea reverse engineer",
-        "explicit-seed:api-verified"
-      ],
-      "fingerprint": "3a9e20ab3e7bd6a23469ce873f7d07c4c1f18cacc6982fa9ee4526384b72a9c6"
-    },
-    "version": 3
-  },
-  "2089327156274790890:8552a9e4d437d224.jpg": {
-    "fingerprint": "568bd6ccb2925a78252e9d87f95e693b7e8929e16c655258f522944ea6cc20c7",
-    "entry": {
-      "title": "Moli Browser",
-      "summary_ko": "Moli는 AI 에이전트가 웹페이지를 탐색하고 상호작용할 수 있도록 Rust로 개발된 헤드리스 브라우저입니다. 가벼운 실행 환경과 빠른 속도, 높은 웹 호환성을 지향합니다.",
-      "category": "AI 에이전트용 헤드리스 브라우저",
-      "repo_url": "https://github.com/lexmount/moli",
-      "status": "verified",
-      "evidence": [
-        "screenshot:phrase:moli browser structure",
-        "user-web-search:lexmount/moli"
-      ],
-      "fingerprint": "568bd6ccb2925a78252e9d87f95e693b7e8929e16c655258f522944ea6cc20c7"
-    },
-    "version": 3
-  },
-  "2089327477214593238:8552a9e4d437d224.jpg": {
-    "fingerprint": "b5e7472b8837f7d191edd4972a3650fd7cb8a5a607582a41dbd6c8af6c075c92",
-    "entry": {
-      "title": "Moli Browser",
-      "summary_ko": "Moli는 AI 에이전트가 웹페이지를 탐색하고 상호작용할 수 있도록 Rust로 개발된 헤드리스 브라우저입니다. 가벼운 실행 환경과 빠른 속도, 높은 웹 호환성을 지향합니다.",
-      "category": "AI 에이전트용 헤드리스 브라우저",
-      "repo_url": "https://github.com/lexmount/moli",
-      "status": "verified",
-      "evidence": [
-        "screenshot:phrase:moli browser structure",
-        "user-web-search:lexmount/moli"
-      ],
-      "fingerprint": "b5e7472b8837f7d191edd4972a3650fd7cb8a5a607582a41dbd6c8af6c075c92"
-    },
-    "version": 3
-  },
-  "2041704624529228093:2285fbb0b53bf3ed.png": {
-    "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc",
-    "entry": {
-      "title": "TimesFM",
-      "summary_ko": "구글 리서치의 시계열 예측 파운데이션 모델",
-      "category": "시계열 예측·AI 모델",
-      "repo_url": "https://github.com/google-research/timesfm",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:google-research/timesfm",
-        "api-verified"
-      ],
-      "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc"
-    },
-    "version": 3
-  },
-  "2042091141328466156:2031da7b5558dbb2.png": {
-    "fingerprint": "14b0bf705776a0c1e5e7c32fdd8896544819c29931cfdebd1fea44d8392427da",
-    "entry": {
-      "title": "Ollama",
-      "summary_ko": "로컬에서 대규모 언어 모델을 실행하는 도구",
-      "category": "로컬 LLM 실행 도구",
-      "repo_url": "https://github.com/ollama/ollama",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:ollama/ollama",
-        "api-verified"
-      ],
-      "fingerprint": "14b0bf705776a0c1e5e7c32fdd8896544819c29931cfdebd1fea44d8392427da"
-    },
-    "version": 3
-  },
-  "2043699713883701640:a5e204ad569f28c5.jpg": {
-    "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a",
-    "entry": {
-      "title": "Public APIs",
-      "summary_ko": "무료 공개 API 모음집",
-      "category": "개발자 리소스·API 모음",
-      "repo_url": "https://github.com/public-apis/public-apis",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:public-apis/public-apis",
-        "api-verified"
-      ],
-      "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a"
-    },
-    "version": 3
-  },
-  "2044745496141734314:0dd86f479501e82e.png": {
-    "fingerprint": "566e1487d21c982216d68e8f83a59116d5b072dacfcd78b07554b1ce7f0e3053",
-    "entry": {
-      "title": "rhwp",
-      "summary_ko": "HWP 문서 프로토콜 분석 도구",
-      "category": "문서 포맷 분석 도구",
-      "repo_url": "https://github.com/edwardkim/rhwp",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:edwardkim/rhwp",
-        "api-verified"
-      ],
-      "fingerprint": "566e1487d21c982216d68e8f83a59116d5b072dacfcd78b07554b1ce7f0e3053"
-    },
-    "version": 3
-  },
-  "2056043954421039302:3c0e0b8d4dabf490.jpg": {
-    "fingerprint": "c5548291d4e2f6428c09be6e0026f5ed1188652f56edeb98cc5feec25e53395c",
-    "entry": {
-      "title": "Dead Simple VPN",
-      "summary_ko": "간단한 자체 호스팅 VPN",
-      "category": "네트워크·VPN 도구",
-      "repo_url": "https://github.com/jedisct1/dsvpn",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:jedisct1/dsvpn",
-        "api-verified"
-      ],
-      "fingerprint": "c5548291d4e2f6428c09be6e0026f5ed1188652f56edeb98cc5feec25e53395c"
-    },
-    "version": 3
-  },
-  "2077936537170542655:e1700757bc8a6994.jpg": {
-    "fingerprint": "54d78d2cd77d90d410fc47b7ab24a35d062955b8ae68a3cb5512688940e0f526",
-    "entry": {
-      "title": "AI Hedge Fund",
-      "summary_ko": "AI 기반 헤지펀드 시뮬레이션",
-      "category": "AI 트레이딩·금융",
-      "repo_url": "https://github.com/virattt/ai-hedge-fund",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:virattt/ai-hedge-fund",
-        "api-verified"
-      ],
-      "fingerprint": "54d78d2cd77d90d410fc47b7ab24a35d062955b8ae68a3cb5512688940e0f526"
-    },
-    "version": 3
-  },
-  "2089574903523749987:bd6d980071ac7d72.jpg": {
-    "fingerprint": "71ec9fa9f0632b4d2746af17b677695544a8e025746d210155593eb830fe5e61",
-    "entry": {
-      "title": "Public APIs",
-      "summary_ko": "무료 공개 API 모음집 (한글 README)",
-      "category": "개발자 리소스·API 모음",
-      "repo_url": "https://github.com/public-apis/public-apis",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:public-apis/public-apis",
-        "api-verified"
-      ],
-      "fingerprint": "71ec9fa9f0632b4d2746af17b677695544a8e025746d210155593eb830fe5e61"
-    },
-    "version": 3
-  },
-  "2089574903523749987:eb78cb1742206670.jpg": {
-    "fingerprint": "496c70f709a204d099ee622182a27f1674494a630b49be1a2be6ef0ebfe70bc7",
-    "entry": {
-      "title": "Public APIs",
-      "summary_ko": "무료 공개 API 모음집 (한글 README)",
-      "category": "개발자 리소스·API 모음",
-      "repo_url": "https://github.com/public-apis/public-apis",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:public-apis/public-apis",
-        "api-verified"
-      ],
-      "fingerprint": "496c70f709a204d099ee622182a27f1674494a630b49be1a2be6ef0ebfe70bc7"
-    },
-    "version": 3
-  },
-  "2107365492797346155:f30bea55c962816e.png": {
-    "fingerprint": "2144fb1ede4e6a1842769104cfc7ccf72214dec8500d331eb0c2fd9d0ae6b1af",
-    "entry": {
-      "title": "Ledge",
-      "summary_ko": "실행 가능한 마크다운 (shell/code/SQL)",
-      "category": "개발자 도구·문서",
-      "repo_url": "https://github.com/ledgesh/ledge",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:ledgesh/ledge",
-        "api-verified"
-      ],
-      "fingerprint": "2144fb1ede4e6a1842769104cfc7ccf72214dec8500d331eb0c2fd9d0ae6b1af"
-    },
-    "version": 3
-  },
-  "2108173081441435912:e712ec45c1a5367f.jpg": {
-    "fingerprint": "901eb54c356de45e5a1127e00798c76a70f8d476f7e258bd1783d4cc8f4ff3b7",
-    "entry": {
-      "title": "Tracearr",
-      "summary_ko": "미디어 관리 도구 (공식 tracearr.com 링크 확인)",
-      "category": "미디어 관리 도구",
-      "repo_url": "https://github.com/connorgallopo/tracearr",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:connorgallopo/tracearr",
-        "api-verified"
-      ],
-      "fingerprint": "901eb54c356de45e5a1127e00798c76a70f8d476f7e258bd1783d4cc8f4ff3b7"
-    },
-    "version": 3
-  },
-  "2108316536394191045:be69e2a500aca10e.jpg": {
-    "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de",
-    "entry": {
-      "title": "CAMEL",
-      "summary_ko": "확장 가능한 AI 에이전트 프레임워크",
-      "category": "AI 에이전트 프레임워크",
-      "repo_url": "https://github.com/camel-ai/camel",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:camel-ai/camel",
-        "api-verified"
-      ],
-      "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de"
-    },
-    "version": 3
-  },
-  "2107674791243325659:753e659bcbbcec09.jpg": {
-    "fingerprint": "b73854ef5e81f4145dd1f7bdf72e8b8d0ad7f53607488267323f9ed12cfe086d",
-    "entry": {
-      "title": "OpenFrame CLI",
-      "summary_ko": "Flamingo 스택의 OpenFrame CLI",
-      "category": "개발자 CLI 도구",
-      "repo_url": "https://github.com/flamingo-stack/openframe-cli",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:flamingo-stack/openframe-cli",
-        "api-verified"
-      ],
-      "fingerprint": "b73854ef5e81f4145dd1f7bdf72e8b8d0ad7f53607488267323f9ed12cfe086d"
-    },
-    "version": 3
-  },
-  "2107886190087266427:c089b9f9d0143ddf.jpg": {
-    "fingerprint": "35b1e5b4aaf49829ce35630f0311e5e71ff2a261385b35609818bd9f41086347",
-    "entry": {
-      "title": "Pimcore",
-      "summary_ko": "오픈소스 디지털 경험 플랫폼",
-      "category": "CMS·디지털 플랫폼",
-      "repo_url": "https://github.com/pimcore/pimcore",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:pimcore/pimcore",
-        "api-verified"
-      ],
-      "fingerprint": "35b1e5b4aaf49829ce35630f0311e5e71ff2a261385b35609818bd9f41086347"
-    },
-    "version": 3
-  },
-  "2108218393568719269:38a4dc8f85067a37.jpg": {
-    "fingerprint": "ce2089169e2b0c32b2d93ac9ecc199bd73805f906acf63766b5ce55739feb711",
-    "entry": {
-      "title": "Mercury Agent",
-      "summary_ko": "Soul 기반 AI 에이전트",
-      "category": "AI 에이전트",
-      "repo_url": "https://github.com/cosmicstack-labs/mercury-agent",
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:cosmicstack-labs/mercury-agent",
-        "api-verified"
-      ],
-      "fingerprint": "ce2089169e2b0c32b2d93ac9ecc199bd73805f906acf63766b5ce55739feb711"
-    },
-    "version": 3
-  },
-  "2107859139938660811:082932b84c760a20.jpg": {
-    "fingerprint": "ca326a2013b6d36f37fa0442f2eaa685f9ecf3500a951cb1136119d1ab24eebb",
-    "entry": {
-      "title": "AI 코딩·디자인 스킬 모음",
-      "summary_ko": "AI 코딩과 디자인을 위한 스킬 모음 6종",
-      "category": "AI 스킬 모음",
-      "repo_url": "https://github.com/obra/superpowers",
-      "repo_links": [
-        {
-          "url": "https://github.com/obra/superpowers",
-          "title": "Superpowers"
-        },
-        {
-          "url": "https://github.com/anthropics/skills",
-          "title": "Anthropic Skills"
-        },
-        {
-          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-          "title": "UI/UX Pro Max Skill"
-        },
-        {
-          "url": "https://github.com/pbakaus/impeccable",
-          "title": "Impeccable"
-        },
-        {
-          "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-          "title": "Awesome Claude Skills"
-        },
-        {
-          "url": "https://github.com/heygen-com/hyperframes",
-          "title": "Hyperframes"
-        }
-      ],
-      "status": "verified",
-      "evidence": [
-        "user-visual-inspection:6-skill-aggregate",
-        "api-verified"
-      ],
-      "fingerprint": "ca326a2013b6d36f37fa0442f2eaa685f9ecf3500a951cb1136119d1ab24eebb"
-    },
-    "version": 3
-  },
-  "2107836535995568551:c57a5ab436a808fa.jpg": {
-    "fingerprint": "32f5ff3c1377c95177e431cb9682a98df4a78a6593b2aac71c5f21ed608f08b8",
-    "entry": null,
-    "version": 3
-  },
-  "2108854476367139013:faccd584d1a73e22.jpg": {
-    "fingerprint": "0979966c8f9a9bf0ae444d66976d040243cc911861b27505e1ea4938e26dba46",
     "entry": null,
     "version": 3
   }
