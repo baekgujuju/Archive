@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import vm from 'node:vm';
+import {readFileSync} from 'node:fs';
+import {webcrypto,createHash} from 'node:crypto';
+const pin='fixture-pin',source=readFileSync(new URL('./drive-sync.js',import.meta.url),'utf8').replace(/var WRITE_PIN_HASH = '[a-f0-9]+';/,`var WRITE_PIN_HASH = '${createHash('sha256').update(pin).digest('hex')}';`);
+const saved={},session={};let writes=0,authReads=0,tamper=false;
+let publicState={schema_version:1,revision:'one',updatedAt:'2026-10-16T01:00:00Z',pinned:['owner'],bookmarks:{},memos:{a:'public memo'},highlights:{a:'[]'}},remote=structuredClone(publicState);
+const storage=s=>({getItem:k=>s[k]??null,setItem:(k,v)=>s[k]=String(v),removeItem:k=>delete s[k],key:i=>Object.keys(s)[i],get length(){return Object.keys(s).length;}});
+const drain=()=>new Promise(setImmediate);
+function page(){let intervals=[],status={textContent:''},refreshes=0;const c=vm.createContext({TextEncoder,Uint8Array,console,setTimeout,clearTimeout,localStorage:storage(saved),sessionStorage:storage(session),window:{crypto:webcrypto,addEventListener(){},ArchiveApp:{refreshSavedState(){refreshes++;}}},document:{hidden:false,querySelector:()=>true,addEventListener(){}},google:{accounts:{oauth2:{initTokenClient(o){return {requestAccessToken(){o.callback({access_token:'test-token',expires_in:3600});}};}}}},setInterval(f,ms){intervals.push(f);return intervals.length;},fetch:async(url,o={})=>{if(url==='data/shared-state.json')return {ok:true,json:async()=>structuredClone(publicState)};authReads++;if(o.method==='PATCH'){writes++;if(!tamper)remote=JSON.parse(o.body);return {ok:true};}return {ok:true,json:async()=>url.includes('?alt=media')?structuredClone(remote):{files:[{id:'test-id'}]}};}});new vm.Script(source).runInContext(c);c.DriveSync.prepareView();c.DriveSync.init(status);return {c,status,intervals,get refreshes(){return refreshes;}};}
+let p=page();await drain();assert.deepEqual(JSON.parse(saved['archive-pinned']),['owner']);assert.equal(authReads,0);assert.equal(writes,0);
+saved['archive-pinned']=JSON.stringify(['visitor']);p.c.DriveSync.prepareView();assert.equal(JSON.parse(saved['archive-pinned'])[0],'visitor');
+publicState={...publicState,revision:'two',updatedAt:'2026-10-16T02:00:00Z',pinned:['owner-new']};await p.c.DriveSync.readPublic();assert.equal(JSON.parse(saved['archive-pinned'])[0],'visitor');
+p=page();await drain();assert.equal(JSON.parse(saved['archive-pinned'])[0],'owner-new');assert.equal(authReads,0);
+const before=p.refreshes;await p.c.DriveSync.readPublic();assert.equal(p.refreshes,before);
+p.c.DriveSync.connect();await assert.rejects(p.c.DriveSync.exportWithPassword('wrong'));assert.equal(writes,0);
+saved['archive-highlights']=JSON.stringify({a:'[{"exact":"quote"}]'});await p.c.DriveSync.exportWithPassword(pin);assert.equal(writes,1);assert.ok(remote.highlights.a.includes('quote'));assert.ok(saved['archive-settings-pending-v1']);
+p=page();await drain();assert.ok(JSON.parse(saved['archive-highlights']).a.includes('quote'));
+publicState=structuredClone(remote);await p.c.DriveSync.readPublic();assert.equal(saved['archive-settings-pending-v1'],undefined);
+saved['archive-pinned']=JSON.stringify(['keep-on-failure']);tamper=true;await assert.rejects(p.c.DriveSync.exportWithPassword(pin),/다시 확인/);assert.equal(JSON.parse(saved['archive-pinned'])[0],'keep-on-failure');
+assert.equal(Object.values(saved).some(x=>x.includes('test-token')),false);
+console.log('PASS: anonymous reads, draft preservation, reload reset, no redraw, PIN gating, highlight export, pending publication, readback rejection, token isolation');

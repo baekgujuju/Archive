@@ -274,7 +274,11 @@ body.aa-modal-open #archive-manage-btn{display:none}
 .archive-header-status{width:auto;flex:0 0 auto;flex-wrap:nowrap;white-space:nowrap;gap:5px;justify-content:flex-end}
 .archive-overview-row{position:relative}
 .archive-overview-row .hero>summary{padding-right:115px}
-.archive-overview-row #archive-drive-quick{position:absolute;right:0;top:10px;border:0;background:transparent;color:var(--accent);font:inherit;font-size:12px;min-height:34px;padding:5px 0;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
-@media(max-width:540px){.archive-header .brand{font-size:clamp(13px,3.6vw,16px)}.archive-version{font-size:9px;letter-spacing:0}#archive-latest-update{font-size:10px}.archive-header-status{width:auto;justify-content:flex-end}.archive-overview-row #archive-drive-quick{font-size:11px}}
+.archive-overview-row #archive-export-quick{position:absolute;right:0;top:10px;border:0;background:transparent;color:var(--accent);font:inherit;font-size:12px;min-height:34px;padding:5px 0;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+@media(max-width:540px){.archive-header .brand{font-size:clamp(13px,3.6vw,16px)}.archive-version{font-size:9px;letter-spacing:0}#archive-latest-update{font-size:10px}.archive-header-status{width:auto;justify-content:flex-end}.archive-overview-row #archive-export-quick{font-size:11px}}
 @media(max-width:360px){.archive-version{font-size:8px}#archive-latest-update{font-size:9px}.archive-brand-line{gap:4px}.archive-header{gap:6px}}
-@media print{#archive-drive-quick{display:none!important}}
+@media print{#archive-export-quick{display:none!important}}
+
+.settings-sections{grid-template-columns:minmax(0,1fr)}
+
+mark[data-archive-highlight]{background:#ffe680;color:inherit;border-radius:2px;box-decoration-break:clone} .archive-highlight-toolbar{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:100000;background:#f4eddf;border:1px solid #d6cbbb;border-radius:12px;padding:6px;box-shadow:0 4px 20px #0002;white-space:nowrap}.archive-highlight-toolbar[hidden]{display:none}.archive-highlight-toolbar button{padding:9px 12px;border:0;background:transparent;color:#514839;font:inherit}

@@ -525,7 +525,7 @@ function articleCard(article, options = {}) {
     `<h3>${escapeHtml(title)}</h3>${a.toolDescription ? '<p class="tool-description">'+escapeHtml(a.toolCategory||'AI 도구')+' · '+escapeHtml(a.toolDescription)+'</p>' : ''}${handle}<div class="meta">${escapeHtml(meta)}</div>` +
     `<p class="summary">${escapeHtml(summary)}</p><div class="tags">${topicsHtml(topics)}</div>` +
     '</summary>' +
-    `<div class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
+    `<div data-highlight-post="${escapeHtml(pinId)}" class="full-text${fullHtml ? ' web-html' : ''}">${fullHtml ? linkifyHtml(fullHtml) : linkify(fullText)}</div>` +
     `${(a.toolLinks||[]).filter(t=>/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+(?:\/|$)/.test(t.url||'')).map(t=>'<p class="tool-shortcut"><a href="'+escapeHtml(t.url)+'" target="_self" rel="noopener noreferrer">↗ '+escapeHtml(t.title||'GitHub 바로가기')+'</a></p>').join('')}${urlInline}${media}${quotedHtml}${repliesHtml(a)}${relatedHtml}` +
     `<div class="byline"><span class="author">${escapeHtml(author)}</span>` +
     `<button type="button" class="read-window-btn" data-idx="${idx}">새 창에서 읽기 ⧉</button>` +

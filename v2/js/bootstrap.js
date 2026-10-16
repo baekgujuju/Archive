@@ -361,6 +361,7 @@ let cacheWritable = true; // localStorage 쓰기 가능 여부 (용량 초과 �
  * 재시도 버튼에서도 호출되므로 여러 번 호출돼도 안전해야 한다.
  */
 async function boot() {
+  if(window.DriveSync&&window.DriveSync.prepareView)window.DriveSync.prepareView();
   if (booted) {
     console.log('[bootstrap] 이미 실행 중이거나 완료됨, 중복 호출 무시');
     return;
@@ -687,7 +688,7 @@ autoStart();
 
 if(typeof window!=='undefined'&&window.addEventListener&&typeof document!=='undefined'){
   let checking=false,lastVersion=null;
-  window.addEventListener('archive-data-loaded',()=>{const manifest=loadCachedManifest();lastVersion=manifest&&JSON.stringify([manifest.chunks,manifest.translations,manifest.ai_tools]);});
-  async function checkUpdates(){if(checking||document.hidden||document.querySelector('dialog[open]'))return;checking=true;try{const next=await fetchManifest(),version=JSON.stringify([next.chunks,next.translations,next.ai_tools]);if(lastVersion&&version!==lastVersion){booted=false;await boot();const status=document.getElementById('archive-update-status');if(status)status.textContent='새 자료가 자동으로 업데이트되었습니다.';}lastVersion=version;}catch(e){}finally{checking=false;}}
+  window.addEventListener('archive-data-loaded',()=>{const manifest=loadCachedManifest();lastVersion=manifest&&JSON.stringify([manifest.chunks,manifest.translations,manifest.ai_tools,manifest.shared_state]);});
+  async function checkUpdates(){if(checking||document.hidden||document.querySelector('dialog[open]'))return;checking=true;try{const next=await fetchManifest(),version=JSON.stringify([next.chunks,next.translations,next.ai_tools,next.shared_state]);if(lastVersion&&version!==lastVersion){booted=false;await boot();const status=document.getElementById('archive-update-status');if(status)status.textContent='새 자료가 자동으로 업데이트되었습니다.';}lastVersion=version;}catch(e){}finally{checking=false;}}
   setInterval(checkUpdates,60000);window.addEventListener('focus',checkUpdates);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkUpdates();});
 }

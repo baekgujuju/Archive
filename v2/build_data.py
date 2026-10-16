@@ -13,6 +13,7 @@ posts.json → data/*.json + media/ 이미지 파일
     2: 에러 발생
 """
 import argparse
+import importlib.util
 import hashlib
 import json
 import shutil
@@ -351,6 +352,13 @@ def build_data():
         translations = DATA_DIR / 'translations.json'
         if translations.exists():
             shutil.copy2(translations, staging_data / 'translations.json')
+        shared_state = DATA_DIR / 'shared-state.json'
+        if shared_state.exists():
+            spec = importlib.util.spec_from_file_location('archive_settings_validator', Path(__file__).parent / 'hooks' / 'publish_settings.py')
+            validator = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(validator)
+            validator.validate(json.loads(shared_state.read_text(encoding='utf-8')))
+            shutil.copy2(shared_state, staging_data / 'shared-state.json')
         # 4. manifest 생성 (스테이징에)
         print(f"\n[4/5] manifest.json 생성...")
 
@@ -386,6 +394,9 @@ def build_data():
 
         if translations.exists():
             manifest['translations'] = {'file': 'data/translations.json', 'sha256': sha256_file(translations)}
+        if shared_state.exists():
+            shared = json.loads(shared_state.read_text(encoding='utf-8'))
+            manifest['shared_state'] = {'file': 'data/shared-state.json', 'sha256': sha256_file(shared_state), 'revision': shared['revision']}
         manifest_path = staging_data / "manifest.json"
         with open(manifest_path, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, ensure_ascii=False, indent=2)

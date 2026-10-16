@@ -107,6 +107,10 @@ def main():
             log("monitor 실패 — 중단")
             return 2
 
+        if not run_step("publish_settings", HOOKS_DIR / "publish_settings.py", 300):
+            log("공통 설정 발행 실패 — 다음 주기 재시도")
+            return 3
+
         log("스케줄러 실행 완료")
         return 0
     finally:
