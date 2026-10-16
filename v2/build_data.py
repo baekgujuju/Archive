@@ -260,6 +260,25 @@ def process_posts(post_list, name, staging_data_dir):
     return out_path
 
 
+def release_app_version():
+    # Program release is independent of data rebuilds.
+    release = json.loads((V2_ROOT / 'release.json').read_text(encoding='utf-8-sig'))
+    value = release.get('app_version')
+    if not isinstance(value, str) or not value:
+        raise ValueError('release.json app_version missing')
+    return value
+
+
+def content_updated_at(source_hash, now):
+    try:
+        previous = json.loads((DATA_DIR / 'manifest.json').read_text(encoding='utf-8'))
+        if previous.get('source_hash') == source_hash:
+            return previous.get('content_updated_at') or previous.get('version') or now
+    except (OSError, ValueError):
+        pass
+    return now
+
+
 def build_data():
     """
     메인 빌드 로직 (원자적 배포)
@@ -341,6 +360,7 @@ def build_data():
 
         manifest = {
             "version": datetime.now(timezone.utc).isoformat(),
+            "content_updated_at": content_updated_at(source_hash, datetime.now(timezone.utc).isoformat()),
             "build": "v2",
             "source_hash": source_hash,  # 변경 감지용
             "builder_version": BUILDER_VERSION,  # 빌더 버전 (로직 변경 시 증분)
@@ -361,7 +381,7 @@ def build_data():
                     "count": len(posts_ib)
                 },
             },
-            "app_version": "2.2.0"
+            "app_version": release_app_version()
         }
 
         if translations.exists():

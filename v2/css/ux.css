@@ -255,3 +255,15 @@ body.aa-modal-open #archive-manage-btn{display:none}
 @media(max-width:767px){.article:not([open]){height:304px}.author-options{grid-template-columns:minmax(0,1fr) auto;justify-content:stretch}.author-options>.aa-chips{width:auto}}
 
 .article .summary:empty{display:none}
+
+/* v2.5.7: compact publication and sync status, lower filter exit. */
+.archive-header{display:flex;align-items:center;justify-content:space-between;gap:8px 20px;flex-wrap:wrap}
+.archive-brand-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;min-width:0}
+.archive-version{font-size:10px;font-weight:400;color:#918b83;letter-spacing:.03em}
+.archive-header-status{display:flex;align-items:center;justify-content:flex-end;gap:6px 14px;flex-wrap:wrap;margin-left:auto;font-size:12px}
+#archive-latest-update{color:var(--accent);font-size:12px;line-height:1.5;font-variant-numeric:tabular-nums}
+.archive-header .reset,.filter-footer .reset{border:0;background:transparent;color:var(--accent);font:inherit;font-size:12px;padding:5px 0;min-height:34px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.filter-footer{display:flex;justify-content:flex-end;margin-top:8px}
+.archive-settings [data-drive-detail]{display:block;line-height:1.7;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
+@media(max-width:540px){.archive-header-status{width:100%;justify-content:space-between}.archive-version{font-size:9px}.archive-header-status,#archive-latest-update{font-size:11px}}
+@media print{.archive-header-status,.filter-footer{display:none!important}}

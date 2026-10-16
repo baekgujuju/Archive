@@ -275,11 +275,13 @@ var ArchiveApp = (function () {
     controls.addEventListener('input', update); controls.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b) return;
       if(b.dataset.filter==='bookmark'){if(suppressBookmarkClick){suppressBookmarkClick=false;return;}clearTimeout(bookmarkClickTimer);if(e.detail<2)bookmarkClickTimer=setTimeout(function(){selection.bookmark=b.dataset.value&&selection.bookmark[0]!==b.dataset.value?[b.dataset.value]:[];update();},250);return;}if (b.dataset.filter) {var field=b.dataset.filter;selection[field]=b.dataset.value&&selection[field][0]!==b.dataset.value?[b.dataset.value]:[];if(field==='type'){selection.topic=[];selection.author=[];selection.subject=[];selection.category=[];}}
+      if(b.dataset.action==='filter-close'){var filters=b.closest('details.filters');filters.open=false;filters.querySelector('summary').focus({preventScroll:true});return;}
       if(b.dataset.action==='reset') resetFilters();
       if (b.dataset.action === 'mode') { mode = mode === 'OR' ? 'AND' : 'OR'; b.textContent = mode; b.setAttribute('aria-label', '검색 조건 ' + mode + ', 클릭하여 변경'); }
       if (b.dataset.action === 'hidden') selection.hidden = !selection.hidden;
       if (b.dataset.action === 'drive-export') { if(!DriveSync.isConnected()){window.alert('먼저 Drive를 연결해 주세요.');return;} show(exportDialog); return; }
       if (b.dataset.action === 'drive') { DriveSync.connect(); return; }
+      if (b.dataset.action === 'drive-download') { DriveSync.download().catch(function(e){window.alert(e.message);});return; }
       update();
     });
     var pressTimer,pressOrigin,bookmarkClickTimer,suppressBookmarkClick=false;
@@ -291,6 +293,7 @@ var ArchiveApp = (function () {
     ['pointerup','pointercancel'].forEach(function(event){controls.addEventListener(event,function(){clearTimeout(pressTimer);if(event==='pointerup'&&renameDialog&&renameDialog.open){var range=window.getSelection();if(range)range.removeAllRanges();var input=renameDialog.querySelector('input');input.focus({preventScroll:true});input.setSelectionRange(0,input.value.length);}});});
     // Drive 동기화 초기화
     DriveSync.init(controls.querySelector('[data-drive-status]'));
+    var driveQuick=document.getElementById('archive-drive-quick');if(driveQuick)driveQuick.onclick=function(){DriveSync.download().catch(function(e){window.alert(e.message);});};
     var backupButton = document.createElement('button'); backupButton.type = 'button'; backupButton.textContent = '저장 데이터 백업';
     backupButton.onclick = function () { download(new Blob([JSON.stringify(DriveSync._exportState(), null, 2)], {type:'application/json'}), 'archive-state.json'); };
     controls.querySelector('[data-settings-backup]').appendChild(backupButton);

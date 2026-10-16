@@ -35,7 +35,20 @@
  *   <!-- window.ArchiveBootstrap.boot() 로 접근 -->
  */
 
-'use strict';
+ 'use strict';
+
+function showContentUpdated(manifest, offline) {
+  const value=manifest&&(manifest.content_updated_at||manifest.version);
+  const date=new Date(value||'');
+  const el=document.getElementById('archive-latest-update');
+  if(!el)return;
+  if(!Number.isFinite(date.getTime())){el.textContent='최신 업데이트 시각 미확인';el.removeAttribute&&el.removeAttribute('datetime');return;}
+  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(date);
+  const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));
+  el.textContent='최신 업데이트 '+p.year+'.'+p.month+'.'+p.day+' '+p.hour+':'+p.minute+(offline?' · 저장본':'');
+  if(el.setAttribute){el.setAttribute('datetime',date.toISOString());el.setAttribute('title','자료 반영 시각 · 한국 시간');}
+}
+
 
 /* ------------------------------------------------------------------ */
 /* 0. 상수                                                            */
@@ -388,6 +401,7 @@ async function boot() {
       const cached = loadAllCachedChunks();
       if (cached) {
         renderArticles(cached.articles, renderer, container, { offline: true });
+        showContentUpdated(cachedManifest,true);
         showOfflineBadge(true);
         showMain();
         return;
@@ -493,6 +507,7 @@ async function boot() {
   if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
   showOfflineBadge(false);
   showMain();
+  showContentUpdated(manifest,false);
   const updateStatus=document.getElementById('archive-update-status');
   if(updateStatus)updateStatus.textContent='자료 변경 자동 확인 · 60초 간격 · '+new Date(manifest.version).toLocaleString('ko-KR');
 

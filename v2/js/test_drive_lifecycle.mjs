@@ -32,7 +32,7 @@ assert.equal(calls.filter(c=>c.method!=='GET').length,0,'wrong password must nev
 await ctx.DriveSync.exportWithPassword(fixturePin);
 assert.deepEqual(new Set(remote.pinned),new Set(['local','cloud']));
 assert.equal(remote.memos.local,'my memo');assert.equal(remote.memos.cloud,'cloud memo');
-assert.equal(refreshes,2);assert.equal(intervals.length,1);
+assert.equal(refreshes,1,'unchanged export must not redraw the article list');assert.equal(intervals.length,1);
 assert.equal(calls.filter(c=>c.method==='POST').length,0);
 console.log('PASS: initial read-only restore, wrong PIN blocked, one authorized export succeeds');
 store['archive-pinned']='["cloud"]';delete store.archive_memo_local;
@@ -59,7 +59,7 @@ new vm.Script(source).runInContext(ctx);
 ctx.DriveSync.init(status);const before=calls.filter(c=>c.method!=='GET').length;ctx.DriveSync.connect();await drain();
 assert.equal(calls.filter(c=>c.method!=='GET').length,before,'empty cloud connect must not create file');
 await ctx.DriveSync.exportWithPassword(fixturePin);
-assert.equal(calls.at(-1).method,'POST');assert.equal(remote.memos.new,'unsynced');
+assert.equal(calls.filter(c=>c.method==='POST').length,1);assert.equal(calls.at(-1).method,'GET','created state is read back before success');assert.equal(remote.memos.new,'unsynced');
 console.log('PASS: absent cloud state stays absent until authorized file creation');
 store.archive_memo_failure='keep this';uploadFailure=true;
 await assert.rejects(ctx.DriveSync.exportWithPassword(fixturePin),/500/);

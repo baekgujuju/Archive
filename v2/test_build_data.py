@@ -14,6 +14,7 @@ class BuilderRegressionTest(unittest.TestCase):
         self.root = Path(self.temp.name)
         b = self.builder
         b.V2_ROOT = self.root
+        (self.root / 'release.json').write_text('{"app_version":"2.5.7"}', encoding='utf-8')
         b.DATA_DIR = self.root / "data"
         b.MEDIA_THUMB = self.root / "media/thumb"
         b.MEDIA_FULL = self.root / "media/full"
@@ -44,6 +45,19 @@ class BuilderRegressionTest(unittest.TestCase):
             b.build_data()
         self.assertEqual(result.exception.code, 2)
         self.assertEqual((b.DATA_DIR / "manifest.json").read_bytes(), original)
+
+    def test_rebuild_keeps_release_and_original_content_time(self):
+        b = self.builder
+        b.build_data()
+        first = json.loads((b.DATA_DIR / 'manifest.json').read_text())
+        b.build_data()
+        second = json.loads((b.DATA_DIR / 'manifest.json').read_text())
+        self.assertEqual(second['app_version'], '2.5.7')
+        self.assertEqual(second['content_updated_at'], first['content_updated_at'])
+        b.POSTS_JSON.write_text('[]', encoding='utf-8')
+        b.build_data()
+        third = json.loads((b.DATA_DIR / 'manifest.json').read_text())
+        self.assertNotEqual(third['content_updated_at'], first['content_updated_at'])
 
 
 if __name__ == "__main__":
