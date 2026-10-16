@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": "2026-10-16T03:27:09.841Z-a8wl70p8",
-  "updatedAt": "2026-10-16T03:27:09.841Z",
+  "revision": "2026-10-16T03:47:39.417Z-j89awkqc",
+  "updatedAt": "2026-10-16T03:47:39.417Z",
   "pinned": [
     "article-20261011-1048"
   ],
@@ -27,6 +27,6 @@
   },
   "memos": {},
   "highlights": {
-    "article-20261011-1048": "[{\"id\":\"mvaeoxjkrvpy\",\"start\":1031,\"exact\":\"Reversal Extension)\",\"prefix\":\"문 이미지)\\n\\n\\n  상승 국면\\n  1\\n    반전 확장 (\",\"suffix\":\"바닥의 항복 매도 — 사이클의 시작점\\n  ↓\\n  2\\n   \"}]"
+    "article-20261011-1048": "[{\"id\":\"mvaeoxjkrvpy\",\"start\":1031,\"exact\":\"Reversal Extension)\",\"prefix\":\"문 이미지)\\n\\n\\n  상승 국면\\n  1\\n    반전 확장 (\",\"suffix\":\"바닥의 항복 매도 — 사이클의 시작점\\n  ↓\\n  2\\n   \"},{\"id\":\"mvafeojy9x73\",\"start\":1089,\"exact\":\"(Wedge Pop\",\"prefix\":\"매도 — 사이클의 시작점\\n  ↓\\n  2\\n    쐐기 돌파 \",\"suffix\":\")이동평균선 회복 — 첫 번째 진입 신호\\n  ↓\\n  3\\n \"}]"
   }
 }
