@@ -79,21 +79,6 @@
     "entry": null,
     "version": 3
   },
-  "2041704624529228093:2285fbb0b53bf3ed.png": {
-    "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc",
-    "entry": {
-      "title": "TimesFM",
-      "summary_ko": "Google Research의 시계열 예측 기반 모델 TimesFM 저장소 안내 화면. 모델 버전과 업데이트 내역, 논문 및 체크포인트 링크를 소개한다.",
-      "category": "인공지능·시계열 예측",
-      "repo_url": "https://github.com/google-research/timesfm",
-      "status": "verified",
-      "evidence": [
-        "screenshot:name-match"
-      ],
-      "fingerprint": "9452bf8fc1ae7673950fa485b72b344c4c7ac5ad025516613df48e6c9c48ffcc"
-    },
-    "version": 3
-  },
   "2042091141328466156:4fb1012be889a4f4.png": {
     "fingerprint": "f25bdfc91f076314daf46d05c884dad192be135c4a3073f1be75873181c75440",
     "entry": null,
@@ -108,7 +93,7 @@
     "fingerprint": "b335114494a6e33d9d41c46408d9e17e72e710da221e711dd46dbba945e2022f",
     "entry": {
       "title": "Developer-Y/math-science-video-lectures",
-      "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 정리한 저장소입니다. 물리학 등 분야별로 강좌와 영상 재생목록 링크를 제공합니다.",
+      "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 제공하는 저장소입니다. 물리학 등 분야별로 강좌와 강의 영상 링크를 찾아볼 수 있습니다.",
       "category": "과학·수학 온라인 강의 모음",
       "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
       "status": "verified",
@@ -123,7 +108,7 @@
     "fingerprint": "f60ad44d5ce05b2fcdf8e9c6ffd712cfd0393ea736e70dd772262094bbf24e53",
     "entry": {
       "title": "Developer-Y/math-science-video-lectures",
-      "summary_ko": "과학과 수학 분야의 동영상 강의가 포함된 온라인 강좌를 주제별로 모아 놓은 저장소입니다. 물리학 등 다양한 분야의 강의 자료와 영상 링크를 제공합니다.",
+      "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 제공하는 저장소입니다. 물리학 등 주제별로 강좌와 강의 영상 링크를 찾아볼 수 있습니다.",
       "category": "과학·수학 온라인 강의 모음",
       "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
       "status": "verified",
@@ -131,21 +116,6 @@
         "text-url:no-title-check"
       ],
       "fingerprint": "f60ad44d5ce05b2fcdf8e9c6ffd712cfd0393ea736e70dd772262094bbf24e53"
-    },
-    "version": 3
-  },
-  "2043699713883701640:a5e204ad569f28c5.jpg": {
-    "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a",
-    "entry": {
-      "title": "Try Public APIs for free",
-      "summary_ko": "Public APIs 저장소의 소개 화면. APILayer 안내와 함께 위치, 주식, 날씨, 환율 등 공개 API 목록을 표로 제공한다.",
-      "category": "개발 자료·공개 API",
-      "repo_url": "https://github.com/public-apis/public-apis",
-      "status": "verified",
-      "evidence": [
-        "screenshot:phrase:try public apis"
-      ],
-      "fingerprint": "5e2d28e0237c70084b2109baee85879d618b0ba8f6bf4708ddbb63fc3e53445a"
     },
     "version": 3
   },
@@ -213,7 +183,7 @@
     "fingerprint": "b57c1a6d9d74ffa652ce4d1ebd57d92a780aae0123fa9e93290a4c2047b25175",
     "entry": {
       "title": "steipete/agent-scripts.git",
-      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 스크립트와 재사용 가능한 작업 지침을 모은 도구입니다. 문서 목록 생성, Git 커밋 보조, 브라우저 제어 등 개발 작업의 자동화를 지원합니다. ([GitHub](https://github.com/steipete/agent-scripts))",
+      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 제어 등 개발 작업 자동화를 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
       "category": "AI 코딩 에이전트용 개발 자동화 스크립트",
       "repo_url": "https://github.com/steipete/agent-scripts.git",
       "status": "verified",
@@ -228,8 +198,8 @@
     "fingerprint": "39e1b374d8c43dbcb5660a469f2eaa64d432d68ee73250c97ef2b4c75d4de048",
     "entry": {
       "title": "steipete/agent-scripts.git",
-      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 조작 등 개발 작업의 자동화를 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
-      "category": "AI 코딩 에이전트용 개발 자동화 스크립트",
+      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 개발 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 제어 등을 지원합니다. ([저장소](https://github.com/steipete/agent-scripts))",
+      "category": "AI 코딩 에이전트용 워크플로 자동화 도구",
       "repo_url": "https://github.com/steipete/agent-scripts.git",
       "status": "verified",
       "evidence": [
@@ -243,8 +213,8 @@
     "fingerprint": "321079e36521d9a188bacb702ea8656a53926bfd519d942de6bf135bda43fa70",
     "entry": {
       "title": "steipete/agent-scripts.git",
-      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 규칙, 재사용 가능한 스킬, 보조 스크립트 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 제어 등을 지원합니다. [출처](https://github.com/steipete/agent-scripts)",
-      "category": "AI 코딩 에이전트용 워크플로 자동화 도구",
+      "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 제어 등을 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
+      "category": "AI 코딩 에이전트용 개발 워크플로 자동화 도구",
       "repo_url": "https://github.com/steipete/agent-scripts.git",
       "status": "verified",
       "evidence": [
@@ -418,8 +388,8 @@
     "fingerprint": "ea071cba858451089037b501257f7f80d32031f5dc4f0c9a3d2a76dc5ef7c269",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac 앱을 쉽게 탐색하고 찾을 수 있도록 돕습니다.",
-      "category": "macOS 앱 큐레이션 목록",
+      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 사용자가 필요한 Mac 앱을 쉽게 탐색하고 찾을 수 있도록 돕습니다.",
+      "category": "macOS 소프트웨어 추천·디렉터리",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -433,8 +403,8 @@
     "fingerprint": "6b7383412e1d71fef98aec34a76358821f057fb9c41a4335e4fb7bc28a9bad3a",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 앱과 소프트웨어를 용도별로 정리해 제공하는 큐레이션 목록입니다. 카테고리별로 Mac에서 사용할 도구를 쉽게 탐색하고 찾을 수 있습니다.",
-      "category": "macOS 소프트웨어 큐레이션 목록",
+      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac 앱을 분야별로 탐색하고 찾는 데 도움을 줍니다.",
+      "category": "macOS 앱 추천 및 소프트웨어 디렉터리",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -448,8 +418,8 @@
     "fingerprint": "072711840093e2517930ccef89081942d7428dc8dbde67ed4512726054914893",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 정리해 쉽게 찾아볼 수 있도록 제공하는 앱 목록 저장소입니다.",
-      "category": "macOS 소프트웨어 모음",
+      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 모아 놓은 목록으로, 필요한 Mac 앱을 쉽게 찾고 살펴볼 수 있습니다.",
+      "category": "macOS 앱 큐레이션 목록",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -463,8 +433,8 @@
     "fingerprint": "83f40cfa2812f955b9627de47c636fea95f38305bcab24b821f97551ca75ef94",
     "entry": {
       "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 원하는 Mac 앱을 카테고리별로 쉽게 찾아볼 수 있습니다.",
-      "category": "macOS 소프트웨어 추천·분류 목록",
+      "summary_ko": "다양한 고품질 macOS 소프트웨어를 분야별로 정리해, 필요한 앱을 쉽게 찾고 살펴볼 수 있도록 돕는 큐레이션 목록입니다.",
+      "category": "macOS 소프트웨어 추천 목록",
       "repo_url": "https://github.com/jaywcjlove/awesome-mac",
       "status": "verified",
       "evidence": [
@@ -478,7 +448,7 @@
     "fingerprint": "62ff2fc955e5bc8d632118d8a4465560e00991004b9044124802268a524f0122",
     "entry": {
       "title": "thaw-app/Thaw",
-      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기거나 정리해 깔끔하게 관리할 수 있는 오픈 소스 도구입니다.",
+      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 정리하고 관리하는 오픈 소스 도구입니다.",
       "category": "macOS 메뉴 막대 관리 도구",
       "repo_url": "https://github.com/thaw-app/Thaw",
       "status": "verified",
@@ -493,7 +463,7 @@
     "fingerprint": "1fd89d5b42ee233802b1be138111c8333bc7a5caaebb0924091ec390777df3e0",
     "entry": {
       "title": "thaw-app/Thaw",
-      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리해 깔끔하게 관리할 수 있는 오픈 소스 도구입니다.",
+      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리할 수 있는 오픈 소스 메뉴 막대 관리 도구입니다.",
       "category": "macOS 메뉴 막대 관리 도구",
       "repo_url": "https://github.com/thaw-app/Thaw",
       "status": "verified",
@@ -506,6 +476,16 @@
   },
   "2100023093435699620:42ea3f1a9ddec33f.jpg": {
     "fingerprint": "b765239dadb67485f9c03f5c7b490efa469de032eeb1d5c599f461f380d16429",
+    "entry": null,
+    "version": 3
+  },
+  "2100782813507416114:d6e6200d0b32ea3d.jpg": {
+    "fingerprint": "5ab3e270993cacbeb73d76ecd46ff94eaf6596e84adf28861a1846bc90ef0856",
+    "entry": null,
+    "version": 3
+  },
+  "2100782813507416114:edd3b1cc7f0cacb1.jpg": {
+    "fingerprint": "0423436f3c3b7c0bb678aea0be8446303a9c034c036c7b53e1872523f15e2be3",
     "entry": null,
     "version": 3
   },
@@ -633,8 +613,8 @@
     "fingerprint": "a089f0a86eadd370af6a910082971d08ea7d6dac6fccd1c16c6b587cb8d487d8",
     "entry": {
       "title": "Nanako0129/sepia",
-      "summary_ko": "AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트의 GitHub 소개 카드다. 여러 에이전트와 Claude Code·Codex용 플러그인 지원을 소개하고 기여자·이슈·스타·포크 수를 표시한다.",
-      "category": "GitHub 프로젝트 · AI 글쓰기 도구",
+      "summary_ko": "AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트의 GitHub 소개 이미지다. 여러 에이전트와 Claude Code, Codex용 플러그인 지원을 소개한다.",
+      "category": "GitHub 프로젝트·AI 글쓰기 도구",
       "repo_url": "https://github.com/Nanako0129/sepia",
       "status": "verified",
       "evidence": [
@@ -683,8 +663,8 @@
     "fingerprint": "b7dba3800a0bc219ca785e59ad7949ded337254a2245c2e095c03867ce0f4631",
     "entry": {
       "title": "AgentMemoryRepo/agentmemoryrepo",
-      "summary_ko": "에이전트가 사용자와의 상호작용에서 배운 정보를 별도 저장소에 기록하고, 다음 세션에서도 활용하도록 하는 메모리 저장소 명세입니다. 기억을 위키처럼 서로 연결해 탐색할 수 있습니다.",
-      "category": "AI 에이전트 장기 메모리 관리",
+      "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도 저장소에 기록하고, 다음 세션에서도 활용할 수 있게 하는 메모리 관리 명세입니다. 기억들을 위키처럼 서로 연결해 탐색할 수 있습니다.",
+      "category": "AI 에이전트 장기 기억 관리",
       "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
       "status": "verified",
       "evidence": [
@@ -698,8 +678,8 @@
     "fingerprint": "664d9caacf8d72219112aa09394c242a2ffc5ac38043c815ca6c9eff8cff45e5",
     "entry": {
       "title": "AgentMemoryRepo/agentmemoryrepo",
-      "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도 저장소에 기록하고, 여러 세션에 걸쳐 기억을 유지하도록 하는 명세입니다. 기억들을 서로 연결해 위키처럼 탐색할 수 있습니다.",
-      "category": "AI 에이전트 장기 기억 관리 명세",
+      "summary_ko": "에이전트가 사용자와의 상호작용에서 배운 정보를 별도 저장소에 기록하고, 세션이 바뀌어도 활용할 수 있도록 하는 메모리 저장소 명세입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
+      "category": "AI 에이전트 영구 메모리 관리",
       "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
       "status": "verified",
       "evidence": [
@@ -718,8 +698,8 @@
     "fingerprint": "bc1e6e0ed358eb8b4620a1b19a0e8fb9747680c9c4c357dabe2a3de04ac97fa3",
     "entry": {
       "title": "atilaahmettaner/tradingview-mcp",
-      "summary_ko": "AI 어시스턴트에서 암호화폐·주식·외환·선물 시장을 분석할 수 있도록 39개 도구를 제공하는 MCP 서버입니다. 종목 스크리닝, 다중 시간대 기술적 분석, 백테스트, 시장 심리 분석을 지원하며 직접 호스팅하거나 TradingMCP 호스팅 서비스를 이용할 수 있습니다.",
-      "category": "금융 시장 데이터·기술적 분석 MCP 서버",
+      "summary_ko": "암호화폐, 주식, 외환, 선물 시장 데이터를 AI 어시스턴트에서 분석할 수 있게 하는 MCP 서버입니다. 종목 스크리닝, 여러 시간대의 기술적 분석, 백테스트, 시장 심리 분석 등을 위한 39개 도구를 제공합니다.",
+      "category": "금융 시장 데이터 및 기술적 분석 MCP 서버",
       "repo_url": "https://github.com/atilaahmettaner/tradingview-mcp",
       "status": "verified",
       "evidence": [
@@ -758,7 +738,7 @@
     "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de",
     "entry": {
       "title": "CAMEL — Finding the Scaling Laws of Agents",
-      "summary_ko": "에이전트의 확장 법칙을 연구하고 데이터 생성, 작업 자동화, 세계 시뮬레이션을 지원하는 CAMEL 프로젝트의 GitHub README 화면.",
+      "summary_ko": "에이전트의 규모 확장 법칙을 연구하는 CAMEL 프로젝트의 GitHub README 화면. 데이터 생성, 작업 자동화, 세계 시뮬레이션을 소개한다.",
       "category": "AI 에이전트 프레임워크",
       "repo_url": "https://github.com/YvMohsin/camel",
       "status": "verified",
@@ -923,8 +903,8 @@
     "fingerprint": "54f7dcacbec604b2c609700254ff6f2d6b2b098f3436b6dadba6716265aed618",
     "entry": {
       "title": "Helm Dashboard",
-      "summary_ko": "Helm 작업을 간소화하는 프로젝트의 GitHub README 화면이다. 프로젝트 상태 배지와 함께 배포 이력, 리소스 상태, 업그레이드 및 롤백 기능이 있는 대시보드 예시가 보인다.",
-      "category": "Kubernetes·Helm 관리 도구",
+      "summary_ko": "Helm 작업을 간소화하는 프로젝트의 GitHub README 화면. 프로젝트 배지와 함께 배포 리비전, 리소스 상태, 업그레이드 및 롤백 기능을 보여주는 대시보드 예시가 있다.",
+      "category": "쿠버네티스 관리 도구",
       "repo_url": "https://github.com/komodorio/helm-dashboard",
       "status": "verified",
       "evidence": [
@@ -986,96 +966,6 @@
   },
   "2108117689524986220:55b57ce96408363a.png": {
     "fingerprint": "9cb2a2bc6e0711f394c079e960702edd85128722f0576b3a2cc21afa2c269c70",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:a2998bcdb2ee908c.png": {
-    "fingerprint": "69aa5217e1b42fe11ebe31154e541b141c82362f8010a7258b73c08b576e218f",
-    "entry": null,
-    "version": 3
-  },
-  "2108117689524986220:c11a0d4aadd7040d.png": {
-    "fingerprint": "00dc60c976a12ab731f8b334836bb301e9d52e54423d9af06090440ecda1f795",
-    "entry": null,
-    "version": 3
-  },
-  "2108124964285243888:b9e9f9e3a3237068.png": {
-    "fingerprint": "e4de59fc6f14b47334259140d0c38b822b6bf5e76241746c98bc38b803fcf542",
-    "entry": null,
-    "version": 3
-  },
-  "2108124964285243888:d3c444251c791148.png": {
-    "fingerprint": "6fa81f8b5dbc902fbcc4c262ea8b400702a62a6caa6398ec1af5683bf86ddbec",
-    "entry": null,
-    "version": 3
-  },
-  "2108135060176294343:text-6ec202e3b4b5c45d": {
-    "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808",
-    "entry": {
-      "title": "feitangyuan/onetake",
-      "summary_ko": "제품 출시 영상, 티저, 기능 데모를 하나의 연속된 카메라 흐름으로 제작하도록 돕는 코딩 에이전트용 스킬입니다. 슬라이드처럼 장면을 전환하는 대신 앞선 화면에서 다음 화면이 자연스럽게 이어지도록 구성하고, 연속성을 자동 평가합니다.",
-      "category": "AI 에이전트용 모션 영상 제작 스킬",
-      "repo_url": "https://github.com/feitangyuan/onetake",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808"
-    },
-    "version": 3
-  },
-  "2108196720706478249:f8c0025c04175532.png": {
-    "fingerprint": "629d2acfaa2eb01760f7641e97460c77d7075d747bc30408c7095c50e8682ca6",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:326cbf781f62626f.png": {
-    "fingerprint": "e675d0b5dcd56267a1313e4b46a041c32ae1ae8264e6955867d568416c55a778",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:c992605d310f3d0c.jpg": {
-    "fingerprint": "1bf13a023a9a3fa2f9610f00cec69ce4f95f6a0da250b460ad58de2c3e4cee94",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:6cd8ffb91b91f3ed.png": {
-    "fingerprint": "305ec8ba840c9c1faa6ef32bae20a867fb0fc0a4b5260bc72c6f159987be1fdd",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:d3c444251c791148.png": {
-    "fingerprint": "6ced22c2e3fe5e2fe664ba71fb3da63af04892973a1b039f5d205cb1fabecbdc",
-    "entry": null,
-    "version": 3
-  },
-  "2108196720706478249:b9e9f9e3a3237068.png": {
-    "fingerprint": "772b77eb8f709036f015c207a8632d5b69378afde8288b631e6a7a6978a4c16e",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:ead79ff3d3f2a378.png": {
-    "fingerprint": "7383365f4294fdfc9887c5b156750ae6d368ab42fbfdd89ce508e69385bb60ec",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:d7013183a3f765f5.png": {
-    "fingerprint": "646c4b0cea59b1bc52db54f7c769614d7247d325b57fe54b430aafe4a0715f81",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:810791fff0bbc880.png": {
-    "fingerprint": "03ccaeb3e203da4851fee658709d47306fe2acd83e4f6100c622bea18eb6998f",
-    "entry": null,
-    "version": 3
-  },
-  "2108200610822861187:93d2ebe7edf28a34.png": {
-    "fingerprint": "5c5b3e2fd22205d826c31f2daa05f74530f3fca2c90ae393c69ba56bbed60580",
-    "entry": null,
-    "version": 3
-  },
-  "2108205259533451648:1b2aa431d0825eb5.jpg": {
-    "fingerprint": "ab17c7650611cc9a913812ef5c4bd7df7885cc07409344a3291e03e4a1a9cbaa",
     "entry": null,
     "version": 3
   }
