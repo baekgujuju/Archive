@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-16T12:32:39.787073+00:00",
+  "version": "2026-10-16T14:57:17.587414+00:00",
   "content_updated_at": "2026-10-15T22:18:03.417937+00:00",
   "build": "v2",
   "source_hash": "c6439bec0010a25e15833c13995e72be8202b2566377ce0a116987f8165b47ed",
@@ -34,7 +34,7 @@
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-    "count": 0
+    "sha256": "896ec5077eb0c7a8fdfab6d363dd0b7db117e76ee43016f44c58f28fd7daa12c",
+    "count": 7
   }
 }
