@@ -5,7 +5,9 @@ var DriveSync = (function () {
   var KEYS = {highlights:'archive-highlights',pinned:'archive-pinned',bookmarks:'archive-bookmarks',names:'archive-bookmark-names',deletedRemovedReplies:'archive-removed-replies',deletedReplies:'archive-deleted-replies',deletedPosts:'archive-deleted-posts'};
   var MEMO = 'archive_memo_', BASE = 'archive-sync-base', BACKUP = 'archive-sync-conflicts';
   var WRITE_PIN_HASH = '2ffb3371badee194e734205ebe9e870bb9e1857feb1e8d1984ba72231894faa6';
-  var writePermit = {}, passwordBusy = false;
+  var writePermit = {}, passwordBusy = false, authPromise=null, authResolve=null, authReject=null, authTimer=null;
+  function finishAuth(error){var resolve=authResolve,reject=authReject;authPromise=null;authResolve=null;authReject=null;if(authTimer)clearTimeout(authTimer);authTimer=null;if(error){message(error.message);if(reject)reject(error);}else if(resolve)resolve(true);}
+  function isConnected(){if(connected&&expiresAt&&Date.now()>=expiresAt)expire();return connected;}
   var viewPrepared=false, VIEW_BASE='archive-settings-view-base';
   var SHARED_CACHE='archive-published-settings-v1', PENDING='archive-settings-pending-v1', publicStarted=false, publicBusy=false, firstPublic=true;
   var SESSION='archive-drive-session-v2', expiresAt=0, lastRead='', remoteUpdated='', warning='';
@@ -201,16 +203,25 @@ var DriveSync = (function () {
     var tries = 0;
     function ready() {
       if (typeof google !== 'undefined' && google.accounts && google.accounts.oauth2) {
-        tokenClient = google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:'https://www.googleapis.com/auth/drive.file',error_callback:function () { message('Google 연결이 취소되었거나 차단되었습니다'); },callback:function (resp) {
-          if (!resp.access_token) { message('Drive 연결 실패 · 다시 연결해 주세요'); return; }
-          token = resp.access_token; connected = true;fileId=null;saveSession(resp);message('Google 연결됨 · 비밀번호 확인 후 내보냅니다');
+        tokenClient = google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:'https://www.googleapis.com/auth/drive.file',error_callback:function () { finishAuth(new Error('Google 로그인이 취소되었거나 팝업이 차단되었습니다. 다시 내보내기를 눌러 주세요.')); },callback:function (resp) {
+          if (!resp.access_token) { finishAuth(new Error('Google 로그인에 실패했습니다. 다시 내보내기를 눌러 주세요.')); return; }
+          token = resp.access_token; connected = true;fileId=null;saveSession(resp);message('Google 연결됨 · 비밀번호 확인 후 내보냅니다');finishAuth();
         }});
       } else if (tries++ < 20) setTimeout(ready, 500);
       else { initialized = false; message('Google 연결을 불러오지 못했습니다 · 다시 시도해 주세요'); }
     }
     ready();
   }
-  function connect() { if (tokenClient) tokenClient.requestAccessToken({prompt:''}); else { initialized = false; init(statusEl); message('Google 연결 준비 중 · 잠시 후 다시 눌러 주세요'); } }
-  return {prepareView:prepareView,readPublic:readPublic,init:init,connect:connect,download:function(){if(!connected){connect();return Promise.resolve(false);}return sync();},exportWithPassword:exportWithPassword,importState:function(state){if(!valid(state))throw new Error("올바른 백업이 아닙니다");apply(normalize(state));},isConnected:function () { return connected; },_validateRemote:valid,_mergeState:merge,_collectMemos:memoState,_exportState:function () { var state = collect(); state.exportedAt = new Date().toISOString(); state.conflicts = get(BACKUP, null); return state; }};
+  function connect() {
+    if(isConnected())return Promise.resolve(true);
+    if(authPromise)return authPromise;
+    if(!tokenClient){initialized=false;init(statusEl);return Promise.reject(new Error('Google 로그인 준비 중입니다. 잠시 후 내보내기를 다시 눌러 주세요.'));}
+    authPromise=new Promise(function(resolve,reject){authResolve=resolve;authReject=reject;});
+    var pending=authPromise;authTimer=setTimeout(function(){finishAuth(new Error('Google 로그인 시간이 초과됐습니다. 다시 내보내기를 눌러 주세요.'));},120000);
+    try{tokenClient.requestAccessToken({prompt:''});}catch(e){finishAuth(new Error('Google 로그인 창을 열지 못했습니다. 다시 내보내기를 눌러 주세요.'));}
+    return pending;
+  }
+
+  return {prepareView:prepareView,readPublic:readPublic,init:init,connect:connect,download:async function(){await connect();return sync();},exportWithPassword:exportWithPassword,importState:function(state){if(!valid(state))throw new Error("올바른 백업이 아닙니다");apply(normalize(state));},isConnected:isConnected,_validateRemote:valid,_mergeState:merge,_collectMemos:memoState,_exportState:function () { var state = collect(); state.exportedAt = new Date().toISOString(); state.conflicts = get(BACKUP, null); return state; }};
 }());
 window.DriveSync = DriveSync;
