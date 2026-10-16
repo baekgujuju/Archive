@@ -1,7 +1,7 @@
 {
   "2043585233958875219": {
     "title": "Developer-Y/math-science-video-lectures",
-    "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 제공하는 목록입니다. 물리학 등 분야별로 강좌와 강의 영상 링크를 찾아볼 수 있습니다.",
+    "summary_ko": "과학과 수학 분야의 강의 영상을 주제별로 모아 제공하는 저장소입니다. 물리학 등 다양한 과목의 대학 강좌와 영상 재생목록 링크를 찾아볼 수 있습니다.",
     "category": "과학·수학 온라인 강의 모음",
     "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
     "status": "verified",
@@ -12,7 +12,7 @@
   },
   "2059197148877423075": {
     "title": "steipete/agent-scripts.git",
-    "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화와 검증, 문서 목록 생성, 브라우저 제어 등을 지원합니다. 출처: [GitHub 저장소](https://github.com/steipete/agent-scripts)",
+    "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 조작 등의 개발 작업을 지원합니다. [저장소](https://github.com/steipete/agent-scripts)",
     "category": "AI 코딩 에이전트용 워크플로 자동화 도구",
     "repo_url": "https://github.com/steipete/agent-scripts.git",
     "status": "verified",
@@ -23,8 +23,8 @@
   },
   "2096840638314717678": {
     "title": "jaywcjlove/awesome-mac",
-    "summary_ko": "다양한 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac 앱을 카테고리별로 쉽게 찾아볼 수 있습니다.",
-    "category": "macOS 앱 추천·디렉터리",
+    "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 모아 놓은 목록입니다. 필요한 Mac 앱을 분야별로 쉽게 탐색하고 찾을 수 있도록 돕습니다.",
+    "category": "macOS 소프트웨어 모음",
     "repo_url": "https://github.com/jaywcjlove/awesome-mac",
     "status": "verified",
     "evidence": [
@@ -34,7 +34,7 @@
   },
   "2099769376132260162": {
     "title": "thaw-app/Thaw",
-    "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 정리하고 관리하는 오픈 소스 도구입니다.",
+    "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리해 깔끔하게 관리할 수 있는 오픈 소스 도구입니다.",
     "category": "macOS 메뉴 막대 관리 도구",
     "repo_url": "https://github.com/thaw-app/Thaw",
     "status": "verified",
@@ -45,8 +45,8 @@
   },
   "2107020338911707270": {
     "title": "Nanako0129/sepia",
-    "summary_ko": "AI 문체를 줄이는 글쓰기 스킬 프로젝트의 GitHub 소개 카드다. 여러 에이전트와 Claude Code, Codex용 플러그인 지원을 소개한다.",
-    "category": "GitHub 프로젝트",
+    "summary_ko": "AI 문체를 줄이기 위한 에이전트 스킬 프로젝트의 GitHub 소개 카드. Claude Code와 Codex용 플러그인 지원 및 기여자·이슈·스타·포크 수가 표시되어 있다.",
+    "category": "GitHub 프로젝트·글쓰기 도구",
     "repo_url": "https://github.com/Nanako0129/sepia",
     "status": "verified",
     "evidence": [
@@ -56,8 +56,8 @@
   },
   "2107317736871534647": {
     "title": "AgentMemoryRepo/agentmemoryrepo",
-    "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도의 저장소에 저장하고, 다음 세션에서도 활용하도록 하는 메모리 저장소 규격입니다. 기억을 위키처럼 서로 연결해 탐색할 수 있습니다.",
-    "category": "AI 에이전트용 세션 간 영구 메모리 규격",
+    "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도 저장소에 기록하고, 세션이 바뀌어도 활용할 수 있도록 하는 메모리 저장소 명세입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
+    "category": "AI 에이전트 장기 기억 관리",
     "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
     "status": "verified",
     "evidence": [
@@ -67,13 +67,35 @@
   },
   "2107365244238545088": {
     "title": "atilaahmettaner/tradingview-mcp",
-    "summary_ko": "AI 어시스턴트에서 암호화폐·주식·외환·선물 시장의 종목 스크리닝, 다중 시간대 기술적 분석, 백테스트, 시장 심리 분석을 수행하도록 돕는 39개 도구의 MCP 서버입니다. 무료로 직접 호스팅하거나 TradingMCP 호스팅 서비스를 이용할 수 있습니다.",
-    "category": "금융 시장 데이터·기술적 분석 MCP 서버",
+    "summary_ko": "AI 어시스턴트에서 암호화폐, 주식, 외환, 선물 시장을 분석할 수 있도록 시세 스크리닝, 다중 시간대 기술적 분석, 백테스트, 시장 심리 분석 등 39개 도구를 제공하는 MCP 서버입니다. 직접 호스팅하거나 TradingMCP 호스팅 서비스를 이용할 수 있습니다.",
+    "category": "금융 시장 데이터 및 기술적 분석",
     "repo_url": "https://github.com/atilaahmettaner/tradingview-mcp",
     "status": "verified",
     "evidence": [
       "text-url:no-title-check"
     ],
     "fingerprint": "bc1e6e0ed358eb8b4620a1b19a0e8fb9747680c9c4c357dabe2a3de04ac97fa3"
+  },
+  "2108316536394191045": {
+    "title": "CAMEL — Finding the Scaling Laws of Agents",
+    "summary_ko": "에이전트의 확장 법칙을 연구하는 오픈소스 커뮤니티 CAMEL의 README 화면. 데이터 생성, 작업 자동화, 세계 시뮬레이션 등을 소개한다.",
+    "category": "AI 에이전트 프레임워크",
+    "repo_url": "https://github.com/YvMohsin/camel",
+    "status": "verified",
+    "evidence": [
+      "search:phrase:camel finding"
+    ],
+    "fingerprint": "a2fdb551ce1c971013eb495f7227f59b4704af143e34703f4b13153c906015de"
+  },
+  "2108052272643264834": {
+    "title": "Helm Dashboard",
+    "summary_ko": "Helm Dashboard의 GitHub README 화면이다. Helm 작업을 간소화하는 도구로 소개하며 릴리스 이력, 리소스 상태, 업그레이드 및 롤백 기능을 보여준다.",
+    "category": "쿠버네티스 관리 도구",
+    "repo_url": "https://github.com/komodorio/helm-dashboard",
+    "status": "verified",
+    "evidence": [
+      "search:phrase:helm dashboard"
+    ],
+    "fingerprint": "54f7dcacbec604b2c609700254ff6f2d6b2b098f3436b6dadba6716265aed618"
   }
 }

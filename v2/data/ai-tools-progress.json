@@ -1,12 +1,12 @@
 {
   "total": 299,
-  "remaining": 139,
+  "remaining": 131,
   "stats": {
-    "verified": 15,
-    "pending": 131,
+    "verified": 17,
+    "pending": 135,
     "pending_github_look": 14,
     "cached": 0,
-    "temporary_failures": 0,
+    "temporary_failures": 2,
     "errors": 0
   },
   "pending_details": {
@@ -124,7 +124,6 @@
     "2107732735259529480:6c19f9919d3992d1.jpg": "successfully inspected: no GitHub project",
     "2108060257515979150:662ad7e49cb1c8e4.jpg": "successfully inspected: no GitHub project",
     "2108173081441435912:e712ec45c1a5367f.jpg": "GitHub screenshot requires verified repository match",
-    "2108316536394191045:be69e2a500aca10e.jpg": "GitHub screenshot requires verified repository match",
     "2084274299444072897:03a2dd2387b6a45f.png": "successfully inspected: no GitHub project",
     "2084274299444072897:855fa9e6d8a0bd8a.jpg": "successfully inspected: no GitHub project",
     "2084274299444072897:c8961759496e796f.jpg": "successfully inspected: no GitHub project",
@@ -151,9 +150,16 @@
     "2106654769037422755:ebbc5dcc51764637.jpg": "successfully inspected: no GitHub project",
     "2106654769037422755:e88246352993b056.jpg": "successfully inspected: no GitHub project",
     "2106654769037422755:afb64684a64c9bca.jpg": "successfully inspected: no GitHub project",
-    "2107674791243325659:753e659bcbbcec09.jpg": "GitHub screenshot requires verified repository match",
+    "2107674791243325659:753e659bcbbcec09.jpg": "temporary analysis or repository API failure",
     "2107730801022652557:15c0371091f0af2d.jpg": "successfully inspected: no GitHub project",
     "2107730801022652557:834c1efe51a03300.jpg": "successfully inspected: no GitHub project",
-    "2107730801022652557:a163bc4f6e53c25f.jpg": "successfully inspected: no GitHub project"
+    "2107730801022652557:a163bc4f6e53c25f.jpg": "successfully inspected: no GitHub project",
+    "2107836535995568551:c57a5ab436a808fa.jpg": "GitHub screenshot requires verified repository match",
+    "2107836535995568551:309e8fab3f33aa16.jpg": "successfully inspected: no GitHub project",
+    "2107859139938660811:082932b84c760a20.jpg": "temporary analysis or repository API failure",
+    "2107886190087266427:c089b9f9d0143ddf.jpg": "GitHub screenshot requires verified repository match",
+    "2108077430389019121:03a2dd2387b6a45f.png": "successfully inspected: no GitHub project",
+    "2108117689524986220:455c03f6037bc847.png": "successfully inspected: no GitHub project",
+    "2108117689524986220:8452892bb620a7de.png": "successfully inspected: no GitHub project"
   }
 }
