@@ -87,7 +87,13 @@ def publish(v2=V2):
             raise ValueError('Export exceeds size limit')
         with tempfile.TemporaryDirectory(prefix='settings_', dir=v2 / 'hooks') as tmp:
             downloaded = Path(tmp) / 'export.json'
-            run(['hatch_gws_cli', 'drive', 'files', 'get', '--params', json.dumps({'fileId': item['id'], 'alt': 'media'}), '-o', str(downloaded)])
+            # hatch_gws_cli writes file content to stdout, not -o file. Capture stdout.
+            content = run(['hatch_gws_cli', 'drive', 'files', 'get', '--params', json.dumps({'fileId': item['id'], 'alt': 'media'})])
+            # Strip any JSON metadata wrapper if present; file content starts with '{'
+            idx = content.find('{')
+            if idx > 0:
+                content = content[idx:]
+            downloaded.write_text(content, encoding='utf-8')
             if downloaded.stat().st_size > 2000000:
                 raise ValueError('Export exceeds size limit')
             state = validate(json.loads(downloaded.read_text(encoding='utf-8')))

@@ -102,17 +102,18 @@ def main():
             log("drive_poll 실패 — monitor 실행하지 않고 중단")
             return 1
 
-        # 2. 변경 감지 및 후크
-        if not run_step("monitor", HOOKS_DIR / "monitor.py", TIMEOUT_MONITOR):
-            log("monitor 실패 — 중단")
-            return 2
+        # 2. 변경 감지 및 후크 (실패해도 설정 발행은 독립 시도)
+        monitor_ok = run_step("monitor", HOOKS_DIR / "monitor.py", TIMEOUT_MONITOR)
+        if not monitor_ok:
+            log("monitor 실패 — 설정 발행은 독립 시도")
 
+        # 3. 공통 설정 발행 (monitor 실패와 무관하게 독립 시도)
         if not run_step("publish_settings", HOOKS_DIR / "publish_settings.py", 300):
             log("공통 설정 발행 실패 — 다음 주기 재시도")
-            return 3
+            return 3 if monitor_ok else 2
 
         log("스케줄러 실행 완료")
-        return 0
+        return 0 if monitor_ok else 2
     finally:
         try:
             fcntl.flock(lock_fh, fcntl.LOCK_UN)
