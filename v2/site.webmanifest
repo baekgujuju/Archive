@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "아카이브 인사이트",
-  "short_name": "아카이브",
+  "name": "Archive",
+  "short_name": "Archive",
   "description": "다시 꺼내 읽을 가치가 있는 기록들, 나의 작은 서재",
   "lang": "ko",
   "start_url": "./",
@@ -10,7 +10,17 @@
   "background_color": "#f6f2e9",
   "theme_color": "#f6f2e9",
   "icons": [
-    {"src": "icons/archive-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "icons/archive-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+    {
+      "src": "icons/archive-note-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/archive-note-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }
