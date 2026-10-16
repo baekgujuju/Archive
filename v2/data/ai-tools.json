@@ -1,7 +1,7 @@
 {
   "2043585233958875219": {
     "title": "Developer-Y/math-science-video-lectures",
-    "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 제공하는 저장소입니다. 물리학 등의 강좌와 강의 영상 링크를 찾아볼 수 있습니다.",
+    "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 주제별로 모아 제공하는 저장소입니다. 물리학 등 다양한 분야의 강의 자료와 영상 링크를 찾아볼 수 있습니다.",
     "category": "과학·수학 온라인 강의 모음",
     "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
     "status": "verified",
@@ -12,8 +12,8 @@
   },
   "2059197148877423075": {
     "title": "steipete/agent-scripts.git",
-    "summary_ko": "AI 코딩 에이전트가 여러 저장소에서 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 제어 등 개발 작업을 지원합니다.",
-    "category": "AI 코딩 에이전트용 개발 워크플로 자동화 도구",
+    "summary_ko": "여러 저장소에서 AI 코딩 에이전트가 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 보조 스크립트를 모은 도구 모음입니다. 프로젝트 간 개발 작업과 자동화 절차를 일관되게 관리하도록 돕습니다.",
+    "category": "AI 코딩 에이전트용 공통 스크립트·스킬 모음",
     "repo_url": "https://github.com/steipete/agent-scripts.git",
     "status": "verified",
     "evidence": [
@@ -23,8 +23,8 @@
   },
   "2096840638314717678": {
     "title": "jaywcjlove/awesome-mac",
-    "summary_ko": "다양한 macOS 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac 앱을 쉽게 검색하고 발견할 수 있도록 돕습니다.",
-    "category": "macOS 소프트웨어 큐레이션 목록",
+    "summary_ko": "고품질 macOS 소프트웨어를 용도별로 분류해 모아 놓은 목록으로, 필요한 Mac 앱을 쉽게 찾고 탐색할 수 있도록 돕습니다.",
+    "category": "macOS 앱 추천 및 소프트웨어 디렉터리",
     "repo_url": "https://github.com/jaywcjlove/awesome-mac",
     "status": "verified",
     "evidence": [
@@ -34,7 +34,7 @@
   },
   "2099769376132260162": {
     "title": "thaw-app/Thaw",
-    "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리해 깔끔하게 관리할 수 있는 오픈 소스 도구입니다.",
+    "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기거나 정리해 깔끔하게 관리할 수 있는 오픈 소스 도구입니다.",
     "category": "macOS 메뉴 막대 관리 도구",
     "repo_url": "https://github.com/thaw-app/Thaw",
     "status": "verified",
@@ -45,7 +45,7 @@
   },
   "2107020338911707270": {
     "title": "Nanako0129/sepia",
-    "summary_ko": "AI 특유의 문체를 줄이는 글쓰기 스킬 프로젝트의 GitHub 미리보기. 에이전트 호환성과 기여자, 이슈, 스타, 포크 수가 표시되어 있다.",
+    "summary_ko": "AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트의 GitHub 소개 카드로, 지원 에이전트 설명과 기여자·이슈·스타·포크 수가 표시되어 있다.",
     "category": "GitHub 프로젝트",
     "repo_url": "https://github.com/Nanako0129/sepia",
     "status": "verified",
@@ -56,8 +56,8 @@
   },
   "2107317736871534647": {
     "title": "AgentMemoryRepo/agentmemoryrepo",
-    "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도 저장소에 기록하고, 다음 세션에서도 활용하도록 하는 메모리 저장 규격입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
-    "category": "AI 에이전트 장기 기억 저장 규격",
+    "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호도를 별도 저장소에 기록하고, 여러 세션에 걸쳐 활용하도록 하는 메모리 저장소 규격입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
+    "category": "AI 에이전트 장기 기억 관리",
     "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
     "status": "verified",
     "evidence": [
@@ -67,7 +67,7 @@
   },
   "2107365244238545088": {
     "title": "atilaahmettaner/tradingview-mcp",
-    "summary_ko": "암호화폐, 주식, 외환, 선물 시장의 데이터를 AI 어시스턴트에서 분석할 수 있도록 연결하는 MCP 서버입니다. 종목 검색, 다중 시간대 기술적 분석, 백테스트, 시장 심리 분석 등을 위한 39개 도구를 제공합니다.",
+    "summary_ko": "암호화폐, 주식, 외환, 선물 시장의 스크리닝, 다중 시간대 기술적 분석, 백테스트, 시장 심리 분석을 AI 어시스턴트에서 수행하도록 지원하는 MCP 서버입니다. 39개 도구를 제공하며 무료로 직접 호스팅하거나 TradingMCP 호스팅 서비스를 이용할 수 있습니다.",
     "category": "금융 시장 데이터·기술적 분석 MCP 서버",
     "repo_url": "https://github.com/atilaahmettaner/tradingview-mcp",
     "status": "verified",
@@ -78,7 +78,7 @@
   },
   "2108316536394191045": {
     "title": "CAMEL — Finding the Scaling Laws of Agents",
-    "summary_ko": "에이전트의 확장 법칙을 연구하고 데이터 생성, 작업 자동화, 세계 시뮬레이션을 지원하는 오픈소스 커뮤니티의 GitHub README 화면.",
+    "summary_ko": "에이전트의 확장 법칙을 연구하는 오픈소스 커뮤니티 CAMEL의 GitHub README 화면. 데이터 생성, 작업 자동화, 세계 시뮬레이션과 관련된 기능을 소개한다.",
     "category": "AI 에이전트 프레임워크",
     "repo_url": "https://github.com/YvMohsin/camel",
     "status": "verified",
