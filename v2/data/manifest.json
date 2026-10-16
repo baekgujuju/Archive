@@ -31,5 +31,10 @@
     "file": "data/ai-tools.json",
     "sha256": "db19dde499df73814832ac9742c1ad416c1aeef936d102396f74697b2856f060",
     "count": 12
+  },
+  "shared_state": {
+    "file": "data/shared-state.json",
+    "sha256": "7af408751c0f25bcdf4cb1a80f6a73d3fad207436b2b1327098185b22c4cea1b",
+    "revision": "2026-10-16T03:27:09.841Z-a8wl70p8"
   }
 }
