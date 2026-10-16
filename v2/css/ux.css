@@ -267,3 +267,14 @@ body.aa-modal-open #archive-manage-btn{display:none}
 .archive-settings [data-drive-detail]{display:block;line-height:1.7;color:var(--muted);margin-top:6px;overflow-wrap:anywhere}
 @media(max-width:540px){.archive-header-status{width:100%;justify-content:space-between}.archive-version{font-size:9px}.archive-header-status,#archive-latest-update{font-size:11px}}
 @media print{.archive-header-status,.filter-footer{display:none!important}}
+
+/* Compact single-line header; Drive actions belong beside the overview. */
+.archive-header{flex-wrap:nowrap;gap:8px}
+.archive-brand-line{flex-wrap:nowrap;white-space:nowrap;gap:6px}
+.archive-header-status{width:auto;flex:0 0 auto;flex-wrap:nowrap;white-space:nowrap;gap:5px;justify-content:flex-end}
+.archive-overview-row{position:relative}
+.archive-overview-row .hero>summary{padding-right:115px}
+.archive-overview-row #archive-drive-quick{position:absolute;right:0;top:10px;border:0;background:transparent;color:var(--accent);font:inherit;font-size:12px;min-height:34px;padding:5px 0;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+@media(max-width:540px){.archive-header .brand{font-size:clamp(13px,3.6vw,16px)}.archive-version{font-size:9px;letter-spacing:0}#archive-latest-update{font-size:10px}.archive-header-status{width:auto;justify-content:flex-end}.archive-overview-row #archive-drive-quick{font-size:11px}}
+@media(max-width:360px){.archive-version{font-size:8px}#archive-latest-update{font-size:9px}.archive-brand-line{gap:4px}.archive-header{gap:6px}}
+@media print{#archive-drive-quick{display:none!important}}

@@ -42,10 +42,10 @@ function showContentUpdated(manifest, offline) {
   const date=new Date(value||'');
   const el=document.getElementById('archive-latest-update');
   if(!el)return;
-  if(!Number.isFinite(date.getTime())){el.textContent='최신 업데이트 시각 미확인';el.removeAttribute&&el.removeAttribute('datetime');return;}
+  if(!Number.isFinite(date.getTime())){el.textContent='latest up —';el.removeAttribute&&el.removeAttribute('datetime');return;}
   const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(date);
   const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));
-  el.textContent='최신 업데이트 '+p.year+'.'+p.month+'.'+p.day+' '+p.hour+':'+p.minute+(offline?' · 저장본':'');
+  el.textContent='latest up '+p.year.slice(-2)+'.'+p.month+'.'+p.day+' '+p.hour+':'+p.minute+(offline?' · 저장본':'');
   if(el.setAttribute){el.setAttribute('datetime',date.toISOString());el.setAttribute('title','자료 반영 시각 · 한국 시간');}
 }
 
