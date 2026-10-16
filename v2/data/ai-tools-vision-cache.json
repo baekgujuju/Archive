@@ -3,8 +3,8 @@
     "index": 0,
     "is_github": false,
     "github_urls": [],
-    "title": "Mark Minervini: The 5 Biggest Trading Mistakes",
-    "description_ko": "매수 지점을 넘어선 추격 매수, 늦은 손절, 수익 반납, 본전 보호 실패, 한 번에 과도하게 진입·청산하는 실수를 설명하며 위험 우선 사고를 강조한다.",
+    "title": "Mark Minervini의 초보 트레이딩 실수 5가지",
+    "description_ko": "매수 시점 이후의 추격 매수, 작은 손실의 손절 실패, 이익 확정 지연, 수익 발생 후 본전 보호 실패, 점진적인 투자 비중 조절 실패를 설명한다. 공통 원인으로 위험을 먼저 고려하지 않는 태도를 지적한다.",
     "category_ko": "트레이딩 원칙",
     "owner_hint": "Mark Minervini"
   },
@@ -13,8 +13,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "ML-Core_10일 평균 거래대금순 (Market Leader)",
-    "description_ko": "미국 주식 대상 스크리너 설정이다. 시가총액, 유동주식 수, 평균 거래대금, EMA 관계, ATR 및 6개월 수익률 조건으로 시장 주도주를 선별한다.",
-    "category_ko": "주식 스크리너",
+    "description_ko": "미국 주식 시장 주도주를 찾는 스크리너 설정이다. 시가총액 1억~1,000억 달러, 평균 거래량 10만 주 초과, 10·30·60일 거래대금 1,000만 달러 초과, ATR 4% 초과, 6개월 수익률 50% 초과 및 EMA 관련 조건이 표시된다.",
+    "category_ko": "미국 주식 스크리너",
     "owner_hint": "TradingView"
   },
   "codex-gpt-6.1-sol-v1:9ca84e7f3f26f8a2e45c5d643f19bc5cd83a5d74507050e66389a815c92eb2ef": {
@@ -22,8 +22,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "ML-Core_돌파(상대볼륨순)",
-    "description_ko": "미국 주식의 돌파 후보를 찾는 스크리너다. 등락률 4~30%, 상대 시간 볼륨 1.2 초과, ATR 3.5~35%, ADR 3.5% 초과와 이동평균 조건 등이 표시되어 있다.",
-    "category_ko": "주식 스크리너",
+    "description_ko": "미국 주식 돌파 후보를 찾는 스크리너 설정이다. 시가총액 5,000만~1,000억 달러, 거래대금 500만 달러 초과, 당일 변동률 4~30%, 상대 시간 볼륨 1.2 초과, ATR 3.5~35%, ADR 3.5% 초과, 6개월 수익률 30% 초과 등의 조건이 보인다.",
+    "category_ko": "미국 주식 스크리너",
     "owner_hint": "TradingView"
   },
   "codex-gpt-6.1-sol-v1:a0a9173deb43edd226e48635b767056604220cad4ce108c744bd55a4317e55c3": {
@@ -31,8 +31,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "ML-Core_ATR%순",
-    "description_ko": "미국 주식의 변동성과 모멘텀을 기준으로 선별하는 스크리너다. 시가총액 5천만~500억 달러, 평균 거래대금 600만 달러 초과, 3개월 수익률 30% 초과, ATR 4~35% 등의 조건이 보인다.",
-    "category_ko": "주식 스크리너",
+    "description_ko": "미국 주식을 ATR 비율 중심으로 선별하는 스크리너 설정이다. 시가총액 5,000만~500억 달러, 30·60일 거래대금 600만 달러 초과, ATR 4~35%, 3개월 수익률 30% 초과 및 EMA 정렬 조건이 표시된다.",
+    "category_ko": "미국 주식 스크리너",
     "owner_hint": "TradingView"
   },
   "codex-gpt-6.1-sol-v1:cce676cd145dc695d61fd0ddfa023187685d90ada4d25b0b72a446b49f2ead36": {
@@ -40,8 +40,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "한국_모멘텀 (10일 평균 거래대금 순)",
-    "description_ko": "한국 주식 모멘텀 스크리너다. 시가총액 300억 원 초과, 평균 거래대금 10억 원 초과, ATR 3.5% 초과, 6개월 수익률 50% 초과 및 EMA 조건이 설정되어 있다.",
-    "category_ko": "주식 스크리너",
+    "description_ko": "한국 모멘텀 주식을 찾는 스크리너 설정이다. 시가총액 300억 원 초과, 평균 거래량 10만 주 초과, 유동주식 100만 주 이상, 10·30·60일 거래대금 10억 원 초과, ATR 3.5% 초과, 6개월 수익률 50% 초과 및 EMA 관련 조건이 보인다.",
+    "category_ko": "한국 주식 스크리너",
     "owner_hint": "TradingView"
   },
   "codex-gpt-6.1-sol-v1:ec8995ff2947f2f45da966522b959a365ba322d37ab9b7eb3604d7662dc84251": {
@@ -49,34 +49,34 @@
     "is_github": false,
     "github_urls": [],
     "title": "와이바이오로직스 일봉 차트",
-    "description_ko": "와이바이오로직스의 일봉 캔들, 이동평균선, 거래량과 지지·저항 구간을 표시한다. 화면 가격은 33,500원이며, 우측에는 RS Rating 98과 ATR 8.73% 등의 지표가 보인다.",
-    "category_ko": "주식 차트",
-    "owner_hint": "TradingView / KRX"
+    "description_ko": "와이바이오로직스의 일봉 캔들, 이동평균선, 거래량과 지지·저항 구간을 표시한다. 화면상 가격은 33,500원이며, 상승 돌파 이후 조정과 반등 흐름이 보인다. 우측에는 ATR 8.73%, RS Rating 98 등의 지표가 있다.",
+    "category_ko": "한국 주식 차트",
+    "owner_hint": "TradingView / 와이바이오로직스"
   },
   "codex-gpt-6.1-sol-v1:2d3e2f951db9f6d45d36f0804fe2151dde6d12acbf1a3de731cb7a00ca291a4d": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
     "title": "기가비스 일봉 차트",
-    "description_ko": "기가비스의 상승 추세를 보여주는 일봉 차트다. 상승 추세선, 이동평균선, 거래량과 지지·저항 구간이 표시되어 있으며 화면 가격은 77,600원이다.",
-    "category_ko": "주식 차트",
-    "owner_hint": "TradingView / KRX"
+    "description_ko": "기가비스의 일봉 캔들, 이동평균선, 거래량과 상승 추세선을 표시한다. 화면상 가격은 77,600원이며, 급등 이후 고점 부근에서 등락하는 모습이다. 우측에는 ATR 8.33%, RS Rating 98 등의 지표가 있다.",
+    "category_ko": "한국 주식 차트",
+    "owner_hint": "TradingView / 기가비스"
   },
   "codex-gpt-6.1-sol-v1:fa59ee88e87bcdb7bb8f3cd58ec7000d11c8b404e1a61df028663784ffb16626": {
     "index": 7,
     "is_github": false,
     "github_urls": [],
-    "title": "에치에프알 일봉 차트",
-    "description_ko": "에치에프알의 급등 이후 가격 흐름을 보여주는 일봉 차트다. 화면 가격은 28,800원이며, 이동평균선과 지지·저항 구간, 거래량, ATR 8.00% 및 이동평균 대비 상승률 58.4%가 표시되어 있다.",
-    "category_ko": "주식 차트",
-    "owner_hint": "TradingView / KRX"
+    "title": "에이치이엠파마 일봉 차트",
+    "description_ko": "에이치이엠파마의 일봉 캔들, 이동평균선, 거래량과 지지·저항 구간을 표시한다. 화면상 가격은 28,800원이며, 거래량을 동반한 급등 이후 3만 원 부근에서 조정하는 흐름이다. 우측 하단에는 ATR 8.00%, 이동평균 대비 상승률 58.4%가 표시된다.",
+    "category_ko": "한국 주식 차트",
+    "owner_hint": "TradingView / 에이치이엠파마"
   },
   "codex-gpt-6.1-sol-v1:4de2b9ec445dfe0f36671a484150b766d4bce8d7187005158627d30940ea82f9": {
     "index": 0,
     "is_github": false,
     "github_urls": [],
-    "title": "알지노믹스 일봉 차트",
-    "description_ko": "알지노믹스의 가격, 이동평균선, 거래량과 상대 강도 지표를 표시한 주식 차트.",
+    "title": "알지노믹스 일봉 주가 차트",
+    "description_ko": "알지노믹스의 캔들, 이동평균선, 거래량과 상대강도 지표를 표시한 차트. 최근 상승 흐름과 224,500원 가격이 보인다.",
     "category_ko": "주식 차트",
     "owner_hint": ""
   },
@@ -84,8 +84,8 @@
     "index": 1,
     "is_github": false,
     "github_urls": [],
-    "title": "상아프론테크 일봉 차트",
-    "description_ko": "상아프론테크의 일봉과 이동평균선, 지지·저항 구간 및 거래량을 표시한 차트.",
+    "title": "상아프론테크 일봉 주가 차트",
+    "description_ko": "상아프론테크의 일봉 차트로 이동평균선, 지지·저항 구간, 거래량과 상대강도 지표를 표시한다. 표시 가격은 24,500원이다.",
     "category_ko": "주식 차트",
     "owner_hint": ""
   },
@@ -94,7 +94,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "기가비스 10분봉 돌파 및 되돌림 분석",
-    "description_ko": "기가비스의 거래량 증가를 동반한 돌파와 거래량이 감소한 되돌림을 설명하고, 지수 반등과 함께 상승하는 시나리오를 표시한 차트.",
+    "description_ko": "기가비스 10분봉에 거래량을 동반한 돌파와 거래량이 줄어드는 되돌림을 주석으로 표시했다. 지수 반등과 함께 재상승하는 흐름을 기대하는 설명이 있다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
@@ -102,8 +102,8 @@
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "기가비스 30분봉 차트",
-    "description_ko": "기가비스의 30분봉에 지지·저항 구간, 상승 추세선과 가격 움직임을 강조한 노란 선을 표시한 차트.",
+    "title": "기가비스 30분봉 주가 차트",
+    "description_ko": "기가비스 30분봉에 지지·저항 구간, 상승 추세선과 노란색 가격 경로를 표시했다. 최근 캔들이 81,500원까지 상승한 모습이다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
@@ -111,8 +111,8 @@
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "기가비스 일봉 신고가 구간 분석",
-    "description_ko": "기가비스의 장기 상승 흐름과 81,500원 가격대, 이동평균선 및 주요 지지 구간을 표시한 일봉 차트.",
+    "title": "기가비스 일봉 상승 추세 분석",
+    "description_ko": "기가비스 일봉의 장기 상승 흐름과 이동평균선, 거래량, 지지 구간을 보여준다. 표시 가격은 81,500원이며 상승 추세선이 그려져 있다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
@@ -120,8 +120,8 @@
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "에이치브이엠 다바스 박스 분석",
-    "description_ko": "에이치브이엠의 상승 흐름에 다바스 박스 이론을 적용하고, 평균 거래량 감소와 상대 강도 저점 상승을 설명한 차트.",
+    "title": "에이치브이엠 다바스 박스 이론 분석",
+    "description_ko": "에이치브이엠 일봉에 다바스 박스를 적용해 가격이 다음 박스의 하단으로 이동했다고 설명한다. 평균 거래량 감소, 큰 양봉의 거래량 증가와 상대강도 저점 상승을 강조한다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
@@ -130,8 +130,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "AI 프롬프트 기법 18선 — 실전 분류",
-    "description_ko": "AI 프롬프트 기법을 환각 통제, 논리 깊이, 편향 파괴, 실행 최적화로 분류하고 정밀 기계 작업대 형태로 시각화한 인포그래픽.",
-    "category_ko": "AI 프롬프트 인포그래픽",
+    "description_ko": "정밀 기계와 도구를 배경으로 AI 프롬프트 기법을 환각 통제, 논리 깊이, 편향 파괴, 실행 최적화로 분류한 인포그래픽이다.",
+    "category_ko": "AI 프롬프트 기법",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:a9060a261b2eab83478182920bb7808410427dc83c843f939c97440ddda74cc9": {
@@ -139,70 +139,78 @@
     "is_github": false,
     "github_urls": [],
     "title": "Claude 브랜드 데스크 이미지",
-    "description_ko": "Claude 로고가 표시된 모니터와 노트북, 머그잔이 놓인 밝은 사무 공간 이미지.",
+    "description_ko": "밝은 사무실 책상 위 모니터, 노트북과 머그잔에 Claude 로고를 배치한 이미지다.",
     "category_ko": "AI 서비스 브랜드 이미지",
     "owner_hint": "Anthropic"
   },
   "codex-gpt-6.1-sol-v1:c9cef2492422ceb4038163fc481f876722af13a6bff1f10ed4fb0fd644076a5e": {
     "index": 0,
     "is_github": true,
-    "github_urls": [],
+    "github_urls": [
+      "https://github.com/google-research/timesfm"
+    ],
     "title": "TimesFM",
-    "description_ko": "Google Research의 시계열 예측 기반 모델 TimesFM을 소개하는 README 화면. 모델 2.5의 특징, 이전 버전 설치 안내와 업데이트 내역이 보인다.",
-    "category_ko": "AI·시계열 예측",
-    "owner_hint": "Google Research"
+    "description_ko": "Google Research의 시계열 예측 기반 모델 TimesFM 저장소 안내 화면. 모델 버전과 업데이트 내역, 논문 및 체크포인트 링크를 소개한다.",
+    "category_ko": "인공지능·시계열 예측",
+    "owner_hint": "google-research"
   },
   "codex-gpt-6.1-sol-v1:3741edc45605c9e5541a5d0f70f806e80b81ffc9b4e8fe40884cec7900ae93fa": {
     "index": 1,
     "is_github": false,
     "github_urls": [],
     "title": "Claude Code for VS Code",
-    "description_ko": "VS Code 확장 마켓플레이스에서 Claude Code를 검색한 화면. Anthropic이 게시한 확장과 설치 버튼이 보인다.",
+    "description_ko": "VS Code 확장 마켓플레이스에서 Claude Code를 검색한 화면. Anthropic이 배포한 확장과 설치 버튼이 표시되어 있다.",
     "category_ko": "개발 도구·AI 코딩",
     "owner_hint": "Anthropic"
   },
   "codex-gpt-6.1-sol-v1:6ba2afddc88bb84f5cf9b0e6b7190098e20656ea7618ba440097628a6b915b22": {
     "index": 2,
     "is_github": true,
-    "github_urls": [],
-    "title": "Ollama",
-    "description_ko": "Ollama 다운로드 안내 화면. macOS, Linux, Windows 선택 항목과 터미널 설치 명령, macOS 다운로드 버튼이 보인다.",
-    "category_ko": "AI·로컬 모델 실행",
-    "owner_hint": "Ollama"
+    "github_urls": [
+      "https://github.com/ollama/ollama"
+    ],
+    "title": "Ollama 다운로드",
+    "description_ko": "Ollama의 운영체제별 설치 안내 화면. macOS가 선택되어 있으며 터미널 설치 명령과 다운로드 버튼이 보인다.",
+    "category_ko": "인공지능·로컬 모델 실행",
+    "owner_hint": "ollama"
   },
   "codex-gpt-6.1-sol-v1:5bcc14b70d0847af2e141ec028313afec4ac6c62483ea90ef41405caddfeacf1": {
     "index": 3,
     "is_github": false,
     "github_urls": [],
     "title": "그림 2.2 공매도 거래의 해부",
-    "description_ko": "주가의 고점 형성, 50일 이동평균선 부근 반등, 거래량 변화와 공매도 시점을 설명하는 도식이다.",
-    "category_ko": "금융·주식 기술적 분석",
+    "description_ko": "주가의 고점 형성, 50일 이동평균선, 거래량 변화와 공매도 시점을 설명하는 도표.",
+    "category_ko": "금융·주식 차트",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:a4fd18cb5be5ce1d6c755d3b9fc32b2cf5faeb14d751b9206e4e55ce7337ec11": {
     "index": 4,
     "is_github": true,
-    "github_urls": [],
+    "github_urls": [
+      "https://github.com/Developer-Y/math-science-video-lectures"
+    ],
     "title": "List of Science & Math courses with video lectures",
-    "description_ko": "과학·수학 동영상 강의를 모은 목록의 물리학 부분. MIT와 Caltech 강의, Leonard Susskind의 이론 물리학 강의 등이 나열되어 있다.",
+    "description_ko": "과학·수학 동영상 강의 모음의 물리학 항목. MIT, Caltech, Stanford 등의 강의 링크와 세부 과목을 나열한다.",
     "category_ko": "교육·과학·수학",
-    "owner_hint": ""
+    "owner_hint": "Developer-Y"
   },
   "codex-gpt-6.1-sol-v1:3b241c90fcf3801000b60f41d9446eb34128e6f0b15b749c85de82d19ce2b026": {
     "index": 5,
     "is_github": true,
-    "github_urls": [],
+    "github_urls": [
+      "https://github.com/public-apis/public-apis"
+    ],
     "title": "Try Public APIs for free",
-    "description_ko": "커뮤니티가 관리하는 Public APIs 저장소 소개 화면. APILayer 홍보와 IP 위치, 주가, 날씨, 환율 등 API 목록이 보인다.",
+    "description_ko": "Public APIs 저장소의 소개 화면. APILayer 안내와 함께 위치, 주식, 날씨, 환율 등 공개 API 목록을 표로 제공한다.",
     "category_ko": "개발 자료·공개 API",
-    "owner_hint": "Public APIs 커뮤니티·APILayer"
+    "owner_hint": "public-apis / APILayer"
   },
   "codex-gpt-6.1-sol-v1:f49369cf27e41dcb41882d580c1c0be94a44b07988fd7625f8082d1349392ed7": {
     "index": 6,
     "is_github": true,
     "github_urls": [],
     "title": "rhwp 테스트 2: data-hwp-* 프로토콜",
-    "description_ko": "로컬 브라우저에서 실행 중인 rhwp 테스트 페이지. data-hwp 속성이 있는 문서 링크의 배지와 제목, 형식, 페이지 수 등 메타데이터 툴팁을 확인하는 화면이다.",
+    "description_ko": "로컬 브라우저에서 실행 중인 rhwp 프로젝트 테스트 화면. 한글 문서 링크의 배지와 메타데이터 툴팁 표시를 확인한다.",
     "category_ko": "개발 도구·한글 문서",
     "owner_hint": "rhwp"
   },
@@ -210,9 +218,9 @@
     "index": 0,
     "is_github": false,
     "github_urls": [],
-    "title": "Image Arena 텍스트 이미지 모델 평균 승률",
-    "description_ko": "Arena AI의 이미지 생성 모델 평균 승률 비교 차트. GPT Image 2 (Medium)가 93%로 가장 높으며 Nano Banana 2가 67%, Nano Banana Pro가 64%로 뒤를 잇는다. 무승부는 제외한 수치다.",
-    "category_ko": "AI 이미지 생성 모델 벤치마크",
+    "title": "Image Arena 텍스트 이미지 생성 모델 평균 승률",
+    "description_ko": "Arena AI의 이미지 생성 모델 평균 승률 비교 차트. GPT Image 2 (Medium)가 93%로 가장 높고 Nano Banana 2가 67%로 뒤를 잇는다. 동률은 제외한 수치다.",
+    "category_ko": "AI 모델 성능 비교",
     "owner_hint": "Arena AI"
   },
   "codex-gpt-6.1-sol-v1:d40dc3985760cd6fb27d5302c041ade5e794aa26dea130f9a23daf4665cadc5c": {
@@ -220,8 +228,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Text-to-Image Arena: GPT-Image-2 1위",
-    "description_ko": "텍스트 이미지 생성 모델의 Arena 점수 순위. GPT Image 2 (Medium)가 1,512점으로 1위이며 Nano Banana 2가 1,271점, Nano Banana Pro (2k)가 1,244점으로 표시된다.",
-    "category_ko": "AI 이미지 생성 모델 순위",
+    "description_ko": "텍스트 이미지 생성 모델의 Arena 점수 순위. GPT Image 2 (Medium)가 1,512점으로 1위이며 Nano Banana 2가 1,271점으로 2위다.",
+    "category_ko": "AI 모델 순위",
     "owner_hint": "Arena AI"
   },
   "codex-gpt-6.1-sol-v1:2f6dbac4998d4f687f3954b8987240c34b92b4d5785bdd2023e8ed748b4bee68": {
@@ -229,16 +237,16 @@
     "is_github": false,
     "github_urls": [],
     "title": "노란 우비를 입은 노년 남성의 해상 인물 사진",
-    "description_ko": "흐린 바다와 선박 구조물을 배경으로 노란 우비를 입은 회색 머리와 수염의 남성을 가까이 촬영한 이미지. 얼굴의 주름과 우비의 마모 흔적이 세밀하게 표현되어 있다.",
-    "category_ko": "인물 이미지",
+    "description_ko": "흐린 바다와 선박 설비를 배경으로 노란 우비를 입은 회색 머리와 수염의 노년 남성을 가까이 촬영한 이미지.",
+    "category_ko": "인물 사진",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:0ff810128c9a0745d26c08609225ed3b98f6d26bb4de045ea22094320e6f9b36": {
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "알멕 일봉 차트와 조정 후 상승 시나리오",
-    "description_ko": "알멕의 일봉 캔들, 이동평균선, 거래량과 보조지표를 표시한 주식 차트. 표시 가격은 89,800원이며 노란 화살표로 지지선 부근까지 조정한 뒤 상승하는 예상 경로를 그렸다.",
+    "title": "알멕 일봉 기술적 분석 차트",
+    "description_ko": "알멕의 일봉 캔들, 이동평균선, 거래량과 보조지표를 표시한 차트. 노란 화살표로 주가가 지지선 부근까지 조정된 뒤 상승하는 예상 경로를 그렸다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
@@ -246,8 +254,8 @@
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "VCP 3단계 변동성 수축 패턴",
-    "description_ko": "선행 상승 이후 조정 폭이 약 20%, 12%, 5%로 줄어드는 VCP 개념도. 마지막 수축 구간의 좁은 캔들, 거래량 감소, 피벗 돌파와 진입 위치를 표시한다.",
+    "title": "VCP · 3T contraction pattern",
+    "description_ko": "변동성 축소 패턴을 설명하는 도식. 선행 상승 이후 조정 폭이 약 20%, 12%, 5%로 줄어드는 세 구간과 거래량 감소, 피벗 돌파 진입 지점을 표시했다.",
     "category_ko": "주식 차트 패턴 교육",
     "owner_hint": ""
   },
@@ -256,7 +264,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "팔란티어 테크놀로지스 월봉 차트",
-    "description_ko": "한국어 증권 앱에 표시된 팔란티어 월봉 차트. 가격은 133.0800, 하락률은 2.08%이며 이동평균선, 거래량, ADX 지표와 2025년 11월 고점 207.5200이 보인다.",
+    "description_ko": "한국어 증권 앱의 팔란티어 월봉 화면. 표시 가격은 133.0800이며 2.08% 하락 상태다. 이동평균선, 거래량, ADX 계열 지표와 2025년 11월 고점 207.5200이 보인다.",
     "category_ko": "주식 시세 및 기술적 분석",
     "owner_hint": ""
   },
@@ -264,8 +272,8 @@
     "index": 6,
     "is_github": false,
     "github_urls": [],
-    "title": "팔란티어 PLTR 일봉 상승 전망 이미지",
-    "description_ko": "팔란티어 로고와 왕관을 쓴 악어 그림을 배치한 PLTR 일봉 차트. 가격대 약 140~146 부근을 원으로 강조하고 큰 초록색 화살표로 상승 전망을 표현했다.",
+    "title": "$PLTR 일봉 상승 전망 차트",
+    "description_ko": "팔란티어 일봉에 볼린저 밴드와 가격선을 표시한 이미지. 최근 캔들 부근을 주황색 원으로 강조하고 녹색 상승 화살표, 팔란티어 로고와 악어 캐릭터 이미지를 배치했다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": "The Crocodile King"
   },
@@ -273,8 +281,8 @@
     "index": 0,
     "is_github": false,
     "github_urls": [],
-    "title": "알멕 일봉 차트와 상승 추세 분석",
-    "description_ko": "알멕의 주가와 거래량, 이동평균선을 표시한 차트. 수요 확인 구간과 저점·고점 상승, 상승 잉태 패턴을 주석으로 강조했다.",
+    "title": "알멕 주가 일봉 차트와 상승 패턴 분석",
+    "description_ko": "알멕의 일봉 차트에 이동평균선과 거래량을 표시하고, 수요 확인 구간과 상승 잉태 패턴, 저점·고점 상승을 주석으로 설명한 화면.",
     "category_ko": "주식·기술적 분석",
     "owner_hint": ""
   },
@@ -283,7 +291,7 @@
     "is_github": true,
     "github_urls": [],
     "title": "DSVPN — Dead Simple VPN",
-    "description_ko": "GitHub 저장소의 README 화면. TCP 기반의 경량 VPN인 DSVPN을 소개하며 현대적 암호화, 일정한 메모리 사용량, 외부 의존성 없는 작은 코드베이스와 간단한 설정을 특징으로 설명한다.",
+    "description_ko": "GitHub의 DSVPN README 화면. MIT 라이선스와 CI·CodeQL 통과 배지가 보이며, TCP 기반 연결, 현대적 암호화, 작은 메모리 사용량과 간단한 설정을 특징으로 소개한다.",
     "category_ko": "오픈소스·VPN",
     "owner_hint": ""
   },
@@ -291,26 +299,26 @@
     "index": 2,
     "is_github": false,
     "github_urls": [],
-    "title": "『초수익 성장투자』 독서 요약 일부",
-    "description_ko": "마크 미너비니의 투자서 요약 이미지 일부. 펀더멘털과 기관 수급, VCP 패턴, 돌파 매수, 손절 및 추세 확장 과정을 도표와 메모로 정리했다.",
-    "category_ko": "독서 노트·주식 투자",
-    "owner_hint": "저자: Mark Minervini"
+    "title": "『초수익 성장투자』 핵심 요약과 VCP 패턴",
+    "description_ko": "마크 미너비니의 투자서 내용을 정리한 독서 노트 일부. 성장주 선정, 변동성 수축 후 돌파 매수, 손실 제한과 추세 보유 원칙을 도표와 차트로 설명한다.",
+    "category_ko": "투자·독서 노트",
+    "owner_hint": "저자 Mark Minervini"
   },
   "codex-gpt-6.1-sol-v1:5005d05862257690ba416dc68f7f1a483b7423c7a1a788150a541f7e6e0b9d3e": {
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "『초수익 성장투자』 핵심 개념과 투자 프로세스",
-    "description_ko": "2026년 5월 21일자로 작성된 독서 정리 자료. SEPA 전략, VCP 패턴, 상대적 강도, 리스크 관리, 추세 템플릿, 포지션 사이징을 설명하고 차트 예시와 실천 체크리스트를 담았다.",
-    "category_ko": "독서 노트·주식 투자",
-    "owner_hint": "저자: Mark Minervini"
+    "title": "『초수익 성장투자』 투자 원칙 요약 인포그래픽",
+    "description_ko": "SEPA 전략, VCP 패턴, 상대적 강도, 리스크 관리, 추세 템플릿과 포지션 사이징을 정리한 한 장짜리 독서 노트. 매매 과정, 돌파·손절 예시와 후속 학습 체크리스트가 포함되어 있다.",
+    "category_ko": "투자·독서 노트",
+    "owner_hint": "저자 Mark Minervini"
   },
   "codex-gpt-6.1-sol-v1:19d2d0839a7c0920e9736b30fca2b4dde48508ed0a150de90adcb536d4da092c": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "Peter Steinberger의 에이전트 스킬 작성 조언",
-    "description_ko": "Peter Steinberger의 게시물을 한국어로 번역한 화면. 스킬 설명을 간결하고 토큰 효율적으로 작성하고 문법 제약을 느슨하게 하라는 의견과 장황한 스킬을 찾아내는 스킬을 만들었다는 내용을 담았다.",
+    "title": "Peter Steinberger의 간결한 에이전트 스킬 작성에 관한 게시물",
+    "description_ko": "Peter Steinberger의 X 게시물 번역 화면. 스킬 설명이 길면 컨텍스트를 낭비한다며 토큰을 효율적으로 사용하는 간결한 스킬 작성을 권하는 내용이다.",
     "category_ko": "AI·에이전트 스킬",
     "owner_hint": "Peter Steinberger (@steipete)"
   },
@@ -318,8 +326,8 @@
     "index": 0,
     "is_github": false,
     "github_urls": [],
-    "title": "SKEW/VIX 비율 일봉 차트",
-    "description_ko": "SKEW/VIX 비율의 캔들, 이동평균선, 지지·저항 구간을 표시한 차트. 비율 상승을 하방 위험 헤지 수요와 연결하는 한국어 주석이 있다.",
+    "title": "SKEW/VIX 일봉 차트",
+    "description_ko": "SKEW/VIX 비율과 이동평균선, 지지·저항 구간을 표시한 차트. 비율 상승을 하방 위험에 대한 헤지 수요로 해석하는 설명이 있다.",
     "category_ko": "금융 차트",
     "owner_hint": "TradingView / CBOE"
   },
@@ -327,8 +335,8 @@
     "index": 1,
     "is_github": false,
     "github_urls": [],
-    "title": "VVIX/VIX 비율 일봉 차트",
-    "description_ko": "VVIX/VIX 비율과 이동평균선, 지지·저항 구간을 보여준다. 비율 하락의 의미와 경계 수준 진입 시 헤지에 관한 한국어 주석이 있다.",
+    "title": "VVIX/VIX 일봉 차트",
+    "description_ko": "VVIX/VIX 비율의 추이와 지지·저항 구간을 표시한 차트. 비율 하락의 의미와 헤지 시작 수준에 관한 설명이 있다.",
     "category_ko": "금융 차트",
     "owner_hint": "TradingView / CBOE"
   },
@@ -336,9 +344,9 @@
     "index": 2,
     "is_github": false,
     "github_urls": [],
-    "title": "ICE BofA 미국 하이일드 옵션조정 스프레드",
-    "description_ko": "미국 하이일드 채권의 옵션조정 스프레드 추이를 표시한 일봉 차트. 최근 값은 2.71%이며 여러 이동평균선과 가격 구간이 겹쳐 있다.",
-    "category_ko": "금융 차트",
+    "title": "ICE BofA US High Yield Index Option-Adjusted Spread",
+    "description_ko": "미국 하이일드 채권의 옵션조정 스프레드 일봉 차트. 표시값은 2.71%이며 이동평균선과 지지·저항 영역이 보인다.",
+    "category_ko": "채권 스프레드 차트",
     "owner_hint": "TradingView / ICE BofA"
   },
   "codex-gpt-6.1-sol-v1:e84a90784048321c727d5b24176a94df5678bba95bd06d04991cbb8feafbda69": {
@@ -346,34 +354,34 @@
     "is_github": false,
     "github_urls": [],
     "title": "Invesco Senior Loan ETF 일봉 차트",
-    "description_ko": "선순위 대출 ETF의 가격, 이동평균선과 거래량을 보여준다. 최근 가격은 20.51달러이며 지지·저항 구간이 표시되어 있다.",
-    "category_ko": "금융 차트",
+    "description_ko": "선순위 대출 ETF의 가격, 거래량, 이동평균선과 지지·저항 구간을 표시한 차트. 표시 가격은 20.51달러다.",
+    "category_ko": "ETF 차트",
     "owner_hint": "TradingView / Invesco"
   },
   "codex-gpt-6.1-sol-v1:f5751e440069a2e3b94c1a1901ed15c57a97c370dc71961d7a9694d256457fb1": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "iShares 투자등급 회사채 ETF 일봉 차트",
-    "description_ko": "투자등급 회사채 ETF의 가격과 거래량 차트. 최근 급락 후 반등 구간을 노란 사각형으로 강조하고 회사채 상승에 관한 한국어 주석을 덧붙였다.",
-    "category_ko": "금융 차트",
+    "title": "iShares iBoxx $ Investment Grade Corporate Bond ETF 일봉 차트",
+    "description_ko": "투자등급 회사채 ETF의 가격과 거래량 차트. 최근 반등 구간을 노란 상자로 강조하고 회사채 상승이 시장 참여 종목 확대를 가져왔다는 주석을 표시했다.",
+    "category_ko": "ETF 차트",
     "owner_hint": "TradingView / iShares"
   },
   "codex-gpt-6.1-sol-v1:cd5c1809e3d82e18beaa8d8f3e53902553ebe6e987829c0863b2fe307ed3d32e": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "iShares 하이일드 회사채 ETF 일봉 차트",
-    "description_ko": "하이일드 회사채 ETF의 캔들, 이동평균선, 거래량 및 지지 구간을 표시한 차트. 최근 가격은 79.68달러로 표시된다.",
-    "category_ko": "금융 차트",
+    "title": "iShares iBoxx $ High Yield Corporate Bond ETF 일봉 차트",
+    "description_ko": "하이일드 회사채 ETF의 가격, 거래량, 이동평균선과 여러 지지 구간을 표시한 차트. 표시 가격은 79.68달러다.",
+    "category_ko": "ETF 차트",
     "owner_hint": "TradingView / iShares"
   },
   "codex-gpt-6.1-sol-v1:6f9b035dd627de0efda36ccfaa7e6156c7b9162d065ee2ae13b01d6cc5723a39": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
-    "title": "OpenAI WebSocket 모드 문서 주소",
-    "description_ko": "브라우저 주소창에 r.jina.ai를 경유한 developers.openai.com/api/docs/guides/websocket-mode 주소가 표시되어 있다. 문서 본문은 보이지 않는다.",
+    "title": "OpenAI API WebSocket mode 문서 주소",
+    "description_ko": "브라우저 주소창에 r.jina.ai를 경유하는 OpenAI 개발자 문서의 WebSocket mode 가이드 주소가 표시되어 있다.",
     "category_ko": "개발 문서 주소",
     "owner_hint": "OpenAI / Jina AI"
   },
@@ -381,17 +389,17 @@
     "index": 7,
     "is_github": false,
     "github_urls": [],
-    "title": "메타 장기 주가 차트와 PLTR 비교 주석",
-    "description_ko": "메타의 장기 월봉 가격, 거래량 및 ADX 지표 화면. 과거 하락 구간을 노란 사각형으로 강조하고 PLTR가 현재 유사한 모습을 진행 중이라는 주석을 표시했다.",
-    "category_ko": "금융 차트",
-    "owner_hint": "Meta Platforms"
+    "title": "메타 플랫폼스 장기 주가 차트와 PLTR 비교 주석",
+    "description_ko": "메타 플랫폼스의 장기 주가, 거래량 및 ADX·방향성 지표 차트. 2021~2022년 하락 구간을 노란 상자로 강조하고 PLTR의 현재 모습과 비교하는 주석이 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "META / 차트 작성자 미상"
   },
   "codex-gpt-6.1-sol-v1:39f178af9c90e81bb94ffd5086843f9afe65fe291e3377f171fc19511ef0caa5": {
     "index": 0,
     "is_github": false,
     "github_urls": [],
     "title": "팔란티어(PLTR) 월봉 차트",
-    "description_ko": "팔란티어의 장기 주가 흐름과 이동평균선, 거래량, ADX 지표를 보여주는 차트. 급등 이후 큰 폭의 조정이 나타난다.",
+    "description_ko": "팔란티어의 월봉 가격, 이동평균선, 거래량과 ADX 지표를 표시한 증권 프로그램 화면이다. 급등 이후 큰 폭으로 조정받는 흐름이 보인다.",
     "category_ko": "주식 차트",
     "owner_hint": ""
   },
@@ -399,17 +407,17 @@
     "index": 1,
     "is_github": true,
     "github_urls": [],
-    "title": "AI Hedge Fund — 오픈소스 AI 투자 분석 프로젝트",
-    "description_ko": "Evan Luthra가 공유한 오픈소스 AI 헤지펀드 소개 게시물. 기업 조사와 정량 모델 기반 매매, 의사결정 근거 제공을 설명하며 실적 발표 후 주가 흐름을 활용한 백테스트 화면이 포함되어 있다. GitHub 주소는 보이지 않는다.",
+    "title": "오픈소스 AI 헤지펀드 및 PEAD 백테스트 소개",
+    "description_ko": "Evan Luthra가 오픈소스 AI 헤지펀드를 소개한 X 게시물이다. 기업 분석과 거래 판단을 설명하며, 실적 발표 후 주가 드리프트 전략의 백테스트 수익률·샤프 비율·최대 낙폭·거래 내역 화면을 첨부했다. GitHub 주소나 정확한 저장소 이름은 보이지 않는다.",
     "category_ko": "오픈소스 AI 금융 도구",
-    "owner_hint": "Virat Singh / virattt"
+    "owner_hint": "Evan Luthra(@EvanLuthra), 원본 영상: Virat Singh(@virattt)"
   },
   "codex-gpt-6.1-sol-v1:5bd87f93e303a62003dffa31d4eba13eec60fe9db24fd8f529a6d22df3cf1a6e": {
     "index": 2,
     "is_github": false,
     "github_urls": [],
-    "title": "종목명 미표시 주가 차트와 반등 시나리오",
-    "description_ko": "급락한 주가의 지지·저항 구간과 이동평균선을 표시한 차트. 주황색 화살표는 하단 지지 영역을 확인한 뒤 반등하는 가상 경로를 나타낸다.",
+    "title": "종목 미상의 급락 후 반등 시나리오 차트",
+    "description_ko": "이동평균선과 지지·저항 구간을 표시한 주가 차트다. 주가가 급락해 하단 지지 영역에 접근했으며, 주황색 화살표로 지지 확인 후 상승하는 예상 경로를 그렸다.",
     "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
@@ -418,115 +426,115 @@
     "is_github": false,
     "github_urls": [],
     "title": "코스피 일봉 급락 및 지지 구간 분석",
-    "description_ko": "2026년 7월 29일 표시된 코스피 일봉 차트. 종가 5,663.24와 급락 흐름, 이동평균선, 지지·저항 영역 및 하단 주황색 박스가 표시되어 있다.",
+    "description_ko": "TradingView 코스피 일봉 차트다. 고점 이후 하락하는 흐름과 약 5,400~5,900포인트의 주요 구간을 강조하고, 이동평균선과 여러 지지·저항 영역을 표시했다.",
     "category_ko": "주가지수 기술적 분석",
-    "owner_hint": "tmmrwseoul / TradingView"
+    "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:13dab202025839c6fc26218a1932733c93607cf809fa64be7e1ea064d269a987": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "코스피 주봉과 피보나치 되돌림 분석",
-    "description_ko": "코스피 장기 상승 이후 조정 흐름을 보여주는 주봉 차트. 피보나치 되돌림 수준과 이동평균선, 지지·저항 구간이 표시되어 있다.",
+    "title": "코스피 주봉 피보나치 되돌림 분석",
+    "description_ko": "TradingView 코스피 주봉 차트에 피보나치 되돌림 수준과 장기 이동평균선, 지지·저항 구간을 표시했다. 급등 후 조정 국면에서 약 5,492포인트의 50% 되돌림 수준 등을 제시한다.",
     "category_ko": "주가지수 기술적 분석",
-    "owner_hint": "tmmrwseoul / TradingView"
+    "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:6edf69c462ca2acd95eccf785f515bb1eca4b5a143e6d890e4dd6b7951816a2b": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "SK하이닉스 일봉 하락 파동 및 지지 구간 분석",
-    "description_ko": "SK하이닉스의 급락과 거래량 증가를 보여주는 일봉 차트. 주황색 파동선과 하락폭 측정, 흰색 하단 지지 박스 및 지지·저항 영역이 표시되어 있다.",
+    "title": "SK하이닉스 일봉 하락 파동 및 목표 구간 분석",
+    "description_ko": "TradingView SK하이닉스 일봉 차트다. 주황색 선으로 상승·하락 파동과 하락 폭을 비교하고, 약 116만~134만 원의 하단 구간을 흰색 상자로 강조했다. 거래량과 이동평균선도 표시되어 있다.",
     "category_ko": "주식 기술적 분석",
-    "owner_hint": "tmmrwseoul / TradingView"
+    "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:23a9d3c49d404dc3c2e99853143c6c3a88c7e548e27625df1edbc41f9e60d42c": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
-    "title": "SK하이닉스 일봉 급락과 하단 지지 영역",
-    "description_ko": "SK하이닉스 종가 1,401,000원과 급락 흐름을 보여주는 일봉 차트. 하락 곡선, 이동평균선, 거래량 및 약 116만~133만 원의 흰색 지지 박스가 표시되어 있다.",
+    "title": "SK하이닉스 일봉 급락 및 하단 지지 영역",
+    "description_ko": "TradingView SK하이닉스 일봉 차트다. 고점 이후 하락 곡선과 최근 급락을 강조하고, 약 116만~134만 원의 지지 후보 영역을 흰색 상자로 표시했다. 이동평균선과 거래량, 매물 구간이 함께 보인다.",
     "category_ko": "주식 기술적 분석",
-    "owner_hint": "tmmrwseoul / TradingView"
+    "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:23ff15774bff0e73d8069dd92de1d96fafc3771fde86be24e98c2494ec2affe7": {
     "index": 0,
     "is_github": false,
     "github_urls": [],
     "title": "SK하이닉스 15분봉 차트",
-    "description_ko": "TradingView의 SK하이닉스 15분봉 차트. 급락 후 반등하는 캔들, 이동평균선, 지지·저항 구간과 거래량이 표시되어 있다.",
+    "description_ko": "TradingView의 SK하이닉스 차트로, 급락 이후 140만 원 부근에서 반등하는 흐름과 이동평균선, 지지·저항 구간, 거래량을 표시한다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:9ade67cc618210e3a9de98ee5890fd8645ffa4570abad863754b1b0ef44f5a9e": {
     "index": 1,
     "is_github": false,
     "github_urls": [],
     "title": "효성중공업 월봉 차트",
-    "description_ko": "TradingView의 효성중공업 월봉 차트. 장기 급등 이후 큰 하락이 나타났으며, 주황색 지지 구간과 예상 반등 경로가 그려져 있다.",
+    "description_ko": "장기 급등 이후 큰 월봉 음봉이 발생한 효성중공업 차트다. 200만 원 부근의 지지 영역과 향후 반등을 가정한 주황색 경로가 표시되어 있다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:51696dc72dca59210ce9065ff86d240675acdf9efaf53b5b74b3b9ead2174618": {
     "index": 2,
     "is_github": false,
     "github_urls": [],
     "title": "효성중공업 주봉 차트",
-    "description_ko": "효성중공업 주봉 차트. 고점 이후 하락 흐름을 흰 곡선으로 표시하고, 약 190만~210만 원대 지지 구간에서 반등하는 가상 경로를 주황색으로 그렸다.",
+    "description_ko": "효성중공업의 고점 이후 하락 흐름을 보여준다. 200만 원 부근 지지 구간, 상단 저항 영역, 반등 예상 경로가 그려져 있다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:85618a20d58fe86e51ad89d3120f7a7c2e662b10884ec41b969e0073c4a70416": {
     "index": 3,
     "is_github": false,
     "github_urls": [],
     "title": "효성중공업 일봉 차트",
-    "description_ko": "효성중공업 일봉 차트. 급락한 주가와 이동평균선, 여러 지지·저항 구간이 표시되어 있으며, 하단 지지 구간을 거쳐 상승하는 예상 경로가 그려져 있다.",
+    "description_ko": "효성중공업의 일봉 하락 추세와 거래량을 표시한다. 약 190만~210만 원 구간이 강조되어 있으며, 해당 구간에서 상승하는 가상의 경로가 표시되어 있다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:e9d7cab7bcb8d15d7faa6450381bde1a48c4ba449c4e4cd3555b603059f1a7ef": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
     "title": "효성중공업 15분봉 차트",
-    "description_ko": "효성중공업 15분봉 차트. 약 188만 원 부근까지 하락한 뒤 200만 원 부근으로 반등한 흐름과 거래량, 이동평균선, 지지·저항 영역을 보여준다.",
+    "description_ko": "효성중공업이 약 188만 원까지 하락한 뒤 200만 원 부근으로 반등한 장중 차트다. 이동평균선과 여러 지지·저항 영역, 거래량이 표시되어 있다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:6a59c5bf701605ddda6991cb9f0a991ef3a5a08203b1a0d0fb8e3a3a7d626915": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
     "title": "삼성전자 주봉 차트",
-    "description_ko": "TradingView의 삼성전자 주봉 차트. 상승 이후 급격한 조정이 나타나며, 고점부터 이어지는 흰 곡선과 수평 가격선, 매물 구간 및 거래량이 표시되어 있다.",
+    "description_ko": "삼성전자의 장기 상승 이후 급격한 조정을 보여주는 주봉 차트다. 둥근 고점 형태를 강조한 흰색 곡선과 수평 가격선, 이동평균선이 표시되어 있다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:1938c65006a8e89965927ab11c790029cdb8d722857d5e0fb062c5ab9eaf3b17": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
     "title": "삼성전자 일봉 차트",
-    "description_ko": "삼성전자 일봉 차트. 고점 이후 하락해 208,500원으로 표시된 주가와 긴 아래꼬리, 증가한 거래량, 이동평균선 및 지지·저항 구간이 보인다.",
+    "description_ko": "삼성전자가 고점에서 하락해 20만8500원에 도달한 일봉 차트다. 최근 급락과 거래량 증가, 하단 지지 영역 및 상단 저항 영역을 보여준다.",
     "category_ko": "주식 차트",
-    "owner_hint": "tmmrwseoul"
+    "owner_hint": "tmmrwseoul / TradingView"
   },
   "codex-gpt-6.1-sol-v1:934126fb5adb94cd3fdb0e1c336dd485a210cd99a41df8076f3e65d3eb37eac5": {
     "index": 7,
     "is_github": false,
     "github_urls": [],
-    "title": "코스피200 선물 150분봉 차트",
-    "description_ko": "국내 거래 프로그램의 선물옵션 차트. 하락 채널과 수평 가격선, 저점 이후 반등 구간에 빨간 화살표와 파란 원이 그려져 있으며, 하단에는 미결제약정 지표가 표시되어 있다.",
-    "category_ko": "선물·옵션 차트",
-    "owner_hint": ""
+    "title": "코스피200 선물 150분봉 기술적 분석",
+    "description_ko": "선물옵션 차트 화면에 하락 채널과 수평 기준선, 저점 및 반등 구간을 표시한 원과 화살표가 그려져 있다. 하단에는 미결제약정과 미결제증감 지표가 표시되어 있다.",
+    "category_ko": "선물 차트",
+    "owner_hint": "화면 상단 m 로고 / 작성자 미상"
   },
   "codex-gpt-6.1-sol-v1:343432618e33418feb577bf303aa5059506bf3a827f3121b117040b3fd65d888": {
     "index": 0,
     "is_github": false,
     "github_urls": [],
     "title": "선물 가격과 미결제약정 변화 분석",
-    "description_ko": "선물 가격의 30분봉 차트와 미결제약정 및 증감 지표를 표시한 화면이다. 가격 하락 구간과 미결제약정 변화가 여러 색의 원으로 강조되어 있다.",
+    "description_ko": "선물 30분봉 가격 차트와 미결제약정 및 증감 지표 화면이다. 가격 하락 구간과 미결제약정 증가 구간에 색상별 원이 표시되어 있다.",
     "category_ko": "금융 차트",
     "owner_hint": ""
   },
@@ -535,16 +543,16 @@
     "is_github": false,
     "github_urls": [],
     "title": "선물 투자자별 일별 매매 동향",
-    "description_ko": "외국인, 개인, 기관과 금융투자·보험·투신 등 세부 투자 주체별 선물 매매 금액을 날짜별로 정리한 표이다.",
-    "category_ko": "금융 수급 데이터",
+    "description_ko": "외국인, 개인, 기관과 금융투자·보험·투신 등 투자 주체별 선물 매매 동향을 날짜별로 나타낸 표이다.",
+    "category_ko": "금융 데이터",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:a1cc6cecf12077588a8b18e4748a497ada56631cf7bff69da8ffb69642c6c620": {
     "index": 2,
     "is_github": false,
     "github_urls": [],
-    "title": "선물 20분봉 및 미결제약정 차트",
-    "description_ko": "선물 가격의 급락과 반등을 보여주는 20분봉 차트이다. 두 개의 파란 수평선이 가격대를 표시하며, 아래에는 미결제약정과 증감 지표가 있다.",
+    "title": "선물 20분봉과 미결제약정",
+    "description_ko": "선물 가격의 급락과 반등을 보여주는 20분봉 차트이다. 958.23과 937.88에 수평선이 표시되어 있으며 하단에는 미결제약정과 증감 지표가 있다.",
     "category_ko": "금융 차트",
     "owner_hint": ""
   },
@@ -553,7 +561,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "TSLA - Options Volatility Skew - 08/07/26 (6 DTE)",
-    "description_ko": "테슬라의 만기까지 6일 남은 옵션에서 행사가별 콜·풋 내재변동성을 비교한 그래프이다. 최근 가격은 311.21로 표시되어 있다.",
+    "description_ko": "만기까지 6일 남은 테슬라 옵션의 행사가별 콜·풋 변동성 그래프이다. 최근 주가는 311.21로 표시되어 있다.",
     "category_ko": "옵션 변동성 차트",
     "owner_hint": ""
   },
@@ -562,7 +570,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "TSLA - Options Volatility Skew - 12/15/28 (867 DTE)",
-    "description_ko": "테슬라의 만기까지 867일 남은 장기 옵션에서 행사가별 콜·풋 내재변동성을 비교한 그래프이다. 콜 변동성이 풋보다 높고 두 곡선 모두 대체로 우하향한다.",
+    "description_ko": "만기까지 867일 남은 테슬라 옵션의 행사가별 콜·풋 변동성 그래프이다. 콜 변동성이 풋보다 높으며 두 곡선 모두 행사가가 높아질수록 대체로 낮아진다.",
     "category_ko": "옵션 변동성 차트",
     "owner_hint": ""
   },
@@ -570,8 +578,8 @@
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "머리 위로 하트를 만드는 정장 남성 일러스트",
-    "description_ko": "정장을 입은 남성이 양손으로 머리 위에 하트 모양을 만드는 애니메이션풍 그림이다. 눈에서는 밝은 황금빛이 뻗어 나온다.",
+    "title": "머리 위로 하트를 만드는 정장 차림 인물",
+    "description_ko": "정장을 입은 남성이 양팔을 들어 머리 위로 하트 모양을 만들고 있다. 눈에서 밝은 빛이 나오는 애니메이션풍 이미지이다.",
     "category_ko": "일러스트·밈",
     "owner_hint": ""
   },
@@ -580,8 +588,8 @@
     "is_github": true,
     "github_urls": [],
     "title": "Moli Browser",
-    "description_ko": "AI 에이전트를 위한 오픈소스 브라우저 프로젝트의 소개 이미지이다. 초록색 꽃 로고와 함께 구조 우선, 필요시 픽셀 제공이라는 문구가 표시되어 있다.",
-    "category_ko": "오픈소스 브라우저",
+    "description_ko": "AI 에이전트를 위한 오픈소스 브라우저 프로젝트 소개 이미지이다. 꽃과 초록색 원형 로고, 'Structure first. Pixels on demand.'라는 문구가 표시되어 있다.",
+    "category_ko": "오픈소스·AI 브라우저",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:31d64900e6b07949175dcbc465104466a003d976026416e4fda68161a0943188": {
@@ -589,7 +597,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "OpenAI · SB Energy · NVIDIA",
-    "description_ko": "검은 배경에 OpenAI, SB Energy, NVIDIA 로고가 나란히 표시된 이미지.",
+    "description_ko": "검은 배경 위에 OpenAI, SB Energy, NVIDIA의 로고가 나란히 배치된 이미지.",
     "category_ko": "기업·브랜드",
     "owner_hint": "OpenAI, SB Energy, NVIDIA"
   },
@@ -598,8 +606,8 @@
     "is_github": true,
     "github_urls": [],
     "title": "Public APIs",
-    "description_ko": "공개 API 모음의 GitHub README로, 참여 안내와 동물, 인증, 달력, 개발 등 분야별 색인을 보여준다.",
-    "category_ko": "개발·공개 API 모음",
+    "description_ko": "공개 API 목록 저장소의 한국어 README 화면. 기여 안내와 동물, 인증, 블록체인, 달력, 개발 등 분야별 색인이 보인다.",
+    "category_ko": "개발·API 모음",
     "owner_hint": "public-apis"
   },
   "codex-gpt-6.1-sol-v1:4ec068894cc46ba1d2fd1b575861146091cdb261add6065551f2e3c40962d4f5": {
@@ -607,7 +615,7 @@
     "is_github": true,
     "github_urls": [],
     "title": "Public APIs — 달력",
-    "description_ko": "공개 API 모음의 달력 분야 표로, 공휴일과 캘린더 API의 설명, 인증 방식, HTTPS 및 CORS 지원 여부를 정리한다.",
+    "description_ko": "공개 API 목록의 달력 항목. 공휴일과 일정 관련 API를 설명, 인증 방식, HTTPS 및 CORS 지원 여부로 비교한다.",
     "category_ko": "개발·달력 API",
     "owner_hint": "public-apis"
   },
@@ -615,26 +623,26 @@
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "힌덴부르크 오멘과 NYSE A/D 라인",
-    "description_ko": "힌덴부르크 오멘 발생 시 상승·하락 종목 누적선으로 확인해야 한다는 주장을 담은 X 게시물. NYSE A/D 라인의 신고점과 약세 다이버전스를 언급한다.",
-    "category_ko": "금융·시장 기술적 분석",
-    "owner_hint": "Adithia Kusno (@AdithiaKusno)"
+    "title": "Hindenburg Omen과 NYSE A/D Line",
+    "description_ko": "힌덴부르크 오멘 신호를 NYSE 상승·하락선으로 확인하라는 X 게시물. 상승·하락선의 신고가와 부정적 다이버전스를 언급하며 다른 시장 분석 게시물을 인용한다.",
+    "category_ko": "금융·시장 분석",
+    "owner_hint": "@AdithiaKusno"
   },
   "codex-gpt-6.1-sol-v1:71e3f928f90da0f4aedf46933718b9c82da725a05f584915d519e89aa3837979": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "Claude 대화 화면",
-    "description_ko": "Claude 모바일 대화 화면으로, 입력창에 /limit-reset이 작성되어 있고 모델 선택 영역에는 'Opus 5 최대'와 경고 아이콘이 표시되어 있다.",
+    "title": "Claude 채팅 입력 화면",
+    "description_ko": "Claude 로고와 '달빛 아래 대화할까요?' 문구가 보이는 모바일 채팅 화면. 입력란에 '/limit-reset'이 작성되어 있고 모델 선택에는 'Opus 5 최대'와 경고 아이콘이 표시된다.",
     "category_ko": "AI·챗봇",
-    "owner_hint": "Anthropic / Claude"
+    "owner_hint": "Anthropic"
   },
   "codex-gpt-6.1-sol-v1:56ab5121d8a4906df50d52cc230db5cc9a0abf79ae1e12818017fd949c3cb2b2": {
     "index": 5,
     "is_github": true,
     "github_urls": [],
     "title": "Awesome Mac",
-    "description_ko": "macOS 소프트웨어를 분야별로 정리한 GitHub 프로젝트 소개. 기여 안내, 언어별 링크와 오픈 소스·무료·App Store 등 아이콘의 의미를 설명한다.",
+    "description_ko": "macOS 소프트웨어를 분야별로 정리한 GitHub 프로젝트의 한국어 README. 프로젝트 소개와 기여 안내, 오픈 소스·무료·App Store 등 아이콘의 의미가 표시된다.",
     "category_ko": "macOS·소프트웨어 모음",
     "owner_hint": "jaywcjlove"
   },
@@ -643,8 +651,8 @@
     "is_github": true,
     "github_urls": [],
     "title": "Awesome Mac — 텍스트 편집기·오피스",
-    "description_ko": "Awesome Mac의 텍스트 편집기와 오피스 앱 목록. Sublime Text, Vim, Zed, LibreOffice, Microsoft Office 등의 링크와 설명이 표시되어 있다.",
-    "category_ko": "macOS·편집기 및 오피스",
+    "description_ko": "Awesome Mac 목록에서 텍스트 편집기와 오피스 앱을 소개하는 부분. Vim, Zed, Sublime Text, LibreOffice, Microsoft Office 등과 간단한 설명이 보인다.",
+    "category_ko": "macOS·편집기·오피스",
     "owner_hint": "jaywcjlove"
   },
   "codex-gpt-6.1-sol-v1:ec53af2112180e8d337a5ab5d0c264e78129406990d883de0b1d7e5fe1d75dd7": {
@@ -652,8 +660,8 @@
     "is_github": true,
     "github_urls": [],
     "title": "Awesome Mac — 저널링·쓰기·전자책",
-    "description_ko": "Awesome Mac의 저널링, 글쓰기, 전자책 앱 목록. Day One, Scrivener, Calibre, Kindle App 등과 함께 앱별 설명 및 배포 특성 아이콘이 표시되어 있다.",
-    "category_ko": "macOS·글쓰기 및 전자책",
+    "description_ko": "Awesome Mac 목록의 저널링, 글쓰기, 전자책 분야. Day One, Scrivener, Calibre, Kindle App 등 앱의 링크와 기능 설명이 나열되어 있다.",
+    "category_ko": "macOS·글쓰기·전자책",
     "owner_hint": "jaywcjlove"
   },
   "codex-gpt-6.1-sol-v1:198abd59650634b327cfbad2172261cb26133a5eee1aa3711717d5652cc09894": {
@@ -661,7 +669,7 @@
     "is_github": true,
     "github_urls": [],
     "title": "Thaw",
-    "description_ko": "macOS 메뉴 막대 아이콘을 관리하는 오픈소스 도구. 테스트 커버리지와 보안 관련 배지, GitHub 트렌딩 배지, 설정 화면을 소개한다.",
+    "description_ko": "macOS 메뉴 막대 아이콘을 관리하는 오픈소스 도구. 아이콘 숨김, 표시 방식, 자동 숨김, 간격 조정 등의 설정을 제공한다.",
     "category_ko": "macOS 유틸리티",
     "owner_hint": ""
   },
@@ -670,35 +678,35 @@
     "is_github": false,
     "github_urls": [],
     "title": "TradingView 공식 MCP 오픈",
-    "description_ko": "TradingView와 AI 에이전트를 MCP로 연결하는 구성을 설명하는 인포그래픽. OHLCV, 스크리너, 기술지표, 뉴스 등의 지원 기능과 분석·검증·모니터링·자동화 활용을 소개한다.",
+    "description_ko": "TradingView와 AI 에이전트를 MCP로 연결하는 구성을 소개하는 인포그래픽. 시세, 스크리너, 기술지표, 뉴스 등의 활용과 분석·모니터링·자동화를 설명한다.",
     "category_ko": "금융·트레이딩 AI 연동",
     "owner_hint": "TradingView"
   },
   "codex-gpt-6.1-sol-v1:5a392163ebd183eecb83f57c925161ffd47e99084e96a12c64cfd9e2e930743b": {
     "index": 2,
-    "is_github": false,
+    "is_github": true,
     "github_urls": [],
     "title": "Paper Deconstruction Engine v2.1",
-    "description_ko": "논문 저자의 주장과 실제 근거를 분리해 검증하는 공개용 프롬프트 소개 이미지. 연구설계 검토, 핵심 주장 추적, 한계와 미검증 사항 정리를 강조한다.",
+    "description_ko": "논문 저자의 주장과 실제 근거를 분리해 검증하는 공개용 프롬프트 소개 이미지. 분석 모드와 목적, 외부 검색 여부를 선택하고 연구설계와 한계를 검토한다.",
     "category_ko": "논문 분석 프롬프트",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:8dbcd5ca92ee15b32a4807bf5a1cc82166e1423fe4cd9fa17e0a50ede76faa28": {
     "index": 3,
-    "is_github": false,
+    "is_github": true,
     "github_urls": [],
     "title": "Paper Deconstruction Engine v2.1 — Public Edition",
-    "description_ko": "논문 검증 프롬프트의 사용법과 분석 체계를 정리한 안내도. 소스 범위 판정, 연구설계 분류, 주장과 근거 기록, 치명적 결함 검토, 최종 근거 프로파일 작성 절차를 설명한다.",
-    "category_ko": "논문 분석·검증 가이드",
-    "owner_hint": "@Alex7j00"
+    "description_ko": "논문 검증 프롬프트의 사용법과 분석 원칙을 정리한 안내도. 소스 범위 판정, 연구설계 분류, 주장·근거 대장, 치명적 결함 검토와 최종 평가 절차를 제시한다.",
+    "category_ko": "논문 분석 프롬프트",
+    "owner_hint": "@Alex7io00"
   },
   "codex-gpt-6.1-sol-v1:a494864649670ffd84d0225ab17edb261c9412c8870a538ecfc487011f6bf3df": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
     "title": "Skill 공유 — DOCX 문서화 스킬",
-    "description_ko": "파스텔 색상의 곰 인형과 문서 아이콘을 활용한 DOCX 문서화 스킬 공유용 표지 이미지.",
-    "category_ko": "문서 작성·스킬 공유",
+    "description_ko": "DOCX 문서화 스킬 공유를 알리는 배너. 파스텔톤 곰 인형과 문서·필기 도구 그림을 배치했다.",
+    "category_ko": "문서 작성·AI 스킬",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:45c1ae6071d8edd58bcc984a95cd42df41ab19193d6b8aca2ce95d230e29cae4": {
@@ -706,7 +714,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "UI/UX 피드백",
-    "description_ko": "분홍색 중심의 문서 디자인으로 구성한 UI/UX 피드백 자료. 테마 색상, 가입 후 안내, 기능 선택, 다음 행동 표시, 레이아웃, 사용자 고민 상태, 완료 후 재시작 흐름을 다룬다.",
+    "description_ko": "분홍색 계열의 UI/UX 피드백 문서 7쪽을 모아 놓은 이미지. 테마 컬러, 가입 후 안내 문구, 기능 선택, 다음 행동 표시, 레이아웃과 완료 화면 개선안을 담고 있다.",
     "category_ko": "UI/UX 디자인 피드백",
     "owner_hint": ""
   },
@@ -715,8 +723,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "UI/UX 피드백 문서",
-    "description_ko": "사진 선택 토너먼트 서비스의 PC 화면을 검토한 문서. 공통 디자인, 설정 단계, 라운드 설정, 토너먼트 진행, 최종 선택 화면의 개선점을 정리했다.",
-    "category_ko": "UI/UX 검토 문서",
+    "description_ko": "사진 선택 서비스의 PC 화면에 대한 UI/UX 피드백 문서. 전체 테마, 설정 단계, 그룹 확인, 토너먼트 진행, 최종 선택 결과 화면의 개선 사항을 정리했다.",
+    "category_ko": "UI/UX 디자인 피드백",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:3865fe7505786b8e7ca619b4bcf19fecf6684e20656377957b0fd1b46694fdb1": {
@@ -724,8 +732,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "BTC-USD Smart Money Concepts 차트 비교",
-    "description_ko": "코인베이스 비트코인 5분봉 차트를 나란히 비교한 화면. BOS, CHoCH, EQH 표시와 붉은 공급 구간, 파란 수요 구간이 보인다.",
-    "category_ko": "암호화폐 차트",
+    "description_ko": "비트코인 5분봉 차트 두 개를 나란히 비교한 화면. BOS, CHoCH, EQH 표시와 매수·매도 주문 블록 영역이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView, LuxAlgo"
   },
   "codex-gpt-6.1-sol-v1:7d9ef12a46765592641cb4c00fec1060af3621f2b41d9cfdd66bb172e8668b4e": {
@@ -733,7 +741,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Linda Bradford Raschke의 매매 원칙",
-    "description_ko": "린다 브래드퍼드 라슈케의 사진과 함께, 잘못된 거래에서 이익을 내려 애쓰기보다 가장 좋은 청산 지점을 찾으라는 영어 문구가 적혀 있다.",
+    "description_ko": "인물 사진과 함께 잘못된 거래에서 수익을 내려 애쓰기보다 가장 좋은 청산 지점을 찾으라는 매매 원칙을 담은 인용 이미지.",
     "category_ko": "투자 명언",
     "owner_hint": "Linda Bradford Raschke"
   },
@@ -742,71 +750,71 @@
     "is_github": false,
     "github_urls": [],
     "title": "칼퇴서류 — 업무 서식",
-    "description_ko": "업무 서식을 검색하고 분류별로 찾는 웹사이트. 간이영수증, 견적서, 거래명세서, 품의서, 지출결의서, 휴가신청서 등의 카드가 표시되어 있다.",
-    "category_ko": "업무 서식 서비스",
+    "description_ko": "업무 서식을 검색하고 선택하는 웹사이트 화면. 간이영수증, 견적서, 거래명세서, 품의서, 지출결의서, 휴가신청서 등의 서식을 제공한다.",
+    "category_ko": "업무 문서 서비스",
     "owner_hint": "칼퇴서류"
   },
   "codex-gpt-6.1-sol-v1:ff6b38b8db28a5675bb55dc3116f9ecf15dd85ef5c0572c26540693e57d77657": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "코스피 일봉 차트 — base 0·1·2",
-    "description_ko": "코스피 상승 흐름에 이동평균선과 추세선을 표시한 차트. 가격 횡보 구간을 base 0, base 1, base 2로 구분하고 원과 화살표로 일부 구간을 강조했다.",
-    "category_ko": "주가지수 기술적 분석",
+    "title": "코스피 상승 추세와 베이스 구간 분석",
+    "description_ko": "코스피 일봉 차트에 이동평균선과 추세선을 표시하고 base 0, base 1, base 2 구간을 구분한 이미지. 원과 화살표로 횡보 구간과 상승 전환 지점을 강조했다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": "tmmrwseoul, TradingView"
   },
   "codex-gpt-6.1-sol-v1:ae9b1470e6422cb95f6806cf2653766aa9c2aec889e7e3051ff602a0647d2eac": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "코스피 일봉 차트 — 지지·저항 구간",
-    "description_ko": "코스피의 상승 이후 하락과 횡보 흐름을 보여주는 차트. 여러 이동평균선, 붉은 저항 구간, 초록 지지 구간과 주황색 원으로 강조한 구간이 보인다.",
-    "category_ko": "주가지수 기술적 분석",
+    "title": "코스피 지지·저항 및 하락 구간 분석",
+    "description_ko": "코스피 일봉 차트에 여러 이동평균선과 지지·저항 영역을 표시한 이미지. 급락 전후의 가격 흐름과 이동평균선 부근을 주황색 원으로 강조했다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": "tmmrwseoul, TradingView"
   },
   "codex-gpt-6.1-sol-v1:5f039116b2b3e6f7956c5d12c75cd8e8058f33d27c3b7eaa539b3c6f34736d8c": {
     "index": 0,
     "is_github": false,
     "github_urls": [],
-    "title": "OKTA 일봉 돌파 및 수익 관리",
-    "description_ko": "OKTA 일봉 차트에 157달러 돌파 진입 이후 45달러 수익, 일부 이익 실현, 최대 스톱 가격 179달러가 표시되어 있다.",
-    "category_ko": "주식 차트·기술적 분석",
+    "title": "OKTA 일봉 차트와 수익 관리 메모",
+    "description_ko": "OKTA의 일봉과 거래량 차트. 157달러 돌파 진입 이후 약 45달러의 상승, 일부 이익 실현과 최대 스톱 가격 179달러를 설명한다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:fc3ec12d6d75da7a4488616809bc780d848dfac2a87b7f8a0ac632ff33075a29": {
     "index": 1,
     "is_github": false,
     "github_urls": [],
-    "title": "OKTA 일봉 추세와 매매 구간 분석",
-    "description_ko": "갭 상승과 저항 돌파, 이동평균선 지지, 횡보 구간, 단기 과열 및 스톱 가격을 한국어 주석으로 설명한 TradingView 차트다.",
-    "category_ko": "주식 차트·기술적 분석",
+    "title": "OKTA 일봉 돌파·횡보·스톱 가격 분석",
+    "description_ko": "OKTA 일봉에 저항 돌파, 이동평균 지지, 단기 과열과 횡보 구간을 표시한 TradingView 차트. 약 179달러 부근의 스톱 가격과 매매 해설이 포함되어 있다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": "tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:dae23d8339b892f53a4d0a7d36204549d3726d2a5ef2f73edd5b759cab937660": {
     "index": 2,
     "is_github": false,
     "github_urls": [],
-    "title": "OKTA 주봉 중기 추세",
-    "description_ko": "2023년부터 2026년까지 OKTA의 주봉 가격과 거래량, 이동평균선 및 주요 지지·저항 구간을 표시한 차트다.",
-    "category_ko": "주식 차트·기술적 분석",
+    "title": "OKTA 주봉 추세와 주요 가격대",
+    "description_ko": "2023년부터 2026년까지의 OKTA 주봉 차트. 최근 급등과 함께 이동평균선, 거래량, 주요 지지·저항 영역을 표시한다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": "tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:5fb8f0884e818a571934a35287469050ec845c33f319d8227596d1cb69800146": {
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "OKTA 장기 주봉과 주요 가격대",
-    "description_ko": "2019년 이후 OKTA의 장기 가격 흐름과 주요 매물 구간을 보여주며, 돌파 이후 횡보가 유의미한 주요 가격대에서 나타난다는 주석이 있다.",
-    "category_ko": "주식 차트·기술적 분석",
+    "title": "OKTA 장기 주봉과 돌파 이후 횡보 분석",
+    "description_ko": "2019년부터 이어지는 OKTA 장기 주봉 차트. 과거 고점과 하락, 최근 회복을 보여주며 돌파 이후 횡보가 주요 가격대에서 나타난다는 설명이 있다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": "tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:e7c9396285e83994b559fe0350d9278559a84a2814e16ac06da54cb8d636ade5": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "OKTA 추세 시작과 눌림목 매수 분석",
-    "description_ko": "투매 이후 추세 시작, 거래량을 동반한 갭 돌파, 단기 과열, 20EMA 지지와 베어 트랩, 이후 횡보 구간을 설명한 일봉 차트다.",
-    "category_ko": "주식 차트·기술적 분석",
+    "title": "OKTA 추세 시작과 눌림목 매수 구간",
+    "description_ko": "OKTA 일봉에 투매, 추세 시작, 거래량을 동반한 갭 상승과 이후 조정을 표시한다. 주요 가격 및 20EMA 지지와 베어 트랩을 매수 관점에서 해설한다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": "tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:37897b949b6b064ab2124628456c6dee79b3533732fd5ca8e2f313f1e39f9a22": {
@@ -814,17 +822,17 @@
     "is_github": false,
     "github_urls": [],
     "title": "Simplified Technical English: overview",
-    "description_ko": "ASD-STE100의 문서 구조, 문장 작성 예시, 허용 동사 형태, 사전 항목, 문장 길이 제한 및 역사를 정리한 기술 영어 안내 도표다.",
-    "category_ko": "기술 문서·영어 작성 지침",
-    "owner_hint": "ASD / ASD-STE100"
+    "description_ko": "ASD-STE100 간소화 기술 영어의 개요 도표. 문서 구조, 문장 작성 예시, 허용 동사 형태, 사전 항목, 단어 수 제한과 역사를 정리한다.",
+    "category_ko": "기술 문서 작성·영어",
+    "owner_hint": "ASD / asd-ste100.org"
   },
   "codex-gpt-6.1-sol-v1:b68da3e0204ea291e5c1d6e96716a7372414d3e50dbb73a583b2ae5816eb3390": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
     "title": "Hewlett Packard Enterprise 일봉 차트",
-    "description_ko": "HPE의 상승 추세를 이동평균선, 거래량, 가격대별 거래량 분포와 함께 보여주며, 실적 표와 상대강도 등 보조 지표가 표시되어 있다.",
-    "category_ko": "주식 차트·기술적 분석",
+    "description_ko": "HPE의 일봉, 이동평균선과 거래량을 보여주는 TradingView 차트. 우측에는 가격대별 거래량과 시장 지표, 좌측 하단에는 분기 실적 표가 있다.",
+    "category_ko": "주식 기술적 분석",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:1a82c27c6489543f874eda876a31ee0ec55652efce770e13b89398fae82b78ee": {
@@ -832,7 +840,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Hewlett Packard Enterprise 주가 차트",
-    "description_ko": "HPE의 일봉 차트로, 이동평균선과 거래량, 가격대별 매물대 및 주요 가격 수준이 표시되어 있다.",
+    "description_ko": "Hewlett Packard Enterprise의 일봉 차트로, 캔들·이동평균선·거래량과 가격대별 매물대, 주요 주가 지표가 표시되어 있다.",
     "category_ko": "주식 차트",
     "owner_hint": ""
   },
@@ -841,7 +849,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Swing Trading Simplified — Parabolic Moves",
-    "description_ko": "주가가 짧은 시간에 가파르게 상승하는 포물선형 급등의 원인과 특징, 급등 이후 하락 위험을 설명하는 책 페이지다.",
+    "description_ko": "주가가 단기간에 가파르게 상승하는 포물선형 급등의 원인과 특징, 급등 이후 급락 위험을 설명하는 책의 56쪽이다.",
     "category_ko": "투자 서적",
     "owner_hint": ""
   },
@@ -850,7 +858,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Swing Trading Simplified — IFCI",
-    "description_ko": "IFCI가 2024년 1월 6일 동안 약 98% 급등한 뒤 16일 동안 고점 대비 40% 하락한 사례와 10·20 EMA를 통한 모멘텀 관찰을 설명한다.",
+    "description_ko": "IFCI가 2024년 6거래일 동안 약 98% 상승한 뒤 고점에서 40% 하락한 사례를 통해 포물선형 급등과 10·20 EMA 이탈을 설명한다.",
     "category_ko": "투자 서적",
     "owner_hint": ""
   },
@@ -859,7 +867,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Swing Trading Simplified — FCL",
-    "description_ko": "FCL이 2017년 12월 약 6일 동안 급등한 뒤 이후 20일 동안 고점 대비 40% 하락한 사례로 포물선형 급등과 상승 동력 소진을 설명한다.",
+    "description_ko": "FCL의 2017년 급등과 이후 약 40% 하락 사례를 차트로 보여주며, 강한 모멘텀이 소진 단계로 전환되는 과정을 설명한다.",
     "category_ko": "투자 서적",
     "owner_hint": ""
   },
@@ -867,9 +875,9 @@
     "index": 4,
     "is_github": false,
     "github_urls": [],
-    "title": "Dan의 빠른 주가 상승 중심 매매 원칙",
-    "description_ko": "매수 후 주가가 빠르게 상승하지 않으면 매도하는 Dan의 원칙과, 이 방식으로 느리게 상승하는 종목을 놓칠 수 있다는 한계를 소개한다.",
-    "category_ko": "트레이딩 전략",
+    "title": "Dan의 빠른 주식 매매 원칙",
+    "description_ko": "주가가 빠르게 상승하지 않으면 매도하는 Dan의 원칙과, 느리게 오르는 종목의 수익 기회를 놓치는 단점을 받아들이는 태도를 소개한다.",
+    "category_ko": "투자 전략",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:e6c6fd95d6243c51d521a625578f91118f9813ad62cdeb13aa566235eb691f0d": {
@@ -877,8 +885,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Fast rotation also fits Dan’s thrill-seeking personality",
-    "description_ko": "Dan이 빠른 종목 교체와 2배 레버리지를 활용했던 경험을 설명하며, 자신의 성격과 위험 감수 성향에 맞춘 매매 방식을 이야기한다.",
-    "category_ko": "트레이더 인터뷰",
+    "description_ko": "Dan이 빠른 종목 교체와 2대 1 마진 거래를 선호하는 성향, 버블 시기 고속 상승 종목을 집중 매매했던 경험을 인용한 글이다.",
+    "category_ko": "투자 전략",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:6e60a197e856cb68213742d0379e5334610c136d2c60b3c5a527256a9a4ba2f6": {
@@ -888,8 +896,8 @@
       "https://github.com/Nanako0129/sepia"
     ],
     "title": "Nanako0129/sepia",
-    "description_ko": "AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트의 GitHub 소개 카드다. 에이전트 스킬 호환성과 Claude Code·Codex용 플러그인을 소개하며 기여자, 이슈, 스타, 포크 수를 표시한다.",
-    "category_ko": "GitHub 프로젝트",
+    "description_ko": "AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트의 GitHub 소개 카드다. 여러 에이전트와 Claude Code·Codex용 플러그인 지원을 소개하고 기여자·이슈·스타·포크 수를 표시한다.",
+    "category_ko": "GitHub 프로젝트 · AI 글쓰기 도구",
     "owner_hint": "Nanako0129"
   },
   "codex-gpt-6.1-sol-v1:6ca4ee4d2bec2b3c8205f5ec2cf317524646f665442144ca90440e05150ec2a4": {
@@ -897,7 +905,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "AI 모델 지원 목록과 모델 변경 대화",
-    "description_ko": "Gemini, Claude, GPT-OSS 등의 지원 모델과 추론 수준을 안내하는 한국어 채팅 화면이다. 마지막에는 사용자가 Claude Opus 5.5의 High 설정을 요청한다.",
+    "description_ko": "Gemini·Claude·GPT-OSS 모델과 추론 수준을 나열하고, CLI를 통한 모델 변경 및 Codex와의 작업 분담을 논의하는 한국어 채팅 화면이다.",
     "category_ko": "AI 도구 대화",
     "owner_hint": ""
   },
@@ -906,7 +914,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Radio Garden",
-    "description_ko": "지구본 위의 초록색 점으로 전 세계 라디오 방송국을 탐색하는 화면. 미국 낸터킷의 WNCK-FM 89.5가 선택되어 있다.",
+    "description_ko": "지구본 위의 초록색 점으로 전 세계 라디오 방송국을 표시하고, 미국 낸터킷의 WNCK-FM 89.5를 선택한 화면.",
     "category_ko": "인터넷 라디오",
     "owner_hint": "Radio Garden"
   },
@@ -915,7 +923,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Internet Archive Wayback Machine",
-    "description_ko": "lifewire.com의 웹페이지 저장 이력을 연도별 막대그래프와 달력으로 표시하며, 2024년 3월 14일의 스냅샷 목록이 열려 있다.",
+    "description_ko": "lifewire.com의 웹페이지 저장 이력을 연도별 그래프와 달력으로 보여주는 화면.",
     "category_ko": "웹 아카이브",
     "owner_hint": "Internet Archive"
   },
@@ -924,7 +932,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Photopea",
-    "description_ko": "브라우저 이미지 편집기에서 PSD 문서를 편집하는 화면. 색상 선택기, 브러시 설정, 레이어 패널이 표시되어 있다.",
+    "description_ko": "레이어 패널, 브러시 설정, 색상 선택 창이 열린 웹 기반 이미지 편집기 화면.",
     "category_ko": "이미지 편집",
     "owner_hint": "Photopea"
   },
@@ -932,9 +940,9 @@
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "이미지 배경 제거 전후 비교",
-    "description_ko": "시장 배경의 인물 사진과 배경을 제거한 결과를 나란히 보여준다. 제거된 배경은 투명도를 나타내는 체크무늬로 표시되어 있다.",
-    "category_ko": "이미지 배경 제거",
+    "title": "사진 배경 제거 전후 비교",
+    "description_ko": "시장 배경의 인물 사진과 배경을 제거한 인물 이미지를 나란히 비교한 화면.",
+    "category_ko": "배경 제거",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:496ec2816c036cc7bddf454b3d7d1d27fb7b8503a4d945a42c13150b2992e0a8": {
@@ -942,8 +950,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "삼성전기보통주 일봉 차트",
-    "description_ko": "삼성전기 주가의 캔들, 이동평균선, 거래량, 가격대별 거래량과 각종 기술적 지표를 표시한 TradingView 차트.",
-    "category_ko": "주식 차트·기술적 분석",
+    "description_ko": "삼성전기 주가의 캔들, 이동평균선, 거래량, 가격대별 거래량과 여러 기술적 지표를 표시한 차트.",
+    "category_ko": "주식 차트",
     "owner_hint": "TradingView"
   },
   "codex-gpt-6.1-sol-v1:99134df5eb048c604422dafb373ef5c1dda9b50607aae184b146ee28806900aa": {
@@ -951,16 +959,16 @@
     "is_github": false,
     "github_urls": [],
     "title": "Muse 공개 사례 2,244건",
-    "description_ko": "Muse AI 에이전트의 공개 활용 사례를 돈 관리, 업무, 여행 등 14개 분야로 정리한 한국어 인포그래픽. 사용자 경험담과 출처를 제시하며 성공률을 독립 검증한 자료는 아니라고 명시한다.",
+    "description_ko": "AI 에이전트 Muse의 공개 활용 사례를 돈 관리, 업무, 여행 등 14개 분야로 분류하고 사용자 경험담을 정리한 한국어 인포그래픽.",
     "category_ko": "AI 에이전트 활용 사례",
-    "owner_hint": "Muse"
+    "owner_hint": "Muse / muse.ai"
   },
   "codex-gpt-6.1-sol-v1:7557e4e3f305ad4318d301878d960c96216eeeaba5040f3a030cb5b3272300e2": {
     "index": 6,
     "is_github": true,
     "github_urls": [],
     "title": "Agent Memory Repo",
-    "description_ko": "에이전트가 세션 간 기억을 저장하고 연결하는 프로젝트 소개 문서. 기억 저장소의 복제·검색·갱신·푸시 흐름과 주기적으로 기억을 추가하고 정리하는 Dreaming 기능을 설명한다.",
+    "description_ko": "세션 간 기억을 저장하고 연결하는 저장소 프로젝트 소개. 기억 복제·검색·갱신·푸시 과정과 주기적으로 기억을 추가하고 정리하는 기능을 설명한다.",
     "category_ko": "AI 에이전트 메모리",
     "owner_hint": ""
   },
@@ -969,7 +977,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Cloudflare Workers AI — clef",
-    "description_ko": "텍스트·JSON·이미지·비디오를 읽고 질문별 선택지의 확률을 반환하는 27B 멀티모달 모델 소개. 컨텍스트 길이, 라이선스, 비전 지원 및 입력 토큰 가격을 표시한다.",
+    "description_ko": "텍스트, JSON, 이미지, 영상을 받아 질문별 선택지의 확률을 반환하는 27B 멀티모달 결정 모델 Clef의 소개 페이지. 컨텍스트 길이, 비전 지원, 입력 토큰 가격 등이 표시되어 있다.",
     "category_ko": "AI 모델",
     "owner_hint": "Cloudflare"
   },
@@ -978,7 +986,7 @@
     "is_github": true,
     "github_urls": [],
     "title": "Ledge를 사용하는 방법",
-    "description_ko": "Ledge의 사용 예시로 SQL·파이썬 데이터 탐색, 프로젝트 실행 계획서, Redis 사고 대응을 보여준다. 코드 실행 결과와 관련 문서 링크가 배치되어 있다.",
+    "description_ko": "Ledge의 활용 예시를 보여주는 안내 페이지. SQL과 파이썬을 이용한 데이터 탐색, Docker 기반 프로젝트 실행, Redis 사고 대응 사례와 실행 결과가 나열되어 있다.",
     "category_ko": "개발 도구",
     "owner_hint": "Ledge"
   },
@@ -987,7 +995,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "전기가 GPU에 도착하기까지",
-    "description_ko": "교류를 직류로 변환하고 800V로 전송한 뒤 중간 전압과 1V 미만으로 낮춰 GPU에 공급하는 과정을 설명한 인포그래픽.",
+    "description_ko": "교류 전력을 직류로 변환하고 800V로 전달한 뒤, GPU 앞에서 중간 전압과 1V 미만으로 낮추는 과정을 네 단계로 설명한 인포그래픽.",
     "category_ko": "GPU 전력 인프라",
     "owner_hint": ""
   },
@@ -996,35 +1004,35 @@
     "is_github": false,
     "github_urls": [],
     "title": "국제금융센터 — 전체보고서",
-    "description_ko": "국제금융센터의 정기보고서 목록 화면. 2025년 10월 미국 정부 셧다운, 트럼프 관세 정책 등 국제금융 관련 보고서와 작성자·작성일·조회수를 표시한다.",
+    "description_ko": "국제금융센터의 보고서 목록 모바일 화면. 2025년 10월 초 미국 정부 셧다운, 관세 정책, 경제지표 발표 지연 등에 관한 보고서와 작성자, 날짜, 조회수, 다운로드 버튼이 보인다.",
     "category_ko": "경제·금융 보고서",
-    "owner_hint": "국제금융센터 (kcif.or.kr)"
+    "owner_hint": "국제금융센터"
   },
   "codex-gpt-6.1-sol-v1:7b1b648a4c10abd98caf2a4b3b25513a41bbec2e9bc66556e4442965db9db67d": {
     "index": 4,
     "is_github": false,
     "github_urls": [],
     "title": "국제금융센터 — 보고서 목록 및 페이지 탐색",
-    "description_ko": "글로벌 리스크, 미국 셧다운, 국제원자재시장 등 2025년 9~10월 보고서를 나열한 화면. 보고서 열람·다운로드 아이콘과 페이지 탐색 버튼이 보인다.",
+    "description_ko": "국제금융센터 보고서 목록의 하단 화면. 글로벌 리스크, 미국 고용과 셧다운, 국제원자재시장, 관세 관련 보고서와 페이지 이동 버튼이 표시되어 있다.",
     "category_ko": "경제·금융 보고서",
-    "owner_hint": "국제금융센터 (kcif.or.kr)"
+    "owner_hint": "국제금융센터"
   },
   "codex-gpt-6.1-sol-v1:5d3e1520e51101ab4b40fc5e92a9e373d8bc7e17e71e602a0f7366354e9ab246": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
     "title": "꼭 저장해야 할 ChatGPT 이미지 프롬프트 99개",
-    "description_ko": "이미지 생성에 활용할 수 있는 해상도, 구도, 날씨, 조명, 분위기, 미술 스타일 등의 영어 표현 99개와 한국어 설명을 정리한 표.",
+    "description_ko": "이미지 생성에 활용할 수 있는 영어 표현 99개와 한국어 설명을 정리한 안내 이미지. 화질, 촬영 구도, 날씨, 조명, 분위기, 미술 스타일 등의 항목을 포함한다.",
     "category_ko": "AI 이미지 프롬프트",
-    "owner_hint": "경제정리노트 (@economy.notes)"
+    "owner_hint": "경제정리노트 / @economy.notes"
   },
   "codex-gpt-6.1-sol-v1:1edd26a417a9571c075f31297b1f5d5cdc51976394402b76b968cdac5fd31b83": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
     "title": "내 버전 만들기 프롬프트",
-    "description_ko": "참고 작품을 변형해 새로운 모션을 만들기 위한 프롬프트 템플릿 화면. 문구, 배경색, 주색, 강조색, 속도, 추가 아이디어를 바꾸는 항목과 복사 버튼이 보인다.",
-    "category_ko": "모션 제작 프롬프트",
+    "description_ko": "참고 작품의 아이디어를 바탕으로 새로운 모션을 만들기 위한 프롬프트 템플릿 화면. 문구, 배경색, 주 색상, 강조색, 애니메이션 속도 등을 지정하는 입력 항목과 복사 버튼이 보인다.",
+    "category_ko": "웹 모션 제작 프롬프트",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:7d8307da181237c5e258759cc1e7b9655296604964081add7927d28fae1d8c4a": {
@@ -1032,7 +1040,7 @@
     "is_github": true,
     "github_urls": [],
     "title": "Tracearr",
-    "description_ko": "Plex, Jellyfin, Emby 서버의 스트리밍 현황과 재생 통계, 계정 공유를 모니터링하는 플랫폼의 GitHub README 화면.",
+    "description_ko": "Plex, Jellyfin, Emby 서버의 실시간 스트리밍, 재생 통계, 통합 미디어 목록과 계정 공유를 모니터링하는 프로젝트의 GitHub README 화면.",
     "category_ko": "미디어 서버 모니터링",
     "owner_hint": "Tracearr"
   },
@@ -1041,7 +1049,7 @@
     "is_github": true,
     "github_urls": [],
     "title": "CAMEL — Finding the Scaling Laws of Agents",
-    "description_ko": "에이전트의 확장 법칙을 연구하고 데이터 생성, 작업 자동화, 세계 시뮬레이션을 지원하는 오픈소스 프로젝트의 GitHub README 화면.",
+    "description_ko": "에이전트의 확장 법칙을 연구하고 데이터 생성, 작업 자동화, 세계 시뮬레이션을 지원하는 CAMEL 프로젝트의 GitHub README 화면.",
     "category_ko": "AI 에이전트 프레임워크",
     "owner_hint": "CAMEL-AI"
   },
@@ -1050,8 +1058,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Every Exit Is a Bet",
-    "description_ko": "매도 이후 가격이 상승하거나 하락하는 두 경로를 그려 매도 결정에 따르는 불확실성을 표현한 도식.",
-    "category_ko": "투자·매도 전략",
+    "description_ko": "매도 시점을 기준으로 가격이 상승하거나 하락하는 두 경로를 그려, 매도 후의 기회와 위험을 표현한 개념도.",
+    "category_ko": "주식 매도 전략",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:c0d88010c0a3e17dabcd5ed9d56680c6bed2dfe8a067ddf93ab51140843123c4": {
@@ -1059,8 +1067,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "The typical winner is nearly done in a week. The average one never stops.",
-    "description_ko": "2019~2022년 수익을 낸 돌파 매매 197건의 진입 후 수익률을 비교한 차트. 중앙값은 초기에 정체되지만 평균값은 큰 수익 거래의 영향으로 계속 상승한다.",
-    "category_ko": "투자·거래 통계",
+    "description_ko": "2019~2022년 수익으로 끝난 돌파 매매 197건의 진입 후 수익률을 비교한 그래프. 중앙값은 초기에 정체되고 평균값은 큰 상승 종목의 영향으로 계속 높아지는 모습을 보여준다.",
+    "category_ko": "트레이딩 성과 분석",
     "owner_hint": "Qullamaggie Deep Dive"
   },
   "codex-gpt-6.1-sol-v1:e881d8afae96cb6a6f87cea832afcbf0dc7eb163d22b428c7a8367b41d384880": {
@@ -1068,17 +1076,17 @@
     "is_github": false,
     "github_urls": [],
     "title": "Which exit is best depends on what you are solving for.",
-    "description_ko": "돌파 매수 829건에 네 가지 청산 규칙을 적용해 거래당 수익, 최대 낙폭, 수익 마감 비율을 비교한 차트.",
-    "category_ko": "투자·청산 전략 비교",
+    "description_ko": "돌파 매수 829건에 네 가지 청산 규칙을 적용해 거래당 수익, 최대 낙폭, 수익 거래 비율을 비교한 차트.",
+    "category_ko": "매매 청산 전략 비교",
     "owner_hint": "Qullamaggie Deep Dive"
   },
   "codex-gpt-6.1-sol-v1:74c6e63f93c7411319fe169aee8782b0120e09e3229a022cdacc7e6a6edd50ea": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "Winning Trades: Median, Average and Biggest Winners",
-    "description_ko": "기록된 거래 914건 중 수익 거래 224건의 진입 후 수익률 궤적. 중앙값 약 12%, 평균 약 27%와 중간 50% 구간, 대형 수익 거래를 표시한다.",
-    "category_ko": "투자·수익률 분포",
+    "title": "Winning Trades: Median and Average Returns",
+    "description_ko": "기록된 거래 914건 중 수익 거래 224건의 진입 후 수익률 경로를 표시한 그래프. 중앙값 약 12%, 평균 약 27%와 큰 수익 거래의 영향을 보여준다.",
+    "category_ko": "트레이딩 수익률 분포",
     "owner_hint": "@Muninn"
   },
   "codex-gpt-6.1-sol-v1:96e1c3612bb8b3f41975005043e579d66d7fd18691b8efbf2859a8a0a2874bf1": {
@@ -1086,8 +1094,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Take away the big movers and the ranking inverts.",
-    "description_ko": "최대 상승폭이 큰 거래를 순차적으로 제외하면서 추적 청산과 3일째 절반 매도 전략의 평균 위험 대비 수익을 비교한다. 대형 상승 거래를 제외하면 전략 순위가 역전된다.",
-    "category_ko": "투자·청산 전략 민감도 분석",
+    "description_ko": "상승 폭이 가장 큰 거래를 단계적으로 제외하면서 일반 추적 청산과 3일 차 절반 매도의 평균 위험 대비 수익을 비교한 그래프.",
+    "category_ko": "매매 전략 민감도 분석",
     "owner_hint": "Qullamaggie Deep Dive"
   },
   "codex-gpt-6.1-sol-v1:7abd79e2062eba80cbef45c76daf27ca071331c518041de14938368a6b19dc3a": {
@@ -1095,8 +1103,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Half the winners never clear twelve percent.",
-    "description_ko": "수익 거래 223건의 첫 15거래일 수익률 분포를 시각화한 차트. 15일째 중앙값은 12%, 평균은 27%이며 일부 큰 상승 거래가 평균을 끌어올린다.",
-    "category_ko": "투자·수익률 분포",
+    "description_ko": "수익 거래 223건의 첫 15거래일 수익률 분포를 시각화한 차트. 15일 차 중앙값 12%, 평균 27%, 중간 절반의 범위 6~29%를 제시한다.",
+    "category_ko": "트레이딩 수익률 분포",
     "owner_hint": "Qullamaggie Deep Dive"
   },
   "codex-gpt-6.1-sol-v1:20741216058c7484513a2159d6184c1a8ec990cccb36cad6afbec2fa136f4042": {
@@ -1104,8 +1112,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Raising your stop too soon costs you the winners.",
-    "description_ko": "820건의 돌파 매매에서 손절가를 매수가로 올리는 시점에 따라 성과가 어떻게 달라지는지 비교한 차트다. 10일·20일 이동평균선 이탈 매도 규칙별로 수익 배수와 수익 거래 비율을 표시한다.",
-    "category_ko": "주식 매매 전략 분석",
+    "description_ko": "820건의 돌파 매매를 바탕으로 손절가를 매수가로 올리는 시점에 따른 성과를 비교한다. 10일·20일 이동평균선 아래 첫 종가에서 매도하는 두 조건에서, 진입 후 2~4일에 손절가를 올리면 수익 배수와 수익 거래 비율이 낮아지는 결과를 보여준다.",
+    "category_ko": "주식 매매 전략 통계",
     "owner_hint": "Qullamaggie Deep Dive"
   },
   "codex-gpt-6.1-sol-v1:c094a4b071e36b2b3d3e072a22d584c0c548019f6789ebe43d42c711de0df714": {
@@ -1113,8 +1121,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "Most of the time, the sell rule never gets to fire.",
-    "description_ko": "2019~2022년 돌파 매수 820건을 보유 기간과 가격 상승 조건 충족 여부로 분류한 인포그래픽이다. 3일 전에 종료되고 ADR의 두 배 상승도 없었던 거래가 61.3%이며, 두 조건을 모두 충족한 거래는 25.0%로 표시된다. 상단 강조 수치는 61.6%로 차트 수치와 다르다.",
-    "category_ko": "주식 매매 통계",
+    "description_ko": "2019~2022년 돌파 매수 820건을 보유 기간과 ADR의 2배 상승 여부로 분류한 도표다. 3일 전에 청산되고 큰 상승도 없었던 거래가 대부분임을 강조한다. 상단 강조 수치는 61.6%지만 해당 막대에는 61.3%가 표시되어 있다.",
+    "category_ko": "주식 매매 전략 통계",
     "owner_hint": "Qullamaggie Deep Dive"
   },
   "codex-gpt-6.1-sol-v1:8c430fa133eb74f472d7dd4fc81e2fb0d1269791fe0741778daa577c80b48b76": {
@@ -1122,8 +1130,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "1%와 0.3%를 대비한 석상 이미지",
-    "description_ko": "검은 배경에서 부서지는 1% 조형물, 절반이 붕괴한 남성 흉상, 0.3%가 새겨진 온전한 석판을 대비한 흑백 이미지다.",
-    "category_ko": "금융 주제의 상징적 일러스트",
+    "description_ko": "검은 배경에 부서지는 1% 조형물, 절반이 붕괴한 남성 흉상, 0.3%가 새겨진 온전한 석판을 배치한 흑백 콘셉트 이미지다.",
+    "category_ko": "금융 콘셉트 일러스트",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:72cfdc6a3f2729e4a89c448719f56a19bd265d07298904e108ff134852dec44a": {
@@ -1131,8 +1139,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "갈라진 양면 석상과 두 트레이더",
-    "description_ko": "중앙에는 서로 반대 방향을 바라보는 두 얼굴의 거대한 석상이 갈라져 있다. 양쪽에는 여러 모니터 앞에 앉은 트레이더가 배치되어 있으며, 오른쪽 벽에는 다수의 차트 화면이 보인다.",
-    "category_ko": "트레이딩 주제의 상징적 일러스트",
+    "description_ko": "중앙의 거대한 양면 석상이 갈라져 있고, 양쪽에는 여러 모니터를 보며 작업하는 사람이 앉아 있는 흑백 이미지다. 오른쪽 벽에는 다수의 차트 화면이 배열되어 있다.",
+    "category_ko": "트레이딩 콘셉트 일러스트",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:d37d85b1d4abfa340928a7cc4f1b6527763588bd8ff3d8dc87eab274ae745824": {
@@ -1140,7 +1148,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "Typical position size",
-    "description_ko": "연도별 최대 매수 포지션의 계좌 대비 비중 중앙값과 중간 50% 범위를 보여준다. 중앙값은 2014년 19.7%에서 2021년 5.9%로 감소하며, 나중에 제시한 15~25% 규칙 구간도 함께 표시되어 있다.",
+    "description_ko": "연도별 계좌 대비 종목당 최대 매수 포지션의 중앙값과 중간 50% 범위를 보여준다. 중앙값은 2014년 19.7%에서 2021년 5.9%로 감소하며, 이후 언급된 15~25% 규칙과 비교된다.",
     "category_ko": "포지션 규모 분석",
     "owner_hint": ""
   },
@@ -1149,7 +1157,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "ESIO, 2017. Nine weeks from ten percent of the account down to three",
-    "description_ko": "2017년 ESIO의 캔들 차트와 10일·20일 단순이동평균선 위에 분할 매도 수량을 표시했다. 아래에는 최초 관측 보유량 3,000주가 단계적으로 줄어 최종 청산되는 과정과 계좌 대비 비중을 보여준다.",
+    "description_ko": "2017년 ESIO의 캔들 차트에 10일·20일 이동평균선, 최초 평균 매수가 10.47달러, 분할 매도 수량을 표시한다. 하단에는 최대 3,000주에서 단계적으로 줄어 최종 청산되는 보유 수량과 계좌 비중이 나타난다.",
     "category_ko": "개별 종목 분할 매도 분석",
     "owner_hint": ""
   },
@@ -1158,7 +1166,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "CUTR, 2017. Seven weeks, two long pauses, and a stub carried three more weeks",
-    "description_ko": "2017년 CUTR의 주가와 10일·20일 단순이동평균선, 분할 매도 수량을 표시한 차트다. 아래 보유량 차트는 1,300주에서 여러 차례 매도하고 두 번의 긴 유지 구간을 거쳐 잔여 물량까지 청산하는 과정을 보여준다.",
+    "description_ko": "2017년 CUTR의 주가와 10일·20일 이동평균선에 분할 매도 수량을 표시한 차트다. 최초 평균 매수가는 33.75달러이며, 하단에는 최대 1,300주에서 여러 차례 매도하고 잔여 물량을 유지한 뒤 청산하는 과정이 나타난다.",
     "category_ko": "개별 종목 분할 매도 분석",
     "owner_hint": ""
   },
@@ -1167,7 +1175,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "ATH, 2017. Biggest size of the five, and the fastest way out of it",
-    "description_ko": "ATH의 2017년 주가와 10일·20일 단순이동평균, 평균 매입가 47.90달러를 표시한 차트. 아래에는 최대 2,000주였던 보유 수량이 분할 매도로 감소하는 과정이 나타난다.",
+    "description_ko": "ATH의 2017년 주가와 10일·20일 단순이동평균, 분할 매도 지점을 표시한 차트다. 아래 그래프는 보유량이 최대 2,000주에서 빠르게 감소하는 과정을 보여준다.",
     "category_ko": "주식 거래 분석",
     "owner_hint": ""
   },
@@ -1176,7 +1184,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "SE, 2020. Full size on the breakout, then sold in pieces as it doubled",
-    "description_ko": "SE의 2020년 돌파 시점에 15,000주를 매수한 뒤 주가 상승에 따라 분할 매도하는 과정을 보여준다. 주가와 이동평균, 진입가·손절가 및 보유 수량 변화가 표시되어 있다.",
+    "description_ko": "SE의 2020년 돌파 매수와 상승 중 분할 매도 과정을 나타낸 차트다. 15,000주 진입 후 보유 수량을 줄여 전량 청산한 흐름과 일부 추정치를 표시한다.",
     "category_ko": "주식 거래 분석",
     "owner_hint": ""
   },
@@ -1185,8 +1193,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "ACB, 28 May 2020",
-    "description_ko": "ACB의 2020년 5월 28일 분봉 차트. 21분 동안 언급된 포지션 구축 과정을 표시하며, 보유 수량이 30,000주에서 35,000주, 50,000주로 증가한다. 진입가는 16.23달러, 손절가는 15.53달러로 표시되어 있다.",
-    "category_ko": "장중 매매 분석",
+    "description_ko": "ACB의 2020년 5월 28일 분봉 차트다. 진입가 16.23달러와 손절가 15.53달러, 보유 수량을 30,000주에서 50,000주로 늘리는 과정을 표시한다.",
+    "category_ko": "주식 장중 거래 분석",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:8832975b8dd21feadcf021d1a8a8d472e7b91bf13c2570928842b9cb008cf83e": {
@@ -1194,8 +1202,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "A Field Guide to Market Breadth",
-    "description_ko": "시장 전반의 폭넓은 참여에서 소수 종목 주도로 바뀌는 모습을 파란 점의 밀도로 표현한 검은색 배경의 표지 이미지.",
-    "category_ko": "시장 폭 분석",
+    "description_ko": "시장 전반의 폭넓은 참여에서 소수 주도주 중심으로 바뀌는 모습을 파란 점의 밀도 변화로 표현한 시장 폭 안내서 표지다.",
+    "category_ko": "금융 콘텐츠 표지",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:11e479eb7ecd918ee7300d5ad686b6ec3b9cadeb4f52a7070ed354d7fdc6820f": {
@@ -1203,7 +1211,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "His position list, read straight off the screen, October 2019 to January 2023",
-    "description_ko": "2019년 10월부터 2023년 1월까지 화면에서 관찰한 일별 최대 보유 포지션 수를 막대로, QQQ 일별 종가를 검은 선으로 비교한 차트. 최대 포지션 수는 32개로 표시되어 있다.",
+    "description_ko": "2019년 10월부터 2023년 1월까지 화면에서 관찰한 일별 최대 보유 종목 수를 막대로, QQQ 종가를 검은 선으로 비교한 차트다.",
     "category_ko": "포트폴리오 분석",
     "owner_hint": ""
   },
@@ -1212,17 +1220,17 @@
     "is_github": false,
     "github_urls": [],
     "title": "WKHS, 1D — Workhorse Group, Inc.",
-    "description_ko": "Workhorse Group의 일봉·거래량 차트. 50,000주 매수 지점과 약 150% 상승 후 약세 매도, 350% 이상 상승 후 10일 이동평균선 아래 첫 종가에 관한 주석이 표시되어 있다.",
+    "description_ko": "Workhorse Group의 일봉 주가와 거래량 차트다. 50,000주 매수, 상승 중 약세 매도, 10일 이동평균선 아래 첫 종가에 관한 주석이 있다.",
     "category_ko": "주식 거래 분석",
-    "owner_hint": "Workhorse Group, Inc. (WKHS)"
+    "owner_hint": "Workhorse Group, Inc."
   },
   "codex-gpt-6.1-sol-v1:6e1c028056fa58fa96644728035ee18e9e2f3edf247624e031e32cf238dfd3c5": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
     "title": "Every step up the account took, the trade list got shorter",
-    "description_ko": "가상 계좌 규모가 10만 달러에서 1억 달러로 커질수록 15% 포지션 조건에 들어맞는 거래 비율이 98%에서 11%로 감소하는 추정 그래프.",
-    "category_ko": "거래 수용력 분석",
+    "description_ko": "가상의 계좌 규모가 10만 달러에서 1억 달러로 커질 때, 계좌의 15% 규모로 편입 가능한 거래 비율이 98%에서 11%로 감소하는 추정 그래프다.",
+    "category_ko": "거래 규모와 유동성 분석",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:2a11ae6e54217acb5bc6a6f30dd6cbbbe5695f6b6fb97c0be322e0a93757c2f6": {
@@ -1230,8 +1238,8 @@
     "is_github": false,
     "github_urls": [],
     "title": "The liquidity his tickers offered stopped keeping pace with his own rule",
-    "description_ko": "2019~2022년 거래 종목의 20일 평균 일일 거래대금 중앙값과 15% 포지션에 필요한 추정 거래대금을 로그 축으로 비교한 막대그래프. 2021년과 2022년에는 필요 거래대금이 실제 중앙값을 크게 초과한다.",
-    "category_ko": "시장 유동성 분석",
+    "description_ko": "2019~2022년 거래 종목의 실제 20일 평균 일일 거래대금 중앙값과 계좌의 15% 포지션에 필요한 추정 거래대금을 비교한다. 2021년과 2022년에는 필요 유동성이 실제 수준을 크게 웃돈다.",
+    "category_ko": "거래 유동성 분석",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:ae9dab2c1e2592b169a6c6fcf96ef2e44451aedc8bf8eee502c990e0345e6472": {
@@ -1239,7 +1247,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "designsystems.one — 120 systems, one library",
-    "description_ko": "120개 디자인 시스템의 스크린샷, 토큰, 구성 요소와 패턴을 탐색하고 비교하는 라이브러리의 메인 화면.",
+    "description_ko": "120개 디자인 시스템의 스크린샷, 토큰, 구성 요소와 패턴을 비교하는 라이브러리의 메인 화면이다.",
     "category_ko": "디자인 시스템 디렉터리",
     "owner_hint": "designsystems.one"
   },
@@ -1248,25 +1256,25 @@
     "is_github": false,
     "github_urls": [],
     "title": "Airbnb Design System — Token snapshot and structure",
-    "description_ko": "Airbnb 디자인 시스템의 색상, 글꼴, 간격, 모서리 반경을 정리한 토큰 참고 화면. 예시 값과 출처 검증 상태를 함께 표시한다.",
+    "description_ko": "Airbnb 디자인 시스템의 색상, 글꼴, 간격, 모서리 반경을 정리한 화면이다. 값은 예시 또는 편집된 참고 자료이며 공식 문서 확인이 필요하다고 표시한다.",
     "category_ko": "디자인 토큰 참고 자료",
-    "owner_hint": "designsystems.one / Airbnb"
+    "owner_hint": "Airbnb / designsystems.one"
   },
   "codex-gpt-6.1-sol-v1:46a6b84b865a5c793f711388dbf12d0894cf302591819f6f04ee10a7ec1755ef": {
     "index": 2,
     "is_github": false,
     "github_urls": [],
     "title": "Stripe Design System",
-    "description_ko": "Stripe의 UI 구성 요소 문서 스크린샷과 디자인 시스템 소개를 보여주는 상세 페이지.",
+    "description_ko": "Stripe의 UI 구성 요소 문서 스크린샷과 디자인 시스템 소개가 보인다. 개발자가 앱 인터페이스를 구성하는 데 사용하는 컴포넌트와 뷰를 설명한다.",
     "category_ko": "디자인 시스템 소개",
-    "owner_hint": "designsystems.one / Stripe"
+    "owner_hint": "Stripe / designsystems.one"
   },
   "codex-gpt-6.1-sol-v1:77191760164cbe46414803b2ce558c048327445e2001ec7da6685aaa66afc735": {
     "index": 3,
     "is_github": false,
     "github_urls": [],
-    "title": "Design Systems Library",
-    "description_ko": "Rakuten, Apple, Vuetify, Blueprint, Ariakit 등 여러 디자인 시스템을 카드로 나열하고 기술 스택, 공개 여부, 공식 문서 링크를 제공하는 목록.",
+    "title": "Design Systems Directory",
+    "description_ko": "Rakuten, Apple, Vuetify, Blueprint, Ariakit, Grommet 등 여러 디자인 시스템을 카드 형태로 나열한다. 각 카드에는 소개, 기술 태그, 공식 사이트 링크가 있다.",
     "category_ko": "디자인 시스템 디렉터리",
     "owner_hint": "designsystems.one"
   },
@@ -1275,16 +1283,16 @@
     "is_github": true,
     "github_urls": [],
     "title": "OpenFrame CLI",
-    "description_ko": "GitHub README 화면. Kubernetes 클러스터를 로컬 또는 클라우드에 구성하고 OpenFrame 플랫폼을 배포·관리하는 CLI 프로젝트를 소개한다.",
+    "description_ko": "GitHub 저장소의 README 화면이다. Kubernetes 클러스터를 로컬 또는 클라우드에 구축하고 OpenFrame 플랫폼을 배포·관리하는 CLI를 소개한다.",
     "category_ko": "개발 도구 / Kubernetes 인프라 관리",
-    "owner_hint": "Flamingo / OpenFrame"
+    "owner_hint": "Flamingo"
   },
   "codex-gpt-6.1-sol-v1:732fdbf0a8a5f9630b48e6c3ef055084ddb7c426314bf77b0cc4d551c0ee4422": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "코리안리 월봉 차트 — 추세변환 시점",
-    "description_ko": "코리안리의 장기 월봉 차트에 이동평균선, 거래량, 지지·저항선과 추세변환 구간을 표시한 TradingView 화면.",
+    "title": "코리안리재보험 보통주 — 월봉 차트",
+    "description_ko": "코리안리의 장기 월봉 차트에 이동평균선, 거래량, 지지·저항선이 표시되어 있다. 2022~2024년 부근을 원으로 강조하고 추세 변화 시점으로 주석 처리했다.",
     "category_ko": "주식 차트 / 기술적 분석",
     "owner_hint": "TradingView / tmmrwseoul"
   },
@@ -1292,8 +1300,8 @@
     "index": 6,
     "is_github": false,
     "github_urls": [],
-    "title": "코리안리 주봉 차트 — 추세변환 시점",
-    "description_ko": "코리안리의 주봉 차트에서 2022~2023년 전후의 추세변환 구간을 원으로 강조하고 이후 상승 흐름과 가격대를 표시한 화면.",
+    "title": "코리안리재보험 보통주 — 주봉 차트",
+    "description_ko": "코리안리의 주봉 차트로, 2022~2024년 부근의 추세 변화 구간과 이후 상승 흐름을 보여준다. 이동평균선, 거래량, 추세선과 지지 구간이 표시되어 있다.",
     "category_ko": "주식 차트 / 기술적 분석",
     "owner_hint": "TradingView / tmmrwseoul"
   },
@@ -1301,8 +1309,8 @@
     "index": 7,
     "is_github": false,
     "github_urls": [],
-    "title": "코리안리 일봉 차트 — 지지·저항과 상승 추세선",
-    "description_ko": "코리안리의 일봉 차트에 상승 추세선, 이동평균선, 거래량 및 주요 지지·저항 영역을 표시한 TradingView 화면.",
+    "title": "코리안리재보험 보통주 — 일봉 차트",
+    "description_ko": "코리안리의 일봉 차트에 상승 추세선, 이동평균선, 거래량과 가격 지지·저항 구간이 표시되어 있다. 최근 가격은 약 14,640원으로 보인다.",
     "category_ko": "주식 차트 / 기술적 분석",
     "owner_hint": "TradingView / tmmrwseoul"
   },
@@ -1313,73 +1321,72 @@
       "https://github.com/karpathy/autoresearch"
     ],
     "title": "Karpathy-inspired Harness Prompt",
-    "description_ko": "장시간 AI 작업을 위한 프롬프트와 컨텍스트, 절차, 도구, 권한, 검토, 노력, 완료의 7단계 작업 구조를 설명하는 연구 노트.",
+    "description_ko": "장기 작업을 위한 프롬프트 예시로, 문맥 관리, 절차, 도구, 권한, 검토, 실행 노력, 완료 기준과 인수인계 방식을 설명한다. 하단에는 Karpathy의 autoresearch에서 영감을 받은 비공식 각색이라고 명시되어 있다.",
     "category_ko": "AI 에이전트 작업 지침",
-    "owner_hint": "프롬프트 작성자 @beamn xw로 보이는 @beamn xw 표기, 참고 저장소 karpathy"
+    "owner_hint": "프롬프트 작성자 @beamnxxw, 참조 저장소 karpathy"
   },
   "codex-gpt-6.1-sol-v1:41ebc9204a815a9bc7ccc33cf9ac9ca8f26f34b8de28d3be988848e02bdceab0": {
     "index": 1,
     "is_github": false,
     "github_urls": [],
-    "title": "Opus 5.5 Harness Engineering",
-    "description_ko": "입력 자료와 승인 기준을 바탕으로 스킬, MCP, 권한, 증거 검토, 진행 상태 저장을 연결해 장시간 작업을 완료하는 흐름도.",
-    "category_ko": "AI 작업 흐름 설계",
+    "title": "Opus 5.5 Harness Engineering — Make Long Tasks Finish",
+    "description_ko": "입력 자료와 승인 기준부터 스킬, MCP, 권한, 증거 검토, 진행 상태 저장, 최종 산출물까지 장기 작업의 흐름을 도식화한다.",
+    "category_ko": "AI 작업 흐름 다이어그램",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:4f8cc5ddd64b3b91fdf8a83f581cbbcf786c77e625aa92003f53d813b2ecb32e": {
     "index": 2,
     "is_github": true,
     "github_urls": [
-      "https://github.com/search?q=claude+skills",
-      "https://github.com/anthropics/skills"
+      "https://github.com/search?q=claude+skills"
     ],
     "title": "Claude Skills GitHub Search",
-    "description_ko": "superpowers, anthropics/skills, ui-ux-pro-max-skill, impeccable, awesome-claude-skills, hyperframes 등 스킬 관련 프로젝트를 나열한 GitHub 검색 화면.",
-    "category_ko": "AI 스킬 저장소 모음",
-    "owner_hint": "anthropics; 다른 프로젝트 소유자는 화면에서 확인되지 않음"
+    "description_ko": "GitHub에서 Claude 스킬을 검색한 화면으로, superpowers, anthropics/skills, ui-ux-pro-max-skill, impeccable, awesome-claude-skills, hyperframes 등의 프로젝트가 나열되어 있다.",
+    "category_ko": "GitHub 스킬 프로젝트 검색",
+    "owner_hint": "anthropics가 표시되며 나머지 프로젝트 소유자는 확인되지 않음"
   },
   "codex-gpt-6.1-sol-v1:91d252f28d63d0f72ffe7e13796264e382ba09d5a08dd69cfdc66e1c22146aa7": {
     "index": 3,
     "is_github": true,
     "github_urls": [],
     "title": "Pimcore",
-    "description_ko": "제품 경험 관리 플랫폼 Pimcore의 GitHub README. 제품 정보, 디지털 자산, 고객 데이터, 콘텐츠 및 커머스 관리 기능을 소개한다.",
-    "category_ko": "제품 경험 및 데이터 관리",
-    "owner_hint": "pimcore"
+    "description_ko": "Pimcore의 GitHub README 화면이다. 제품 경험 관리 플랫폼으로 소개하며 PIM, MDM, DAM, CDP, CMS 및 디지털 커머스 기능과 REST·GraphQL 기반 데이터 제공을 설명한다.",
+    "category_ko": "제품 경험 및 데이터 관리 플랫폼",
+    "owner_hint": "Pimcore"
   },
   "codex-gpt-6.1-sol-v1:96735775e956a88c7aa754a9a140b916da134bdd8345b786f56548330a77fb44": {
     "index": 4,
     "is_github": true,
     "github_urls": [],
     "title": "Helm Dashboard",
-    "description_ko": "Helm 작업을 간소화하는 대시보드 프로젝트의 GitHub README. 릴리스 이력, 리소스 상태, 업그레이드 및 롤백 기능을 보여준다.",
-    "category_ko": "쿠버네티스 관리 도구",
+    "description_ko": "Helm 작업을 간소화하는 프로젝트의 GitHub README 화면이다. 프로젝트 상태 배지와 함께 배포 이력, 리소스 상태, 업그레이드 및 롤백 기능이 있는 대시보드 예시가 보인다.",
+    "category_ko": "Kubernetes·Helm 관리 도구",
     "owner_hint": ""
   },
   "codex-gpt-6.1-sol-v1:39af7a52fc2c407a00fde8669b072cb003bf19fe006470cecd76e6fe974454d7": {
     "index": 5,
     "is_github": false,
     "github_urls": [],
-    "title": "JUP/USDT 일봉 차트",
-    "description_ko": "TradingView의 바이낸스 JUP/USDT 일봉 차트. 이동평균선, 거래량, 지지·저항 구간과 상승 흐름이 표시되어 있다.",
-    "category_ko": "암호화폐 차트",
-    "owner_hint": "tmmrwseoul"
+    "title": "JUP/USDT Binance 일봉 차트",
+    "description_ko": "TradingView의 JUP/USDT 일봉 차트로, 이동평균선과 거래량, 지지·저항 영역이 표시되어 있다. 오른쪽 최근 구간의 상승과 약 0.3785 USDT 가격이 보인다.",
+    "category_ko": "암호화폐 가격 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:57aafd2a063f29d02eccab7c0e18a8e2972159d9544d1aae8e83add091aef06a": {
     "index": 6,
     "is_github": false,
     "github_urls": [],
-    "title": "JUP/USDT 4시간봉 차트",
-    "description_ko": "TradingView의 바이낸스 JUP/USDT 4시간봉 차트. 이동평균선, 거래량, 지지·저항 구간과 최근 가격 상승이 표시되어 있다.",
-    "category_ko": "암호화폐 차트",
-    "owner_hint": "tmmrwseoul"
+    "title": "JUP/USDT Binance 4시간봉 차트",
+    "description_ko": "TradingView의 JUP/USDT 4시간봉 차트로, 이동평균선과 거래량, 지지·저항 영역이 표시되어 있다. 최근 반등 구간이 흰 원으로 강조되어 있으며 약 0.3782 USDT 가격이 보인다.",
+    "category_ko": "암호화폐 가격 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
   "codex-gpt-6.1-sol-v1:d0db9a0846b16a2fbc300e46e0d95d17dd2a64de25ccdc5b6c0813a7fde72dc9": {
     "index": 0,
     "is_github": false,
     "github_urls": [],
     "title": "NEAR/USDT 4시간봉 차트",
-    "description_ko": "바이낸스 NEAR의 4시간봉 차트로, 가격 약 5.386 USDT와 이동평균선, 거래량, 지지·저항 구간이 표시되어 있다. 최근 반등 구간에 흰색 원이 그려져 있다.",
+    "description_ko": "TradingView의 바이낸스 NEAR/USDT 차트. 상승 이후 약 5.386 USDT에서 움직이며 이동평균선, 거래량, 지지·저항 구간과 최근 반등 부위를 표시했다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1388,7 +1395,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "NEAR/USDT 일봉 차트",
-    "description_ko": "바이낸스 NEAR의 일봉 차트로, 급등 이후 약 5.391 USDT 부근의 가격 흐름을 보여준다. 4.602와 6.6 부근의 수평선 및 여러 지지·저항 영역이 표시되어 있다.",
+    "description_ko": "장기 횡보 후 급등한 NEAR/USDT의 일봉 차트. 현재 표시 가격은 약 5.391 USDT이며 4.602와 6.6 부근의 수평선, 이동평균선 및 매물 구간이 보인다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1397,7 +1404,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "PUMP/USDT 일봉 차트",
-    "description_ko": "바이낸스 PUMP의 일봉 차트로, 상승 이후 약 0.006082 USDT 부근에서 조정하는 모습이다. 최근 고점의 하락 추세선과 흰색 원, 이동평균선 및 거래량이 표시되어 있다.",
+    "description_ko": "PUMP/USDT가 저점 이후 상승해 약 0.006082 USDT에 도달한 일봉 차트. 최근 고점 부근의 조정 구간에 하락 추세선과 흰색 원이 표시되어 있다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1406,7 +1413,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "PUMP/USDT 4시간봉 차트",
-    "description_ko": "바이낸스 PUMP의 4시간봉 차트로, 약 0.006085 USDT의 가격과 최근 횡보·하락 구간을 보여준다. 추세선, 이동평균선, 여러 지지 영역과 상단 저항선이 표시되어 있다.",
+    "description_ko": "PUMP/USDT의 상승 이후 단기 조정을 보여주는 4시간봉 차트. 약 0.006085 USDT의 가격과 하락 저항선, 여러 지지 구간, 이동평균선 및 거래량이 표시되어 있다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1415,7 +1422,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "RAY/USDT 일봉 차트",
-    "description_ko": "바이낸스 RAY의 일봉 차트로, 장기간의 횡보 이후 급등하여 약 2.5197 USDT에 도달한 모습이다. 이동평균선과 거래량, 상단 저항 영역 및 하단 지지 영역이 표시되어 있다.",
+    "description_ko": "장기간의 바닥권 이후 급등한 RAY/USDT 일봉 차트. 표시 가격은 약 2.5197 USDT이며 상단 저항 영역과 하단 지지 영역, 이동평균선 및 거래량이 보인다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1424,7 +1431,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "RAY/USDT 4시간봉 차트",
-    "description_ko": "바이낸스 RAY의 4시간봉 차트로, 상승 추세 속에서 약 2.5205 USDT에 거래되는 모습이다. 최근 돌파 직전 구간이 흰색 원으로 강조되어 있으며 여러 지지·저항 영역이 표시되어 있다.",
+    "description_ko": "고점과 저점을 높이며 상승하는 RAY/USDT의 4시간봉 차트. 약 2.5205 USDT의 가격과 함께 최근 돌파 직전 구간을 흰색 원으로 강조하고 지지·저항 영역을 표시했다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1433,7 +1440,7 @@
     "is_github": false,
     "github_urls": [],
     "title": "CRV/USDT 일봉 차트",
-    "description_ko": "바이낸스 CRV의 일봉 차트로, 하락 이후 반등하여 약 0.3909 USDT에 위치한 모습이다. 0.3471 부근의 수평선, 이동평균선, 지지·저항 영역과 최근 눌림 구간을 강조한 흰색 원이 보인다.",
+    "description_ko": "하락 추세 이후 회복한 CRV/USDT의 일봉 차트. 표시 가격은 약 0.3909 USDT이며 0.3471 부근 수평선과 최근 이동평균선 부근을 강조한 흰색 원이 보인다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
   },
@@ -1442,8 +1449,125 @@
     "is_github": false,
     "github_urls": [],
     "title": "CRV/USDT 1시간봉 차트",
-    "description_ko": "바이낸스 CRV의 1시간봉 차트로, 단기 하락 이후 거래량을 동반해 급반등하여 약 0.3910 USDT에 위치한 모습이다. 이동평균선 밀집 구간의 돌파가 흰색 원으로 강조되어 있다.",
+    "description_ko": "CRV/USDT가 단기 하락 후 거래량 증가와 함께 반등한 1시간봉 차트. 약 0.3910 USDT의 가격, 이동평균선 밀집 구간의 돌파 표시, 상단 저항대와 하단 지지대가 보인다.",
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:12b1bb0741e480e2ac8ad631c57176831f8fd00978d58111b8f7b5f6ec80ff47": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "WTI 원유 CFD 일봉 차트",
+    "description_ko": "WTI 원유의 일봉 차트로, 현재 가격 약 91.96달러와 이동평균선, 추세선, 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:08c8aff1c3e9905270a99a0ce50c07c53f0e43c141835df82d083e7af9a24011": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "WTI 원유 CFD 1시간봉 차트",
+    "description_ko": "WTI 원유의 1시간봉 차트로, 약 91.91달러까지 상승한 가격 흐름과 거래량, 지지·저항 영역 및 흰색 원으로 강조한 구간이 보인다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:8001989c6156a871914c5ba52599787aa3751af0b8bf9ae654ee069b0fb59d40": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AVAX/USDT 일봉 차트",
+    "description_ko": "바이낸스 AVAX/USDT 일봉 차트로, 급등 이후 약 10.824달러에서 형성된 가격 흐름과 상승 추세선, 수평 저항선, 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:659b54600c563f40e04f59908c4fe52ad071c887b8aaaea0b93494bfb44d4c44": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "WLD/USDT 일봉 차트",
+    "description_ko": "바이낸스 WLD/USDT 일봉 차트로, 현재 가격 약 0.5240달러와 이동평균선, 0.4876 및 0.6078달러의 수평선, 하단 지지 영역이 보인다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:e0c0d5e1683bd6084e8026390169429eb7d40ab37dcc1aaedadce76a2c7593a8": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Aerodrome Finance AERO/USDT 일봉 차트",
+    "description_ko": "MEXC AERO/USDT 일봉 차트로, 최근 상승 이후 약 0.8015달러에서 움직이는 가격과 이동평균선, 지지·저항 영역 및 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:39a4c65be670137b1700224383a3176f1cab6c9d91a9e3a4bad8110aac63b2b5": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ONDO/USDT 일봉 차트",
+    "description_ko": "바이낸스 ONDO/USDT 일봉 차트로, 급등 후 조정된 약 0.4921달러의 가격과 수평 지지·저항선, 장기 상승 추세선, 거래량이 보인다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:20a39742e5d3851b90786d31e3cc04ea936bdaf8d2edeee2cf47e893131f6e1f": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "PYTH/USDT 일봉 차트",
+    "description_ko": "바이낸스 PYTH/USDT 일봉 차트로, 최근 상승 후 약 0.07642달러에서 형성된 가격 흐름과 상단 저항 영역, 이동평균선 및 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:b704afdae6ee902bde839fbe9b4dfd7a9ad223df248660a82371e23745b03bb2": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView STX/USDT 일봉 차트",
+    "description_ko": "바이낸스 스택스(STX)의 일봉 차트. 급등 이후 약 0.3815 USDT에서 거래되며 이동평균선, 지지·저항 구간과 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:967daed60dca1206f2c8c684c719c2d8e25338d971469e49c91fa5b029efe115": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView ONDO/USDT 4시간봉 차트",
+    "description_ko": "바이낸스 ONDO의 4시간봉 차트. 급등 후 조정을 거쳐 약 0.4915 USDT로 반등하는 모습과 이동평균선, 지지·저항 구간 및 거래량 지표가 보인다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:ad5f17dfbabfdee3bfc8788dac3ff2f7d66447b465d432f83afdd9286385053b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView ONDO/USDT 1시간봉 기술 분석",
+    "description_ko": "바이낸스 ONDO의 1시간봉 차트. 하락 후 바닥 구간에서 반등하여 약 0.4920 USDT에 도달했으며, 흰색 원으로 단기 조정 구간을 강조했다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:5813b304816254c971256595c33b5443adc0ecc2a7f8f2bf380c7417f9b755ad": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView ONDO/USDT 1시간봉 매매 구간 표시",
+    "description_ko": "ONDO의 1시간봉 확대 차트. 약 0.4834 USDT를 기준으로 위쪽 수익 구간과 아래쪽 손실 구간을 표시했으며, 반등 직전 캔들을 흰색 원으로 강조했다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:cf4d9bc247e95b6d956933b2ce6fefdbc5926fc6fb1512b8c63de1c76e9dfe20": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView ONDO/USDT 일봉 차트",
+    "description_ko": "바이낸스 ONDO의 일봉 차트. 9월 급등 이후 조정과 약 0.4920 USDT로의 반등이 보이며, 장기 추세선과 지지·저항선, 이동평균선 및 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul"
+  },
+  "codex-gpt-6.1-sol-v1:ed2e3b28e40806fc64dce7a5467e5fd3354ba4a05272fc9cfa37dc079787e440": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView Lighter/USDT 일봉 차트",
+    "description_ko": "OKX의 Lighter 일봉 차트. 상승 채널과 고점 형성 이후 약 3.7004 USDT까지 조정된 모습이며, 저항 구간과 이동평균선 및 거래량 지표가 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul"
   }
 }

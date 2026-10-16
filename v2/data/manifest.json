@@ -24,11 +24,12 @@
   "app_version": "2.5.8",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "3a80c81d9d5af8ed76c59450256825e9c3fe2422a0ac78e6c9c273176fb7e4c0"
+    "sha256": "3a80c81d9d5af8ed76c59450256825e9c3fe2422a0ac78e6c9c273176fb7e4c0",
+    "count": 71
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "39be9d8d18650de726300970c7d61c0faa15e8a9de728b932fd47eca840fc09c",
-    "count": 4
+    "sha256": "db19dde499df73814832ac9742c1ad416c1aeef936d102396f74697b2856f060",
+    "count": 12
   }
 }
