@@ -3993,10 +3993,14 @@
       "JP Morgan calls for a re-rating in memory stocks on “business model transformation” with “unprecedented forward visibility”",
       "“The setup for memory is meaningfully stronger than 90 days ago, with the structural S-D imbalance deepening and business model transformation gaining pace.” $SNDK\n $MU\n $SKHY"
     ],
-    "translated": [],
+    "translated": [
+      "JP모건은 \"전례 없는 미래 가시성\"을 동반한 \"비즈니스 모델 전환\"을 이유로 메모리 주식의 재평가(리레이팅)를 촉구했습니다.",
+      "\"구조적인 수급 불균형이 심화되고 비즈니스 모델 전환이 가속화되면서, 메모리 업황은 90일 전보다 의미 있게 강화되었습니다.\" $SNDK\n $MU\n $SKHY"
+    ],
     "content_hash": "944d3bfb5af99371",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained"
+    "status": "ok",
+    "translated_at": "2026-10-17T15:32:13.920559+00:00",
+    "chunk": "posts-x.json"
   },
   "2111071792500490393": {
     "paragraphs": [
@@ -4017,5 +4021,19 @@
     "status": "ok",
     "translated_at": "2026-10-17T15:13:27.779349+00:00",
     "chunk": "posts-x.json"
+  },
+  "2111147604042272835": {
+    "paragraphs": [
+      "One of the most encouraging things I'm seeing in the market today is the $VIX surging +35%, currently around 22!",
+      "A quick spike toward 26-30 would be interesting.",
+      "Historically, sharp selloffs accompanied by VIX spikes have often coincided with panic selling and potential interim bottoms.",
+      "I'm not someone who calls market tops or bottoms, but this is worth watching closely!",
+      "During June's selloff, the VIX barely moved. This time, we're seeing volatility expand alongside the selling pressure, which can be an encouraging sign of a potential short-term washout.",
+      "Not confirmation of a bottom, but definitely something I'm paying attention to!"
+    ],
+    "translated": [],
+    "content_hash": "94f587c7c2596346",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained"
   }
 }

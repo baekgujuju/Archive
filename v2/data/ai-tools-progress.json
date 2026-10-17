@@ -1,12 +1,12 @@
 {
   "total": 446,
-  "remaining": 37,
+  "remaining": 26,
   "stats": {
     "verified": 0,
     "pending": 0,
-    "pending_github_look": 5,
+    "pending_github_look": 9,
     "cached": 364,
-    "temporary_failures": 40,
+    "temporary_failures": 47,
     "errors": 0
   },
   "pending_details": {
@@ -54,6 +54,17 @@
     "2111071792500490393:57409462d5965790.jpg": "temporary analysis or repository API failure",
     "2111071792500490393:029433d3b4ae7ab1.jpg": "temporary analysis or repository API failure",
     "2111091037972181403:a27ffd7d1845ee40.jpg": "temporary analysis or repository API failure",
-    "2056043954421039302:3c0e0b8d4dabf490.jpg": "temporary analysis or repository API failure"
+    "2056043954421039302:3c0e0b8d4dabf490.jpg": "temporary analysis or repository API failure",
+    "2111147604042272835:44175a87ad1e11f8.jpg": "temporary analysis or repository API failure",
+    "2111369849121231072:03d8ede6067734e7.jpg": "temporary analysis or repository API failure",
+    "2108854476367139013:faccd584d1a73e22.jpg": "GitHub screenshot requires verified repository match",
+    "2108437050294706599:6379e44907b5b4d0.jpg": "temporary analysis or repository API failure",
+    "2089327156274790890:8552a9e4d437d224.jpg": "temporary analysis or repository API failure",
+    "2108437050294706599:bcf670fdc1aa4144.jpg": "temporary analysis or repository API failure",
+    "2108218393568719269:38a4dc8f85067a37.jpg": "temporary analysis or repository API failure",
+    "2107886190087266427:c089b9f9d0143ddf.jpg": "GitHub screenshot requires verified repository match",
+    "2107836535995568551:c57a5ab436a808fa.jpg": "GitHub screenshot requires verified repository match",
+    "2041704624529228093:2285fbb0b53bf3ed.png": "GitHub screenshot requires verified repository match",
+    "2108135060176294343:text-6ec202e3b4b5c45d": "temporary analysis or repository API failure"
   }
 }
