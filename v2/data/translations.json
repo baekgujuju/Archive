@@ -3970,5 +3970,52 @@
     "status": "ok",
     "translated_at": "2026-10-17T00:40:07.210757+00:00",
     "chunk": "posts-web.json"
+  },
+  "2111142128860762476": {
+    "paragraphs": [
+      "THIS IS FUCKING INCREDIBLE",
+      "a solo dev just open-sourced a 100% FREE replacement for ElevenLabs that runs entirely on your own machine.",
+      "the GitHub repo is at 19.4K stars.",
+      "it lets you:",
+      "→ clone a voice from a clean reference clip\n→ dub any video into 646 languages\n→ generate audiobooks, dictation, transcription\n→ choose between 14 TTS engines instead of one",
+      "ElevenLabs supports 32 languages. this does 646.",
+      "no per-character charges. no usage limits. no audio ever leaves your computer.",
+      "save this for later.",
+      "i'll leave the repo below"
+    ],
+    "translated": [],
+    "content_hash": "1cbae733d7e05aba",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained"
+  },
+  "2111091037972181403": {
+    "paragraphs": [
+      "JP Morgan calls for a re-rating in memory stocks on “business model transformation” with “unprecedented forward visibility”",
+      "“The setup for memory is meaningfully stronger than 90 days ago, with the structural S-D imbalance deepening and business model transformation gaining pace.” $SNDK\n $MU\n $SKHY"
+    ],
+    "translated": [],
+    "content_hash": "944d3bfb5af99371",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained"
+  },
+  "2111071792500490393": {
+    "paragraphs": [
+      "SpaceXAI engineer, Lauren made all 54 of her skills public, and now you can add them to Grok Bot in one click",
+      "absolutely amazing...",
+      "the full list is in the image:",
+      "·  3 to start: /poteto-mode runs everything else\n·  8 to build: arena, swarm, architect, blast-radius\n·  6 to review: interrogate, no-comments, verification\n·  8 to understand: how, why, teach, bro\n·  5 to write: unslop, technical-writing\n·  24 principles her agents read before every decision",
+      "save the list, then add it to your Grok Bot"
+    ],
+    "translated": [
+      "SpaceXAI 엔지니어 Lauren이 자신의 54개 스킬을 모두 공개했며, 이제 클릭 한 번으로 Grok Bot에 추가할 수 있습니다.",
+      "정말 놀랍네요...",
+      "전체 목록은 이미지에서 확인하실 수 있습니다:",
+      "· 시작을 위한 3개: /poteto-mode가 나머지 모든 것을 실행\n· 빌드를 위한 8개: arena, swarm, architect, blast-radius\n· 검토를 위한 6개: interrogate, no-comments, verification\n· 이해를 위한 8개: how, why, teach, bro\n· 작성을 위한 5개: unslop, technical-writing\n· 에이전트가 매 의사결정 전에 읽는 24가지 원칙",
+      "목록을 저장한 뒤 Grok Bot에 추가해 보세요."
+    ],
+    "content_hash": "debce2d3e73fa3ef",
+    "status": "ok",
+    "translated_at": "2026-10-17T15:13:27.779349+00:00",
+    "chunk": "posts-x.json"
   }
 }
