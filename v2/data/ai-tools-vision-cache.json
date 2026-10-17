@@ -2204,5 +2204,205 @@
     "category_ko": "주식 기술적 분석",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b16f2b194099a8d98a37db35358aed438f5124f0112d3dde5995f1c11e8f2fe1": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Rocket Lab 주가의 언더컷 후 반등",
+    "description_ko": "TradingView 주가 차트에 지지선 이탈인 언더컷, 진입 지점, 손절선이 표시되어 있으며 이후 상승 흐름을 보여준다.",
+    "category_ko": "주식 차트·매매 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4546dd419839bcc359ba8a227d5cc5d7bd658855c4dc7b4a9398d437e3599977": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Dell Technologies 진입 및 1차 분할 매도",
+    "description_ko": "Dell 일봉 차트에 진입가 141.58, 손절가 137.41, 목표 수준 168.24와 언더컷 및 4분의 1 분할 매도 표시가 있다.",
+    "category_ko": "주식 차트·매매 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7f9969fc2deadb912d3b056baaf381386470d489e5b1b064bfa21d3a5702d1fc": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Dell Technologies 추가 분할 매도",
+    "description_ko": "Dell의 상승 추세에서 언더컷 이후 진입과 손절 기준, 두 차례의 4분의 1 분할 매도 지점을 표시한 일봉 차트다.",
+    "category_ko": "주식 차트·매매 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9d3014d463b344547e2a5dcb6dc4259982ec9e8eae3c46f3fa4a08a3c44abde5": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Dell Technologies 장기 상승과 분할 매도",
+    "description_ko": "Dell 주가의 큰 상승 구간을 확대한 기간으로 보여주며 초기 진입, 손절선과 상승 중 세 차례의 분할 매도 지점을 표시한다.",
+    "category_ko": "주식 차트·매매 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7b4b837002ba348b78ead721da52d352757aece91e782a05aecbb747f0d0d882": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Dell Technologies 분할 매도 및 전량 청산",
+    "description_ko": "Dell 일봉 차트에 초기 진입과 분할 매도 기록이 있으며, 상승 후 조정 구간에 전량 청산 지점이 추가로 표시되어 있다.",
+    "category_ko": "주식 차트·매매 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a563de49eefe77f622b0e67921bd7835d40b78b2f70e84eb650b0970a58d1908": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Roundhill Memory ETF 거래량 감소 후 확대",
+    "description_ko": "DRAM ETF 일봉 차트에서 주가 하락과 이동평균선을 보여주며, 거래량이 줄어들다가 마지막 반등 봉에서 확대된 구간을 강조한다.",
+    "category_ko": "ETF 차트·거래량 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4f8a2fce497c8f9c3063d0d222439183a7c1e20a5e1167fc62e252d8a4220c1c": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group 거래량 확대와 200일선 부근 반등",
+    "description_ko": "NBIS 일봉 차트에서 하락 후 200일 이동평균선 부근의 반등을 보여주며, 이전 거래량 감소와 마지막 봉의 거래량 확대를 강조한다.",
+    "category_ko": "주식 차트·거래량 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1e04b62c885a053bf1061f594c5b0da0ad5692ba717c5eff8288c6ac14dd7779": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "CoreWeave 일봉 차트: 주요 지지선과 거래량",
+    "description_ko": "CoreWeave(CRWV)의 일봉 차트. 60.74달러 부근의 주요 지지선, 하락 구간의 거래량 감소, 마지막 반등 봉의 거래량 급증이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4de8fc949ae4a309a910027a302bfc3e11ef5cf82033a7f48e5ebfbe497db027": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Rocket Lab 일봉 차트: 하락 추세와 거래량",
+    "description_ko": "Rocket Lab(RKLB)의 일봉 차트. 이동평균선 아래로 하락한 주가와 최근 거래량 감소, 마지막 봉의 긴 아래꼬리 및 거래량 급증을 보여준다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:dc94a8be383cca23be885bdc007a27aac12436d7490a019970236fc128bad167": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "주가 사이클의 5단계 개념도",
+    "description_ko": "축적, 상승, 분산, 하락, 횡보로 이어지는 주가 사이클을 설명하는 그림. 상승 초기에는 매수 적기, 하락 초기에는 매도 적기라는 표시가 있다.",
+    "category_ko": "투자 교육 도표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c0edea37bb807f9fe4477903c78a1c0ea3c70ecc323e6e5aeb12fa4f037f9259": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ARKK와 Micron의 주가 단계 비교",
+    "description_ko": "왼쪽 ARKK 월봉에 1~4단계 주가 흐름을 표시하고, 오른쪽 Micron(MU) 주봉에는 상승 이후 수렴하는 구간을 잠재적인 3단계로 표시한 비교 차트다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d1ae3c70c0196e90514b142d6db35a74f1a61bd48601d87840bae6e22317bd06": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "CoreWeave 일봉 차트: 지지·저항과 매물대",
+    "description_ko": "CoreWeave의 주가, 여러 이동평균선, 거래량 및 우측 매물대를 표시한 차트. 최근 주가가 64.80달러로 하락한 모습과 지지·저항 구간, 매도 신호, 실적 표가 보인다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0f829c802ff6371ef99011a85c378d6e21432a657a6c5caffe7994b9c216ce10": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "CoreWeave 주가 차트와 주요 지지선 분석",
+    "description_ko": "CoreWeave의 일봉 캔들, 이동평균선과 거래량 차트다. 주요 지지·저항 전환선 위에서 지지받고 마감하는지, 언더컷 앤드 랠리 캔들의 저가를 이탈하는지 확인하라는 한국어 주석이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8b231c8802b2cab9c2ad0da9a1ec3aeee1665d9626311844dee2635c77dccc26": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Share count vs relative volume",
+    "description_ko": "갭 거래에서 거래 주식 수와 상대 거래량에 따른 거래당 추가 R을 비교한 그래프다. 900만 주 이상 그룹은 두 분석 기간 모두 양의 평균 차이를 보이며, 상대 거래량 최고·최저 그룹 비교는 표시된 95% 범위가 0을 포함한다.",
+    "category_ko": "트레이딩 통계",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fe5590716e2c7eb4d744f759edac6065142b6cd8912932ebaa81d76fcff05df5": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Marvell·SpaceX·Astera Labs의 5일 주가 차트",
+    "description_ko": "Marvell Technology, Space Exploration Technologies, Astera Labs라는 이름의 금융 차트 세 개가 세로로 배치되어 있다. 각각 286.45달러, 174.60달러, 387.33달러와 5일 상승률이 표시되며, 차트 끝부분에 상승 움직임이 나타난다.",
+    "category_ko": "금융 시세 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bce16c2befaa3a9013bcb3a915e3509d08e79bd371d1e4538636bef3a99ad9ba": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "How To Find & Own America’s Greatest Opportunities",
+    "description_ko": "윌리엄 오닐이 Simmonds Precision Products의 주간 주가와 거래량 차트로 컵 위드 핸들, 매수 지점, 상승 베이스, 클라이맥스 천장과 매도 규칙을 설명하는 자료.",
+    "category_ko": "주식 투자 교육",
+    "owner_hint": "William O’Neil",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:477044b5081ffeb4f2198ca8bd318d79696f29ff7c622062042df5560b045efa": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SOXX/RSP 일간 상대강도 차트",
+    "description_ko": "SOXX와 RSP의 비율을 표시한 TradingView 일간 차트. 삼각 수렴 추세선, 여러 이동평균선, 지지·저항 영역과 거래량 프로파일이 표시되어 있다.",
+    "category_ko": "금융 차트·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1b0d42aee0e81981f65f7b32e92ee3e94b27caad4387f17a6d5b78fafab3c85e": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SOXX/RSP 장기 흐름과 삼각 수렴 분석",
+    "description_ko": "SOXX/RSP 비율의 장기 일간 차트. 상승 이후 수렴하는 구간과 거래량 프로파일을 보여주며, 노란 화살표로 과거 상승과 향후 상승 시나리오를 표시했다.",
+    "category_ko": "금융 차트·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:544a177a174925caeb7744cf7fefc3b7c664168b7ab592aa46d956f127ed3793": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Invesco QQQ Trust 일간 차트",
+    "description_ko": "QQQ의 일간 캔들과 여러 이동평균선을 표시한 TradingView 차트. 최근 하락 후 가격은 약 722.67로 표시되며, 청록색 화살표와 노란 점으로 특정 구간을 강조했다.",
+    "category_ko": "금융 차트·기술적 분석",
+    "owner_hint": "jfsrev",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bf6442bdde6ef597b1b6f9b36e79b693f46c74c5000de35bdb70759256f01897": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "KOSPI 200 Futures 주간 차트",
+    "description_ko": "코스피 200 선물의 주간 차트. 급등 후 하락과 반등 구간에 노란 상승 채널이 그려져 있으며, 마지막 큰 음봉이 채널 하단과 50주 단순이동평균선 아래로 내려간 모습을 보여준다.",
+    "category_ko": "금융 차트·기술적 분석",
+    "owner_hint": "Professorr_",
+    "provider": "codex"
   }
 }
