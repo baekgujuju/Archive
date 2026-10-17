@@ -23,12 +23,25 @@ v2 결정적 스케줄러 러너 (5분 주기)
 """
 import fcntl
 import os
+import signal
 import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from proc_group import run_grouped
+from proc_group import run_grouped, terminate_current
+
+
+def _on_sigterm(signum, frame):
+    """P1-7: SIGTERM을 받으면 현재 자식 그룹(단계)부터 종료시키고 끝낸다."""
+    terminate_current()
+    raise SystemExit(143)
+
+
+try:
+    signal.signal(signal.SIGTERM, _on_sigterm)
+except ValueError:
+    pass
 
 HOOKS_DIR = Path(__file__).parent
 V2_ROOT = HOOKS_DIR.parent

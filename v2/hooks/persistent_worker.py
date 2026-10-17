@@ -30,13 +30,26 @@ subprocess로 분리 실행되며 exec 완료 후에도 생존.
 """
 import fcntl
 import os
+import signal
 import subprocess
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-from proc_group import run_grouped
+from proc_group import run_grouped, terminate_current
+
+
+def _on_sigterm(signum, frame):
+    """P1-7: SIGTERM을 받으면 현재 자식 그룹(폴)부터 종료시키고 끝낸다."""
+    terminate_current()
+    raise SystemExit(143)
+
+
+try:
+    signal.signal(signal.SIGTERM, _on_sigterm)
+except ValueError:
+    pass
 
 HOOKS_DIR = Path(__file__).resolve().parent
 V2_ROOT = HOOKS_DIR.parent

@@ -5,10 +5,13 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 from datetime import datetime
 
-from pipeline_lock import PipelineLockTimeout, pipeline_lock
+# pipeline_lock lives in v2/ (parent dir), not hooks/ — same bootstrap as drive_poll.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
 
 V2 = Path(__file__).resolve().parent.parent
 ARRAYS = ('pinned', 'deletedPosts', 'deletedReplies', 'deletedRemovedReplies')
@@ -102,8 +105,11 @@ def publish(v2=V2):
         target = v2 / 'data' / 'shared-state.json'
         manifest_path = v2 / 'data' / 'manifest.json'
         paths = [str(p.relative_to(repo)) for p in (target, manifest_path)]
-        # P1-4: read-validate-write under the shared lock so a concurrent
-        # build cannot preserve a stale shared-state and then lose this write.
+        # P1-4: read-validate-write + staging/commit under the shared lock so
+        # a concurrent build cannot swap the manifest in the gap between
+        # the write and the commit (that would publish a settings commit
+        # whose manifest does not match its chunks). The network push stays
+        # outside the critical section.
         try:
             with pipeline_lock():
                 if target.exists():
@@ -117,11 +123,11 @@ def publish(v2=V2):
                 atomic(target, state)
                 manifest['shared_state'] = {'file': 'data/shared-state.json', 'sha256': hashlib.sha256(target.read_bytes()).hexdigest(), 'revision': state['revision']}
                 atomic(manifest_path, manifest)
+                if run(['git', 'status', '--porcelain', '--'] + paths, repo).strip():
+                    run(['git', 'add', '--'] + paths, repo)
+                    run(['git', 'commit', '-m', 'Publish owner archive settings'], repo)
         except PipelineLockTimeout as e:
             raise ValueError(f"공유 상태 쓰기 건너뜀 (락 타임아웃): {e}")
-        if run(['git', 'status', '--porcelain', '--'] + paths, repo).strip():
-            run(['git', 'add', '--'] + paths, repo)
-            run(['git', 'commit', '-m', 'Publish owner archive settings'], repo)
         # Retry a previous failed push even when downloaded state is unchanged.
         run(['git', 'push', 'origin', 'HEAD:' + branch], repo)
         print('Owner shared settings published')

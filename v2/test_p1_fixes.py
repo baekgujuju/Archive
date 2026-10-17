@@ -55,15 +55,20 @@ def test_translate_corrupt_recovery_and_merge():
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
         tp.CACHE_FILE = td / "translations.json"
-        tp.RECOVERY_FILE = td / "translations.json.recovery"
+        tp.RECOVERY_FILE = td / ".translations-recovery.json"
+        tp.QUARANTINE_DIR = td / ".quarantine"
         # Valid recovery copy present; main file corrupt.
         tp._atomic_write_json(tp.RECOVERY_FILE, {"good": {"status": "ok"}})
         tp.CACHE_FILE.write_text("{corrupt", encoding="utf-8")
         cache = tp.load_cache()
         _check("corrupt main -> recovery fallback", cache == {"good": {"status": "ok"}})
-        _check("corrupt file quarantined (not deleted silently)",
-               len(list(td.glob("translations.json.corrupt-*"))) == 1)
-        _check("corrupt main file moved away", not tp.CACHE_FILE.exists())
+        _check("corrupt file quarantined outside data/",
+               len(list((td / ".quarantine").glob("translations.json.corrupt-*"))) == 1)
+        _check("corrupt main file moved away", not tp.CACHE_FILE.exists() or
+               json.loads(tp.CACHE_FILE.read_text()) == {"good": {"status": "ok"}})
+        _check("recovery restored as main file even with no work",
+               json.loads(tp.CACHE_FILE.read_text(encoding="utf-8")) ==
+               {"good": {"status": "ok"}})
         # save_cache merges touched keys only: a concurrent writer's entry
         # added after our load must survive our save.
         tp._atomic_write_json(tp.CACHE_FILE, {"other": {"status": "ok"}})
@@ -73,6 +78,12 @@ def test_translate_corrupt_recovery_and_merge():
         _check("save merges touched only (concurrent entry preserved)",
                saved.get("other") == {"status": "ok"} and saved.get("mine") == {"status": "ok"})
         _check("recovery copy refreshed", json.loads(tp.RECOVERY_FILE.read_text()) == saved)
+        # Empty pending set must NOT clobber a concurrent correction to an
+        # already-saved key (the pending set is cleared after each save).
+        tp._atomic_write_json(tp.CACHE_FILE, {"mine": {"status": "corrected"}})
+        tp.save_cache(cache, touched=set())
+        _check("empty pending does not overwrite concurrent correction",
+               json.loads(tp.CACHE_FILE.read_text())["mine"] == {"status": "corrected"})
         # save_cache with a corrupt current file raises (fail-closed).
         tp.CACHE_FILE.write_text("{corrupt", encoding="utf-8")
         try:
@@ -156,41 +167,50 @@ def test_enrich_merge_save_fail_closed():
 
     with tempfile.TemporaryDirectory() as td:
         td = Path(td)
-        target = td / "cache.json"
-        # Corrupt file -> quarantine + raise, never overwrite with our keys.
-        target.write_text("{corrupt", encoding="utf-8")
+        qdir = td / "hooks" / ".quarantine"
+        real_v2 = et.V2_ROOT
+        et.V2_ROOT = td  # quarantine lands in the sandbox, not the real tree
         try:
-            et._merge_save(target, {"k": {"v": 1}})
-            _check("enrich refuses corrupt file", False)
-        except RuntimeError:
-            _check("enrich refuses corrupt file", True)
-        _check("corrupt file quarantined",
-               len(list(td.glob(".cache.json.corrupt-*"))) == 1)
-        # Lock timeout -> raise, never write unlocked.
-        import fcntl
-        lock_path = pl.LOCK_PATH
-        lock_path.parent.mkdir(parents=True, exist_ok=True)
-        fd = os.open(lock_path, os.O_CREAT | os.O_RDWR, 0o644)
-        fcntl.flock(fd, fcntl.LOCK_EX)
-        try:
-            target2 = td / "cache2.json"
-            target2.write_text(json.dumps({"base": 1}), encoding="utf-8")
+            target = td / "cache.json"
+            # Corrupt file -> quarantine + raise, never overwrite with our keys.
+            target.write_text("{corrupt", encoding="utf-8")
             try:
-                et._merge_save(target2, {"k": 2})
-                _check("enrich lock timeout raises", False)
-            except PipelineLockTimeout:
-                _check("enrich lock timeout raises", True)
-            _check("no unlocked write happened",
-                   json.loads(target2.read_text()) == {"base": 1})
+                et._merge_save(target, {"k": {"v": 1}})
+                _check("enrich refuses corrupt file", False)
+            except RuntimeError:
+                _check("enrich refuses corrupt file", True)
+            _check("corrupt file quarantined outside data/",
+                   len(list(qdir.glob("cache.json.corrupt-*"))) == 1)
+            _check("quarantine bytes preserved",
+                   (list(qdir.glob("cache.json.corrupt-*"))[0].read_text()
+                    == "{corrupt"))
+            # Lock timeout -> raise, never write unlocked.
+            import fcntl
+            lock_path = pl.LOCK_PATH
+            lock_path.parent.mkdir(parents=True, exist_ok=True)
+            fd = os.open(lock_path, os.O_CREAT | os.O_RDWR, 0o644)
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            try:
+                target2 = td / "cache2.json"
+                target2.write_text(json.dumps({"base": 1}), encoding="utf-8")
+                try:
+                    et._merge_save(target2, {"k": 2})
+                    _check("enrich lock timeout raises", False)
+                except PipelineLockTimeout:
+                    _check("enrich lock timeout raises", True)
+                _check("no unlocked write happened",
+                       json.loads(target2.read_text()) == {"base": 1})
+            finally:
+                fcntl.flock(fd, fcntl.LOCK_UN)
+                os.close(fd)
+            # Normal merge: concurrent update preserved.
+            target3 = td / "cache3.json"
+            target3.write_text(json.dumps({"a": 1}), encoding="utf-8")
+            et._merge_save(target3, {"b": 2})
+            _check("enrich merge preserves disk state",
+                   json.loads(target3.read_text()) == {"a": 1, "b": 2})
         finally:
-            fcntl.flock(fd, fcntl.LOCK_UN)
-            os.close(fd)
-        # Normal merge: concurrent update preserved.
-        target3 = td / "cache3.json"
-        target3.write_text(json.dumps({"a": 1}), encoding="utf-8")
-        et._merge_save(target3, {"b": 2})
-        _check("enrich merge preserves disk state",
-               json.loads(target3.read_text()) == {"a": 1, "b": 2})
+            et.V2_ROOT = real_v2
 
 
 def test_proc_group_kills_grandchildren():
@@ -227,6 +247,136 @@ def test_legacy_writer_disabled():
     _check("legacy monitor --dry-run still allowed", r.returncode != 2)
 
 
+def test_proc_group_kills_sigterm_ignoring_grandchild():
+    from proc_group import run_grouped
+    # Grandchild ignores SIGTERM; the unconditional group SIGKILL must reap it.
+    code = (
+        "import signal, subprocess, sys, time; "
+        "signal.signal(signal.SIGTERM, signal.SIG_IGN); "
+        "subprocess.Popen([sys.executable, '-c', "
+        "'import signal, time; signal.signal(signal.SIGTERM, signal.SIG_IGN); "
+        "time.sleep(30)']); "
+        "time.sleep(30)"
+    )
+    try:
+        run_grouped([sys.executable, "-c", code], timeout=2, grace=2,
+                    capture_output=True, text=True)
+        _check("proc_group timeout raises (SIGTERM-ignoring)", False)
+    except subprocess.TimeoutExpired:
+        _check("proc_group timeout raises (SIGTERM-ignoring)", True)
+    time.sleep(0.5)
+    r = subprocess.run(["pgrep", "-f", "time.sleep(30)"],
+                       capture_output=True, text=True)
+    _check("SIGTERM-ignoring grandchild reaped by group SIGKILL",
+           r.stdout.strip() == "")
+
+
+def test_quarantine_survives_build():
+    import build_data as bd
+    import enrich_tools as et
+
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        real_v2 = et.V2_ROOT
+        et.V2_ROOT = td
+        real_bd_v2 = bd.V2_ROOT
+        real_bd_data = bd.DATA_DIR
+        real_bd_posts = bd.POSTS_JSON
+        real_bd_web = bd.WEB_INDEX_JSON
+        real_bd_ib = bd.IB_LIBRARY_JSON
+        real_bd_thumb = bd.MEDIA_THUMB
+        real_bd_full = bd.MEDIA_FULL
+        try:
+            # Quarantine a corrupt file (goes to hooks/.quarantine).
+            target = td / "data" / "cache.json"
+            target.parent.mkdir(parents=True)
+            target.write_text("{corrupt", encoding="utf-8")
+            try:
+                et._merge_save(target, {"k": 1})
+            except RuntimeError:
+                pass
+            qfiles = list((td / "hooks" / ".quarantine").glob("cache.json.corrupt-*"))
+            _check("quarantine created before build", len(qfiles) == 1)
+            # Run a real build (replaces data/) and check the quarantine survives.
+            bd.V2_ROOT = td
+            bd.DATA_DIR = td / "data"
+            bd.POSTS_JSON = td / "posts.json"
+            bd.WEB_INDEX_JSON = td / "index.json"
+            bd.IB_LIBRARY_JSON = td / "ib-library.json"
+            bd.MEDIA_THUMB = td / "media" / "thumb"
+            bd.MEDIA_FULL = td / "media" / "full"
+            bd.POSTS_JSON.write_text(json.dumps(
+                [{"tweetId": "1", "fullText": "hello", "type": "x",
+                  "sourceUrl": "https://x.com/a/status/1"}]), encoding="utf-8")
+            (td / "release.json").write_text(
+                json.dumps({"app_version": "test"}), encoding="utf-8")
+            bd.build_data()
+            _check("quarantine survives data/ replacement",
+                   len(list((td / "hooks" / ".quarantine").glob(
+                       "cache.json.corrupt-*"))) == 1)
+        finally:
+            et.V2_ROOT = real_v2
+            bd.V2_ROOT = real_bd_v2
+            bd.DATA_DIR = real_bd_data
+            bd.POSTS_JSON = real_bd_posts
+            bd.WEB_INDEX_JSON = real_bd_web
+            bd.IB_LIBRARY_JSON = real_bd_ib
+            bd.MEDIA_THUMB = real_bd_thumb
+            bd.MEDIA_FULL = real_bd_full
+
+
+def test_launcher_matching():
+    import launcher
+    # A python process whose argv contains an exact pipeline script path
+    # is matched (the script need not actually run — argv match only).
+    proc = subprocess.Popen(
+        [sys.executable, "-c", "import time; time.sleep(5)",
+         str(launcher.HOOKS_DIR / "monitor.py")],
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        time.sleep(0.5)
+        _check("launcher matches exact pipeline script argv",
+               proc.pid in launcher._pipeline_pids())
+    finally:
+        proc.terminate()
+        proc.wait()
+    # A shell whose args merely CONTAIN the hooks path + a script name is
+    # NOT matched (no substring matching).
+    shell = subprocess.Popen(
+        ["bash", "-c", f"echo {launcher.HOOKS_DIR}/monitor.py; sleep 5"],
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        time.sleep(0.5)
+        _check("launcher does not match non-python processes",
+               shell.pid not in launcher._pipeline_pids())
+    finally:
+        shell.terminate()
+        shell.wait()
+
+
+def test_ib_adapter_input_stability():
+    import ib_adapter as ia
+    real_lib = ia.IB_LIBRARY_JSON
+    before = real_lib.read_bytes() if real_lib.exists() else None
+    calls = {"n": 0}
+
+    def flaky():
+        calls["n"] += 1
+        return "fp-first" if calls["n"] == 1 else "fp-changed"
+
+    real_fp = ia.canonical_fingerprint
+    ia.canonical_fingerprint = flaky
+    try:
+        ia.main()
+        _check("adapter aborts when inputs change mid-adaptation", False)
+    except SystemExit as e:
+        _check("adapter aborts when inputs change mid-adaptation", e.code == 1)
+    finally:
+        ia.canonical_fingerprint = real_fp
+    after = real_lib.read_bytes() if real_lib.exists() else None
+    _check("adapter leaves library untouched on abort", before == after)
+
+
 if __name__ == "__main__":
     test_lock_exclusive_and_timeout()
     test_translate_corrupt_recovery_and_merge()
@@ -234,5 +384,9 @@ if __name__ == "__main__":
     test_build_toctou_abort()
     test_enrich_merge_save_fail_closed()
     test_proc_group_kills_grandchildren()
+    test_proc_group_kills_sigterm_ignoring_grandchild()
+    test_quarantine_survives_build()
+    test_launcher_matching()
+    test_ib_adapter_input_stability()
     test_legacy_writer_disabled()
     print("ALL P1 TESTS PASSED")

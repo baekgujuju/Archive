@@ -16,6 +16,7 @@ import time
 from pathlib import Path
 
 HOOKS_DIR = Path(__file__).resolve().parent
+V2_ROOT = HOOKS_DIR.parent
 WORKER_SCRIPT = HOOKS_DIR / "persistent_worker.py"
 PID_FILE = HOOKS_DIR / ".worker.pid"
 LOG_FILE = HOOKS_DIR / "worker.log"
@@ -124,21 +125,33 @@ def stop():
 
 # P1-7: 워커만 죽이면 scheduler/hook/번역 같은 자손이 고아로 남아 계속
 # 쓰고 게시할 수 있다. 이 checkout의 파이프라인 스크립트 프로세스를
-# cmdline으로 식별해 SIGTERM -> 대기 -> SIGKILL 순으로 정리한다.
-# (스크립트 파일명 + checkout 경로로만 식별 — 이름만으로 codex 같은
-#  일반 프로세스를 일괄 종료하지 않는다.)
+# 식별해 SIGTERM -> 대기 -> SIGKILL 순으로 정리한다.
+# 식별은 (a) 인터프리터가 python이고 (b) argv 중 하나가 파이프라인
+# 스크립트의 절대 경로와 정확히 일치할 때만 — hooks 경로를 포함하는
+# 에디터·셸 같은 무관한 프로세스를 부분 문자열 매칭으로 죽이지 않는다.
 PIPELINE_SCRIPTS = (
     "persistent_worker.py", "scheduler_runner.py", "drive_poll.py",
-    "monitor.py", "post_ingest_hook.py", "build_data.py",
-    "enrich_tools.py", "translate_posts.py", "publish_settings.py",
+    "monitor.py", "post_ingest_hook.py", "publish_settings.py",
+)
+V2_SCRIPTS = (
+    "build_data.py", "enrich_tools.py", "translate_posts.py",
     "media-mirror.py", "ib_adapter.py",
 )
 
 
+def _pipeline_script_paths():
+    paths = set()
+    for name in PIPELINE_SCRIPTS:
+        paths.add(str(HOOKS_DIR / name))
+    for name in V2_SCRIPTS:
+        paths.add(str(V2_ROOT / name))
+    return paths
+
+
 def _pipeline_pids():
-    """이 checkout의 파이프라인 프로세스 PID 목록 (/proc cmdline 대조)."""
+    """이 checkout의 파이프라인 프로세스 PID 목록 (정확한 argv 대조)."""
+    script_paths = _pipeline_script_paths()
     found = []
-    hooks = str(HOOKS_DIR)
     try:
         entries = list(Path("/proc").iterdir())
     except OSError:
@@ -147,13 +160,20 @@ def _pipeline_pids():
         if not entry.name.isdigit():
             continue
         try:
-            cmdline = (entry / "cmdline").read_bytes().decode("utf-8", "ignore")
+            raw = (entry / "cmdline").read_bytes()
         except OSError:
             continue
-        if hooks not in cmdline:
+        argv = [a.decode("utf-8", "ignore") for a in raw.split(b"\x00") if a]
+        if not argv:
             continue
-        if any(script in cmdline for script in PIPELINE_SCRIPTS):
-            found.append(int(entry.name))
+        # (a) python 인터프리터로 실행된 프로세스만 (에디터·셸 제외).
+        interp = Path(argv[0]).name
+        if interp not in ("python", "python3") and "python" not in interp:
+            continue
+        # (b) argv 중 하나가 파이프라인 스크립트 절대 경로와 정확히 일치.
+        if not any(arg in script_paths for arg in argv):
+            continue
+        found.append(int(entry.name))
     return found
 
 

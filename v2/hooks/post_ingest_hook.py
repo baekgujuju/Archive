@@ -27,7 +27,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from proc_group import run_grouped, terminate_current
-from pipeline_lock import PipelineLockTimeout, pipeline_lock
+
+# pipeline_lock lives in v2/ (parent dir), not hooks/ — same bootstrap as drive_poll.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
 
 V2_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = V2_ROOT / "data"
@@ -147,18 +150,27 @@ def do_push():
 
 
 def update_manifest_translation_hash():
-    """번역 후 manifest.translations.sha256 업데이트."""
+    """번역 후 manifest.translations.sha256 업데이트 (P1-4: 공유 락 하에서).
+
+    락 없이 읽은 오래된 manifest에 번역 해시를 붙이고, 그 사이 빌드가
+    교체한 새 manifest 위에 덮으면 빌드 세대의 청크 해시가 사라진다.
+    """
     if not MANIFEST.exists() or not TRANSLATIONS.exists():
         return
     try:
-        m = json.loads(MANIFEST.read_text(encoding="utf-8"))
-        m["translations"] = {
-            "file": "data/translations.json",
-            "sha256": sha256_file(TRANSLATIONS),
-            "count": len(json.loads(TRANSLATIONS.read_text(encoding="utf-8"))),
-        }
-        MANIFEST.write_text(json.dumps(m, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        log(f"manifest.translations.sha256 업데이트: {m['translations']['sha256'][:16]}...")
+        with pipeline_lock():
+            m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+            m["translations"] = {
+                "file": "data/translations.json",
+                "sha256": sha256_file(TRANSLATIONS),
+                "count": len(json.loads(TRANSLATIONS.read_text(encoding="utf-8"))),
+            }
+            tmp = MANIFEST.with_name(f".{MANIFEST.name}.tmp-{os.getpid()}")
+            tmp.write_text(json.dumps(m, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            tmp.replace(MANIFEST)
+            log(f"manifest.translations.sha256 업데이트: {m['translations']['sha256'][:16]}...")
+    except PipelineLockTimeout as e:
+        log(f"manifest 번역 해시 업데이트 건너뜀 (락 타임아웃): {e}")
     except (OSError, ValueError) as e:
         log(f"manifest 번역 해시 업데이트 실패: {e}")
 

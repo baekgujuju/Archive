@@ -30,7 +30,21 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from proc_group import run_grouped
+import signal
+
+from proc_group import run_grouped, terminate_current
+
+
+def _on_sigterm(signum, frame):
+    """P1-7: SIGTERM을 받으면 현재 자식 그룹(후크)부터 종료시키고 끝낸다."""
+    terminate_current()
+    raise SystemExit(143)
+
+
+try:
+    signal.signal(signal.SIGTERM, _on_sigterm)
+except ValueError:
+    pass
 
 V2_ROOT = Path(__file__).resolve().parent.parent
 HOOKS_DIR = V2_ROOT / "hooks"

@@ -355,6 +355,12 @@ def main():
         print(canonical_fingerprint())
         return
 
+    # P1-5: 어댑션 전 입력 지문을 기록하고, 쓰기 전 입력이 안정했는지
+    # 재검증한다. 입력이 어댑션 도중 바뀌면 산출물(라이브러리)은 바뀐
+    # 전후 입력이 섞인 것이 되므로, 임시 파일만 버리고 실패한다.
+    # 지문은 라이브러리에 내장한다 — 빌드는 "이 라이브러리를 만든 입력"의
+    # 지문을 쓰지, 어댑션 이후 재계산한 지문을 쓰지 않는다.
+    fp_before = canonical_fingerprint()
     snapshot = load_snapshot()
     raws = collect_canonical()
     merged, stats = merge(snapshot, raws)
@@ -373,15 +379,22 @@ def main():
 
     temporary = IB_LIBRARY_JSON.with_suffix(".tmp")
     temporary.write_text(
-        json.dumps({"posts": merged}, ensure_ascii=False, indent=2) + "\n",
+        json.dumps({"posts": merged, "canonical_fingerprint": fp_before},
+                   ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+    fp_after = canonical_fingerprint()
+    if fp_after != fp_before:
+        temporary.unlink(missing_ok=True)
+        print("오류: 정본 입력이 어댑션 도중 변경됨 — 라이브러리를 쓰지 않고 중단 "
+              "(다음 폴에서 재시도)", file=sys.stderr)
+        sys.exit(1)
     temporary.replace(IB_LIBRARY_JSON)
     print(f"IB 병합 완료: 스냅샷 {stats['snapshot']} → "
           f"매칭 {stats['matched']} + 신규 {stats['added']} + "
           f"스냅샷유지 {stats['snapshot_only']} = 총 {stats['total']}개 "
           f"(본문 업데이트 {stats['content_updated']}개)", file=sys.stderr)
-    print(f"정본 해시: {canonical_fingerprint()[:16]}...", file=sys.stderr)
+    print(f"정본 해시: {fp_before[:16]}...", file=sys.stderr)
 
 
 if __name__ == "__main__":

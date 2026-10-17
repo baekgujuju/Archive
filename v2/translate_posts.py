@@ -42,8 +42,11 @@ V2_ROOT = Path(__file__).parent
 DATA_DIR = V2_ROOT / "data"
 CACHE_FILE = DATA_DIR / "translations.json"
 # Validated recovery copy: written atomically after every successful save.
-# If CACHE_FILE is ever corrupt, load_cache() falls back to this file.
-RECOVERY_FILE = DATA_DIR / "translations.json.recovery"
+# Lives OUTSIDE data/ (in hooks/) so a build's data/ replacement can never
+# wipe it (P1-6 quarantine durability). Same for the quarantine dir.
+HOOKS_DIR = V2_ROOT / "hooks"
+RECOVERY_FILE = HOOKS_DIR / ".translations-recovery.json"
+QUARANTINE_DIR = HOOKS_DIR / ".quarantine"
 API_KEY_PATH = Path.home() / ".gemini" / ".api_key"
 _GEMINI_QUOTA_UNTIL = 0.0  # monotonic timestamp; 429 cooldown expiry
 _GEMINI_QUOTA_COOLDOWN = 60.0
@@ -271,38 +274,52 @@ def load_cache():
 
     - Valid main file -> return it.
     - Corrupt main file -> quarantine it (never silently delete: the corrupt
-      bytes may still hold recoverable entries), fall back to the validated
-      recovery copy. If that is also bad, return {} and rebuild from posts
+      bytes may still hold recoverable entries), then atomically RESTORE
+      the validated recovery copy as the main file (under the shared lock)
+      so later saves merge onto the whole recovered cache instead of
+      starting from {} and losing untouched recovered entries. If the
+      recovery copy is also bad, return {} and rebuild from posts
       (translations are regenerable; a corrupt cache must never wedge the
       pipeline into a permanent crash loop).
+
+    The restore happens here (not in save_cache) so even the no-work
+    early-return path leaves the main file restored.
     """
     cache = _read_cache_file(CACHE_FILE)
     if cache is not None:
         return cache
-    if CACHE_FILE.exists():
-        quarantine = CACHE_FILE.with_name(
-            f"translations.json.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
-        )
-        try:
-            os.replace(CACHE_FILE, quarantine)
-            print(f"손상된 번역 캐시를 격리: {quarantine}", file=sys.stderr)
-        except OSError as e:
-            print(f"손상 캐시 격리 실패 (덮어쓰지 않고 계속): {e}", file=sys.stderr)
-    recovery = _read_cache_file(RECOVERY_FILE)
-    if recovery is not None:
-        print(f"복구본에서 번역 캐시 복원: {len(recovery)}개", file=sys.stderr)
-        return recovery
-    print("번역 캐시 복구본 없음 — 빈 캐시에서 재번역으로 재구성", file=sys.stderr)
-    return {}
+    with pipeline_lock():
+        # Re-check under the lock: another writer may have restored it.
+        cache = _read_cache_file(CACHE_FILE)
+        if cache is not None:
+            return cache
+        if CACHE_FILE.exists():
+            QUARANTINE_DIR.mkdir(parents=True, exist_ok=True)
+            quarantine = QUARANTINE_DIR / (
+                f"translations.json.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+            )
+            try:
+                os.replace(CACHE_FILE, quarantine)
+                print(f"손상된 번역 캐시를 격리: {quarantine}", file=sys.stderr)
+            except OSError as e:
+                print(f"손상 캐시 격리 실패 (덮어쓰지 않고 계속): {e}", file=sys.stderr)
+        recovery = _read_cache_file(RECOVERY_FILE)
+        if recovery is not None:
+            print(f"복구본에서 번역 캐시 복원: {len(recovery)}개", file=sys.stderr)
+            _atomic_write_json(CACHE_FILE, recovery)
+            return recovery
+        print("번역 캐시 복구본 없음 — 빈 캐시에서 재번역으로 재구성", file=sys.stderr)
+        return {}
 
 
 def save_cache(cache, touched):
     """Save the translation cache (P1-1).
 
     Under the shared pipeline-write lock: re-read the CURRENT file, merge
-    only the keys this run touched (so a concurrent writer's entries are
-    never clobbered by our older snapshot), then atomic-write the merged
-    cache and refresh the validated recovery copy.
+    only the keys changed since the last successful save (so a concurrent
+    writer's entries — and its intervening corrections to keys we already
+    saved — are never clobbered by our older snapshot), then atomic-write
+    the merged cache and refresh the validated recovery copy.
 
     Fail-closed: lock timeout or a corrupt current file -> raise, do not
     write. The hook marks retry and the next poll re-attempts.
@@ -334,6 +351,10 @@ def main():
     # 교체해 버리는 P1-1. --chunks도 touched 키만 병합하므로 다른 청크가 보존된다.)
     cache = load_cache()
     print(f"캐시 로드: {len(cache)}개")
+    # touched = keys changed SINCE THE LAST SUCCESSFUL SAVE. Cleared after
+    # each save: re-merging already-saved keys on a later save would
+    # overwrite a concurrent writer's intervening correction with our
+    # older snapshot value (P1-1 review).
     touched = set()
 
     # 전체 청크에서 번역 대상 수집
@@ -426,6 +447,7 @@ def main():
             if (i + 1) % 5 == 0:
                 try:
                     save_cache(cache, touched)
+                    touched.clear()
                     print(f"  (캐시 중간 저장)")
                 except Exception as e:
                     # 중간 저장 실패는 번역 성공과 별개: 최종 저장에서 재시도한다.

@@ -336,17 +336,34 @@ def _current_source_hashes():
     """현재 소스 파일들의 해시 dict (스냅샷과 동일 형식).
 
     P1-5: 교체 직전 재검증용. source_fingerprint()와 같은 조합이다.
+    단, ib_canonical은 어댑션이 내장한 지문을 쓴다 — 어댑션 이후 입력이
+    바뀌었다면 그 입력은 이 라이브러리를 만든 입력이 아니므로, 재계산한
+    지문을 쓰면 오래된 라이브러리에 새 지문이 붙는다. 내장 지문이 없는
+    구 라이브러리는 재계산으로 폴백한다.
     """
     hashes = {}
     for name, source in (("posts", POSTS_JSON), ("web", WEB_INDEX_JSON), ("ib", IB_LIBRARY_JSON)):
         hashes[name] = sha256_file(source) if source.exists() else None
+    hashes["ib_canonical"] = _embedded_ib_fingerprint()
+    return hashes
+
+
+def _embedded_ib_fingerprint():
+    """ib-library.json에 내장된 canonical fingerprint (없으면 재계산)."""
+    if IB_LIBRARY_JSON.exists():
+        try:
+            data = json.loads(IB_LIBRARY_JSON.read_text(encoding="utf-8"))
+            if isinstance(data, dict) and isinstance(
+                    data.get("canonical_fingerprint"), str):
+                return data["canonical_fingerprint"]
+        except (OSError, ValueError):
+            pass
     try:
         from ib_adapter import canonical_fingerprint
-        hashes["ib_canonical"] = canonical_fingerprint()
+        return canonical_fingerprint()
     except Exception as e:
         print(f"  경고: IB 정본 해시 실패: {e}", file=sys.stderr)
-        hashes["ib_canonical"] = None
-    return hashes
+        return None
 
 
 def _snapshot_hash(snapshot):
@@ -401,8 +418,13 @@ def _build_data_locked():
             posts_web.append(post)
 
     ib_hash = None
+    ib_embedded = None
     if IB_LIBRARY_JSON.exists():
         library, ib_hash = _read_json_bytes(IB_LIBRARY_JSON)
+        if isinstance(library, dict) and isinstance(
+                library.get("canonical_fingerprint"), str):
+            # 파싱한 바로 그 라이브러리의 내장 지문 (재읽기 아님).
+            ib_embedded = library["canonical_fingerprint"]
         existing = {str(p.get("id") or p.get("tweetId") or "") for p in posts_ib}
         for record in library.get("posts", []):
             if isinstance(record, dict) and str(record.get("id") or "") not in existing:
@@ -425,8 +447,10 @@ def _build_data_locked():
     snapshot["posts"] = posts_hash
     snapshot["web"] = web_hash
     snapshot["ib"] = ib_hash
-    # ib_canonical은 파싱 대상이 아니라 해시 함수 자체라 현재값을 스냅샷으로 쓴다.
-    # (canonical_fingerprint()는 읽기 전용 해시이며, 교체 직전 재검증이 변경을 잡는다.)
+    # ib_canonical은 파싱한 라이브러리의 내장 지문으로 덮는다 (재읽기 아님).
+    # 내장이 없으면 _current_source_hashes()의 값(재계산 폴백)을 유지한다.
+    if ib_embedded is not None:
+        snapshot["ib_canonical"] = ib_embedded
 
     # 3. 스테이징 디렉토리에 생성
     print(f"\n[3/5] 스테이징 디렉토리에 생성...")

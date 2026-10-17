@@ -188,26 +188,32 @@ def _merge_save(path, updates, deletions=()):
             found, disk = _read_json_strict(path)
         except RuntimeError as e:
             # Corrupt original: quarantine the bytes (recoverable) and
-            # fail closed. The next run sees a missing file and rebuilds;
-            # the quarantined bytes stay for manual recovery.
-            quarantine = path.with_name(
-                f".{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+            # fail closed. The quarantine lives OUTSIDE data/ (hooks/
+            # .quarantine/) so the next build's data/ replacement cannot
+            # destroy the recovery evidence. The next run sees a missing
+            # file and rebuilds; the quarantined bytes stay for recovery.
+            quarantine_dir = V2_ROOT / "hooks" / ".quarantine"
+            quarantine_dir.mkdir(parents=True, exist_ok=True)
+            quarantine = quarantine_dir / (
+                f"{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
             )
             try:
                 os.replace(path, quarantine)
-                log(f"{path.name}: 손상 파일 격리 -> {quarantine.name}")
+                log(f"{path.name}: 손상 파일 격리 -> {quarantine}")
             except OSError as qe:
                 log(f"{path.name}: 손상 파일 격리 실패 ({qe}) — 덮어쓰지 않고 중단")
             raise
         if not found:
             disk = {}
         elif not isinstance(disk, dict):
-            quarantine = path.with_name(
-                f".{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+            quarantine_dir = V2_ROOT / "hooks" / ".quarantine"
+            quarantine_dir.mkdir(parents=True, exist_ok=True)
+            quarantine = quarantine_dir / (
+                f"{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
             )
             try:
                 os.replace(path, quarantine)
-                log(f"{path.name}: 비-dict 파일 격리 -> {quarantine.name}")
+                log(f"{path.name}: 비-dict 파일 격리 -> {quarantine}")
             except OSError as qe:
                 log(f"{path.name}: 격리 실패 ({qe}) — 덮어쓰지 않고 중단")
             raise RuntimeError(f"손상된 JSON (dict 아님, 격리·fail-closed): {path}")
@@ -788,19 +794,29 @@ def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, m
 
 
 def update_manifest():
-    """manifest.ai_tools 업데이트."""
-    manifest = load_json(MANIFEST_JSON, {})
-    if not TOOLS_JSON.exists():
-        return
-    sha = sha256_file(str(TOOLS_JSON))
-    tools = load_json(TOOLS_JSON, {})
-    manifest["ai_tools"] = {
-        "file": "data/ai-tools.json",
-        "sha256": sha,
-        "count": len(tools),
-    }
-    save_json_atomic(MANIFEST_JSON, manifest)
-    log(f"manifest.ai_tools 업데이트: count={len(tools)}")
+    """manifest.ai_tools 업데이트 (P1-4: 공유 락 하에서 read-modify-write).
+
+    락 없이 읽은 오래된 manifest에 새 ai_tools를 붙이고, 그 사이 빌드가
+    교체한 새 manifest 위에 덮으면 빌드 세대의 청크 해시가 사라진다.
+    손상된 manifest는 빈 dict로 취급하지 않고 fail-closed 한다.
+    """
+    with pipeline_lock():
+        found, manifest = _read_json_strict(MANIFEST_JSON)
+        if not found:
+            manifest = {}
+        elif not isinstance(manifest, dict):
+            raise RuntimeError(f"손상된 manifest (dict 아님, fail-closed): {MANIFEST_JSON}")
+        if not TOOLS_JSON.exists():
+            return
+        sha = sha256_file(str(TOOLS_JSON))
+        tools = load_json(TOOLS_JSON, {})
+        manifest["ai_tools"] = {
+            "file": "data/ai-tools.json",
+            "sha256": sha,
+            "count": len(tools),
+        }
+        save_json_atomic(MANIFEST_JSON, manifest)
+        log(f"manifest.ai_tools 업데이트: count={len(tools)}")
 
 
 def valid_analysis(value):
