@@ -700,6 +700,53 @@ def test_ingester_source_link_normalization_allowed(tmp_path):
     assert posts[0]["sourceUrl"] == "https://x.com/Author1/status/123"
 
 
+def test_ingester_photo_subpath_other_id_to_review(tmp_path):
+    """다른 글 ID의 /photo/ 하위 링크도 검수 대상이다
+    (파서 하위 경로 허용 후에도 ID 불일치는 검수 — Codex 2차 리뷰 ④)."""
+    indir, outdir = tmp_path / "in", tmp_path / "out"
+    indir.mkdir()
+    (indir / "x.html").write_text(
+        _capture_html(
+            meta=_capture_meta(quote_status="extracted"),
+            quote={"tid": "456", "handle": "Author2", "text": "quoted"},
+            source_href="https://x.com/Other/status/999/photo/1"), encoding="utf-8")
+    rc, out = _run_ingester(indir, outdir)
+    assert rc == 2, out
+    review = json.loads((outdir / "review.json").read_text())
+    assert "HTML 메인 permalink" in review[0]["reason"]
+
+
+def test_ingester_photo_subpath_same_id_ok(tmp_path):
+    """같은 글의 /photo/ 하위 링크는 정규화해 통과한다."""
+    indir, outdir = tmp_path / "in", tmp_path / "out"
+    indir.mkdir()
+    (indir / "x.html").write_text(
+        _capture_html(
+            meta=_capture_meta(),
+            source_href="https://x.com/Author1/status/123/photo/1"),
+        encoding="utf-8")
+    rc, out = _run_ingester(indir, outdir)
+    assert rc == 0, out
+    posts = json.loads((outdir / "posts.json").read_text())
+    assert posts[0]["sourceUrl"] == "https://x.com/Author1/status/123"
+
+
+def test_ingester_unparsable_source_link_to_review(tmp_path):
+    """파싱 불가 HTML permalink는 비교를 건너뛰지 않고 검수한다
+    (파싱 실패를 정상화 허가로 취급하는 우회 방지 — Codex 2차 리뷰 ④)."""
+    indir, outdir = tmp_path / "in", tmp_path / "out"
+    indir.mkdir()
+    (indir / "x.html").write_text(
+        _capture_html(
+            meta=_capture_meta(),
+            source_href="https://x.com/Author1/status/123/unknown/1"),
+        encoding="utf-8")
+    rc, out = _run_ingester(indir, outdir)
+    assert rc == 2, out
+    review = json.loads((outdir / "review.json").read_text())
+    assert "파싱 불가" in review[0]["reason"]
+
+
 def test_ingester_quote_failed_to_review(tmp_path):
     indir, outdir = tmp_path / "in", tmp_path / "out"
     indir.mkdir()
@@ -1459,6 +1506,11 @@ def test_do_push_no_baseline_blocked(tmp_path, monkeypatch):
     monkeypatch.setattr(hook, "V2_ROOT", work)
     monkeypatch.setattr(hook, "HOOKS_DIR", hooks_dir)
     monkeypatch.setattr(hook, "PUBLISH_BRANCH", "main")
+    # do_push 자식에도 임시 Git 환경을 적용한다 (실제 HOME의
+    # core.hooksPath·URL 재작성 설정이 do_push에만 적용되는 것 방지).
+    monkeypatch.setenv("HOME", str(tmp_path / "home"))
+    monkeypatch.setenv("GIT_CONFIG_NOSYSTEM", "1")
+    monkeypatch.setenv("GIT_TERMINAL_PROMPT", "0")
     _write_valid_commit(work, {"x": [{"id": "1"}], "web": [], "ib": []}, "A", env)
     assert hook.do_push() is False
     assert _remote_ref(bare, env) is None
@@ -1473,7 +1525,7 @@ def test_do_push_branch_mismatch_blocked(push_env):
     assert _remote_ref(bare, env) == push_env["sha_a"]
 
 
-def test_do_push_non_fast_forward_blocked(tmp_path, monkeypatch):
+def test_do_push_non_fast_forward_blocked(tmp_path, monkeypatch, capsys):
     env = _git_env(tmp_path)
     bare = tmp_path / "remote.git"
     _git(tmp_path, "init", "--bare", str(bare), env=env)
@@ -1517,13 +1569,19 @@ def test_do_push_non_fast_forward_blocked(tmp_path, monkeypatch):
     monkeypatch.setattr(hook, "V2_ROOT", work2)
     monkeypatch.setattr(hook, "HOOKS_DIR", hooks_dir)
     monkeypatch.setattr(hook, "PUBLISH_BRANCH", "main")
+    # do_push 자식에도 임시 Git 환경을 적용한다 (실제 HOME의
+    # core.hooksPath·URL 재작성 설정이 do_push에만 적용되는 것 방지).
+    monkeypatch.setenv("HOME", str(tmp_path / "home"))
+    monkeypatch.setenv("GIT_CONFIG_NOSYSTEM", "1")
+    monkeypatch.setenv("GIT_TERMINAL_PROMPT", "0")
     _git(work2, "fetch", "origin", env=env)
     assert hook.do_push() is False
     assert _remote_ref(bare, env) == sha_a2
-    # 거부 원인이 브랜치 불일치가 아니라 non-fast-forward인지 직접 확인한다.
-    r = _git(work2, "push", "origin", f"{sha_b}:refs/heads/main",
-             env=env, check=False)
-    assert "non-fast-forward" in r.stderr
+    # 거부 원인이 브랜치 불일치가 아니라 non-fast-forward인지 do_push
+    # 자체의 로그(자식 git push의 stderr)로 확인한다. 별도 수동 push
+    # 호출은 do_push의 거부 원인을 증명하지 못한다.
+    captured = capsys.readouterr().out
+    assert "non-fast-forward" in captured
 
 
 def test_do_push_receive_hook_rejection_blocked(push_env):
@@ -1620,6 +1678,7 @@ def _bookmarklet_js(articles, pathname):
             images: {esc(images)},
             quoteText: {esc(quote_text)},
             quoteLink: {esc(quote_link)},
+            quoteContainsLink: {json.dumps(bool(a.get('quote_contains_link')))},
             bodyLinks: {esc(a.get('body_links') or [])},
             bodyInQuote: {json.dumps(bool(a.get('body_in_quote')))},
             bodyClosestHref: {esc(a.get('body_closest_href'))},
@@ -1704,14 +1763,48 @@ function makeArticle(spec) {
   // 인용 카드: 인용 링크가 있으면 그 앵커가 인용 카드 역할을 한다.
   if (spec.quoteLink != null) {
     const qLink = makeLink(spec.quoteLink, '');
-    qLink.querySelectorAll = (sel) => {
-      if (sel === 'div[dir="auto"]') return quoteEls;
-      if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
-      return [];
-    };
-    // 본문 요소가 인용 카드 안에 있는 경우를 모델링한다.
-    qLink.contains = (el) => (spec.bodyInQuote ? el === bodyEl : false);
-    statusLinks.push(qLink);
+    if (spec.quoteContainsLink) {
+      // 링크-포함 구조 (Codex 2차 리뷰 ② 재현): 인용 div 안에 인용 링크가
+      // 있고 permalink보다 앞에 있다. 체인(parentElement/children)을
+      // 모델링해 pre-pass·isAfter가 동작하게 한다.
+      const quoteDiv = {
+        tagName: 'DIV',
+        textContent: spec.quoteText || '', innerText: spec.quoteText || '',
+        children: [qLink], parentElement: art,
+        getAttribute: (n) => (n === 'dir' ? 'auto' : null),
+        closest: () => null,
+        querySelector: () => null,
+        querySelectorAll: () => [],
+        contains: (el) => el === qLink || el === quoteDiv,
+      };
+      qLink.parentElement = quoteDiv;
+      bodyEl.parentElement = art;
+      bodyEl.tagName = 'DIV';
+      const _bodyGetAttr = bodyEl.getAttribute;
+      bodyEl.getAttribute = (n) => (n === 'dir' ? 'auto' : _bodyGetAttr(n));
+      const permalinkEl = statusLinks[0] || null;
+      if (permalinkEl) permalinkEl.parentElement = art;
+      const chainChildren = [quoteDiv, ...(permalinkEl ? [permalinkEl] : []), bodyEl];
+      art.children = chainChildren;
+      art.contains = (el) => el === art || chainChildren.includes(el) || el === qLink;
+      const _artQSA = art.querySelectorAll;
+      art.querySelectorAll = (sel) => {
+        if (sel === 'div[dir="auto"]') return [quoteDiv, bodyEl];
+        if (sel === 'div') return [quoteDiv, bodyEl];
+        if (sel === 'a[href*="/status/"]') return [qLink, ...statusLinks];
+        return _artQSA(sel);
+      };
+      statusLinks.push(qLink);
+    } else {
+      qLink.querySelectorAll = (sel) => {
+        if (sel === 'div[dir="auto"]') return quoteEls;
+        if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
+        return [];
+      };
+      // 본문 요소가 인용 카드 안에 있는 경우를 모델링한다.
+      qLink.contains = (el) => (spec.bodyInQuote ? el === bodyEl : false);
+      statusLinks.push(qLink);
+    }
   }
   return art;
 }
@@ -1814,6 +1907,36 @@ def test_bookmarklet_quote_extracted_downloads_with_quote():
     text = result["downloads"][0]["text"]
     assert 'data-tweet-id="456"' in text
     assert "quoted text" in text
+
+
+def test_bookmarklet_i_status_quote_textful_indeterminate():
+    """텍스트 있는 인용 카드의 링크가 /i/status/면 indeterminate로 저장 중단
+    (핸들 'i'로 오인해 extracted가 되면 안 된다 — Codex 2차 리뷰 ③)."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"}],
+          "quote_text": "quoted text",
+          "quote_link": "/i/status/456"}],
+        "/Author1/status/123")
+    assert result["downloads"] == []
+    assert any("인용글" in a for a in result["alerts"])
+
+
+def test_bookmarklet_quote_div_contains_link():
+    """인용 div 안에 인용 링크가 있고 permalink보다 앞에 있어도
+    인용은 추출되고 본문은 메인 글이다 (Codex 2차 리뷰 ② 재현 구조)."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"}],
+          "quote_text": "quoted text",
+          "quote_link": "/Other/status/456",
+          "quote_contains_link": True}],
+        "/Author1/status/123")
+    assert len(result["downloads"]) == 1
+    text = result["downloads"][0]["text"]
+    assert 'data-tweet-id="456"' in text
+    assert "quoted text" in text
+    assert "hello world" in text
 
 
 # ---------- Codex 1차 리뷰 ①: 상태 격리 중단 시 fail-closed ----------
@@ -2264,6 +2387,8 @@ def _run_extract_js(articles, tid, req_handle):
             profileFirst: {esc(a.get('profile_first'))},
             quote: {esc(a.get('quote'))},
             quoteFirst: {json.dumps(bool(a.get('quote_first')))},
+            quoteHref: {esc(a.get('quote_href'))},
+            quoteContainsLink: {json.dumps(bool(a.get('quote_contains_link')))},
             statusLinks: {esc(a.get('status_links') or [])},
             bodyLinks: {esc(a.get('body_links') or [])},
         }}""")
@@ -2302,7 +2427,7 @@ function queryAll(root, sel) {
 }
 function makeEl(tag, attrs, children, text) {
   const e = {
-    tag, attrs: attrs || {}, children: children || [],
+    tag, tagName: tag.toUpperCase(), attrs: attrs || {}, children: children || [],
     textContent: text || '', innerText: text || '',
     parentElement: null,
     getAttribute(n) { return this.attrs[n] !== undefined ? this.attrs[n] : null; },
@@ -2325,9 +2450,15 @@ function makeArticle(spec) {
   const extraLinks = (spec.statusLinks || []).map(h => makeEl('a', {href: h}, [], ''));
   let quoteCard = null;
   if (spec.quote) {
-    const qLink = makeEl('a', {href: '/' + spec.quote.handle + '/status/' + spec.quote.tid}, [], '');
-    const qDiv = makeEl('div', {dir: 'auto'}, [], spec.quote.text);
-    quoteCard = makeEl('div', {}, [qLink, qDiv], '');
+    const qHref = spec.quoteHref || ('/' + spec.quote.handle + '/status/' + spec.quote.tid);
+    const qLink = makeEl('a', {href: qHref}, [], '');
+    if (spec.quoteContainsLink) {
+      // 링크-포함 구조: 인용 div 안에 인용 링크가 있다 (Codex 2차 리뷰 ② 재현).
+      quoteCard = makeEl('div', {dir: 'auto'}, [qLink], spec.quote.text);
+    } else {
+      const qDiv = makeEl('div', {dir: 'auto'}, [], spec.quote.text);
+      quoteCard = makeEl('div', {}, [qLink, qDiv], '');
+    }
   }
   const mainProfile = makeEl('a', {href: '/' + spec.handle}, [], spec.handle + ' Name');
   // 인용 작성자 프로필 링크가 먼저 오는 경우 (profileFirst).
@@ -2337,7 +2468,8 @@ function makeArticle(spec) {
   const kids = [];
   if (spec.quoteFirst && quoteCard) kids.push(quoteCard);
   if (firstProfile) kids.push(firstProfile);
-  kids.push(bodyDiv, profileLink, mainProfile, permalink, ...extraLinks);
+  // 실제 X 순서: 헤더(프로필·permalink) → 본문 → 인용 카드.
+  kids.push(profileLink, mainProfile, permalink, bodyDiv, ...extraLinks);
   if (!spec.quoteFirst && quoteCard) kids.push(quoteCard);
   return makeEl('article', {}, kids, '');
 }
@@ -2419,4 +2551,29 @@ def test_extract_js_quote_first_with_pasted_link_in_body():
         "123", "Author1")
     assert result["quoteStatus"] == "extracted"
     assert result["quote"]["id"] == "456"
+    assert result["text"] == "main body"
+
+
+def test_extract_js_i_status_quote_textful_indeterminate():
+    """텍스트 있는 인용 카드의 링크가 /i/status/면 indeterminate이다
+    (핸들 'i'로 오인해 extracted가 되면 안 된다 — Codex 2차 리뷰 ③)."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "quote": {"handle": "Author2", "tid": "456", "text": "quoted text"},
+          "quote_href": "/i/status/456"}],
+        "123", "Author1")
+    assert result["quoteStatus"] == "indeterminate"
+
+
+def test_extract_js_quote_div_contains_link():
+    """인용 div 안에 인용 링크가 있고 permalink보다 앞에 있어도
+    인용은 추출되고 본문은 메인 글이다 (Codex 2차 리뷰 ② 재현 구조)."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "quote": {"handle": "Other", "tid": "456", "text": "quoted text"},
+          "quote_first": True,
+          "quote_contains_link": True}],
+        "123", "Author1")
+    assert result["quoteStatus"] == "extracted"
+    assert result["quote"]["text"] == "quoted text"
     assert result["text"] == "main body"
