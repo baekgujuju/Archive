@@ -44,7 +44,9 @@ import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-from pipeline_lock import PipelineLockTimeout, pipeline_lock
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from media_select import select_media_url  # noqa: E402
+from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
 
 V2_ROOT = Path(__file__).resolve().parent
 DATA_DIR = V2_ROOT / "data"
@@ -244,35 +246,28 @@ def extract_image_urls(chunks):
 
 
 def collect_post_urls(post, urls):
-    """단일 post에서 이미지 URL 수집."""
+    """단일 post에서 이미지 URL 수집.
+
+    P2-8: media/mediaImages 선택은 공용 셀렉터(media_select)를 쓴다
+    (enrich와 동일 URL을 선택해야 한다). media 배열의 pair도
+    셀렉터가 처리한다.
+    """
     # 1. fullHtml의 <img src> (html.unescape)
     full_html = post.get("fullHtml", "") or ""
     for m in re.finditer(r'<img[^>]+src=["\']([^"\']+)["\']', full_html):
         urls.add(html.unescape(m.group(1)))
 
-    # 2. mediaImages 쌍 배열 (full 우선)
-    for pair in post.get("mediaImages", []) or []:
-        if isinstance(pair, dict):
-            # full 우선, 없으면 thumb
-            for key in ("full", "thumb", "url", "src"):
-                if pair.get(key):
-                    urls.add(html.unescape(pair[key]))
-                    break
-        elif isinstance(pair, (list, tuple)) and len(pair) >= 1:
-            # [thumb, full] 형태 — full 우선 (ArchiveRender 계약)
-            urls.add(html.unescape(str(pair[1] if len(pair)>1 and pair[1] else pair[0])))
-        elif isinstance(pair, str):
-            urls.add(html.unescape(pair))
+    # 2. mediaImages — 공용 셀렉터 (pair/dict/str 전부).
+    for item in post.get("mediaImages", []) or []:
+        url = select_media_url(item)
+        if url:
+            urls.add(html.unescape(url))
 
-    # 3. media 배열 (dict full/thumb 우선)
-    for media in post.get("media", []) or []:
-        if isinstance(media, dict):
-            for key in ("full", "thumb", "url", "src", "media_url", "image_url"):
-                if media.get(key):
-                    urls.add(html.unescape(media[key]))
-                    break
-        elif isinstance(media, str):
-            urls.add(html.unescape(media))
+    # 3. media 배열 — 공용 셀렉터 (pair/dict/str 전부).
+    for item in post.get("media", []) or []:
+        url = select_media_url(item)
+        if url:
+            urls.add(html.unescape(url))
 
     # 4. 중첩 replies/quoted (재귀)
     for section in ("replies", "quoted"):

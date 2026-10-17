@@ -29,7 +29,14 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from collections import namedtuple
+
 from proc_group import run_grouped, terminate_current
+
+# run_step 결과: (kind, rc). kind ∈ {"ok", "failed", "timeout", "exception"}.
+# rc는 자식 프로세스의 실제 종료 코드 (drive_poll의 3은 파일 실패
+# 존재 + 실패 기록 영속화 완료 — 폴 자체 실패가 아니다).
+StepResult = namedtuple("StepResult", ["kind", "rc"])
 
 
 def _on_sigterm(signum, frame):
@@ -65,10 +72,13 @@ def log(msg):
 
 
 def run_step(name, script, timeout):
-    """단일 단계 실행. 실패 시 False 반환.
+    """단일 단계 실행. Returns StepResult(kind, rc).
 
     P1-7: run_grouped로 실행해 타임아웃 시 단계 프로세스 그룹 전체를
     종료한다 (subprocess.run은 직접 자식만 죽여 손자를 고아로 남긴다).
+    P2-1: bool 대신 결과 종류와 종료 코드를 반환한다. drive_poll의
+    rc=3은 폴 자체 실패가 아니라 "파일 실패 존재 + 실패 기록
+    영속화 완료"이므로, 호출자가 rc를 보고 판단한다.
     """
     log(f"=== {name} 시작 (타임아웃 {timeout}초) ===")
     try:
@@ -86,15 +96,15 @@ def run_step(name, script, timeout):
             log(f"✗ {name} 실패 (rc={r.returncode})")
             if r.stderr:
                 log(f"  오류: {r.stderr[:500]}")
-            return False
+            return StepResult("failed", r.returncode)
         log(f"✓ {name} 완료")
-        return True
+        return StepResult("ok", 0)
     except subprocess.TimeoutExpired:
         log(f"✗ {name} 타임아웃 ({timeout}초 초과)")
-        return False
+        return StepResult("timeout", None)
     except Exception as e:
         log(f"✗ {name} 예외: {e}")
-        return False
+        return StepResult("exception", None)
 
 
 def main():
@@ -120,21 +130,36 @@ def main():
 
     try:
         # 1. Drive 인제스트
-        if not run_step("drive_poll", HOOKS_DIR / "drive_poll.py", TIMEOUT_DRIVE_POLL):
+        # P2-1: drive_poll rc=3은 폴 자체 실패가 아니다 (파일 실패 존재
+        # + 실패 기록 영속화 완료). 경고를 남기고 monitor를 진행한다.
+        # monitor 성공으로 3의 경고를 지우면 안 된다 (최종 반환에 반영).
+        drive_file_failures = False
+        drive = run_step("drive_poll", HOOKS_DIR / "drive_poll.py", TIMEOUT_DRIVE_POLL)
+        if drive.rc == 3:
+            drive_file_failures = True
+            log("drive_poll: 파일 실패 존재 (실패 기록 영속화 완료) — 경고 남기고 monitor 진행")
+        elif drive.kind != "ok":
+            if drive.rc == 2:
+                log("drive_poll 락 경합 — 다음 주기 대기 (정상 완료로 기록하지 않음)")
+                return 2
             log("drive_poll 실패 — monitor 실행하지 않고 중단")
             return 1
 
         # 2. 변경 감지 및 후크 (실패해도 설정 발행은 독립 시도)
-        monitor_ok = run_step("monitor", HOOKS_DIR / "monitor.py", TIMEOUT_MONITOR)
+        monitor_result = run_step("monitor", HOOKS_DIR / "monitor.py", TIMEOUT_MONITOR)
+        monitor_ok = monitor_result.kind == "ok"
         if not monitor_ok:
             log("monitor 실패 — 설정 발행은 독립 시도")
 
         # 3. 공통 설정 발행 (monitor 실패와 무관하게 독립 시도)
-        if not run_step("publish_settings", HOOKS_DIR / "publish_settings.py", 300):
+        publish_result = run_step("publish_settings", HOOKS_DIR / "publish_settings.py", 300)
+        if publish_result.kind != "ok":
             log("공통 설정 발행 실패 — 다음 주기 재시도")
             return 3 if monitor_ok else 2
 
         log("스케줄러 실행 완료")
+        if drive_file_failures:
+            return 3
         return 0 if monitor_ok else 2
     finally:
         try:

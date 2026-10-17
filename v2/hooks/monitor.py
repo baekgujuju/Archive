@@ -54,6 +54,17 @@ HOOKS_DIR = V2_ROOT / "hooks"
 STATE_FILE = HOOKS_DIR / ".monitor_state.json"
 LOCK_FILE = HOOKS_DIR / ".monitor.lock"
 
+sys.path.insert(0, str(HOOKS_DIR))
+from state_guard import (  # noqa: E402
+    StateBlockedError,
+    StateReadError,
+    append_review_entry,
+    atomic_json_write,
+    load_state_guarded,
+    read_recovery_marker,
+    recovery_marker_path,
+)
+
 HOME = Path.home()
 SOURCES = {
     "posts.json (X)": HOME / "workspace" / "x-bookmarks" / "posts.json",
@@ -87,22 +98,43 @@ def current_hashes():
 
 
 def load_state():
-    if STATE_FILE.exists():
-        try:
-            return json.loads(STATE_FILE.read_text(encoding="utf-8"))
-        except (OSError, ValueError):
-            pass
-    return {}
+    """워터마크 읽기 + 검증 (P3).
+
+    손상 시 격리·로그·검수 기록 후 보이는 초기화를 반환한다
+    ({} + "post_quarantine_init"). 읽기 권한 오류는 손상이 아니므로
+    StateReadError를 전파한다 (호출자가 환경 오류로 처리).
+    """
+    data, status = load_state_guarded(STATE_FILE, kind="monitor_state")
+    if status == "post_quarantine_init":
+        print("[monitor] 경고: 워터마크 손상 — 격리 후 보이는 초기화 "
+              "(복구 마커로 구분, 신규 설치가 아님)")
+        append_review_entry(
+            HOOKS_DIR / ".needs-review", "",
+            "monitor 워터마크 손상 — 격리 후 보이는 초기화",
+            extra={"state_file": str(STATE_FILE)})
+    elif status == "fresh":
+        pass
+    return data
 
 
 def save_state(hashes):
-    STATE_FILE.write_text(
-        json.dumps({
-            "hashes": hashes,
-            "checked_at": datetime.now(timezone.utc).isoformat(),
-        }, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    """워터마크 원자적 저장 (P3).
+
+    같은 디렉터리의 고유 임시 파일에 flush → fsync → os.replace 후
+    디렉터리를 fsync한다. 실패 시 이전 state를 유지한다 (예외 전파).
+    저장 성공 시 복구 마커를 제거한다 (새 유효 워터마크가 생겼으므로
+    격리 후 초기화 상태가 아니다).
+    """
+    atomic_json_write(STATE_FILE, {
+        "hashes": hashes,
+        "checked_at": datetime.now(timezone.utc).isoformat(),
+    })
+    marker = recovery_marker_path(STATE_FILE)
+    if marker.exists():
+        try:
+            marker.unlink()
+        except OSError:
+            pass
 
 
 def main():
@@ -120,7 +152,11 @@ def main():
 
     try:
         current = current_hashes()
-        prev = load_state().get("hashes", {})
+        try:
+            prev = load_state().get("hashes", {})
+        except StateReadError as e:
+            print(f"[monitor] 워터마크 읽기 실패 (손상 아님) — 환경 오류: {e}")
+            return 2
 
         # 재시도 마커 확인 (소스 변경 없어도 후크 실행)
         retry_marker = (
@@ -139,7 +175,11 @@ def main():
         pending_work=bool(dirty.returncode==0 and dirty.stdout.strip()) or bool(os.environ.get('V2_PUBLISH')=='1' and pending.returncode==0 and pending.stdout.strip()!='0')
         changed = args.force or retry_marker or pending_work or any(current[k] != prev.get(k) for k in current)
         if not changed:
-            save_state(current)
+            try:
+                save_state(current)
+            except OSError as e:
+                print(f"[monitor] 워터마크 저장 실패 — 이전 state 유지: {e}")
+                return 1
             return 0
 
         if not retry_marker:
@@ -166,7 +206,11 @@ def main():
             return r.returncode
 
         # 후크 성공 → 워터마크 저장
-        save_state(current)
+        try:
+            save_state(current)
+        except OSError as e:
+            print(f"[monitor] 워터마크 저장 실패 — 이전 state 유지, 다음 실행에서 재시도: {e}")
+            return 1
         print("[monitor] 후크 성공 — 워터마크 저장")
         return 0
     finally:

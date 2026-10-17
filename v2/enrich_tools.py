@@ -226,32 +226,38 @@ def _dict_diff(old, new):
 
 
 def get_media_url(m):
-    if isinstance(m, str):
-        return m
-    if isinstance(m, dict):
-        return m.get("url") or m.get("src") or m.get("mediaUrl") or m.get("fullHtml") or ""
-    return ""
+    """미디어 항목 → 사용할 URL. P2-8 공용 셀렉터로 위임한다
+    (미러와 동일 URL을 선택해야 한다)."""
+    from media_select import select_media_url
+    return select_media_url(m)
 
 
 def collect_screenshots():
     """
     (tweetId, local_path, source_url, post_text) 수집.
     quoted.get(field) 버그 수정, 다양한 필드 지원.
+    P2-8: 로컬 매핑 조회는 공용 find_local_in_map을 쓴다
+    (query 보존·정확 일치, substring 비교 금지). missing은 누락
+    상태로 남기고 재시도 대상으로 유지한다 (thumb로 조용히 바꾸지
+    않음). ambiguous/invalid는 fail-closed로 중단한다.
     """
+    from media_select import build_media_index, find_local_in_map
+
     media_map = load_json(DATA_DIR / "media-map.json", {})
+    media_index = build_media_index(media_map)
     candidates = []
+    missing_urls = []
 
     def find_local(url):
-        if not url or not url.startswith("http"):
+        local, status = find_local_in_map(
+            url, media_map, V2_ROOT, index=media_index)
+        if status == "missing":
+            missing_urls.append(url)
             return None
-        url_base = url.split("?")[0]
-        for map_url, map_local in media_map.items():
-            if url_base == map_url.split("?")[0]:
-                return map_local
-        for map_url, map_local in media_map.items():
-            if url_base in map_url or map_url.split("?")[0] in url:
-                return map_local
-        return None
+        if status in ("ambiguous", "invalid"):
+            raise RuntimeError(
+                f"미디어 매핑 {status} — 조용히 대체하지 않고 중단: {url}")
+        return local
 
     for data_file in ["posts-x.json", "posts-web.json"]:
         data = load_json(DATA_DIR / data_file, {})
@@ -301,6 +307,8 @@ def collect_screenshots():
             for owner, repo in GITHUB_RE.findall(post_text):
                 candidates.append((tweet_id, None, f"https://github.com/{owner}/{repo}", post_text))
 
+    if missing_urls:
+        log(f"미디어 매핑 누락 {len(missing_urls)}건 — 재시도 대상으로 유지 (미러 재실행 필요)")
     return candidates
 
 
