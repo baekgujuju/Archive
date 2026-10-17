@@ -2404,5 +2404,295 @@
     "category_ko": "금융 차트·기술적 분석",
     "owner_hint": "Professorr_",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b21f2954634dd48a6a6acb19844b143be140e587f9612f40219c5617bdc5a87e": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Bear Flag",
+    "description_ko": "급락 후 상승 평행 채널 안에서 반등하다가 하단을 이탈해 추가 하락하는 베어 플래그 패턴의 개념도.",
+    "category_ko": "금융 차트 패턴",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1d0428d4f4c73dd797b0fffa3fba87ff9fcde609b68a15dbea07a2618df33fc8": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SOXL 하락 파동 및 피보나치 분석",
+    "description_ko": "SOXL 캔들 차트에 A·B·C·X 파동과 피보나치 비율을 표시했다. 약 169.83 고점에서 104.05 저점까지 이어지는 하락을 보여준다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tubepsh / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9743d19614087444e73d45e65ac579715f55d33b2fb3a071f47986857fd3096c": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Figure 12-42: ZigZag Waterfall Effect",
+    "description_ko": "지그재그 하락과 초기 지지선 이탈 이후의 폭포 효과를 설명하는 도식. 첫 지그재그 길이의 61.8%와 38.2%를 이용해 추가 하락 수준을 계산한다.",
+    "category_ko": "금융 차트 이론",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3b2fcb7497f94c75411463ac045b8e5658c00dcd66e1079de11e72fcaf5c437f": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Invesco QQQ Trust Series I 일봉 분석",
+    "description_ko": "QQQ 일봉에 이동평균선, 거래량, 지지·저항 구간을 표시했다. 최근 약 760 부근 고점에서 723.52까지 하락한 흐름과 과거 조정 구간을 곡선으로 강조했다.",
+    "category_ko": "ETF 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:27cf03ce88758ad9c1e7b7826dafc1481480918405440a429e8ac61afce49025": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hyperliquid HYPE/USDT 하락 시나리오",
+    "description_ko": "MEXC의 HYPE/USDT 일봉에 이동평균선과 지지·저항 구간을 표시했다. 주황색 선으로 주요 고점과 저점을 연결하고 약 78 부근으로 향하는 하락 시나리오를 그렸다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ddb997e985b7af289cb7969117fb9a4fb26dbe5e34704b01e3df2e49756d091e": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hyperliquid HYPE/USDT 추세선 이탈 분석",
+    "description_ko": "HYPE/USDT 일봉에 여러 흰색 추세선과 지지·저항 영역을 표시했다. 최근 가격 약 81.02가 상승 지지 추세선 아래로 내려온 모습을 보여준다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8e1d226722d53307886feb7ce0986c6b5c688598ac125e5463aaa516b15d6062": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hyperliquid/USDT 일봉 기술적 분석",
+    "description_ko": "TradingView의 MEXC HYPE/USDT 일봉 차트. 이동평균선, 거래량, 수렴하는 추세선과 지지·저항 구간이 표시되어 있으며 현재가는 약 81.01 USDT다.",
+    "category_ko": "암호화폐 차트 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c158ef5a17d411755e81e9aead0d6120dcdf831129d78e400270cce9543ac09b": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "The Psychology of Waiting",
+    "description_ko": "매매에서 기다림과 인내의 중요성을 설명하는 교육 자료. 변동성 축소와 거래량 감소가 나타나는 차트 예시와 함께 충동 억제, 패턴 성숙, 시장 방향 확인 등 12가지 원칙을 제시한다.",
+    "category_ko": "트레이딩 심리 교육",
+    "owner_hint": "Julian Komar / @BlogJulianKomar",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:26bba47016fab66dd6470b31a819024d36e35e6f6d1840e101add3c910b38501": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Dan Zanger Newsletter",
+    "description_ko": "두 남성이 주식 차트가 실린 Dan Zanger 뉴스레터를 함께 들고 있는 흑백 스케치풍 삽화. 주변에는 고양이와 주가 차트가 표시된 모니터가 배치되어 있다.",
+    "category_ko": "주식 트레이딩 삽화",
+    "owner_hint": "Dan Zanger Newsletter라는 문구가 보이며 제작자는 확인되지 않음",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0fe62eb24fefd765be9145bb248bcf56b64f5ee20c5a09c29f57c60c65925941": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "MASTER SWING SET UP - RANGE BREAKOUT",
+    "description_ko": "상승 추세에서 횡보 구간 돌파와 이후 눌림목 진입을 설명하는 개념도. 가격 흐름, 21일 이동평균선, 고점·저점 표기와 두 진입 지점이 표시되어 있다.",
+    "category_ko": "스윙 트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:751a3143750074cebc3795cbf364ff1f071861046acb8df5e03eab2940b6a672": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ENTRY SCENARIOS",
+    "description_ko": "같은 상승 차트에서 선행 진입, 박스권 돌파 진입, 명확한 돌파 진입을 비교한다. 진입가 약 436·453·505에 따른 손절 폭과 예상 보상, 위험 대비 보상 비율을 설명한다.",
+    "category_ko": "트레이딩 진입 전략",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c96773c0e1c26ad882469d838ce20902be4b0cde421e0883401a931aae8b5793": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "미국 10년물 국채 수익률 일봉 차트",
+    "description_ko": "미국 10년물 국채 수익률의 상승 추세와 최근 조정을 나타낸 TradingView 차트. 이동평균선, 추세선, 수평 지지·저항선과 가격 구간이 표시되어 있다.",
+    "category_ko": "금융 차트·국채 금리",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e5a9e3d6576be9a97d1eb8b67628af6ac498a33b7a9fcbd1d394b538c51f8930": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "미국 20년물 국채 수익률 일봉 차트",
+    "description_ko": "미국 20년물 국채 수익률이 상승한 뒤 약 5.58%로 조정된 모습을 보여준다. 여러 이동평균선과 하단 지지 구간이 표시되어 있다.",
+    "category_ko": "금융 차트·국채 금리",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5b1de31a4603e08e6631c2f27c2253062a7e1e5af99847393f374dac0f6927e2": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "미국 30년물 국채 수익률 일봉 차트",
+    "description_ko": "미국 30년물 국채 수익률의 상승 추세와 최근 되돌림을 보여주는 차트. 약 5.53% 부근의 현재 수익률과 상단 저항 구간, 하단 지지 구간이 강조되어 있다.",
+    "category_ko": "금융 차트·국채 금리",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fde6ec864bdb1009581aa45f61bbf2c410a8cce6f2528410504b7d1260e5b335": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "WTI 원유 CFD 일봉 차트",
+    "description_ko": "WTI 원유 가격이 약 95.62달러에 위치한 TradingView 차트. 약 86~99달러의 박스권, 여러 추세선과 이동평균선, 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "금융 차트·원자재",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2c5f0833769fb30926b565e0eaf1c80db361ee2e702caa597ac7de0e357337c2": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NBCC (INDIA) LIMITED 상승 돌파 패턴",
+    "description_ko": "NBCC 주가의 강한 상승 이후 횡보와 얕은 조정, 거래량 감소, 가격 변동폭 축소 및 매수 지점을 설명한 교육용 차트.",
+    "category_ko": "주식 차트·기술적 분석",
+    "owner_hint": "TradingView / NSE: NBCC",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fdddb34e916156d24c4129f9ec0090d27592163a894a9b31f3a45d5806757a95": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Delta Corp. Ltd. 상승 돌파 패턴",
+    "description_ko": "델타 코퍼레이션 주가의 상승 후 횡보 구간을 분석한 차트. 이동평균선 부근의 얕은 조정, 거래량 감소와 좁은 가격 움직임, 이후 돌파 매수 지점을 표시한다.",
+    "category_ko": "주식 차트·기술적 분석",
+    "owner_hint": "TradingView / NSE: Delta Corp.",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cd8f556a20dc36c90e96d99b25c4be2d514d6eb80dd4e2da94e290da94c0f815": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GNA Axles Ltd 상승 돌파 패턴",
+    "description_ko": "GNA 액슬스 주가의 강한 상승과 횡보 이후 돌파를 설명한 차트. 얕은 조정, 이동평균선 지지, 거래량 감소, 가격 변동폭 축소 및 매수 지점을 강조한다.",
+    "category_ko": "주식 차트·기술적 분석",
+    "owner_hint": "TradingView / NSE: GNA Axles",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:afbe1a45a3e38e71045bae759be36736d4b209b3ed072038593e571289015ead": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "JBM Auto 일봉 차트와 매수 패턴",
+    "description_ko": "JBM Auto의 상승 추세에서 횡보 조정, 얕은 눌림, 거래량 감소와 가격 밀집을 표시하고 돌파 매수 지점을 설명한 차트.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView, Deepvue",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b7492f9bed4437cb1cca16d886b41348d94403980dba1924a435360832ee10ec": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SNDK 일봉 차트와 상대강도 변화",
+    "description_ko": "SNDK의 가격, 이동평균선, 거래량 및 상대강도 구간을 보여주며 일부 반등 지점의 매수 의견에 비판적 주석을 단 차트.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "Deepvue",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3ac20ef8f06d9b8450047a2e2cec7f68dbef860ee65c253673d581f549a89f38": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Dell Technologies 일봉 차트",
+    "description_ko": "Dell의 상승 추세와 수평 저항선, 이동평균선 및 거래량을 표시한 차트. 마지막 봉은 12.02% 하락하며 503.65를 나타낸다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 irdcacdc",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:149eb663125dcca54395831f506608c53f0e9dd43c1cb9b647f484992de90790": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NVIDIA 일봉 차트",
+    "description_ko": "NVIDIA의 장기간 저항선과 최근 돌파 후 하락을 표시한 차트. 마지막 가격은 220.26이며 당일 3.61% 하락으로 표시된다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 irdcacdc",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:74d9c00ec8c1168cf3dce1a2ec495b70d6b19f1f5bdd8360c7d9a2f941a16b8c": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group 일봉 차트",
+    "description_ko": "Nebius의 횡보 구간 상단 저항과 이후 하락을 보여주는 차트. 마지막 가격은 183.30이며 장기 이동평균선과 하단 음영 구간이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 irdcacdc",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cce17aa03934cf623183df3a5f1cb9fe166b1836aca3ce7abbff459c68a62d58": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Bloom Energy 일봉 차트",
+    "description_ko": "Bloom Energy의 최근 상승 구간과 수평 지지선 이탈을 표시한 차트. 마지막 봉은 10.01% 하락하며 237.08을 나타낸다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 irdcacdc",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:844969400f2fdc9268ee2d79d3c540cbb60e3a7310d5c0f458223c5e71f3e76e": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView 이더리움 USDT 15분봉 차트",
+    "description_ko": "바이낸스 ETHUSDT의 15분봉 차트로, 급격한 가격 하락과 거래량 증가, 이동평균선 및 여러 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a8b8e1e68c9ecf15f70868d233022bbabc72f6fbfff02acd98190a407a298278": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView 비트코인 USDT 15분봉 차트",
+    "description_ko": "바이낸스 BTCUSDT의 15분봉 차트로, 가격 급락 이후 약 82,156 USDT 부근의 움직임과 거래량, 이동평균선, 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:19c24c365d056df5e94ac432f488685df16e1570542373b5b8dabc5041511cdd": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Claude Code를 쓴다면 놓치면 안 되는 유용한 기능 2탄",
+    "description_ko": "Claude Code 활용법을 소개하는 카드뉴스 표지다. 모드 전환, 자동 모드 기본 설정, 명령 직접 실행, 지난 대화 재개, 파일 지정 등 다섯 가지 주제를 나열한다.",
+    "category_ko": "AI 코딩 도구 활용법",
+    "owner_hint": "람쥐썬더 (@ramztd)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:180a2ab3d352e82777bc509254a94462130f73c561b3d908a9af10a4c1b403f7": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Claude Code 모드 전환·자동 모드·명령 직접 실행",
+    "description_ko": "Shift+Tab을 이용한 모드 전환, settings.json의 자동 모드 설정, 느낌표를 붙인 셸 명령 실행 방법을 설명한다. git status가 예시로 나오지만 GitHub 관련 화면이나 링크는 없다.",
+    "category_ko": "AI 코딩 도구 활용법",
+    "owner_hint": "람쥐썬더 (@ramztd)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e7f956ac288474982a2249e9b40622bb07fc033a322d4812b487b558464b4b66": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Claude Code 지난 대화 이어서 하기와 파일 지정하기",
+    "description_ko": "claude -c, claude -r, /resume을 통한 대화 재개와 @파일이름을 통한 파일 선택 방법을 소개하는 카드뉴스다.",
+    "category_ko": "AI 코딩 도구 활용법",
+    "owner_hint": "람쥐썬더 (@ramztd)",
+    "provider": "codex"
   }
 }
