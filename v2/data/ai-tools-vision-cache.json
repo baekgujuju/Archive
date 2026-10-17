@@ -3055,5 +3055,195 @@
     "category_ko": "영상 편집",
     "owner_hint": "Adobe Premiere Pro",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:45c332eae41d4f8a7289cb2f8d360caa2642d2cdc3a85fbd21b9232e0a01f228": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "7 things Qullamaggie's big breakout winners had in common",
+    "description_ko": "쿨라마기의 큰 수익을 낸 돌파 매매 사례에서 나타난 7가지 공통점을 정리한 인포그래픽. 선행 상승, 베이스 형성, 10일 단순이동평균선 위 매수, 꾸준한 상승, 최근 변동폭 축소, 작은 시초가 갭, 시장의 단기 과열 여부를 수익 사례와 손절 사례의 비율로 비교한다.",
+    "category_ko": "주식 투자·돌파 매매 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b5748cb616532b85a9ef81050d98168251fc6ad9281e860ab42b542ac9d2bae4": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "KRX 043260+327260+010170+138080 일봉 합산 차트",
+    "description_ko": "여러 한국 주식 종목 코드를 합산한 트레이딩뷰 일봉 차트. 캔들, 이동평균선, 거래량, 우측 매물대와 추세선이 표시되어 있으며, 큰 상승과 하락 이후 반등한 가격이 약 13만 3천 원 부근에 도달한 모습을 보여준다.",
+    "category_ko": "주식 차트·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c550da38c316c9622c7ae56001aa51a73b8f5e40d964fbf8b703815031e55923": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Amphenol Corporation Class A (APH) 일봉 차트",
+    "description_ko": "암페놀의 트레이딩뷰 일봉 차트. 주가 87.24달러와 이동평균선, 거래량, 매물대, 실적 표가 표시되어 있다. 노란 선으로 반복되는 조정과 반등을 표시하고, 최근 고점 부근의 수평 저항선 위에 ‘돌파 필요’라는 주석을 덧붙였다.",
+    "category_ko": "미국 주식·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f4dd03eeabce82c7a25632a0e053c5d361c43dfa241602e02abddbfb269026d2": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "매물대 돌파 후 가격 반응과 숏 청산",
+    "description_ko": "상승 추세에서 매물대 상단에 성급하게 숏으로 진입했다가 강한 돌파로 청산되는 상황과, 돌파 이후 같은 구간이 지지선으로 작용하는 모습을 설명한 차트 도식이다.",
+    "category_ko": "주식·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0a87d4a6284adb56431bc2fcb85588d855f412d626e43222ef8303bb3d1e04d2": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "스킬북 — AI 모음집",
+    "description_ko": "AI 도구 100개를 분야별로 탐색하는 한국어 디렉터리 화면이다. Jan, LM Studio Bionic, Ollama, GPT4All, Open WebUI, AnythingLLM 등 GitHub 프로젝트와 관련된 로컬 AI 도구의 용도와 설치 방식이 카드로 소개되어 있다.",
+    "category_ko": "AI 도구 디렉터리",
+    "owner_hint": "스킬북 · 꼬마봇",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4e6564168f653154ef2793127fb9207c8c59f386bfbac4e89d11473dcbeb2213": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [],
+    "title": "TensorFold — Living Weights",
+    "description_ko": "공개 모델이 고정된 가중치로 배포되는 방식에서 나아가 스스로 학습하고 가중치를 갱신할 수 있는지 질문하는 프로젝트 홍보 이미지다. 어두운 배경에 다채로운 신경망 형태의 물결을 배치했다.",
+    "category_ko": "AI 모델·지속 학습",
+    "owner_hint": "TensorFold",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:79fcd8c8ad12dfa5f056b0a1fc084f45faefa30969fdb8dddb433e59cdd1e33c": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Arista Networks Inc. (ANET) 일봉 차트",
+    "description_ko": "아리스타 네트웍스의 일봉 주가 차트다. 이동평균선, 거래량, 가격대별 거래량, 지지·저항 구간과 추세선이 표시되어 있으며, 최근 가격이 이전 고점 부근을 돌파하는 모습이다.",
+    "category_ko": "주식 차트·기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2f72fa888828f00f3a4bc6f7d4be1430a8f7c13e1d887cdd5e0f4d2fdd5973ca": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Cisco Systems, Inc. (CSCO) 일봉 차트",
+    "description_ko": "시스코 시스템즈의 일봉 주가 차트다. 이동평균선, 거래량, 가격대별 거래량과 지지·저항 구간이 표시되어 있으며, 최근 반등한 가격이 약 116달러의 수평선 부근에 도달한 모습이다.",
+    "category_ko": "주식 차트·기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:eb5f0f2ae25608a6627615a868f498f30957f14ec6f524e93ccdf6971e615496": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hewlett Packard Enterprise 일봉 차트",
+    "description_ko": "HPE의 주가 상승 추세를 보여주는 차트로, 이동평균선과 거래량, 가격대별 거래량 및 기업 실적 표가 표시되어 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "Hewlett Packard Enterprise",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:efa4eebb95b860a833b0b8daedeafe1669acdbd1d5005257d9a657041cdf922d": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Semtech Corporation 일봉 차트",
+    "description_ko": "SMTC의 주가와 이동평균선, 거래량을 보여준다. 조정 구간의 추세선과 여러 지지 영역, 이후 상승 흐름이 표시되어 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "Semtech Corporation",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:31fcd51c4ec8135ccaa590120e3c82dd917d46627e5a96beb9c745be4663429b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AI 및 반도체 관련 종목 보유 내역",
+    "description_ko": "AMD, 마벨, 엔비디아, TSMC, 마이크론, 브로드컴, 코어위브, 글로벌 유니칩, 오라클, 슈퍼마이크로의 티커와 업종, 자산 유형, 보유 시장가치를 나열한 표이다.",
+    "category_ko": "투자 보유 종목",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0bf671fd689f9991030975c514651c38616a0913079bc52aee2eb10ba9424ce5": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "iShares Future AI & Tech ETF 일봉 차트",
+    "description_ko": "ARTY ETF의 가격 추이와 이동평균선, 거래량을 보여준다. 하락 채널과 수평 가격선, 지지·저항 영역이 그려져 있다.",
+    "category_ko": "ETF 차트",
+    "owner_hint": "iShares",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:10018b3766f07db1e493f57ca25d8ca4095dbb13daa4fb1cf1fcae2f341b8fd4": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SOXX/RSP 상대강도 비율 차트",
+    "description_ko": "SOXX와 RSP의 가격 비율 차트로, 하락 추세와 변동성 수축 이후 돌파 및 추세 전환, 지지·저항 전환 구간이 주석으로 표시되어 있다.",
+    "category_ko": "상대강도 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b0c1429723d1f9fa2843c89b58c218958b8c19a600b4f20f8d11be40b8192554": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Invesco S&P 500 Equal Weight ETF 주봉 차트",
+    "description_ko": "RSP ETF의 주봉 가격 흐름을 상승 평행 채널과 함께 보여준다. 최근 고점 이후 조정과 채널 하단 부근의 반등이 나타나 있다.",
+    "category_ko": "ETF 차트",
+    "owner_hint": "Invesco",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:880f14536dc391d2d8813e90e31d580cc6326842169170903ecce2790fc89908": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Mercury Agent",
+    "description_ko": "MIT 라이선스의 AI 에이전트 프로젝트 README 화면. 권한 제어 도구, 토큰 예산, 다중 채널 접근, 메모리와 확장 가능한 스킬 등을 소개한다.",
+    "category_ko": "AI 에이전트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:77669be5f0c2af023cb6cc3ff611507206d06e98f6deefb6dabfab15b70d41a4": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "왜 토스 API와 Alpaca API를 함께 쓰나요?",
+    "description_ko": "Penny Chart가 토스 API의 실시간 시세, Alpaca API의 과거 데이터, 로컬 저장을 결합해 차트를 구성하는 방식을 설명한 도식.",
+    "category_ko": "금융 데이터 아키텍처",
+    "owner_hint": "Penny Chart",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d0db9a0846b16a2fbc300e46e0d95d17dd2a64de25ccdc5b6c0813a7fde72dc9": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NEAR/USDT 4시간 차트",
+    "description_ko": "TradingView의 바이낸스 NEAR/USDT 4시간봉 화면. 이동평균선, 거래량, 지지·저항 구간과 최근 가격 부근의 원형 표시가 보인다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4fcc5474f3b36c9d13c231261681c98ffd5c44fd95fec24a127d79b348f36ed8": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NEAR/USDT 일봉 차트",
+    "description_ko": "TradingView의 바이낸스 NEAR/USDT 일봉 화면. 장기간의 가격 흐름과 최근 급등, 이동평균선, 거래량 및 지지·저항 표시가 보인다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c48101abfbb63b968595e46993694c81122d9a107b60c354ae3ec2fb561d8f3c": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "PUMP/USDT 일봉 차트",
+    "description_ko": "TradingView의 바이낸스 PUMP/USDT 일봉 화면. 상승 이후 최근 고점 부근의 조정과 함께 이동평균선, 거래량, 수평 가격선 및 추세선이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
   }
 }

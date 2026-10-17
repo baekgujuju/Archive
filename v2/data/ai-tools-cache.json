@@ -1983,5 +1983,130 @@
     "fingerprint": "fcce1514cc04d7c6ae94b57a622b431ff521ac9809b323bae9a8ea078a544a90",
     "entry": null,
     "version": 3
+  },
+  "2109257204348145817:b06ea8ba8dce5dae.jpg": {
+    "fingerprint": "98f9470c2c3663351da627281f049b515e4cd052c7823b6e3e0418188fa31eaa",
+    "entry": {
+      "title": "storytold/filmcraft",
+      "summary_ko": "FilmCraft는 Rust로 개발된 오픈소스 비선형 영상 편집기로, 영상 편집과 색보정, 오디오 작업을 지원합니다. Adobe Premiere Pro와 유사한 작업 흐름을 제공하며 macOS, Windows, Linux와 WebAssembly 기반 웹 브라우저에서 실행됩니다.",
+      "category": "비선형 영상 편집기",
+      "repo_url": "https://github.com/storytold/filmcraft",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "98f9470c2c3663351da627281f049b515e4cd052c7823b6e3e0418188fa31eaa"
+    },
+    "version": 3
+  },
+  "2109298980454850615:6c7fca6b6277b943.jpg": {
+    "fingerprint": "7195c6df212bbf9a0d2b00b940b6cd94c89ff6a60580acfc9bbe3dc2c3a89109",
+    "entry": null,
+    "version": 3
+  },
+  "2109426928570819047:e671fe79987e30b7.jpg": {
+    "fingerprint": "959bcc8711e60013ae5f7a83b3c7c1034e6e20db4cbb4f4596c2fc3987af9526",
+    "entry": null,
+    "version": 3
+  },
+  "2108702865288265881:cce9d2ae3cab7bfc.jpg": {
+    "fingerprint": "2370a3e720ad72f90a1732c2dd8d253fab5513fe44a61a3a3b2f802e469e89e0",
+    "entry": null,
+    "version": 3
+  },
+  "2108977796576109007:3c6e611dc5e9eaca.png": {
+    "fingerprint": "ed0b9bd29d51bc094b8fe315eaf03a49857dd35af83c1ff33699e8d7e70449df",
+    "entry": null,
+    "version": 3
+  },
+  "2108977796576109007:235c5f01fb9f3e29.jpg": {
+    "fingerprint": "1ea90988af673ebf8372b610053f522a2d5938a1b046c526ede547f5daba5237",
+    "entry": null,
+    "version": 3
+  },
+  "2108977796576109007:3abec07a6dca3d52.jpg": {
+    "fingerprint": "9469a3517b980b3f25b81907a235288820f6d934cd0d8f96276a8c528fcf8a87",
+    "entry": null,
+    "version": 3
+  },
+  "2108132673894195668:e3210e9e1190f716.jpg": {
+    "fingerprint": "ae610385dd52dd9eb8fa8430c5aa291b7056e75c102709f8e12a3f450331e586",
+    "entry": null,
+    "version": 3
+  },
+  "2108769590671294736:6aa489313140eac8.jpg": {
+    "fingerprint": "03dc328da66f760c10f56f2e82e429eca642d48dab7207539d3dfd1d4958a5f7",
+    "entry": {
+      "title": "TensorFold — Living Weights",
+      "summary_ko": "공개 모델이 고정된 가중치로 배포되는 방식에서 나아가 스스로 학습하고 가중치를 갱신할 수 있는지 질문하는 프로젝트 홍보 이미지다. 어두운 배경에 다채로운 신경망 형태의 물결을 배치했다.",
+      "category": "AI 모델·지속 학습",
+      "repo_url": "https://github.com/jimthedj65/living-weights-harness",
+      "status": "verified",
+      "evidence": [
+        "search:phrase:tensorfold living weights"
+      ],
+      "fingerprint": "03dc328da66f760c10f56f2e82e429eca642d48dab7207539d3dfd1d4958a5f7"
+    },
+    "version": 3
+  },
+  "2108567811530658011:74eca38d6f773efd.jpg": {
+    "fingerprint": "5594e708acf055ee17308aa9e40fb026b512d754c42115c4433c754bef067482",
+    "entry": null,
+    "version": 3
+  },
+  "2108567811530658011:2ee3005c1bb78a4b.jpg": {
+    "fingerprint": "152edcd55bebead267a9224b50297ca088b5d6f671c4e0c70b96f8b8c12f96a5",
+    "entry": null,
+    "version": 3
+  },
+  "2108567811530658011:b218366f048310f6.jpg": {
+    "fingerprint": "2242c42e91ae60795ed87e35b112ea26c5371c046a9b146d101d25a0508b82b5",
+    "entry": null,
+    "version": 3
+  },
+  "2108567811530658011:ed3fa23a6a1905e1.jpg": {
+    "fingerprint": "030c0708f6c32566a7e40d0d69006363752c292c45189aa9d2d606145e203881",
+    "entry": null,
+    "version": 3
+  },
+  "2108561333902004307:2fd3ac359d97d580.jpg": {
+    "fingerprint": "a9cbb4d0138b9f73c15c5a6f83e0a5cd06b8d3938bbcd877035aa048ab01b221",
+    "entry": null,
+    "version": 3
+  },
+  "2108561333902004307:b2efe2299cc0edeb.jpg": {
+    "fingerprint": "44f93fcc6fa95948976e96b21d1fe5757f1595bca043f0adce4b37c308710cc9",
+    "entry": null,
+    "version": 3
+  },
+  "2108962705319317665:3abec07a6dca3d52.jpg": {
+    "fingerprint": "bc3aa8738a2111bee1d9ecf022af13f0a8558f96e3098b6095f860498f2f5998",
+    "entry": null,
+    "version": 3
+  },
+  "2108557751769321771:beaff73c3f6437e1.jpg": {
+    "fingerprint": "4d3aaec6eb9cc7e93d1906c388a4c964938bb1e8966530c440f803ac96fdd636",
+    "entry": null,
+    "version": 3
+  },
+  "2108557751769321771:445709fe97f62a5e.jpg": {
+    "fingerprint": "f74d68cb972b5a3c99a80e44b6e016c0d70b1e93bb45ee23852fff1164bb4fed",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:12b4880e04ca8660.png": {
+    "fingerprint": "19053ae72def9559010d4a43a7d1f83bdb552572e7b197d64a21ad37691a62c6",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:387e29f6dcd693e2.png": {
+    "fingerprint": "555547b27f1b78454f05746ce8d0d1baa8d76e9859edc7510d0f2c100bb95eaf",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:708bec74cb974b40.png": {
+    "fingerprint": "3db2b4681b601392c9fdaddb65b17f38d846c373cf151f2b2c6c9140f13ad34d",
+    "entry": null,
+    "version": 3
   }
 }
