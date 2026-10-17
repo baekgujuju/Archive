@@ -32,6 +32,7 @@ import shutil
 import subprocess
 import sys
 import time
+from datetime import datetime, timedelta, timezone
 import urllib.parse
 import urllib.request
 import urllib.error
@@ -271,15 +272,23 @@ def collect_screenshots():
     return candidates
 
 
-def github_api(path, timeout=15):
+def _check_deadline(deadline):
+    """Raise TimeoutError when the deadline is exhausted (None = unbounded)."""
+    if deadline is not None and _remaining(deadline) <= 0:
+        raise TimeoutError("enrich deadline exhausted")
+
+
+def github_api(path, timeout=15, deadline=None):
     """GitHub API 호출. 일시적 실패 시 예외."""
+    _check_deadline(deadline)
     url = f"https://api.github.com{path}"
     req = urllib.request.Request(url, headers={
         "Accept": "application/vnd.github.v3+json",
         "User-Agent": "archive-enrich-tools/3.0",
     })
+    call_timeout = min(timeout, _remaining(deadline)) if deadline is not None else timeout
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
+        with urllib.request.urlopen(req, timeout=call_timeout) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
         if e.code == 404:
@@ -287,14 +296,16 @@ def github_api(path, timeout=15):
         raise  # 403/500 등은 일시적
 
 
-def get_readme(owner, repo):
+def get_readme(owner, repo, deadline=None):
     """README 원문. 실패 시 None (일시적)."""
+    _check_deadline(deadline)
     try:
         req = urllib.request.Request(
             f"https://api.github.com/repos/{owner}/{repo}/readme",
             headers={"Accept": "application/vnd.github.v3.raw", "User-Agent": "archive-enrich-tools/3.0"}
         )
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        call_timeout = min(15, _remaining(deadline)) if deadline is not None else 15
+        with urllib.request.urlopen(req, timeout=call_timeout) as resp:
             return resp.read().decode("utf-8", errors="ignore")
     except urllib.error.HTTPError as e:
         if e.code == 404:
@@ -327,26 +338,28 @@ def extract_distinctive_phrases(title, min_words=2, max_phrases=5):
     return phrases[:max_phrases]
 
 
-def search_github_repos(query, per_page=5):
+def search_github_repos(query, per_page=5, deadline=None):
     """GitHub 저장소 검색. 일시적 실패 시 예외."""
     url = f"https://api.github.com/search/repositories?q={urllib.parse.quote(query)}&per_page={per_page}"
-    result = github_api(f"/search/repositories?q={urllib.parse.quote(query)}&per_page={per_page}")
+    result = github_api(f"/search/repositories?q={urllib.parse.quote(query)}&per_page={per_page}",
+                        deadline=deadline)
     if result is None:
         return []
     return result.get("items", [])
 
 
-def verify_repo_with_readme(owner, repo, expected_title="", expected_phrases=None):
+def verify_repo_with_readme(owner, repo, expected_title="", expected_phrases=None, deadline=None):
     """
     저장소 검증: 실존 + 포크 아님 + README distinctive phrase 매칭.
     반환: (verified, description, is_fork, match_evidence)
     일시적 실패 시 예외 전파.
     """
+    _check_deadline(deadline)
     repo_clean = repo.removesuffix(".git").split("?")[0].split("#")[0]
     if not re.match(r"^[A-Za-z0-9_.-]+$", owner) or not re.match(r"^[A-Za-z0-9_.-]+$", repo_clean):
         return False, "", False, ""
 
-    data = github_api(f"/repos/{owner}/{repo_clean}")
+    data = github_api(f"/repos/{owner}/{repo_clean}", deadline=deadline)
     if data is None:
         return False, "", False, ""  # 404
 
@@ -358,7 +371,7 @@ def verify_repo_with_readme(owner, repo, expected_title="", expected_phrases=Non
 
     # README distinctive phrase 매칭
     if expected_title or expected_phrases:
-        readme = get_readme(owner, repo_clean)
+        readme = get_readme(owner, repo_clean, deadline=deadline)
         readme_norm = normalize_phrase(readme[:5000])
         desc_norm = normalize_phrase(description)
 
@@ -375,12 +388,13 @@ def verify_repo_with_readme(owner, repo, expected_title="", expected_phrases=Non
     return True, description, False, "no-title-check"
 
 
-def search_and_verify(title, owner_hint=""):
+def search_and_verify(title, owner_hint="", deadline=None):
     """
     URL 없는 GitHub-like 제목으로 검색 → README phrase 비교로 검증.
     모호한 다중 매칭은 거부.
     반환: (owner, repo, description, category_hint) 또는 (None, None, None, None)
     """
+    _check_deadline(deadline)
     if not title or len(title.strip()) < 4:
         return None, None, None, None
 
@@ -391,7 +405,7 @@ def search_and_verify(title, owner_hint=""):
     # 가장 distinctive한 phrase로 검색
     query = f"{phrases[0]} {owner_hint}".strip()
     try:
-        items = search_github_repos(query, per_page=5)
+        items = search_github_repos(query, per_page=5, deadline=deadline)
     except Exception:
         raise  # 일시적 실패 전파
 
@@ -401,13 +415,14 @@ def search_and_verify(title, owner_hint=""):
     # 각 후보를 README phrase로 검증
     verified_candidates = []
     for item in items:
+        _check_deadline(deadline)
         full = item.get("full_name", "")
         if "/" not in full:
             continue
         owner, repo = full.split("/", 1)
         try:
             verified, desc, is_fork, evidence = verify_repo_with_readme(
-                owner, repo, title, phrases)
+                owner, repo, title, phrases, deadline=deadline)
         except Exception:
             raise  # 일시적 실패 전파
         if verified and not is_fork:
@@ -423,15 +438,18 @@ def search_and_verify(title, owner_hint=""):
     return None, None, None, None
 
 
-def korean_summary_from_readme(owner, repo, description):
+def korean_summary_from_readme(owner, repo, description, deadline=None):
     """
     README 기반 한국어 요약/분류 생성.
     순서: Gemini API 1차 → Codex 2차 (2026-10-17 규칙).
+    deadline이 주어지면 각 모델 호출 타임아웃을 남은 예산으로 제한하고,
+    폴백 전에 다시 확인한다.
     """
+    _check_deadline(deadline)
     codex_bin = Path.home() / "workspace" / ".npm-global" / "bin" / "codex"
 
     try:
-        readme = get_readme(owner, repo)[:1500]
+        readme = get_readme(owner, repo, deadline=deadline)[:1500]
     except Exception:
         raise
 
@@ -454,19 +472,22 @@ def korean_summary_from_readme(owner, repo, description):
 
     # 1차: Gemini
     try:
-        parsed = _parse(_run_gemini(prompt, timeout=60))
+        gemini_timeout = min(60, _remaining(deadline)) if deadline is not None else 60
+        parsed = _parse(_run_gemini(prompt, timeout=gemini_timeout))
         if parsed:
             return parsed
     except Exception as e:
         log(f"Gemini 요약 실패, Codex로 폴백: {e}")
     # 2차: Codex
+    _check_deadline(deadline)
     if not codex_bin.exists():
         raise RuntimeError("Korean summary model unavailable")
     try:
+        codex_timeout = min(60, _remaining(deadline)) if deadline is not None else 60
         result = subprocess.run(
             [str(codex_bin), "exec", "-m", "gpt-6.1-sol",
              "--sandbox", "read-only", "--skip-git-repo-check", "-c", 'model_reasoning_effort="low"', "-"],
-            input=prompt, capture_output=True, text=True, timeout=60, cwd="/tmp",
+            input=prompt, capture_output=True, text=True, timeout=codex_timeout, cwd="/tmp",
         )
         if result.returncode:
             return None
@@ -525,19 +546,33 @@ def _parse_image_batch_json(stdout, batch):
     return results
 
 
-def analyze_image_batch(image_paths, timeout=180):
+def _remaining(deadline, floor=0.0):
+    """Seconds left until deadline (None deadline = unbounded)."""
+    if deadline is None:
+        return float("inf")
+    return max(0.0, deadline - time.monotonic()) - floor
+
+
+def analyze_image_batch(image_paths, timeout=180, deadline=None):
     """
     이미지 분석.
     순서: Gemini API 1차(단일 이미지 호출) → Codex 2차(배치, 8개씩).
     반환: {image_path: analysis_dict}
+    deadline이 주어지면 각 호출 전에 확인하고, 호출 타임아웃을 남은
+    예산으로 제한한다. 데드라인 소진 시 미처리 이미지는 결과에서
+    빠지며, 호출자는 이를 temporary_failure(재시도 가능)로 다룬다.
     """
     codex_bin = Path.home() / "workspace" / ".npm-global" / "bin" / "codex"
 
     results = {}
     pending = []
     for img in image_paths:
+        if _remaining(deadline) <= 5:
+            log("데드라인 소진, 남은 이미지 분석 건너뜀")
+            break
+        call_timeout = min(timeout, _remaining(deadline))
         try:
-            item = _analyze_single_image_gemini(img, timeout=timeout)
+            item = _analyze_single_image_gemini(img, timeout=call_timeout)
         except Exception as e:
             log(f"Gemini 단일 이미지 분석 실패, Codex 후보로: {e}")
             item = None
@@ -554,6 +589,9 @@ def analyze_image_batch(image_paths, timeout=180):
     # 2차: Codex 배치 (미커버 이미지만)
     batch_size = 8
     for i in range(0, len(pending), batch_size):
+        if _remaining(deadline) <= 5:
+            log("데드라인 소진, Codex 폴백 건너뜀")
+            break
         batch = pending[i:i + batch_size]
         # 인덱싱된 JSON 배열 프롬프트
         prompt_lines = [
@@ -570,9 +608,10 @@ def analyze_image_batch(image_paths, timeout=180):
         args.append("-")
 
         try:
+            call_timeout = min(timeout, _remaining(deadline))
             result = subprocess.run(
                 args, input="\n".join(prompt_lines),
-                capture_output=True, text=True, timeout=timeout, cwd="/tmp",
+                capture_output=True, text=True, timeout=call_timeout, cwd="/tmp",
             )
             if result.returncode:
                 log(f"Codex 배치 분석 실패 (exit {result.returncode})")
@@ -591,10 +630,13 @@ def candidate_key(tweet_id, image_path, source_url):
     suffix = Path(image_path).name if image_path else "text-"+sha256_str(source_url)[:16]
     return str(tweet_id)+":"+suffix
 
-def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, model_calls):
+def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, model_calls,
+                deadline=None):
     """
     단일 처리. 반환: (entry|None, status)
     status: verified|cached|pending|pending-github-look|temporary_failure
+    deadline이 주어지면 각 모델/네트워크 호출 전에 확인하고, 초과 시
+    temporary_failure(재시도 가능, negative 캐시 없음)로 반환한다.
     """
     fp = fingerprint(image_path, post_text, source_url)
     cache_key = candidate_key(tweet_id, image_path, source_url)
@@ -606,14 +648,18 @@ def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, m
     # 1. 텍스트 GitHub URL 직접 검증 (한국어 요약 포함)
     text_github = GITHUB_RE.findall(post_text or "") + GITHUB_RE.findall(source_url or "")
     for owner, repo in text_github:
+        if _remaining(deadline) <= 5:
+            return None, "temporary_failure"
         try:
-            verified, desc, is_fork, evidence = verify_repo_with_readme(owner, repo)
+            verified, desc, is_fork, evidence = verify_repo_with_readme(owner, repo, deadline=deadline)
         except Exception:
             return None, "temporary_failure"
         if verified and not is_fork:
             # README 기반 한국어 요약 (캐시됨)
+            if _remaining(deadline) <= 5:
+                return None, "temporary_failure"
             try:
-                summary_ko, category_ko = korean_summary_from_readme(owner, repo, desc)
+                summary_ko, category_ko = korean_summary_from_readme(owner, repo, desc, deadline=deadline)
             except Exception:
                 return None, "temporary_failure"
             entry = {
@@ -636,7 +682,9 @@ def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, m
         analysis = image_memo[fp]
     else:
         # 단일 이미지 분석 (배치 호출자가 미리 채워둘 수도 있음)
-        batch_result = analyze_image_batch([image_path])
+        if _remaining(deadline) <= 5:
+            return None, "temporary_failure"
+        batch_result = analyze_image_batch([image_path], deadline=deadline)
         analysis = batch_result.get(str(image_path))
         if analysis is None:
             return None, "temporary_failure"
@@ -656,9 +704,11 @@ def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, m
         m = GITHUB_RE.search(url)
         if not m:
             continue
+        if _remaining(deadline) <= 5:
+            return None, "temporary_failure"
         owner, repo = m.group(1), m.group(2)
         try:
-            verified, desc, is_fork, evidence = verify_repo_with_readme(owner, repo, title)
+            verified, desc, is_fork, evidence = verify_repo_with_readme(owner, repo, title, deadline=deadline)
         except Exception:
             return None, "temporary_failure"
         if verified and not is_fork:
@@ -676,8 +726,10 @@ def enrich_one(tweet_id, image_path, source_url, post_text, cache, image_memo, m
 
     # 3b. URL 없지만 GitHub-like 제목이면 검색
     if is_github and title:
+        if _remaining(deadline) <= 5:
+            return None, "temporary_failure"
         try:
-            owner, repo, desc, evidence = search_and_verify(title, owner_hint)
+            owner, repo, desc, evidence = search_and_verify(title, owner_hint, deadline=deadline)
         except Exception:
             return None, "temporary_failure"
         if evidence == "ambiguous":
@@ -726,7 +778,8 @@ def valid_analysis(value):
             and all(isinstance(value.get(k,""),str) for k in
                     ("title","description_ko","category_ko","owner_hint")))
 
-def run_backfill(max_items=None, dry_run=False, batch_size=8):
+def run_backfill(max_items=None, dry_run=False, batch_size=8,
+                 interleave_ratio=4, time_budget=180):
     """Resume from matching fingerprints; failed/changed entries never count as done.
 
     Append-only rule (2026-10-17): verified tool entries are NEVER dropped
@@ -737,7 +790,20 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
     negative re-verification does not erase verified history).
     Saves are diff-merges onto current disk state (_merge_save), never
     whole-snapshot overwrites.
+
+    Newest-first + reserved backlog share + hard deadline (2026-10-17,
+    Codex-consulted bottleneck fix): uncached candidates are ordered
+    newest-first by the post's capturedAt (missing timestamp = oldest),
+    with 1 oldest (backlog) candidate interleaved per `interleave_ratio`
+    newest ones so the backlog keeps draining even when new posts keep
+    arriving. `time_budget` (seconds, monotonic clock) is enforced inside
+    operations: before every model/network call and by capping each call's
+    timeout to the remaining budget. Deadline exhaustion leaves work
+    retryable (temporary_failure, never a cached negative), so the poll
+    can proceed to translate/commit instead of being killed mid-batch.
     """
+    run_start = time.monotonic()
+    deadline = run_start + time_budget
     tools_data = load_json(TOOLS_JSON, {})
     cache = load_json(CACHE_JSON, {})
     vision_path = DATA_DIR / "ai-tools-vision-cache.json"
@@ -751,17 +817,33 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
     current_fps = {}
     for tid, image, url, text in candidates:
         current_fps.setdefault(tid, set()).add(fingerprint(image, text, url))
-    # Authoritative post set: ALL archived X posts, not just screenshot
+    # Authoritative post set: ALL archived posts (X + web), not just screenshot
     # candidates (a post can have no candidate if its image is missing or
     # its text no longer contains a GitHub URL — that is not deletion).
-    # Fail-closed: if the archive cannot be read, skip pruning entirely.
-    archive_posts = load_json(DATA_DIR / "posts-x.json", {}).get("posts", [])
+    # Fail-closed: if either archive file cannot be read, skip pruning
+    # entirely (a missing file must never look like "all posts deleted").
+    archive_posts = []
+    archive_ok = True
+    for data_file in ("posts-x.json", "posts-web.json"):
+        path = DATA_DIR / data_file
+        if not path.exists():
+            archive_ok = False
+            continue
+        try:
+            archive_posts.extend(json.loads(path.read_text(encoding="utf-8")).get("posts", []))
+        except (OSError, ValueError):
+            archive_ok = False
     all_post_ids = {str(p.get("tweetId") or p.get("id") or "") for p in archive_posts}
     all_post_ids.discard("")
+    captured_map = {}
+    for p in archive_posts:
+        tid = str(p.get("tweetId") or p.get("id") or "")
+        if tid:
+            captured_map[tid] = p.get("capturedAt") or ""
     kept_stale = 0
     pruned_gone = 0
     kept_tools = {}
-    if not all_post_ids:
+    if not archive_ok or not all_post_ids:
         log("게시물 목록을 읽지 못해 도구 프루닝 건너뜀 (fail-closed)")
         kept_tools = dict(tools_data)
     else:
@@ -797,7 +879,40 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
                 tools_data[tid] = old["entry"]
             continue
         remaining.append(c)
-    items = remaining[:max_items] if max_items else remaining
+    # Newest-first + reserved backlog share: sort all uncached candidates
+    # by capturedAt desc (missing = oldest), then interleave 1 oldest per
+    # `interleave_ratio` newest so the backlog drains even under steady
+    # new arrivals. max_items applies AFTER scheduling (slicing first
+    # could exclude new posts).
+    def _captured_at(candidate):
+        raw = captured_map.get(candidate[0], "")
+        try:
+            parsed = datetime.fromisoformat(str(raw))
+        except (ValueError, TypeError):
+            return None
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed
+    oldest_ts = datetime.min.replace(tzinfo=timezone.utc)
+    newest = sorted(remaining, key=lambda c: _captured_at(c) or oldest_ts, reverse=True)
+    ordered, used = [], set()
+    new_i, old_i = 0, len(newest) - 1
+    while len(ordered) < len(newest):
+        for _ in range(max(1, interleave_ratio)):
+            while new_i < len(newest) and new_i in used:
+                new_i += 1
+            if new_i < len(newest):
+                ordered.append(newest[new_i])
+                used.add(new_i)
+                new_i += 1
+        while old_i >= 0 and old_i in used:
+            old_i -= 1
+        if old_i >= 0:
+            ordered.append(newest[old_i])
+            used.add(old_i)
+            old_i -= 1
+    items = ordered[:max_items] if max_items else ordered
+    log(f"신규 우선 정렬: 전체 {len(items)}건 중 최신순 + 백로그 예약분 인터리브(신규 {interleave_ratio}:백로그 1)")
     model_calls = [0]
     def persist():
         if dry_run:
@@ -838,7 +953,11 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
             RETRY_MARKER.unlink(missing_ok=True)
     processed = 0
     persist()
+    deadline_hit = False
     for start in range(0, len(items), batch_size):
+        if _remaining(deadline) <= 5:
+            log(f"시간 예산 {time_budget}초 소진, 남은 {len(items) - processed}건은 다음 폴에서 재개")
+            break
         batch = items[start:start+batch_size]
         needed = {}
         for tid, image, url, text in batch:
@@ -851,7 +970,7 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
             else:
                 needed.setdefault(ikey, image)
         if needed:
-            result = analyze_image_batch(list(needed.values()))
+            result = analyze_image_batch(list(needed.values()), deadline=deadline)
             model_calls[0] += 1
             for ikey, image in needed.items():
                 analysis = result.get(str(image))
@@ -863,9 +982,14 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
                     if img == image:
                         image_memo[fingerprint(img, text, url)] = analysis
         for tid, image, url, text in batch:
+            if _remaining(deadline) <= 5:
+                log(f"시간 예산 {time_budget}초 소진, 남은 {len(items) - processed}건은 다음 폴에서 재개")
+                deadline_hit = True
+                break
             key = candidate_key(tid, image, url)
             try:
-                entry, status = enrich_one(tid, image, url, text, cache, image_memo, model_calls)
+                entry, status = enrich_one(tid, image, url, text, cache, image_memo, model_calls,
+                                           deadline=deadline)
                 if entry:
                     tools_data[tid] = entry
                     stats["cached" if status == "cached" else "verified"] += 1
@@ -884,6 +1008,8 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
                 pending_details[key] = type(error).__name__
             processed += 1
         persist()
+        if deadline_hit:
+            break
     persist()
     unfinished = len(remaining)-processed
     log(f"Completed {processed}/{len(remaining)} uncached candidates; stats={stats}")
@@ -899,6 +1025,10 @@ def main():
     parser.add_argument("--max-items", type=int, default=None)
     parser.add_argument("--tweet-id", type=str, default=None)
     parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--interleave-ratio", type=int, default=4,
+                        help="신규 N건당 백로그 1건 인터리브 (기본 4)")
+    parser.add_argument("--time-budget", type=float, default=180,
+                        help="데드라인 초 (기본 180, monotonic)")
     args = parser.parse_args()
 
     if args.tweet_id:
@@ -926,7 +1056,9 @@ def main():
 
     if args.backfill:
         result = run_backfill(max_items=args.max_items, dry_run=args.dry_run,
-                              batch_size=args.batch_size)
+                              batch_size=args.batch_size,
+                              interleave_ratio=args.interleave_ratio,
+                              time_budget=args.time_budget)
         # pending_details는 별도 출력
         details = result.pop("pending_details", {})
         print(json.dumps(result, ensure_ascii=False))

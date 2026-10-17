@@ -228,9 +228,14 @@ def main():
         # 미디어 미러 후, git 커밋 전. 실패해도 전체 흐름은 계속.
         _enrich = V2_ROOT / "enrich_tools.py"
         if _enrich.exists():
-            log("AI툴 스크린샷 분류 시작 (best-effort)...")
+            log("AI툴 스크린샷 분류 시작 (best-effort, 최신 우선 + 백로그 인터리브 + 180초 데드라인)...")
             try:
-                _er = run([sys.executable, str(_enrich), "--backfill"], timeout=900)
+                # 최신 우선 + 백로그 예약분(신규 4:백로그 1) + 180초 데드라인.
+                # 데드라인은 연산 내부에서 강제되어 번역/커밋이 900초 타임아웃에
+                # 걸리지 않게 한다 (미완료분은 지문으로 다음 폴에 재개).
+                _er = run([sys.executable, str(_enrich), "--backfill",
+                           "--interleave-ratio", "4",
+                           "--time-budget", "180"], timeout=900)
                 if _er.returncode == 0:
                     log("AI툴 분류 완료")
                 else:
