@@ -212,6 +212,49 @@ def _git_show_bytes(commit, git_path):
     raise RuntimeError(f"git show 실패 ({commit[:12]}:{git_path}): {err[-300:]}")
 
 
+def _validate_manifest_dict(m, short):
+    """매니페스트 구조 검증 (커밋 검증 + 번역 해시 업데이트 공유).
+
+    validate_commit_artifacts와 update_manifest_translation_hash가
+    같은 기준을 쓰지 않으면 한쪽이 통과시킨 비정형 매니페스트를
+    다른 쪽이 성공처럼 처리한다. Returns (ok, reason).
+    - chunks: posts-x/posts-web/posts-ib 필수, 각 file(유효한 v2-상대
+      경로) + sha256(64-hex) + count(정확히 int, bool 거부, >= 0).
+    - 선택 섹션 translations/shared_state/ai_tools: 있으면 dict +
+      file/sha256 유효 + count가 있으면 정확히 int >= 0.
+    """
+    if not isinstance(m, dict):
+        return False, f"manifest.json이 dict가 아님 ({short})"
+    chunks = m.get("chunks")
+    if not isinstance(chunks, dict):
+        return False, f"manifest.json에 chunks 없음 ({short})"
+    for name in ("posts-x", "posts-web", "posts-ib"):
+        entry = chunks.get(name)
+        if not isinstance(entry, dict):
+            return False, f"manifest.json chunks.{name} 없음/형식 오류 ({short})"
+        f, h, c = entry.get("file"), entry.get("sha256"), entry.get("count")
+        if _manifest_relpath(f) is None:
+            return False, f"manifest.json chunks.{name} file 경로 형식 오류 ({short})"
+        if not isinstance(h, str) or not _HEX64.match(h):
+            return False, f"manifest.json chunks.{name} sha256 형식 오류 ({short})"
+        if type(c) is not int or c < 0:  # bool은 int의 서브클래스 — type()으로 거부
+            return False, f"manifest.json chunks.{name} count 형식 오류 ({short})"
+    for section in ("translations", "shared_state", "ai_tools"):
+        entry = m.get(section)
+        if entry is None:
+            continue
+        if not isinstance(entry, dict):
+            return False, f"manifest.json {section} 형식 오류 ({short})"
+        f, h = entry.get("file"), entry.get("sha256")
+        if _manifest_relpath(f) is None:
+            return False, f"manifest.json {section} file 경로 형식 오류 ({short})"
+        if not isinstance(h, str) or not _HEX64.match(h):
+            return False, f"manifest.json {section} sha256 형식 오류 ({short})"
+        if "count" in entry and (type(entry["count"]) is not int or entry["count"] < 0):
+            return False, f"manifest.json {section} count 형식 오류 ({short})"
+    return True, ""
+
+
 def validate_commit_artifacts(commit):
     """푸시 전 커밋 아티팩트 검증 (P2-10).
 
@@ -229,35 +272,19 @@ def validate_commit_artifacts(commit):
         m = json.loads(data.decode("utf-8"))
     except (ValueError, UnicodeDecodeError):
         return False, f"manifest.json 파싱 실패 ({short})"
-    if not isinstance(m, dict):
-        return False, f"manifest.json이 dict가 아님 ({short})"
-
-    # 필수 청크 구조 검증 (posts-x/posts-web/posts-ib).
-    chunks = m.get("chunks")
-    if not isinstance(chunks, dict):
-        return False, f"manifest.json에 chunks 없음 ({short})"
+    ok, reason = _validate_manifest_dict(m, short)
+    if not ok:
+        return False, reason
+    chunks = m["chunks"]
     pairs = []  # (manifest_path, sha256, chunk_name_or_None)
     for name in ("posts-x", "posts-web", "posts-ib"):
-        entry = chunks.get(name)
-        if not isinstance(entry, dict):
-            return False, f"manifest.json chunks.{name} 없음/형식 오류 ({short})"
-        f, h, c = entry.get("file"), entry.get("sha256"), entry.get("count")
-        if not isinstance(f, str) or not isinstance(h, str) or not _HEX64.match(h):
-            return False, f"manifest.json chunks.{name} file/sha256 형식 오류 ({short})"
-        if not isinstance(c, int) or c < 0:
-            return False, f"manifest.json chunks.{name} count 형식 오류 ({short})"
-        pairs.append((f, h, name))
-    # 선택 섹션 (있으면 형식 검증, 없으면 무시).
+        entry = chunks[name]
+        pairs.append((entry["file"], entry["sha256"], name))
     for section in ("translations", "shared_state", "ai_tools"):
         entry = m.get(section)
         if entry is None:
             continue
-        if not isinstance(entry, dict):
-            return False, f"manifest.json {section} 형식 오류 ({short})"
-        f, h = entry.get("file"), entry.get("sha256")
-        if not isinstance(f, str) or not isinstance(h, str) or not _HEX64.match(h):
-            return False, f"manifest.json {section} file/sha256 형식 오류 ({short})"
-        pairs.append((f, h, None))
+        pairs.append((entry["file"], entry["sha256"], None))
 
     for path, want, chunk_name in pairs:
         git_path = _manifest_relpath(path)
@@ -277,6 +304,8 @@ def validate_commit_artifacts(commit):
                 return False, f"{path} 파싱 실패 ({short})"
             if not isinstance(chunk, dict) or not isinstance(chunk.get("posts"), list):
                 return False, f"{path} 구조 오류 (posts 목록 없음) ({short})"
+            if not all(isinstance(p, dict) for p in chunk["posts"]):
+                return False, f"{path} 구조 오류 (post가 dict가 아님) ({short})"
             want_count = chunks[chunk_name]["count"]
             if len(chunk["posts"]) != want_count:
                 return False, f"{path} count 불일치 (manifest {want_count}, 실제 {len(chunk['posts'])}) ({short})"
@@ -301,13 +330,29 @@ def flag_needs_review(commit, reason):
             if not isinstance(entries, list):
                 raise ValueError("not a list")
         except (OSError, ValueError):
+            # 손상된 마커 격리: 고유 목적지를 예약(mkstemp, O_EXCL)하고
+            # 원본 바이트를 복사한 뒤 원본을 삭제한다. 초 단위 이름 +
+            # replace는 같은 초의 두 격리가 앞 증거를 덮는다.
+            # 격리 실패 시 원본 마커를 건드리지 않고 중단한다
+            # (격리 실패 후 새 마커로 교체하면 손상 증거가 사라진다).
             stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
-            quarantine = marker.with_name(f".needs-review.quarantine.{stamp}")
             try:
-                marker.replace(quarantine)
-                log(f"손상된 검수 마커 격리: {quarantine.name}")
+                fd, qpath = tempfile.mkstemp(
+                    prefix=f".needs-review.quarantine.{stamp}.", dir=str(HOOKS_DIR))
+                try:
+                    with os.fdopen(fd, "wb") as dst, open(marker, "rb") as src:
+                        shutil.copyfileobj(src, dst)
+                except OSError:
+                    try:
+                        os.unlink(qpath)
+                    except OSError:
+                        pass
+                    raise
+                marker.unlink()
+                log(f"손상된 검수 마커 격리: {Path(qpath).name}")
             except OSError as e:
-                log(f"손상된 검수 마커 격리 실패: {e}")
+                log(f"손상된 검수 마커 격리 실패 — 원본 보존: {e}")
+                return
             entries = []
     for e in entries:
         if isinstance(e, dict) and e.get("commit") == commit and e.get("reason") == reason:
@@ -394,8 +439,12 @@ def update_manifest_translation_hash():
             except (OSError, ValueError) as e:
                 log(f"manifest 번역 해시 업데이트 실패: manifest 파싱 오류: {e}")
                 return False
-            if not isinstance(m, dict):
-                log("manifest 번역 해시 업데이트 실패: manifest가 dict가 아님")
+            # 구조 검증 (validate_commit_artifacts와 공유) — {}처럼
+            # 필수 청크가 없는 매니페스트를 "동기화할 게 없음"으로
+            # 성공 처리하면 비정형 매니페스트가 커밋된다.
+            ok, reason = _validate_manifest_dict(m, "local")
+            if not ok:
+                log(f"manifest 번역 해시 업데이트 실패: 구조 오류 — {reason}")
                 return False
             if not TRANSLATIONS.exists():
                 if "translations" in m:
@@ -468,6 +517,9 @@ def merge_translation_backup(backup_path):
     방치 백업 복구의 공통 로직). 원자적 저장.
     Returns (복원 키 수, 사유). 사유:
       '' = 성공 (복원 0개도 성공 — 백업이 이미 중복),
+      'partial' = 일부 엔트리가 유효하지 않아 건너뜀 — 유효 엔트리는
+        병합됐지만 무효 엔트리의 증거가 백업에 남아 있으므로
+        호출자는 백업을 삭제하면 안 된다 (격리/보존해야 한다).
       '손상' = 백업이 파싱 불가 / dict 아님 / 유효 엔트리 없음,
       'current-corrupt' = 현재 파일이 존재하지만 손상됨 — 병합하지
         않고 둘 다 보존한다 (손상 현재 파일을 오래된 백업으로 덮으면
@@ -512,6 +564,10 @@ def merge_translation_backup(backup_path):
         tmp = TRANSLATIONS.with_name(f".{TRANSLATIONS.name}.tmp-{os.getpid()}")
         tmp.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
         tmp.replace(TRANSLATIONS)
+    if skipped:
+        # 유효 엔트리는 병합됐지만 무효 엔트리의 증거가 백업에 있음 —
+        # 성공으로 보고해 삭제하면 증거가 사라진다.
+        return restored, "partial"
     return restored, ""
 
 
@@ -530,7 +586,13 @@ def merge_translation_backup(backup_path):
 
 
 def _read_backup_transaction(backup_dir):
-    """백업의 transaction.json을 읽는다. 없거나 형식이 틀리면 None."""
+    """백업의 transaction.json을 읽는다. 없거나 형식이 틀리면 None.
+
+    모든 필드를 요구한다 — source_hash/translations_sha256이
+    없거나 임의 문자열이면 백업 바이트와 묶을 수 없어 신뢰할 수
+    없다 (Codex 2차 리뷰 차단 4). translations_sha256은 64-hex여야
+    백업 바이트 해시와 대조할 수 있다.
+    """
     try:
         rec = json.loads((backup_dir / "transaction.json").read_text(encoding="utf-8"))
     except (OSError, ValueError):
@@ -541,11 +603,31 @@ def _read_backup_transaction(backup_dir):
         return None
     if not isinstance(rec.get("created_at"), str) or not rec.get("created_at"):
         return None
-    if rec.get("source_hash") is not None and not isinstance(rec.get("source_hash"), str):
+    if not isinstance(rec.get("source_hash"), str) or not rec.get("source_hash"):
         return None
-    if rec.get("translations_sha256") is not None and not isinstance(rec.get("translations_sha256"), str):
+    if not isinstance(rec.get("translations_sha256"), str) or not _HEX64.match(rec["translations_sha256"]):
         return None
     return rec
+
+
+def _quarantine_backup_dir(backup_dir):
+    """백업 디렉터리를 .quarantine/으로 이동해 증거를 보존한다.
+
+    부분 병합처럼 유효 엔트리는 복원됐지만 무효 엔트리의 증거가
+    남아 있는 경우 — 제자리 보존하면 매 폴 재시도하고, 삭제하면
+    증거가 사라진다. 격리하면 재시도도 없고 증거도 남는다.
+    Returns True(이동 성공) / False(실패 — 제자리 보존).
+    """
+    try:
+        dest_root = HOOKS_DIR / ".quarantine"
+        dest_root.mkdir(exist_ok=True)
+        dest = dest_root / f"{backup_dir.name}.{uuid.uuid4().hex}"
+        shutil.move(str(backup_dir), str(dest))
+        log(f"방치 백업 격리 (증거 보존): {backup_dir.name} → {dest.name}")
+        return True
+    except OSError as e:
+        log(f"방치 백업 격리 실패 — 제자리 보존: {backup_dir.name}: {e}")
+        return False
 
 
 def _current_source_hash():
@@ -566,15 +648,31 @@ def recover_abandoned_backups():
     후크 flock을 획득한 뒤에 호출되므로 다른 후크와 동시에 실행되지
     않는다. 트랜잭션 출처 + 소스 동일성 + 충돌 없음이 확인된 경우만
     자동 복구한다. 그 외는 모두 보존하고 운영자 검토를 기다린다.
+
+    후보 수집은 공유 상태가 아니라 락 밖에서 한다. 공유 상태 판단
+    (현재 매니페스트 source_hash, 현재 파일, 중복 대조) + 병합 +
+    삭제는 전부 공유 락 안에서 수행한다 — 락 밖에서 하면 현재 파일이
+    병합 사이에 바뀌어 중복 판단이 어긋나고, 병합한 백업을
+    다른 실행이 다시 병합할 수 있다.
     """
     candidates = []  # (backup_dir, transaction, backup_data)
-    for d in sorted(HOOKS_DIR.glob("v2_trans_*")):
+    try:
+        entries = sorted(HOOKS_DIR.glob("v2_trans_*"))
+    except OSError as e:
+        # 열거 실패 — 어떤 백업이 있는지 알 수 없으므로 모두 보존한다.
+        log(f"방치 백업 열거 실패 — 모두 보존: {e}")
+        return
+    for d in entries:
         if not d.is_dir():
             continue
         backup_file = d / "translations.json"
         if not backup_file.is_file():
             # translations.json이 없다고 빈 디렉터리가 아니다.
-            remaining = [p for p in d.iterdir()]
+            try:
+                remaining = [p for p in d.iterdir()]
+            except OSError as e:
+                log(f"방치 백업 열거 실패 — 보존: {d.name}: {e}")
+                continue
             if not remaining:
                 log(f"방치 백업 (진짜 빈 디렉터리, 삭제): {d.name}")
                 shutil.rmtree(d, ignore_errors=True)
@@ -583,7 +681,17 @@ def recover_abandoned_backups():
             continue
         rec = _read_backup_transaction(d)
         if rec is None:
-            log(f"방치 백업 legacy (transaction.json 없음) — 자동 복구하지 않고 운영자 검토 대기: {d.name}")
+            log(f"방치 백업 legacy/형식 오류 (transaction.json 없음·불완전) — 자동 복구하지 않고 운영자 검토 대기: {d.name}")
+            continue
+        # 백업 바이트를 트랜잭션 메타데이터와 묶는다 — 해시가 다르면
+        # 생성 후 백업이 변경된 것이므로 신뢰할 수 없다.
+        try:
+            backup_hash = sha256_file(backup_file)
+        except OSError as e:
+            log(f"방치 백업 읽기 실패 — 보존: {d.name}: {e}")
+            continue
+        if backup_hash != rec["translations_sha256"]:
+            log(f"방치 백업 해시 불일치 (백업이 생성 후 변경됨) — 자동 복구하지 않고 운영자 검토 대기: {d.name}")
             continue
         try:
             bak = json.loads(backup_file.read_text(encoding="utf-8"))
@@ -597,15 +705,24 @@ def recover_abandoned_backups():
 
     if not candidates:
         return
+    try:
+        with pipeline_lock():
+            _recover_abandoned_backups_locked(candidates)
+    except PipelineLockTimeout as e:
+        log(f"방치 백업 복구 건너뜀 (락 타임아웃) — 보존: {e}")
+    except OSError as e:
+        # 쓰기/교체 실패 — 백업을 보존하고 중단한다 (다음 실행 재시도).
+        log(f"방치 백업 복구 중단 (쓰기 실패) — 보존: {e}")
+
+
+def _recover_abandoned_backups_locked(candidates):
+    """공유 락 보유 상태에서 실행되는 복구 본체 (candidates: 위 참조)."""
     current_hash = _current_source_hash()
     if current_hash is None:
         log("방치 백업 복구 건너뜀: 현재 매니페스트의 source_hash를 확인할 수 없음 — 모두 보존")
         return
     applicable = []
     for d, rec, bak in candidates:
-        if rec.get("source_hash") is None:
-            log(f"방치 백업 보존 (source_hash 없음 — 적용 가능성 판단 불가): {d.name}")
-            continue
         if rec["source_hash"] != current_hash:
             log(f"방치 백업 보존 (소스 변경됨 — 백업 세대가 현재와 다름): {d.name}")
             continue
@@ -631,25 +748,19 @@ def recover_abandoned_backups():
     # 순서는 결과에 영향을 주지 않는다.
     for d, rec, bak in sorted(applicable, key=lambda x: x[1]["created_at"], reverse=True):
         backup_file = d / "translations.json"
-        # 현재 파일과 바이트 동일하면 중복 — 병합 없이 삭제한다.
-        try:
-            if TRANSLATIONS.exists() and sha256_file(TRANSLATIONS) == rec.get("translations_sha256"):
-                log(f"방치 백업 중복 (현재와 동일) — 삭제: {d.name}")
-                shutil.rmtree(d, ignore_errors=True)
-                continue
-        except OSError:
-            pass
-        try:
-            with pipeline_lock():
-                restored, reason = merge_translation_backup(backup_file)
-        except PipelineLockTimeout as e:
-            log(f"방치 백업 복구 건너뜀 (락 타임아웃) — 보존: {d.name}: {e}")
+        # 현재 파일과 바이트가 실제로 동일할 때만 중복 — 메타데이터만
+        # 대조하면 변경된 백업의 고유 엔트리를 중복으로 오판해 지운다.
+        if TRANSLATIONS.exists() and sha256_file(TRANSLATIONS) == sha256_file(backup_file):
+            log(f"방치 백업 중복 (현재와 바이트 동일) — 삭제: {d.name}")
+            shutil.rmtree(d, ignore_errors=True)
             continue
-        except OSError as e:
-            # 쓰기/교체 실패 — 백업을 보존하고 중단한다 (다음 실행 재시도).
-            # 예외를 위로 전파하면 후크가 크래시한다.
-            log(f"방치 백업 복구 중단 (쓰기 실패) — 보존: {d.name}: {e}")
-            return
+        restored, reason = merge_translation_backup(backup_file)
+        if reason == "partial":
+            # 유효 엔트리는 병합됐고 무효 엔트리 증거가 백업에 남음 —
+            # 삭제하지 않고 격리한다 (재시도 없음 + 증거 보존).
+            log(f"방치 백업 부분 병합 (복원 {restored}개, 무효 엔트리 격리): {d.name}")
+            _quarantine_backup_dir(d)
+            continue
         if reason:
             # 손상 / 현재 파일 손상 — 둘 다 보존하고 중단한다.
             # (현재 파일 손상은 translate 로드의 격리 경로가 처리한다.)
@@ -669,16 +780,18 @@ def main():
         return 2
     log("락 획득")
 
-    # P2/P3: 이전 실행이 중단하며 남긴 번역 백업을 먼저 정리한다.
-    # (최근 + 유효한 백업만 자동 복구, 나머지는 운영자 검토 대기.)
-    recover_abandoned_backups()
-
     force_build_markers = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists()
     has_retry_marker = force_build_markers or RETRY_ENRICH.exists()
     if has_retry_marker:
         log("재시도 마커 감지 — 소스 변경 여부와 무관하게 처리")
 
     try:
+        # P2/P3: 이전 실행이 중단하며 남긴 번역 백업을 먼저 정리한다.
+        # (최근 + 유효한 백업만 자동 복구, 나머지는 운영자 검토 대기.)
+        # try/finally 안에서 호출해야 예상치 못한 예외 시에도 flock이
+        # 해제된다 (밖에서 호출하면 finally를 우회한다).
+        recover_abandoned_backups()
+
         # 0. 미푸시 커밋/Dirty 처리 (소스 해시와 무관)
         # P2-10: 미푸시 커밋 검증은 실제로 푸시할 때만 수행한다.
         # 게시 비활성 시에는 푸시하지 않으므로 기준선 확인이

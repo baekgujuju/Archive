@@ -425,3 +425,58 @@ def test_verify_failure_does_not_create_generation(tmp_path, monkeypatch):
     assert len(_generation_dirs(v2root)) == 1
     for name, content in preserved.items():
         assert (data / name).read_text() == content, name
+
+
+def test_archive_allocation_above_max_suffix(tmp_path, monkeypatch):
+    """같은 초 4개 아카이브 + 중간 prune 시 최신 세대가 지워지지 않는다.
+
+    Codex 2차 리뷰 차단 2: "첫 빈 접미사" 할당은 prune이 bare를 지운
+    뒤 같은 초에 bare를 재할당해 최신 세대를 가장 오래된 것처럼
+    정렬하고 prune이 최신 세대를 지운다. 할당은 max+1이어야 한다.
+    """
+    import datetime as _dt
+
+    v2root = tmp_path / "v2"
+    v2root.mkdir()
+    monkeypatch.setattr(build_data, "V2_ROOT", v2root)
+    fixed = _dt.datetime(2026, 1, 1, 0, 0, 0, tzinfo=_dt.timezone.utc)
+
+    class _FixedDatetime:
+        @classmethod
+        def now(cls, tz=None):
+            return fixed
+
+    monkeypatch.setattr(build_data, "datetime", _FixedDatetime)
+    stamp = "20260101T000000"
+
+    def _archive_one():
+        transient = v2root / "data.backup"
+        transient.mkdir()
+        return build_data._archive_backup(transient)
+
+    assert _archive_one().name == f"data.backup.{stamp}"
+    assert _archive_one().name == f"data.backup.{stamp}.1"
+    assert _archive_one().name == f"data.backup.{stamp}.2"
+    assert _archive_one().name == f"data.backup.{stamp}.3"
+    build_data._prune_generations(keep=2)
+    remaining = sorted(p.name for p in _generation_dirs(v2root))
+    assert remaining == [f"data.backup.{stamp}.2", f"data.backup.{stamp}.3"]
+    # bare를 재사용하면 안 된다 — max+1인 .4여야 한다.
+    assert _archive_one().name == f"data.backup.{stamp}.4"
+    build_data._prune_generations(keep=2)
+    remaining = sorted(p.name for p in _generation_dirs(v2root))
+    assert remaining == [f"data.backup.{stamp}.3", f"data.backup.{stamp}.4"]
+    assert not (v2root / f"data.backup.{stamp}").exists()  # 최신이 지워지지 않음
+
+
+def test_prune_ignores_unicode_digit_and_newline_names(tmp_path, monkeypatch):
+    """유니코드 숫자·개행 접미사 이름은 세대가 아니다 (prune이 건드리지 않음)."""
+    v2root = tmp_path / "v2"
+    v2root.mkdir()
+    monkeypatch.setattr(build_data, "V2_ROOT", v2root)
+    (v2root / "data.backup.20260101T000000").mkdir()
+    (v2root / "data.backup.20260101T000000\n").mkdir()
+    (v2root / "data.backup.٢٠٢٦٠١٠١T٠٠٠٠٠٠").mkdir()
+    build_data._prune_generations(keep=0)
+    assert (v2root / "data.backup.20260101T000000\n").is_dir()
+    assert (v2root / "data.backup.٢٠٢٦٠١٠١T٠٠٠٠٠٠").is_dir()

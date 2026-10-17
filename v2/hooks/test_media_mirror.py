@@ -1,5 +1,7 @@
 """Run actual hook control flow: failed image mirroring must still publish text."""
+import hashlib
 import importlib.util
+import json
 import subprocess
 import sys
 import tempfile
@@ -24,9 +26,17 @@ class MirrorPublicationTests(unittest.TestCase):
             self.assertTrue(root.is_relative_to(workspace.resolve()))
             (root/'data').mkdir(); (root/'hooks').mkdir(); (root/'media-mirror.py').touch()
             # P2 배치 1: 매니페스트 업데이트 실패 시 커밋이 막힌다
-            # (fail-closed). 테스트 공간에도 유효한 매니페스트 +
-            # 번역 파일이 있어야 2f 단계가 성공한다.
-            (root/'data/manifest.json').write_text('{"source_hash": "x", "chunks": {}}')
+            # (fail-closed). 테스트 공간에도 구조가 유효한 매니페스트 +
+            # 번역 파일이 있어야 2f 단계가 성공한다 (필수 청크 3종).
+            chunks = {}
+            for name in ("x", "web", "ib"):
+                chunks[f"posts-{name}"] = {
+                    "file": f"data/posts-{name}.json",
+                    "sha256": "0" * 64,
+                    "count": 0,
+                }
+            (root/'data/manifest.json').write_text(
+                json.dumps({"source_hash": "x", "chunks": chunks}))
             (root/'data/translations.json').write_text('{}')
             calls=[]
             def run(cmd, **kwargs):

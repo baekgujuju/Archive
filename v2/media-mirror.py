@@ -34,6 +34,7 @@ v2 미디어 미러 (media-mirror.py)
 """
 import hashlib
 import html
+import io
 import json
 import re
 import struct
@@ -71,8 +72,8 @@ IMAGE_MAGIC = {
     ".webp": [b"RIFF"],
 }
 
-# PNG IEND 청크 (12바이트): 길이 0 + "IEND" + CRC.
-_PNG_IEND = bytes.fromhex("0000000049454e44ae426082")
+# 확장자 → Pillow 포맷 (is_complete_image의 포맷 대조용).
+_EXT_FORMAT = {".png": "PNG", ".jpg": "JPEG", ".gif": "GIF", ".webp": "WEBP"}
 
 
 def _magic_matches(data: bytes, ext: str) -> bool:
@@ -88,36 +89,35 @@ def _magic_matches(data: bytes, ext: str) -> bool:
 
 
 def is_complete_image(data: bytes, ext: str) -> bool:
-    """이미지 전체 프레임 검증 (P2-9: 헤더-only 검사는 잘린 파일을 통과시킨다).
+    """이미지 전체 검증 (P2-9 차단 4 재수정: 트레일러만으로는 부족하다).
 
-    헤더 + 트레일러를 확인해 잘림을 검출한다. 중간 비트 손상까지
-    검출하지는 않는다 — 잘림이 명시된 실패 모드이다.
-      PNG: 8바이트 시그니처 + 마지막 12바이트가 IEND 청크.
-      JPEG: FF D8 FF 시작 + FF D9(EOI) 끝.
-      GIF: GIF87a/89a 시작 + 0x3B(트레일러) 끝.
-      WebP: RIFF + WEBP + RIFF 크기 필드 + 8 == 전체 길이.
+    헤더/트레일러/크기 검사만으로는 중간 비트 손상을 통과시킨다
+    (트레일러를 유지한 채 중간만 손상된 파일이 통과했음). 그래서
+    Pillow로 모든 프레임까지 실제로 디코딩한다 — 잘림·중간 손상·
+    손상된 헤더 테이블을 모두 거부한다. 디코딩 실패 = 유효하지 않음.
+    포맷도 대조한다 (매직은 맞는데 내용이 다른 포맷이면 거부).
     """
     if not data or not _magic_matches(data[:12], ext):
         return False
-    if ext == ".png":
-        return len(data) >= 20 and data[-12:] == _PNG_IEND
-    if ext == ".jpg":
-        return len(data) >= 4 and data[-2:] == b"\xff\xd9"
-    if ext == ".gif":
-        return len(data) >= 7 and data[-1:] == b"\x3b"
-    if ext == ".webp":
-        if len(data) < 12:
-            return False
-        riff_size = struct.unpack("<I", data[4:8])[0]
-        return riff_size + 8 == len(data)
-    return False
+    try:
+        from PIL import Image
+        with Image.open(io.BytesIO(data)) as im:
+            if im.format != _EXT_FORMAT.get(ext):
+                return False
+            n_frames = getattr(im, "n_frames", 1)
+            for i in range(n_frames):
+                im.seek(i)
+                im.load()
+        return True
+    except Exception:
+        return False
 
 
 def cached_image_ok(path: Path, ext: str) -> bool:
     """캐시 파일이 완전한 이미지인지 확인한다.
 
     매직이 틀리면 파일을 읽지 않고 False (빠른 실패). 매직이 맞으면
-    전체를 읽어 트레일러/크기까지 검증한다.
+    전체를 읽어 Pillow로 전 프레임 디코딩까지 검증한다.
     """
     try:
         with open(path, "rb") as f:
@@ -161,10 +161,10 @@ def load_expected_chunks():
         f, h, c = entry.get("file"), entry.get("sha256"), entry.get("count")
         if not isinstance(f, str) or not f or f.startswith("/") or ".." in f.split("/"):
             raise ChunkError(f"manifest.json chunks.{name} file 형식 오류")
-        if not isinstance(h, str) or len(h) != 64:
-            raise ChunkError(f"manifest.json chunks.{name} sha256 형식 오류")
-        if not isinstance(c, int) or c < 0:
-            raise ChunkError(f"manifest.json chunks.{name} count 형식 오류")
+        if not isinstance(h, str) or len(h) != 64 or any(ch not in "0123456789abcdef" for ch in h):
+            raise ChunkError(f"manifest.json chunks.{name} sha256 형식 오류 (64-hex 아님)")
+        if type(c) is not int or c < 0:  # bool은 int의 서브클래스 — type()으로 거부
+            raise ChunkError(f"manifest.json chunks.{name} count 형식 오류 (bool/비int)")
         expected[name] = (f, h, c)
     return expected
 
@@ -340,6 +340,17 @@ def download_image(url):
 
 def main():
     dry_run = "--dry-run" in sys.argv
+
+    # Pillow 없이는 전체 디코딩 검증을 할 수 없다 — 조용히 모든
+    # 이미지를 거부하는 대신 맵 교체를 중단한다 (fail-closed).
+    # Pillow가 없으면 is_complete_image가 전부 False를 반환해
+    # 정상 매핑까지 제거되는 침묵 손상이 생기기 때문이다.
+    try:
+        import PIL  # noqa: F401
+    except ImportError:
+        print("오류: Pillow 없음 — 이미지 전체 검증을 할 수 없어 맵 교체를 중단합니다.",
+              file=sys.stderr)
+        return 2
 
     print("이미지 URL 스캔 중...")
     try:

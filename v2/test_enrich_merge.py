@@ -29,9 +29,12 @@ _ORIG_ANALYZE = et.analyze_image_batch
 # _setup()이 바꾸는 et 전역은 테스트 후 복원한다 — 복원하지 않으면
 # 뒤에 실행되는 테스트(예: test_build_preserve의 보존 목록 검사)가
 # 오염된 경로를 보고 실패한다 (pytest 세션 내 테스트 순서 의존성).
+# 파일 안의 모든 `et.X =` 대입을 빠짐없이 포함해야 한다.
 _ET_GLOBALS = ["DATA_DIR", "TOOLS_JSON", "CACHE_JSON", "PROGRESS_JSON",
                "RETRY_MARKER", "MANIFEST_JSON", "collect_screenshots",
-               "fingerprint", "analyze_image_batch"]
+               "fingerprint", "analyze_image_batch",
+               "verify_repo_with_readme", "get_readme", "log",
+               "_merge_save", "enrich_one", "_analyze_single_image_gemini"]
 
 
 @pytest.fixture(autouse=True)

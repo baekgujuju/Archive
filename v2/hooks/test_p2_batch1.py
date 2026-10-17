@@ -153,6 +153,35 @@ def test_validate_malformed_manifest(hook_repo):
     assert not ok
 
 
+def test_validate_non_dict_post_member_fails(hook_repo):
+    """청크 posts 안에 dict가 아닌 멤버가 있으면 커밋 검증 실패."""
+    repo, sha, manifest, chunks, _ = hook_repo
+    posts = [{"id": "ok"}, "not-a-dict"]
+    raw = _chunk_bytes(posts)
+    (repo / "v2" / "data" / "posts-x.json").write_bytes(raw)
+    m = json.loads((repo / "v2" / "data" / "manifest.json").read_text())
+    m["chunks"]["posts-x"] = {
+        "file": "data/posts-x.json",
+        "sha256": hashlib.sha256(raw).hexdigest(),
+        "count": len(posts),
+    }
+    (repo / "v2" / "data" / "manifest.json").write_text(json.dumps(m))
+    bad = _commit(repo, "non-dict post")
+    ok, reason = hook.validate_commit_artifacts(bad)
+    assert not ok and "dict" in reason
+
+
+def test_validate_bool_count_fails(hook_repo):
+    """count가 bool(True)이면 커밋 검증 실패 (bool은 int의 서브클래스)."""
+    repo, sha, manifest, chunks, _ = hook_repo
+    m = json.loads((repo / "v2" / "data" / "manifest.json").read_text())
+    m["chunks"]["posts-x"]["count"] = True
+    (repo / "v2" / "data" / "manifest.json").write_text(json.dumps(m))
+    bad = _commit(repo, "bool count")
+    ok, reason = hook.validate_commit_artifacts(bad)
+    assert not ok and "count" in reason
+
+
 def test_validate_missing_chunk(hook_repo):
     repo, sha, manifest, chunks, _ = hook_repo
     (repo / "v2" / "data" / "posts-ib.json").unlink()
@@ -380,6 +409,19 @@ def _write_manifest_translations(data, manifest, translations):
             json.dumps(translations), encoding="utf-8")
 
 
+def _valid_manifest():
+    """구조가 유효한 매니페스트 (필수 청크 3종 포함)."""
+    chunks = {}
+    for name in ("x", "web", "ib"):
+        raw = _chunk_bytes([])
+        chunks[f"posts-{name}"] = {
+            "file": f"data/posts-{name}.json",
+            "sha256": hashlib.sha256(raw).hexdigest(),
+            "count": 0,
+        }
+    return {"source_hash": "SRC-1", "chunks": chunks}
+
+
 def test_manifest_update_missing_manifest_blocks(manifest_env):
     data = manifest_env
     (data / "translations.json").write_text("{}", encoding="utf-8")
@@ -391,28 +433,43 @@ def test_manifest_update_invalid_schema_blocks(manifest_env):
     (data / "manifest.json").write_text("[1, 2]", encoding="utf-8")
     (data / "translations.json").write_text("{}", encoding="utf-8")
     assert hook.update_manifest_translation_hash() is False
-    # translations가 dict가 아니면 차단.
+    # 필수 청크가 없는 {}도 구조 오류로 차단 (구버그는 성공 처리했다).
     (data / "manifest.json").write_text("{}", encoding="utf-8")
+    (data / "translations.json").write_text("{}", encoding="utf-8")
+    assert hook.update_manifest_translation_hash() is False
+    # chunks가 비어 있어도 차단.
+    (data / "manifest.json").write_text(json.dumps({"chunks": {}}), encoding="utf-8")
+    (data / "translations.json").write_text("{}", encoding="utf-8")
+    assert hook.update_manifest_translation_hash() is False
+    # translations가 dict가 아니면 차단 (매니페스트는 유효).
+    _write_manifest_translations(data, _valid_manifest(), None)
     (data / "translations.json").write_text("[1]", encoding="utf-8")
+    assert hook.update_manifest_translation_hash() is False
+    # count가 bool이면 차단 (bool은 int의 서브클래스).
+    m = _valid_manifest()
+    m["chunks"]["posts-x"]["count"] = True
+    _write_manifest_translations(data, m, {})
     assert hook.update_manifest_translation_hash() is False
 
 
 def test_manifest_update_missing_translations_with_ref_blocks(manifest_env):
     data = manifest_env
-    (data / "manifest.json").write_text(
-        json.dumps({"translations": {"file": "x", "sha256": "0" * 64}}))
+    m = _valid_manifest()
+    m["translations"] = {"file": "data/translations.json",
+                         "sha256": "0" * 64, "count": 0}
+    (data / "manifest.json").write_text(json.dumps(m))
     assert hook.update_manifest_translation_hash() is False
 
 
 def test_manifest_update_missing_translations_without_ref_ok(manifest_env):
     data = manifest_env
-    (data / "manifest.json").write_text(json.dumps({"chunks": {}}))
+    (data / "manifest.json").write_text(json.dumps(_valid_manifest()))
     assert hook.update_manifest_translation_hash() is True
 
 
 def test_manifest_update_lock_timeout_blocks(manifest_env, monkeypatch):
     data = manifest_env
-    _write_manifest_translations(data, {}, {"a": 1})
+    _write_manifest_translations(data, _valid_manifest(), {"a": 1})
 
     def raising_lock():
         raise PipelineLockTimeout("mock timeout")
@@ -423,7 +480,7 @@ def test_manifest_update_lock_timeout_blocks(manifest_env, monkeypatch):
 
 def test_manifest_update_hash_failure_blocks_then_repair_succeeds(manifest_env, monkeypatch):
     data = manifest_env
-    _write_manifest_translations(data, {}, {"a": 1})
+    _write_manifest_translations(data, _valid_manifest(), {"a": 1})
     real_hash = hook.sha256_file
 
     def failing_hash(path):
@@ -463,6 +520,106 @@ def test_review_marker_malformed_is_quarantined(tmp_path, monkeypatch):
     assert len(entries) == 1 and entries[0]["commit"] == "abc123"
 
 
+def test_review_marker_two_quarantines_both_preserved(tmp_path, monkeypatch):
+    """같은 초에 두 번 격리해도 앞 증거를 덮지 않는다 (고유 예약)."""
+    hooks_dir = tmp_path / "hooks"
+    hooks_dir.mkdir()
+    monkeypatch.setattr(hook, "HOOKS_DIR", hooks_dir)
+    (hooks_dir / ".needs-review").write_text("{broken-1")
+    hook.flag_needs_review("abc123", "reason-1")
+    (hooks_dir / ".needs-review").write_text("{broken-2")
+    hook.flag_needs_review("def456", "reason-2")
+    quarantined = sorted(hooks_dir.glob(".needs-review.quarantine.*"),
+                         key=lambda p: p.name)
+    assert len(quarantined) == 2
+    contents = sorted(p.read_text() for p in quarantined)
+    assert contents == ["{broken-1", "{broken-2"]
+    entries = json.loads((hooks_dir / ".needs-review").read_text())
+    assert len(entries) == 1 and entries[0]["commit"] == "def456"
+
+
+def test_review_marker_quarantine_failure_preserves_original(tmp_path, monkeypatch):
+    """격리 실패 시 원본 손상 마커를 건드리지 않고 중단한다."""
+    import tempfile
+
+    hooks_dir = tmp_path / "hooks"
+    hooks_dir.mkdir()
+    monkeypatch.setattr(hook, "HOOKS_DIR", hooks_dir)
+    (hooks_dir / ".needs-review").write_text("{broken")
+
+    def failing_mkstemp(*a, **kw):
+        raise OSError("injected mkstemp failure")
+
+    monkeypatch.setattr(tempfile, "mkstemp", failing_mkstemp)
+    hook.flag_needs_review("abc123", "reason-1")
+    # 원본 그대로, 새 마커 없음, 격리 파일 없음.
+    assert (hooks_dir / ".needs-review").read_text() == "{broken"
+    assert not list(hooks_dir.glob(".needs-review.quarantine.*"))
+
+
+def test_publish_off_defers_pending_validation_then_on_blocks(hook_repo, monkeypatch):
+    """PUBLISH 비활성 시 미푸시 검증 건너뜀 → 활성 시 다시 검증해 차단.
+
+    Codex 2차 리뷰 뉘앙스: off일 때 검증을 건너뛰는 것은 지연된
+    감지이지 푸시 우회가 아니다 — on으로 바꾸면 같은 미푸시 커밋이
+    검증에 걸려야 한다. main()을 실제로 두 번 호출해 확인한다.
+    """
+    repo, sha, manifest, chunks, hooks_dir = hook_repo
+    # 무효 커밋 C2 (해시 불일치) + 유효 커밋 C3.
+    m = json.loads((repo / "v2" / "data" / "manifest.json").read_text())
+    m["chunks"]["posts-x"]["sha256"] = "0" * 64
+    (repo / "v2" / "data" / "manifest.json").write_text(json.dumps(m))
+    bad = _commit(repo, "bad older")
+    _write_repo_files(repo, manifest, chunks)
+    good = _commit(repo, "good newer")
+    data = repo / "v2" / "data"
+    monkeypatch.setattr(hook, "MANIFEST", data / "manifest.json")
+    monkeypatch.setattr(hook, "TRANSLATIONS", data / "translations.json")
+    monkeypatch.setattr(hook, "LOCK_FILE", hooks_dir / ".post_ingest.lock")
+    for attr, name in [("RETRY_TRANSLATION", ".retry_translation"),
+                       ("RETRY_COMMIT", ".retry_commit"),
+                       ("RETRY_MEDIA", ".retry_media"),
+                       ("RETRY_ENRICH", ".retry-enrich")]:
+        monkeypatch.setattr(hook, attr, hooks_dir / name)
+
+    class _R:
+        returncode = 0
+        stdout = ""
+        stderr = ""
+
+    # 파이프라인 서브프로세스만 가짜 성공으로 처리하고, git 명령은
+    # 실제 실행해야 한다 (hook.git()이 hook.run()을 쓰므로, run을
+    # 전부 모킹하면 current_branch가 빈 출력을 보고 detached로 오판한다).
+    real_run = hook.run
+
+    def fake_run(cmd, **kw):
+        if cmd and cmd[0] == "git":
+            return real_run(cmd, **kw)
+        return _R()
+
+    monkeypatch.setattr(hook, "run", fake_run)
+    calls = []
+    real_unpushed = hook.unpushed_commit_list
+
+    def guarded_unpushed():
+        calls.append(1)
+        return real_unpushed()
+
+    monkeypatch.setattr(hook, "unpushed_commit_list", guarded_unpushed)
+
+    # PUBLISH off: 미푸시 검증을 호출하지 않고 정상 종료한다.
+    monkeypatch.setattr(hook, "PUBLISH_ENABLED", False)
+    assert hook.main() == 0
+    assert calls == []
+    assert not (hooks_dir / ".needs-review").exists()
+    # PUBLISH on: 같은 미푸시 커밋이 검증에 걸려 차단된다.
+    monkeypatch.setattr(hook, "PUBLISH_ENABLED", True)
+    assert hook.main() == 1
+    assert len(calls) == 1
+    entries = json.loads((hooks_dir / ".needs-review").read_text())
+    assert any(e["commit"] == bad for e in entries)
+
+
 # ---------- 복구 ----------
 
 def _valid_entry(translated="hello"):
@@ -479,8 +636,9 @@ def recovery_env(tmp_path, monkeypatch):
     monkeypatch.setattr(hook, "HOOKS_DIR", hooks_dir)
     monkeypatch.setattr(hook, "MANIFEST", data / "manifest.json")
     monkeypatch.setattr(hook, "TRANSLATIONS", data / "translations.json")
+    # 구조가 유효한 매니페스트 (복구 후 update_manifest_translation_hash가 동작).
     (data / "manifest.json").write_text(
-        json.dumps({"source_hash": "SRC-1"}), encoding="utf-8")
+        json.dumps(_valid_manifest()), encoding="utf-8")
     return hooks_dir, data
 
 
@@ -488,14 +646,15 @@ def _make_backup(hooks_dir, name, entries, source_hash="SRC-1",
                  trans_hash=None, with_txn=True):
     d = hooks_dir / name
     d.mkdir()
-    (d / "translations.json").write_text(
-        json.dumps(entries, ensure_ascii=False), encoding="utf-8")
+    raw = json.dumps(entries, ensure_ascii=False).encode("utf-8")
+    (d / "translations.json").write_bytes(raw)
     if with_txn:
+        # 트랜잭션은 실제 백업 바이트 해시를 묶는다 (임의 문자열 금지).
         txn = {
             "transaction_id": uuid.uuid4().hex,
             "created_at": "2026-10-17T00:00:00+00:00",
             "source_hash": source_hash,
-            "translations_sha256": trans_hash or "deadbeef",
+            "translations_sha256": trans_hash or hashlib.sha256(raw).hexdigest(),
         }
         (d / "transaction.json").write_text(json.dumps(txn), encoding="utf-8")
     return d
@@ -533,12 +692,64 @@ def test_corrupt_backup_retained(recovery_env):
     (d / "translations.json").write_text("{broken", encoding="utf-8")
     (d / "transaction.json").write_text(json.dumps({
         "transaction_id": "x", "created_at": "2026-10-17T00:00:00+00:00",
-        "source_hash": "SRC-1", "translations_sha256": "00"}))
+        "source_hash": "SRC-1",
+        "translations_sha256": hashlib.sha256(b"{broken").hexdigest()}))
     hook.recover_abandoned_backups()
     assert d.exists()
 
 
-def test_invalid_entries_skipped(recovery_env):
+def test_backup_hash_mismatch_retained(recovery_env):
+    """트랜잭션 해시와 백업 바이트가 다르면 생성 후 변경된 것 — 보존."""
+    hooks_dir, data = recovery_env
+    (data / "translations.json").write_text("{}", encoding="utf-8")
+    d = _make_backup(hooks_dir, "v2_trans_a", {"k": _valid_entry()})
+    # 백업을 생성 후 변경 (트랜잭션 해시는 원래 바이트를 가리킴).
+    (d / "translations.json").write_text(
+        json.dumps({"k": _valid_entry("tampered")}), encoding="utf-8")
+    hook.recover_abandoned_backups()
+    assert d.exists()
+    assert json.loads((data / "translations.json").read_text()) == {}
+
+
+def test_modified_backup_not_deleted_as_duplicate(recovery_env):
+    """현재 파일이 메타데이터와 일치해도 백업 바이트가 다르면 중복이 아니다.
+
+    구버그는 현재 해시 == 메타데이터 해시면 백업을 삭제해, 변경된
+    백업의 고유 엔트리를 지웠다. 신버그는 백업 해시를 먼저 대조해
+    변경된 백업을 신뢰하지 않고 보존한다 (병합하지 않음 — 위조 가능).
+    고유 엔트리는 보존된 백업 안에 남는다.
+    """
+    hooks_dir, data = recovery_env
+    entries = {"k": _valid_entry()}
+    raw = json.dumps(entries, ensure_ascii=False).encode("utf-8")
+    # 현재 파일을 백업과 동일하게 만든다 (중복 상태).
+    (data / "translations.json").write_bytes(raw)
+    d = _make_backup(hooks_dir, "v2_trans_a", entries)
+    # 백업을 생성 후 변경 — 이제 현재와 바이트가 다르고, 트랜잭션 해시와도 다르다.
+    (d / "translations.json").write_text(
+        json.dumps({"k": _valid_entry(), "extra": _valid_entry("unique")}),
+        encoding="utf-8")
+    hook.recover_abandoned_backups()
+    assert d.exists()  # 중복이 아니므로 삭제되지 않음
+    cur = json.loads((data / "translations.json").read_text())
+    assert cur == entries  # 신뢰할 수 없는 백업은 병합하지 않음
+    retained = json.loads((d / "translations.json").read_text())
+    assert "extra" in retained  # 고유 엔트리는 보존된 백업 안에 남음
+
+
+def test_true_duplicate_backup_deleted(recovery_env):
+    """백업 바이트가 현재와 실제로 동일하면 중복 — 삭제한다."""
+    hooks_dir, data = recovery_env
+    entries = {"k": _valid_entry()}
+    raw = json.dumps(entries, ensure_ascii=False).encode("utf-8")
+    (data / "translations.json").write_bytes(raw)
+    d = _make_backup(hooks_dir, "v2_trans_a", entries)
+    hook.recover_abandoned_backups()
+    assert not d.exists()
+    assert json.loads((data / "translations.json").read_text()) == entries
+
+
+def test_invalid_entries_skipped_and_quarantined(recovery_env):
     hooks_dir, data = recovery_env
     (data / "translations.json").write_text("{}", encoding="utf-8")
     d = _make_backup(hooks_dir, "v2_trans_a",
@@ -548,7 +759,12 @@ def test_invalid_entries_skipped(recovery_env):
     cur = json.loads((data / "translations.json").read_text())
     assert "good" in cur
     assert "bad" not in cur and "bad2" not in cur
-    assert not d.exists()  # 유효 엔트리 병합은 성공 → 삭제
+    # 유효 엔트리는 병합됐지만 무효 엔트리 증거는 격리에 보존된다 — 삭제 아님.
+    assert not d.exists()
+    quarantined = list((hooks_dir / ".quarantine").glob("v2_trans_a.*"))
+    assert len(quarantined) == 1
+    qbak = json.loads((quarantined[0] / "translations.json").read_text())
+    assert "bad" in qbak and "bad2" in qbak
 
 
 def test_conflicting_backups_all_preserved(recovery_env):

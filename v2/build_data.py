@@ -89,26 +89,47 @@ def verify_preserved_files(data_dir, backup_dir, names):
 # 세대 이름은 타임스탬프(UTC, 초 단위) + 충돌 시 일련번호.
 # 정렬은 사전식이 아니라 (타임스탬프, 숫자 접미사) 순서이다 —
 # 사전식 정렬은 .10을 .2보다 앞으로 두어 최신 세대를 지울 수 있다 (차단 7).
-_GENERATION_RE = re.compile(r"^data\.backup\.(\d{8}T\d{6})(?:\.(\d+))?$")
+# 정규식은 ASCII 숫자 + fullmatch로 고정한다 — 유니코드 숫자(\d)나
+# 개행 접미사($)가 붙은 이름이 세대 패턴으로 인정되면 prune이
+# 무관한 디렉터리를 지울 수 있다.
+_GENERATION_RE = re.compile(r"data\.backup\.([0-9]{8}T[0-9]{6})(?:\.([0-9]+))?")
 RETAINED_GENERATIONS = 2
 
 
 def _generation_sort_key(name):
-    """세대 디렉터리 이름 → (타임스탬프, 숫자 접미사)."""
-    m = _GENERATION_RE.match(name)
+    """세대 디렉터리 이름 → (타임스탬프, 숫자 접미사).
+
+    접미사 없음은 -1 (같은 초의 첫 세대 = 가장 오래됨).
+    접미사 없음과 .0이 같은 키(0)가 되면 정렬이 전체 순서가 아니게 된다.
+    """
+    m = _GENERATION_RE.fullmatch(name)
     if not m:
-        return ("", 0)
-    return (m.group(1), int(m.group(2)) if m.group(2) else 0)
+        return ("", -1)
+    return (m.group(1), int(m.group(2)) if m.group(2) else -1)
 
 
 def _archive_backup(backup_dir):
-    """data.backup/을 타임스탬프 세대 디렉터리로 이동한다. Returns the new path."""
+    """data.backup/을 타임스탬프 세대 디렉터리로 이동한다. Returns the new path.
+
+    할당은 해당 초의 기존 최대 접미사 + 1이다. "첫 빈 접미사"로
+    할당하면, prune이 bare 이름을 지운 뒤 같은 초에 다시 bare를
+    할당해 최신 세대가 가장 오래된 것처럼 정렬되고 prune이
+    최신 세대를 지운다 (Codex 2차 리뷰 차단 2).
+    """
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
-    archived = V2_ROOT / f"data.backup.{stamp}"
-    n = 0
-    while archived.exists():
-        n += 1
-        archived = V2_ROOT / f"data.backup.{stamp}.{n}"
+    max_suffix = None
+    for p in V2_ROOT.iterdir():
+        if not p.is_dir():
+            continue
+        m = _GENERATION_RE.fullmatch(p.name)
+        if not m or m.group(1) != stamp:
+            continue
+        suffix = int(m.group(2)) if m.group(2) else 0
+        max_suffix = suffix if max_suffix is None else max(max_suffix, suffix)
+    if max_suffix is None:
+        archived = V2_ROOT / f"data.backup.{stamp}"
+    else:
+        archived = V2_ROOT / f"data.backup.{stamp}.{max_suffix + 1}"
     shutil.move(str(backup_dir), str(archived))
     print(f"  이전 세대 보존: {archived.name} (삭제 아님)")
     return archived
@@ -123,7 +144,7 @@ def _prune_generations(keep=RETAINED_GENERATIONS):
     """
     gens = sorted(
         (p for p in V2_ROOT.iterdir()
-         if p.is_dir() and _GENERATION_RE.match(p.name)),
+         if p.is_dir() and _GENERATION_RE.fullmatch(p.name)),
         key=lambda p: _generation_sort_key(p.name),
     )
     for old in gens[: max(0, len(gens) - keep)]:

@@ -2,18 +2,25 @@
 
 - 누락/손상/형식 오류 청크 → 양쪽 맵 바이트 불변, rc=2, 다운로드 없음.
 - data 디렉터리 없음 / 청크 형상 오류 / 유효한 빈 아카이브 구분.
-- 손상 캐시·헤더-only/잘린 PNG/JPEG/GIF/WebP 거부, 유효 이미지는 캐시 히트.
+- 손상 캐시·중간 손상/트레일러 유지 잘림 PNG/JPEG/GIF/WebP 거부, 유효 이미지는 캐시 히트.
 - 유효하지 않은 다운로드가 유효한 캐시 바이트를 덮지 않음.
 - 일반 다운로드 실패 → rc=1, 맵은 성공 URL만 포함 (부분 게시 가능).
+이미지 픽스처는 Pillow로 실제로 생성한다 — 매직+트레일러만 붙인
+가짜 바이트는 전체 디코딩 검증을 통과하지 못한다.
 """
 import hashlib
 import importlib.util
+import io
 import json
+import random
 import struct
 import sys
 from pathlib import Path
 
 import pytest
+
+pytest.importorskip("PIL", reason="이미지 픽스처 생성에 Pillow 필요")
+from PIL import Image
 
 MIRROR_PATH = Path(__file__).resolve().parent / "media-mirror.py"
 
@@ -25,36 +32,71 @@ def load_mirror():
     return mod
 
 
-# --- 이미지 바이트 픽스처 (전체 프레임) ---
+# --- 이미지 바이트 픽스처 (Pillow 실제 생성) ---
+
+def _real_image(fmt, animated=False):
+    buf = io.BytesIO()
+    if animated:
+        frames = [Image.new("RGB", (32, 32), c)
+                  for c in ("red", "green", "blue", "yellow")]
+        frames[0].save(buf, format="GIF", save_all=True,
+                       append_images=frames[1:], loop=0)
+    else:
+        Image.new("RGB", (32, 32), "red").save(buf, format=fmt)
+    return buf.getvalue()
+
 
 def png_bytes(valid=True):
-    sig = bytes.fromhex("89504e470d0a1a0a")
-    iend = bytes.fromhex("0000000049454e44ae426082")
-    if valid:
-        return sig + b"\x00" * 20 + iend
-    return sig + b"\x00" * 20  # IEND 없음 (잘림)
+    return _real_image("PNG")
 
 
 def jpeg_bytes(valid=True):
-    if valid:
-        return b"\xff\xd8\xff" + b"\x00" * 20 + b"\xff\xd9"
-    return b"\xff\xd8\xff" + b"\x00" * 20  # EOI 없음
+    return _real_image("JPEG")
 
 
 def gif_bytes(valid=True):
-    if valid:
-        return b"GIF89a" + b"\x00" * 20 + b"\x3b"
-    return b"GIF89a" + b"\x00" * 20  # 트레일러 없음
+    return _real_image("GIF")
 
 
 def webp_bytes(valid=True):
-    payload = b"VP8 " + b"\x00" * 10
-    size = 4 + len(payload)
-    data = b"RIFF" + struct.pack("<I", size) + b"WEBP" + payload
-    if valid:
-        return data
-    # RIFF 크기를 실제보다 크게 (잘림).
-    return b"RIFF" + struct.pack("<I", size + 100) + b"WEBP" + payload
+    return _real_image("WEBP")
+
+
+def _corrupt_interior(data, ext):
+    """트레일러는 유지하되 중간을 손상시킨 바이트 (Pillow가 거부해야 함).
+
+    위치는 Pillow 10.2.0에서 실측 검증됨 (고정 픽스처라 결정적):
+      PNG: IDAT zlib 데이터 뒤집기 → 복원/CRC 실패.
+      JPEG: SOF0/DHT 영역 뒤집기 → 테이블 파싱 실패.
+      GIF: LZW 데이터 16바이트 교체 → 디코딩 실패.
+      WebP: VP8 프레임 데이터 뒤집기 → 디코딩 실패.
+    """
+    b = bytearray(data)
+    if ext == ".png":
+        b[len(b) // 2] ^= 0xFF
+    elif ext == ".jpg":
+        b[int(len(b) * 0.25)] ^= 0xFF
+    elif ext == ".gif":
+        rng = random.Random(42)
+        pos = len(b) // 2
+        for i in range(16):
+            b[pos + i] = rng.randrange(256)
+    elif ext == ".webp":
+        b[len(b) // 2] ^= 0xFF
+    return bytes(b)
+
+
+def _truncated_with_trailer(data, ext):
+    """중간을 잘라내고 트레일러만 붙인 바이트 (트레일러 검사만으론 통과)."""
+    if ext == ".png":
+        return data[: len(data) // 2] + data[-12:]  # IEND 유지
+    if ext == ".jpg":
+        return data[: len(data) // 2] + data[-2:]  # EOI 유지
+    if ext == ".gif":
+        return data[: len(data) // 2] + data[-1:]  # 트레일러 유지
+    if ext == ".webp":
+        return data[: len(data) // 2] + data[-4:]
+    return data[: len(data) // 2]
 
 
 @pytest.fixture
@@ -97,25 +139,67 @@ def _post_with_image(url):
 
 # --- 전체 프레임 검증 ---
 
-@pytest.mark.parametrize("data,ext,expected", [
-    (png_bytes(True), ".png", True),
-    (png_bytes(False), ".png", False),
-    (bytes.fromhex("89504e470d0a1a0a"), ".png", False),  # 헤더-only
-    (jpeg_bytes(True), ".jpg", True),
-    (jpeg_bytes(False), ".jpg", False),
-    (b"\xff\xd8\xff", ".jpg", False),
-    (gif_bytes(True), ".gif", True),
-    (gif_bytes(False), ".gif", False),
-    (b"GIF89a", ".gif", False),
-    (webp_bytes(True), ".webp", True),
-    (webp_bytes(False), ".webp", False),
-    (b"RIFF", ".webp", False),
-    (b"not-an-image", ".png", False),
-    (b"", ".jpg", False),
+@pytest.mark.parametrize("ext,make", [
+    (".png", png_bytes),
+    (".jpg", jpeg_bytes),
+    (".gif", gif_bytes),
+    (".webp", webp_bytes),
 ])
-def test_is_complete_image(mirror, data, ext, expected):
+def test_is_complete_image_valid(mirror, ext, make):
     mod, _, _, _ = mirror
-    assert mod.is_complete_image(data, ext) is expected
+    assert mod.is_complete_image(make(), ext) is True
+
+
+@pytest.mark.parametrize("ext,make", [
+    (".png", png_bytes),
+    (".jpg", jpeg_bytes),
+    (".gif", gif_bytes),
+    (".webp", webp_bytes),
+])
+def test_is_complete_image_rejects_corrupt_interior(mirror, ext, make):
+    """트레일러는 멀쩡하지만 중간이 손상됨 — 트레일러 검사만으론 통과한다."""
+    mod, _, _, _ = mirror
+    valid = make()
+    assert mod.is_complete_image(valid, ext) is True  # 대조군
+    assert mod.is_complete_image(_corrupt_interior(valid, ext), ext) is False
+
+
+@pytest.mark.parametrize("ext,make", [
+    (".png", png_bytes),
+    (".jpg", jpeg_bytes),
+    (".gif", gif_bytes),
+    (".webp", webp_bytes),
+])
+def test_is_complete_image_rejects_truncated_with_trailer(mirror, ext, make):
+    """잘렸지만 트레일러를 붙임 — 트레일러 검사만으론 통과한다."""
+    mod, _, _, _ = mirror
+    valid = make()
+    assert mod.is_complete_image(_truncated_with_trailer(valid, ext), ext) is False
+
+
+def test_is_complete_image_rejects_header_only_and_garbage(mirror):
+    mod, _, _, _ = mirror
+    assert mod.is_complete_image(bytes.fromhex("89504e470d0a1a0a"), ".png") is False
+    assert mod.is_complete_image(b"\xff\xd8\xff", ".jpg") is False
+    assert mod.is_complete_image(b"GIF89a", ".gif") is False
+    assert mod.is_complete_image(b"RIFF", ".webp") is False
+    assert mod.is_complete_image(b"not-an-image", ".png") is False
+    assert mod.is_complete_image(b"", ".jpg") is False
+    # 매직은 맞는데 내용이 다른 포맷 (PNG 바이트를 .jpg로) — 거부.
+    assert mod.is_complete_image(png_bytes(), ".jpg") is False
+
+
+def test_is_complete_image_animated_gif_all_frames(mirror):
+    mod, _, _, _ = mirror
+    anim = _real_image("GIF", animated=True)
+    assert mod.is_complete_image(anim, ".gif") is True
+    # 애니메이션 중간 프레임 손상 — 전 프레임 디코딩이 잡아낸다.
+    b = bytearray(anim)
+    rng = random.Random(42)
+    pos = len(b) // 2
+    for i in range(16):
+        b[pos + i] = rng.randrange(256)
+    assert mod.is_complete_image(bytes(b), ".gif") is False
 
 
 # --- 청크 실패 시 맵 불변 + rc=2 + 다운로드 없음 ---
@@ -228,7 +312,7 @@ def test_invalid_download_does_not_overwrite_cache(mirror, monkeypatch):
             return {"Content-Type": "image/png"}
 
         def read(self, n=-1):
-            return png_bytes(False)  # 잘린 PNG (유효하지 않음)
+            return _corrupt_interior(png_bytes(), ".png")  # 중간 손상 (유효하지 않음)
 
         def __enter__(self):
             return self
