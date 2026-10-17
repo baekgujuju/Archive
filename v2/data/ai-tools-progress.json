@@ -1,11 +1,11 @@
 {
   "total": 406,
-  "remaining": 366,
+  "remaining": 214,
   "stats": {
     "verified": 0,
     "pending": 40,
     "pending_github_look": 0,
-    "cached": 0,
+    "cached": 152,
     "temporary_failures": 0,
     "errors": 0
   },
