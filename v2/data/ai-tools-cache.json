@@ -1268,5 +1268,185 @@
       "fingerprint": "213c8e56b6e7d89703b35d0f013e51a9e6a3e8b6747e4efd853402a6d62f2df9"
     },
     "version": 3
+  },
+  "2110740461522767881:text-811ebbb72ff6d0f1": {
+    "fingerprint": "a486117a1a1f9182d8a42a69f177947ff3a3cb74365d44ec75681c973d69741d",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, Word 등 다양한 문서에서 텍스트, 표, 문서 구조를 추출해 생성형 AI가 활용하기 쉬운 형태로 변환하는 도구입니다.",
+      "category": "생성형 AI용 문서 파싱·변환 도구",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "a486117a1a1f9182d8a42a69f177947ff3a3cb74365d44ec75681c973d69741d"
+    },
+    "version": 3
+  },
+  "2110770721760899395:37f7af473953df04.png": {
+    "fingerprint": "158ae78be6b691378a9415888cacc8507e52ab1b50ddaa6df6e75da252b2a8ef",
+    "entry": null,
+    "version": 3
+  },
+  "2110620043780538515:cfa5459209152327.jpg": {
+    "fingerprint": "ae784fbaf5c5ea70ed84cc7040997b92de0a2726c11bf553438580c9b8a23bad",
+    "entry": {
+      "title": "superdesigndev/treg",
+      "summary_ko": "여러 제공업체의 SEO, 소셜 분석, 기업 정보 조회, 스크래핑, 이미지·영상 생성 도구를 하나의 URL과 토큰으로 검색하고 호출할 수 있는 에이전트용 도구 통합 플랫폼입니다. 호출별 과금과 팀 공용 API 키·스킬·CLI 연동을 지원하며, 자격 증명은 서버에 보관합니다.",
+      "category": "AI 에이전트용 도구 통합 게이트웨이",
+      "repo_url": "https://github.com/superdesigndev/treg",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "ae784fbaf5c5ea70ed84cc7040997b92de0a2726c11bf553438580c9b8a23bad"
+    },
+    "version": 3
+  },
+  "2110620043780538515:text-8b01562a542974d1": {
+    "fingerprint": "e77d1e4c41227790836413e8e6e59ce643dd1eb9718832d5ed87c324f037b602",
+    "entry": {
+      "title": "superdesigndev/treg",
+      "summary_ko": "여러 제공업체의 에이전트 도구를 하나의 API 주소와 토큰으로 검색하고 호출하는 통합 플랫폼입니다. SEO, 데이터 수집, 인물·기업 정보 보강, 이미지·영상 생성 등을 호출당 요금으로 이용하고, 팀의 API 키·스킬·CLI도 자격 증명 노출 없이 공유할 수 있습니다.",
+      "category": "AI 에이전트 도구 통합 API 플랫폼",
+      "repo_url": "https://github.com/superdesigndev/treg",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "e77d1e4c41227790836413e8e6e59ce643dd1eb9718832d5ed87c324f037b602"
+    },
+    "version": 3
+  },
+  "article-20261016-1928:f78a9a5ebe5f2ddb.jpg": {
+    "fingerprint": "0144d426c400330e8555ed852c73feee69c61582483e501c34fbdca2b86bd0ef",
+    "entry": null,
+    "version": 3
+  },
+  "2110858313495974368:5bd23d16d920d9d5.jpg": {
+    "fingerprint": "61737cccb54098e4ad8931c29d32a88875ef6a2e149ebdaa2f18c9299dee09ff",
+    "entry": null,
+    "version": 3
+  },
+  "2111090970653819152:9112dc944b0f84e7.jpg": {
+    "fingerprint": "daa78f022b689982fac623b3dbbd4304df99bd6351d2a59295f71011721d1ebf",
+    "entry": null,
+    "version": 3
+  },
+  "2111105958831403192:4897d8b8a91aa3b4.jpg": {
+    "fingerprint": "4806cea999eca00732af309798b8c5da86fcd3a7f1ff81eca06c32df5b50cf65",
+    "entry": null,
+    "version": 3
+  },
+  "2105445711592755431:1e0cd7ff11ea6449.jpg": {
+    "fingerprint": "1cebe3b0e1944344cf40c37ba58c39c6e0bb1915bd438e03b6140ebdbca8dde5",
+    "entry": null,
+    "version": 3
+  },
+  "article-20261016-1928:5325fa6016e5284b.png": {
+    "fingerprint": "fd46bd06c3d49de03d80d761bf942a971e88d652991b71397adeb1d15bcac522",
+    "entry": null,
+    "version": 3
+  },
+  "2105445711592755431:da580a757c237fef.jpg": {
+    "fingerprint": "f0549fb22c182af875da9326be690b5aa100763f80f416552f8f5a7e06527d0a",
+    "entry": null,
+    "version": 3
+  },
+  "2105445711592755431:2619b47f6869f4fe.jpg": {
+    "fingerprint": "9c908964d70883835e5520ba8b57d1bad14a4091f1d591418497eadf9d006c86",
+    "entry": null,
+    "version": 3
+  },
+  "2105445711592755431:066a72e0a1199e95.jpg": {
+    "fingerprint": "2433916e752d245f77770fae94de4dc46971be725225d1137afb8eaff2567f1f",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:4a4d3cf756014271.jpg": {
+    "fingerprint": "9cdaa7011f3a502ed85bb19f13404bbfaaaf38cd1ef7d4732b379b5f2dd0436e",
+    "entry": null,
+    "version": 3
+  },
+  "article-20261016-1928:f4d8db9df3d4073a.jpg": {
+    "fingerprint": "a19fd15378ec494db2b4827e4e99e4de6a71f8a1233223789eb43e7aa09d84ce",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:32c19e976c229855.png": {
+    "fingerprint": "86ef12fe1a5bda879d11d7107b8922fc9e164b571615a61074d0131ccfac4adb",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:7250a8a1d3483758.png": {
+    "fingerprint": "11c7a86fd1126882277101a243c92c0c92142d238f5da446e52db20265af9fcb",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:898cbd0a560a3be3.png": {
+    "fingerprint": "3566c19216c02f95c1389e2fe3265ff6295aa1a50ddc41bf8685b8f7f516f5bc",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:e6161bb1ac8d1f14.png": {
+    "fingerprint": "8971f0ea5c3a689ef02869825954e24dc0db70c500238468edecf779f45f8575",
+    "entry": null,
+    "version": 3
+  },
+  "article-20261016-1928:d467170e7f571be9.png": {
+    "fingerprint": "959ed3dcd0ef437b8227369ae95b9ea6909c3baec79e6a62cc1120008719a931",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:eada3389d80fd154.jpg": {
+    "fingerprint": "91b9e24d3c1829c1373b19ee9aeda216e7e8d7e30186a5367ec4c9fbc96ec460",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:42670a5fe996d2d0.jpg": {
+    "fingerprint": "467ba895bf2f3f30ec3904a7ce0da6832a8b78dcbe3c41f31b0bd344a1fc5410",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:ebcb177ee16f3def.png": {
+    "fingerprint": "79e6a5c53a17f18c61e4dfd21ec271df788f3ac75b70a605fdef35618100e21c",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:5cb937b97423af8e.png": {
+    "fingerprint": "287842923fbee473754f005c19bea80759e366639815f8db5eda0e6567cd59e3",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:59bc563144057c03.png": {
+    "fingerprint": "9a84a577eed9910690bda25790e4be9ccf0d9882679cdf27562471f595d346a1",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:9decdc297b055cdb.png": {
+    "fingerprint": "011f5cacc0d817773694624b02d027c51a45ab386605bf9c3a73a2099f1e53f2",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:876c5a93735f16ad.png": {
+    "fingerprint": "b856460155209bf332a32ddd556ec594b0e5b3df1dc58fef20efc0dcdba8ea53",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:3770acaf23ffd7d4.png": {
+    "fingerprint": "5da0c275a0641c77057589a937c8d6dccba864276f954578c43ba8d2abc3b692",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:3accf4f350c243d4.png": {
+    "fingerprint": "4c562e62b9adc955e4c1927a6f69f676258938556450006973b1110c8a559105",
+    "entry": null,
+    "version": 3
+  },
+  "2107237563425493147:bfd350f898b157a6.png": {
+    "fingerprint": "883bf713d59309fa666eacb0723ea738ed754f1aa38e290b55e4245f689b892f",
+    "entry": null,
+    "version": 3
   }
 }

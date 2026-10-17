@@ -100,13 +100,24 @@
   },
   "2110740461522767881": {
     "title": "docling-project/docling",
-    "summary_ko": "Docling은 PDF, Word 등 다양한 형식의 문서를 분석해 텍스트, 표, 문서 구조를 추출하고 생성형 AI가 활용하기 좋은 형식으로 변환하는 도구입니다.",
-    "category": "AI용 문서 파싱 및 변환 도구",
+    "summary_ko": "Docling은 PDF, Word 등 다양한 문서에서 텍스트, 표, 문서 구조를 추출해 생성형 AI가 활용하기 쉬운 형태로 변환하는 도구입니다.",
+    "category": "생성형 AI용 문서 파싱·변환 도구",
     "repo_url": "https://github.com/docling-project/docling",
     "status": "verified",
     "evidence": [
       "text-url:no-title-check"
     ],
-    "fingerprint": "213c8e56b6e7d89703b35d0f013e51a9e6a3e8b6747e4efd853402a6d62f2df9"
+    "fingerprint": "a486117a1a1f9182d8a42a69f177947ff3a3cb74365d44ec75681c973d69741d"
+  },
+  "2110620043780538515": {
+    "title": "superdesigndev/treg",
+    "summary_ko": "여러 제공업체의 에이전트 도구를 하나의 API 주소와 토큰으로 검색하고 호출하는 통합 플랫폼입니다. SEO, 데이터 수집, 인물·기업 정보 보강, 이미지·영상 생성 등을 호출당 요금으로 이용하고, 팀의 API 키·스킬·CLI도 자격 증명 노출 없이 공유할 수 있습니다.",
+    "category": "AI 에이전트 도구 통합 API 플랫폼",
+    "repo_url": "https://github.com/superdesigndev/treg",
+    "status": "verified",
+    "evidence": [
+      "text-url:no-title-check"
+    ],
+    "fingerprint": "e77d1e4c41227790836413e8e6e59ce643dd1eb9718832d5ed87c324f037b602"
   }
 }

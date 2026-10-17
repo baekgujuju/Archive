@@ -1934,5 +1934,275 @@
     "category_ko": "문서 Markdown 변환",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b3e2b2d8ee995ba0c92ea158b71369be5e112e23da1d0e0e6606fd46c32eb558": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "원유 선물 일봉 차트와 상승 목표 가격",
+    "description_ko": "원유 선물 가격이 96.59달러를 나타내는 TradingView 차트. 장기 추세선과 저항선, 136.88달러 및 168.84달러의 상승 목표가 표시되어 있다.",
+    "category_ko": "금융·원자재 차트",
+    "owner_hint": "PeterLBrandt",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:86746906d0589f035b6433078e72ba54b169136226c6cb1cfe846bc381227c41": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "treg — OpenRouter for agent tools",
+    "description_ko": "하나의 API 키로 2,000개 이상의 도구를 이용하는 오픈소스 프로젝트 소개 이미지. 호출별 과금과 검색·소셜미디어·영업·광고·분석 서비스 연동을 홍보한다.",
+    "category_ko": "개발 도구·에이전트 API",
+    "owner_hint": "treg",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:67f34539a39258a8f74b4ecef32b6a291d1a6c77374c10cbb42d3fe25f409f46": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "S&P 500 예상 3분기 EPS 성장 기여도",
+    "description_ko": "S&P 500의 예상 3분기 EPS 성장률 27.2%를 기업별 기여도로 분해한 차트. MU와 NVDA가 전체 성장의 36%, 다음 8개 기업이 30%, 나머지 종목이 34%를 차지한다.",
+    "category_ko": "금융·기업 실적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2596c6f5d76642b08c6bf8f1021422e6e9b6bae1f482e37802f24b7ab8bddceb": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SPDR S&P 500 ETF 일봉 기술적 분석",
+    "description_ko": "SPY 가격과 거래량, 여러 이동평균선 및 지지·저항 구간을 표시한 TradingView 차트. 현재 표시 가격은 771.65달러이며 우측에 변동성과 상대강도 지표가 나열되어 있다.",
+    "category_ko": "금융·ETF 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5553d56680b0cbec5e1848bc458a8eecd91be0dec4d467d052efdaffde22b059": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "RSP와 SOXX의 단기 가격 움직임 비교",
+    "description_ko": "10분봉 화면에서 RSP의 상승 후 하락과 SOXX의 저점 반등을 노란색 화살표로 대비한 차트. 하단에는 거래량이 표시되어 있다.",
+    "category_ko": "금융·ETF 비교 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:97267b381131b9368e0721ee4fdf68b00288ac3355c7d7a4512572b1aefd9f75": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group(NBIS) 일봉 차트",
+    "description_ko": "네비우스 그룹의 주가와 거래량을 보여주는 TradingView 차트. 21일 지수이동평균선, 하락 추세 저항선 두 개, 약 157달러의 수평 지지선이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Professorr_",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2d7010840c178b839676431b51446e30cbaf17a1fd964f3a72507cc9f492e317": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "주간 실적 발표 비중과 누적 일정",
+    "description_ko": "10월 16일부터 12월 11일까지 주간 실적 발표 비중을 업종별 누적 막대로 나타낸 그래프. 10월 30일 주간이 38%로 가장 높고, 빨간 누적선은 마지막 주에 97%에 도달한다.",
+    "category_ko": "금융 통계 및 실적 일정",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:19747d3a497bbe27025441fe41e2c9e4c5667e72e44c42138fc2659359b1333c": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Marvell Technology(MRVL) 일봉 차트",
+    "description_ko": "마벨 테크놀로지의 주가와 거래량 차트. 장기 하락 추세선, 약 251달러의 수평선, 최근 264달러 부근의 짧은 수렴 구간과 21일 지수이동평균선이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Professorr_",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5f6d7970bcacafdc56929012bf0933cd94944a977f06e4aa4aa2b647f5716792": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Space Exploration Technologies(SPCX) 일봉 차트",
+    "description_ko": "화면상 Space Exploration Technologies Corp로 표기된 종목의 주가 차트. 약 130달러의 이전 돌파선과 155.44달러의 다음 돌파 기준선, 단기 하락 추세선 및 21일 지수이동평균선이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Professorr_",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d40180511331ce27c7ec88832e515511af37b59a58d9d23bedd8aa922e60c99b": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Astera Labs(ALAB) 일봉 차트",
+    "description_ko": "아스테라 랩스의 주가와 거래량 차트. 약 263달러의 지지선, 351달러 부근의 수평선, 최근 고점들을 연결한 저항선과 위쪽으로 향하는 예상 경로 화살표가 그려져 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Professorr_",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8bfd8720c80c48f51769b626abf410971086cd5a4514a6bbf476f40fd2abd04b": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "누적 금액 상승 추이",
+    "description_ko": "검은 배경에 녹색 영역으로 표시한 누적 금액 그래프. 2024년 2월경 0달러 부근에서 시작해 2026년 구간에 약 500만 달러까지 상승하며, 지표 이름이나 계좌 정보는 보이지 않는다.",
+    "category_ko": "금융 성과 그래프",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0e6f83d38942e925aa753574bb9b3f6e22099870b82bc9bc779bc9ca3748967f": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "분기별 실현 수치와 시장 예상치 비교",
+    "description_ko": "2025년 2분기부터 2027년 1분기까지 실현 수치와 시장 예상치를 비교한 막대그래프. 2026년 2분기 실현 수치는 32.4%이며, 노란 테두리로 강조한 2026년 3분기 예상치는 27.2%다. 측정 지표의 이름은 보이지 않는다.",
+    "category_ko": "금융 통계 및 전망",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1c315aa259c440b43669a7acdfd89256fe98c43008a3dd2b9e728935c4910771": {
+    "index": 7,
+    "is_github": false,
+    "github_urls": [],
+    "title": "이동평균선으로 보는 상승 추세",
+    "description_ko": "상승하는 캔들 차트에 하늘색, 분홍색, 흰색 이동평균선을 겹쳐 표시한 교육용 이미지. 화살표와 'Moving averages = trend' 문구로 이동평균선과 추세의 관계를 설명한다.",
+    "category_ko": "투자 교육 및 차트 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b02f97024113661d0fa0bde6573b94672e3aa5bf6aaffd6b646a2a8c2e396a9a": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "이동평균선 위아래에서 나타나는 추세 강도",
+    "description_ko": "TradingView의 QQQ 일봉 차트로, 가격이 EMA 아래에 있으면 약세, 위에 있으면 강세라는 설명과 거래량이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7cabf389c973619d298f4bd17124aebdf511bd7f014144ea9a76545025e2abd0": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Breakout scanner",
+    "description_ko": "미국 주식 돌파 종목 검색 조건 화면이다. 주가 3달러 초과, 시가총액 3억 달러 초과, 21·50 EMA 위의 가격, 10일 평균 거래량 50만 초과, ADR 2% 이상 등의 필터가 설정되어 있다.",
+    "category_ko": "주식 스크리너",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:81e07c9f1745274f026de5e17f203264fa51cdb3cf24fdc49ca909139ac5ebba": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "계단식 상승 패턴 개념도",
+    "description_ko": "상승과 횡보가 반복되며 고점을 높이는 계단식 가격 흐름을 선으로 그린 도식이다. 아래에는 우상향하는 곡선이 표시되어 있다.",
+    "category_ko": "차트 패턴 교육",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7d847ffaa4b9a27301cc7796a793ec18d12d726064d60518d1d24d7462aa3bad": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "It is time for a thread.",
+    "description_ko": "바늘과 실을 형상화한 아이콘 옆에 스레드를 시작한다는 영문 문구가 적힌 흰색 배너다.",
+    "category_ko": "스레드 안내 배너",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d109bb3790ed5510e5708a826a6643b15086fd040b0763a9ed28cea424522c89": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SanDisk 계단식 상승과 돌파 사례",
+    "description_ko": "SanDisk 일봉 차트에 큰 상승, 계단식 조정, 이동평균선을 따라가는 가격, 거래량 감소와 이후 상승 돌파가 주석으로 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:52ade92f2caab8b05f32d8c3ffe98087a768c2e9c64f5af51807449cd14f7e25": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ARM 계단식 상승과 저거래량 조정 사례",
+    "description_ko": "Arm Holdings 일봉 차트에서 반복되는 상승과 계단식 조정, 이동평균선 부근의 가격 지지, 조정 중 거래량 감소를 설명한다. 오른쪽에는 급등 이후 하락 구간도 보인다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ac28c0d6c2583da7d9f5bce50e0aeb5b6812409d63a3d6c38329f26e7bd52a76": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "계단식 횡보 후 상승 돌파",
+    "description_ko": "캔들 차트에 두 차례의 계단식 횡보 구간과 뒤이은 상승을 표시했다. 하단 화살표는 조정 중 거래량 감소와 돌파 시 거래량 증가를 나타낸다.",
+    "category_ko": "차트 패턴 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1143979cec8d6693aaaffe66d7fa55c1473cef7e42c1e2e0125673b8943e0f65": {
+    "index": 7,
+    "is_github": false,
+    "github_urls": [],
+    "title": "반복되는 계단식 상승 패턴",
+    "description_ko": "상승 추세에서 세 차례의 계단식 조정과 후속 상승이 표시된 캔들 차트다. 이동평균선과 함께 조정 및 상승 구간의 거래량 변화가 화살표로 강조되어 있다.",
+    "category_ko": "차트 패턴 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:416e930170c02a58057a8fefeee38ce4ee305fbf58e65a870536ce0e5eedb81b": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NVIDIA 장기 차트의 저항선 돌파",
+    "description_ko": "NVIDIA 주가의 장기 캔들 차트로, 과거 고점에 그은 수평 저항선과 여러 차례의 저항 테스트, 이후 강한 상승을 보여준다. 이동평균선과 거래량이 함께 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d23f94438674a18e4d32ac7589086378bc87e93ee66a3eade9dfa9a95365afb4": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NVIDIA 일봉 차트의 돌파 구간",
+    "description_ko": "반복적으로 막히던 수평 저항선을 주가가 돌파하는 구간을 표시한 차트다. 돌파 이후 상승 추세와 돌파 시점의 거래량 증가가 나타난다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a6581f13bcafe400f864d8c2fe6338fa63caf59ac374410aaa7692460d7b1485": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NVIDIA 분봉 차트의 진입 신호와 거래량 확인",
+    "description_ko": "주가가 수평 트리거선을 넘는 지점에 진입 표시가 있다. 돌파 시 거래량이 크게 증가하고 이후 가격이 이동평균선 위에서 상승하는 모습을 보여준다.",
+    "category_ko": "주식 매매 진입 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:244912ffd8a0f37b3bf2bd6b465bc4df77d05d6cdc1c6f61886eae943f10b960": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NVIDIA 돌파 매매의 진입선과 손절선",
+    "description_ko": "앞선 분봉 차트에 분홍색 수평 손절선을 추가한 이미지다. 트리거선 돌파 진입, 거래량 증가 확인, 진입 가격 아래의 손절 위치를 함께 표시한다.",
+    "category_ko": "주식 매매 위험 관리",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3d82645889840f3fb866683ecc37e73b8dcba40b7caa667170ec091ae3b08037": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "언더컷 이후 반등 패턴 도식",
+    "description_ko": "검은 지그재그 선으로 가격 움직임을 표현한 도식이다. 하락하는 고점과 수평 지지선 아래로 잠시 내려가는 언더컷 구간, 이후 반등과 상승 방향 화살표가 표시되어 있다.",
+    "category_ko": "주식 차트 패턴 도식",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2f2779e4458d7edb28f83ee19268f3ce64a4d171856e88947a653949fb87e7b0": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "계단식 상승과 언더컷 캔들 패턴",
+    "description_ko": "상승 추세 중 조정과 재상승이 반복되는 캔들 차트다. 계단식 상승 구간과 단기 지지선을 일시적으로 밑도는 언더컷을 표시하며, 이동평균선과 거래량을 함께 보여준다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }
