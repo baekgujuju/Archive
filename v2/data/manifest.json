@@ -1,19 +1,19 @@
 {
-  "version": "2026-10-16T15:17:29.126139+00:00",
-  "content_updated_at": "2026-10-15T22:18:03.417937+00:00",
+  "version": "2026-10-17T00:15:08.829168+00:00",
+  "content_updated_at": "2026-10-17T00:15:08.829193+00:00",
   "build": "v2",
-  "source_hash": "c6439bec0010a25e15833c13995e72be8202b2566377ce0a116987f8165b47ed",
+  "source_hash": "fd87f882cc50fa877fbd02ca25414ba53270988fd16352c121b629b295d05e5d",
   "builder_version": "1.2.0",
   "chunks": {
     "posts-x": {
       "file": "data/posts-x.json",
-      "sha256": "4172e390b95cc764d037c1465594ef613c28cd19b28105a669f5b37ed3fd31cf",
-      "count": 216
+      "sha256": "f6cad2c7c71aa5474d639bdfb5e2c5c5172eab1d841f54e2f8cf31b5bf36abf0",
+      "count": 256
     },
     "posts-web": {
       "file": "data/posts-web.json",
-      "sha256": "ead44d13e5a45c8a1b140c8372373b05d56f94eac62c5708f676d5de124a829c",
-      "count": 2
+      "sha256": "b7514753361dae0b3018684107fc0acfaafb3512984fb5154286466fd6b52384",
+      "count": 3
     },
     "posts-ib": {
       "file": "data/posts-ib.json",
@@ -24,8 +24,8 @@
   "app_version": "2.5.8",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "3a80c81d9d5af8ed76c59450256825e9c3fe2422a0ac78e6c9c273176fb7e4c0",
-    "count": 71
+    "sha256": "46827452d6811f5dc033bf84ac1f2337ce58f01010db866ea9d9fbaab598ad07",
+    "count": 98
   },
   "shared_state": {
     "file": "data/shared-state.json",
@@ -34,7 +34,7 @@
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "33d601542b4294e924495737abadd3191adf78fc8bc08ad351636760bd27fdf5",
-    "count": 9
+    "sha256": "9bc2b0d92e3e9cec3b78b79d8e15aa4a93a62c8e80e07c582f217d9c3c7ada8e",
+    "count": 6
   }
 }
