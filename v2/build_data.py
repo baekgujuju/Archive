@@ -40,6 +40,46 @@ IB_LIBRARY_JSON = V2_ROOT / "ib-library.json"
 # 빌더 버전 (로직 변경 시 증분 → --check가 재빌드 감지)
 BUILDER_VERSION = "1.2.0"
 
+# 빌드 시 data/ 교체에서 보존해야 할 파일 (스테이징에 복사).
+# ai-tools 4종이 빠지면 매 빌드마다 enrich 상태가 소실됨 (2026-10-17 사고).
+# media-map.json은 빌드가 재생성하지 않고 미디어 미러가 채우므로,
+# 미러가 실패해도 이전 매핑이 사라지지 않게 보존한다.
+ENRICH_STATE_FILES = ['ai-tools.json', 'ai-tools-cache.json',
+                      'ai-tools-vision-cache.json', 'ai-tools-progress.json']
+PRESERVED_FILES = ['translations.json', 'shared-state.json', 'media-map.json'] + ENRICH_STATE_FILES
+
+
+def copy_preserved_files(src_dir, dst_dir, names):
+    """Copy existing files from src_dir to dst_dir; returns copied names."""
+    copied = []
+    for name in names:
+        src = Path(src_dir) / name
+        if src.is_file():
+            shutil.copy2(src, Path(dst_dir) / name)
+            copied.append(name)
+    return copied
+
+
+def verify_preserved_files(data_dir, backup_dir, names):
+    """After a data/ swap, restore missing preserved files from backup.
+
+    Raises RuntimeError (backup kept) if a file is unrecoverable —
+    the caller must NOT delete the backup on this path (fail-closed).
+    is_file() (not exists()): a directory named like a state file is
+    not a preserved file (copy2 would otherwise "succeed" into it).
+    """
+    for name in names:
+        new_file = Path(data_dir) / name
+        bak_file = Path(backup_dir) / name
+        if not new_file.is_file() and bak_file.is_file():
+            try:
+                shutil.copy2(bak_file, new_file)
+            except OSError as e:
+                raise RuntimeError(f"보존 파일 복원 실패: {name}: {e}")
+    for name in names:
+        if (Path(backup_dir) / name).is_file() and not (Path(data_dir) / name).is_file():
+            raise RuntimeError(f"보존 파일 소실: {name} (백업 유지됨)")
+
 
 def source_fingerprint():
     """Include both article sources so web-only edits trigger a rebuild.
@@ -337,6 +377,9 @@ def build_data():
     print(f"\n[3/5] 스테이징 디렉토리에 생성...")
     staging_dir = None
     backup_dir = None  # try 블록 밖에서 초기화 (except 핸들러에서 안전하게 참조)
+    swapped = False  # 스테이징 -> data/ 교체 + 보존 검증 완료 여부
+    rolled_back = False  # 검증 실패 후 백업 세대로 롤백 완료 여부
+    backup_cleaned = False  # 성공 시 백업 삭제 완료 여부
     try:
         staging_dir = Path(tempfile.mkdtemp(prefix="v2_build_", dir=V2_ROOT))
         staging_data = staging_dir / "data"
@@ -352,6 +395,13 @@ def build_data():
         translations = DATA_DIR / 'translations.json'
         if translations.exists():
             shutil.copy2(translations, staging_data / 'translations.json')
+        # Enrich state MUST survive a rebuild: build_data.py replaces the
+        # whole data/ directory (data/ -> data.backup/ -> deleted). Until
+        # 2026-10-17 the ai-tools files were not carried over, so every
+        # build wiped them and enrich rebuilt from scratch (152 -> 40).
+        copied = copy_preserved_files(DATA_DIR, staging_data, ENRICH_STATE_FILES)
+        for name in copied:
+            print(f"  enrich 상태 보존: {name}")
         shared_state = DATA_DIR / 'shared-state.json'
         if shared_state.exists():
             spec = importlib.util.spec_from_file_location('archive_settings_validator', Path(__file__).parent / 'hooks' / 'publish_settings.py')
@@ -397,6 +447,16 @@ def build_data():
         if shared_state.exists():
             shared = json.loads(shared_state.read_text(encoding='utf-8'))
             manifest['shared_state'] = {'file': 'data/shared-state.json', 'sha256': sha256_file(shared_state), 'revision': shared['revision']}
+        # Carry over the enrich manifest entry (refreshed by enrich's
+        # update_manifest after each run; without this a rebuild drops it).
+        old_manifest = DATA_DIR / 'manifest.json'
+        if old_manifest.exists():
+            try:
+                old_ai = json.loads(old_manifest.read_text(encoding='utf-8')).get('ai_tools')
+                if isinstance(old_ai, dict):
+                    manifest['ai_tools'] = old_ai
+            except (OSError, ValueError):
+                pass
         manifest_path = staging_data / "manifest.json"
         with open(manifest_path, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, ensure_ascii=False, indent=2)
@@ -435,13 +495,45 @@ def build_data():
         if DATA_DIR.exists():
             backup_dir = V2_ROOT / "data.backup"
             if backup_dir.exists():
-                shutil.rmtree(backup_dir)
+                # 이전 실행이 남긴 백업은 절대 삭제하지 않는다 — 유일한
+                # 복구본일 수 있다. 타임스탬프 붙여 보관하고 진행한다.
+                stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+                archived = V2_ROOT / f"data.backup.{stamp}"
+                n = 0
+                while archived.exists():
+                    n += 1
+                    archived = V2_ROOT / f"data.backup.{stamp}.{n}"
+                shutil.move(str(backup_dir), str(archived))
+                print(f"  이전 백업 보관: {archived.name} (삭제 아님)")
             shutil.move(str(DATA_DIR), str(backup_dir))
             print(f"  기존 data/ → data.backup/")
 
         # 스테이징 → 정식
         shutil.move(str(staging_data), str(DATA_DIR))
+        swapped = True  # 교체 완료 — 이후 실패는 새 세대 live (검증과 분리)
         print(f"  스테이징 → data/")
+
+        # 교체 후 검증: 보존 대상 파일이 새 data/에 없으면 백업에서 복원.
+        # 검증 실패 시 실패한 세대(DATA_DIR)를 버리고 백업을 복원한 뒤
+        # 실패 종료 — 실패 세대를 live로 남겨두면 다음 빌드가 백업을
+        # 지워버려 유일한 복구본이 사라진다 (fail-closed + rollback).
+        if backup_dir and backup_dir.exists():
+            try:
+                verify_preserved_files(DATA_DIR, backup_dir, PRESERVED_FILES)
+            except RuntimeError:
+                # 실패 세대 제거 후 백업 복원. rmtree 실패 시 move가
+                # 백업을 실패 세대 안으로 넣는 오염을 막기 위해
+                # ignore_errors 없이, 실패하면 원본 오류를 그대로 전파.
+                try:
+                    shutil.rmtree(DATA_DIR)
+                    shutil.move(str(backup_dir), str(DATA_DIR))
+                    rolled_back = True
+                    print("검증 실패 — 백업 세대로 롤백됨", file=sys.stderr)
+                except OSError as rollback_e:
+                    print(f"롤백 실패 (수동 복구 필요): {rollback_e}", file=sys.stderr)
+                    print(f"  live: {DATA_DIR}, 백업: {backup_dir}", file=sys.stderr)
+                raise
+        # (swapped는 교체 직후 이미 True — 검증 이후 실패도 새 세대 live)
 
         # 미디어 디렉토리 생성 (비어 있음, Phase 2에서 사용)
         MEDIA_THUMB.mkdir(parents=True, exist_ok=True)
@@ -450,6 +542,7 @@ def build_data():
         # 백업 정리 (성공 시)
         if backup_dir and backup_dir.exists():
             shutil.rmtree(backup_dir)
+            backup_cleaned = True
             print(f"  백업 정리됨")
 
         # 스테이징 루트 정리
@@ -469,6 +562,18 @@ def build_data():
             except Exception as restore_e:
                 print(f"백업 복원 실패: {restore_e}", file=sys.stderr)
                 print(f"수동 복원 필요: {backup_dir} → {DATA_DIR}", file=sys.stderr)
+        elif rolled_back:
+            print("백업 세대로 롤백되어 이전 세대가 live입니다.", file=sys.stderr)
+        elif swapped and backup_cleaned:
+            print(f"새 세대가 live입니다 (백업 정리됨). 실패 단계: 후처리. data/: {DATA_DIR}", file=sys.stderr)
+        elif swapped:
+            # 교체 완료 후 실패 — 새 세대가 live. 백업은 있을 때만 유지됨을
+            # 명시한다 (최초 빌드는 백업 자체가 없음).
+            print(f"새 세대가 live 상태: {DATA_DIR}", file=sys.stderr)
+            if backup_dir and backup_dir.exists():
+                print(f"백업 유지됨 (수동 확인 필요): {backup_dir}", file=sys.stderr)
+            else:
+                print("백업 없음 (최초 빌드 또는 백업 미생성).", file=sys.stderr)
         else:
             print("이전 세대를 유지합니다.", file=sys.stderr)
         # 스테이징 정리

@@ -135,6 +135,22 @@ def update_manifest_translation_hash():
         log(f"manifest 번역 해시 업데이트 실패: {e}")
 
 
+def decide_pipeline(force_build, check_rc, dirty, enrich_marker):
+    """Pure pipeline decision: (needs_build, enrich_only).
+
+    force_build: a translation/commit/media retry marker forces a rebuild.
+    check_rc: build_data --check result (0=no change, 1=changed).
+    dirty: working-tree changes exist. enrich_marker: .retry-enrich exists.
+    Enrich-only = no rebuild needed but enrich backlog remains: skip the
+    build (which replaces data/) and run enrich alone.
+    """
+    needs_build = bool(force_build)
+    if not needs_build:
+        needs_build = (check_rc == 1) or bool(dirty)
+    enrich_only = (not needs_build) and bool(enrich_marker)
+    return needs_build, enrich_only
+
+
 def main():
     HOOKS_DIR.mkdir(parents=True, exist_ok=True)
     lock_fh = open(LOCK_FILE, "w")
@@ -145,7 +161,8 @@ def main():
         return 2
     log("락 획득")
 
-    has_retry_marker = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()
+    force_build_markers = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists()
+    has_retry_marker = force_build_markers or RETRY_ENRICH.exists()
     if has_retry_marker:
         log("재시도 마커 감지 — 소스 변경 여부와 무관하게 처리")
 
@@ -167,11 +184,15 @@ def main():
             log(f"Dirty 파일 감지 (소스 해시 무관): {dirty}")
             # 아래 3단계로 진행하여 커밋함
 
-        # 1. 변경 감지 (재시도 마커가 있으면 무조건 진행)
-        needs_build = has_retry_marker
+        # 1. 변경 감지 (번역/커밋/미디어 마커가 있으면 무조건 빌드.
+        #    enrich 마커만 있으면 소스 변경이 있을 때만 빌드하고,
+        #    없으면 빌드 없이 enrich만 실행 — enrich 미완료(rc=2) 때마다
+        #    전체 빌드가 data/를 교체하던 손실 루프 방지.)
+        needs_build = force_build_markers
+        enrich_only = False
         if not needs_build:
             r = run([sys.executable, str(V2_ROOT / "build_data.py"), "--check"])
-            if r.returncode == 0 and not dirty:
+            if r.returncode == 0 and not dirty and not RETRY_ENRICH.exists():
                 log("변경 없음, Dirty 없음 — 종료 (모델 호출 없음)")
                 # 재시도 마커 정리 (성공적으로 처리됨)
                 RETRY_TRANSLATION.unlink(missing_ok=True)
@@ -180,50 +201,57 @@ def main():
             if r.returncode not in (0, 1):
                 log(f"--check 비정상 종료 ({r.returncode})")
                 return 1
-            needs_build = (r.returncode == 1) or bool(dirty)
-
-        if not needs_build:
+            needs_build, enrich_only = decide_pipeline(
+                False, r.returncode, dirty, RETRY_ENRICH.exists())
+        if not needs_build and not enrich_only:
             return 0
-        log("빌드 필요 — 시작")
+        log("빌드 필요 — 시작" if needs_build else "소스 변경 없음 — 빌드 없이 enrich만 실행")
 
-        # 2a. IB 정본 병합 (신규 IB 감지)
-        r = run([sys.executable, str(V2_ROOT / "ib_adapter.py")])
-        if r.returncode != 0:
-            log("IB 어댑터 실패 — 중단")
-            return 1
+        # 2a~2c-2는 빌드 파이프라인 — enrich-only 모드면 건너뜀
+        # (소스 변경 없음: 빌드할 게 없고, 빌드 자체가 data/ 교체라
+        # 불필요한 위험만 더함. enrich → 번역 → 커밋은 아래에서 계속.)
+        if not enrich_only:
+            # 2a. IB 정본 병합 (신규 IB 감지)
+            r = run([sys.executable, str(V2_ROOT / "ib_adapter.py")])
+            if r.returncode != 0:
+                log("IB 어댑터 실패 — 중단")
+                return 1
 
-        # 2b. translations.json 백업
-        backup = None
-        if TRANSLATIONS.exists():
-            backup = Path(tempfile.mkdtemp(prefix="v2_trans_", dir=HOOKS_DIR)) / "translations.json"
-            shutil.copy2(str(TRANSLATIONS), str(backup))
-            log(f"번역 캐시 백업: {backup}")
+            # 2b. translations.json 백업
+            backup = None
+            if TRANSLATIONS.exists():
+                backup = Path(tempfile.mkdtemp(prefix="v2_trans_", dir=HOOKS_DIR)) / "translations.json"
+                shutil.copy2(str(TRANSLATIONS), str(backup))
+                log(f"번역 캐시 백업: {backup}")
 
-        # 2c. 전체 빌드
-        r = run([sys.executable, str(V2_ROOT / "build_data.py")])
-        if r.returncode != 0:
-            log("빌드 실패 — 중단")
-            return 1
+            # 2c. 전체 빌드
+            r = run([sys.executable, str(V2_ROOT / "build_data.py")])
+            if r.returncode != 0:
+                log("빌드 실패 — 중단")
+                return 1
 
 
-        # 2c-2. 미디어 미러 (best-effort)
-        # build_data 성공 후, git 발행 전
-        _mirror = V2_ROOT / "media-mirror.py"
-        if _mirror.exists():
-            log("미디어 미러 시작 (best-effort)...")
-            try:
-                _mr = run([sys.executable, str(_mirror)], timeout=600)
-                if _mr.returncode == 0:
-                    RETRY_MEDIA.unlink(missing_ok=True)
-                    log("미디어 미러 완료")
-                else:
+            # 2c-2. 미디어 미러 (best-effort)
+            # build_data 성공 후, git 발행 전
+            _mirror = V2_ROOT / "media-mirror.py"
+            if _mirror.exists():
+                log("미디어 미러 시작 (best-effort)...")
+                try:
+                    _mr = run([sys.executable, str(_mirror)], timeout=600)
+                    if _mr.returncode == 0:
+                        RETRY_MEDIA.unlink(missing_ok=True)
+                        log("미디어 미러 완료")
+                    else:
+                        RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+                        log(f"미디어 미러 실패 (rc={_mr.returncode}) — 다음 실행에서 재시도")
+                except Exception as _e:
                     RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-                    log(f"미디어 미러 실패 (rc={_mr.returncode}) — 다음 실행에서 재시도")
-            except Exception as _e:
-                RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-                log(f"미디어 미러 예외: {_e} — 다음 실행에서 재시도")
+                    log(f"미디어 미러 예외: {_e} — 다음 실행에서 재시도")
+            else:
+                log("media-mirror.py 없음")
         else:
-            log("media-mirror.py 없음")
+            backup = None
+            log("enrich-only — IB/빌드/미디어미러 건너뜀")
         # 2c-3. GitHub 스크린샷 AI툴 자동 분류 (best-effort, 캐시 기반)
         # 미디어 미러 후, git 커밋 전. 실패해도 전체 흐름은 계속.
         _enrich = V2_ROOT / "enrich_tools.py"
