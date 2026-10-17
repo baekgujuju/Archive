@@ -656,6 +656,11 @@ def handle_file_failure(f, failure):
     return persist_failure_record(record, lock_contention=failure.lock_contention)
 
 
+def _is_html_name(name):
+    """인제스터가 처리할 수 있는 HTML 파일명인가 (P2-3)."""
+    return isinstance(name, str) and name.lower().endswith((".html", ".htm"))
+
+
 def _verification_of(entry):
     """processed 항목의 검증 상태 (구형 항목 마이그레이션 포함)."""
     if not isinstance(entry, dict):
@@ -807,12 +812,18 @@ def main():
                     "legacy": True,
                 }
                 state_dirty = True
+        # 재검증 배치는 인제스터가 처리할 수 있는 HTML만 선정한다.
+        # 비-HTML 미검증 항목이 배치 슬롯을 영구 점유하면 HTML
+        # 항목이 재검증되지 않는 라이브락이 생긴다 (생산 첫 폴에서
+        # legacy 재검증 0건 확인 — 가장 오래된 5건이 비-HTML).
+        file_names = {f.get("id"): f.get("name", "") for f in files}
         unverified = sorted(
             (fid for fid, entry in processed.items()
              # unavailable이었는데 파일이 다시 나타나면 재검증 대상이다
              # (배치 풀에 포함 — disposition의 주석과 일치).
              if _verification_of(entry) in ("unverified", "unavailable")
-             and fid in file_ids),
+             and fid in file_ids
+             and _is_html_name(file_names.get(fid, ""))),
             key=lambda fid: (
                 str(processed[fid].get("modifiedTime", "")) if isinstance(processed.get(fid), dict) else "",
                 fid))
@@ -868,7 +879,7 @@ def main():
                 if fid not in batch_fids:
                     continue
             # 신규 파일은 배치 제한 없이 처리한다.
-            if not name.lower().endswith((".html", ".htm")):
+            if not _is_html_name(name):
                 log("Unsupported material remains pending: " + name)
                 continue
             if not INGEST_SCRIPT.exists():
