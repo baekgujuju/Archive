@@ -182,6 +182,17 @@ def test_validate_bool_count_fails(hook_repo):
     assert not ok and "count" in reason
 
 
+def test_validate_null_optional_section_fails(hook_repo):
+    """선택 섹션이 null이면 부재가 아니라 형식 오류 (부재와 구분)."""
+    repo, sha, manifest, chunks, _ = hook_repo
+    m = json.loads((repo / "v2" / "data" / "manifest.json").read_text())
+    m["translations"] = None
+    (repo / "v2" / "data" / "manifest.json").write_text(json.dumps(m))
+    bad = _commit(repo, "null translations")
+    ok, reason = hook.validate_commit_artifacts(bad)
+    assert not ok and "translations" in reason
+
+
 def test_validate_missing_chunk(hook_repo):
     repo, sha, manifest, chunks, _ = hook_repo
     (repo / "v2" / "data" / "posts-ib.json").unlink()
@@ -765,6 +776,31 @@ def test_invalid_entries_skipped_and_quarantined(recovery_env):
     assert len(quarantined) == 1
     qbak = json.loads((quarantined[0] / "translations.json").read_text())
     assert "bad" in qbak and "bad2" in qbak
+
+
+def test_overlapping_invalid_entry_still_partial(recovery_env):
+    """겹치는 키의 무효 엔트리도 partial로 잡혀 증거가 격리된다.
+
+    구버그는 이미 있는 키를 검증 없이 건너뛰어, 백업의 무효 엔트리가
+    partial로 잡히지 않고 백업이 삭제돼 증거가 사라졌다.
+    현재 값은 보존된다 (무효 엔트리로 덮지 않음).
+    """
+    hooks_dir, data = recovery_env
+    (data / "translations.json").write_text(
+        json.dumps({"bad": _valid_entry("current"),
+                    "good": _valid_entry("current")}), encoding="utf-8")
+    d = _make_backup(hooks_dir, "v2_trans_a",
+                     {"bad": "evidence-not-a-dict",
+                      "good": _valid_entry("backup")})
+    hook.recover_abandoned_backups()
+    cur = json.loads((data / "translations.json").read_text())
+    assert cur["bad"]["translated"] == "current"  # 덮지 않음
+    assert cur["good"]["translated"] == "current"  # 덮지 않음
+    assert not d.exists()
+    quarantined = list((hooks_dir / ".quarantine").glob("v2_trans_a.*"))
+    assert len(quarantined) == 1
+    qbak = json.loads((quarantined[0] / "translations.json").read_text())
+    assert qbak["bad"] == "evidence-not-a-dict"
 
 
 def test_conflicting_backups_all_preserved(recovery_env):

@@ -28,11 +28,16 @@ class MirrorPublicationTests(unittest.TestCase):
             # P2 배치 1: 매니페스트 업데이트 실패 시 커밋이 막힌다
             # (fail-closed). 테스트 공간에도 구조가 유효한 매니페스트 +
             # 번역 파일이 있어야 2f 단계가 성공한다 (필수 청크 3종).
+            # 청크 파일은 실제로 쓰고 진짜 해시를 기록한다 — 존재하지
+            # 않는 청크에 0 해시를 적으면 게시 아티팩트 검증을
+            # 우회하는 픽스처가 된다 (Codex 3차 리뷰).
             chunks = {}
             for name in ("x", "web", "ib"):
+                raw = json.dumps({"posts": []}).encode("utf-8")
+                (root / f"data/posts-{name}.json").write_bytes(raw)
                 chunks[f"posts-{name}"] = {
                     "file": f"data/posts-{name}.json",
-                    "sha256": "0" * 64,
+                    "sha256": hashlib.sha256(raw).hexdigest(),
                     "count": 0,
                 }
             (root/'data/manifest.json').write_text(

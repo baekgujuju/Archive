@@ -46,19 +46,19 @@ def _real_image(fmt, animated=False):
     return buf.getvalue()
 
 
-def png_bytes(valid=True):
+def png_bytes():
     return _real_image("PNG")
 
 
-def jpeg_bytes(valid=True):
+def jpeg_bytes():
     return _real_image("JPEG")
 
 
-def gif_bytes(valid=True):
+def gif_bytes():
     return _real_image("GIF")
 
 
-def webp_bytes(valid=True):
+def webp_bytes():
     return _real_image("WEBP")
 
 
@@ -177,6 +177,25 @@ def test_is_complete_image_rejects_truncated_with_trailer(mirror, ext, make):
     assert mod.is_complete_image(_truncated_with_trailer(valid, ext), ext) is False
 
 
+def test_is_complete_image_rejects_missing_trailer(mirror):
+    """Pillow만으로는 트레일러 누락을 통과시킨다 — 트레일러 검사도 필요하다."""
+    mod, _, _, _ = mirror
+    # PNG: IEND 12바이트 제거 (Pillow는 디코딩한다).
+    png = png_bytes()
+    assert mod.is_complete_image(png[:-12], ".png") is False
+    # GIF: 트레일러 0x3B 제거 (Pillow는 디코딩한다).
+    gif = gif_bytes()
+    assert mod.is_complete_image(gif[:-1], ".gif") is False
+    # JPEG: EOI 제거.
+    jpg = jpeg_bytes()
+    assert mod.is_complete_image(jpg[:-2], ".jpg") is False
+    # WebP: RIFF 크기 필드 위조 (실제보다 크게).
+    webp = webp_bytes()
+    bad = bytearray(webp)
+    bad[4:8] = struct.pack("<I", len(webp) + 100)
+    assert mod.is_complete_image(bytes(bad), ".webp") is False
+
+
 def test_is_complete_image_rejects_header_only_and_garbage(mirror):
     mod, _, _, _ = mirror
     assert mod.is_complete_image(bytes.fromhex("89504e470d0a1a0a"), ".png") is False
@@ -292,7 +311,7 @@ def test_corrupt_cache_is_rejected_and_redownloaded(mirror, monkeypatch):
     cached.write_bytes(bytes.fromhex("89504e470d0a1a0a"))
     assert mod.cached_image_ok(cached, ".png") is False
     # 유효한 캐시는 히트.
-    cached.write_bytes(png_bytes(True))
+    cached.write_bytes(png_bytes())
     assert mod.cached_image_ok(cached, ".png") is True
 
 
@@ -345,7 +364,7 @@ def test_ordinary_download_failure_returns_1_and_writes_partial_map(mirror, monk
             return {"Content-Type": "image/png"}
 
         def read(self, n=-1):
-            return png_bytes(True)
+            return png_bytes()
 
         def __enter__(self):
             return self

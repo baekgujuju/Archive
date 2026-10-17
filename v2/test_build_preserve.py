@@ -480,3 +480,30 @@ def test_prune_ignores_unicode_digit_and_newline_names(tmp_path, monkeypatch):
     build_data._prune_generations(keep=0)
     assert (v2root / "data.backup.20260101T000000\n").is_dir()
     assert (v2root / "data.backup.٢٠٢٦٠١٠١T٠٠٠٠٠٠").is_dir()
+
+
+def test_generation_sort_total_order_leading_zero_and_bare(tmp_path, monkeypatch):
+    """선행 0 별칭(.1 vs .01)과 bare vs .0이 정렬에서 동률이 되지 않는다.
+
+    Codex 3차 리뷰 차단 3: .1과 .01은 숫자 키가 같아 prune이 열거
+    순서에 의존했다. 원본 이름을 최종 타이브레이크로 둬 전체 순서로 만든다.
+    """
+    v2root = tmp_path / "v2"
+    v2root.mkdir()
+    monkeypatch.setattr(build_data, "V2_ROOT", v2root)
+    stamp = "20260101T000000"
+    for suffix in (".1", ".01"):
+        (v2root / f"data.backup.{stamp}{suffix}").mkdir()
+    # 정렬 키가 서로 다르고, 결정적이다 (열거 순서와 무관).
+    keys = [build_data._generation_sort_key(p.name)
+            for p in _generation_dirs(v2root)]
+    assert len(set(keys)) == len(keys)
+    build_data._prune_generations(keep=1)
+    remaining = sorted(p.name for p in _generation_dirs(v2root))
+    assert remaining == [f"data.backup.{stamp}.1"]  # .01이 오래된 쪽으로 정리됨
+    # bare vs .0: bare(-1)가 .0(0)보다 오래됨.
+    (v2root / f"data.backup.{stamp}").mkdir()
+    (v2root / f"data.backup.{stamp}.0").mkdir()
+    build_data._prune_generations(keep=1)
+    remaining = sorted(p.name for p in _generation_dirs(v2root))
+    assert remaining == [f"data.backup.{stamp}.1"]  # 가장 오래된 bare/.0 정리, 최신 .1 유지

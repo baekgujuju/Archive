@@ -97,15 +97,18 @@ RETAINED_GENERATIONS = 2
 
 
 def _generation_sort_key(name):
-    """세대 디렉터리 이름 → (타임스탬프, 숫자 접미사).
+    """세대 디렉터리 이름 → (타임스탬프, 숫자 접미사, 이름).
 
     접미사 없음은 -1 (같은 초의 첫 세대 = 가장 오래됨).
     접미사 없음과 .0이 같은 키(0)가 되면 정렬이 전체 순서가 아니게 된다.
+    선행 0 별칭(.1 vs .01)은 숫자 키가 같아지므로, 원본 이름을
+    최종 타이브레이크로 둬 정렬을 전체 순서로 만든다 (Codex 3차 리뷰
+    차단 3) — 열거 순서에 따라 prune 대상이 달라지지 않는다.
     """
     m = _GENERATION_RE.fullmatch(name)
     if not m:
-        return ("", -1)
-    return (m.group(1), int(m.group(2)) if m.group(2) else -1)
+        return ("", -1, name)
+    return (m.group(1), int(m.group(2)) if m.group(2) else -1, name)
 
 
 def _archive_backup(backup_dir):

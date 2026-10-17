@@ -240,9 +240,11 @@ def _validate_manifest_dict(m, short):
         if type(c) is not int or c < 0:  # bool은 int의 서브클래스 — type()으로 거부
             return False, f"manifest.json chunks.{name} count 형식 오류 ({short})"
     for section in ("translations", "shared_state", "ai_tools"):
-        entry = m.get(section)
-        if entry is None:
+        # 부재와 null을 구분한다 — 키가 있는데 null이면 "없음"이 아니라
+        # 형식 오류이다 (문서화된 "있으면 dict" 규칙).
+        if section not in m:
             continue
+        entry = m[section]
         if not isinstance(entry, dict):
             return False, f"manifest.json {section} 형식 오류 ({short})"
         f, h = entry.get("file"), entry.get("sha256")
@@ -551,10 +553,13 @@ def merge_translation_backup(backup_path):
     restored = 0
     skipped = 0
     for k, v in bak.items():
-        if k in merged:
-            continue
+        # 겹치는 키도 먼저 검증한다 — 이미 있는 키라고 검증을
+        # 건너뛰면 백업의 무효 엔트리가 partial로 잡히지 않고
+        # 백업이 삭제돼 증거가 사라진다 (Codex 3차 리뷰 차단 2).
         if not _validate_translation_entry(v):
             skipped += 1
+            continue
+        if k in merged:
             continue
         merged[k] = v
         restored += 1

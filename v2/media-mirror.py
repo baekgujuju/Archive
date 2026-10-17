@@ -75,6 +75,9 @@ IMAGE_MAGIC = {
 # 확장자 → Pillow 포맷 (is_complete_image의 포맷 대조용).
 _EXT_FORMAT = {".png": "PNG", ".jpg": "JPEG", ".gif": "GIF", ".webp": "WEBP"}
 
+# PNG IEND 청크 (12바이트): 길이 0 + "IEND" + CRC.
+_PNG_IEND = bytes.fromhex("0000000049454e44ae426082")
+
 
 def _magic_matches(data: bytes, ext: str) -> bool:
     """헤더 매직 바이트 사전 검사 (빠른 실패용 — 완전성 아님)."""
@@ -89,15 +92,35 @@ def _magic_matches(data: bytes, ext: str) -> bool:
 
 
 def is_complete_image(data: bytes, ext: str) -> bool:
-    """이미지 전체 검증 (P2-9 차단 4 재수정: 트레일러만으로는 부족하다).
+    """이미지 전체 검증 (P2-9 차단 4 + Codex 3차 리뷰).
 
-    헤더/트레일러/크기 검사만으로는 중간 비트 손상을 통과시킨다
-    (트레일러를 유지한 채 중간만 손상된 파일이 통과했음). 그래서
-    Pillow로 모든 프레임까지 실제로 디코딩한다 — 잘림·중간 손상·
-    손상된 헤더 테이블을 모두 거부한다. 디코딩 실패 = 유효하지 않음.
+    트레일러 검사만으로는 중간 손상을 통과시키고, Pillow만으로는
+    트레일러 누락(IEND 없는 PNG, 트레일러 없는 GIF)을 통과시킨다.
+    둘 다 필요하다 — 구조 검사 AND 전 프레임 디코딩.
+      PNG: IEND 청크 + Pillow 전 프레임 디코딩.
+      JPEG: EOI + Pillow 전 프레임 디코딩.
+      GIF: 0x3B 트레일러 + Pillow 전 프레임 디코딩.
+      WebP: RIFF 크기 + 8 == 전체 길이 + Pillow 전 프레임 디코딩.
     포맷도 대조한다 (매직은 맞는데 내용이 다른 포맷이면 거부).
     """
     if not data or not _magic_matches(data[:12], ext):
+        return False
+    if ext == ".png":
+        if len(data) < 20 or data[-12:] != _PNG_IEND:
+            return False
+    elif ext == ".jpg":
+        if len(data) < 4 or data[-2:] != b"\xff\xd9":
+            return False
+    elif ext == ".gif":
+        if len(data) < 7 or data[-1:] != b"\x3b":
+            return False
+    elif ext == ".webp":
+        if len(data) < 12:
+            return False
+        riff_size = struct.unpack("<I", data[4:8])[0]
+        if riff_size + 8 != len(data):
+            return False
+    else:
         return False
     try:
         from PIL import Image
