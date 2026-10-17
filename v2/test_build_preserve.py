@@ -219,9 +219,9 @@ def test_hook_force_marker_builds_without_crash(tmp_path, monkeypatch):
     monkeypatch.setattr(hook, "TRANSLATIONS", data_dir / "translations.json")
     monkeypatch.setattr(hook, "PUBLISH_ENABLED", False)
     monkeypatch.setattr(hook, "changed_files", lambda: [])
-    monkeypatch.setattr(hook, "unpushed_commits", lambda: 0)
+    monkeypatch.setattr(hook, "unpushed_commit_list", lambda: [])
     monkeypatch.setattr(hook, "do_push", lambda: True)
-    monkeypatch.setattr(hook, "update_manifest_translation_hash", lambda: None)
+    monkeypatch.setattr(hook, "update_manifest_translation_hash", lambda: True)
     monkeypatch.setattr(hook, "log", lambda msg: None)
 
     calls = []
@@ -270,9 +270,9 @@ def test_hook_enrich_only_skips_build_runs_enrich(tmp_path, monkeypatch):
     monkeypatch.setattr(hook, "TRANSLATIONS", data_dir / "translations.json")
     monkeypatch.setattr(hook, "PUBLISH_ENABLED", False)
     monkeypatch.setattr(hook, "changed_files", lambda: [])
-    monkeypatch.setattr(hook, "unpushed_commits", lambda: 0)
+    monkeypatch.setattr(hook, "unpushed_commit_list", lambda: [])
     monkeypatch.setattr(hook, "do_push", lambda: True)
-    monkeypatch.setattr(hook, "update_manifest_translation_hash", lambda: None)
+    monkeypatch.setattr(hook, "update_manifest_translation_hash", lambda: True)
     logs = []
     monkeypatch.setattr(hook, "log", lambda msg: logs.append(msg))
 
@@ -306,3 +306,122 @@ def test_hook_enrich_only_skips_build_runs_enrich(tmp_path, monkeypatch):
     assert "translate_posts.py" in joined
     assert any("enrich만 실행" in m for m in logs)
     assert rc == 1  # enrich rc=2 -> retry marker remains -> failure return
+
+
+# ---------- P2 배치 1: 보존 세대 (rollback generation) ----------
+
+def _generation_dirs(v2root):
+    return sorted(p for p in v2root.iterdir()
+                  if p.is_dir() and p.name.startswith("data.backup."))
+
+
+def test_three_builds_retain_two_generations(tmp_path, monkeypatch):
+    """3번의 성공 빌드 후 이전 세대 2개만 남는다 (가장 오래된 세대 정리)."""
+    v2root, data, preserved, posts = _seed_build_sandbox(tmp_path)
+    _patch_build_globals(monkeypatch, v2root, data, posts, tmp_path)
+    for _ in range(3):
+        build_data.build_data()
+    gens = _generation_dirs(v2root)
+    assert len(gens) == 2
+    # 가장 오래된 세대(시드 매니페스트 source_hash "old")는 정리됨.
+    for g in gens:
+        m = json.loads((g / "manifest.json").read_text())
+        assert m["source_hash"] != "old"
+    # live는 최신 빌드 결과.
+    assert json.loads((data / "posts-x.json").read_text())["posts"][0]["tweetId"] == "1"
+
+
+def test_prune_collision_ordering_is_numeric(tmp_path, monkeypatch):
+    """같은 초의 충돌 접미사 12개(.0~.11) 중 숫자 기준 최신 2개만 남는다.
+
+    사전식 정렬은 .10을 .2보다 앞으로 두어 최신 세대를 지운다.
+    """
+    v2root = tmp_path / "v2"
+    v2root.mkdir()
+    monkeypatch.setattr(build_data, "V2_ROOT", v2root)
+    for i in range(12):
+        (v2root / f"data.backup.20260101T000000.{i}").mkdir()
+    build_data._prune_generations(keep=2)
+    remaining = sorted(p.name for p in _generation_dirs(v2root))
+    assert remaining == ["data.backup.20260101T000000.10",
+                         "data.backup.20260101T000000.11"]
+
+
+def test_prune_keeps_transient_and_unrelated(tmp_path, monkeypatch):
+    """prune은 data.backup 본체와 무관한 디렉터리를 건드리지 않는다."""
+    v2root = tmp_path / "v2"
+    v2root.mkdir()
+    monkeypatch.setattr(build_data, "V2_ROOT", v2root)
+    (v2root / "data.backup").mkdir()
+    (v2root / "data.backup-foo").mkdir()
+    (v2root / "data.backup2").mkdir()
+    (v2root / "other").mkdir()
+    for stamp in ("20260101T000000", "20260102T000000", "20260103T000000"):
+        (v2root / f"data.backup.{stamp}").mkdir()
+    build_data._prune_generations(keep=2)
+    assert (v2root / "data.backup").is_dir()
+    assert (v2root / "data.backup-foo").is_dir()
+    assert (v2root / "data.backup2").is_dir()
+    assert (v2root / "other").is_dir()
+    remaining = sorted(p.name for p in _generation_dirs(v2root))
+    assert remaining == ["data.backup.20260102T000000", "data.backup.20260103T000000"]
+
+
+def test_prune_deletion_failure_warns_without_failing(tmp_path, monkeypatch, capsys):
+    """prune 삭제 실패는 경고만 남기고 빌드를 실패시키지 않는다."""
+    v2root = tmp_path / "v2"
+    v2root.mkdir()
+    monkeypatch.setattr(build_data, "V2_ROOT", v2root)
+    for stamp in ("20260101T000000", "20260102T000000", "20260103T000000"):
+        (v2root / f"data.backup.{stamp}").mkdir()
+    real_rmtree = build_data.shutil.rmtree
+
+    def failing_rmtree(path, *a, **kw):
+        if "20260101T000000" in str(path):
+            raise OSError("injected prune failure")
+        return real_rmtree(path, *a, **kw)
+
+    monkeypatch.setattr(build_data.shutil, "rmtree", failing_rmtree)
+    build_data._prune_generations(keep=2)  # raise하지 않음
+    assert "정리 실패" in capsys.readouterr().err
+    assert (v2root / "data.backup.20260101T000000").is_dir()
+
+
+def test_interrupted_swap_restores_backup(tmp_path, monkeypatch):
+    """중단된 교체(data/ 없음 + data.backup/ 있음) 시 다음 빌드가 복원한다.
+
+    이전 빌드가 data/ → data.backup/ 이동 후 staging → data/ 이동 전에
+    죽은 상태를 재현한다. 복원 없이는 보존 파일이 빠진 채로 재구축된다.
+    """
+    v2root, data, preserved, posts = _seed_build_sandbox(tmp_path)
+    _patch_build_globals(monkeypatch, v2root, data, posts, tmp_path)
+    # 중단 상태: data/를 data.backup/으로 이동 (staging 설치 전 사망).
+    import shutil
+    shutil.move(str(data), str(v2root / "data.backup"))
+    assert not data.exists()
+    assert (v2root / "data.backup").exists()
+    build_data.build_data()
+    # 복원된 보존 파일이 live에 있고, 빌드가 성공했다.
+    for name, content in preserved.items():
+        assert (data / name).read_text() == content, name
+    assert json.loads((data / "posts-x.json").read_text())["posts"][0]["tweetId"] == "1"
+    # 복원된 세대는 교체 후 세대 디렉터리로 보존됨.
+    assert len(_generation_dirs(v2root)) == 1
+
+
+def test_verify_failure_does_not_create_generation(tmp_path, monkeypatch):
+    """검증 실패 시 실패 세대는 세대 디렉터리로 보존되지 않는다."""
+    v2root, data, preserved, posts = _seed_build_sandbox(tmp_path)
+    _patch_build_globals(monkeypatch, v2root, data, posts, tmp_path)
+    build_data.build_data()  # 성공 → 세대 1개
+    assert len(_generation_dirs(v2root)) == 1
+    monkeypatch.setattr(
+        build_data, "verify_preserved_files",
+        lambda *a: (_ for _ in ()).throw(RuntimeError("injected verify failure")))
+    with pytest.raises(SystemExit) as exc:
+        build_data.build_data()
+    assert exc.value.code == 2
+    # 실패 빌드는 세대를 만들지 않고, 이전 세대가 live로 복원됨.
+    assert len(_generation_dirs(v2root)) == 1
+    for name, content in preserved.items():
+        assert (data / name).read_text() == content, name

@@ -17,12 +17,29 @@ import sys
 import tempfile
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import enrich_tools as et
 
 # Original analyze_image_batch captured before test setups mock it.
 _ORIG_ANALYZE = et.analyze_image_batch
+
+# _setup()이 바꾸는 et 전역은 테스트 후 복원한다 — 복원하지 않으면
+# 뒤에 실행되는 테스트(예: test_build_preserve의 보존 목록 검사)가
+# 오염된 경로를 보고 실패한다 (pytest 세션 내 테스트 순서 의존성).
+_ET_GLOBALS = ["DATA_DIR", "TOOLS_JSON", "CACHE_JSON", "PROGRESS_JSON",
+               "RETRY_MARKER", "MANIFEST_JSON", "collect_screenshots",
+               "fingerprint", "analyze_image_batch"]
+
+
+@pytest.fixture(autouse=True)
+def _restore_et_globals():
+    saved = {k: getattr(et, k) for k in _ET_GLOBALS}
+    yield
+    for k, v in saved.items():
+        setattr(et, k, v)
 
 
 def _setup(tmp):

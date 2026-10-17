@@ -2,7 +2,7 @@
 """
 v2 미디어 미러 (media-mirror.py)
 
-v2/data/posts*.json에서 이미지 URL을 스캔하고,
+매니페스트가 지정한 posts 청크에서 이미지 URL을 스캔하고,
 공개 아카이브 이미지를 v2/media/full/<sha256>.<ext>에 다운로드.
 원본 URL → same-origin 상대 경로 매핑을 생성.
 
@@ -11,13 +11,21 @@ v2/data/posts*.json에서 이미지 URL을 스캔하고,
   - 래스터 MIME만 허용 (png/jpeg/webp/gif)
   - 크기 제한 (10MB), 시간 제한 (30초/파일)
   - 8 병렬 워커
-  - 결정적: 이미 존재하고 nonempty면 스킵
+  - 결정적: 완전한 이미지(헤더+트레일러)가 캐시에 있으면 스킵
   - 실패 보고 (실패한 URL 목록 출력)
   - 매핑을 원자적으로 기록 (js + data/media-map.json)
+  - P2-9: 청크는 매니페스트에서 기대 목록을 확인하고, 공유 파이프라인
+    락 하에서 일관된 스냅샷으로 읽는다. 누락·손상 청크가 있으면
+    맵을 건드리지 않고 중단한다 (축소 방지).
 
 사용법:
     python3 v2/media-mirror.py
     python3 v2/media-mirror.py --dry-run  # 다운로드 없이 URL 목록만
+
+종료 코드: 0=맵 완성, 1=일부 URL 미매핑(다운로드 실패),
+          2=청크/매니페스트 읽기 실패(맵을 건드리지 않고 중단 — P2-9 축소 방지)
+캐시 검증: 매직 바이트(빠른 사전 검사) + 전체 프레임 검증(트레일러·크기)
+          — nonempty-only·헤더-only 검사는 잘린 파일을 영구 cache hit으로 만든다.
 
 출력:
     v2/media/full/<sha256>.<ext>  — 미러된 이미지
@@ -28,11 +36,14 @@ import hashlib
 import html
 import json
 import re
+import struct
 import sys
 import urllib.request
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+
+from pipeline_lock import PipelineLockTimeout, pipeline_lock
 
 V2_ROOT = Path(__file__).resolve().parent
 DATA_DIR = V2_ROOT / "data"
@@ -52,28 +63,161 @@ ALLOWED_MIME = {
     "image/gif": ".gif",
 }
 
+# 이미지 매직 바이트 (빠른 사전 검사 — 전체 검증은 is_complete_image).
+IMAGE_MAGIC = {
+    ".png": [bytes.fromhex("89504e470d0a1a0a")],
+    ".jpg": [bytes.fromhex("ffd8ff")],
+    ".gif": [b"GIF87a", b"GIF89a"],
+    ".webp": [b"RIFF"],
+}
 
-def extract_image_urls():
-    """posts*.json에서 이미지 URL 추출 (html.unescape 적용)."""
+# PNG IEND 청크 (12바이트): 길이 0 + "IEND" + CRC.
+_PNG_IEND = bytes.fromhex("0000000049454e44ae426082")
+
+
+def _magic_matches(data: bytes, ext: str) -> bool:
+    """헤더 매직 바이트 사전 검사 (빠른 실패용 — 완전성 아님)."""
+    if not data:
+        return False
+    for magic in IMAGE_MAGIC.get(ext, []):
+        if data.startswith(magic):
+            if ext == ".webp":
+                return len(data) >= 12 and data[8:12] == b"WEBP"
+            return True
+    return False
+
+
+def is_complete_image(data: bytes, ext: str) -> bool:
+    """이미지 전체 프레임 검증 (P2-9: 헤더-only 검사는 잘린 파일을 통과시킨다).
+
+    헤더 + 트레일러를 확인해 잘림을 검출한다. 중간 비트 손상까지
+    검출하지는 않는다 — 잘림이 명시된 실패 모드이다.
+      PNG: 8바이트 시그니처 + 마지막 12바이트가 IEND 청크.
+      JPEG: FF D8 FF 시작 + FF D9(EOI) 끝.
+      GIF: GIF87a/89a 시작 + 0x3B(트레일러) 끝.
+      WebP: RIFF + WEBP + RIFF 크기 필드 + 8 == 전체 길이.
+    """
+    if not data or not _magic_matches(data[:12], ext):
+        return False
+    if ext == ".png":
+        return len(data) >= 20 and data[-12:] == _PNG_IEND
+    if ext == ".jpg":
+        return len(data) >= 4 and data[-2:] == b"\xff\xd9"
+    if ext == ".gif":
+        return len(data) >= 7 and data[-1:] == b"\x3b"
+    if ext == ".webp":
+        if len(data) < 12:
+            return False
+        riff_size = struct.unpack("<I", data[4:8])[0]
+        return riff_size + 8 == len(data)
+    return False
+
+
+def cached_image_ok(path: Path, ext: str) -> bool:
+    """캐시 파일이 완전한 이미지인지 확인한다.
+
+    매직이 틀리면 파일을 읽지 않고 False (빠른 실패). 매직이 맞으면
+    전체를 읽어 트레일러/크기까지 검증한다.
+    """
+    try:
+        with open(path, "rb") as f:
+            head = f.read(12)
+    except OSError:
+        return False
+    if not _magic_matches(head, ext):
+        return False
+    try:
+        data = path.read_bytes()
+    except OSError:
+        return False
+    return is_complete_image(data, ext)
+
+
+class ChunkError(Exception):
+    """청크/매니페스트 읽기 실패 — 맵 교체를 중단한다 (rc=2)."""
+
+
+def load_expected_chunks():
+    """매니페스트에서 기대 청크 목록을 읽고 검증한다.
+
+    Returns {chunk_name: (manifest_relpath, sha256, count)}.
+    매니페스트 없음/파싱 불가/구조 오류 시 ChunkError.
+    """
+    manifest_path = DATA_DIR / "manifest.json"
+    try:
+        m = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        raise ChunkError(f"manifest.json 읽기 실패: {e}")
+    if not isinstance(m, dict):
+        raise ChunkError("manifest.json이 dict가 아님")
+    chunks = m.get("chunks")
+    if not isinstance(chunks, dict):
+        raise ChunkError("manifest.json에 chunks 없음")
+    expected = {}
+    for name in ("posts-x", "posts-web", "posts-ib"):
+        entry = chunks.get(name)
+        if not isinstance(entry, dict):
+            raise ChunkError(f"manifest.json chunks.{name} 없음/형식 오류")
+        f, h, c = entry.get("file"), entry.get("sha256"), entry.get("count")
+        if not isinstance(f, str) or not f or f.startswith("/") or ".." in f.split("/"):
+            raise ChunkError(f"manifest.json chunks.{name} file 형식 오류")
+        if not isinstance(h, str) or len(h) != 64:
+            raise ChunkError(f"manifest.json chunks.{name} sha256 형식 오류")
+        if not isinstance(c, int) or c < 0:
+            raise ChunkError(f"manifest.json chunks.{name} count 형식 오류")
+        expected[name] = (f, h, c)
+    return expected
+
+
+def read_chunk_snapshot(expected):
+    """기대 청크들을 공유 락 하에서 일관된 스냅샷으로 읽는다.
+
+    각 청크: 존재 확인 + 바이트 sha256 대조(매니페스트) + JSON 파싱 +
+    {posts: [...]} 구조 + 모든 post가 dict인지 검증.
+    하나라도 실패하면 ChunkError (맵을 건드리지 않고 중단).
+    Returns [chunk_data, ...] (expected 순서).
+    """
+    try:
+        with pipeline_lock():
+            snapshot = []
+            for name, (rel, want_hash, want_count) in expected.items():
+                # rel은 v2/ 기준 상대 경로 (예: data/posts-x.json).
+                path = V2_ROOT / rel
+                try:
+                    raw = path.read_bytes()
+                except OSError as e:
+                    raise ChunkError(f"청크 없음/읽기 실패 ({name} {rel}): {e}")
+                got = hashlib.sha256(raw).hexdigest()
+                if got != want_hash:
+                    raise ChunkError(
+                        f"청크 해시 불일치 ({name} {rel}): manifest와 다름 — "
+                        f"빌드 중 교체됐거나 손상됨")
+                try:
+                    data = json.loads(raw.decode("utf-8"))
+                except (ValueError, UnicodeDecodeError) as e:
+                    raise ChunkError(f"청크 파싱 실패 ({name} {rel}): {e}")
+                if not isinstance(data, dict) or not isinstance(data.get("posts"), list):
+                    raise ChunkError(f"청크 구조 오류 ({name} {rel}): posts 목록 없음")
+                if len(data["posts"]) != want_count:
+                    raise ChunkError(
+                        f"청크 count 불일치 ({name} {rel}): "
+                        f"manifest {want_count}, 실제 {len(data['posts'])}")
+                for post in data["posts"]:
+                    if not isinstance(post, dict):
+                        raise ChunkError(f"청크 구조 오류 ({name} {rel}): post가 dict가 아님")
+                snapshot.append(data)
+            return snapshot
+    except PipelineLockTimeout as e:
+        raise ChunkError(f"청크 스냅샷 락 타임아웃: {e}")
+
+
+def extract_image_urls(chunks):
+    """스냅샷 청크들에서 이미지 URL 추출 (html.unescape 적용)."""
     urls = set()
-
-    for posts_file in DATA_DIR.glob("posts*.json"):
-        try:
-            data = json.loads(posts_file.read_text(encoding="utf-8"))
-        except Exception as e:
-            print(f"경고: {posts_file.name} 읽기 실패: {e}", file=sys.stderr)
-            continue
-
-        posts = data.get("posts", []) if isinstance(data, dict) else data
-
-        for post in posts:
-            if not isinstance(post, dict):
-                continue
+    for data in chunks:
+        for post in data.get("posts", []):
             collect_post_urls(post, urls)
-
-    # HTTPS만 필터
-    https_urls = {u for u in urls if u.startswith("https://")}
-    return https_urls
+    return {u for u in urls if u.startswith("https://")}
 
 
 def collect_post_urls(post, urls):
@@ -139,7 +283,9 @@ def download_image(url):
     for ext in set(ALLOWED_MIME.values()):
         cached_name=url_to_filename(url,ext)
         cached_path=MEDIA_DIR/cached_name
-        if cached_path.exists() and cached_path.stat().st_size>0:
+        # P2-9: nonempty-only/헤더-only 검사는 잘린 파일을 영구 cache hit으로
+        # 만든다. 완전한 이미지(헤더+트레일러)만 캐시로 인정한다.
+        if cached_path.exists() and cached_image_ok(cached_path, ext):
             return f"media/full/{cached_name}", "cached"
 
     req = urllib.request.Request(url, headers={
@@ -170,12 +316,18 @@ def download_image(url):
 
             # MIME 기반 확장자로 파일명 확정
             ext = ALLOWED_MIME[ctype]
+
+            # P2-9: 다운로드한 바이트도 전체 프레임으로 검증 — 잘못된
+            # 콘텐츠를 캐시에 저장하면 영구 cache hit이 된다.
+            if not is_complete_image(data, ext):
+                return None, f"이미지 불완전 (헤더/트레일러 불일치, {ctype})"
+
             filename = url_to_filename(url, ext)
             dest = MEDIA_DIR / filename
             rel_path = f"media/full/{filename}"
 
-            # 이미 있으면 스킵 (nonempty 확인)
-            if dest.exists() and dest.stat().st_size > 0:
+            # 이미 있으면 스킵 (전체 프레임 확인 — P2-9)
+            if dest.exists() and cached_image_ok(dest, ext):
                 return rel_path, "cached"
 
             temp=dest.with_suffix(dest.suffix+".tmp")
@@ -190,7 +342,18 @@ def main():
     dry_run = "--dry-run" in sys.argv
 
     print("이미지 URL 스캔 중...")
-    urls = extract_image_urls()
+    try:
+        expected = load_expected_chunks()
+        chunks = read_chunk_snapshot(expected)
+    except ChunkError as e:
+        # P2-9: 청크/매니페스트 읽기 실패 시 맵 교체를 중단한다.
+        # 실패한 청크의 URL이 빠진 채로 맵을 쓰면 정상 매핑까지
+        # 제거되고 rc=0이 될 수 있다. 맵은 건드리지 않는다.
+        print(f"오류: {e}", file=sys.stderr)
+        print("청크 읽기 실패 — 맵 교체를 중단하고 기존 맵을 유지합니다.", file=sys.stderr)
+        return 2
+    urls = extract_image_urls(chunks)
+
     print(f"발견: {len(urls)}개 HTTPS 이미지 URL")
 
     if dry_run:

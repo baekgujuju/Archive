@@ -16,6 +16,7 @@ import argparse
 import importlib.util
 import hashlib
 import json
+import re
 import shutil
 import sys
 import tempfile
@@ -81,6 +82,56 @@ def verify_preserved_files(data_dir, backup_dir, names):
     for name in names:
         if (Path(backup_dir) / name).is_file() and not (Path(data_dir) / name).is_file():
             raise RuntimeError(f"보존 파일 소실: {name} (백업 유지됨)")
+
+
+# P2 배치 1: 보존 세대 (rollback generation) 관리.
+# 성공한 빌드도 이전 세대를 삭제하지 않고 data.backup.<stamp>로 보존한다.
+# 세대 이름은 타임스탬프(UTC, 초 단위) + 충돌 시 일련번호.
+# 정렬은 사전식이 아니라 (타임스탬프, 숫자 접미사) 순서이다 —
+# 사전식 정렬은 .10을 .2보다 앞으로 두어 최신 세대를 지울 수 있다 (차단 7).
+_GENERATION_RE = re.compile(r"^data\.backup\.(\d{8}T\d{6})(?:\.(\d+))?$")
+RETAINED_GENERATIONS = 2
+
+
+def _generation_sort_key(name):
+    """세대 디렉터리 이름 → (타임스탬프, 숫자 접미사)."""
+    m = _GENERATION_RE.match(name)
+    if not m:
+        return ("", 0)
+    return (m.group(1), int(m.group(2)) if m.group(2) else 0)
+
+
+def _archive_backup(backup_dir):
+    """data.backup/을 타임스탬프 세대 디렉터리로 이동한다. Returns the new path."""
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+    archived = V2_ROOT / f"data.backup.{stamp}"
+    n = 0
+    while archived.exists():
+        n += 1
+        archived = V2_ROOT / f"data.backup.{stamp}.{n}"
+    shutil.move(str(backup_dir), str(archived))
+    print(f"  이전 세대 보존: {archived.name} (삭제 아님)")
+    return archived
+
+
+def _prune_generations(keep=RETAINED_GENERATIONS):
+    """보존 세대 중 최신 `keep`개만 남기고 나머지를 삭제한다.
+
+    패턴에 정확히 일치하는 디렉터리만 대상으로 한다 (data.backup 본체,
+    다른 이름의 디렉터리는 건드리지 않는다). 삭제 실패는 경고만 남기고
+    빌드를 실패시키지 않는다 — 오래된 세대가 남는 것은 안전한 방향이다.
+    """
+    gens = sorted(
+        (p for p in V2_ROOT.iterdir()
+         if p.is_dir() and _GENERATION_RE.match(p.name)),
+        key=lambda p: _generation_sort_key(p.name),
+    )
+    for old in gens[: max(0, len(gens) - keep)]:
+        try:
+            shutil.rmtree(old)
+            print(f"  오래된 세대 정리: {old.name}")
+        except OSError as e:
+            print(f"  경고: 오래된 세대 정리 실패 ({old.name}): {e}", file=sys.stderr)
 
 
 def source_fingerprint():
@@ -406,6 +457,18 @@ def _build_data_locked():
     """
     print("=== v2 데이터 빌드 시작 ===")
 
+    # P2 배치 1 (Codex 차단 7): 중단된 교체 복구. 이전 빌드가
+    # data/ → data.backup/ 이동 후 staging → data/ 이동 전에 죽으면
+    # live data/가 없고 data.backup/만 남는다. 다음 빌드가 이 상태로
+    # 보존 파일을 복사하면 번역·공유상태·enrich 상태가 빠진 채로
+    # 재구축된다. data/가 없고 data.backup/이 있으면, live 상태를
+    # 읽기 전에 백업을 복원한다 (명백한 중단 트랜잭션 — 의미론적
+    # 롤백 승인이 필요 없는 복구이다).
+    _transient_backup = V2_ROOT / "data.backup"
+    if not DATA_DIR.exists() and _transient_backup.exists():
+        print("  중단된 교체 감지: data.backup/ → data/ 복원")
+        shutil.move(str(_transient_backup), str(DATA_DIR))
+
     # 1. posts.json 로드 및 검증 (+ 파싱한 바이트의 해시를 스냅샷으로 기록)
     print(f"\n[1/5] posts.json 읽기 및 검증...")
     try:
@@ -612,14 +675,9 @@ def _build_data_locked():
             if backup_dir.exists():
                 # 이전 실행이 남긴 백업은 절대 삭제하지 않는다 — 유일한
                 # 복구본일 수 있다. 타임스탬프 붙여 보관하고 진행한다.
-                stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
-                archived = V2_ROOT / f"data.backup.{stamp}"
-                n = 0
-                while archived.exists():
-                    n += 1
-                    archived = V2_ROOT / f"data.backup.{stamp}.{n}"
-                shutil.move(str(backup_dir), str(archived))
-                print(f"  이전 백업 보관: {archived.name} (삭제 아님)")
+                # (P2 배치 1: 세대 보존 — 아래 성공 경로와 동일한 이름 체계,
+                # prune_generations가 최근 2세대만 유지한다.)
+                _archive_backup(backup_dir)
             shutil.move(str(DATA_DIR), str(backup_dir))
             print(f"  기존 data/ → data.backup/")
 
@@ -654,11 +712,15 @@ def _build_data_locked():
         MEDIA_THUMB.mkdir(parents=True, exist_ok=True)
         MEDIA_FULL.mkdir(parents=True, exist_ok=True)
 
-        # 백업 정리 (성공 시)
+        # 백업 정리 (성공 시) — P2 배치 1: 이전 세대를 삭제하지 않고
+        # 타임스탬프 세대 디렉터리로 보존하고 최근 2세대만 유지한다.
+        # 검증 통과했지만 의미론적으로 잘못된 콘텐츠가 live가 됐을 때의
+        # 롤백 대상이다 (의미론적 롤백 자체는 운영자 승인 필요).
         if backup_dir and backup_dir.exists():
-            shutil.rmtree(backup_dir)
+            _archive_backup(backup_dir)
+            _prune_generations(keep=2)
             backup_cleaned = True
-            print(f"  백업 정리됨")
+            print(f"  이전 세대 보존됨 (최근 2세대 유지)")
 
         # 스테이징 루트 정리
         staging_dir.rmdir()

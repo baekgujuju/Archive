@@ -729,6 +729,7 @@ def test_proc_group_bounded_drain():
 
 def test_ib_adapter_input_stability():
     import ib_adapter as ia
+    from unittest.mock import patch
     real_lib = ia.IB_LIBRARY_JSON
     before = real_lib.read_bytes() if real_lib.exists() else None
     calls = {"n": 0}
@@ -740,7 +741,11 @@ def test_ib_adapter_input_stability():
     real_fp = ia.canonical_fingerprint
     ia.canonical_fingerprint = flaky
     try:
-        ia.main()
+        # ia.main()은 parse_args()로 sys.argv를 읽는다 — pytest argv가
+        # 섞이지 않도록 고정한다 (직접 실행 시에는 argv가 비어 있어
+        # 통과하던 것을 pytest에서도 재현한다).
+        with patch.object(sys, "argv", ["ib_adapter.py"]):
+            ia.main()
         _check("adapter aborts when inputs change mid-adaptation", False)
     except SystemExit as e:
         _check("adapter aborts when inputs change mid-adaptation", e.code == 1)
