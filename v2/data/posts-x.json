@@ -18916,6 +18916,52 @@
         "quoteUrlConfirmed": false,
         "quotedLegacyText": "앤트로픽이 클로드 API를 사용하여 만들 수 있는 애츨리케이션 예제 코드를 mit 라이센스로 공개했지만 참고하지 않는 개발자들이 여전히 많습니다.\n\nmit이기에 매우 자유롭게 사용할 수 있습니다."
       }
+    },
+    {
+      "tweetId": "2111462527918035411",
+      "sourceUrl": "https://x.com/sustain_abund/status/2111462527918035411",
+      "capturedAt": "2026-10-17T15:19:26.709140+00:00",
+      "createdAt": "Last editedOpens edit history11:21 PM · Oct 17, 2026",
+      "fullText": "Han\n@sustain_abund\n\nShow translation\n매우 중요한순간에 휴방을 때려서 구독자들한테 미안한데 그래서 휴가가서도 새벽 4시까진 브리핑함. \n\n일단 테크니컬 오버셀 반등 플레이를 봤으면 이건 컨트래리안이고 하따이기때문에 더 내릴걸 염두해야한다고 봄. \n\n컨트래리안은 정확히 여기다 라고 짚는 플레이인데 틀리면 손절도 할줄알아야함. \n\n내가 말했던 속슬 하따가 97-95였는데 평단 컷으로 손절타겟을 했고 이런게 리스크 매니지라고 생각함. \n\n어찌됐든 계좌는 지켜야하지않는가? \n\n틀리는게 왜 무서움? 신도아니고말이지. \n\n빅스 터지는데 자존심때문에 팔지마셈 이러는게 더 위험한 것이라고 생각함. 기적같이 월요일날 반등해서 올라도 난 내 리스크 매니지 손절 알림을 후회하지않음. 이게 트레이더라고생각함.\nLast edited\n11:21 PM · Oct 17, 2026\n·1,268\n Views\n2\n3\n26\n1",
+      "author": {
+        "handle": "@sustain_abund",
+        "name": "Han (@sustain_abund)"
+      },
+      "media": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2111467905024225692",
+          "sourceUrl": "https://x.com/1111kivin/status/2111467905024225692",
+          "capturedAt": "2026-10-17T15:19:26.709140+00:00",
+          "createdAt": "28m",
+          "fullText": "진짜 개멋있습니다",
+          "author": {
+            "handle": "@1111kivin",
+            "name": "최기빈 (@1111kivin)"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "p2-batch2-1",
+        "requested_url": "https://x.com/sustain_abund/status/2111462527918035411",
+        "observed_main_url": "https://x.com/sustain_abund/status/2111462527918035411/analytics",
+        "author_handle": "sustain_abund",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 100
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
