@@ -1679,6 +1679,8 @@ def _bookmarklet_js(articles, pathname):
             quoteText: {esc(quote_text)},
             quoteLink: {esc(quote_link)},
             quoteContainsLink: {json.dumps(bool(a.get('quote_contains_link')))},
+            chain: {json.dumps(bool(a.get('chain')))},
+            headerText: {esc(a.get('header_text'))},
             bodyLinks: {esc(a.get('body_links') or [])},
             bodyInQuote: {json.dumps(bool(a.get('body_in_quote')))},
             bodyClosestHref: {esc(a.get('body_closest_href'))},
@@ -1697,6 +1699,13 @@ global.URL = {
 global.scrollTo = () => {};
 global.getComputedStyle = () => ({ overflowY: 'visible' });
 global.Node = { DOCUMENT_POSITION_FOLLOWING: 4 };
+// HTMLCollection-like (실제 DOM: length + 인덱스 + iterable, indexOf 없음).
+function toCollection(arr) {
+  const o = { length: arr.length };
+  arr.forEach((el, i) => { o[i] = el; });
+  o[Symbol.iterator] = function* () { for (let i = 0; i < this.length; i++) yield this[i]; };
+  return o;
+}
 function makeTextEl(text) {
   return {
     textContent: text, innerText: text,
@@ -1761,7 +1770,8 @@ function makeArticle(spec) {
     },
   };
   // 인용 카드: 인용 링크가 있으면 그 앵커가 인용 카드 역할을 한다.
-  if (spec.quoteLink != null) {
+  // chain 모드는 아래 chain 블록에서 처리한다 (중복 추가 방지).
+  if (spec.quoteLink != null && !spec.chain) {
     const qLink = makeLink(spec.quoteLink, '');
     if (spec.quoteContainsLink) {
       // 링크-포함 구조 (Codex 2차 리뷰 ② 재현): 인용 div 안에 인용 링크가
@@ -1770,7 +1780,7 @@ function makeArticle(spec) {
       const quoteDiv = {
         tagName: 'DIV',
         textContent: spec.quoteText || '', innerText: spec.quoteText || '',
-        children: [qLink], parentElement: art,
+        children: toCollection([qLink]), parentElement: art,
         getAttribute: (n) => (n === 'dir' ? 'auto' : null),
         closest: () => null,
         querySelector: () => null,
@@ -1785,7 +1795,7 @@ function makeArticle(spec) {
       const permalinkEl = statusLinks[0] || null;
       if (permalinkEl) permalinkEl.parentElement = art;
       const chainChildren = [quoteDiv, ...(permalinkEl ? [permalinkEl] : []), bodyEl];
-      art.children = chainChildren;
+      art.children = toCollection(chainChildren);
       art.contains = (el) => el === art || chainChildren.includes(el) || el === qLink;
       const _artQSA = art.querySelectorAll;
       art.querySelectorAll = (sel) => {
@@ -1805,6 +1815,90 @@ function makeArticle(spec) {
       qLink.contains = (el) => (spec.bodyInQuote ? el === bodyEl : false);
       statusLinks.push(qLink);
     }
+  }
+  // chain 모드 (Codex 4차 리뷰): permalink → 본문(붙여넣은 링크) →
+  // 실제 인용 카드(형제 구조) 순서의 체인을 HTMLCollection-like로
+  // 모델링해 isAfter의 실제 DOM 경로를 증명한다. headerText가 있으면
+  // permalink 앞 헤더 div를 추가한다 (헤더-only 테스트용).
+  if (spec.chain) {
+    const permalinkEl = statusLinks[0] || null;
+    if (permalinkEl) permalinkEl.parentElement = art;
+    bodyEl.parentElement = art;
+    bodyEl.tagName = 'DIV';
+    const _bg = bodyEl.getAttribute;
+    bodyEl.getAttribute = (n) => (n === 'dir' ? 'auto' : _bg(n));
+    bodyEl.children = toCollection(bodyLinkObjs);
+    const chainEls = [];
+    let headerDiv = null;
+    if (spec.headerText != null) {
+      headerDiv = {
+        tagName: 'DIV', textContent: spec.headerText, innerText: spec.headerText,
+        children: toCollection([]), parentElement: art,
+        getAttribute: (n) => (n === 'dir' ? 'auto' : null),
+        closest: () => null, querySelector: () => null, querySelectorAll: () => [],
+        contains: (el) => el === headerDiv,
+      };
+      chainEls.push(headerDiv);
+    }
+    if (permalinkEl) chainEls.push(permalinkEl);
+    chainEls.push(bodyEl);
+    let chainQLink = null;
+    if (spec.quoteLink != null) {
+      chainQLink = makeLink(spec.quoteLink, '');
+      const quoteCardEl = {
+        tagName: 'DIV', textContent: '', innerText: '',
+        children: toCollection([chainQLink, ...quoteEls]), parentElement: art,
+        getAttribute: () => null, closest: () => null,
+        querySelector: () => null,
+        querySelectorAll: (sel) => {
+          if (sel === 'div[dir="auto"]') return quoteEls;
+          if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
+          return [];
+        },
+        contains: (el) => el === quoteCardEl || el === chainQLink || quoteEls.includes(el),
+      };
+      chainQLink.parentElement = quoteCardEl;
+      chainQLink.querySelectorAll = (sel) => {
+        if (sel === 'div[dir="auto"]') return quoteEls;
+        if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
+        return [];
+      };
+      chainEls.push(quoteCardEl);
+      statusLinks.push(chainQLink);
+    }
+    art.children = toCollection(chainEls);
+    art.contains = (el) => {
+      if (el === art) return true;
+      if (chainEls.includes(el)) return true;
+      if (el === chainQLink) return true;
+      if (bodyLinkObjs.includes(el)) return true;
+      if (quoteEls.includes(el)) return true;
+      return false;
+    };
+    const _artQSA3 = art.querySelectorAll;
+    art.querySelectorAll = (sel) => {
+      if (sel === 'div[dir="auto"]') {
+        const out = [];
+        if (headerDiv) out.push(headerDiv);
+        out.push(bodyEl, ...quoteEls);
+        return out;
+      }
+      if (sel === 'div') {
+        const out = [];
+        if (headerDiv) out.push(headerDiv);
+        out.push(bodyEl, ...quoteEls);
+        return out;
+      }
+      if (sel === 'a[href*="/status/"]') {
+        // DOM 순서: permalink → 본문 붙여넣은 링크 → 인용 링크
+        const out = [];
+        if (permalinkEl) out.push(permalinkEl);
+        out.push(...bodyLinkObjs);
+        if (chainQLink) out.push(chainQLink);
+        return out;
+      }
+      return _artQSA3(sel);
+    };
   }
   return art;
 }
@@ -1942,6 +2036,42 @@ def test_bookmarklet_quote_div_contains_link():
     assert "quoted text" not in main_part
     assert 'data-tweet-id="456"' in quote_part
     assert "quoted text" in quote_part
+
+
+def test_bookmarklet_chain_pasted_link_and_quote():
+    """체인 모드: permalink → 본문(붙여넣은 링크) → 실제 인용 카드.
+    붙여넣은 링크는 인용이 아니고, 실제 인용이 추출되며, 본문·인용의
+    ID·내용이 각각 올바르다 (Codex 4차 리뷰 ②-1)."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"}],
+          "body_links": ["/Other/status/789"],
+          "quote_text": "quoted text",
+          "quote_link": "/Author2/status/456",
+          "chain": True}],
+        "/Author1/status/123")
+    assert len(result["downloads"]) == 1
+    text = result["downloads"][0]["text"]
+    assert "<blockquote" in text
+    main_part, quote_part = text.split("<blockquote", 1)
+    assert "hello world" in main_part
+    assert "quoted text" not in main_part
+    assert 'data-tweet-id="456"' in quote_part
+    assert "quoted text" in quote_part
+    assert 'data-tweet-id="789"' not in text
+
+
+def test_bookmarklet_header_only_no_download():
+    """헤더 div만 있고 실제 본문·미디어가 없으면 저장 중단한다
+    (findBodyEl null → 다운로드 0회 + 본문 오류 안내 — Codex 4차 리뷰 ②-3)."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "",
+          "status_links": [{"href": "/Author1/status/123"}],
+          "header_text": "header text",
+          "chain": True}],
+        "/Author1/status/123")
+    assert result["downloads"] == []
+    assert any("본문을 찾지 못했습니다" in a for a in result["alerts"])
 
 
 # ---------- Codex 1차 리뷰 ①: 상태 격리 중단 시 fail-closed ----------
