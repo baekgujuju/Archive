@@ -53,12 +53,20 @@ def quarantine_file(path, quarantine_dir, label):
     - Other OSError: the destination or move failed while the source
       remains — the reserved dir is removed; the caller must NOT
       overwrite the original (fail-closed).
+    Destination-setup failures (mkdir/mkdtemp) are normalized to OSError
+    even when they raise FileNotFoundError — a setup failure must never
+    reach a caller's source-gone handler (which would restore over an
+    unquarantined corrupt file).
     """
     path = Path(path)
     quarantine_dir = Path(quarantine_dir)
-    quarantine_dir.mkdir(parents=True, exist_ok=True)
-    dest_dir = Path(tempfile.mkdtemp(
-        prefix=f"{path.name}.corrupt-", dir=str(quarantine_dir)))
+    try:
+        quarantine_dir.mkdir(parents=True, exist_ok=True)
+        dest_dir = Path(tempfile.mkdtemp(
+            prefix=f"{path.name}.corrupt-", dir=str(quarantine_dir)))
+    except OSError as e:
+        # Normalize: setup failure is never "source gone".
+        raise OSError(f"격리 목적지 생성 실패: {e}") from e
     dest = dest_dir / path.name
     try:
         os.replace(path, dest)

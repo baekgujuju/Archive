@@ -155,16 +155,21 @@ def _pipeline_script_paths():
 _UNPARSEABLE = object()
 
 # CPython이 인정하는 긴 옵션 (값을 먹는 것은 --check-hash-based-pycs뿐).
+# 이 환경의 python3.12.3 실측 기준:
+# - --isolated는 이 환경에서 거부됨 ("unknown option") -> 목록에서 제외.
+# - 플래그 긴 옵션의 --opt=val 형태는 거부됨 -> _UNPARSEABLE.
+# - --check-hash-based-pycs=always 형태도 거부됨 -> 띄어쓰기 형태만 유효.
 _LONG_VALUE_OPTIONS = frozenset({"--check-hash-based-pycs"})
 _LONG_FLAG_OPTIONS = frozenset({
-    "--isolated", "--inspect", "--interactive", "--optimize",
+    "--inspect", "--interactive", "--optimize",
     "--dont-write-bytecode", "--no-user-site", "--no-site",
     "--ignore-environment", "--bytes-warning", "--quiet", "--verbose",
     "--unbuffered", "--warn-default-encoding", "--safe-path",
-    "--help-env", "--help-xoptions", "--help-all",
 })
-# --help/--version은 도움말·버전 출력 후 종료 — 스크립트 실행이 아니다.
-_LONG_TERMINAL_OPTIONS = frozenset({"--help", "--version"})
+# --help/--version/--help-*는 도움말 출력 후 종료 — 스크립트 실행이 아니다.
+_LONG_TERMINAL_OPTIONS = frozenset({
+    "--help", "--version", "--help-env", "--help-xoptions", "--help-all",
+})
 
 
 def _script_operand(argv):
@@ -190,12 +195,8 @@ def _script_operand(argv):
             return None
         if a.startswith("--"):
             if "=" in a:
-                name, _val = a.split("=", 1)
-                if name in _LONG_VALUE_OPTIONS or name in _LONG_FLAG_OPTIONS:
-                    i += 1
-                    continue
-                if name in _LONG_TERMINAL_OPTIONS:
-                    return None
+                # 이 환경의 인터프리터는 --opt=val 형태를 거부한다
+                # (실측: --quiet=x, --check-hash-based-pycs=always 거부).
                 return _UNPARSEABLE
             if a in _LONG_VALUE_OPTIONS:
                 # 값을 다음 인자에서 먹는다 (빈 문자열이어도 값이다).
@@ -259,7 +260,12 @@ def _pipeline_pids():
             continue
         if "python" not in Path(exe).name:
             continue
-        argv = [a.decode("utf-8", "ignore") for a in raw.split(b"\x00") if a]
+        parts = raw.split(b"\x00")
+        # trailing NUL 구분자만 제거하고, 내부 빈 argv 요소('')는 보존한다
+        # (예: `python -W '' monitor.py`의 빈 -W 값).
+        if parts and parts[-1] == b"":
+            parts.pop()
+        argv = [a.decode("utf-8", "ignore") for a in parts]
         if not argv:
             continue
         script = _script_operand(argv)

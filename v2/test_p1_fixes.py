@@ -14,6 +14,7 @@ import sys
 import tempfile
 import time
 import unittest
+import unittest.mock
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -412,9 +413,17 @@ def test_launcher_matching():
     _check("launcher consumes long-option value",
            pids_for(FakeEntry(b"python3\x00--check-hash-based-pycs\x00always\x00monitor.py\x00",
                               cwd=hooks)) == [123456])
-    _check("launcher consumes attached long-option value",
+    # Attached --opt=val is REJECTED by this environment's interpreter
+    # (verified by probe) -> do not guess.
+    _check("launcher rejects attached long-option value",
            pids_for(FakeEntry(b"python3\x00--check-hash-based-pycs=always\x00monitor.py\x00",
-                              cwd=hooks)) == [123456])
+                              cwd=hooks)) == [])
+    _check("launcher rejects --quiet=x",
+           pids_for(FakeEntry(b"python3\x00--quiet=x\x00monitor.py\x00",
+                              cwd=hooks)) == [])
+    _check("launcher rejects --isolated (unsupported here)",
+           pids_for(FakeEntry(b"python3\x00--isolated\x00monitor.py\x00",
+                              cwd=hooks)) == [])
     # -I / -S are valid flags (no value).
     _check("launcher parses -I flag",
            pids_for(FakeEntry(b"python3\x00-I\x00monitor.py\x00",
@@ -426,6 +435,17 @@ def test_launcher_matching():
     _check("launcher rejects --help",
            pids_for(FakeEntry(b"python3\x00--help\x00monitor.py\x00",
                               cwd=hooks)) == [])
+    _check("launcher rejects --help-env/--help-xoptions/--help-all",
+           pids_for(FakeEntry(b"python3\x00--help-env\x00monitor.py\x00",
+                              cwd=hooks)) == [] and
+           pids_for(FakeEntry(b"python3\x00--help-xoptions\x00monitor.py\x00",
+                              cwd=hooks)) == [] and
+           pids_for(FakeEntry(b"python3\x00--help-all\x00monitor.py\x00",
+                              cwd=hooks)) == [])
+    # Empty argv element is preserved: `python -W '' monitor.py`.
+    _check("launcher preserves empty argv element",
+           pids_for(FakeEntry(b"python3\x00-W\x00\x00monitor.py\x00",
+                              cwd=hooks)) == [123456])
     _check("launcher rejects -h",
            pids_for(FakeEntry(b"python3\x00-h\x00monitor.py\x00",
                               cwd=hooks)) == [])
@@ -492,6 +512,56 @@ def test_build_rejects_unstamped_ib():
                 setattr(bd, k, v)
 
 
+def test_quarantine_setup_failure_is_not_source_gone():
+    from pipeline_lock import quarantine_file
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        src = td / "src.json"
+        src.write_text("{corrupt", encoding="utf-8")
+        # 목적지 생성(mkdtemp)이 FileNotFoundError를 내도, 소스 소실로
+        # 오인되지 않고 OSError로 정규화돼야 한다.
+        with unittest.mock.patch("pipeline_lock.tempfile.mkdtemp",
+                                 side_effect=FileNotFoundError("setup gone")):
+            try:
+                quarantine_file(src, td / ".quarantine", "src.json")
+                _check("quarantine setup failure is OSError", False)
+            except FileNotFoundError:
+                _check("quarantine setup failure is OSError", False)
+            except OSError:
+                _check("quarantine setup failure is OSError", True)
+        _check("quarantine setup failure leaves source intact",
+               src.read_text() == "{corrupt")
+
+
+def test_translate_source_gone_then_reappears_aborts():
+    import translate_posts as tp
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        main = td / "translations.json"
+        recovery = td / "translations.json.recovery"
+        main.write_text("{corrupt", encoding="utf-8")
+        recovery.write_text(json.dumps({"a": "A"}), encoding="utf-8")
+        qdir = td / ".quarantine"
+
+        def fake_quarantine(path, qd, label):
+            # 소스가 사라졌다가 손상 상태로 다시 나타나는 TOCTOU.
+            main.write_text("{corrupt-again", encoding="utf-8")
+            raise FileNotFoundError("source gone")
+
+        with unittest.mock.patch.object(tp, "CACHE_FILE", main), \
+             unittest.mock.patch.object(tp, "RECOVERY_FILE", recovery), \
+             unittest.mock.patch.object(tp, "QUARANTINE_DIR", qdir), \
+             unittest.mock.patch.object(tp, "quarantine_file",
+                                         side_effect=fake_quarantine):
+            try:
+                tp.load_cache()
+                _check("reappeared corrupt file aborts before restore", False)
+            except RuntimeError:
+                _check("reappeared corrupt file aborts before restore", True)
+        _check("reappeared corrupt file is not overwritten",
+               main.read_text() == "{corrupt-again")
+
+
 def test_translate_quarantine_source_gone_uses_recovery():
     import translate_posts as tp
     with tempfile.TemporaryDirectory() as td:
@@ -503,12 +573,16 @@ def test_translate_quarantine_source_gone_uses_recovery():
         qdir = td / ".quarantine"
         # 소스가 격리 도중 사라진 경우(FileNotFoundError) -> 복구본 경로로
         # 계속해야지 {}를 즉시 반환하면 안 된다.
+        # (mock은 소스가 실제로 사라지는 것을 시뮬레이션한다.)
+        def fake_quarantine(path, qd, label):
+            main.unlink()
+            raise FileNotFoundError("source gone")
+
         with unittest.mock.patch.object(tp, "CACHE_FILE", main), \
              unittest.mock.patch.object(tp, "RECOVERY_FILE", recovery), \
              unittest.mock.patch.object(tp, "QUARANTINE_DIR", qdir), \
-             unittest.mock.patch.object(
-                 tp, "quarantine_file",
-                 side_effect=FileNotFoundError("source gone")):
+             unittest.mock.patch.object(tp, "quarantine_file",
+                                         side_effect=fake_quarantine):
             cache = tp.load_cache()
         _check("quarantine source-gone continues to recovery",
                cache == {"a": "A"})
@@ -669,6 +743,8 @@ if __name__ == "__main__":
     test_translate_corrupt_recovery_and_merge()
     test_translate_quarantine_failure_aborts()
     test_translate_quarantine_source_gone_uses_recovery()
+    test_quarantine_setup_failure_is_not_source_gone()
+    test_translate_source_gone_then_reappears_aborts()
     test_quarantine_file_distinguishes_source_vs_destination()
     test_ingester_guards()
     test_build_toctou_abort()

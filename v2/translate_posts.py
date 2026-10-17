@@ -315,6 +315,13 @@ def load_cache():
                 )
         recovery = _read_cache_file(RECOVERY_FILE)
         if recovery is not None:
+            # 복원 쓰기 직전 확인: 격리되지 않은 파일이 다시 나타났으면
+            # (소스 소실 후 재등장 TOCTOU) 복구본으로 덮지 않고 중단.
+            if CACHE_FILE.exists():
+                raise RuntimeError(
+                    "번역 캐시가 격리되지 않은 채 다시 나타남 — "
+                    "복구본으로 덮지 않고 중단 (수동 확인 필요)"
+                )
             print(f"복구본에서 번역 캐시 복원: {len(recovery)}개", file=sys.stderr)
             _atomic_write_json(CACHE_FILE, recovery)
             return recovery
