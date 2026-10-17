@@ -1934,9 +1934,14 @@ def test_bookmarklet_quote_div_contains_link():
         "/Author1/status/123")
     assert len(result["downloads"]) == 1
     text = result["downloads"][0]["text"]
-    assert 'data-tweet-id="456"' in text
-    assert "quoted text" in text
-    assert "hello world" in text
+    # 메인 본문과 인용 블록을 분리해 각각의 내용·ID를 검증한다
+    # (존재만 검사하면 역할 뒤바뀜을 검출하지 못함 — Codex 3차 비차단).
+    assert "<blockquote" in text
+    main_part, quote_part = text.split("<blockquote", 1)
+    assert "hello world" in main_part
+    assert "quoted text" not in main_part
+    assert 'data-tweet-id="456"' in quote_part
+    assert "quoted text" in quote_part
 
 
 # ---------- Codex 1차 리뷰 ①: 상태 격리 중단 시 fail-closed ----------
@@ -2389,10 +2394,19 @@ def _run_extract_js(articles, tid, req_handle):
             quoteFirst: {json.dumps(bool(a.get('quote_first')))},
             quoteHref: {esc(a.get('quote_href'))},
             quoteContainsLink: {json.dumps(bool(a.get('quote_contains_link')))},
+            headerText: {esc(a.get('header_text'))},
             statusLinks: {esc(a.get('status_links') or [])},
             bodyLinks: {esc(a.get('body_links') or [])},
         }}""")
     script = r"""
+// HTMLCollection-like (실제 DOM: length + 인덱스 + iterable, indexOf 없음).
+// isAfter가 Array.prototype.indexOf.call을 써야 함을 증명한다 (Codex 3차 ②-1).
+function toCollection(arr) {
+  const o = { length: arr.length };
+  arr.forEach((el, i) => { o[i] = el; });
+  o[Symbol.iterator] = function* () { for (let i = 0; i < this.length; i++) yield this[i]; };
+  return o;
+}
 function matches(e, sel) {
   const parts = sel.split(',').map(s => s.trim());
   return parts.some(p => matchOne(e, p));
@@ -2427,7 +2441,7 @@ function queryAll(root, sel) {
 }
 function makeEl(tag, attrs, children, text) {
   const e = {
-    tag, tagName: tag.toUpperCase(), attrs: attrs || {}, children: children || [],
+    tag, tagName: tag.toUpperCase(), attrs: attrs || {}, children: toCollection(children || []),
     textContent: text || '', innerText: text || '',
     parentElement: null,
     getAttribute(n) { return this.attrs[n] !== undefined ? this.attrs[n] : null; },
@@ -2443,7 +2457,7 @@ function makeEl(tag, attrs, children, text) {
 function makeArticle(spec) {
   const bodyDiv = makeEl('div', {dir: 'auto'}, [], spec.text);
   const bodyLinks = (spec.bodyLinks || []).map(h => makeEl('a', {href: h}, [], ''));
-  bodyDiv.children = bodyLinks;
+  bodyDiv.children = toCollection(bodyLinks);
   for (const c of bodyDiv.children) c.parentElement = bodyDiv;
   const profileLink = makeEl('a', {href: '/' + spec.handle}, [], spec.handle);
   const permalink = makeEl('a', {href: '/' + spec.handle + '/status/' + spec.tid}, [], '12:00');
@@ -2469,6 +2483,10 @@ function makeArticle(spec) {
   if (spec.quoteFirst && quoteCard) kids.push(quoteCard);
   if (firstProfile) kids.push(firstProfile);
   // 실제 X 순서: 헤더(프로필·permalink) → 본문 → 인용 카드.
+  // headerText가 있으면 permalink보다 앞의 헤더 div를 추가한다.
+  const headerDiv = spec.headerText != null
+    ? makeEl('div', {dir: 'auto'}, [], spec.headerText) : null;
+  if (headerDiv) kids.push(headerDiv);
   kids.push(profileLink, mainProfile, permalink, bodyDiv, ...extraLinks);
   if (!spec.quoteFirst && quoteCard) kids.push(quoteCard);
   return makeEl('article', {}, kids, '');
@@ -2577,3 +2595,25 @@ def test_extract_js_quote_div_contains_link():
     assert result["quoteStatus"] == "extracted"
     assert result["quote"]["text"] == "quoted text"
     assert result["text"] == "main body"
+
+
+def test_extract_js_header_div_before_permalink_not_body():
+    """permalink 앞 헤더 div가 있어도 최종 본문은 실제 본문이다
+    (main.text가 mainBodyEl을 써야 함 — Codex 3차 리뷰 ②-2)."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "header_text": "header text",
+          "quote": {"handle": "Author2", "tid": "456", "text": "quoted"}}],
+        "123", "Author1")
+    assert result["text"] == "main body"
+    assert result["quoteStatus"] == "extracted"
+
+
+def test_extract_js_only_header_before_permalink_no_fallback():
+    """permalink 앞 헤더 div만 있고 실제 본문이 없으면 본문은 빈 값이다
+    (폴백으로 헤더를 본문으로 쓰지 않음 — Codex 3차 리뷰 ②-3)."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "",
+          "header_text": "header text"}],
+        "123", "Author1")
+    assert result["text"] == ""
