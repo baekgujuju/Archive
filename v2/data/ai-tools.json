@@ -155,14 +155,14 @@
   },
   "2109257204348145817": {
     "title": "storytold/filmcraft",
-    "summary_ko": "FilmCraft는 Rust로 개발된 오픈소스 비선형 영상 편집기로, 영상 편집과 색보정, 오디오 작업을 지원합니다. Adobe Premiere Pro와 유사한 작업 흐름을 제공하며 macOS, Windows, Linux와 WebAssembly 기반 웹 브라우저에서 실행됩니다.",
-    "category": "비선형 영상 편집기",
+    "summary_ko": "FilmCraft는 Rust로 개발된 오픈소스 비선형 영상 편집기로, 영상 편집과 색보정, 오디오 작업을 지원합니다. Adobe Premiere Pro와 유사한 작업 흐름을 제공하며 macOS, Windows, Linux와 WebAssembly 기반 웹 브라우저에서 사용할 수 있습니다.",
+    "category": "비선형 영상 편집 소프트웨어",
     "repo_url": "https://github.com/storytold/filmcraft",
     "status": "verified",
     "evidence": [
       "text-url:no-title-check"
     ],
-    "fingerprint": "98f9470c2c3663351da627281f049b515e4cd052c7823b6e3e0418188fa31eaa"
+    "fingerprint": "0735803b5a3305396c3017b42233575f91f94b573425da7e407132e28e7675d5"
   },
   "2108769590671294736": {
     "title": "TensorFold — Living Weights",
@@ -174,5 +174,16 @@
       "search:phrase:tensorfold living weights"
     ],
     "fingerprint": "03dc328da66f760c10f56f2e82e429eca642d48dab7207539d3dfd1d4958a5f7"
+  },
+  "2108229808094400736": {
+    "title": "koala-1234/penny-chart",
+    "summary_ko": "Penny Chart는 AI 동료를 탑재한 Windows용 차트 분석 데스크톱 앱입니다. AI 기반 차트 분석과 자리 판정 점수, 조건 검색(스크리너), 백테스트 및 사용자 정의 지표 작성 등의 기능을 제공합니다.",
+    "category": "금융 / 차트 분석 도구",
+    "repo_url": "https://github.com/koala-1234/penny-chart",
+    "status": "verified",
+    "evidence": [
+      "text-url:no-title-check"
+    ],
+    "fingerprint": "f36ffa153a8e44af893ef5b813036c328b51398be3c5cfbf52e0fb5a68e089e8"
   }
 }

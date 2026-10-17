@@ -2108,5 +2108,85 @@
     "fingerprint": "3db2b4681b601392c9fdaddb65b17f38d846c373cf151f2b2c6c9140f13ad34d",
     "entry": null,
     "version": 3
+  },
+  "2109257204348145817:text-14b81a5414bbd18e": {
+    "fingerprint": "0735803b5a3305396c3017b42233575f91f94b573425da7e407132e28e7675d5",
+    "entry": {
+      "title": "storytold/filmcraft",
+      "summary_ko": "FilmCraft는 Rust로 개발된 오픈소스 비선형 영상 편집기로, 영상 편집과 색보정, 오디오 작업을 지원합니다. Adobe Premiere Pro와 유사한 작업 흐름을 제공하며 macOS, Windows, Linux와 WebAssembly 기반 웹 브라우저에서 사용할 수 있습니다.",
+      "category": "비선형 영상 편집 소프트웨어",
+      "repo_url": "https://github.com/storytold/filmcraft",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "0735803b5a3305396c3017b42233575f91f94b573425da7e407132e28e7675d5"
+    },
+    "version": 3
+  },
+  "2108229808094400736:46caa922a6f8e7c5.jpg": {
+    "fingerprint": "4fc6e71d3d1648ffa8f07a6d4ad70d19a8fe6262dd69118cd0937eb703045d10",
+    "entry": {
+      "title": "koala-1234/penny-chart",
+      "summary_ko": "Penny Chart는 Windows용 데스크톱 차트 앱으로, AI 동료 Penny와 함께 차트를 분석하고 조건 검색과 백테스트를 수행할 수 있습니다. 사용자 지표, 차트 그리기 도구, 조건 알림, 화면 녹화 기능도 제공합니다.",
+      "category": "AI 기반 금융 차트 분석 도구",
+      "repo_url": "https://github.com/koala-1234/penny-chart",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "4fc6e71d3d1648ffa8f07a6d4ad70d19a8fe6262dd69118cd0937eb703045d10"
+    },
+    "version": 3
+  },
+  "2108229808094400736:text-ef1c7406fa4c8178": {
+    "fingerprint": "f36ffa153a8e44af893ef5b813036c328b51398be3c5cfbf52e0fb5a68e089e8",
+    "entry": {
+      "title": "koala-1234/penny-chart",
+      "summary_ko": "Penny Chart는 AI 동료를 탑재한 Windows용 차트 분석 데스크톱 앱입니다. AI 기반 차트 분석과 자리 판정 점수, 조건 검색(스크리너), 백테스트 및 사용자 정의 지표 작성 등의 기능을 제공합니다.",
+      "category": "금융 / 차트 분석 도구",
+      "repo_url": "https://github.com/koala-1234/penny-chart",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "f36ffa153a8e44af893ef5b813036c328b51398be3c5cfbf52e0fb5a68e089e8"
+    },
+    "version": 3
+  },
+  "2108117689524986220:82dabf481741371f.png": {
+    "fingerprint": "9c83be1596b687563d79d7c0f0aef6cb1deac0f349e7b87c5440b7316839cb5c",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:00961f58b4d72b07.png": {
+    "fingerprint": "7a500d91cc29bce1aec11242eed2a8f85d1dcdfdbef07dbf88675ae9b2c3cd29",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:399dd944a3f16497.png": {
+    "fingerprint": "3c2a94703121176f8e473260a1d20dd815654f33b95b4e382e77a67eebf87671",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:658504020de8c00f.png": {
+    "fingerprint": "af9afa8f86c922b05bc7187a248189c750ff70d0d7a84b70dd659cdcedbe7f19",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:55b57ce96408363a.png": {
+    "fingerprint": "9cb2a2bc6e0711f394c079e960702edd85128722f0576b3a2cc21afa2c269c70",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:a2998bcdb2ee908c.png": {
+    "fingerprint": "69aa5217e1b42fe11ebe31154e541b141c82362f8010a7258b73c08b576e218f",
+    "entry": null,
+    "version": 3
+  },
+  "2108117689524986220:c11a0d4aadd7040d.png": {
+    "fingerprint": "00dc60c976a12ab731f8b334836bb301e9d52e54423d9af06090440ecda1f795",
+    "entry": null,
+    "version": 3
   }
 }

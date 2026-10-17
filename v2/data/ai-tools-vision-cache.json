@@ -3245,5 +3245,75 @@
     "category_ko": "암호화폐 차트",
     "owner_hint": "tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d277c76df84a49b0f146e5864b34855593fa33aa250aecfabbaae3e0f766a2f1": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView PUMP/USDT 4시간봉 차트",
+    "description_ko": "바이낸스 PUMP/USDT의 4시간봉 차트로, 상승 이후 조정 구간의 캔들, 이동평균선, 거래량과 지지·저항 영역이 표시되어 있다. 최근 고점 부근에는 흰색 원과 추세선이 그려져 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul0",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5178ae2342b1cda6cb3ad703dcb82070e3cc97d9907c69ef0a41382c829286cf": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView RAY/USDT 일봉 차트",
+    "description_ko": "바이낸스 RAY/USDT의 일봉 차트로, 장기간 횡보 후 급등한 가격 흐름과 이동평균선, 거래량, 지지·저항 영역이 표시되어 있다. 현재 표시 가격은 약 2.5197 USDT이다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul0",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ef1aa813c3b9bff53c9c2ecbd2c78b3147e066f324fd6c346253d7207dee3421": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView RAY/USDT 4시간 차트",
+    "description_ko": "바이낸스 RAY/USDT의 상승 추세를 보여주는 차트. 여러 이동평균선과 거래량, 지지·저항 구간이 표시되어 있으며 최근 돌파 부근에 흰색 원이 그려져 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c4d2ec8c2b89dca643739f711254e164337bfbffe2483854b4dfa014c6f468ed": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView CRV/USDT 일봉 차트",
+    "description_ko": "바이낸스 CRV/USDT의 장기 하락 이후 반등 흐름을 보여주는 일봉 차트. 이동평균선과 거래량, 지지·저항 영역이 표시되어 있으며 최근 가격은 약 0.3909 USDT다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3fec1357ebaf4b1e8ff3aafcf33f58f4c369b4ab724c64d59f8bf882f504033a": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView CRV/USDT 1시간 차트",
+    "description_ko": "바이낸스 CRV/USDT의 단기 가격 흐름과 급등 구간을 보여주는 차트. 약 0.36 USDT 부근의 이동평균선 밀집 및 돌파 지점에 흰색 원이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:12b1bb0741e480e2ac8ad631c57176831f8fd00978d58111b8f7b5f6ec80ff47": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView WTI 원유 CFD 일봉 차트",
+    "description_ko": "WTI 원유 CFD의 일봉 차트. 이동평균선, 추세선, 지지·저항 영역과 약 87~98달러의 박스 구간이 표시되어 있으며 최근 가격은 약 91.96달러다.",
+    "category_ko": "원자재 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:08c8aff1c3e9905270a99a0ce50c07c53f0e43c141835df82d083e7af9a24011": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView WTI 원유 CFD 1시간 차트",
+    "description_ko": "WTI 원유 CFD의 단기 반등을 보여주는 1시간 차트. 이동평균선과 지지·저항 영역이 표시되어 있고 두 지점에 흰색 원이 그려져 있으며 최근 가격은 약 91.91달러다.",
+    "category_ko": "원자재 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
   }
 }

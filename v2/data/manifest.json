@@ -34,7 +34,7 @@
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "6baed9f0f04f070796efc61aaaacc11430852cbf6e9ed49411f27bd8aa17d387",
-    "count": 16
+    "sha256": "9c95481e218166e5e111505f2bdf6d65fd74a3fe3543e073c85887351554d51d",
+    "count": 17
   }
 }
