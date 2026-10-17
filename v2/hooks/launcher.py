@@ -156,16 +156,16 @@ _UNPARSEABLE = object()
 
 # CPython이 인정하는 긴 옵션 (값을 먹는 것은 --check-hash-based-pycs뿐).
 # 이 환경의 python3.12.3 실측 기준:
-# - --isolated는 이 환경에서 거부됨 ("unknown option") -> 목록에서 제외.
+# - 긴 플래그 옵션은 전부 거부됨 ("unknown option") -> _LONG_FLAG_OPTIONS
+#   는 비어 있다. 전수 프로브(2026-10-17): --inspect/--interactive/
+#   --optimize/--dont-write-bytecode/--no-user-site/--no-site/
+#   --ignore-environment/--bytes-warning/--quiet/--verbose/--unbuffered/
+#   --warn-default-encoding/--safe-path 모두 거부.
+# - --isolated도 거부됨 -> 목록에서 제외.
 # - 플래그 긴 옵션의 --opt=val 형태는 거부됨 -> _UNPARSEABLE.
 # - --check-hash-based-pycs=always 형태도 거부됨 -> 띄어쓰기 형태만 유효.
 _LONG_VALUE_OPTIONS = frozenset({"--check-hash-based-pycs"})
-_LONG_FLAG_OPTIONS = frozenset({
-    "--inspect", "--interactive", "--optimize",
-    "--dont-write-bytecode", "--no-user-site", "--no-site",
-    "--ignore-environment", "--bytes-warning", "--quiet", "--verbose",
-    "--unbuffered", "--warn-default-encoding", "--safe-path",
-})
+_LONG_FLAG_OPTIONS = frozenset()
 # --help/--version/--help-*는 도움말 출력 후 종료 — 스크립트 실행이 아니다.
 _LONG_TERMINAL_OPTIONS = frozenset({
     "--help", "--version", "--help-env", "--help-xoptions", "--help-all",

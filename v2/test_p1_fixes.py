@@ -456,6 +456,19 @@ def test_launcher_matching():
     _check("launcher rejects unknown long option",
            pids_for(FakeEntry(b"python3\x00--bogus\x00monitor.py\x00",
                               cwd=hooks)) == [])
+    # Every long flag option is rejected by this environment's interpreter
+    # (full probe 2026-10-17) -> _UNPARSEABLE, never a script match.
+    _rejected_long_flags = [
+        b"--inspect", b"--interactive", b"--optimize",
+        b"--dont-write-bytecode", b"--no-user-site", b"--no-site",
+        b"--ignore-environment", b"--bytes-warning", b"--quiet",
+        b"--verbose", b"--unbuffered", b"--warn-default-encoding",
+        b"--safe-path", b"--isolated",
+    ]
+    _check("launcher rejects all unsupported long flag options",
+           all(pids_for(FakeEntry(b"python3\x00" + opt + b"\x00monitor.py\x00",
+                                  cwd=hooks)) == []
+               for opt in _rejected_long_flags))
 
 
 def test_lock_reentrant():
