@@ -4,9 +4,9 @@
   "stats": {
     "verified": 0,
     "pending": 0,
-    "pending_github_look": 10,
+    "pending_github_look": 9,
     "cached": 364,
-    "temporary_failures": 72,
+    "temporary_failures": 73,
     "errors": 0
   },
   "pending_details": {
@@ -34,7 +34,7 @@
     "2111186751285031098:ae3b9fd13936eadb.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:715f5c494a6137cb.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:faf0986da9b43770.jpg": "temporary analysis or repository API failure",
-    "2107365492797346155:f30bea55c962816e.png": "GitHub screenshot requires verified repository match",
+    "2107365492797346155:f30bea55c962816e.png": "temporary analysis or repository API failure",
     "2111370347463446904:ca036a027541ea76.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:3dc16d6ba60b21ef.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:6f86c7fd1e429c7f.jpg": "temporary analysis or repository API failure",
@@ -44,7 +44,7 @@
     "2111370347463446904:98e0d45afc679986.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:71ae489744508596.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:148a71b12eeea6d6.jpg": "temporary analysis or repository API failure",
-    "2077936537170542655:e1700757bc8a6994.jpg": "temporary analysis or repository API failure",
+    "2077936537170542655:e1700757bc8a6994.jpg": "GitHub screenshot requires verified repository match",
     "2111370347463446904:f77783c4cf73d2bd.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:6ce98daae4db643b.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:705ee027fc36898e.jpg": "temporary analysis or repository API failure",
@@ -76,7 +76,7 @@
     "2108216456597103032:da60784c6631a5d6.png": "temporary analysis or repository API failure",
     "2108205259533451648:df0e98603970521b.png": "temporary analysis or repository API failure",
     "2107674791243325659:753e659bcbbcec09.jpg": "GitHub screenshot requires verified repository match",
-    "2107859139938660811:082932b84c760a20.jpg": "GitHub screenshot requires verified repository match",
+    "2107859139938660811:082932b84c760a20.jpg": "temporary analysis or repository API failure",
     "2108200610822861187:ead79ff3d3f2a378.png": "temporary analysis or repository API failure",
     "2108200610822861187:d7013183a3f765f5.png": "temporary analysis or repository API failure",
     "2108205259533451648:1b2aa431d0825eb5.jpg": "temporary analysis or repository API failure",
