@@ -208,13 +208,22 @@ def check_canonical_duplicates(canonical):
     return dups
 
 
-def merge_records(canonical, incoming, file_id="", fingerprint=""):
+def merge_records(canonical, incoming, file_id="", fingerprint="",
+                  overwrite_tweet_ids=()):
     """정본 + 수신 레코드 병합. Returns MergeResult.
 
     canonical에 중복 tweetId가 있으면 CanonicalDuplicateError를
     raise한다 (병합 전 명시적 차단). incoming 내 중복 tweetId도
     차단한다 (수신 파일 자체의 모순).
+
+    overwrite_tweet_ids: 이 파일이 이전에 검증된 상태로 생산한
+    tweetId 집합 (동일 파일 재인제스트). 해당 tweetId는 새 파싱이
+    같은 캡처의 현재 진실이므로 수집기 필드를 덮어쓴다 (기존 동작:
+    수정된 파일이 같은 글을 갱신). 그 외 기존 tweetId는 보수적
+    병합 (충돌 → 기존 보존 + 제안). PROTECTED_FIELDS와 capturedAt은
+    덮어쓰기 대상에서도 제외한다 (기존 값 유지).
     """
+    overwrite_ids = {str(t) for t in overwrite_tweet_ids or ()}
     if not isinstance(canonical, list):
         raise ValueError("정본은 배열이어야 함")
     dups = check_canonical_duplicates(canonical)
@@ -246,6 +255,31 @@ def merge_records(canonical, incoming, file_id="", fingerprint=""):
         old = merged[indices[tid]]
         new = dict(old)
         changed = False
+        if tid in overwrite_ids:
+            # 동일 파일 재인제스트 — 새 파싱이 같은 캡처의 현재 진실.
+            # 수집기 필드를 통째로 교체 (기존 동작). PROTECTED_FIELDS와
+            # capturedAt은 제외, 수신에 없는 필드는 기존 값 유지.
+            for key in sorted(set(old) | set(item)):
+                if key in ("tweetId", "capturedAt"):
+                    continue
+                if key in PROTECTED_FIELDS:
+                    continue
+                if key not in COLLECTOR_FIELDS and key not in old:
+                    continue
+                if key not in COLLECTOR_FIELDS:
+                    continue
+                if key not in item:
+                    continue
+                new_v = item.get(key)
+                if _is_missing(new_v):
+                    continue
+                if old.get(key) != new_v:
+                    new[key] = new_v
+                    changed = True
+            if changed:
+                merged[indices[tid]] = new
+                updated += 1
+            continue
         for key in sorted(set(old) | set(item)):
             if key == "tweetId":
                 continue

@@ -555,9 +555,21 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
                 if POSTS_JSON.exists() else []
             if not isinstance(existing, list):
                 raise ValueError("Canonical posts must be an array")
+            # 동일 파일 재인제스트 구분: 이 파일이 이전에 검증된 상태로
+            # 생산한 tweetId는 새 파싱이 같은 캡처의 현재 진실이므로
+            # 덮어쓴다. 그 외 기존 tweetId는 보수적 병합 (충돌 → 제안).
+            # 검증되지 않은 이전 기록(legacyBaseline 등)은 동일 파일로
+            # 인정하지 않는다 — tweetIds가 없어도 마찬가지이다.
+            prior = processed.get(fid, {}) if isinstance(processed, dict) else {}
+            prior_tweet_ids = set()
+            if prior.get("verification") == "verified":
+                for t in prior.get("tweetIds", []) or []:
+                    if isinstance(t, str):
+                        prior_tweet_ids.add(t)
             result = merge_records(
                 existing, parsed, file_id=fid,
-                fingerprint=failure_key(fid, fp))
+                fingerprint=failure_key(fid, fp),
+                overwrite_tweet_ids=prior_tweet_ids)
             if result.proposals:
                 prop_data = load_proposals()
                 seen_fp = {

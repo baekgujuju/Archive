@@ -72,21 +72,49 @@ class IBPreservation(unittest.TestCase):
         self.assertNotEqual(self.ib.norm_url('https://youtube.com/watch?v=a'),self.ib.norm_url('https://youtube.com/watch?v=b'))
 
 class DriveExecution(unittest.TestCase):
+    # 픽스처 레코드는 P2-7 캡처 계약을 만족해야 한다 (숫자 tweetId,
+    # tweetId와 일치하는 sourceUrl, sourceUrl 핸들과 일치하는 author).
+    _FIXTURE_RECORDS = {
+        'good': {'tweetId': '111', 'fullText': 'updated body',
+                 'sourceUrl': 'https://x.com/testuser/status/111',
+                 'author': {'handle': '@testuser'}},
+        'bad': {'tweetId': '222', 'fullText': 'updated body',
+                'sourceUrl': 'https://x.com/testuser/status/222',
+                'author': {'handle': '@testuser'}},
+    }
+
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory(dir=HERE);self.root=Path(self.temp.name);self.d=load('drive_poll');d=self.d
         d.HOOKS_DIR=self.root;d.SHARED_LOCK=self.root/'.lock';d.XBM=self.root;d.CONFIG_PATH=self.root/'config.json';d.INGEST_SCRIPT=self.root/'ingest.py';d.POSTS_JSON=self.root/'posts.json';d.log=lambda text:None
-        d.CONFIG_PATH.write_text(json.dumps({'inbox_folder_id':'fixture','local_inbox':str(self.root/'inbox'),'state_file':str(self.root/'legacy.json')}));d.INGEST_SCRIPT.write_text('');d.POSTS_JSON.write_text(json.dumps([{'tweetId':'good','fullText':'old','category':'투자'}]))
+        # 모듈 상수는 import 시점에 실제 hooks 디렉터리에 묶이므로,
+        # 테스트가 실제 디렉터리를 오염시키지 않도록 임시 루트로 재배정한다.
+        d.FAILURES_FILE=self.root/'.drive_poll_failures.json';d.PROPOSALS_FILE=self.root/'.merge_proposals.json';d.NEEDS_REVIEW=self.root/'.needs-review';d.QUARANTINE_DRIVE_DIR=self.root/'.quarantine'/'drive-files';d.STAGING_DIR=self.root/'.drive_poll_staging'
+        d.CONFIG_PATH.write_text(json.dumps({'inbox_folder_id':'fixture','local_inbox':str(self.root/'inbox'),'state_file':str(self.root/'legacy.json')}));d.INGEST_SCRIPT.write_text('');d.POSTS_JSON.write_text(json.dumps([{'tweetId':'111','fullText':'old','category':'투자'}]))
+        # 'good' 파일이 이전에 검증된 상태로 '111'을 생산했다는 기록.
+        # 지문(modifiedTime '0')이 현재 파일('1')과 달라 재처리되며,
+        # 동일 파일 재인제스트로 인정되어 새 파싱이 덮어쓴다.
+        (self.root/'.drive_poll_state.json').write_text(json.dumps({'processed': {'good': {'modifiedTime': '0', 'size': '10', 'verification': 'verified', 'tweetIds': ['111']}}}))
         self.files=[{'id':x,'name':x+'.html','modifiedTime':'1','size':'10'} for x in ['good','bad']];self.failed=True;self.downloads=[]
         d.list_drive_files=lambda folder:self.files;d.run=self.worker
     def tearDown(self):self.temp.cleanup()
     def worker(self,cmd,**kwargs):
         if cmd[0]=='hatch_gws_cli':
-            fid=json.loads(cmd[cmd.index('--params')+1])['fileId'];self.downloads.append(fid);Path(cmd[-1]).write_text('fixture HTML');return result()
+            fid=json.loads(cmd[cmd.index('--params')+1])['fileId'];self.downloads.append(fid)
+            # 다운로드 바이트 수는 선언 크기와 일치해야 한다 (drift 검사).
+            size=int(next(x['size'] for x in self.files if x['id']==fid));Path(cmd[-1]).write_text('x'*size);return result()
         inputs=Path(cmd[2]);name=next(inputs.iterdir()).stem
         if name=='bad' and self.failed:return result(1)
-        outputs=Path(cmd[-1]);(outputs/'posts.json').write_text(json.dumps([{'tweetId':name,'fullText':'updated body'}]));return result()
+        outputs=Path(cmd[-1]);(outputs/'posts.json').write_text(json.dumps([dict(self._FIXTURE_RECORDS[name])]));return result()
     def test_failed_capture_not_marked_successful_and_retried(self):
-        self.assertEqual(self.d.main(),1);state=json.loads((self.root/'.drive_poll_state.json').read_text());self.assertIn('good',state['processed']);self.assertNotIn('bad',state['processed']);self.failed=False;self.assertEqual(self.d.main(),0);self.assertEqual(self.downloads,['good','bad','bad'])
+        # P2-1: 파일 실패는 rc=3 (실패 기록 영속화 완료, 스케줄러는 monitor 진행).
+        # 실패 파일도 processed에 남지만 성공이 아닌 retry_pending으로 기록된다.
+        self.assertEqual(self.d.main(),3);state=json.loads((self.root/'.drive_poll_state.json').read_text());self.assertIn('good',state['processed']);self.assertEqual(state['processed']['bad']['verification'],'retry_pending')
+        # 백오프 만료 — 재시도 시점이 미래면 두 번째 폴이 건너뛰므로 과거로 당긴다.
+        failures_path=self.root/'.drive_poll_failures.json';data=json.loads(failures_path.read_text())
+        for rec in data['records'].values():
+            if rec.get('fileId')=='bad':rec['next_retry_at']='2000-01-01T00:00:00+00:00'
+        failures_path.write_text(json.dumps(data))
+        self.failed=False;self.assertEqual(self.d.main(),0);self.assertEqual(self.downloads,['good','bad','bad'])
         posts=json.loads(self.d.POSTS_JSON.read_text());self.assertEqual(len(posts),2);self.assertEqual(posts[0]['category'],'투자');self.assertEqual(posts[0]['fullText'],'updated body')
     def test_modified_capture_replaces_same_post_without_duplicate(self):
         self.files=self.files[:1];self.assertEqual(self.d.main(),0);self.files[0]['modifiedTime']='2';self.assertEqual(self.d.main(),0);self.assertEqual(len(json.loads(self.d.POSTS_JSON.read_text())),1);self.assertEqual(self.downloads,['good','good'])

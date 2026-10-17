@@ -202,6 +202,45 @@ def test_merge_conflict_keeps_existing_and_proposes():
     assert result.proposals[0]["proposed"] == "different text"
 
 
+def test_merge_same_file_reingest_overwrites_collector_fields():
+    # 동일 파일 재인제스트: 새 파싱이 같은 캡처의 현재 진실 → 덮어쓰기.
+    old = _base_record()
+    new = _base_record()
+    new["fullText"] = "corrected text"
+    new["author"] = {"handle": "@Author1", "name": "Author Renamed"}
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    assert result.merged[0]["fullText"] == "corrected text"
+    assert result.merged[0]["author"]["name"] == "Author Renamed"
+    assert result.proposals == []
+    assert result.updated == 1
+
+
+def test_merge_same_file_reingest_keeps_protected_and_captured_at():
+    # 덮어쓰기 대상에서도 PROTECTED_FIELDS와 capturedAt은 유지.
+    old = _base_record()
+    old["category"] = "투자"
+    old["capturedAt"] = "2026-01-01T00:00:00"
+    new = _base_record()
+    new["category"] = "기타"
+    new["capturedAt"] = "2026-10-17T00:00:00"
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    assert result.merged[0]["category"] == "투자"
+    assert result.merged[0]["capturedAt"] == "2026-01-01T00:00:00"
+    assert result.proposals == []
+
+
+def test_merge_same_file_reingest_missing_incoming_keeps_existing():
+    # 수신에 없는 필드·비어 있는 수신 값은 기존 값 유지.
+    old = _base_record()
+    old["media"] = [{"url": "https://x.com/img.jpg"}]
+    new = _base_record()
+    del new["media"]
+    new["fullText"] = ""
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    assert result.merged[0]["media"] == [{"url": "https://x.com/img.jpg"}]
+    assert result.merged[0]["fullText"] == "hello world"
+
+
 def test_merge_protected_category_never_written():
     old = _base_record()
     old["category"] = "투자"
