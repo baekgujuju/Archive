@@ -2,6 +2,7 @@
 Windows tests stub Linux flock only; production workers still use real flock.
 """
 import importlib.util,json,subprocess,sys,tempfile,types,unittest
+from contextlib import contextmanager
 from pathlib import Path
 from unittest.mock import patch
 if sys.platform=='win32':
@@ -10,6 +11,11 @@ HERE=Path(__file__).parent
 def load(name):
     spec=importlib.util.spec_from_file_location(name,HERE/(name+'.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 def result(code=0):return subprocess.CompletedProcess([],code,'','injected failure' if code else '')
+
+
+@contextmanager
+def _noop_lock(*args, **kwargs):
+    yield
 
 class HookExecution(unittest.TestCase):
     def setUp(self):
@@ -88,6 +94,9 @@ class DriveExecution(unittest.TestCase):
         d.HOOKS_DIR=self.root;d.SHARED_LOCK=self.root/'.lock';d.XBM=self.root;d.CONFIG_PATH=self.root/'config.json';d.INGEST_SCRIPT=self.root/'ingest.py';d.POSTS_JSON=self.root/'posts.json';d.log=lambda text:None
         # 모듈 상수는 import 시점에 실제 hooks 디렉터리에 묶이므로,
         # 테스트가 실제 디렉터리를 오염시키지 않도록 임시 루트로 재배정한다.
+        # pipeline_lock도 실제 락 파일(v2/hooks/.pipeline-write.lock)을
+        # 쓰므로 noop으로 격리한다 (단일 스레드 테스트라 경합 없음).
+        d.pipeline_lock = _noop_lock
         d.FAILURES_FILE=self.root/'.drive_poll_failures.json';d.PROPOSALS_FILE=self.root/'.merge_proposals.json';d.NEEDS_REVIEW=self.root/'.needs-review';d.QUARANTINE_DRIVE_DIR=self.root/'.quarantine'/'drive-files';d.STAGING_DIR=self.root/'.drive_poll_staging'
         d.CONFIG_PATH.write_text(json.dumps({'inbox_folder_id':'fixture','local_inbox':str(self.root/'inbox'),'state_file':str(self.root/'legacy.json')}));d.INGEST_SCRIPT.write_text('');d.POSTS_JSON.write_text(json.dumps([{'tweetId':'111','fullText':'old','category':'투자'}]))
         # 'good' 파일이 이전에 검증된 상태로 '111'을 생산했다는 기록.

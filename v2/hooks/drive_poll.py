@@ -555,21 +555,16 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
                 if POSTS_JSON.exists() else []
             if not isinstance(existing, list):
                 raise ValueError("Canonical posts must be an array")
-            # 동일 파일 재인제스트 구분: 이 파일이 이전에 검증된 상태로
-            # 생산한 tweetId는 새 파싱이 같은 캡처의 현재 진실이므로
-            # 덮어쓴다. 그 외 기존 tweetId는 보수적 병합 (충돌 → 제안).
-            # 검증되지 않은 이전 기록(legacyBaseline 등)은 동일 파일로
-            # 인정하지 않는다 — tweetIds가 없어도 마찬가지이다.
-            prior = processed.get(fid, {}) if isinstance(processed, dict) else {}
-            prior_tweet_ids = set()
-            if prior.get("verification") == "verified":
-                for t in prior.get("tweetIds", []) or []:
-                    if isinstance(t, str):
-                        prior_tweet_ids.add(t)
+            # 동일 파일 재인제스트 구분: 단독 생산자 규칙.
+            # 이 파일만 주장하는 tweetId는 새 파싱이 같은 캡처의
+            # 현재 진실이므로 덮어쓴다. 타 파일도 주장하는 ID는
+            # 보수적 병합 (충돌 → 제안). tweetIds는 검증된 생산에서만
+            # 기록되므로 그 존재 자체가 주장의 증거이다 (실패 기록이
+            # 지우지 않는다).
             result = merge_records(
                 existing, parsed, file_id=fid,
                 fingerprint=failure_key(fid, fp),
-                overwrite_tweet_ids=prior_tweet_ids)
+                overwrite_tweet_ids=_overwrite_tweet_ids(processed, fid))
             if result.proposals:
                 prop_data = load_proposals()
                 seen_fp = {
@@ -664,6 +659,40 @@ def _verification_of(entry):
         # 구형 성공 항목 (at 있음) — 검증됨으로 간주.
         return "verified" if entry.get("at") else "unverified"
     return verification
+
+
+def _claimed_tweet_ids(record):
+    """한 processed 항목이 주장하는 tweetId 집합 (숫자 문자열만).
+
+    tweetIds가 list가 아니면 빈 집합을 반환한다 — 문자열 "123"을
+    문자별로 해석하지 않는다. tweetIds는 마지막 검증 생산만을
+    반영한다 (실패 기록이 지우지 않는다).
+    """
+    if not isinstance(record, dict):
+        return set()
+    raw = record.get("tweetIds")
+    if not isinstance(raw, list):
+        return set()
+    return {t for t in raw if isinstance(t, str) and t.isdigit()}
+
+
+def _overwrite_tweet_ids(processed, fid):
+    """동일 파일 재인제스트 덮어쓰기 대상 tweetId 집합.
+
+    이 파일이 주장하고 다른 파일이 주장하지 않는(단독 생산) ID만.
+    파싱 성공 자체는 덮어쓰기 권한이 아니다 — 타 파일 충돌 후
+    재인제스트가 덮어쓰기로 승격되는 것을 막는다. 두 파일이 같은
+    ID를 주장하면 어느 쪽도 덮지 않고 보수적 병합(제안)한다.
+    """
+    if not isinstance(processed, dict):
+        return set()
+    mine = _claimed_tweet_ids(processed.get(fid, {}))
+    others = set()
+    for other_fid, rec in processed.items():
+        if other_fid == fid:
+            continue
+        others |= _claimed_tweet_ids(rec)
+    return mine - others
 
 
 def main():
@@ -837,13 +866,22 @@ def main():
             except FileFailure as failure:
                 record = handle_file_failure(f, failure)
                 # processed에 실패 상태 반영 (다음 폴 disposition용).
-                processed[fid] = {
+                # tweetIds(마지막 검증 생산)는 실패로 지우지 않는다 —
+                # 동일 파일 갱신 권한·소유권 판정에 쓴다. 일시 실패
+                # 한 번으로 갱신 권한을 잃으면 재시도 동작이 중간
+                # 실패 유무에 따라 달라진다.
+                prior_rec = processed.get(fid, {}) \
+                    if isinstance(processed, dict) else {}
+                failure_rec = {
                     "modifiedTime": fp[1],
                     "size": fp[2],
                     "verification": record["status"],
                     "last_failure_at": record["last_failed_at"],
                     "failure_key": record["key"],
                 }
+                if isinstance(prior_rec.get("tweetIds"), list):
+                    failure_rec["tweetIds"] = prior_rec["tweetIds"]
+                processed[fid] = failure_rec
                 state["processed"] = processed
                 atomic_json(state_path, state)
                 failures += 1

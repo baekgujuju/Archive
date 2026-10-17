@@ -208,6 +208,84 @@ def check_canonical_duplicates(canonical):
     return dups
 
 
+def _overlay(existing, incoming, path):
+    """동일 파일 재인제스트용 재귀 오버레이. Returns (merged, changed).
+
+    - 수신 누락/빈 값은 기존 유지 (삭제 없음).
+    - PROTECTED_FIELDS·capturedAt은 모든 깊이에서 기존 유지.
+    - dict는 키 단위 재귀 (수신에만 있는 키는 추가, 기존에만 있는 키는 유지).
+    - replies는 tweetId 기준 합집합 (동일 ID는 재귀 오버레이).
+    - media는 미디어 키 기준 합집합 (동일 키는 기존 유지).
+    - 그 외 리스트는 동등성 기준 합집합. 스칼라는 수신 승리.
+    """
+    field = path.split(".")[-1]
+    if field in PROTECTED_FIELDS or field == "capturedAt":
+        return existing, False
+    if _is_missing(incoming):
+        return existing, False
+    if _is_missing(existing):
+        return incoming, True
+    if isinstance(existing, dict) and isinstance(incoming, dict):
+        merged = dict(existing)
+        changed = False
+        for key in sorted(set(existing) | set(incoming)):
+            if key not in incoming:
+                continue
+            if key not in existing:
+                if not _is_missing(incoming[key]):
+                    merged[key] = incoming[key]
+                    changed = True
+                continue
+            v, c = _overlay(existing[key], incoming[key], f"{path}.{key}")
+            merged[key] = v
+            changed = changed or c
+        return merged, changed
+    if isinstance(existing, list) and isinstance(incoming, list):
+        if field == "replies" or field.startswith("replies["):
+            by_id = {}
+            for reply in existing:
+                if isinstance(reply, dict) and reply.get("tweetId"):
+                    by_id[str(reply["tweetId"])] = reply
+            merged = list(existing)
+            changed = False
+            for reply in incoming:
+                if not isinstance(reply, dict) or not reply.get("tweetId"):
+                    continue
+                rid = str(reply["tweetId"])
+                if rid not in by_id:
+                    merged.append(reply)
+                    by_id[rid] = reply
+                    changed = True
+                else:
+                    v, c = _overlay(by_id[rid], reply, f"{path}[{rid}]")
+                    for i, m in enumerate(merged):
+                        if isinstance(m, dict) and str(m.get("tweetId")) == rid:
+                            merged[i] = v
+                            break
+                    changed = changed or c
+            return merged, changed
+        if field == "media":
+            keys = {_media_key(m) for m in existing}
+            merged = list(existing)
+            changed = False
+            for m in incoming:
+                if _media_key(m) not in keys:
+                    merged.append(m)
+                    keys.add(_media_key(m))
+                    changed = True
+            return merged, changed
+        merged = list(existing)
+        changed = False
+        for v in incoming:
+            if v not in merged:
+                merged.append(v)
+                changed = True
+        return merged, changed
+    if existing != incoming:
+        return incoming, True
+    return existing, False
+
+
 def merge_records(canonical, incoming, file_id="", fingerprint="",
                   overwrite_tweet_ids=()):
     """정본 + 수신 레코드 병합. Returns MergeResult.
@@ -216,12 +294,13 @@ def merge_records(canonical, incoming, file_id="", fingerprint="",
     raise한다 (병합 전 명시적 차단). incoming 내 중복 tweetId도
     차단한다 (수신 파일 자체의 모순).
 
-    overwrite_tweet_ids: 이 파일이 이전에 검증된 상태로 생산한
-    tweetId 집합 (동일 파일 재인제스트). 해당 tweetId는 새 파싱이
-    같은 캡처의 현재 진실이므로 수집기 필드를 덮어쓴다 (기존 동작:
-    수정된 파일이 같은 글을 갱신). 그 외 기존 tweetId는 보수적
-    병합 (충돌 → 기존 보존 + 제안). PROTECTED_FIELDS와 capturedAt은
-    덮어쓰기 대상에서도 제외한다 (기존 값 유지).
+    overwrite_tweet_ids: 호출자가 단독 생산자로 확인한 tweetId 집합
+    (이 파일만 주장하고 다른 파일이 주장하지 않음). 해당 tweetId는
+    새 파싱이 같은 캡처의 현재 진실이므로 재귀 오버레이로 갱신한다
+    (수정된 파일이 같은 글 갱신 — 배치 2 이전 동작). 그 외 기존
+    tweetId는 보수적 병합 (충돌 → 기존 보존 + 제안). 파싱 성공
+    자체는 덮어쓰기 권한이 아니다 — 타 파일 충돌 후 재인제스트가
+    덮어쓰기로 승격되는 것을 막는다.
     """
     overwrite_ids = {str(t) for t in overwrite_tweet_ids or ()}
     if not isinstance(canonical, list):
@@ -256,9 +335,8 @@ def merge_records(canonical, incoming, file_id="", fingerprint="",
         new = dict(old)
         changed = False
         if tid in overwrite_ids:
-            # 동일 파일 재인제스트 — 새 파싱이 같은 캡처의 현재 진실.
-            # 수집기 필드를 통째로 교체 (기존 동작). PROTECTED_FIELDS와
-            # capturedAt은 제외, 수신에 없는 필드는 기존 값 유지.
+            # 동일 파일 재인제스트 (단독 생산자 확인됨) — 재귀 오버레이.
+            # 삭제 없음, 보호 필드는 모든 깊이에서 보존.
             for key in sorted(set(old) | set(item)):
                 if key in ("tweetId", "capturedAt"):
                     continue
@@ -270,12 +348,9 @@ def merge_records(canonical, incoming, file_id="", fingerprint="",
                     continue
                 if key not in item:
                     continue
-                new_v = item.get(key)
-                if _is_missing(new_v):
-                    continue
-                if old.get(key) != new_v:
-                    new[key] = new_v
-                    changed = True
+                merged_v, sub_changed = _overlay(old.get(key), item.get(key), key)
+                new[key] = merged_v
+                changed = changed or sub_changed
             if changed:
                 merged[indices[tid]] = new
                 updated += 1

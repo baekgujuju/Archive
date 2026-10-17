@@ -241,6 +241,48 @@ def test_merge_same_file_reingest_missing_incoming_keeps_existing():
     assert result.merged[0]["fullText"] == "hello world"
 
 
+def test_overlay_keeps_nested_missing_and_protected():
+    # 중첩 구조: 수신 누락 하위 필드는 유지, 보호 필드는 모든 깊이에서 유지.
+    old = _base_record()
+    old["author"] = {"handle": "@Author1", "name": "Alice"}
+    old["quoted"] = {"tweetId": "456",
+                     "sourceUrl": "https://x.com/B/status/456",
+                     "fullText": "quoted", "translation": "번역됨",
+                     "capturedAt": "2026-01-01T00:00:00"}
+    new = _base_record()
+    new["author"] = {"handle": "@Author1"}  # name 누락 → 기존 유지.
+    new["quoted"] = {"tweetId": "456",
+                     "sourceUrl": "https://x.com/B/status/456",
+                     "fullText": "quoted v2", "translation": "새 번역",
+                     "capturedAt": "2026-10-17T00:00:00"}
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    merged = result.merged[0]
+    assert merged["author"] == {"handle": "@Author1", "name": "Alice"}
+    assert merged["quoted"]["fullText"] == "quoted v2"
+    assert merged["quoted"]["translation"] == "번역됨"  # 보호 필드 유지.
+    assert merged["quoted"]["capturedAt"] == "2026-01-01T00:00:00"  # 유지.
+    assert result.proposals == []
+
+
+def test_overlay_replies_union_and_media_union():
+    # 리스트는 합집합 (삭제 없음). 동일 답글 ID는 재귀 오버레이.
+    old = _base_record()
+    old["replies"] = [{"tweetId": "201", "fullText": "r1"}]
+    old["media"] = [{"url": "https://x.com/a.jpg"}]
+    new = _base_record()
+    new["replies"] = [{"tweetId": "201", "fullText": "r1 edited"},
+                      {"tweetId": "202", "fullText": "r2"}]
+    new["media"] = [{"url": "https://x.com/a.jpg"},
+                    {"url": "https://x.com/b.jpg"}]
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    merged = result.merged[0]
+    assert sorted(r["tweetId"] for r in merged["replies"]) == ["201", "202"]
+    assert merged["replies"][0]["fullText"] == "r1 edited"
+    assert sorted(m["url"] for m in merged["media"]) == [
+        "https://x.com/a.jpg", "https://x.com/b.jpg"]
+    assert result.proposals == []
+
+
 def test_merge_protected_category_never_written():
     old = _base_record()
     old["category"] = "투자"
@@ -1214,6 +1256,77 @@ def test_drive_poll_merge_conflict_becomes_proposal(poll_env, monkeypatch):
     assert proposals["proposals"][0]["proposed"] == "new text"
     state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
     assert state["processed"]["fid-new"]["verification"] == "verified"
+
+
+def test_drive_poll_conflict_does_not_escalate_on_reingest(poll_env, monkeypatch):
+    # 파일 A가 123을 만들고, 파일 B가 같은 ID의 다른 본문을 생산하면
+    # 첫 병합은 제안만 남긴다. B를 수정해 다시 처리해도 B는 123을
+    # 덮지 못한다 (파싱 성공 ≠ 덮어쓰기 권한, 단독 생산자 규칙).
+    content_a = _valid_html("123", "A body")
+    files = [_drive_file("fid-a", "a.html", content_a)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-a": content_a}))
+    assert drive_poll.main() == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert posts[0]["fullText"] == "A body"
+
+    content_b = _valid_html("123", "B body")
+    files = [_drive_file("fid-a", "a.html", content_a),
+             _drive_file("fid-b", "b.html", content_b)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-b": content_b}))
+    assert drive_poll.main() == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert posts[0]["fullText"] == "A body"  # 기존 보존.
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    assert state["processed"]["fid-b"]["verification"] == "verified"
+
+    # B 수정 → 재처리해도 여전히 제안만, 덮어쓰기 없음.
+    content_b2 = _valid_html("123", "B body v2")
+    files = [_drive_file("fid-a", "a.html", content_a),
+             {"id": "fid-b", "name": "b.html",
+              "modifiedTime": "2026-10-18T00:00:00Z",
+              "size": str(len(content_b2))}]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-b": content_b2}))
+    assert drive_poll.main() == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert posts[0]["fullText"] == "A body"
+    proposals = json.loads((poll_env["hooks"] / ".merge_proposals.json").read_text())
+    assert any(p["path"] == "fullText" and p["proposed"] == "B body v2"
+               for p in proposals["proposals"])
+
+
+def test_drive_poll_failure_preserves_overwrite_authority(poll_env, monkeypatch):
+    # 검증된 파일이 수정 후 일시 실패해도 tweetIds(마지막 검증 생산)가
+    # 보존되어, 백오프 후 재시도에서 동일 파일 갱신이 동작한다.
+    content_v1 = _valid_html("123", "A body")
+    files = [_drive_file("fid-a", "a.html", content_v1)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-a": content_v1}))
+    assert drive_poll.main() == 0
+
+    content_v2 = _valid_html("123", "A body v2")
+    files = [{"id": "fid-a", "name": "a.html",
+              "modifiedTime": "2026-10-18T00:00:00Z",
+              "size": str(len(content_v2))}]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-a": "timeout"}))
+    assert drive_poll.main() == 3
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    assert state["processed"]["fid-a"]["verification"] == "retry_pending"
+    assert state["processed"]["fid-a"]["tweetIds"] == ["123"]  # 실패로 지워지지 않음.
+
+    # 백오프 만료 후 재시도 → 동일 파일 갱신 동작.
+    failures = json.loads((poll_env["hooks"] / ".drive_poll_failures.json").read_text())
+    for rec in failures["records"].values():
+        rec["next_retry_at"] = "2020-01-01T00:00:00+00:00"
+    (poll_env["hooks"] / ".drive_poll_failures.json").write_text(
+        json.dumps(failures), encoding="utf-8")
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-a": content_v2}))
+    assert drive_poll.main() == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert posts[0]["fullText"] == "A body v2"
 
 
 # ---------- scheduler_runner (P2-1) ----------
