@@ -12,10 +12,11 @@ subprocess로 분리 실행되며 exec 완료 후에도 생존.
   - V2_PUBLISH=1, V2_PUBLISH_BRANCH=main을 자식 프로세스에 프로그래밍 방식으로 설정
   - 모델 호출 없음 (순수 Python)
 
-타임아웃 예산:
+타임아웃 예산 (P1-7 체인 정합 — 바깥이 안쪽 합계보다 커야 한다):
   - Drive 인제스트: 600초
-  - Monitor: 2400초 (번역 1800초 허용)
-  - 전체: 3120초 (600 + 2400 + 120 여유)
+  - Monitor: 3900초 (후크 3600 + 300 여유)
+  - 설정 발행: 300초
+  - 전체: 4800초 (600 + 3900 + 300)
 
 사용법:
     # 시작 (백그라운드, 세션 분리)
@@ -35,6 +36,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+from proc_group import run_grouped
+
 HOOKS_DIR = Path(__file__).resolve().parent
 V2_ROOT = HOOKS_DIR.parent
 PID_FILE = HOOKS_DIR / ".worker.pid"
@@ -45,8 +48,8 @@ MAX_LOG_SIZE = 1 * 1024 * 1024  # 1MB
 
 POLL_INTERVAL = 300  # 5분 (완료 후 대기)
 
-# 타임아웃 예산 (초): Drive 600 + monitor 2400 + 여유 120
-TIMEOUT_TOTAL = 3120
+# 타임아웃 예산 (초): Drive 600 + monitor 3900 + 설정 발행 300
+TIMEOUT_TOTAL = 4800
 
 
 def rotate_log(path: Path):
@@ -100,7 +103,8 @@ def run_poll():
 
     log(f"폴 시작 (타임아웃 {TIMEOUT_TOTAL}초)")
     try:
-        r = subprocess.run(
+        # P1-7: 타임아웃 시 스케줄러 그룹 전체를 종료한다.
+        r = run_grouped(
             [sys.executable, str(HOOKS_DIR / "scheduler_runner.py")],
             capture_output=True, text=True, timeout=TIMEOUT_TOTAL, env=env)
         # scheduler_runner의 출력을 워커 로그에 기록

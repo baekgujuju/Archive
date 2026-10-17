@@ -93,6 +93,8 @@ def stop():
                     print("stale PID 파일 정리됨")
             except (ValueError, OSError):
                 pass
+        # 워커 없이 남은 고아 파이프라인 프로세스도 정리 (P1-7)
+        _stop_pipeline_processes()
         return 0
 
     print(f"워커 중지 중 (PID {pid})...")
@@ -103,6 +105,7 @@ def stop():
             time.sleep(0.5)
             if not get_pid():
                 print("워커 중지됨")
+                _stop_pipeline_processes()
                 return 0
         # 강제 종료
         print("SIGKILL 전송...")
@@ -115,7 +118,74 @@ def stop():
         print("워커가 이미 종료됨")
         if PID_FILE.exists():
             PID_FILE.unlink()
+    _stop_pipeline_processes()
     return 0
+
+
+# P1-7: 워커만 죽이면 scheduler/hook/번역 같은 자손이 고아로 남아 계속
+# 쓰고 게시할 수 있다. 이 checkout의 파이프라인 스크립트 프로세스를
+# cmdline으로 식별해 SIGTERM -> 대기 -> SIGKILL 순으로 정리한다.
+# (스크립트 파일명 + checkout 경로로만 식별 — 이름만으로 codex 같은
+#  일반 프로세스를 일괄 종료하지 않는다.)
+PIPELINE_SCRIPTS = (
+    "persistent_worker.py", "scheduler_runner.py", "drive_poll.py",
+    "monitor.py", "post_ingest_hook.py", "build_data.py",
+    "enrich_tools.py", "translate_posts.py", "publish_settings.py",
+    "media-mirror.py", "ib_adapter.py",
+)
+
+
+def _pipeline_pids():
+    """이 checkout의 파이프라인 프로세스 PID 목록 (/proc cmdline 대조)."""
+    found = []
+    hooks = str(HOOKS_DIR)
+    try:
+        entries = list(Path("/proc").iterdir())
+    except OSError:
+        return found
+    for entry in entries:
+        if not entry.name.isdigit():
+            continue
+        try:
+            cmdline = (entry / "cmdline").read_bytes().decode("utf-8", "ignore")
+        except OSError:
+            continue
+        if hooks not in cmdline:
+            continue
+        if any(script in cmdline for script in PIPELINE_SCRIPTS):
+            found.append(int(entry.name))
+    return found
+
+
+def _stop_pipeline_processes():
+    """남은 파이프라인 프로세스 정리: SIGTERM -> 대기 -> SIGKILL -> 검증."""
+    remaining = [p for p in _pipeline_pids() if p != os.getpid()]
+    if not remaining:
+        return
+    print(f"남은 파이프라인 프로세스 정리: {remaining}")
+    for pid in remaining:
+        try:
+            os.kill(pid, signal.SIGTERM)
+        except OSError:
+            pass
+    deadline = time.time() + 10
+    while time.time() < deadline:
+        remaining = [p for p in _pipeline_pids() if p != os.getpid()]
+        if not remaining:
+            print("파이프라인 프로세스 정리됨")
+            return
+        time.sleep(0.5)
+    for pid in remaining:
+        try:
+            os.kill(pid, signal.SIGKILL)
+        except OSError:
+            pass
+    time.sleep(1)
+    remaining = [p for p in _pipeline_pids() if p != os.getpid()]
+    if remaining:
+        print(f"경고: 파이프라인 프로세스가 남아 있음: {remaining} — 수동 확인 필요")
+    else:
+        print("파이프라인 프로세스 정리됨")
 
 
 def status():

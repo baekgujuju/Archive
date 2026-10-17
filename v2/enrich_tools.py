@@ -38,6 +38,8 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+from pipeline_lock import pipeline_lock
+
 V2_ROOT = Path(__file__).resolve().parent
 DATA_DIR = V2_ROOT / "data"
 MEDIA_FULL = V2_ROOT / "media" / "full"
@@ -137,6 +139,23 @@ def load_json(path, default):
         return default
 
 
+def _read_json_strict(path):
+    """Read JSON, distinguishing missing from corrupt (P1-6).
+
+    Returns (found, data): found=False only when the file does not exist.
+    Raises RuntimeError on corrupt content — callers must NOT treat a
+    corrupt file as empty, or a merge-save would overwrite the corrupt
+    original with only this run's keys.
+    """
+    if not path.exists():
+        return False, None
+    try:
+        with open(path, encoding="utf-8") as f:
+            return True, json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        raise RuntimeError(f"손상된 JSON (격리·fail-closed): {path} ({e})")
+
+
 def save_json_atomic(path, data):
     # Unique tmp per call: concurrent writers previously shared one ".tmp"
     # pathname and could interfere with each other's rename.
@@ -147,7 +166,7 @@ def save_json_atomic(path, data):
 
 
 def _merge_save(path, updates, deletions=()):
-    """Flock-protected read-merge-write: apply only `updates` (touched keys)
+    """Shared-lock-protected read-merge-write: apply only `updates` (touched keys)
     and `deletions` onto the CURRENT disk state.
 
     A long-running enrich (up to 900s) may have loaded a stale snapshot;
@@ -155,35 +174,48 @@ def _merge_save(path, updates, deletions=()):
     2026-10-17 152 -> 107 vision loss). Merging only touched keys means an
     untouched entry is never overwritten by an older value, and a deletion
     another writer already applied is not resurrected by this writer's
-    stale snapshot. Lock is fail-open after ~10s (liveness over strictness).
+    stale snapshot.
+
+    P1-6: fail-closed. (a) The shared pipeline-write lock serializes this
+    save against builds (which replace the whole data/ dir) — the old
+    per-file lock did not. (b) Lock timeout -> raise, never write unlocked
+    (the old fail-open after ~10s silently lost another writer's updates).
+    (c) Corrupt existing file -> quarantine it and raise; never treat
+    corrupt bytes as {} and overwrite the original with this run's keys.
     """
-    lock_path = path.with_suffix(path.suffix + ".lock")
-    lock_fd = None
-    try:
-        lock_fd = open(lock_path, "w")
-        deadline = time.time() + 10
-        while True:
+    with pipeline_lock():
+        try:
+            found, disk = _read_json_strict(path)
+        except RuntimeError as e:
+            # Corrupt original: quarantine the bytes (recoverable) and
+            # fail closed. The next run sees a missing file and rebuilds;
+            # the quarantined bytes stay for manual recovery.
+            quarantine = path.with_name(
+                f".{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+            )
             try:
-                fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                break
-            except BlockingIOError:
-                if time.time() > deadline:
-                    log(f"{path.name}: 락 획득 실패, 락 없이 저장 (fail-open)")
-                    lock_fd = None
-                    break
-                time.sleep(0.1)
-        disk = load_json(path, {})
+                os.replace(path, quarantine)
+                log(f"{path.name}: 손상 파일 격리 -> {quarantine.name}")
+            except OSError as qe:
+                log(f"{path.name}: 손상 파일 격리 실패 ({qe}) — 덮어쓰지 않고 중단")
+            raise
+        if not found:
+            disk = {}
+        elif not isinstance(disk, dict):
+            quarantine = path.with_name(
+                f".{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+            )
+            try:
+                os.replace(path, quarantine)
+                log(f"{path.name}: 비-dict 파일 격리 -> {quarantine.name}")
+            except OSError as qe:
+                log(f"{path.name}: 격리 실패 ({qe}) — 덮어쓰지 않고 중단")
+            raise RuntimeError(f"손상된 JSON (dict 아님, 격리·fail-closed): {path}")
         merged = dict(disk)
         for key in deletions:
             merged.pop(key, None)
         merged.update(updates)
         save_json_atomic(path, merged)
-    finally:
-        if lock_fd is not None:
-            try:
-                fcntl.flock(lock_fd, fcntl.LOCK_UN)
-            finally:
-                lock_fd.close()
 
 
 def _dict_diff(old, new):

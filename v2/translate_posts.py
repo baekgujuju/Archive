@@ -26,6 +26,7 @@ import hashlib
 import json
 import os
 import re
+import secrets
 import subprocess
 import sys
 import time
@@ -34,9 +35,15 @@ import tempfile
 from html.parser import HTMLParser
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
+
 V2_ROOT = Path(__file__).parent
 DATA_DIR = V2_ROOT / "data"
 CACHE_FILE = DATA_DIR / "translations.json"
+# Validated recovery copy: written atomically after every successful save.
+# If CACHE_FILE is ever corrupt, load_cache() falls back to this file.
+RECOVERY_FILE = DATA_DIR / "translations.json.recovery"
 API_KEY_PATH = Path.home() / ".gemini" / ".api_key"
 _GEMINI_QUOTA_UNTIL = 0.0  # monotonic timestamp; 429 cooldown expiry
 _GEMINI_QUOTA_COOLDOWN = 60.0
@@ -235,17 +242,99 @@ class ArticleParagraphs(HTMLParser):
             if value and not block['nested']: self.paragraphs.append(value)
 
 
+def _atomic_write_json(path, data):
+    """Write JSON atomically: unique tmp file in the same dir + fsync + replace.
+
+    A kill mid-write leaves the old file (or no file) intact, never a
+    truncated half-written file.
+    """
+    tmp = path.with_name(f".{path.name}.{secrets.token_hex(8)}.tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
+
+
+def _read_cache_file(path):
+    """Read a cache file. Returns the dict, or None if missing/corrupt."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def load_cache():
+    """Load the translation cache, with corruption recovery (P1-1).
+
+    - Valid main file -> return it.
+    - Corrupt main file -> quarantine it (never silently delete: the corrupt
+      bytes may still hold recoverable entries), fall back to the validated
+      recovery copy. If that is also bad, return {} and rebuild from posts
+      (translations are regenerable; a corrupt cache must never wedge the
+      pipeline into a permanent crash loop).
+    """
+    cache = _read_cache_file(CACHE_FILE)
+    if cache is not None:
+        return cache
+    if CACHE_FILE.exists():
+        quarantine = CACHE_FILE.with_name(
+            f"translations.json.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+        )
+        try:
+            os.replace(CACHE_FILE, quarantine)
+            print(f"손상된 번역 캐시를 격리: {quarantine}", file=sys.stderr)
+        except OSError as e:
+            print(f"손상 캐시 격리 실패 (덮어쓰지 않고 계속): {e}", file=sys.stderr)
+    recovery = _read_cache_file(RECOVERY_FILE)
+    if recovery is not None:
+        print(f"복구본에서 번역 캐시 복원: {len(recovery)}개", file=sys.stderr)
+        return recovery
+    print("번역 캐시 복구본 없음 — 빈 캐시에서 재번역으로 재구성", file=sys.stderr)
+    return {}
+
+
+def save_cache(cache, touched):
+    """Save the translation cache (P1-1).
+
+    Under the shared pipeline-write lock: re-read the CURRENT file, merge
+    only the keys this run touched (so a concurrent writer's entries are
+    never clobbered by our older snapshot), then atomic-write the merged
+    cache and refresh the validated recovery copy.
+
+    Fail-closed: lock timeout or a corrupt current file -> raise, do not
+    write. The hook marks retry and the next poll re-attempts.
+    """
+    with pipeline_lock():
+        current = _read_cache_file(CACHE_FILE)
+        if current is None and CACHE_FILE.exists():
+            raise RuntimeError(
+                "현재 번역 캐시가 손상되어 저장하지 않습니다 "
+                "(load_cache 격리 경로로 복구 후 재시도)"
+            )
+        merged = dict(current or {})
+        for key in touched:
+            if key in cache:
+                merged[key] = cache[key]
+        _atomic_write_json(CACHE_FILE, merged)
+        _atomic_write_json(RECOVERY_FILE, merged)
+        return merged
+
+
 def main():
     parser = argparse.ArgumentParser(description='영어 게시글 문단별 번역 (X/Web/IB)')
     parser.add_argument('--force', action='store_true', help='캐시 무시하고 다시 번역')
     parser.add_argument('--chunks',nargs='+',choices=TARGET_CHUNKS,help='지정한 데이터 청크만 갱신')
     args = parser.parse_args()
 
-    cache = {}
-    if CACHE_FILE.exists() and not args.force:
-        with open(CACHE_FILE, encoding='utf-8') as f:
-            cache = json.load(f)
-        print(f"캐시 로드: {len(cache)}개")
+    # --force는 "다시 번역"만 제어한다: 캐시는 항상 로드해 병합 베이스로 쓴다.
+    # (예전: --force 시 빈 캐시에서 시작해 최종 저장에서 전역 캐시를 이번 실행분으로
+    # 교체해 버리는 P1-1. --chunks도 touched 키만 병합하므로 다른 청크가 보존된다.)
+    cache = load_cache()
+    print(f"캐시 로드: {len(cache)}개")
+    touched = set()
 
     # 전체 청크에서 번역 대상 수집
     to_translate = []  # (post_id, text, chunk)
@@ -331,12 +420,17 @@ def main():
             }
             success += 1
             consecutive_failures=0
+            touched.add(post_id)
             print(f"  ✓ 번역 완료")
 
             if (i + 1) % 5 == 0:
-                with open(CACHE_FILE, 'w', encoding='utf-8') as f:
-                    json.dump(cache, f, ensure_ascii=False, indent=2)
-                print(f"  (캐시 중간 저장)")
+                try:
+                    save_cache(cache, touched)
+                    print(f"  (캐시 중간 저장)")
+                except Exception as e:
+                    # 중간 저장 실패는 번역 성공과 별개: 최종 저장에서 재시도한다.
+                    print(f"  (캐시 중간 저장 실패 — 최종 저장에서 재시도: {e})",
+                          file=sys.stderr)
 
             time.sleep(2)
         except Exception as e:
@@ -357,13 +451,13 @@ def main():
                 cache[post_id] = dict(previous, last_attempt=failure)
             else:
                 cache[post_id] = failure
+            touched.add(post_id)
             if consecutive_failures>=2:
                 print('연속 번역 실패 2회: 기존 캐시를 보존하고 이번 실행을 종료합니다.',file=sys.stderr)
                 break
             time.sleep(5)
 
-    with open(CACHE_FILE, 'w', encoding='utf-8') as f:
-        json.dump(cache, f, ensure_ascii=False, indent=2)
+    save_cache(cache, touched)
 
     print(f"\n=== 완료 ===")
     print(f"성공: {success}개, 실패: {failed}개")

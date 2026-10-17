@@ -30,6 +30,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from proc_group import run_grouped
+
 V2_ROOT = Path(__file__).resolve().parent.parent
 HOOKS_DIR = V2_ROOT / "hooks"
 STATE_FILE = HOOKS_DIR / ".monitor_state.json"
@@ -128,10 +130,18 @@ def main():
             print(f"[monitor] 변경 감지: {diffs}")
         # 워터마크는 후크 성공 후에만 저장 (실패 시 재시도 보장)
 
-        r = subprocess.run(
-            [sys.executable, str(HOOKS_DIR / "post_ingest_hook.py")],
-            capture_output=True, text=True, timeout=1800,
-        )
+        # P1-7: 후크 전체 타임아웃은 내부 예산 합계(빌드/미러 600 + enrich 900
+        # + 번역 1800 = 3300)보다 커야 한다. 예전 1800초는 번역이 정상
+        # 동작 중인데도 후크를 죽여 고아 translator를 만들었다.
+        # run_grouped는 타임아웃 시 후크 프로세스 그룹 전체를 종료한다.
+        try:
+            r = run_grouped(
+                [sys.executable, str(HOOKS_DIR / "post_ingest_hook.py")],
+                capture_output=True, text=True, timeout=3600,
+            )
+        except subprocess.TimeoutExpired:
+            print("[monitor] 후크 타임아웃 (3600초) — 그룹 종료, 워터마크 유지, 다음 실행에서 재시도")
+            return 1
         print(r.stdout[-3000:])
         if r.returncode != 0:
             print(f"[monitor] 후크 실패 (exit {r.returncode}) — 워터마크 유지, 다음 실행에서 재시도")

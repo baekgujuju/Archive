@@ -8,6 +8,8 @@ import subprocess
 import tempfile
 from datetime import datetime
 
+from pipeline_lock import PipelineLockTimeout, pipeline_lock
+
 V2 = Path(__file__).resolve().parent.parent
 ARRAYS = ('pinned', 'deletedPosts', 'deletedReplies', 'deletedRemovedReplies')
 MAPS = ('bookmarks', 'names', 'memos', 'highlights')
@@ -100,17 +102,23 @@ def publish(v2=V2):
         target = v2 / 'data' / 'shared-state.json'
         manifest_path = v2 / 'data' / 'manifest.json'
         paths = [str(p.relative_to(repo)) for p in (target, manifest_path)]
-        if target.exists():
-            previous = validate(json.loads(target.read_text(encoding='utf-8')))
-            if datetime.fromisoformat(previous['updatedAt'].replace('Z', '+00:00')) > datetime.fromisoformat(state['updatedAt'].replace('Z', '+00:00')):
-                raise ValueError('Older export rejected')
-        # Never overwrite a pending article build or manual change.
-        if run(['git', 'status', '--porcelain', '--'] + paths, repo).strip():
-            raise ValueError('Target files have uncommitted changes; deferred')
-        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
-        atomic(target, state)
-        manifest['shared_state'] = {'file': 'data/shared-state.json', 'sha256': hashlib.sha256(target.read_bytes()).hexdigest(), 'revision': state['revision']}
-        atomic(manifest_path, manifest)
+        # P1-4: read-validate-write under the shared lock so a concurrent
+        # build cannot preserve a stale shared-state and then lose this write.
+        try:
+            with pipeline_lock():
+                if target.exists():
+                    previous = validate(json.loads(target.read_text(encoding='utf-8')))
+                    if datetime.fromisoformat(previous['updatedAt'].replace('Z', '+00:00')) > datetime.fromisoformat(state['updatedAt'].replace('Z', '+00:00')):
+                        raise ValueError('Older export rejected')
+                # Never overwrite a pending article build or manual change.
+                if run(['git', 'status', '--porcelain', '--'] + paths, repo).strip():
+                    raise ValueError('Target files have uncommitted changes; deferred')
+                manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+                atomic(target, state)
+                manifest['shared_state'] = {'file': 'data/shared-state.json', 'sha256': hashlib.sha256(target.read_bytes()).hexdigest(), 'revision': state['revision']}
+                atomic(manifest_path, manifest)
+        except PipelineLockTimeout as e:
+            raise ValueError(f"공유 상태 쓰기 건너뜀 (락 타임아웃): {e}")
         if run(['git', 'status', '--porcelain', '--'] + paths, repo).strip():
             run(['git', 'add', '--'] + paths, repo)
             run(['git', 'commit', '-m', 'Publish owner archive settings'], repo)

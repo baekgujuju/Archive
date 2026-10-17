@@ -28,6 +28,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from proc_group import run_grouped
+
 HOOKS_DIR = Path(__file__).parent
 V2_ROOT = HOOKS_DIR.parent
 LOG_FILE = HOOKS_DIR / "scheduler.log"
@@ -35,7 +37,7 @@ LOCK_FILE = HOOKS_DIR / ".scheduler.lock"
 
 # 단계별 타임아웃 (초)
 TIMEOUT_DRIVE_POLL = 600   # Drive 인제스트
-TIMEOUT_MONITOR = 2400     # monitor (번역 1800초 허용 + 여유)
+TIMEOUT_MONITOR = 3900     # monitor (후크 3600 + 300 여유, P1-7 체인 정합)
 
 
 def log(msg):
@@ -47,14 +49,18 @@ def log(msg):
 
 
 def run_step(name, script, timeout):
-    """단일 단계 실행. 실패 시 False 반환."""
+    """단일 단계 실행. 실패 시 False 반환.
+
+    P1-7: run_grouped로 실행해 타임아웃 시 단계 프로세스 그룹 전체를
+    종료한다 (subprocess.run은 직접 자식만 죽여 손자를 고아로 남긴다).
+    """
     log(f"=== {name} 시작 (타임아웃 {timeout}초) ===")
     try:
         env = os.environ.copy()
         # 발행 환경변수 기본값 보장
         env.setdefault("V2_PUBLISH", "1")
         env.setdefault("V2_PUBLISH_BRANCH", "main")
-        r = subprocess.run(
+        r = run_grouped(
             [sys.executable, str(script)],
             capture_output=True, text=True, timeout=timeout, env=env)
         if r.stdout:

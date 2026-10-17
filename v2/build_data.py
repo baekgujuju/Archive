@@ -20,6 +20,8 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
+
+from pipeline_lock import pipeline_lock
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 
@@ -114,12 +116,23 @@ def sha256_file(path):
     return h.hexdigest()
 
 
+def _read_json_bytes(path):
+    """Read a JSON file once, returning (parsed, sha256 of the exact bytes).
+
+    P1-5: the manifest's source hash and the pre-swap re-verification must
+    describe the exact bytes that were parsed, not a later re-read.
+    """
+    raw = path.read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    return json.loads(raw.decode("utf-8")), digest
+
+
 def load_posts():
     """
     posts.json 로드 및 검증
 
     Returns:
-        list: 검증된 포스트 리스트
+        (list, str): 검증된 포스트 리스트, 파싱한 바이트의 SHA-256
 
     Raises:
         FileNotFoundError: posts.json이 없을 때
@@ -132,8 +145,7 @@ def load_posts():
         )
 
     try:
-        with open(POSTS_JSON, encoding='utf-8') as f:
-            posts = json.load(f)
+        posts, posts_hash = _read_json_bytes(POSTS_JSON)
     except json.JSONDecodeError as e:
         raise ValueError(
             f"posts.json 파싱 실패 (line {e.lineno}, col {e.colno}): {e.msg}\n"
@@ -179,7 +191,7 @@ def load_posts():
         if len(errors) > 10:
             print(f"  ... 외 {len(errors) - 10}개", file=sys.stderr)
 
-    return valid_posts
+    return valid_posts, posts_hash
 
 
 def load_web_articles():
@@ -190,14 +202,14 @@ def load_web_articles():
     별도 index.json에 있음. v2에서 누락되지 않도록 병합.
 
     Returns:
-        list: 정규화된 웹 글 리스트 (v2 스키마 호환)
+        (list, str|None): 정규화된 웹 글 리스트 (v2 스키마 호환),
+        파싱한 바이트의 SHA-256 (인덱스 없음 시 None)
     """
     if not WEB_INDEX_JSON.exists():
         print(f"  웹 인덱스 없음 (건너뜀): {WEB_INDEX_JSON}", file=sys.stderr)
-        return []
+        return [], None
 
-    with open(WEB_INDEX_JSON, encoding='utf-8') as f:
-        data = json.load(f)
+    data, web_hash = _read_json_bytes(WEB_INDEX_JSON)
 
     articles = data.get('articles', []) if isinstance(data, dict) else []
     normalized = []
@@ -221,7 +233,7 @@ def load_web_articles():
             'fullHtml': a.get('fullHtml', ''),
             'category': 'web',
         })
-    return normalized
+    return normalized, web_hash
 
 
 def classify_post(post):
@@ -320,7 +332,40 @@ def content_updated_at(source_hash, now):
     return now
 
 
+def _current_source_hashes():
+    """현재 소스 파일들의 해시 dict (스냅샷과 동일 형식).
+
+    P1-5: 교체 직전 재검증용. source_fingerprint()와 같은 조합이다.
+    """
+    hashes = {}
+    for name, source in (("posts", POSTS_JSON), ("web", WEB_INDEX_JSON), ("ib", IB_LIBRARY_JSON)):
+        hashes[name] = sha256_file(source) if source.exists() else None
+    try:
+        from ib_adapter import canonical_fingerprint
+        hashes["ib_canonical"] = canonical_fingerprint()
+    except Exception as e:
+        print(f"  경고: IB 정본 해시 실패: {e}", file=sys.stderr)
+        hashes["ib_canonical"] = None
+    return hashes
+
+
+def _snapshot_hash(snapshot):
+    """스냅샷 dict -> manifest source_hash (source_fingerprint()와 동일 조합)."""
+    return hashlib.sha256(json.dumps(snapshot, sort_keys=True).encode()).hexdigest()
+
+
 def build_data():
+    """메인 빌드 로직 (원자적 배포).
+
+    P1-4: 전체 빌드를 공유 파이프라인 락 하에서 수행한다. 보존 복사부터
+    교체·백업 정리까지, 다른 writer(enrich/translate/설정)의 저장이 끼어들어
+    스테이징본이 새 갱신을 덮는 일을 막는다.
+    """
+    with pipeline_lock():
+        _build_data_locked()
+
+
+def _build_data_locked():
     """
     메인 빌드 로직 (원자적 배포)
 
@@ -331,10 +376,10 @@ def build_data():
     """
     print("=== v2 데이터 빌드 시작 ===")
 
-    # 1. posts.json 로드 및 검증
+    # 1. posts.json 로드 및 검증 (+ 파싱한 바이트의 해시를 스냅샷으로 기록)
     print(f"\n[1/5] posts.json 읽기 및 검증...")
     try:
-        posts = load_posts()
+        posts, posts_hash = load_posts()
     except (FileNotFoundError, ValueError) as e:
         print(f"에러: {e}", file=sys.stderr)
         sys.exit(2)
@@ -355,8 +400,9 @@ def build_data():
         else:
             posts_web.append(post)
 
+    ib_hash = None
     if IB_LIBRARY_JSON.exists():
-        library = json.loads(IB_LIBRARY_JSON.read_text(encoding="utf-8"))
+        library, ib_hash = _read_json_bytes(IB_LIBRARY_JSON)
         existing = {str(p.get("id") or p.get("tweetId") or "") for p in posts_ib}
         for record in library.get("posts", []):
             if isinstance(record, dict) and str(record.get("id") or "") not in existing:
@@ -367,11 +413,20 @@ def build_data():
     print(f"  IB: {len(posts_ib)}개")
 
     # 2b. v1 웹 글 병합 (index.json)
-    web_articles = load_web_articles()
+    web_articles, web_hash = load_web_articles()
     if web_articles:
         posts_web.extend(web_articles)
         print(f"  Web 추가 (index.json): {len(web_articles)}개")
     print(f"  Web 합계: {len(posts_web)}개")
+
+    # P1-5 스냅샷: 파싱한 정확한 소스 바이트의 해시. manifest source_hash와
+    # 교체 직전 재검증이 이 스냅샷을 기준으로 한다 (나중 재읽기 아님).
+    snapshot = _current_source_hashes()
+    snapshot["posts"] = posts_hash
+    snapshot["web"] = web_hash
+    snapshot["ib"] = ib_hash
+    # ib_canonical은 파싱 대상이 아니라 해시 함수 자체라 현재값을 스냅샷으로 쓴다.
+    # (canonical_fingerprint()는 읽기 전용 해시이며, 교체 직전 재검증이 변경을 잡는다.)
 
     # 3. 스테이징 디렉토리에 생성
     print(f"\n[3/5] 스테이징 디렉토리에 생성...")
@@ -413,8 +468,9 @@ def build_data():
         print(f"\n[4/5] manifest.json 생성...")
 
         # 소스 콘텐츠 해시 (변경 감지용)
-        # posts.json 전체를 읽어서 해시 (결정적)
-        source_hash = source_fingerprint()
+        # P1-5: 파싱한 스냅샷의 해시를 쓴다. 여기서 다시 읽으면,
+        # 로드 이후 바뀐 소스의 해시가 오래된 청크에 붙는 TOCTOU가 된다.
+        source_hash = _snapshot_hash(snapshot)
 
         manifest = {
             "version": datetime.now(timezone.utc).isoformat(),
@@ -490,6 +546,17 @@ def build_data():
 
         # 6. 원자적 교체
         print(f"\n[6/6] 원자적 교체...")
+
+        # P1-5: 교체 직전 소스 재검증. 로드 이후 소스가 바뀌었으면
+        # 오래된 청크에 새 해시를 붙이지 않고 교체 없이 중단한다.
+        # (다음 폴이 새 소스로 처음부터 다시 빌드한다.)
+        current_snapshot = _current_source_hashes()
+        if current_snapshot != snapshot:
+            changed = [k for k in snapshot if snapshot.get(k) != current_snapshot.get(k)]
+            raise ValueError(
+                "소스가 빌드 중 변경됨 — 교체 없이 중단: "
+                f"{', '.join(changed)} (다음 폴이 새 소스로 재빌드)"
+            )
 
         # 기존 백업 (있을 경우)
         if DATA_DIR.exists():

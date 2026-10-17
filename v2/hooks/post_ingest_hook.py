@@ -19,11 +19,15 @@ import hashlib
 import json
 import os
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+
+from proc_group import run_grouped, terminate_current
+from pipeline_lock import PipelineLockTimeout, pipeline_lock
 
 V2_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = V2_ROOT / "data"
@@ -45,9 +49,33 @@ def log(msg):
     print(f"[hook {datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
 
 
+def _on_sigterm(signum, frame):
+    """P1-7: monitor가 후크 그룹에 SIGTERM을 보내면, 현재 자식 그룹부터
+    종료시키고 후크를 끝낸다. (SIGKILL만으로는 자손이 고아로 남는다.)"""
+    terminate_current()
+    raise SystemExit(143)
+
+
+def _on_sigterm(signum, frame):
+    """P1-7: monitor가 후크 그룹에 SIGTERM을 보내면, 현재 자식 그룹부터
+    종료시키고 후크를 끝낸다. (SIGKILL만으로는 자손이 고아로 남는다.)"""
+    terminate_current()
+    raise SystemExit(143)
+
+
+try:
+    # import 시점(테스트 등 비-메인 스레드)에서는 설치 불가 — 그 경우 스킵.
+    signal.signal(signal.SIGTERM, _on_sigterm)
+except ValueError:
+    pass
+
+
 def run(cmd, **kw):
     log("$ " + " ".join(str(c) for c in cmd))
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=kw.pop("timeout", 600), **kw)
+    # P1-7: 자식은 별도 프로세스 그룹으로 실행하고, 타임아웃 시 그룹 전체를
+    # 종료한다 (subprocess.run은 직접 자식만 죽여 손자를 고아로 남긴다).
+    r = run_grouped(cmd, capture_output=True, text=True,
+                    timeout=kw.pop("timeout", 600), **kw)
     if r.stdout:
         print(r.stdout[-2000:])
     if r.returncode != 0:
@@ -217,12 +245,18 @@ def main():
                 log("IB 어댑터 실패 — 중단")
                 return 1
 
-            # 2b. translations.json 백업
+            # 2b. translations.json 백업 (공유 락 하에서 읽어 일관된 스냅샷 확보)
             backup = None
             if TRANSLATIONS.exists():
                 backup = Path(tempfile.mkdtemp(prefix="v2_trans_", dir=HOOKS_DIR)) / "translations.json"
-                shutil.copy2(str(TRANSLATIONS), str(backup))
-                log(f"번역 캐시 백업: {backup}")
+                try:
+                    with pipeline_lock():
+                        shutil.copy2(str(TRANSLATIONS), str(backup))
+                except PipelineLockTimeout as e:
+                    log(f"번역 캐시 백업 건너뜀 (락 타임아웃): {e}")
+                    backup = None
+                else:
+                    log(f"번역 캐시 백업: {backup}")
 
             # 2c. 전체 빌드
             r = run([sys.executable, str(V2_ROOT / "build_data.py")])
@@ -274,23 +308,42 @@ def main():
                 log(f"AI툴 분류 예외: {_e} — 다음 실행에서 재시도")
         else:
             log("enrich_tools.py 없음")
-        # 2d. 번역 캐시 복원/병합
+        # 2d. 번역 캐시 복원/병합 (공유 락 하에서, 원자적 저장)
         if backup and backup.exists():
             try:
-                bak = json.loads(backup.read_text(encoding="utf-8"))
-                cur = json.loads(TRANSLATIONS.read_text(encoding="utf-8")) if TRANSLATIONS.exists() else {}
-                merged = dict(cur)
-                restored = sum(1 for k, v in bak.items() if k not in merged)
-                for k, v in bak.items():
-                    if k not in merged:
-                        merged[k] = v
-                if restored or len(merged) != len(cur):
-                    TRANSLATIONS.write_text(
-                        json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-                    log(f"번역 캐시 병합: {len(cur)}→{len(merged)}개 (복원 {restored}개)")
-            except (OSError, ValueError) as e:
-                log(f"번역 캐시 검증 실패, 백업으로 복원: {e}")
-                shutil.copy2(str(backup), str(TRANSLATIONS))
+                with pipeline_lock():
+                    try:
+                        bak = json.loads(backup.read_text(encoding="utf-8"))
+                    except (OSError, ValueError):
+                        bak = None
+                    if bak is None or not isinstance(bak, dict):
+                        # 손상된 백업을 현재 파일 위에 덮지 않는다 (예전 버그).
+                        # translate 로드 시 격리·복구 경로가 처리한다.
+                        log("번역 백업 손상 — 복원 건너뜀 (translate 로드 시 복구)")
+                    else:
+                        cur = {}
+                        if TRANSLATIONS.exists():
+                            try:
+                                cur = json.loads(TRANSLATIONS.read_text(encoding="utf-8"))
+                            except (OSError, ValueError):
+                                cur = {}
+                        if not isinstance(cur, dict):
+                            cur = {}
+                        merged = dict(cur)
+                        restored = sum(1 for k, v in bak.items() if k not in merged)
+                        for k, v in bak.items():
+                            if k not in merged:
+                                merged[k] = v
+                        if restored or len(merged) != len(cur):
+                            tmp = TRANSLATIONS.with_name(
+                                f".{TRANSLATIONS.name}.tmp-{os.getpid()}")
+                            tmp.write_text(
+                                json.dumps(merged, ensure_ascii=False, indent=2),
+                                encoding="utf-8")
+                            tmp.replace(TRANSLATIONS)
+                            log(f"번역 캐시 병합: {len(cur)}→{len(merged)}개 (복원 {restored}개)")
+            except PipelineLockTimeout as e:
+                log(f"번역 캐시 병합 건너뜀 (락 타임아웃): {e}")
             finally:
                 shutil.rmtree(backup.parent, ignore_errors=True)
 

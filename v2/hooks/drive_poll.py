@@ -43,6 +43,9 @@ POSTS_JSON = XBM / "posts.json"
 # 12h 러너는 flock을 사용하지 않음이 확인됨 → 격리된 상태로 충돌 회피
 SHARED_LOCK = HOOKS_DIR / ".drive_poll.lock"
 
+sys.path.insert(0, str(V2_ROOT))
+from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
+
 
 def log(msg):
     print(f"[drive_poll {datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
@@ -158,19 +161,26 @@ def main():
                 parsed=json.loads(post_file.read_text(encoding='utf-8'))
                 valid=isinstance(parsed,list) and parsed and all(isinstance(item,dict) and item.get('tweetId') and isinstance(item.get('fullText'),str) for item in parsed)
                 if not valid:failures+=1;continue
-                existing=json.loads(POSTS_JSON.read_text(encoding='utf-8')) if POSTS_JSON.exists() else []
-                if not isinstance(existing,list):raise ValueError('Canonical posts must be an array')
-                indices={str(item['tweetId']):i for i,item in enumerate(existing) if isinstance(item,dict) and item.get('tweetId')}
-                changed=False
-                for item in parsed:
-                    tid=str(item['tweetId'])
-                    if tid in indices:
-                        old=existing[indices[tid]];merged=dict(old)
-                        for key,value in item.items():
-                            if value not in (None,'',[]):merged[key]=value
-                        if merged!=old:existing[indices[tid]]=merged;updated+=1;changed=True
-                    else:indices[tid]=len(existing);existing.append(item);added+=1;changed=True
-                if changed:atomic_json(POSTS_JSON,existing)
+                # 정본 병합은 공유 파이프라인 락 하에서만 수행 (P1-2).
+                # 락 타임아웃 시 이 파일만 실패로 세고 다음 파일로 간다 (폴 전체 중단 금지).
+                try:
+                    with pipeline_lock():
+                        existing=json.loads(POSTS_JSON.read_text(encoding='utf-8')) if POSTS_JSON.exists() else []
+                        if not isinstance(existing,list):raise ValueError('Canonical posts must be an array')
+                        indices={str(item['tweetId']):i for i,item in enumerate(existing) if isinstance(item,dict) and item.get('tweetId')}
+                        changed=False
+                        for item in parsed:
+                            tid=str(item['tweetId'])
+                            if tid in indices:
+                                old=existing[indices[tid]];merged=dict(old)
+                                for key,value in item.items():
+                                    if value not in (None,'',[]):merged[key]=value
+                                if merged!=old:existing[indices[tid]]=merged;updated+=1;changed=True
+                            else:indices[tid]=len(existing);existing.append(item);added+=1;changed=True
+                        if changed:atomic_json(POSTS_JSON,existing)
+                except PipelineLockTimeout as e:
+                    log(f"파이프라인 락 타임아웃 — 다음 폴에서 재시도: {fid} ({e})")
+                    failures+=1;continue
                 shutil.copy2(path,safe_filename(name,fid,local_inbox))
                 # Per-file success: one malformed capture cannot mark another complete.
                 processed[fid]={'modifiedTime':fp[1],'size':fp[2],'at':datetime.now(timezone.utc).isoformat()}
