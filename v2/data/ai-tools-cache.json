@@ -1128,5 +1128,145 @@
     "fingerprint": "b0245a658dc80f2c69a7f9dbb0f8ae9daa32548dfce7fbcdd4ad712babec1a1a",
     "entry": null,
     "version": 3
+  },
+  "2111090149845352932:bcd7738ded617b4c.jpg": {
+    "fingerprint": "2a86c9fe9d7e79c4afef9b3996ef74336e699ba767db6b9335f99d1796b7e7c8",
+    "entry": null,
+    "version": 3
+  },
+  "2110840172896260562:d887b5d488bd1668.jpg": {
+    "fingerprint": "a38b8d1914bc97a3c75c916df07015f12fd8c388bd69de16fd880a8415b0791a",
+    "entry": null,
+    "version": 3
+  },
+  "2110829313964519502:e12fed21724ef190.jpg": {
+    "fingerprint": "fb0f1ce935014007174da6cc329bf0c742bafff584e8e8aad8ca603dbf437e84",
+    "entry": null,
+    "version": 3
+  },
+  "2110829313964519502:28c277d1ac5cca2f.jpg": {
+    "fingerprint": "22102c49b4193e96bd1de3dd2816091fbd6b0b62adddfced2014bb681d80e4e6",
+    "entry": null,
+    "version": 3
+  },
+  "article-20261016-1928:2ead9147a92fb8b1.jpg": {
+    "fingerprint": "c4c17b8cc31212cf75bc27519f09d54fbe8db1e29f9ba0ca34e1dfce76090cc2",
+    "entry": null,
+    "version": 3
+  },
+  "2111206827790885288:0d42a6eb94398bbf.jpg": {
+    "fingerprint": "9746dea3528ee6edaac0887b655ced7d9217f72b860459b2d988292fddf15167",
+    "entry": null,
+    "version": 3
+  },
+  "2111206827790885288:3c926f7dd0718d19.jpg": {
+    "fingerprint": "77f995cdf2c2e76b45a2706e6161d0d68160ae96a0836527807502baa6793329",
+    "entry": null,
+    "version": 3
+  },
+  "2111206827790885288:5cf4c72a9ac4e8f4.jpg": {
+    "fingerprint": "1ec92c9c09d3f237e095887d40ab21068d5924358accef66ebd8ec5d73f027dd",
+    "entry": null,
+    "version": 3
+  },
+  "2110740461522767881:b8636e9b5c41e2bc.jpg": {
+    "fingerprint": "497b1b02cbdce5f3c8f99d89c036f3e286b5ecd43e31e15dee67c7ebfaffb84e",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, 문서, 이미지 등 다양한 형식의 파일에서 텍스트, 표, 문서 구조를 추출하고 변환하는 도구입니다. 문서를 생성형 AI와 검색 증강 생성(RAG)에 활용하기 좋은 구조화된 데이터로 준비합니다.",
+      "category": "AI용 문서 파싱·변환 도구",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "497b1b02cbdce5f3c8f99d89c036f3e286b5ecd43e31e15dee67c7ebfaffb84e"
+    },
+    "version": 3
+  },
+  "article-20261016-1928:71628a811bb42311.png": {
+    "fingerprint": "eb27e3c73cd52b5fd22bc1247cb182e1501e254b1d93bb44f9426dde6928ea2b",
+    "entry": null,
+    "version": 3
+  },
+  "2110740461522767881:97bad5634c67b709.jpg": {
+    "fingerprint": "9238d9680f799676298d717be5df70150a1ffe085c54e0f2bc42ae3cd408a035",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, Word, HTML 등 다양한 문서를 분석해 텍스트, 표, 문서 구조를 추출하고 구조화된 형식으로 변환하는 도구입니다. 생성형 AI와 RAG에서 활용할 수 있도록 문서 데이터를 준비합니다.",
+      "category": "AI용 문서 파싱·구조화 도구",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "9238d9680f799676298d717be5df70150a1ffe085c54e0f2bc42ae3cd408a035"
+    },
+    "version": 3
+  },
+  "2110740461522767881:af3132420781314b.jpg": {
+    "fingerprint": "75575667ea63d3b4373a9b0b362afa7b6bb9b3cbc49754d152473c6edaf9a386",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, Word 등 다양한 문서에서 텍스트, 표, 레이아웃을 추출하고 구조화된 데이터로 변환하는 도구입니다. 문서를 생성형 AI와 검색 증강 생성(RAG)에 활용하기 적합한 형태로 준비합니다.",
+      "category": "AI용 문서 파싱·변환 도구",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "75575667ea63d3b4373a9b0b362afa7b6bb9b3cbc49754d152473c6edaf9a386"
+    },
+    "version": 3
+  },
+  "2110740461522767881:8b5a6c0fcce38ea8.jpg": {
+    "fingerprint": "b7db38b4a4723eb456394c76228c85639f0a20eaaec2a9005d57cf1accf1dc0b",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, Word 등 다양한 문서를 분석해 텍스트, 표, 문서 구조를 추출하고 생성형 AI가 활용하기 좋은 형식으로 변환하는 도구입니다.",
+      "category": "생성형 AI용 문서 파싱·변환 도구",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "b7db38b4a4723eb456394c76228c85639f0a20eaaec2a9005d57cf1accf1dc0b"
+    },
+    "version": 3
+  },
+  "2110740461522767881:e0114c0c20efa412.jpg": {
+    "fingerprint": "c475cf9fddda6da6bbc153a853ed0404327aa284df67b541856b39d796c58f5f",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, Word, PowerPoint 등 다양한 문서에서 텍스트, 표, 레이아웃을 추출하고 구조화된 형식으로 변환하는 도구입니다. 문서 데이터를 생성형 AI와 검색 증강 생성(RAG)에 활용할 수 있도록 준비합니다.",
+      "category": "AI용 문서 파싱 및 데이터 변환",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "c475cf9fddda6da6bbc153a853ed0404327aa284df67b541856b39d796c58f5f"
+    },
+    "version": 3
+  },
+  "article-20261016-1928:9b2b3f1d6a77b188.png": {
+    "fingerprint": "24414c3021f609a2c883cbc012a15f06fc4f891c4343114936116b711961d154",
+    "entry": null,
+    "version": 3
+  },
+  "2110740461522767881:51860008e84dcc6b.jpg": {
+    "fingerprint": "213c8e56b6e7d89703b35d0f013e51a9e6a3e8b6747e4efd853402a6d62f2df9",
+    "entry": {
+      "title": "docling-project/docling",
+      "summary_ko": "Docling은 PDF, Word 등 다양한 형식의 문서를 분석해 텍스트, 표, 문서 구조를 추출하고 생성형 AI가 활용하기 좋은 형식으로 변환하는 도구입니다.",
+      "category": "AI용 문서 파싱 및 변환 도구",
+      "repo_url": "https://github.com/docling-project/docling",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "213c8e56b6e7d89703b35d0f013e51a9e6a3e8b6747e4efd853402a6d62f2df9"
+    },
+    "version": 3
   }
 }

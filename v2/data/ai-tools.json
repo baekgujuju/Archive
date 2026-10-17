@@ -97,5 +97,16 @@
       "search:phrase:helm dashboard"
     ],
     "fingerprint": "54f7dcacbec604b2c609700254ff6f2d6b2b098f3436b6dadba6716265aed618"
+  },
+  "2110740461522767881": {
+    "title": "docling-project/docling",
+    "summary_ko": "Docling은 PDF, Word 등 다양한 형식의 문서를 분석해 텍스트, 표, 문서 구조를 추출하고 생성형 AI가 활용하기 좋은 형식으로 변환하는 도구입니다.",
+    "category": "AI용 문서 파싱 및 변환 도구",
+    "repo_url": "https://github.com/docling-project/docling",
+    "status": "verified",
+    "evidence": [
+      "text-url:no-title-check"
+    ],
+    "fingerprint": "213c8e56b6e7d89703b35d0f013e51a9e6a3e8b6747e4efd853402a6d62f2df9"
   }
 }

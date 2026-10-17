@@ -1772,5 +1772,167 @@
     "category_ko": "주가지수 상대강도 분석",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:824d6719b96bc4c49c0896523393c58482a797ee53790a0d4d8ebdaa5fe97cdb": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스닥 일봉 차트와 하락 시나리오",
+    "description_ko": "코스닥 지수가 764.42로 7.22% 하락한 일봉 차트다. 이동평균선과 지지·저항 구간이 표시되어 있으며, 노란 화살표는 반등 후 740선 부근으로 추가 하락하는 시나리오를 나타낸다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ad043ceeb6db5e8d8e194dd88c1150e0861fcc39faa5441f556a8b8489e6788e": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AST SpaceMobile 주봉 추세선 및 낙폭 분석",
+    "description_ko": "AST SpaceMobile의 주봉 차트로, 표시 가격은 44.46달러다. 장기 상승 추세선과 약 40달러의 지지 구간, 고점 대비 약 67%의 하락폭이 표시되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "Professorr_ / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2a321283498ddb688707ad99275a67d96906d9858fdc0cefb8e2735c423e28ba": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group 일봉 과매도 반등 분석",
+    "description_ko": "Nebius Group의 일봉 차트다. 200일 단순이동평균선 부근에서 거래량이 증가하며 반등한 모습과, 8일 지수이동평균선 대비 약 3배 ADR만큼 하락했다는 주석이 있다.",
+    "category_ko": "금융·기술적 분석",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:20ef9756029046c670b2adc7554fa1948222099a29f471ac4c051f1a60ac1c42": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group 30분봉 반전 매매 사례",
+    "description_ko": "Nebius Group의 30분봉 차트에 반전 진입가 168.87달러와 손절가 163.48달러가 표시되어 있다. 급락 이후 가격이 약 188.49달러까지 반등한 흐름을 보여준다.",
+    "category_ko": "금융·매매 전략",
+    "owner_hint": "AlbertRay / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b072760c4d0ecd09f25516c8e7a301b4a83071c9538b80ac22bc6ec8d87b2d13": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "2016~2026년 산업별 금액 및 비중 누적 막대그래프",
+    "description_ko": "정보기술, 금융, 통신서비스 등 산업별 금액과 비중을 연도별로 비교한 그래프다. 총액은 2016년 4,440억 달러에서 2026년 1조 3,300억 달러로 표시되며, 집계 지표명과 출처는 보이지 않는다.",
+    "category_ko": "경제·산업 통계",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1efe5bd3ce0da65e55776d4abdfe261d1f0e59d1915cf9002184148dee9b2848": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이클 델의 메모리 공급 부족 장기화 전망",
+    "description_ko": "마이클 델이 AI 수요 증가로 2027년 반도체 부족이 심해지고 메모리 공급 제약이 4년간 지속될 수 있다고 경고했다는 기사 발췌다. CNBC 인터뷰 발언을 인용한다.",
+    "category_ko": "반도체·AI 산업 뉴스",
+    "owner_hint": "CNBC 인터뷰 인용 / 원문 매체 미표시",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6ea0eb791bbd0ace01006707df3f8e490f146f1ee0b9fbdaba843e65ac93cd3f": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "반도체 공장 건설 기간과 기업 AI 수요 확대",
+    "description_ko": "신규 반도체 공장 건설에 약 4년이 걸려 현재 계획한 시설이 2029~2030년에 생산을 시작할 수 있다는 기사 발췌다. 기업의 AI 도입이 새로운 수요 증가를 이끌고 있다는 델의 발언도 담겨 있다.",
+    "category_ko": "반도체·AI 산업 뉴스",
+    "owner_hint": "마이클 델 발언 인용 / 원문 매체 미표시",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0f32d738987fd5faba3548b8c397e8333987ee19051a72c6b27126a32925d8f5": {
+    "index": 7,
+    "is_github": false,
+    "github_urls": [],
+    "title": "메모리 가격 상승 전망과 장기 공급 계약",
+    "description_ko": "DRAM·NAND·HBM 가격 상승 전망과 데이터센터 중심의 생산능력 전환을 다룬 기사 발췌다. HP와 델이 2031년까지 공급 계약을 연장하고 구글은 2035년까지의 계약을 논의 중이라는 내용이 강조되어 있다.",
+    "category_ko": "반도체·메모리 시장 뉴스",
+    "owner_hint": "Vinh 발언 인용 / 원문 매체 미표시",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b50b3a57f91a7d318fdd19aeaf8e7aed78d78e70b6656890db2643b2d97a4ead": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Docling",
+    "description_ko": "PDF, DOCX, PPTX, HTML 등 다양한 문서를 분석해 구조화된 문서로 변환하고, JSON·Markdown 내보내기와 생성형 AI 도구 연동을 제공하는 프로젝트의 소개 화면.",
+    "category_ko": "문서 파싱 및 변환",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0b5a9065fb0e1e39c9aacf4fa45f855ec2b3ad81b0e97aec649070a07b5a694e": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "9월~11월 백분율 추이 차트",
+    "description_ko": "9월 말 약 80%에서 10월 약 23%까지 하락한 뒤 11월 말 약 92%까지 상승하는 영역 차트. 10월 중순에 Today 표시가 있으며 지표 이름은 보이지 않는다.",
+    "category_ko": "시계열 데이터 시각화",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:da7caa47f496140c27d7c9fe84bc35b314ee66494270ea57a4c500880a8d355d": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Docling Features",
+    "description_ko": "다양한 파일 형식 파싱, PDF 구조 이해, OCR, 음성 인식, 로컬 실행, AI 프레임워크 연동, MCP 및 API 서버 등 Docling의 주요 기능을 나열한 화면.",
+    "category_ko": "문서 처리 도구 기능 소개",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:71063388184708bea69f4fe696998b3019d4c398eca59d2608494dbf3876c94a": {
+    "index": 3,
+    "is_github": true,
+    "github_urls": [],
+    "title": "anydoc",
+    "description_ko": "오피스 문서와 PDF 등을 GitHub Flavored Markdown으로 변환하는 Rust 라이브러리. Node.js·Python·WebAssembly 바인딩과 에이전트 스킬을 소개하며, 브라우저 내 로컬 변환을 지원한다고 설명한다.",
+    "category_ko": "문서 Markdown 변환",
+    "owner_hint": "Firecrawl / firecrawl",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:807dbf588aa6eef8cfc6a090b4ebcb9a203efe724cdd55cd240647b9c666a5c7": {
+    "index": 4,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Defuddle",
+    "description_ko": "웹페이지에서 댓글, 사이드바, 머리글 등 불필요한 요소를 제거하고 본문을 HTML 또는 Markdown으로 추출하는 도구. Obsidian Web Clipper를 위해 만들어졌으며 Mozilla Readability와의 차이를 설명한다.",
+    "category_ko": "웹 본문 추출",
+    "owner_hint": "Obsidian Web Clipper 관련",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9b4047df3794daa08d7f9788c1be4fe196ca5abbf15ec5dc00b09d71fb5276f5": {
+    "index": 5,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/jina-ai/reader"
+    ],
+    "title": "Reader",
+    "description_ko": "Jina AI의 Reader 소개 화면. r.jina.ai를 통한 URL의 LLM 친화적 텍스트 변환과 s.jina.ai를 통한 웹 검색 기능 및 처리 흐름을 설명한다.",
+    "category_ko": "웹 콘텐츠 변환 및 검색",
+    "owner_hint": "Jina AI / jina-ai",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b9b2778fb546d524a1c43a82cfdb0b29aa67371242fc3357ed42cccc5de660ed": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "6월 30일 이후 업종별 밸류에이션 및 실적 전망 변화",
+    "description_ko": "업종별 선행 PER, EPS 추정치 변화, 시가총액 변화, EPS 상향 종목 비율과 밸류에이션 하락 종목 비율을 비교한 색상 강조 표. S&P 500, 대형 기술주 7개, 메모리, AI 인프라, 반도체 등이 포함된다.",
+    "category_ko": "금융 및 주식시장 데이터",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b6eba8d8e5eb8c1a3fd9f57009f83f9bf3400ff2da3c9de450e8e505c55e2270": {
+    "index": 7,
+    "is_github": true,
+    "github_urls": [],
+    "title": "MarkItDown",
+    "description_ko": "PDF, 오피스 문서, 이미지, 오디오, HTML, ZIP 등 다양한 입력을 LLM과 텍스트 분석용 Markdown으로 변환하는 Python 유틸리티의 소개 화면. 문서 구조 보존과 입출력 권한 관련 주의사항을 설명한다.",
+    "category_ko": "문서 Markdown 변환",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }

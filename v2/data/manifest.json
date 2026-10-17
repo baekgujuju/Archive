@@ -24,7 +24,8 @@
   "app_version": "2.5.8",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "46827452d6811f5dc033bf84ac1f2337ce58f01010db866ea9d9fbaab598ad07"
+    "sha256": "46827452d6811f5dc033bf84ac1f2337ce58f01010db866ea9d9fbaab598ad07",
+    "count": 98
   },
   "shared_state": {
     "file": "data/shared-state.json",
@@ -33,7 +34,7 @@
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "33d601542b4294e924495737abadd3191adf78fc8bc08ad351636760bd27fdf5",
-    "count": 9
+    "sha256": "4a233b50a95f1ad925ff2feb9c993ddb9635e4cee5756b0d4c994efdcc5b770c",
+    "count": 10
   }
 }
