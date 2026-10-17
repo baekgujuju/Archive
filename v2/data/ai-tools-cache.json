@@ -1,692 +1,202 @@
 {
-  "1316391190879711233:a9a0835b92d89566.jpg": {
-    "fingerprint": "d30701690b75a2aba4da6b7eaf2377bdc6ca63e12c4a5b24e480e3b79c29509d",
+  "2110735663859450138:ad67f83dcdd54966.jpg": {
+    "fingerprint": "a2fe0f1b665d720ece873fbf5cd7b72e0e3bf5f6a9185e0550c8404a80b6f8e7",
     "entry": null,
     "version": 3
   },
-  "2008896517722218519:1515732cc128b8bf.jpg": {
-    "fingerprint": "1b2fd38b88ec3c457a0a83aca0febd1639e7dfd2da58256c79ead7b3de94e780",
+  "2111098174584791346:e943783541ce47a6.jpg": {
+    "fingerprint": "699b3e512d7155e25df1868f1729a7b702305a66e01d127ec986075f8ea4be37",
     "entry": null,
     "version": 3
   },
-  "2008896517722218519:6c132553e0ecdf23.jpg": {
-    "fingerprint": "6ee96225c40204d79154b5cf15b334cfee1d63d38681dd38cab6fcba42d1201b",
+  "2111098174584791346:c54c185eaec89b69.jpg": {
+    "fingerprint": "4628836765ec181e12f71c2808f894d2064456e09ae90ccf1d8e83761cce2fc2",
     "entry": null,
     "version": 3
   },
-  "2008896517722218519:bca2d63f9ff6eda0.jpg": {
-    "fingerprint": "fa69b220cb65365fa10869e3ff5851d7ef4b54b80dfac50252095fc4ea227b84",
+  "2110856399370829966:169e8509085f2954.png": {
+    "fingerprint": "dceac395ee14d047bd70746ce7aac7526a65cb2a2af6d079723640471a57d2c2",
     "entry": null,
     "version": 3
   },
-  "2008896517722218519:b432ffe5b2de1673.jpg": {
-    "fingerprint": "9ed98ca675794cfff69fb3adf6be0dabd8df6b50f28f0a767c4205407bb46241",
+  "article-20261016-1928:612b95c9c04f7a9b.jpg": {
+    "fingerprint": "2c2436466ac36124c7c23e141ba0d896e5cc2ceabf1930c20cd88e89872291d8",
     "entry": null,
     "version": 3
   },
-  "2037328321110065280:e3bb5e6c28117155.jpg": {
-    "fingerprint": "0b54f894309b5ffa9c2a844d266b018ca5be81119ad51c908ccea0bf08c3e684",
+  "2110856399370829966:97a3dcab5d59571b.jpg": {
+    "fingerprint": "bf9e89db9bddc5c0c4e09679efc82e5fdde2317143c6c3cfab27ed71ffbdc5c9",
     "entry": null,
     "version": 3
   },
-  "2037328321110065280:64f8ca95606d9753.jpg": {
-    "fingerprint": "c13c03e1cc69198307b2435ba1aae92cb0d7350c693ada90c5e81a52f29fd2ef",
+  "2110856399370829966:0b098dbc5e99cbae.png": {
+    "fingerprint": "7c03fa9e23e8089c6c93b05b614012c65e10f9a9ca831f8f05206cb596243119",
     "entry": null,
     "version": 3
   },
-  "2037328321110065280:7acc8ab08db29e40.jpg": {
-    "fingerprint": "e72b5ff9bf55fe6fa189571295bfe28c6b3c9db8d4c76dd4b6dcd3afcb8467c6",
+  "2110856399370829966:70379c5579bb0bee.jpg": {
+    "fingerprint": "a122daa46cbcca9e547dce8f363be9fea69ac6bb0178c6279065d8abf73c9fe8",
     "entry": null,
     "version": 3
   },
-  "2037328321110065280:a951c3e76dea7855.jpg": {
-    "fingerprint": "91ba48f24e3f2e3616dbe68e38c8aeec3a3d690d5151b39f467c8f3888e342f2",
+  "2111077032172093770:7d858414ddf36dcd.jpg": {
+    "fingerprint": "306dcaafe315de225b8522701532bf8feba17435537d586ee2754b24a00eac94",
     "entry": null,
     "version": 3
   },
-  "2037337138992414886:61e944e34fa79bfc.jpg": {
-    "fingerprint": "6adf2192ae66d3a069d804170a77c8dfd54c899179cec1071634a755d3a4f433",
+  "article-20261016-1928:b54547065111105a.png": {
+    "fingerprint": "97839250204f79a99ecef9779fb8d0ceddadf8fa32f2a5a5a444634ab2edb56a",
     "entry": null,
     "version": 3
   },
-  "2037373439305298365:ac2fd4bda0900687.jpg": {
-    "fingerprint": "ca35cb1cc7764debbf79fca503d194970480b166153d95c97465646aec2b7964",
+  "2111077032172093770:f78f6d15ba3e1ec3.jpg": {
+    "fingerprint": "f415331dd4b31b598dbe5c6df936dc2a47ef44653d47699ae8b01a64b5211629",
     "entry": null,
     "version": 3
   },
-  "2037373439305298365:ccb86bd58fa1cd6e.jpg": {
-    "fingerprint": "2c988e7f6a480d30be6425837ec4de6996687d6c6cd2204b32d3a1b97a857b03",
+  "2111077032172093770:60c6ce12138f9410.jpg": {
+    "fingerprint": "31d59065fd3b15c622c991e4a77c3ef89573e3b181cc6cf24db3645ab2b94535",
     "entry": null,
     "version": 3
   },
-  "2037373439305298365:3f4e05c9ea1c72e1.jpg": {
-    "fingerprint": "93ff8d05f3a4053997dec6399199b2a703935d22245369c8548e66060e9d8184",
+  "2111077032172093770:c9f7d000e98f8c86.jpg": {
+    "fingerprint": "c7101d1de1581f5594ac6c664f36c1c82e74f62e2ec0ae2576ad44a1f05960a6",
     "entry": null,
     "version": 3
   },
-  "2037381449612153136:cc3705f7d0df0067.jpg": {
-    "fingerprint": "7b8dd89b08093aa6a4c7491311afd86e0c0905058e4c8248e7184b850d0a3965",
+  "2111077032172093770:5c22141a52781338.jpg": {
+    "fingerprint": "796d5881a3b467a13a7c685bf2b06b56afc4f0e161f93a1215b672dae1a5ff07",
     "entry": null,
     "version": 3
   },
-  "2037675386201600013:fbedbce732b05347.jpg": {
-    "fingerprint": "b1bc9d6c61bd8f8594849e569c03a256a8bdb7781752797a55719c4ca0ac94f7",
+  "article-20261016-1928:7e57c509a603f4f9.png": {
+    "fingerprint": "c23392c56b87712730051da7dac66f1a7ad6f49e1af147c6ed467db056d0178a",
     "entry": null,
     "version": 3
   },
-  "2041151720601100593:6b4d79319a1e71f4.jpg": {
-    "fingerprint": "06f7564e3ea7eb5825ea6d80aa3c3e08f166a1dd070f4b3a4a57cba459ff066a",
+  "2111132564811653502:1cf3244f63dd9eea.jpg": {
+    "fingerprint": "0b3844b19f61e5a44749d9f74421de62f2bf4e39f23975d714a27ddfd48b9e4a",
     "entry": null,
     "version": 3
   },
-  "2042091141328466156:4fb1012be889a4f4.png": {
-    "fingerprint": "f25bdfc91f076314daf46d05c884dad192be135c4a3073f1be75873181c75440",
+  "2111132564811653502:73651bc1e42ecb18.png": {
+    "fingerprint": "aef8220ec02260c0a2bdb79146197c74f24c58eb3db5ba02872353cefb8766c7",
     "entry": null,
     "version": 3
   },
-  "2042412982106554632:877720d2f33f5664.jpg": {
-    "fingerprint": "f077df21e797f2f626e640d555ca7b59534faa8f3de9be510b9f5f9610eb51a1",
+  "2110778022131306528:5bd23d16d920d9d5.jpg": {
+    "fingerprint": "ab87da3943273f7da1f1260b184d85f4b841e3d62f0621ddf3719c97da1ef63b",
     "entry": null,
     "version": 3
   },
-  "2043585233958875219:132d67320ed87438.jpg": {
-    "fingerprint": "b335114494a6e33d9d41c46408d9e17e72e710da221e711dd46dbba945e2022f",
-    "entry": {
-      "title": "Developer-Y/math-science-video-lectures",
-      "summary_ko": "수학 및 과학 분야의 비디오 강의 및 대학 강좌 링크를 수집하여 정리한 큐레이션 리포지토리입니다. 물리학, 수학 등 다양한 분야의 강의 영상과 관련 학습 자료를 한곳에서 쉽게 찾아볼 수 있습니다.",
-      "category": "교육 / 학습 자료",
-      "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "b335114494a6e33d9d41c46408d9e17e72e710da221e711dd46dbba945e2022f"
-    },
-    "version": 3
-  },
-  "2043585233958875219:text-a6b3766dd0bcac84": {
-    "fingerprint": "f60ad44d5ce05b2fcdf8e9c6ffd712cfd0393ea736e70dd772262094bbf24e53",
-    "entry": {
-      "title": "Developer-Y/math-science-video-lectures",
-      "summary_ko": "과학과 수학 분야의 동영상 강의가 있는 강좌를 모아 제공하는 자료 목록입니다. 물리학 등 주제별로 강좌와 강의 영상 링크를 찾아볼 수 있습니다.",
-      "category": "과학·수학 온라인 강의 모음",
-      "repo_url": "https://github.com/Developer-Y/math-science-video-lectures",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "f60ad44d5ce05b2fcdf8e9c6ffd712cfd0393ea736e70dd772262094bbf24e53"
-    },
-    "version": 3
-  },
-  "2046996779418423431:314e7872e5fcc7dc.jpg": {
-    "fingerprint": "7fa318f1c0af2e1edef5b7125603075f7fc590e0b6bae9b33abe01adaa7060b6",
-    "entry": null,
-    "version": 3
-  },
-  "2046996779418423431:68e4394921b24dab.jpg": {
-    "fingerprint": "5114d9b81b77d71085471494985ded5e70f5a3819f0238c084e4b3dbec18f921",
-    "entry": null,
-    "version": 3
-  },
-  "2047222757981860320:92777c38b4bd3fd4.jpg": {
-    "fingerprint": "9cdb3475d986387eb1aa165b3a2af40c33f5121ce301da87830c91e3afd035ee",
-    "entry": null,
-    "version": 3
-  },
-  "2047222757981860320:314e7872e5fcc7dc.jpg": {
-    "fingerprint": "e6d562d7ffbc8e3167fea69cd25214eadc0483a9399ea0c9deaf2515fef0a832",
-    "entry": null,
-    "version": 3
-  },
-  "2047527388725264526:da89d80b1a34fdfe.jpg": {
-    "fingerprint": "66dd5bb96667d0073361b803be1eb0f6096d25e31e9dcb4326f8164ddeeefc10",
-    "entry": null,
-    "version": 3
-  },
-  "2048711994363044080:3b55e7fd30480e12.png": {
-    "fingerprint": "ff19fc6e9cd1952bceda0ad2f320345343b2ed2d4e7760c6d4654569bd083024",
-    "entry": null,
-    "version": 3
-  },
-  "2052024151498715240:9fb27afcdc4582d4.jpg": {
-    "fingerprint": "da1905ae8da52551e109e2e203d672599ba14d945304bb6dc06450de3a137dd2",
-    "entry": null,
-    "version": 3
-  },
-  "2052024151498715240:1f19d1bfcccf9daa.png": {
-    "fingerprint": "3edfcb6b9791a34c28b656b2e9740bc17e9a0c99bd1ad6a2fcf2a057c882c2de",
-    "entry": null,
-    "version": 3
-  },
-  "2055088909735035384:a0f3a7e21b2fbf46.jpg": {
-    "fingerprint": "a62bd1f0cdddfb4d4ecbf7e931ce4c2c385937a0e0465ce2c8161b2262f6815c",
-    "entry": null,
-    "version": 3
-  },
-  "2055088909735035384:da89d80b1a34fdfe.jpg": {
-    "fingerprint": "7a1ab930510333486a2ab69e0cb8d69591ffa2cd9937976e979cd8628fb9e0b9",
-    "entry": null,
-    "version": 3
-  },
-  "2057697811446284511:1f1fbf1b41ae76f7.jpg": {
-    "fingerprint": "38a5817ced34022b19cf25afc767d826fc50b965d3e1c872c28b70673d791ca1",
-    "entry": null,
-    "version": 3
-  },
-  "2057698122206486676:689336d7b8f9352d.png": {
-    "fingerprint": "11b8bd67823958c78bc6a16123757b4aed07e4b1e5f2c435682569d1f3bf11cc",
-    "entry": null,
-    "version": 3
-  },
-  "2059197148877423075:e8621d30c560c7e2.jpg": {
-    "fingerprint": "b57c1a6d9d74ffa652ce4d1ebd57d92a780aae0123fa9e93290a4c2047b25175",
-    "entry": {
-      "title": "steipete/agent-scripts.git",
-      "summary_ko": "여러 저장소에서 공통으로 사용하는 에이전트용 스크립트를 모아 둔 도구입니다. 에이전트의 반복 작업을 자동화하고 저장소 간 일관된 작업 흐름을 지원합니다.",
-      "category": "개발 에이전트용 공통 자동화 스크립트",
-      "repo_url": "https://github.com/steipete/agent-scripts.git",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "b57c1a6d9d74ffa652ce4d1ebd57d92a780aae0123fa9e93290a4c2047b25175"
-    },
-    "version": 3
-  },
-  "2059197148877423075:text-f1f8fd607ba3f113": {
-    "fingerprint": "39e1b374d8c43dbcb5660a469f2eaa64d432d68ee73250c97ef2b4c75d4de048",
-    "entry": {
-      "title": "steipete/agent-scripts.git",
-      "summary_ko": "AI 코딩 에이전트가 여러 저장소에서 공통으로 사용하는 작업 지침, 재사용 가능한 스킬, 개발 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화와 검증, 문서 목록 생성, 브라우저 조작 등을 지원합니다. ([저장소](https://github.com/steipete/agent-scripts))",
-      "category": "AI 코딩 에이전트용 개발 워크플로 자동화 도구",
-      "repo_url": "https://github.com/steipete/agent-scripts.git",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "39e1b374d8c43dbcb5660a469f2eaa64d432d68ee73250c97ef2b4c75d4de048"
-    },
-    "version": 3
-  },
-  "2059197148877423075:text-524ba09ff53fbb3e": {
-    "fingerprint": "321079e36521d9a188bacb702ea8656a53926bfd519d942de6bf135bda43fa70",
-    "entry": {
-      "title": "steipete/agent-scripts.git",
-      "summary_ko": "AI 코딩 에이전트가 여러 저장소에서 공통으로 사용할 작업 지침, 재사용 가능한 스킬, 개발 보조 스크립트를 모은 도구 모음입니다. 스킬 동기화·검증, 문서 목록 생성, 브라우저 조작 등을 지원합니다. ([저장소](https://github.com/steipete/agent-scripts))",
-      "category": "AI 코딩 에이전트용 개발 워크플로 자동화",
-      "repo_url": "https://github.com/steipete/agent-scripts.git",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "321079e36521d9a188bacb702ea8656a53926bfd519d942de6bf135bda43fa70"
-    },
-    "version": 3
-  },
-  "2062494620739924045:e3a7f857d0b49150.jpg": {
-    "fingerprint": "94fa4b4a06381e7e4bad1c5429a0aac4a143a910be2fdea2ea1370d80c14bf8f",
-    "entry": null,
-    "version": 3
-  },
-  "2062494620739924045:4dfd93c6722e3176.jpg": {
-    "fingerprint": "83427fd9e869518c09b608ef52f52d62cc236cb9356b5209c78ef24a1dfbf93b",
-    "entry": null,
-    "version": 3
-  },
-  "2062494624019833124:8b74f72c32bd6a30.jpg": {
-    "fingerprint": "180147ab4bb000e6b0ebc19da4a202263535583cfbd0f50e818dfb5a96e7e8e4",
-    "entry": null,
-    "version": 3
-  },
-  "2062494624019833124:3cba40d8657ada83.jpg": {
-    "fingerprint": "f7fb1017758865e7f4cfb82fd710d25ad2621fbc8e23f49a1541b4af8222fb4b",
-    "entry": null,
-    "version": 3
-  },
-  "2062494624019833124:e258eb60d20ea991.jpg": {
-    "fingerprint": "0f285143f0d95555b8c6ca6532a2df2fa5014de364a0fcedec2baa9ef79a75d6",
-    "entry": null,
-    "version": 3
-  },
-  "2062494624019833124:28ce76cbbc61521f.jpg": {
-    "fingerprint": "8481c43d8c9150238b72df6cabcf0498e534f43e24ff250b30b5248d47f6f291",
-    "entry": null,
-    "version": 3
-  },
-  "2063592410018673104:f0986e4b4b42d02e.jpg": {
-    "fingerprint": "459ee54b9574d1fe47bf97bf0e081dfb8a7bfe8de31ddaa9ca304ad7c87401aa",
-    "entry": null,
-    "version": 3
-  },
-  "2070666173277208737:bdd65ba3cf046d97.png": {
-    "fingerprint": "f3f69aaeb87e8481115885310a0cc60da0c8660dcd0be6ff81c0f34a3c123b55",
-    "entry": null,
-    "version": 3
-  },
-  "2070666173277208737:a31945c3aab0f93e.png": {
-    "fingerprint": "c776025e07f894b896ed01ec4bb037e2fac913f04a7cd6c2ca16b5b3f477aab7",
-    "entry": null,
-    "version": 3
-  },
-  "2070666173277208737:9fb27afcdc4582d4.jpg": {
-    "fingerprint": "93f34aef45749cdf9cc82ab5b6de72b01407f482ab8dc83ab336c21cb4ab6a5b",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:76ba78b99e8e47b3.jpg": {
-    "fingerprint": "73680ce75c056d3430a3a16a38ac4c8157805fc8aaeac14a133342d76a7c10ec",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:1be52c3e96cdf2e0.jpg": {
-    "fingerprint": "6a6811f2f20e96e4b7ed97f39d09ba475b4a26ec06f58ea2fd454ae90b61a49a",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:0154387948e05dd7.jpg": {
-    "fingerprint": "369d9cd3dea681e124a9cebc8fc26d2d4a48a7f08c36ad4d14f1db8ace774e76",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:a57f3acc985329a1.jpg": {
-    "fingerprint": "2c080a0eade3618811eb471ac431424a0fe31b46b412336d790399336238d7bb",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:3eb30e900e019c7e.jpg": {
-    "fingerprint": "a85ffece61ff47599b69305735c0d9a20537c4f46be18c1a81bb4c08a4c7d228",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:77f757f93ede0bcf.jpg": {
-    "fingerprint": "cd26fe1161394b1dfad45ce0d9c7a35e3619ca4e3de6054dea80c3c9a2eec4bf",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:97fa3d7e7049cf9e.jpg": {
-    "fingerprint": "2bfb8a0878fc6f7884ef0aaec2eea4a1d388dfde41e9ee113cb8b6b70d435958",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:c9e868bbfd6a7db7.jpg": {
-    "fingerprint": "803a41ab96e736d6387f6dc58430bdc574f198292c683176d34e620740bbe339",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:71877b455db39b3e.jpg": {
-    "fingerprint": "9b6aacc09b32ed7c232cbb4a651f18e063e9e465f83befdda14711fa79ba5439",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:254e7804223dc4b6.png": {
-    "fingerprint": "9c9d1384a860a6a4e105801ff5f841edc63cdb67940c44a2b27537d77beaa14c",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:827e8ab44e9b3c1f.jpg": {
-    "fingerprint": "981586f23709dae02d9e00387b78301c5f3a4b71ac25b4a30d540c66017ce9e0",
-    "entry": null,
-    "version": 3
-  },
-  "2082476026014364033:094e36d8ad96397a.jpg": {
-    "fingerprint": "984b32b83f9392cf3c6ae3e1a7488456e548cea3b6ec6ec3a5e9bfed9532c950",
-    "entry": null,
-    "version": 3
-  },
-  "2083463524802494823:b9ed2bf24f0fb5ae.jpg": {
-    "fingerprint": "baac70c76e04dde0915c0198674767f08cc16e9f42b8345202011d213e9ac8f4",
-    "entry": null,
-    "version": 3
-  },
-  "2083463524802494823:79fbc775ae5e12fd.jpg": {
-    "fingerprint": "d7339e9b1e65e148f4eb155f4190469504add7d9c934b635008ca7b230a09fd4",
-    "entry": null,
-    "version": 3
-  },
-  "2083463524802494823:b8a9ebb83ecdd392.jpg": {
-    "fingerprint": "df12c03033af7752eb3c1be592cdcda3ce96f5e9b45f1c74b3d123305ce6fbbe",
-    "entry": null,
-    "version": 3
-  },
-  "2083463524802494823:877db9706b738e80.jpg": {
-    "fingerprint": "980ef38dd951ec95f6f7657f6e5554e66a3a114ee8cc4e841271a0131424e743",
-    "entry": null,
-    "version": 3
-  },
-  "2083473942241780203:c9a2a1d33fac169b.jpg": {
-    "fingerprint": "40ed5860b1cee4af0a774992738be5ce5b7fa8971c34e6f1c82d81f80b306e9b",
-    "entry": null,
-    "version": 3
-  },
-  "2083473942241780203:ae33fa78603cf4d3.jpg": {
-    "fingerprint": "ca240e90af8ad1c6c598a6c44c579296e228c83fb4622cb2434a2ec02c40cae7",
-    "entry": null,
-    "version": 3
-  },
-  "2088193042083967340:8bae600667e596db.jpg": {
-    "fingerprint": "05b47c6a3072a447023d00e385531eca4153ce1c823ef49b89c04836e37152f1",
-    "entry": null,
-    "version": 3
-  },
-  "2089331487342829862:08c57748cc33fbe8.jpg": {
-    "fingerprint": "58339ab3a1f5e10a5baca6012e8c5da65575df5fbb2d316a5cc9b8ff12ee0cc9",
-    "entry": null,
-    "version": 3
-  },
-  "2089718444908597368:d209a9f29a54eba0.jpg": {
-    "fingerprint": "3e2fb3a1b3b968b668508fe3321d10d9c064b0c533ce509d55677b96f2394152",
-    "entry": null,
-    "version": 3
-  },
-  "2095881059431063962:7d1369aa7c8b4b38.jpg": {
-    "fingerprint": "ae1180b0988fbc1b26307d63883e200d6ed3dc984df4182973cc0368aa6c4857",
-    "entry": null,
-    "version": 3
-  },
-  "2096840638314717678:d809f2186ae0d768.jpg": {
-    "fingerprint": "ea071cba858451089037b501257f7f80d32031f5dc4f0c9a3d2a76dc5ef7c269",
-    "entry": {
-      "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 소개하는 목록입니다. 사용자가 필요한 Mac 앱을 쉽게 검색하고 발견하도록 돕습니다.",
-      "category": "macOS 소프트웨어 추천 목록",
-      "repo_url": "https://github.com/jaywcjlove/awesome-mac",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "ea071cba858451089037b501257f7f80d32031f5dc4f0c9a3d2a76dc5ef7c269"
-    },
-    "version": 3
-  },
-  "2096840638314717678:15e252a0318bff13.jpg": {
-    "fingerprint": "6b7383412e1d71fef98aec34a76358821f057fb9c41a4335e4fb7bc28a9bad3a",
-    "entry": {
-      "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 쉽게 검색하고 찾아볼 수 있도록 정리한 목록입니다.",
-      "category": "macOS 소프트웨어 추천 목록",
-      "repo_url": "https://github.com/jaywcjlove/awesome-mac",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "6b7383412e1d71fef98aec34a76358821f057fb9c41a4335e4fb7bc28a9bad3a"
-    },
-    "version": 3
-  },
-  "2096840638314717678:722d8e5ae234384f.jpg": {
-    "fingerprint": "072711840093e2517930ccef89081942d7428dc8dbde67ed4512726054914893",
-    "entry": {
-      "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 앱과 소프트웨어를 용도별로 분류해 소개하는 큐레이션 목록입니다. 필요한 Mac용 도구를 쉽게 찾고 탐색할 수 있도록 돕습니다.",
-      "category": "macOS 소프트웨어 큐레이션 목록",
-      "repo_url": "https://github.com/jaywcjlove/awesome-mac",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "072711840093e2517930ccef89081942d7428dc8dbde67ed4512726054914893"
-    },
-    "version": 3
-  },
-  "2096840638314717678:text-28fba7b218680c0f": {
-    "fingerprint": "83f40cfa2812f955b9627de47c636fea95f38305bcab24b821f97551ca75ef94",
-    "entry": {
-      "title": "jaywcjlove/awesome-mac",
-      "summary_ko": "다양한 고품질 macOS 소프트웨어를 용도별로 분류해 쉽게 찾아볼 수 있도록 정리한 큐레이션 목록입니다.",
-      "category": "macOS 소프트웨어 추천 목록",
-      "repo_url": "https://github.com/jaywcjlove/awesome-mac",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "83f40cfa2812f955b9627de47c636fea95f38305bcab24b821f97551ca75ef94"
-    },
-    "version": 3
-  },
-  "2099769376132260162:1b336b27a17c10b1.jpg": {
-    "fingerprint": "62ff2fc955e5bc8d632118d8a4465560e00991004b9044124802268a524f0122",
-    "entry": {
-      "title": "thaw-app/Thaw",
-      "summary_ko": "Thaw는 macOS 메뉴 막대의 아이콘을 숨기고 정리할 수 있는 오픈 소스 메뉴 막대 관리 도구입니다.",
-      "category": "macOS 메뉴 막대 관리",
-      "repo_url": "https://github.com/thaw-app/Thaw",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "62ff2fc955e5bc8d632118d8a4465560e00991004b9044124802268a524f0122"
-    },
-    "version": 3
-  },
-  "2099769376132260162:text-9801a88bbba17d88": {
-    "fingerprint": "1fd89d5b42ee233802b1be138111c8333bc7a5caaebb0924091ec390777df3e0",
-    "entry": {
-      "title": "thaw-app/Thaw",
-      "summary_ko": "Thaw는 macOS 메뉴 바 아이콘을 정리하고 관리할 수 있는 오픈소스 메뉴 바 관리 도구입니다. 숨김 영역 설정 및 아이콘 정리를 통해 깔끔하고 효율적인 데스크톱 환경을 제공합니다.",
-      "category": "macOS 유틸리티",
-      "repo_url": "https://github.com/thaw-app/Thaw",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "1fd89d5b42ee233802b1be138111c8333bc7a5caaebb0924091ec390777df3e0"
-    },
-    "version": 3
-  },
-  "2100023093435699620:42ea3f1a9ddec33f.jpg": {
-    "fingerprint": "b765239dadb67485f9c03f5c7b490efa469de032eeb1d5c599f461f380d16429",
-    "entry": null,
-    "version": 3
-  },
-  "2100782813507416114:d6e6200d0b32ea3d.jpg": {
-    "fingerprint": "5ab3e270993cacbeb73d76ecd46ff94eaf6596e84adf28861a1846bc90ef0856",
-    "entry": null,
-    "version": 3
-  },
-  "2100782813507416114:edd3b1cc7f0cacb1.jpg": {
-    "fingerprint": "0423436f3c3b7c0bb678aea0be8446303a9c034c036c7b53e1872523f15e2be3",
-    "entry": null,
-    "version": 3
-  },
-  "2101099423430255024:9a38caa126827ccf.jpg": {
-    "fingerprint": "07192a6878d16b11d66d2aac26d4180a454de8076fca567d80e6ef505785bf5b",
-    "entry": null,
-    "version": 3
-  },
-  "2101099423430255024:395d8b81bcdce616.jpg": {
-    "fingerprint": "e6eb3009fb87eaca6f46b2b36a58a85e022569ae739cc4cd6ddccc3e81959383",
-    "entry": null,
-    "version": 3
-  },
-  "2101099423430255024:1536dbe0c535cc1c.jpg": {
-    "fingerprint": "26aa6b6666dfe1f1f36a99d701395de5285460effcceef797bc3b2c43310a06a",
-    "entry": null,
-    "version": 3
-  },
-  "2101099423430255024:be63d8b34df36901.jpg": {
-    "fingerprint": "05d92ec63fd3d424dc5ac85607811e9049ec8b6c54deafc6945904654daff553",
-    "entry": null,
-    "version": 3
-  },
-  "2101099423430255024:61b5b101dfaaf2f5.jpg": {
-    "fingerprint": "0bc71925aea669c867e0e23dcadc922e622bee111c9c6a70fbd801b67741c732",
-    "entry": null,
-    "version": 3
-  },
-  "2102498561636094324:be8a1664bc050507.png": {
-    "fingerprint": "521b6497273031ce7606a0590b0c911e34ea1508ec886cc4a6726e4c5e3222ea",
-    "entry": null,
-    "version": 3
-  },
-  "2104436024093147159:505132bf6a116d15.jpg": {
-    "fingerprint": "ade02eecfbd57bbd57b0cae0c67788540f536a50796ca875140fddf7168aa2d7",
-    "entry": null,
-    "version": 3
-  },
-  "2104843389091139819:337330663538fe5f.jpg": {
-    "fingerprint": "a2d4ee3439d9223bb9ea88b83e189fbe0ea9497abbed9f3d9f3a42bd8d1b63d3",
-    "entry": null,
-    "version": 3
-  },
-  "2104889655980446116:808642e3d81d9ec5.jpg": {
-    "fingerprint": "c83b4753ab21b2c2e8fd365c7ceeac26249e8f6cf8b412abc506e5a3cd187007",
-    "entry": null,
-    "version": 3
-  },
-  "2104889655980446116:4721ad6e04c81b1d.png": {
-    "fingerprint": "9e8469b42099a6197a89c2f182f3b35191823511b7b7076478a18393974fce62",
+  "2110778022131306528:4ccbfff18f4e7287.png": {
+    "fingerprint": "cd047d37d49488c7023e2969f80671d480bfc2289df56235901b2c4f447aa24e",
     "entry": null,
     "version": 3
   },
-  "2104918615686332428:4fdf324c65683867.jpg": {
-    "fingerprint": "f3b2ca254440a54c3fa5386a5735a876d5cc0a6a610c680755ea5fe3d41f214e",
+  "article-20261016-1928:91272f074471eef8.jpg": {
+    "fingerprint": "a38535ca0be308255c1c2646d80c4e804daac0f9c924658657d23ce578e1b81f",
     "entry": null,
     "version": 3
   },
-  "2104920514297000294:4fdf324c65683867.jpg": {
-    "fingerprint": "0a1a5094daa5180ddc9563d33fde33e42db54693f0cce4296cdc69152bcf48a2",
+  "2110778022131306528:53e9a9ffc376ce9a.png": {
+    "fingerprint": "ec5ade6635569725c9f2082cee9042fe5bcb6fa10874eef573be0860594d7b7c",
     "entry": null,
     "version": 3
   },
-  "2104928125847248936:e4f0955d40e21526.png": {
-    "fingerprint": "a9328088ae99ecd80cbf9791fee3362991fdab2eb83d1c5a16209faacc68788c",
+  "2110778022131306528:68b5cf2caac22b2d.png": {
+    "fingerprint": "7d0b8362fb03ffa8d9bd8c042096c64470478dd581289cc844be414e94863444",
     "entry": null,
     "version": 3
   },
-  "2104928125847248936:57933fcf2c9917be.png": {
-    "fingerprint": "2424847f1bfd72e6f4a242ded44c474f8a68f8d294d10ddc26b322c8c9e1513e",
+  "2110778022131306528:cd4c9d28f5f8cfff.png": {
+    "fingerprint": "1cf879c0caae104cea0ef93253bbb32d5ce0eb1825c7a99639bb72f4d76391c9",
     "entry": null,
     "version": 3
   },
-  "2104928125847248936:f8db844c59d25997.png": {
-    "fingerprint": "8671e16fabcfa0c84884a37bee891ad65cd7b1dcad8bbb3bb15c78131143f972",
+  "2110778022131306528:b22d9131d2fc466b.png": {
+    "fingerprint": "bfad7f00c9ae6370bb16c01471ffb144236c9111fdf50140cfbdaf76611f9cbd",
     "entry": null,
     "version": 3
   },
-  "2104928125847248936:cd3b05d98880b266.png": {
-    "fingerprint": "34d5555a444bb5896c557a5b4157c0dcb19d7cf5b84b6165458e0c0b37456f35",
+  "article-20261016-1928:7d4f2051dc890e07.png": {
+    "fingerprint": "5bb7711c17b5c620eb117b711710be1a58c7f90c66eb596fadc75c9d7458df5a",
     "entry": null,
     "version": 3
   },
-  "2105819303471976479:7e6077f6b390cf9e.png": {
-    "fingerprint": "9c0583ae7935787e31d269b56555d6ae3e2ad404d72d38c33f771d255d2d72f5",
+  "2110778022131306528:b4c826ca8899caea.png": {
+    "fingerprint": "a3165b965165b8f7f8e944be1761b16e8dbfca9065c6a542194242348e02931f",
     "entry": null,
     "version": 3
   },
-  "2106014631391347028:82fb8bcd56056066.jpg": {
-    "fingerprint": "931dba8c9860da5eeecf3d34fdf8bfe6e1a9397eb40c8d4442681a86ea766667",
+  "2110778022131306528:262272fa5f7f0825.png": {
+    "fingerprint": "bc12e947dd7861740a957dd62bbf0453193eeee96bb8a188150c9e1a7af4eb80",
     "entry": null,
     "version": 3
   },
-  "2106014631391347028:7a71bac1ed30064d.jpg": {
-    "fingerprint": "256869125c8284b668a9c52e13a6dfc2d33379461954a5e7b08933e913a193c8",
+  "2110778022131306528:a20d16667f472929.png": {
+    "fingerprint": "895a26240394d19da3553979b7f867b4783540466b5e3a1931e520c2365e9af2",
     "entry": null,
     "version": 3
   },
-  "2106728039472152810:e81623b79a4b5102.jpg": {
-    "fingerprint": "5665cc3052f3fa2c7c9698b85c17a54f706e69ae540d408d0bf179c25f7f5792",
+  "2110778022131306528:e630bfa9803d74c1.png": {
+    "fingerprint": "4b58a299816fdc2e06646110c159b5fe50bfc60a285e13d2811e13328661c1a9",
     "entry": null,
     "version": 3
   },
-  "2106728039472152810:9d911df83e910b9d.jpg": {
-    "fingerprint": "7c4483deb5b134c465484ef3414c47db5eab34e8810f53dac3156bd9997328dd",
+  "article-20261016-1928:1676079cb1578b14.png": {
+    "fingerprint": "7d01bafa5c1d2f310ed1bd3e0f5ad6971cc66f56986b352beff3a3e8126a3ee0",
     "entry": null,
     "version": 3
   },
-  "2106728039472152810:23e27aeb899f3229.jpg": {
-    "fingerprint": "fa9c70767e4024f770b46bc900dc24960f3fa275a00d515ef248e99474a13255",
+  "2110778022131306528:3e47650de7851b62.png": {
+    "fingerprint": "adc56e41a7ff97ea9acccaf8090410291ff70c9489c55d757b2b45349dd7250a",
     "entry": null,
     "version": 3
   },
-  "2106796010823663783:544a636fea1d179b.jpg": {
-    "fingerprint": "ada18dc6e51f7f2140b12e2059b8e3e55c7f964ab49118bcdaa42d41be9e0a9a",
+  "2110778022131306528:36ab58f407f7b995.png": {
+    "fingerprint": "3ad0a6121cb182d13585200c3e0491f4ad208d0226260a7c048efdfb01a22e68",
     "entry": null,
     "version": 3
   },
-  "2106796010823663783:9af3319d1060fd96.png": {
-    "fingerprint": "1ac44d10bbadfe757db3f017634980e9b50300e643cfc61456f666448135f4dd",
+  "2110778022131306528:2864f544cdc268b3.png": {
+    "fingerprint": "7364a0ed0146c15f0d4dfcdce35a4e87ebed0b1f18d7c55cec0b469c33b2b89b",
     "entry": null,
-    "version": 3
-  },
-  "2107020338911707270:9182475ccb212888.jpg": {
-    "fingerprint": "a089f0a86eadd370af6a910082971d08ea7d6dac6fccd1c16c6b587cb8d487d8",
-    "entry": {
-      "title": "Nanako0129/sepia",
-      "summary_ko": "AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트의 GitHub 소개 카드. 에이전트 호환성과 Claude Code 및 Codex용 플러그인을 소개한다.",
-      "category": "GitHub 프로젝트 · 글쓰기 도구",
-      "repo_url": "https://github.com/Nanako0129/sepia",
-      "status": "verified",
-      "evidence": [
-        "screenshot:phrase:nanako0129 sepia"
-      ],
-      "fingerprint": "a089f0a86eadd370af6a910082971d08ea7d6dac6fccd1c16c6b587cb8d487d8"
-    },
     "version": 3
   },
-  "2107034668977848430:997ef6c43710935d.png": {
-    "fingerprint": "4b78a080bf741a72c87a7dbfc1de9670e276ae983afe9969821826e9967e51f7",
+  "2110778022131306528:302adee460f47561.png": {
+    "fingerprint": "a6d0f3bef13151e8e366993a620d5ce553757c6e03c8624a0da104ebda915d5d",
     "entry": null,
     "version": 3
   },
-  "2107244545805267079:d7150807f580bcf4.jpg": {
-    "fingerprint": "6dd95dca9f24ca24e4263387b8f33ac44de7bd334b7c5faaa16a6ae2e3599fdc",
+  "article-20261016-1928:8c6a61b35a41b490.png": {
+    "fingerprint": "806c8cf833730d31068873920e7c78e9dedb5b1a5a9e41f83df13b54d6135f05",
     "entry": null,
     "version": 3
   },
-  "2107244545805267079:eff14c30a6ee7d87.jpg": {
-    "fingerprint": "a3992014cf0848c06932d17cfd5c6b69b358935279f0e9661c46b38ab26165e5",
+  "2110778022131306528:0b676f5697d96c73.png": {
+    "fingerprint": "869b05837f85eb4373603eea696b02b5de6f15bae2ae864e5bb25de775f7f8e3",
     "entry": null,
     "version": 3
   },
-  "2107244545805267079:a2f615d79f01e1e6.jpg": {
-    "fingerprint": "1658c8448daf056b0afd54e573f7b0b1c1ded421cd417df308da03658add43cd",
+  "2111100692970746226:d294a9af102d2e0e.png": {
+    "fingerprint": "ab77ac6e9285280b53522b2f806f65f50a673869231bd9ecc9bd7a91af2a8e3c",
     "entry": null,
     "version": 3
   },
-  "2107244545805267079:5f70b2216ca757fd.jpg": {
-    "fingerprint": "52abfca167c740b9725848d8eaf9a987194ed08c22dbbf0865accf0b2b77bbcb",
+  "2111090149845352932:9ee806e6b56e2917.jpg": {
+    "fingerprint": "62cee3d274738442de8e53e0d5b12e54b99fee7f4523b2736b50e96301c9d62e",
     "entry": null,
     "version": 3
   },
-  "2107261048441151943:7efae6fede8d39f7.jpg": {
-    "fingerprint": "c1bf7bc3274444343406483b92a626d9bb83f0d3fb22391dfaf083eef53509a3",
+  "2111090149845352932:4bce8988d9a6a7c8.jpg": {
+    "fingerprint": "40260c186c9e727f8feff4f466ff614d03bb77085b63031742b8daedf28f8f4e",
     "entry": null,
     "version": 3
   },
-  "2107299145367310450:7ab2b83ea2e6a2a8.jpg": {
-    "fingerprint": "7fb8620f60e7e8c27d3436957c294bf9c53ccf963d95f07c74265ac8c01d3d47",
+  "article-20261016-1928:4348450ea71edd5a.png": {
+    "fingerprint": "b0245a658dc80f2c69a7f9dbb0f8ae9daa32548dfce7fbcdd4ad712babec1a1a",
     "entry": null,
-    "version": 3
-  },
-  "2107317736871534647:d04c54f7f078fb13.jpg": {
-    "fingerprint": "b7dba3800a0bc219ca785e59ad7949ded337254a2245c2e095c03867ce0f4631",
-    "entry": {
-      "title": "AgentMemoryRepo/agentmemoryrepo",
-      "summary_ko": "에이전트가 사용자에게 배운 정보와 선호를 별도 저장소에 실시간으로 저장하고, 다음 세션에서도 활용하도록 하는 메모리 저장소 명세입니다. 기억을 서로 연결해 위키처럼 탐색할 수 있습니다.",
-      "category": "AI 에이전트 장기 메모리 관리",
-      "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "b7dba3800a0bc219ca785e59ad7949ded337254a2245c2e095c03867ce0f4631"
-    },
-    "version": 3
-  },
-  "2107317736871534647:text-8cfe322ff2d980bc": {
-    "fingerprint": "664d9caacf8d72219112aa09394c242a2ffc5ac38043c815ca6c9eff8cff45e5",
-    "entry": {
-      "title": "AgentMemoryRepo/agentmemoryrepo",
-      "summary_ko": "에이전트가 사용자에게서 배운 정보와 선호를 별도의 저장소에 기록하고, 세션이 바뀌어도 활용할 수 있도록 하는 메모리 저장소 규격입니다. 기억을 위키처럼 서로 연결해 탐색할 수 있습니다.",
-      "category": "AI 에이전트 영구 메모리 관리",
-      "repo_url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "664d9caacf8d72219112aa09394c242a2ffc5ac38043c815ca6c9eff8cff45e5"
-    },
     "version": 3
   }
 }
