@@ -669,9 +669,25 @@ def main():
                 processed[fid]["verification"] = "unavailable"
                 processed[fid]["unavailable_at"] = _now_iso()
                 state_dirty = True
+        # Drive에 없는 legacy 항목 중 processed에 아예 없는 것도
+        # unavailable로 등록한다 (위 루프는 processed 항목만 다룬다).
+        for fid, entry in legacy.items():
+            if fid in file_ids or fid in processed:
+                continue
+            if isinstance(entry, dict):
+                processed[fid] = {
+                    "modifiedTime": entry.get("modifiedTime", ""),
+                    "size": str(entry.get("size", "")),
+                    "verification": "unavailable",
+                    "unavailable_at": _now_iso(),
+                    "legacy": True,
+                }
+                state_dirty = True
         unverified = sorted(
             (fid for fid, entry in processed.items()
-             if _verification_of(entry) == "unverified"
+             # unavailable이었는데 파일이 다시 나타나면 재검증 대상이다
+             # (배치 풀에 포함 — disposition의 주석과 일치).
+             if _verification_of(entry) in ("unverified", "unavailable")
              and fid in file_ids),
             key=lambda fid: (
                 str(processed[fid].get("modifiedTime", "")) if isinstance(processed.get(fid), dict) else "",

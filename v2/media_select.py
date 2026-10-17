@@ -35,9 +35,10 @@ MEDIA_URL_KEYS = ("full", "thumb", "url", "src", "media_url", "image_url", "medi
 
 
 def _is_valid_url(value):
+    # 스킴은 대소문자를 구분하지 않는다 (RFC 3986) — "HTTPS://"도 유효.
     return (
         isinstance(value, str)
-        and value.startswith(("http://", "https://"))
+        and value.lower().startswith(("http://", "https://"))
         and len(value) > len("https://")
     )
 
