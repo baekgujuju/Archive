@@ -2825,5 +2825,235 @@
     "category_ko": "금융·미국 주식 기술적 분석",
     "owner_hint": "TradingView / IREN Limited",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0b0624dcda7a7727238eec36c664857f95b817cc87c92b200b62869148c379f3": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "IREN Limited 일봉 지지·저항 분석",
+    "description_ko": "IREN 주가의 일봉 차트로, 74.15와 48.20의 저항선 및 42.21과 33.34 부근의 지지 구간을 표시한다. 최근 가격은 47.05이며 48.20 저항과 하단 지지 구간의 유지 여부를 강조한다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a3948f2cfee9109033ad91df857379cfe614e90c89805fc9be54a61a5cf27801": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 일봉 장기 상승 채널 및 지지선 분석",
+    "description_ko": "코스피 지수의 장기 상승 채널과 7200, 6750, 6250, 6010 수준을 표시한 차트다. 지수는 6035.35로 하락했으며 하단 RSI는 29.87로 표시된다.",
+    "category_ko": "주가지수 기술적 분석",
+    "owner_hint": "TradingView 사용자 Stayhumble_10",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c42913749674b944697050e03e176691bc302372c5ee0f640dd8f680f394daff": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SK하이닉스 일봉 장기 상승추세 및 지지 구간",
+    "description_ko": "SK하이닉스 주가와 이동평균선, 장기 상승 추세선 및 수평 지지·저항 구간을 표시한다. 종가는 1,443,000원으로 10.09% 하락했으며 하단 지지 영역에 도달한 모습이다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 Stayhumble_10",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:77930c304e43c216888939a02c8b05c2f7a1deea5d7f8a51789b7afd02ff70df": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "삼성전자 일봉 이동평균선 및 지지·저항 분석",
+    "description_ko": "삼성전자 일봉 차트에 여러 이동평균선과 수평 지지·저항선을 표시한다. 종가는 232,000원으로 7.39% 하락했으며 230,000원 부근의 장기 이동평균선에 근접해 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 Stayhumble_10",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e54098335c0592f45c99137f48b4e2a4bf975d8f6bf34f0d3f7c2b879aa323c0": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스닥 일봉 피보나치 되돌림 분석",
+    "description_ko": "코스닥 지수에 피보나치 되돌림 구간과 이동평균선, 추세선을 표시한 차트다. 지수는 837.03이며 822.31과 864.51 사이에 위치하고, RSI는 46.64로 표시된다.",
+    "category_ko": "주가지수 기술적 분석",
+    "owner_hint": "TradingView 사용자 Stayhumble_10",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:521f776d436e70a32e6bc52ca7cb30cd51c1cf9b036eb50dfe64799a7d32f6df": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스닥 일봉 박스권 및 수급 구간 분석",
+    "description_ko": "코스닥 일봉 차트에 박스권, 추세선, 이동평균선과 붉은색·초록색 가격 영역을 표시한다. 최근 920 부근 고점과 이전 돌파 구간을 원으로 강조하며, 지수는 837.03으로 표시된다.",
+    "category_ko": "주가지수 기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:05f6a404472c745cff657726ac0bb8bd3d2c6f8b73749898519ab7ac836ac6ee": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스닥 일봉 추세 전환과 단계별 매매 패턴",
+    "description_ko": "코스닥 일봉 차트에 반전 확장, 웨지 돌파, EMA 크로스백, 베이스 돌파 구간을 표시하고 단계별 매수·매도 전략을 설명한 이미지.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b80ff58bfb50bcf69420eb5d90401ca42a79e3657a7653f00180b4e4b998af47": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "QQQ 일봉 추세 전환과 베이스 돌파 분석",
+    "description_ko": "Invesco QQQ Trust 일봉 차트에 반전 확장, 첫 추세, 웨지 돌파, EMA 크로스백과 베이스 돌파 후보 구간을 주석으로 표시한 이미지.",
+    "category_ko": "금융·ETF 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:764f245eabee053d585530edaf421b60863c5167ea9bcc28607a5ea7a913952c": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "슈퍼마이크로컴퓨터 주봉 수렴과 상승 채널 분석",
+    "description_ko": "슈퍼마이크로컴퓨터 주봉 차트에 수렴 상단 돌파, 주요 박스 상단 확인, 상승 채널 유지 여부를 점검하는 추세선과 설명을 표시한 이미지.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0d35e1c7cba7658c6b61b17f8f3f63e17f218e228453433526ee67f6d5a5d945": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "슈퍼마이크로컴퓨터 일봉 하락 추세선 돌파",
+    "description_ko": "슈퍼마이크로컴퓨터 일봉 차트에 이동평균선, 거래량, 하락 추세선과 둥근 바닥 형태를 표시하고 최근 상승 구간을 보여주는 이미지.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "theodore_Invest / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:998c9b86eb7631d30be42e3affdc765d86530031d55fec728fe5dfb8ae5b591f": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 일봉 상승 지지선과 하락 시나리오",
+    "description_ko": "코스피 일봉 차트에 주요 고점과 저점을 연결한 노란 선, 장기 상승 지지선, 지지·저항 구역 및 추가 하락 가능 경로를 표시한 이미지.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7f35603ec90b674f677fc4770604f760fe4d2508b5d87eadedb13c0fbd9157ec": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TOTAL3 알트코인 시가총액 돌파 분석",
+    "description_ko": "비트코인과 이더리움을 제외한 암호화폐 시가총액 일봉 차트에 바닥 박스권, 하락 추세선, 상승 돌파 구간과 상단 저항 부근의 움직임을 표시한 이미지.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:df0af76ad3f79c5294e2be8f916f21fbdd993480e390769a5c04c566408a3ff1": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "하락 이후 수렴 구간과 거래량 감소 차트",
+    "description_ko": "캔들, 여러 이동평균선과 추세선이 표시된 가격 차트다. 급락 이후 가격이 수렴하며 반등하는 모습과 거래량 감소를 가리키는 주석이 보인다.",
+    "category_ko": "금융·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e63b3d31eb16d0e8ba2f47b687dccc52a70d3c9ca501a8549892b2560e1ba088": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "날짜별 신청수량 및 체결수량 표",
+    "description_ko": "날짜별 신청수량과 체결수량을 나열한 표다. 2026년 9월 10일, 11일, 14일의 수량 600,000이 빨간 테두리로 강조되어 있다.",
+    "category_ko": "금융·거래 데이터",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2dbfa78b277b2f9321dcbf4967b3e558e8527cd404b94c5c1bc6503503d09fd9": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "개별주식 옵션 파생상품 거래 활동이 다시 크게 확대됐다",
+    "description_ko": "개별주식 옵션의 일평균 명목 거래 규모 추이를 설명하는 한국어 금융 콘텐츠다. 최근 거래 규모가 2021년 고점에 근접했다며 옵션 거래와 단기 가격 변동의 관계를 설명한다.",
+    "category_ko": "금융·시장 분석",
+    "owner_hint": "GBN 인사이트 / Premium Contents",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:43b5e7651367fe98202a41c98147f8e3f8d15cac4f5085fd45e88ff8a38ff320": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "INJ/USDT 주봉 반등 차트",
+    "description_ko": "바이낸스 INJ/USDT 주봉 차트다. 장기간 하락 후 약 2.7 부근에서 반등해 약 8 부근에 도달한 흐름과 이동평균선, 수평 가격선, 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐·기술적 분석",
+    "owner_hint": "TradingView / Binance",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d4857135d6b54e60b53a675264c6754f9724120174aa8ce4634070c1c3a93aae": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "INJ/USDT 일봉 상승 및 지지 구간 차트",
+    "description_ko": "바이낸스 INJ/USDT 일봉 차트다. 상승 과정의 조정과 반등, 여러 이동평균선, 수평 가격선 및 초록색 지지 구간이 표시되어 있다.",
+    "category_ko": "암호화폐·기술적 분석",
+    "owner_hint": "TradingView / Binance",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3d502f491661f2a59fca4a207ada46b78434133612b3677823a5e04fd6402af0": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "10·20 EMA와 가격 추세 패턴 개념도",
+    "description_ko": "가격 흐름과 10 EMA, 20 EMA의 관계를 그린 도식이다. 이동평균선 재돌파, 횡보 후 돌파, 쐐기형 움직임, 상승 소진 및 반전 구간을 예시한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d27bc8f39ee24761e4e2c7ef3a0f825659a687704f92b517ec7c0f9e3967c9de": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "모더나 주가의 급등 후 타이트 플래그 패턴",
+    "description_ko": "모더나 일봉 차트에 임상 결과 관련 급등봉, 타이트 플래그, 거래량이 감소하는 조정, 이동평균선 지지와 후속 상승이 주석으로 표시되어 있다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "AlbertRoy / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:88f9f54a34e85b7aaf446c21f9f55588e5ab8d1facdfada18dc454910f754737": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "10·20 EMA 기반 주가 패턴 도식",
+    "description_ko": "주가와 10·20 지수이동평균선을 이용해 상승 돌파, 과열 확장, 쐐기형 하락, 추세 반전 등의 패턴을 설명하는 도식이다.",
+    "category_ko": "금융·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d11e95c18ad0743f39cacfa1abfcdc1c42a8cd05293eca43afdca9c2428b015b": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "이수페타시스 일봉 차트",
+    "description_ko": "이수페타시스의 주가, 이동평균선, 거래량, 가격대별 매물대와 지지·저항 구간을 표시한 차트다. 최근 상승 구간이 노란색 타원으로 강조되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:dd9a44129911f430f0a94dcfbf5479f1adbaee378b294ad489a4aac0e4ca39ec": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "테크윙 일봉 차트",
+    "description_ko": "테크윙의 주가, 이동평균선, 거래량과 가격대별 매물대를 보여주는 차트다. 최근 저항선 부근의 상승 및 조정 구간이 노란색 타원으로 표시되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a0a516f7269a31e0f23ea4331c90e8508ac960e0006ab4fe2a097699be4f0346": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Adobe Premiere Pro의 Apollo 11 영상 편집 화면",
+    "description_ko": "아폴로 11호 발사 영상을 편집하는 화면이다. 미리보기, 효과 컨트롤, Lumetri 색상 조정 패널과 영상·자막·오디오 트랙이 배치된 타임라인이 보인다.",
+    "category_ko": "영상 편집",
+    "owner_hint": "Adobe Premiere Pro",
+    "provider": "codex"
   }
 }
