@@ -303,6 +303,61 @@ def test_overlay_reply_duplicate_id_accumulates():
     assert len(merged["replies"]) == 1
     assert merged["replies"][0]["sourceUrl"] == "https://x.com/A/status/201"
     assert merged["replies"][0]["fullText"] == "r1 edited"
+
+
+def test_merge_new_field_key_itself_protected():
+    # 신규 키 자체가 보호 필드면 추가하지 않는다 (값 정제만으로는 부족).
+    old = _base_record()
+    new = _base_record()
+    new["translation"] = "수집기 번역"
+    new["capturedAt"] = "2026-10-17T00:00:00"
+    result = merge_records([old], [new])
+    assert "translation" not in result.merged[0]
+    assert "capturedAt" not in result.merged[0]
+
+
+def test_merge_new_field_branch_strips_nested_protected():
+    # 기존 레코드에 필드 자체가 없는 경우 (quoted 키 없음) — 최상위
+    # 신규 필드 분기에서도 중첩 보호 필드가 제거된다.
+    old = _base_record()
+    del old["quoted"]
+    new = _base_record()
+    new["quoted"] = {"tweetId": "456", "fullText": "quoted",
+                     "translation": "수집기 번역"}
+    result = merge_records([old], [new])
+    assert "translation" not in result.merged[0]["quoted"]
+    assert result.merged[0]["quoted"]["fullText"] == "quoted"
+
+
+def test_overlay_new_key_protected_and_captured_at_skipped():
+    # 오버레이에서 기존 객체에 없던 보호 필드·capturedAt은 추가하지 않는다.
+    old = _base_record()
+    old["quoted"] = {"tweetId": "456", "fullText": "quoted"}
+    new = _base_record()
+    new["translation"] = "수집기 번역"
+    new["quoted"] = {"tweetId": "456", "fullText": "quoted",
+                     "translation": "수집기 번역",
+                     "capturedAt": "2026-10-17T00:00:00"}
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    merged = result.merged[0]
+    assert "translation" not in merged
+    assert "translation" not in merged["quoted"]
+    assert "capturedAt" not in merged["quoted"]
+
+
+def test_overlay_media_dedup_after_strip():
+    # 정제 전 값으로 비교하면 정제된 중복이 매번 다시 추가된다.
+    # 정제 후 값으로 중복 검사해야 재처리마다 목록이 늘지 않는다.
+    old = _base_record()
+    old["media"] = [{"url": "https://x.com/a.jpg"}]
+    new = _base_record()
+    new["media"] = [{"url": "https://x.com/a.jpg", "analysis": "수집기 값"}]
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    merged = result.merged[0]
+    assert merged["media"] == [{"url": "https://x.com/a.jpg"}]
+    # 두 번째 재처리에서도 중복이 쌓이지 않는다.
+    result2 = merge_records([merged], [new], overwrite_tweet_ids={"123"})
+    assert result2.merged[0]["media"] == [{"url": "https://x.com/a.jpg"}]
     # 리스트는 합집합 (삭제 없음). 동일 답글 ID는 재귀 오버레이.
     old = _base_record()
     old["replies"] = [{"tweetId": "201", "fullText": "r1"}]

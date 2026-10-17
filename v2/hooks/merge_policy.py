@@ -117,7 +117,10 @@ def _merge_value(existing, incoming, path, tweet_id, file_id, fingerprint, propo
         merged = dict(existing)
         changed = False
         for key in sorted(set(existing) | set(incoming)):
-            if key in PROTECTED_FIELDS:
+            if key in PROTECTED_FIELDS or key == "capturedAt":
+                # 기존 객체에 없던 보호 필드·capturedAt은 수집기가
+                # 추가하지 않는다 (나중 캡처의 시각이 첫 캡처 시각이
+                # 될 수 없다).
                 continue
             sub_path = f"{path}.{key}"
             old_v = existing.get(key)
@@ -253,6 +256,10 @@ def _overlay(existing, incoming, path):
             if key not in incoming:
                 continue
             if key not in existing:
+                # 신규 키 — 키 자체가 보호 필드·capturedAt이면 추가하지
+                # 않는다. 값 내부의 보호 필드도 제거한다.
+                if key in PROTECTED_FIELDS or key == "capturedAt":
+                    continue
                 if not _is_missing(incoming[key]):
                     merged[key] = _strip_protected(incoming[key])
                     changed = True
@@ -291,16 +298,20 @@ def _overlay(existing, incoming, path):
             merged = list(existing)
             changed = False
             for m in incoming:
-                if _media_key(m) not in keys:
-                    merged.append(_strip_protected(m))
-                    keys.add(_media_key(m))
+                # 정제 먼저, 그 값으로 중복 검사·저장 (정제 전 값으로
+                # 비교하면 정제된 중복이 매번 다시 추가된다).
+                stripped = _strip_protected(m)
+                if _media_key(stripped) not in keys:
+                    merged.append(stripped)
+                    keys.add(_media_key(stripped))
                     changed = True
             return merged, changed
         merged = list(existing)
         changed = False
         for v in incoming:
-            if v not in merged:
-                merged.append(_strip_protected(v))
+            stripped = _strip_protected(v)
+            if stripped not in merged:
+                merged.append(stripped)
                 changed = True
         return merged, changed
     if isinstance(existing, (dict, list)) or isinstance(incoming, (dict, list)):
@@ -353,7 +364,8 @@ def merge_records(canonical, incoming, file_id="", fingerprint="",
     for item in incoming:
         tid = str(item["tweetId"])
         if tid not in indices:
-            merged.append(dict(item))
+            # 신규 레코드 — 수집기가 쓴 보호 필드는 저장하지 않는다.
+            merged.append(_strip_protected(item))
             indices[tid] = len(merged) - 1
             added += 1
             continue
@@ -394,8 +406,13 @@ def merge_records(canonical, incoming, file_id="", fingerprint="",
             old_v = old.get(key)
             new_v = item.get(key)
             if key not in old:
+                # 신규 필드 — 최상위 capturedAt은 기존 기록의 첫 캡처
+                # 시각이므로 수집기가 쓰지 않는다. 값 안의 중첩 보호
+                # 필드도 제거한다.
+                if key == "capturedAt":
+                    continue
                 if not _is_missing(new_v):
-                    new[key] = new_v
+                    new[key] = _strip_protected(new_v)
                     changed = True
                 continue
             if key not in item:
