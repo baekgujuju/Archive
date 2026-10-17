@@ -2694,5 +2694,136 @@
     "category_ko": "AI 코딩 도구 활용법",
     "owner_hint": "람쥐썬더 (@ramztd)",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a3a36e09a01622b0ad604387f093733e85f3417858e99978f8a8e2c031d7fdf2": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Claude에서 Shift+Tab으로 입력 모드 전환하기",
+    "description_ko": "Claude 입력창에서 Shift+Tab을 누를 때마다 auto, manual, accept edits, plan 모드로 전환되는 예시를 보여주는 한국어 안내 이미지. 실제 표시 문구와 색상은 버전마다 다를 수 있다고 설명한다.",
+    "category_ko": "AI 도구 사용 안내",
+    "owner_hint": "람쥐썬더 (@ramztd)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9add43e8bf993d435b0a30ea46736a630e929b6de7dd257d1b38d21def600ad8": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/supermemoryai/supermemory"
+    ],
+    "title": "supermemory",
+    "description_ko": "AI를 활용하여 북마크, 노트, 문서 등의 정보를 저장하고 효율적으로 검색 및 관리할 수 있는 세컨드 브레인 구축 오픈소스 도구입니다.",
+    "category_ko": "AI / 지식 관리",
+    "owner_hint": "supermemoryai",
+    "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:4725f52e07cdce854637fb6c4329d8f47423609505848481a12ae9b18e7afa52": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [],
+    "title": "멋진 디자인.md (Awesome DESIGN.md)",
+    "description_ko": "VoltAgent의 DESIGN.md 자료 모음 소개 화면. 실제 웹사이트에서 추출한 디자인 시스템 문서를 AI 에이전트에 제공해 일관된 UI를 생성하는 방법과 AGENTS.md와의 차이를 설명한다.",
+    "category_ko": "GitHub 프로젝트·AI UI 디자인 자료",
+    "owner_hint": "VoltAgent",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:88589d6bdf18f68570ef1df507a87e6c5527d150567ed1c39d28cd890819a3cf": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Awesome DESIGN.md — 서비스별 디자인 자료 목록",
+    "description_ko": "AI 플랫폼, 개발자 도구, 데이터베이스·DevOps, 생산성·SaaS 분야의 서비스별 디자인 자료 목록. 각 서비스의 색상, 글꼴, 레이아웃과 UI 특징을 짧게 소개한다.",
+    "category_ko": "GitHub 프로젝트·디자인 레퍼런스 목록",
+    "owner_hint": "VoltAgent",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e8238a166af3010f5085d81103f98f0e996cafd06f1858e98ef7ecf6f4b18ce8": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [],
+    "title": "DESIGN.md의 각 내용",
+    "description_ko": "DESIGN.md의 테마, 색상, 타이포그래피, 컴포넌트, 레이아웃, 반응형 동작 등 9개 구성 항목을 설명한다. DESIGN.md와 HTML 미리보기 파일의 용도 및 프로젝트에 복사해 사용하는 절차도 안내한다.",
+    "category_ko": "GitHub 프로젝트·디자인 문서 사용 가이드",
+    "owner_hint": "VoltAgent",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:810d0573cdfa6a68623406b14087e61e956c8b4961a89405a0ec3fbd227d9166": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AMD 일봉 차트 — 피보나치와 가격 구간 분석",
+    "description_ko": "AMD의 일봉 캔들 및 거래량 차트. 피보나치 되돌림 수준, 수평 가격 구간, BC·AR·SOS 표기와 상승 구간 강조가 표시되어 있다.",
+    "category_ko": "금융·주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:86e59d9d12336ef333286864bde214d90b853e498325ace92805037a90f9fc2d": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "미국 30년 만기 국채 수익률 일봉 차트",
+    "description_ko": "미국 30년 만기 국채 수익률의 일봉 차트. 여러 이동평균선과 색상으로 구분한 수익률 구간, ATR 관련 지표가 표시되어 있으며 최근 상승 후 하락하는 흐름을 보여준다.",
+    "category_ko": "금융·국채 수익률 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b4718f5ba4503d472c583b9b08dc6eebac1f2276b9624f01acb62abc46d6339a": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "미국 정부 10년 채권 금리 일봉 차트",
+    "description_ko": "미국 10년물 국채 금리가 상승한 뒤 약 5.20%로 조정받는 차트. 여러 이동평균선과 약 5.1~5.2% 구간의 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "금융·채권 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:74431ce68c192dd236d563caa9b70095123422422845216529475fb1bc9ab718": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "테크윙 장기 일봉 차트와 상승 단계 분석",
+    "description_ko": "테크윙의 장기 주가 흐름에 기대감 선반영 1차 랠리, 과열을 식히며 실적 기대가 따라오는 기간, 이후 2차 상승 기대를 노란 화살표로 표시한 차트.",
+    "category_ko": "금융·주식 기술적 분석",
+    "owner_hint": "TradingView / 테크윙",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0decefa9d87084aa9d44953bb9a712a19f623a42eaea75f013c501a67d76e3fa": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "테크윙 일봉 200일 이동평균선 지지·저항 분석",
+    "description_ko": "테크윙 일봉에 거래량 프로파일과 가격 구간을 표시한 차트. 빨간색 200일 단순이동평균선을 핵심 지지·저항 전환선으로 설명하고 주요 접촉 지점을 노란 원으로 강조했다.",
+    "category_ko": "금융·주식 기술적 분석",
+    "owner_hint": "TradingView / 테크윙",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5c841eb2564c444b5b4cd34b33e77128d2b4e6337aa9141c2bff31bb8751b62d": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "테크윙 10분봉 실적 발표 이후 가격 회복 분석",
+    "description_ko": "테크윙 10분봉에서 실적 발표 캔들, 지지·저항 전환 구간 이탈 이후 탈환, 앵커드 거래량 가중평균가격(aVWAP) 돌파 지점을 표시한 차트.",
+    "category_ko": "금융·주식 단기 차트",
+    "owner_hint": "TradingView / 테크윙",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3392f38d5dd6a4576e7aade2d612e9dfae2c88667a93878f38f59f9a86008bf7": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "삼성전자 보통주 일봉 지지 구간과 반등 시나리오",
+    "description_ko": "삼성전자 보통주의 일봉에 이동평균선, 거래량 프로파일과 지지·저항 영역을 표시했다. 과거 조정 저점과 최근 하락 구간을 노란 원과 화살표로 연결해 반등 시나리오를 나타낸다.",
+    "category_ko": "금융·주식 기술적 분석",
+    "owner_hint": "TradingView / 삼성전자",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e7c0736d3a18d98286a91b24d60fcc0b9f06f5566190af31868606e603a63e16": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "IREN Limited 일봉 하락 채널과 매수 반응 예상 구간",
+    "description_ko": "IREN Limited의 일봉에 하락 평행 채널과 74.15, 48.20, 42.21, 33.34달러 수평선을 표시했다. 33달러 부근을 매수 반응 예상 영역으로, 채널 하단을 추가 관심 구간으로 주석 처리했다.",
+    "category_ko": "금융·미국 주식 기술적 분석",
+    "owner_hint": "TradingView / IREN Limited",
+    "provider": "codex"
   }
 }

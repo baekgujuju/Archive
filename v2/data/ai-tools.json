@@ -119,5 +119,38 @@
       "text-url:no-title-check"
     ],
     "fingerprint": "e77d1e4c41227790836413e8e6e59ce643dd1eb9718832d5ed87c324f037b602"
+  },
+  "2110102222793331024": {
+    "title": "tradesdontlie/tradingview-mcp",
+    "summary_ko": "로컬에서 실행 중인 TradingView Desktop을 Chrome DevTools Protocol로 Claude Code와 연결하는 도구입니다. AI를 활용한 차트 분석, Pine Script 개발, 개인 작업 흐름 자동화를 지원합니다.",
+    "category": "트레이딩 차트 분석 및 작업 자동화 MCP 도구",
+    "repo_url": "https://github.com/tradesdontlie/tradingview-mcp",
+    "status": "verified",
+    "evidence": [
+      "text-url:no-title-check"
+    ],
+    "fingerprint": "45ffdac81c2f6115a7dcbf3feca20e492c3fc2ed2ac948268d17864f75bdd1f7"
+  },
+  "2110191179589734604": {
+    "title": "supermemory",
+    "summary_ko": "AI를 활용하여 북마크, 노트, 문서 등의 정보를 저장하고 효율적으로 검색 및 관리할 수 있는 세컨드 브레인 구축 오픈소스 도구입니다.",
+    "category": "AI / 지식 관리",
+    "repo_url": "https://github.com/supermemoryai/supermemory",
+    "status": "verified",
+    "evidence": [
+      "screenshot:name-match"
+    ],
+    "fingerprint": "1d8a5056df9ae29975a452d30f45acfa9061b16a2316321e84fbfc109c927935"
+  },
+  "2110264088941023486": {
+    "title": "VoltAgent/awesome-design-md",
+    "summary_ko": "인기 브랜드와 개발자 중심 웹사이트의 디자인 시스템을 분석한 DESIGN.md 파일 모음입니다. 프로젝트에 파일을 추가하면 코딩 에이전트가 해당 디자인 스타일에 맞는 UI를 생성하는 데 활용할 수 있습니다.",
+    "category": "AI 코딩 에이전트용 UI 디자인 가이드 모음",
+    "repo_url": "https://github.com/VoltAgent/awesome-design-md",
+    "status": "verified",
+    "evidence": [
+      "text-url:no-title-check"
+    ],
+    "fingerprint": "33aa584a88e42a309fe5062131f1c4cc4b1968d47145ce948ade3727e25419c4"
   }
 }

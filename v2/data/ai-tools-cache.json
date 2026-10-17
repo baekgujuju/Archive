@@ -1708,5 +1708,160 @@
     "fingerprint": "177a43c30e9e4cb3bf224e22da629c23a2082e55d467559a55dfd4bff8d33408",
     "entry": null,
     "version": 3
+  },
+  "2110102222793331024:text-eda52afc2779cedf": {
+    "fingerprint": "45ffdac81c2f6115a7dcbf3feca20e492c3fc2ed2ac948268d17864f75bdd1f7",
+    "entry": {
+      "title": "tradesdontlie/tradingview-mcp",
+      "summary_ko": "로컬에서 실행 중인 TradingView Desktop을 Chrome DevTools Protocol로 Claude Code와 연결하는 도구입니다. AI를 활용한 차트 분석, Pine Script 개발, 개인 작업 흐름 자동화를 지원합니다.",
+      "category": "트레이딩 차트 분석 및 작업 자동화 MCP 도구",
+      "repo_url": "https://github.com/tradesdontlie/tradingview-mcp",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "45ffdac81c2f6115a7dcbf3feca20e492c3fc2ed2ac948268d17864f75bdd1f7"
+    },
+    "version": 3
+  },
+  "2110373980154761359:fda81d753fa45d32.jpg": {
+    "fingerprint": "30cc5718cf3600464727ab63c0bf800f98918e1f6ea643c20158ca0e99023aad",
+    "entry": null,
+    "version": 3
+  },
+  "2110373980154761359:98715c1d7dae31da.png": {
+    "fingerprint": "f02ef9981dff42a6172b23f38d2e16167e67075498ec11e01f010290d7a05650",
+    "entry": null,
+    "version": 3
+  },
+  "2110191179589734604:30b0e882b8559740.jpg": {
+    "fingerprint": "b0388f43df15b80da149573d295a5bbb6f027f779b2493ba1005f659cbf0092e",
+    "entry": null,
+    "version": 3
+  },
+  "2110191179589734604:453dd1d6b9adbcdc.jpg": {
+    "fingerprint": "67a88635b9944e8d7d291dbda22818751424f7afb44684fe784655b52c20c517",
+    "entry": null,
+    "version": 3
+  },
+  "2110191179589734604:47a6485eeb598e12.jpg": {
+    "fingerprint": "f398f4e83fe28622bcbafc028f6e1f6c696d4b0c0a4e776bfbb756652799fafa",
+    "entry": null,
+    "version": 3
+  },
+  "2110191179589734604:2eed0406d1398921.jpg": {
+    "fingerprint": "557ea1f5bd9e77562382669f35dec6b85ad7945840da00730b24ff41b789d100",
+    "entry": null,
+    "version": 3
+  },
+  "2110191179589734604:c555b746ddb5947d.png": {
+    "fingerprint": "1d8a5056df9ae29975a452d30f45acfa9061b16a2316321e84fbfc109c927935",
+    "entry": {
+      "title": "supermemory",
+      "summary_ko": "AI를 활용하여 북마크, 노트, 문서 등의 정보를 저장하고 효율적으로 검색 및 관리할 수 있는 세컨드 브레인 구축 오픈소스 도구입니다.",
+      "category": "AI / 지식 관리",
+      "repo_url": "https://github.com/supermemoryai/supermemory",
+      "status": "verified",
+      "evidence": [
+        "screenshot:name-match"
+      ],
+      "fingerprint": "1d8a5056df9ae29975a452d30f45acfa9061b16a2316321e84fbfc109c927935"
+    },
+    "version": 3
+  },
+  "2110264088941023486:34cc41840d332aa7.jpg": {
+    "fingerprint": "7e308f09fedcb9fc0e258e93d42f61fb65351e8bc208a486a8c77db5c22b0378",
+    "entry": {
+      "title": "VoltAgent/awesome-design-md",
+      "summary_ko": "인기 브랜드와 개발자 중심 웹사이트의 디자인 시스템을 분석한 DESIGN.md 파일 모음입니다. 원하는 파일을 프로젝트에 추가하면 코딩 에이전트가 해당 스타일에 맞는 UI를 생성하도록 도울 수 있습니다.",
+      "category": "AI UI 개발용 디자인 시스템 자료 모음",
+      "repo_url": "https://github.com/VoltAgent/awesome-design-md",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "7e308f09fedcb9fc0e258e93d42f61fb65351e8bc208a486a8c77db5c22b0378"
+    },
+    "version": 3
+  },
+  "2110264088941023486:f4442440cb52199e.jpg": {
+    "fingerprint": "ba212e027a267a317ae026618cec95b50308eaef357dda1609770c414b58edc7",
+    "entry": {
+      "title": "VoltAgent/awesome-design-md",
+      "summary_ko": "인기 브랜드와 개발자 중심 웹사이트의 디자인 시스템을 분석한 DESIGN.md 파일 모음입니다. 프로젝트에 파일을 추가하면 코딩 에이전트가 해당 디자인 스타일에 맞는 UI를 생성하도록 도울 수 있습니다.",
+      "category": "AI UI 개발용 디자인 시스템 자료 모음",
+      "repo_url": "https://github.com/VoltAgent/awesome-design-md",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "ba212e027a267a317ae026618cec95b50308eaef357dda1609770c414b58edc7"
+    },
+    "version": 3
+  },
+  "2110264088941023486:966e47acfbfcc366.png": {
+    "fingerprint": "3e5aa83c71473aeaf6267c5af334f235cf6b6bde451e492a9dcc2d262f592a15",
+    "entry": {
+      "title": "VoltAgent/awesome-design-md",
+      "summary_ko": "인기 브랜드와 개발자 중심 웹사이트의 디자인 시스템을 분석한 DESIGN.md 파일 모음입니다. 프로젝트에 파일을 추가하면 코딩 에이전트가 해당 디자인 스타일에 맞는 UI를 생성하도록 도울 수 있습니다.",
+      "category": "AI UI 개발용 디자인 시스템 레퍼런스",
+      "repo_url": "https://github.com/VoltAgent/awesome-design-md",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "3e5aa83c71473aeaf6267c5af334f235cf6b6bde451e492a9dcc2d262f592a15"
+    },
+    "version": 3
+  },
+  "2110264088941023486:text-f9df08c201fdc4c7": {
+    "fingerprint": "33aa584a88e42a309fe5062131f1c4cc4b1968d47145ce948ade3727e25419c4",
+    "entry": {
+      "title": "VoltAgent/awesome-design-md",
+      "summary_ko": "인기 브랜드와 개발자 중심 웹사이트의 디자인 시스템을 분석한 DESIGN.md 파일 모음입니다. 프로젝트에 파일을 추가하면 코딩 에이전트가 해당 디자인 스타일에 맞는 UI를 생성하는 데 활용할 수 있습니다.",
+      "category": "AI 코딩 에이전트용 UI 디자인 가이드 모음",
+      "repo_url": "https://github.com/VoltAgent/awesome-design-md",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "33aa584a88e42a309fe5062131f1c4cc4b1968d47145ce948ade3727e25419c4"
+    },
+    "version": 3
+  },
+  "2110222381029695982:2b190f2a6723e856.jpg": {
+    "fingerprint": "dcbf19ec0fb27c83d29a86817aa0cda25e38830b8803d4fa51e576721605d83d",
+    "entry": null,
+    "version": 3
+  },
+  "2110253755384172603:f89b03a835455031.jpg": {
+    "fingerprint": "47615dc9c4d74a2e0548661a4a68c09859c2a7e717232d820e076b92d9e8404d",
+    "entry": null,
+    "version": 3
+  },
+  "2110253755384172603:6b2b0f6d9b199e5d.jpg": {
+    "fingerprint": "a0486259958f50b8f44edfa24ea9000fd329ad7ef55dd1a682dd4c6a731cd1a4",
+    "entry": null,
+    "version": 3
+  },
+  "2110196183570542839:0457cd892cc9fd97.jpg": {
+    "fingerprint": "3fefbf04bd7cb6f5a146a28cd87dc7f51a3e547a6631fdc06ee9d0bae1e015ee",
+    "entry": null,
+    "version": 3
+  },
+  "2110196764968133089:2ae208e95441e6e6.jpg": {
+    "fingerprint": "f5bf5ac7bac8fd3a1059f88fde0b22d6a0f4305f094b6592ae8fe1f177687075",
+    "entry": null,
+    "version": 3
+  },
+  "2110196764968133089:5a2789ad51cbbf1a.jpg": {
+    "fingerprint": "5ed1650d93ced0b230aa58f3662356aab9e02c87c8b6716a61e153cd833691ae",
+    "entry": null,
+    "version": 3
+  },
+  "2109860594279174173:c41d449faf471ec8.jpg": {
+    "fingerprint": "252ca1d7165b93c82c668faea87aa5ba61b07b118a48e491e130efa08db4a242",
+    "entry": null,
+    "version": 3
   }
 }
