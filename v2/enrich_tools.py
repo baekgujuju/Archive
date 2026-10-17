@@ -14,17 +14,20 @@ v3 수정 (2026-10-14 리뷰 피드백):
 2. 텍스트 URL도 README 기반 한국어 요약/분류
 3. 일시적 오류 전파, 모호한 다중 매칭 거부, distinctive phrase 매칭
 4. 지문에 text+image+analyzer_version 포함, 배치 단위 원자적 저장
-5. 캐시 히트도 tools_data에 재적용, 지문 변경 시 stale 제거
+5. 캐시 히트도 tools_data에 재적용, 지문 변경 시 stale 유지 (2026-10-17 append-only: 검증 항목은 게시물 소실 시에만 제거)
 6. manifest.ai_tools 업데이트
 7. quoted.get(field) 버그 수정
 8. dry_run은 retry 마커 미작성
 9. source_url도 해시에 포함
 """
 
+import copy
+import fcntl
 import hashlib
 import json
 import os
 import re
+import secrets
 import shutil
 import subprocess
 import sys
@@ -134,10 +137,59 @@ def load_json(path, default):
 
 
 def save_json_atomic(path, data):
-    tmp = path.with_suffix(".tmp")
+    # Unique tmp per call: concurrent writers previously shared one ".tmp"
+    # pathname and could interfere with each other's rename.
+    tmp = path.with_name(f".{path.name}.tmp-{os.getpid()}-{secrets.token_hex(4)}")
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     tmp.replace(path)
+
+
+def _merge_save(path, updates, deletions=()):
+    """Flock-protected read-merge-write: apply only `updates` (touched keys)
+    and `deletions` onto the CURRENT disk state.
+
+    A long-running enrich (up to 900s) may have loaded a stale snapshot;
+    saving its whole in-memory dict would clobber newer disk state (the
+    2026-10-17 152 -> 107 vision loss). Merging only touched keys means an
+    untouched entry is never overwritten by an older value, and a deletion
+    another writer already applied is not resurrected by this writer's
+    stale snapshot. Lock is fail-open after ~10s (liveness over strictness).
+    """
+    lock_path = path.with_suffix(path.suffix + ".lock")
+    lock_fd = None
+    try:
+        lock_fd = open(lock_path, "w")
+        deadline = time.time() + 10
+        while True:
+            try:
+                fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.time() > deadline:
+                    log(f"{path.name}: 락 획득 실패, 락 없이 저장 (fail-open)")
+                    lock_fd = None
+                    break
+                time.sleep(0.1)
+        disk = load_json(path, {})
+        merged = dict(disk)
+        for key in deletions:
+            merged.pop(key, None)
+        merged.update(updates)
+        save_json_atomic(path, merged)
+    finally:
+        if lock_fd is not None:
+            try:
+                fcntl.flock(lock_fd, fcntl.LOCK_UN)
+            finally:
+                lock_fd.close()
+
+
+def _dict_diff(old, new):
+    """Keys whose value changed/added (updates) and keys removed (deletions)."""
+    updates = {k: v for k, v in new.items() if k not in old or old[k] != v}
+    deletions = [k for k in old if k not in new]
+    return updates, deletions
 
 
 def get_media_url(m):
@@ -675,17 +727,62 @@ def valid_analysis(value):
                     ("title","description_ko","category_ko","owner_hint")))
 
 def run_backfill(max_items=None, dry_run=False, batch_size=8):
-    """Resume from matching fingerprints; failed/changed entries never count as done."""
+    """Resume from matching fingerprints; failed/changed entries never count as done.
+
+    Append-only rule (2026-10-17): verified tool entries are NEVER dropped
+    on fingerprint drift (post text/media re-ingest changes fingerprints).
+    Only entries whose post is gone from the archive entirely are removed.
+    Fingerprint mismatches are kept with a stale flag as a historical
+    record; only a fresh positive entry replaces them (a definitive
+    negative re-verification does not erase verified history).
+    Saves are diff-merges onto current disk state (_merge_save), never
+    whole-snapshot overwrites.
+    """
     tools_data = load_json(TOOLS_JSON, {})
     cache = load_json(CACHE_JSON, {})
     vision_path = DATA_DIR / "ai-tools-vision-cache.json"
     vision_cache = load_json(vision_path, {})
+    # Snapshots for diff-merge saves: only keys this run actually changed
+    # are written back, so an older value never overwrites a newer correction.
+    tools_data_initial = copy.deepcopy(tools_data)
+    cache_initial = copy.deepcopy(cache)
+    vision_initial = copy.deepcopy(vision_cache)
     candidates = list(dict.fromkeys(collect_screenshots()))
     current_fps = {}
     for tid, image, url, text in candidates:
         current_fps.setdefault(tid, set()).add(fingerprint(image, text, url))
-    tools_data = {tid: entry for tid, entry in tools_data.items()
-                  if entry.get("fingerprint") in current_fps.get(tid, set())}
+    # Authoritative post set: ALL archived X posts, not just screenshot
+    # candidates (a post can have no candidate if its image is missing or
+    # its text no longer contains a GitHub URL — that is not deletion).
+    # Fail-closed: if the archive cannot be read, skip pruning entirely.
+    archive_posts = load_json(DATA_DIR / "posts-x.json", {}).get("posts", [])
+    all_post_ids = {str(p.get("tweetId") or p.get("id") or "") for p in archive_posts}
+    all_post_ids.discard("")
+    kept_stale = 0
+    pruned_gone = 0
+    kept_tools = {}
+    if not all_post_ids:
+        log("게시물 목록을 읽지 못해 도구 프루닝 건너뜀 (fail-closed)")
+        kept_tools = dict(tools_data)
+    else:
+        for tid, entry in tools_data.items():
+            if tid not in all_post_ids:
+                pruned_gone += 1  # post itself is gone from the archive -> drop
+                continue
+            entry = dict(entry)
+            if entry.get("fingerprint") not in current_fps.get(tid, set()):
+                # Fingerprint drifted (re-ingest changed text/media) -> KEEP, stale.
+                entry["stale"] = True
+                kept_stale += 1
+            else:
+                # Fingerprint matches again -> clear a previously set stale flag.
+                entry.pop("stale", None)
+            kept_tools[tid] = entry
+    tools_data = kept_tools
+    if pruned_gone:
+        log(f"게시물 소실로 도구 {pruned_gone}건 제거")
+    if kept_stale:
+        log(f"지문 불일치에도 검증 도구 {kept_stale}건 유지 (stale 표시, append-only)")
     stats = dict(verified=0, pending=0, pending_github_look=0, cached=0,
                  temporary_failures=0, errors=0)
     pending_details = {}
@@ -705,9 +802,30 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8):
     def persist():
         if dry_run:
             return
-        save_json_atomic(TOOLS_JSON, tools_data)
-        save_json_atomic(CACHE_JSON, cache)
-        save_json_atomic(vision_path, vision_cache)
+        # Diff-merge saves: only keys this run changed SINCE THE LAST SAVE
+        # are written back onto current disk state. A stale snapshot can
+        # never clobber a newer entry, resurrect a deletion, or shrink the
+        # vision cache. Baselines advance after each successful save, so a
+        # later persist never resubmits an earlier batch's changes over an
+        # intervening external correction/deletion.
+        nonlocal tools_data_initial, cache_initial, vision_initial
+        baselines = {
+            TOOLS_JSON: tools_data_initial,
+            CACHE_JSON: cache_initial,
+            vision_path: vision_initial,
+        }
+        currents = {
+            TOOLS_JSON: tools_data,
+            CACHE_JSON: cache,
+            vision_path: vision_cache,
+        }
+        for path in (TOOLS_JSON, CACHE_JSON, vision_path):
+            updates, deletions = _dict_diff(baselines[path], currents[path])
+            _merge_save(path, updates, deletions)
+            baselines[path] = copy.deepcopy(currents[path])
+        tools_data_initial = baselines[TOOLS_JSON]
+        cache_initial = baselines[CACHE_JSON]
+        vision_initial = baselines[vision_path]
         save_json_atomic(PROGRESS_JSON, {"total": len(candidates), "remaining":
                          len(remaining)-processed, "stats": stats,
                          "pending_details": pending_details})
@@ -791,14 +909,15 @@ def main():
             return 1
         tools_data = load_json(TOOLS_JSON, {})
         cache = load_json(CACHE_JSON, {})
+        cache_initial = copy.deepcopy(cache)
         image_memo = {}
         model_calls = [0]
         c = match[0]
         entry, status = enrich_one(c[0], c[1], c[2], c[3], cache, image_memo, model_calls)
         if entry and not args.dry_run:
-            tools_data[str(c[0])] = entry
-            save_json_atomic(TOOLS_JSON, tools_data)
-            save_json_atomic(CACHE_JSON, cache)
+            _merge_save(TOOLS_JSON, {str(c[0]): entry})
+            cache_updates, _ = _dict_diff(cache_initial, cache)
+            _merge_save(CACHE_JSON, cache_updates)
             update_manifest()
         log(f"{c[0]}: {status}")
         if entry:
