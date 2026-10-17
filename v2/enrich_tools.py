@@ -47,6 +47,10 @@ TOOLS_JSON = DATA_DIR / "ai-tools.json"
 CACHE_JSON = DATA_DIR / "ai-tools-cache.json"
 MANIFEST_JSON = DATA_DIR / "manifest.json"
 RETRY_MARKER = V2_ROOT / "hooks" / ".retry-enrich"
+# 미디어 매핑 누락 pending (영속) — collect_screenshots가 수집하고
+# run_backfill의 unresolved 판단에 포함한다. 로그만 남기면 미러 재실행
+# 없이 .retry-enrich가 삭제돼 누락 이미지가 영원히 재시도되지 않는다.
+MISSING_MEDIA_FILE = V2_ROOT / "hooks" / ".enrich_missing_media.json"
 PROGRESS_JSON = DATA_DIR / "ai-tools-progress.json"
 
 GITHUB_RE = re.compile(r"github\.com/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)", re.IGNORECASE)
@@ -246,13 +250,13 @@ def collect_screenshots():
     media_map = load_json(DATA_DIR / "media-map.json", {})
     media_index = build_media_index(media_map)
     candidates = []
-    missing_urls = []
+    missing = []  # (tweetId, url) — 영속 pending으로 저장한다.
 
-    def find_local(url):
+    def find_local(url, tweet_id):
         local, status = find_local_in_map(
             url, media_map, V2_ROOT, index=media_index)
         if status == "missing":
-            missing_urls.append(url)
+            missing.append((tweet_id, url))
             return None
         if status in ("ambiguous", "invalid"):
             raise RuntimeError(
@@ -297,7 +301,7 @@ def collect_screenshots():
                 if not url or url in seen_urls:
                     continue
                 seen_urls.add(url)
-                local = find_local(url)
+                local = find_local(url, tweet_id)
                 if local:
                     full_path = V2_ROOT / local
                     if full_path.exists():
@@ -307,8 +311,14 @@ def collect_screenshots():
             for owner, repo in GITHUB_RE.findall(post_text):
                 candidates.append((tweet_id, None, f"https://github.com/{owner}/{repo}", post_text))
 
-    if missing_urls:
-        log(f"미디어 매핑 누락 {len(missing_urls)}건 — 재시도 대상으로 유지 (미러 재실행 필요)")
+    if missing:
+        log(f"미디어 매핑 누락 {len(missing)}건 — 재시도 대상으로 유지 (미러 재실행 필요)")
+    # 누락 목록을 영속 pending으로 저장한다. 다음 수집에서 누락이
+    # 사라지면 (미러 복구) 빈 목록으로 덮어 미해결 상태를 해제한다.
+    save_json_atomic(MISSING_MEDIA_FILE, [
+        {"tweetId": tid, "url": url,
+         "detected_at": datetime.now(timezone.utc).isoformat()}
+        for tid, url in dict.fromkeys(missing)])
     return candidates
 
 
@@ -1002,7 +1012,11 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8,
                              len(remaining)-processed, "stats": stats,
                              "pending_details": pending_details})
             update_manifest()
-        unresolved = len(remaining)-processed or stats["temporary_failures"] or stats["errors"] or stats["pending_github_look"]
+        # 미디어 매핑 누락도 미해결로 센다 — 누락만 남은 채로
+        # .retry-enrich가 삭제되면 누락 이미지가 영원히 재시도되지 않는다.
+        missing_media = load_json(MISSING_MEDIA_FILE, [])
+        missing_pending = len(missing_media) if isinstance(missing_media, list) else 0
+        unresolved = len(remaining)-processed or stats["temporary_failures"] or stats["errors"] or stats["pending_github_look"] or missing_pending
         if unresolved:
             RETRY_MARKER.parent.mkdir(parents=True, exist_ok=True)
             RETRY_MARKER.write_text("Enrichment pending; resume by fingerprints", encoding="utf-8")

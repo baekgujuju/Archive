@@ -243,12 +243,17 @@ def backoff_seconds(attempts):
     return min(BACKOFF_BASE_SECONDS * (2 ** max(0, attempts - 1)), BACKOFF_MAX_SECONDS)
 
 
-def persist_failure_record(record):
+def persist_failure_record(record, *, lock_contention=False):
     """실패 기록을 원자적으로 저장한다 (실패 기록 저장 실패 → rc=1).
 
     같은 키의 기존 기록이 있으면 시도 횟수·시각을 누적한다.
     구조·신원 검증 실패(stage=validation)는 즉시 격리한다.
     같은 방식(동일 stage+error_code) 연속 실패 2회 후 격리한다.
+    격리·백오프 판단은 콘텐츠 실패의 연속 횟수(consecutive)로 하며,
+    누적 attempts가 아니다 (A→B→B는 B 2회 연속이지 3회가 아님).
+    락 경합(lock_contention)은 별도 재시도 상태로 처리한다 — 콘텐츠
+    실패 횟수에 포함하지 않고, 격리 사유가 되지 않으며, 고정 짧은
+    백오프로 재시도한다.
     Returns 저장된 기록.
     """
     data = load_failures()
@@ -259,25 +264,44 @@ def persist_failure_record(record):
     if prev is not None and isinstance(prev, dict):
         record["attempts"] = prev.get("attempts", 0) + 1
         record["first_failed_at"] = prev.get("first_failed_at", now)
-        prev_sig = (prev.get("stage"), prev.get("error_code"))
+        prev_consecutive = prev.get("consecutive", 0)
+        prev_content_sig = prev.get("last_content_sig")
     else:
         record["attempts"] = 1
         record["first_failed_at"] = now
-        prev_sig = None
+        prev_consecutive = 0
+        prev_content_sig = None
     record["last_failed_at"] = now
+    if lock_contention:
+        # 락 경합은 콘텐츠 실패 체인을 끊지도 세지도 않는다.
+        record["consecutive"] = prev_consecutive
+        record["last_content_sig"] = prev_content_sig
+        record["lock_contention"] = True
+        record["status"] = "retry_pending"
+        record["next_retry_at"] = (
+            datetime.now(timezone.utc)
+            + timedelta(seconds=BACKOFF_BASE_SECONDS)
+        ).isoformat()
+        records[key] = record
+        save_failures(data)
+        return record
     sig = (record["stage"], record["error_code"])
+    prev_sig = tuple(prev_content_sig) if isinstance(prev_content_sig, list) else None
+    consecutive = prev_consecutive + 1 if prev_sig == sig else 1
+    record["consecutive"] = consecutive
+    record["last_content_sig"] = [record["stage"], record["error_code"]]
+    record["lock_contention"] = False
     if record["stage"] == "validation":
         record["status"] = "quarantined"
         record["next_retry_at"] = None
-    elif (prev_sig is not None and prev_sig == sig
-            and record["attempts"] >= QUARANTINE_AFTER_SAME_FAILURES):
+    elif consecutive >= QUARANTINE_AFTER_SAME_FAILURES:
         record["status"] = "quarantined"
         record["next_retry_at"] = None
     else:
         record["status"] = "retry_pending"
         record["next_retry_at"] = (
             datetime.now(timezone.utc)
-            + timedelta(seconds=backoff_seconds(record["attempts"]))
+            + timedelta(seconds=backoff_seconds(consecutive))
         ).isoformat()
     records[key] = record
     save_failures(data)
@@ -339,7 +363,8 @@ class FileFailure(Exception):
 
     def __init__(self, stage, error_code, *, subprocess_rc=None,
                  stderr="", content_sha256=None, tweet_id=None,
-                 downloaded_path=None, review_items=None):
+                 downloaded_path=None, review_items=None,
+                 lock_contention=False):
         super().__init__(f"{stage}: {error_code}")
         self.stage = stage
         self.error_code = error_code
@@ -349,30 +374,49 @@ class FileFailure(Exception):
         self.tweet_id = tweet_id
         self.downloaded_path = downloaded_path
         self.review_items = review_items
+        # 락 경합은 콘텐츠 실패 횟수에 포함하지 않는다 (별도 재시도).
+        self.lock_contention = lock_contention
 
 
-def _validate_parsed_records(parsed):
-    """병합 전 수신 레코드 재검증 (ingester 결과의 방어적 재검사)."""
+def _validate_parsed_records(parsed, *, content_sha256=None, downloaded_path=None):
+    """병합 전 수신 레코드 재검증 (ingester 결과의 방어적 재검사).
+
+    빈 결과도 검증 실패이다 — 단일 HTML 입력이 레코드 0건을 낸 것은
+    정상 캡처가 아니다 (ingester가 rc=0으로 빈 posts.json을 낸 경우).
+    모든 검증 예외에 다운로드 바이트·해시를 연결한다 (증거 보존용).
+    """
     sys.path.insert(0, str(TOOLS_DIR))
     from capture_contract import verify_record  # noqa: E402
     if not isinstance(parsed, list):
-        raise FileFailure("validation", "parsed_not_list")
+        raise FileFailure("validation", "parsed_not_list",
+                          content_sha256=content_sha256,
+                          downloaded_path=downloaded_path)
+    if not parsed:
+        raise FileFailure("validation", "empty_results",
+                          content_sha256=content_sha256,
+                          downloaded_path=downloaded_path)
     seen = set()
     for item in parsed:
         if not isinstance(item, dict) or not item.get("tweetId"):
-            raise FileFailure("validation", "record_no_tweet_id")
+            raise FileFailure("validation", "record_no_tweet_id",
+                              content_sha256=content_sha256,
+                              downloaded_path=downloaded_path)
         tid = str(item["tweetId"])
         if tid in seen:
-            raise FileFailure("validation", "duplicate_tweet_id", tweet_id=tid)
+            raise FileFailure("validation", "duplicate_tweet_id", tweet_id=tid,
+                              content_sha256=content_sha256,
+                              downloaded_path=downloaded_path)
         seen.add(tid)
         ok, errors = verify_record(item)
         if not ok:
             raise FileFailure("validation", "contract_failed",
-                              tweet_id=tid, stderr="; ".join(errors))
+                              tweet_id=tid, stderr="; ".join(errors),
+                              content_sha256=content_sha256,
+                              downloaded_path=downloaded_path)
     return parsed
 
 
-def process_file(f, *, local_inbox, state, state_path, processed):
+def process_file(f, *, local_inbox, state, state_path, processed, inbox_id=None):
     """파일 1건 처리. Returns (added, updated, proposals) — 성공 시.
 
     FileFailure → 호출자가 실패 기록으로 전환한다.
@@ -389,7 +433,7 @@ def process_file(f, *, local_inbox, state, state_path, processed):
             return _process_file_inner(
                 f, fid, name, fp, work=Path(temporary),
                 local_inbox=local_inbox, state=state, state_path=state_path,
-                processed=processed)
+                processed=processed, inbox_id=inbox_id)
         except FileFailure as failure:
             # 임시 디렉터리가 사라지기 전에 다운로드 바이트를 스테이징으로
             # 이동한다 (증거 저장 시 이 경로를 쓴다).
@@ -403,7 +447,7 @@ def process_file(f, *, local_inbox, state, state_path, processed):
             raise
 
 
-def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_path, processed):
+def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_path, processed, inbox_id=None):
     content_sha256 = None
     downloaded_path = None
     inputs = work / "in"
@@ -427,7 +471,27 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
     downloaded_path = path
     content_sha256 = hashlib.sha256(path.read_bytes()).hexdigest()
     # 다운로드 중 Drive 지문 변경 — 성공 체크포인트를 남기지 않는다.
+    # 크기만 비교하면 동일 크기로 수정된 파일을 놓친다. 다운로드 후
+    # 메타데이터를 재조회해 modifiedTime 변화까지 확인한다.
     if str(path.stat().st_size) != str(f.get("size", "")):
+        raise FileFailure("download", "fingerprint_drift",
+                          content_sha256=content_sha256,
+                          downloaded_path=downloaded_path)
+    refreshed = None
+    try:
+        for entry in list_drive_files(inbox_id):
+            if entry.get("id") == fid:
+                refreshed = entry
+                break
+    except Exception as e:
+        # 메타데이터 재조회 자체가 목록 조회 실패 — 폴 자체 실패로 전파.
+        raise RuntimeError(f"Drive 메타데이터 재조회 실패: {e}") from e
+    if refreshed is None:
+        raise FileFailure("download", "fingerprint_drift",
+                          content_sha256=content_sha256,
+                          downloaded_path=downloaded_path)
+    if (str(refreshed.get("modifiedTime", "")) != str(f.get("modifiedTime", ""))
+            or str(refreshed.get("size", "")) != str(f.get("size", ""))):
         raise FileFailure("download", "fingerprint_drift",
                           content_sha256=content_sha256,
                           downloaded_path=downloaded_path)
@@ -480,7 +544,8 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
                           downloaded_path=downloaded_path,
                           review_items=review_items)
     # 3) 검증 (공통 계약 재검사).
-    _validate_parsed_records(parsed)
+    _validate_parsed_records(parsed, content_sha256=content_sha256,
+                             downloaded_path=downloaded_path)
     # 4) 정본 병합 (공유 파이프라인 락 하에서만).
     # 락 타임아웃 시 이 파일만 실패로 세고 다음 파일로 간다
     # (폴 전체 중단 금지).
@@ -512,7 +577,8 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
         log(f"파이프라인 락 타임아웃 — 다음 폴에서 재시도: {fid} ({e})")
         raise FileFailure("merge", "lock_timeout", stderr=str(e),
                           content_sha256=content_sha256,
-                          downloaded_path=downloaded_path) from e
+                          downloaded_path=downloaded_path,
+                          lock_contention=True) from e
     # 5) 원본 보관 (영속 보관 경로 — fileId + 콘텐츠 해시).
     try:
         shutil.copy2(path, local_inbox / archive_filename(name, fid, content_sha256))
@@ -567,10 +633,12 @@ def handle_file_failure(f, failure):
         "evidence_path": None,
         "review_items": failure.review_items,
     }
-    if failure.downloaded_path is not None:
+    if failure.downloaded_path is not None and not failure.lock_contention:
         # 증거 저장 실패 → 폴 자체 실패 (부분 성공 반환 금지).
+        # 락 경합은 파일 불량이 아니라 일시적 경합이므로 증거를 남기지
+        # 않는다 (격리 디렉터리를 경합 증거로 채우지 않음).
         record["evidence_path"] = save_evidence(failure.downloaded_path, record)
-    return persist_failure_record(record)
+    return persist_failure_record(record, lock_contention=failure.lock_contention)
 
 
 def _verification_of(entry):
@@ -712,6 +780,11 @@ def main():
             # 처리 여부 판정.
             if isinstance(previous, dict):
                 verification = _verification_of(previous)
+                # 미검증 legacy는 지문 일치 여부와 관계없이 폴당 배치
+                # 제한을 적용한다 (지문 변경이 제한을 우회하지 않음).
+                if verification in ("unverified", "unavailable") \
+                        and fid not in batch_fids:
+                    continue
                 fingerprint_match = (
                     previous.get("modifiedTime"), str(previous.get("size", ""))
                 ) == (fp[1], fp[2])
@@ -730,12 +803,10 @@ def main():
                             next_retry = rec.get("next_retry_at")
                         if next_retry and datetime.now(timezone.utc) < datetime.fromisoformat(next_retry):
                             continue  # backoff 대기 중.
-                    if verification in ("unverified", "unavailable"):
-                        # unavailable이었는데 파일이 다시 나타남 → 재검증.
-                        if fid not in batch_fids:
-                            continue
                     # fingerprint_match + retry_pending(백오프 만료) → 재처리.
-                # 지문 불일치 → 수정된 파일 — 일반 경로로 재처리 (배치 제한 없음).
+                    # fingerprint_match + unverified/unavailable(배치 내) → 재검증.
+                # 지문 불일치 → 수정된 파일 — 일반 경로로 재처리.
+                # (미검증 legacy는 위에서 배치 제한을 이미 적용받음.)
             elif fid in legacy:
                 # 사전 패스에서 이미 unverified로 등록됨 — 방어.
                 if fid not in batch_fids:
@@ -749,7 +820,8 @@ def main():
             try:
                 file_added, file_updated, _proposals = process_file(
                     f, local_inbox=local_inbox, state=state,
-                    state_path=state_path, processed=processed)
+                    state_path=state_path, processed=processed,
+                    inbox_id=inbox_id)
             except FileFailure as failure:
                 record = handle_file_failure(f, failure)
                 # processed에 실패 상태 반영 (다음 폴 disposition용).

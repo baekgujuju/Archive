@@ -72,8 +72,12 @@ def read_recovery_marker(state_path):
 
 
 def write_recovery_marker(state_path, *, kind, quarantined_path,
-                          original_path, byte_sha256, error):
-    """복구 마커를 원자적으로 쓴다 (격리 정보 + 복원 절차)."""
+                          original_path, byte_sha256, error, status="quarantined"):
+    """복구 마커를 원자적으로 쓴다 (격리 정보 + 복원 절차).
+
+    status: "quarantine_pending" (이동 전 의도 마커 — 이동 직후 중단돼도
+    다음 실행이 fresh로 진행하지 않는다) | "quarantined" (격리 완료).
+    """
     marker = recovery_marker_path(state_path)
     if kind == "drive_poll_state":
         procedure = (
@@ -82,6 +86,12 @@ def write_recovery_marker(state_path, *, kind, quarantined_path,
             "3) 복구 마커를 삭제한다. 마커가 있으면 다음 실행도 "
             "fail-closed로 중단된다 (신규 초기화가 아님)."
         )
+        if status == "quarantine_pending":
+            procedure += (
+                " 마커 상태가 quarantine_pending이면 격리가 중단됐을 수 있어 "
+                "원본이 남아 있거나 이미 이동했을 수 있다 — 격리 디렉터리를 "
+                "확인한 뒤 마커를 삭제한다."
+            )
     else:
         procedure = (
             "격리된 워터마크는 파생 값이다. 다음 실행은 보이는 초기화로 "
@@ -90,8 +100,9 @@ def write_recovery_marker(state_path, *, kind, quarantined_path,
         )
     data = {
         "kind": kind,
+        "status": status,
         "quarantined_at": datetime.now(timezone.utc).isoformat(),
-        "quarantined_path": str(quarantined_path),
+        "quarantined_path": str(quarantined_path) if quarantined_path else None,
         "original_path": str(original_path),
         "byte_sha256": byte_sha256,
         "error": error,
@@ -163,8 +174,13 @@ def load_state_guarded(state_path, *, kind):
     - 읽기 권한 오류 → StateReadError (손상 아님, 격리 없음).
     """
     state_path = Path(state_path)
+    # 복구 마커를 state 파일 존재 여부보다 먼저 검사한다. 마커가 남은
+    # 상태에서 유효한 state 파일이 생겨도 복구 차단을 우회하지 않는다
+    # (격리 의도 마커가 이동 전에 저장되므로, 중단 후 원본이 남아 있어도
+    # 마커가 있으면 fail-closed / 보이는 초기화로 처리한다).
+    marker = read_recovery_marker(state_path)
     if not state_path.exists():
-        if read_recovery_marker(state_path) is not None:
+        if marker is not None:
             if kind == "drive_poll_state":
                 raise StateBlockedError(
                     "복구 마커 존재 — drive state 복구 대기 중. "
@@ -193,19 +209,35 @@ def load_state_guarded(state_path, *, kind):
             raise StateBlockedError(
                 f"drive state 손상 — 격리 후 fail-closed 중단 ({reason})")
         return {}, "post_quarantine_init"
+    if marker is not None:
+        # 유효한 state 파일 + 미해결 복구 마커 — 마커를 무시하고
+        # state를 쓰면 복구 차단을 우회한다. drive는 차단, monitor는
+        # 보이는 초기화로 진행한다 (워터마크는 재계산되므로 안전).
+        if kind == "drive_poll_state":
+            raise StateBlockedError(
+                "복구 마커 존재 — drive state 복구 대기 중 "
+                "(state 파일이 유효해도 마커 삭제 없이는 진행하지 않음).")
+        return {}, "post_quarantine_init"
     return data, "ok"
 
 
 def _quarantine_and_mark(state_path, raw, kind, error):
     """손상 상태 파일을 격리하고 복구 마커를 쓴다.
 
-    격리 실패 시 원본을 덮지 않는다 (예외를 그대로 전파).
+    순서: 복구 의도 마커(내구성) → 원본 이동 → 메타데이터 → 최종 마커.
+    이동 직후 중단돼도 의도 마커가 남아 다음 실행이 fresh로 진행하지
+    않는다. 격리 실패 시 원본을 덮지 않는다 (예외를 그대로 전파).
     """
     byte_sha = hashlib.sha256(raw).hexdigest()
+    # 1) 복구 의도 마커를 이동 전에 내구성 있게 저장한다.
+    write_recovery_marker(
+        state_path, kind=kind, quarantined_path=None,
+        original_path=state_path, byte_sha256=byte_sha, error=error,
+        status="quarantine_pending")
     quarantined = quarantine_file(
         state_path, Path(state_path).parent / ".quarantine",
         Path(state_path).name)
-    # 메타데이터를 격리 디렉터리 안에 남긴다.
+    # 메타데이터를 격리 디렉터리 안에 원자적으로 남긴다.
     meta = {
         "original_path": str(state_path),
         "quarantined_at": datetime.now(timezone.utc).isoformat(),
@@ -214,14 +246,18 @@ def _quarantine_and_mark(state_path, raw, kind, error):
         "code_sha": code_sha(),
         "restore_procedure": (
             "격리본을 검사해 검증된 백업으로 복원하거나, 운영자가 "
-            "명시적으로 재구축한 뒤 복구 마커를 삭제한다."
+            "명시적으로 재구축한 뒤 복구 마커를 삭제한다. "
+            "마커 상태가 quarantine_pending이면 격리가 중단됐을 수 있어 "
+            "원본이 남아 있거나 이미 이동했을 수 있다 — 격리 디렉터리를 "
+            "확인한 뒤 마커를 삭제한다."
         ),
     }
-    (Path(quarantined).parent / "metadata.json").write_text(
-        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
+    atomic_json_write(Path(quarantined).parent / "metadata.json", meta)
+    # 2) 최종 마커 (격리 완료 경로).
     write_recovery_marker(
         state_path, kind=kind, quarantined_path=quarantined,
-        original_path=state_path, byte_sha256=byte_sha, error=error)
+        original_path=state_path, byte_sha256=byte_sha, error=error,
+        status="quarantined")
     return quarantined
 
 
@@ -248,11 +284,9 @@ def atomic_json_write(path, data):
         except OSError:
             pass
         raise
-    # 디렉터리 fsync — rename의 내구성 보장.
-    try:
-        dir_fd = os.open(str(path.parent), os.O_RDONLY)
-    except OSError:
-        return
+    # 디렉터리 fsync — rename의 내구성 보장. open 실패도 삼키지 않고
+    # 보고한다 (내구성을 보장할 수 없는데 성공으로 반환하지 않는다).
+    dir_fd = os.open(str(path.parent), os.O_RDONLY)
     try:
         os.fsync(dir_fd)
     finally:

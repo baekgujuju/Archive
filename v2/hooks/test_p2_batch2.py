@@ -17,6 +17,7 @@ import itertools
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -668,9 +669,9 @@ def test_ingester_metadata_mismatch_to_review(tmp_path):
     assert "요청 ID" in review[0]["reason"]
 
 
-def test_ingester_wrong_source_link_corrected_by_normalization(tmp_path):
-    """HTML의 메인 링크가 인용글을 가리켜도, 검증된 메인 permalink로
-    sourceUrl을 정규화해 생성한다 (첫 status 링크를 믿지 않음)."""
+def test_ingester_wrong_source_link_to_review(tmp_path):
+    """HTML의 메인 링크가 다른 글의 ID를 가리키면 검수 대상이다
+    (메타데이터로 조용히 보정하지 않음 — Codex 1차 리뷰)."""
     indir, outdir = tmp_path / "in", tmp_path / "out"
     indir.mkdir()
     (indir / "x.html").write_text(
@@ -678,6 +679,21 @@ def test_ingester_wrong_source_link_corrected_by_normalization(tmp_path):
             meta=_capture_meta(quote_status="extracted"),
             quote={"tid": "456", "handle": "Author2", "text": "quoted"},
             source_href="https://x.com/Author2/status/456"), encoding="utf-8")
+    rc, out = _run_ingester(indir, outdir)
+    assert rc == 2, out
+    review = json.loads((outdir / "review.json").read_text())
+    assert "HTML 메인 permalink" in review[0]["reason"]
+
+
+def test_ingester_source_link_normalization_allowed(tmp_path):
+    """호스트·query 차이만 있는 HTML 링크는 정규화해 통과한다."""
+    indir, outdir = tmp_path / "in", tmp_path / "out"
+    indir.mkdir()
+    (indir / "x.html").write_text(
+        _capture_html(
+            meta=_capture_meta(),
+            source_href="https://twitter.com/Author1/status/123?s=20"),
+        encoding="utf-8")
     rc, out = _run_ingester(indir, outdir)
     assert rc == 0, out
     posts = json.loads((outdir / "posts.json").read_text())
@@ -1393,6 +1409,11 @@ def push_env(tmp_path, monkeypatch):
     monkeypatch.setattr(hook, "HOOKS_DIR", hooks_dir)
     monkeypatch.setattr(hook, "PUBLISH_BRANCH", "main")
     monkeypatch.setattr(hook, "PUBLISH_ENABLED", True)
+    # do_push 자식 프로세스에도 임시 Git 환경을 적용한다 (전역 설정·
+    # 자격증명 접근 금지 — do_push은 env를 상속하므로 setenv로 격리).
+    monkeypatch.setenv("HOME", str(tmp_path / "home"))
+    monkeypatch.setenv("GIT_CONFIG_NOSYSTEM", "1")
+    monkeypatch.setenv("GIT_TERMINAL_PROMPT", "0")
     chunks = {"x": [{"id": "1"}], "web": [], "ib": []}
     sha_a = _write_valid_commit(work, chunks, "A", env)
     _git(work, "push", "origin", "main", env=env)
@@ -1457,6 +1478,9 @@ def test_do_push_non_fast_forward_blocked(tmp_path, monkeypatch):
     bare = tmp_path / "remote.git"
     _git(tmp_path, "init", "--bare", str(bare), env=env)
     _git(bare, "config", "receive.denyNonFastForwards", "true", env=env)
+    # bare HEAD를 main으로 지정한다 — clone이 main을 체크아웃해야
+    # 브랜치 불일치가 아니라 non-fast-forward로 거부됨을 증명한다.
+    _git(bare, "symbolic-ref", "HEAD", "refs/heads/main", env=env)
     # work1: A를 remote에 게시.
     work1 = tmp_path / "work1"
     work1.mkdir()
@@ -1471,6 +1495,7 @@ def test_do_push_non_fast_forward_blocked(tmp_path, monkeypatch):
     _git(tmp_path, "clone", str(bare), str(work2), env=env)
     _git(work2, "config", "user.email", "t@t", env=env)
     _git(work2, "config", "user.name", "t", env=env)
+    assert _git(work2, "branch", "--show-current", env=env).stdout.strip() == "main"
     sha_b = _write_valid_commit(work2, {"x": [{"id": "1"}, {"id": "2"}], "web": [], "ib": []}, "B", env)
     # work3: A와 무관한 A2를 remote에 강제 게시 (다른 히스토리).
     work3 = tmp_path / "work3"
@@ -1495,6 +1520,10 @@ def test_do_push_non_fast_forward_blocked(tmp_path, monkeypatch):
     _git(work2, "fetch", "origin", env=env)
     assert hook.do_push() is False
     assert _remote_ref(bare, env) == sha_a2
+    # 거부 원인이 브랜치 불일치가 아니라 non-fast-forward인지 직접 확인한다.
+    r = _git(work2, "push", "origin", f"{sha_b}:refs/heads/main",
+             env=env, check=False)
+    assert "non-fast-forward" in r.stderr
 
 
 def test_do_push_receive_hook_rejection_blocked(push_env):
@@ -1508,42 +1537,52 @@ def test_do_push_receive_hook_rejection_blocked(push_env):
     assert _remote_ref(bare, env) == push_env["sha_a"]
 
 
-def test_do_push_head_move_race_pushes_verified_sha(push_env, monkeypatch):
-    """HEAD 이동 경쟁: push 대기 중 로컬 HEAD를 C로 이동해도
-    remote에는 검증된 B가 도착해야 한다."""
+def test_do_push_head_move_race_pushes_verified_sha(push_env, monkeypatch, tmp_path):
+    """HEAD 이동 경쟁: 검증 완료 후 push 프로세스 시작 전에 HEAD를
+    이동시켜도 remote에는 검증된 B가 도착해야 한다.
+
+    동기화 지점은 PATH상의 git shim이다 — do_push가 `git push`를
+    호출하는 순간 (검증 완료 후, push 시작 전) shim이 HEAD를 C로
+    이동시킨 뒤 실제 git push를 실행한다. push·검증 함수는 모킹하지
+    않고 실제 Git을 쓴다.
+    """
     env, bare, work = push_env["env"], push_env["bare"], push_env["work"]
-    started = push_env["hooks_dir"] / "hook-started"
-    signal = push_env["hooks_dir"] / "hook-signal"
-    hook_path = bare / "hooks" / "pre-receive"
-    hook_path.write_text(
-        "#!/bin/sh\n"
-        f'touch "{started}"\n'
-        "for i in $(seq 1 100); do "
-        f'[ -f "{signal}" ] && exit 0; sleep 0.1; done\n'
-        "exit 1\n", encoding="utf-8")
-    hook_path.chmod(0o755)
     chunks_b = {"x": [{"id": "1"}, {"id": "2"}], "web": [], "ib": []}
     sha_b = _write_valid_commit(work, chunks_b, "B", env)
-    result = {}
-
-    def _push():
-        result["ok"] = hook.do_push()
-
-    t = threading.Thread(target=_push, daemon=True)
-    t.start()
-    deadline = __import__("time").monotonic() + 20
-    while not started.exists():
-        if __import__("time").monotonic() > deadline:
-            raise AssertionError("pre-receive hook이 시작되지 않음")
-        __import__("time").sleep(0.05)
-    # push 대기 중 로컬 HEAD를 C로 이동한다.
-    chunks_c = {"x": [{"id": "1"}, {"id": "2"}, {"id": "3"}], "web": [], "ib": []}
-    _write_valid_commit(work, chunks_c, "C", env)
-    assert _git(work, "rev-parse", "HEAD", env=env).stdout.strip() != sha_b
-    signal.touch()
-    t.join(timeout=30)
-    assert not t.is_alive()
-    assert result.get("ok") is True
+    # C를 미리 만들어 두되 HEAD는 B에 둔다.
+    sha_c = _write_valid_commit(work, {"x": [{"id": "1"}, {"id": "2"}, {"id": "3"}],
+                                "web": [], "ib": []}, "C", env)
+    _git(work, "reset", "--hard", sha_b, env=env)
+    assert _git(work, "rev-parse", "HEAD", env=env).stdout.strip() == sha_b
+    # git shim: 첫 `git push` 호출 시 HEAD를 C로 이동시킨다.
+    bindir = tmp_path / "bin"
+    bindir.mkdir()
+    real_git = shutil.which("git")
+    shim = bindir / "git"
+    shim.write_text(
+        "#!/bin/sh\n"
+        "for _a in \"$@\"; do\n"
+        "  if [ \"$_a\" = \"push\" ] && [ -n \"$GIT_SHIM_MOVE_HEAD_TO\" ] "
+        "&& [ ! -f \"$GIT_SHIM_FIRED\" ]; then\n"
+        "    touch \"$GIT_SHIM_FIRED\"\n"
+        "    \"$REAL_GIT\" -C \"$GIT_SHIM_REPO\" update-ref HEAD \"$GIT_SHIM_MOVE_HEAD_TO\"\n"
+        "    break\n"
+        "  fi\n"
+        "done\n"
+        "exec \"$REAL_GIT\" \"$@\"\n", encoding="utf-8")
+    shim.chmod(0o755)
+    monkeypatch.setenv("PATH", str(bindir) + os.pathsep + os.environ["PATH"])
+    monkeypatch.setenv("REAL_GIT", real_git)
+    monkeypatch.setenv("GIT_SHIM_REPO", str(work))
+    monkeypatch.setenv("GIT_SHIM_MOVE_HEAD_TO", sha_c)
+    monkeypatch.setenv("GIT_SHIM_FIRED", str(tmp_path / "shim-fired"))
+    monkeypatch.setenv("HOME", str(tmp_path / "home"))
+    monkeypatch.setenv("GIT_CONFIG_NOSYSTEM", "1")
+    monkeypatch.setenv("GIT_TERMINAL_PROMPT", "0")
+    # monkeypatch이 env를 복원하고, shim-fired 파일은 pytest tmp에 있어
+    # 별도 정리가 필요 없다.
+    assert hook.do_push() is True
+    assert _git(work, "rev-parse", "HEAD", env=env).stdout.strip() == sha_c
     assert _remote_ref(bare, env) == sha_b  # C가 아니라 검증된 B.
 
 
@@ -1581,6 +1620,9 @@ def _bookmarklet_js(articles, pathname):
             images: {esc(images)},
             quoteText: {esc(quote_text)},
             quoteLink: {esc(quote_link)},
+            bodyLinks: {esc(a.get('body_links') or [])},
+            bodyInQuote: {json.dumps(bool(a.get('body_in_quote')))},
+            bodyClosestHref: {esc(a.get('body_closest_href'))},
         }}""")
     return r"""
 const downloads = [];
@@ -1627,6 +1669,13 @@ function makeArticle(spec) {
   const statusLinks = spec.statusLinks.map(l => makeLink(l.href, ''));
   const profileLinks = spec.profile.map(h => makeLink('/' + h, h));
   const imgs = spec.images.map(s => makeImg(s));
+  // 본문 안에 붙여넣은 링크 — 본문 div 안에 있으므로 인용 후보가 아니다.
+  const bodyLinkObjs = (spec.bodyLinks || []).map(href => makeLink(href, ''));
+  bodyEl.contains = (el) => bodyLinkObjs.includes(el);
+  if (spec.bodyClosestHref) {
+    const _a = makeLink(spec.bodyClosestHref, '');
+    bodyEl.closest = (sel) => (sel === 'a' ? _a : null);
+  }
   const art = {
     textContent: spec.text,
     innerText: spec.text,
@@ -1635,8 +1684,8 @@ function makeArticle(spec) {
     compareDocumentPosition: () => 0,
     contains: () => false,
     querySelectorAll: (sel) => {
-      if (sel === 'a[href*="/status/"]') return statusLinks;
-      if (sel === 'a[href]') return [...profileLinks, ...statusLinks];
+      if (sel === 'a[href*="/status/"]') return [...statusLinks, ...bodyLinkObjs];
+      if (sel === 'a[href]') return [...profileLinks, ...statusLinks, ...bodyLinkObjs];
       if (sel.startsWith('a[href="/')) return profileLinks.filter(
         l => l.href === sel.slice(8, -2));
       if (sel === 'div[data-testid="tweetText"]') return [];
@@ -1660,6 +1709,8 @@ function makeArticle(spec) {
       if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
       return [];
     };
+    // 본문 요소가 인용 카드 안에 있는 경우를 모델링한다.
+    qLink.contains = (el) => (spec.bodyInQuote ? el === bodyEl : false);
     statusLinks.push(qLink);
   }
   return art;
@@ -1763,3 +1814,609 @@ def test_bookmarklet_quote_extracted_downloads_with_quote():
     text = result["downloads"][0]["text"]
     assert 'data-tweet-id="456"' in text
     assert "quoted text" in text
+
+
+# ---------- Codex 1차 리뷰 ①: 상태 격리 중단 시 fail-closed ----------
+
+def test_state_guard_intent_marker_blocks_after_interruption(tmp_path):
+    """격리 중단 (의도 마커만 남고 원본이 남아 있음) 후에도 fail-closed.
+
+    다음 실행은 fresh로 진행하지 않고, 중단된 격리를 완료한 뒤 차단한다.
+    """
+    hooks = tmp_path / "hooks"
+    hooks.mkdir()
+    state_path = hooks / ".drive_poll_state.json"
+    state_path.write_text('{"processed": {"a": ', encoding="utf-8")  # 잘린 JSON
+    # 이동 전에 중단된 것처럼 의도 마커만 남긴다.
+    state_guard.write_recovery_marker(
+        state_path, kind="drive_poll_state", quarantined_path=None,
+        original_path=state_path, byte_sha256="abc", error="interrupted",
+        status="quarantine_pending")
+    # 의도 마커의 복원 절차에 중단 가능성이 안내된다.
+    intent = state_guard.read_recovery_marker(state_path)
+    assert intent["status"] == "quarantine_pending"
+    assert "quarantine_pending" in intent["restore_procedure"]
+    with pytest.raises(state_guard.StateBlockedError):
+        state_guard.load_state_guarded(state_path, kind="drive_poll_state")
+    # 중단된 격리가 완료된다: 원본은 격리되고 마커는 quarantined로 갱신.
+    assert not state_path.exists()
+    marker = state_guard.read_recovery_marker(state_path)
+    assert marker["status"] == "quarantined"
+    assert marker["quarantined_path"] is not None
+
+
+def test_state_guard_valid_state_with_marker_blocked(tmp_path):
+    """유효한 state 파일 + 미해결 마커 → 마커를 무시하고 진행하지 않는다."""
+    hooks = tmp_path / "hooks"
+    hooks.mkdir()
+    state_path = hooks / ".drive_poll_state.json"
+    state_path.write_text('{"processed": {}}', encoding="utf-8")
+    state_guard.write_recovery_marker(
+        state_path, kind="drive_poll_state", quarantined_path="/tmp/q",
+        original_path=state_path, byte_sha256="abc", error="x")
+    with pytest.raises(state_guard.StateBlockedError):
+        state_guard.load_state_guarded(state_path, kind="drive_poll_state")
+    # monitor는 유효 state를 버리고 보이는 초기화로 진행한다.
+    monitor_path = hooks / ".monitor_state.json"
+    monitor_path.write_text('{"hashes": {"a": "b"}}', encoding="utf-8")
+    state_guard.write_recovery_marker(
+        monitor_path, kind="monitor_state", quarantined_path="/tmp/q",
+        original_path=monitor_path, byte_sha256="abc", error="x")
+    data, status = state_guard.load_state_guarded(
+        monitor_path, kind="monitor_state")
+    assert (data, status) == ({}, "post_quarantine_init")
+
+
+def test_state_guard_quarantine_marker_status_complete(tmp_path):
+    """격리 완료 후 마커 상태는 quarantined, 격리 경로가 기록된다."""
+    hooks = tmp_path / "hooks"
+    hooks.mkdir()
+    state_path = hooks / ".drive_poll_state.json"
+    state_path.write_text('{"processed": {"a": ', encoding="utf-8")
+    with pytest.raises(state_guard.StateBlockedError):
+        state_guard.load_state_guarded(state_path, kind="drive_poll_state")
+    marker = state_guard.read_recovery_marker(state_path)
+    assert marker["status"] == "quarantined"
+    assert marker["quarantined_path"] is not None
+
+
+def test_atomic_json_write_dir_fsync_failure_propagates(tmp_path, monkeypatch):
+    """디렉터리 fsync용 open 실패를 성공으로 삼키지 않는다."""
+    target = tmp_path / "state.json"
+    target.write_text('{"old": true}', encoding="utf-8")
+    orig_open = os.open
+
+    def _fail_dir(path, *args, **kwargs):
+        if path == str(tmp_path):
+            raise OSError("injected dir open failure")
+        return orig_open(path, *args, **kwargs)
+
+    monkeypatch.setattr(os, "open", _fail_dir)
+    with pytest.raises(OSError):
+        state_guard.atomic_json_write(target, {"new": 1})
+
+
+# ---------- Codex 1차 리뷰 ⑤: 빈 결과 검증 실패 + 증거 + media 유효성 ----------
+
+def test_capture_contract_media_only_requires_valid_url():
+    base = {
+        "tweetId": "123",
+        "sourceUrl": "https://x.com/Author1/status/123",
+        "fullText": "",
+        "author": {"handle": "@Author1", "name": "A"},
+        "captureType": "media-only",
+        "quoteStatus": "none",
+    }
+    # "https://"만으로는 media-only 예외를 통과하지 않는다.
+    rec = dict(base, media=["https://"])
+    ok, errors = capture_contract.verify_record(rec)
+    assert not ok
+    assert any("공백 본문" in e for e in errors)
+    rec = dict(base, media=[{"full": "https://"}])
+    ok, _ = capture_contract.verify_record(rec)
+    assert not ok
+    # 유효한 미디어 URL이면 예외가 적용된다.
+    rec = dict(base, media=["https://x.com/a.jpg"])
+    ok, _ = capture_contract.verify_record(rec)
+    assert ok
+
+
+def test_drive_poll_empty_results_is_validation_failure(poll_env, monkeypatch):
+    """ingester가 rc=0으로 빈 posts.json을 내면 검증 실패 + 증거 보존."""
+    content = _valid_html("111")
+    files = [_drive_file("fid-e", "e.html", content)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+
+    def _run(cmd, **kw):
+        if cmd[0] == "hatch_gws_cli":
+            out = cmd[cmd.index("-o") + 1]
+            Path(out).write_bytes(content)
+            return subprocess.CompletedProcess(cmd, 0, "", "")
+        # ingester 흉내: rc=0이지만 posts.json이 비어 있음.
+        outdir = Path(cmd[cmd.index("-o") + 1])
+        outdir.mkdir(parents=True, exist_ok=True)
+        (outdir / "posts.json").write_text("[]", encoding="utf-8")
+        (outdir / "review.json").write_text("[]", encoding="utf-8")
+        return subprocess.CompletedProcess(cmd, 0, "", "")
+
+    monkeypatch.setattr(drive_poll, "run", _run)
+    rc = drive_poll.main()
+    assert rc == 3
+    failures = json.loads((poll_env["hooks"] / ".drive_poll_failures.json").read_text())
+    rec = next(iter(failures["records"].values()))
+    assert rec["stage"] == "validation"
+    assert rec["error_code"] == "empty_results"
+    assert rec["status"] == "quarantined"  # 검증 실패는 즉시 격리.
+    # 증거가 보존된다 (다운로드 바이트 연결).
+    assert rec["evidence_path"] is not None
+    assert (Path(rec["evidence_path"]) / "download.bin").exists()
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    assert state["processed"]["fid-e"]["verification"] == "quarantined"
+
+
+# ---------- Codex 1차 리뷰 ⑥: 락 경합 분리 ----------
+
+def _failure_record(fid="fid-x", stage="download", error_code="timeout"):
+    return {
+        "key": f"{fid}:1:10", "fileId": fid, "fileName": f"{fid}.html",
+        "modifiedTime": "1", "size": "10", "content_sha256": "abc",
+        "stage": stage, "error_code": error_code, "subprocess_rc": None,
+        "stderr_excerpt": "", "stderr_truncated": False, "tweetId": None,
+        "evidence_path": None, "review_items": None,
+    }
+
+
+def test_persist_failure_lock_contention_excluded(tmp_path, monkeypatch):
+    monkeypatch.setattr(drive_poll, "FAILURES_FILE", tmp_path / "failures.json")
+    monkeypatch.setattr(drive_poll, "NEEDS_REVIEW", tmp_path / ".needs-review")
+    # 콘텐츠 실패 A 1회 → consecutive 1, retry_pending.
+    r1 = drive_poll.persist_failure_record(_failure_record())
+    assert r1["status"] == "retry_pending"
+    assert r1["consecutive"] == 1
+    # 락 경합 → consecutive 유지, 격리 아님, 락 표시.
+    r2 = drive_poll.persist_failure_record(
+        _failure_record(), lock_contention=True)
+    assert r2["status"] == "retry_pending"
+    assert r2["consecutive"] == 1
+    assert r2["lock_contention"] is True
+    # 락 경합 2회 더 → 여전히 격리되지 않는다.
+    drive_poll.persist_failure_record(_failure_record(), lock_contention=True)
+    r4 = drive_poll.persist_failure_record(
+        _failure_record(), lock_contention=True)
+    assert r4["status"] == "retry_pending"
+    assert r4["consecutive"] == 1
+    # 락 경합 뒤 같은 콘텐츠 실패 → 연속 2회로 격리 (락이 체인을 끊지 않음).
+    r5 = drive_poll.persist_failure_record(_failure_record())
+    assert r5["status"] == "quarantined"
+    assert r5["consecutive"] == 2
+    # .needs-review에는 격리된 콘텐츠 실패만 있다 (락 경합 없음).
+    review = json.loads((tmp_path / ".needs-review").read_text())
+    assert len(review) == 1
+    assert "timeout" in review[0]["reason"]
+
+
+def test_persist_failure_backoff_uses_consecutive(tmp_path, monkeypatch):
+    monkeypatch.setattr(drive_poll, "FAILURES_FILE", tmp_path / "failures.json")
+    monkeypatch.setattr(drive_poll, "NEEDS_REVIEW", tmp_path / ".needs-review")
+    # A → B → B: 세 번째 기록의 백오프는 누적 3회가 아니라 연속 2회 기준.
+    # (연속 2회이므로 격리되지만, 그 전 B 1회째의 백오프는 300초여야 한다.)
+    drive_poll.persist_failure_record(_failure_record(error_code="err-a"))
+    r_b1 = drive_poll.persist_failure_record(_failure_record(error_code="err-b"))
+    assert r_b1["consecutive"] == 1
+    assert r_b1["status"] == "retry_pending"
+    from datetime import datetime as _dt, timezone as _tz
+    nxt = _dt.fromisoformat(r_b1["next_retry_at"])
+    now = _dt.now(_tz.utc)
+    assert 240 <= (nxt - now).total_seconds() <= 360  # backoff(1)=300초
+
+
+def test_drive_poll_lock_timeout_retries_without_quarantine(poll_env, monkeypatch):
+    content = _valid_html("111")
+    files = [_drive_file("fid-l", "l.html", content)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-l": content}))
+
+    @contextmanager
+    def _raising_lock(*args, **kwargs):
+        from pipeline_lock import PipelineLockTimeout
+        raise PipelineLockTimeout("injected lock contention")
+        yield
+
+    monkeypatch.setattr(drive_poll, "pipeline_lock", _raising_lock)
+    rc = drive_poll.main()
+    assert rc == 3
+    failures = json.loads((poll_env["hooks"] / ".drive_poll_failures.json").read_text())
+    rec = next(iter(failures["records"].values()))
+    assert rec["stage"] == "merge"
+    assert rec["error_code"] == "lock_timeout"
+    assert rec["status"] == "retry_pending"
+    assert rec["lock_contention"] is True
+    assert rec["evidence_path"] is None  # 락 경합은 증거를 남기지 않음.
+    # 백오프 만료 후 다시 락 경합 → 여전히 격리되지 않는다.
+    failures["records"][rec["key"]]["next_retry_at"] = "2020-01-01T00:00:00+00:00"
+    (poll_env["hooks"] / ".drive_poll_failures.json").write_text(
+        json.dumps(failures), encoding="utf-8")
+    rc = drive_poll.main()
+    assert rc == 3
+    failures = json.loads((poll_env["hooks"] / ".drive_poll_failures.json").read_text())
+    rec = next(iter(failures["records"].values()))
+    assert rec["status"] == "retry_pending"
+    assert rec["consecutive"] == 0
+
+
+# ---------- Codex 1차 리뷰 ⑦: 다운로드 지문 재조회 + 배치 제한 ----------
+
+def test_drive_poll_download_drift_modified_time(poll_env, monkeypatch):
+    """다운로드 중 modifiedTime 변경 (동일 크기) → fingerprint_drift."""
+    content = _valid_html("111")
+    original = _drive_file("fid-m", "m.html", content)
+    changed = dict(original, modifiedTime="2026-10-18T00:00:00Z")
+    calls = {"n": 0}
+
+    def _listing(inbox_id):
+        calls["n"] += 1
+        return [original] if calls["n"] == 1 else [changed]
+
+    monkeypatch.setattr(drive_poll, "list_drive_files", _listing)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-m": content}))
+    rc = drive_poll.main()
+    assert rc == 3
+    failures = json.loads((poll_env["hooks"] / ".drive_poll_failures.json").read_text())
+    rec = next(iter(failures["records"].values()))
+    assert rec["stage"] == "download"
+    assert rec["error_code"] == "fingerprint_drift"
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    assert state["processed"]["fid-m"]["verification"] != "verified"
+
+
+def test_drive_poll_legacy_batch_limit_on_fingerprint_change(poll_env, monkeypatch):
+    """지문이 바뀐 미검증 legacy도 폴당 5건 제한을 받는다."""
+    legacy = {"processed": {}}
+    files = []
+    downloads = {}
+    for i in range(7):
+        fid = f"legacy-{i}"
+        tid = str(2000 + i)
+        content = _valid_html(tid, f"changed {i}")
+        # legacy 기록은 옛 지문, Drive 목록은 새 지문 (수정됨).
+        legacy["processed"][fid] = {"modifiedTime": "2026-10-01T00:00:00Z",
+                                    "size": str(len(content))}
+        files.append(_drive_file(fid, f"legacy-{i}.html", content))
+        # Drive 목록의 modifiedTime을 바꿔 지문 불일치를 만든다.
+        files[-1] = dict(files[-1], modifiedTime="2026-10-17T00:00:00Z")
+        downloads[fid] = content
+    (poll_env["tmp"] / "legacy.json").write_text(json.dumps(legacy), encoding="utf-8")
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun(downloads))
+    rc = drive_poll.main()
+    assert rc == 0
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    verified = [f for f, e in state["processed"].items()
+                if e.get("verification") == "verified"]
+    unverified = [f for f, e in state["processed"].items()
+                  if e.get("verification") == "unverified"]
+    assert len(verified) == 5
+    assert len(unverified) == 2
+
+
+# ---------- Codex 1차 리뷰 ⑧: 누락 미디어 영속 pending ----------
+
+def test_enrich_missing_media_persisted(tmp_path, monkeypatch):
+    import enrich_tools as et
+    monkeypatch.setattr(et, "DATA_DIR", tmp_path)
+    monkeypatch.setattr(et, "V2_ROOT", tmp_path)
+    monkeypatch.setattr(et, "MISSING_MEDIA_FILE", tmp_path / ".enrich_missing_media.json")
+    monkeypatch.setattr(et, "log", lambda *a: None)
+    (tmp_path / "media-map.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "posts-x.json").write_text(json.dumps({"posts": [
+        {"tweetId": "t1", "fullText": "x", "media": ["https://x.com/missing.jpg"]}]}),
+        encoding="utf-8")
+    (tmp_path / "posts-web.json").write_text(json.dumps({"posts": []}), encoding="utf-8")
+    candidates = et.collect_screenshots()
+    assert candidates == []
+    missing = json.loads((tmp_path / ".enrich_missing_media.json").read_text())
+    assert missing == [{"tweetId": "t1", "url": "https://x.com/missing.jpg",
+                        "detected_at": missing[0]["detected_at"]}]
+
+
+def test_enrich_missing_media_keeps_retry_marker(tmp_path, monkeypatch):
+    import enrich_tools as et
+    monkeypatch.setattr(et, "DATA_DIR", tmp_path)
+    monkeypatch.setattr(et, "V2_ROOT", tmp_path)
+    monkeypatch.setattr(et, "TOOLS_JSON", tmp_path / "ai-tools.json")
+    monkeypatch.setattr(et, "CACHE_JSON", tmp_path / "ai-tools-cache.json")
+    monkeypatch.setattr(et, "PROGRESS_JSON", tmp_path / "progress.json")
+    monkeypatch.setattr(et, "RETRY_MARKER", tmp_path / ".retry-enrich")
+    monkeypatch.setattr(et, "MANIFEST_JSON", tmp_path / "manifest.json")
+    monkeypatch.setattr(et, "MISSING_MEDIA_FILE", tmp_path / ".enrich_missing_media.json")
+    monkeypatch.setattr(et, "collect_screenshots", lambda: [])
+    monkeypatch.setattr(et, "fingerprint", lambda *a: "fp")
+    monkeypatch.setattr(et, "analyze_image_batch", lambda *a, **k: {})
+    monkeypatch.setattr(et, "verify_repo_with_readme", lambda *a, **k: None)
+    monkeypatch.setattr(et, "get_readme", lambda *a, **k: None)
+    monkeypatch.setattr(et, "log", lambda *a: None)
+    (tmp_path / "posts-x.json").write_text(json.dumps({"posts": []}), encoding="utf-8")
+    (tmp_path / "posts-web.json").write_text(json.dumps({"posts": []}), encoding="utf-8")
+    (tmp_path / "ai-tools.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "ai-tools-cache.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "ai-tools-vision-cache.json").write_text("{}", encoding="utf-8")
+    # 누락 미디어만 남은 상태 — 다른 미해결 항목이 없어도 마커가 유지된다.
+    (tmp_path / ".enrich_missing_media.json").write_text(json.dumps([
+        {"tweetId": "t1", "url": "https://x.com/missing.jpg",
+         "detected_at": "2026-10-17T00:00:00+00:00"}]), encoding="utf-8")
+    et.run_backfill(dry_run=False, max_items=1)
+    assert (tmp_path / ".retry-enrich").exists()
+    # 누락이 해소되면 마커가 삭제된다.
+    (tmp_path / ".enrich_missing_media.json").write_text("[]", encoding="utf-8")
+    et.run_backfill(dry_run=False, max_items=1)
+    assert not (tmp_path / ".retry-enrich").exists()
+
+
+# ---------- Codex 1차 리뷰 ②③: 북마크릿 본문/인용 분리 + indeterminate ----------
+
+def test_bookmarklet_photo_link_not_quote():
+    """메인 글 자신의 사진 링크는 인용이 아니다."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"},
+                           {"href": "/Author1/status/123/photo/1"}]}],
+        "/Author1/status/123")
+    assert len(result["downloads"]) == 1
+    assert "인용" not in " ".join(result["alerts"])
+
+
+def test_bookmarklet_unparsable_quote_candidate_indeterminate():
+    """인용 후보이나 신원 파싱 불가 (/Other/status/abc) → 저장 중단."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"},
+                           {"href": "/Other/status/abc"}]}],
+        "/Author1/status/123")
+    assert result["downloads"] == []
+    assert any("인용글" in a for a in result["alerts"])
+
+
+def test_bookmarklet_i_status_other_tweet_indeterminate():
+    """/i/status/<다른 ID>는 작성자 불명 인용 → 저장 중단."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"},
+                           {"href": "/i/status/456"}]}],
+        "/Author1/status/123")
+    assert result["downloads"] == []
+    assert any("인용글" in a for a in result["alerts"])
+
+
+def test_bookmarklet_i_status_own_tweet_ok():
+    """/i/status/<자신 ID>는 메인 글 자신의 링크 → 정상 저장."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"},
+                           {"href": "/i/status/123"}]}],
+        "/Author1/status/123")
+    assert len(result["downloads"]) == 1
+
+
+def test_bookmarklet_pasted_x_link_in_body_not_quote():
+    """본문 안에 붙여넣은 X 링크는 인용이 아니다."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "check this link",
+          "status_links": [{"href": "/Author1/status/123"}],
+          "body_links": ["/Other/status/456"]}],
+        "/Author1/status/123")
+    assert len(result["downloads"]) == 1
+    assert "data-tweet-id=\"456\"" not in result["downloads"][0]["text"]
+
+
+def test_bookmarklet_body_inside_quote_card_aborts():
+    """본문 요소가 인용 카드 안에 있으면 저장 중단."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "status_links": [{"href": "/Author1/status/123"}],
+          "quote_text": "quoted text",
+          "quote_link": "/Author2/status/456",
+          "body_in_quote": True}],
+        "/Author1/status/123")
+    assert result["downloads"] == []
+    assert any("인용 카드" in a for a in result["alerts"])
+
+
+def test_bookmarklet_body_inside_other_link_aborts():
+    """본문 요소가 다른 글의 링크 안에 있으면 저장 중단."""
+    result = _run_bookmarklet(
+        [{"handle": "Author1", "tid": "123", "text": "hello world",
+          "body_closest_href": "/Other/status/456"}],
+        "/Author1/status/123")
+    assert result["downloads"] == []
+    assert any("다른 글의 링크" in a for a in result["alerts"])
+
+
+# ---------- x_post_to_html EXTRACT_JS (Codex 1차 리뷰 ②③) ----------
+
+def _extract_x_post_js():
+    """x_post_to_html.py에서 EXTRACT_JS의 Python 문자열 값을 추출한다.
+
+    원시 소스가 아니라 Python이 보는 값(파일의 `\\\\` → 값의 `\\`,
+    즉 브라우저에 전달되는 JS 소스)을 반환해야 한다.
+    ast.literal_eval로 정확히 디코드한다.
+    """
+    import ast
+    src = (TOOLS_DIR / "x_post_to_html.py").read_text(encoding="utf-8")
+    m = re.search(r'EXTRACT_JS = (""".*?""")', src, re.DOTALL)
+    assert m, "EXTRACT_JS를 찾지 못함"
+    return ast.literal_eval(m.group(1))
+
+
+def _run_extract_js(articles, tid, req_handle):
+    """mini-DOM에서 EXTRACT_JS를 실행한다.
+
+    articles: [{handle, tid, text, profile_first: handle|None,
+                quote: {handle, tid, text}|None, quote_first: bool,
+                status_links: [href], body_links: [href]}]
+    """
+    def esc(s):
+        return json.dumps(s, ensure_ascii=False)
+    art_js = []
+    for a in articles:
+        art_js.append(f"""{{
+            handle: {esc(a['handle'])}, tid: {esc(a['tid'])},
+            text: {esc(a.get('text', ''))},
+            profileFirst: {esc(a.get('profile_first'))},
+            quote: {esc(a.get('quote'))},
+            quoteFirst: {json.dumps(bool(a.get('quote_first')))},
+            statusLinks: {esc(a.get('status_links') or [])},
+            bodyLinks: {esc(a.get('body_links') or [])},
+        }}""")
+    script = r"""
+function matches(e, sel) {
+  const parts = sel.split(',').map(s => s.trim());
+  return parts.some(p => matchOne(e, p));
+}
+function matchOne(e, sel) {
+  if (/^[a-z][a-z0-9]*$/.test(sel)) return e.tag === sel;  // 'a', 'div' 등 태그만
+  if (sel === '[aria-label]') return e.attrs['aria-label'] !== undefined;
+  if (sel === '[role="heading"]') return e.attrs['role'] === 'heading';
+  if (sel === 'a[href]') return e.tag === 'a' && e.attrs['href'] !== undefined;
+  if (sel === 'a[href*="/status/"]') return e.tag === 'a' && (e.attrs['href'] || '').includes('/status/');
+  if (sel === 'div[dir="auto"]') return e.tag === 'div' && e.attrs['dir'] === 'auto';
+  if (sel === 'img[src*="pbs.twimg.com/media"]') return e.tag === 'img' && (e.attrs['src'] || '').includes('pbs.twimg.com/media');
+  const m = sel.match(/^a\[href="([^"]+)"\]$/);
+  if (m) return e.tag === 'a' && e.attrs['href'] === m[1];
+  throw new Error('unsupported selector: ' + sel);
+}
+function isDescendant(root, el) {
+  if (root === el) return true;
+  for (const c of root.children) if (isDescendant(c, el)) return true;
+  return false;
+}
+function queryAll(root, sel) {
+  const out = [];
+  const walk = (e) => {
+    for (const c of e.children) {
+      if (matches(c, sel)) out.push(c);
+      walk(c);
+    }
+  };
+  walk(root);
+  return out;
+}
+function makeEl(tag, attrs, children, text) {
+  const e = {
+    tag, attrs: attrs || {}, children: children || [],
+    textContent: text || '', innerText: text || '',
+    parentElement: null,
+    getAttribute(n) { return this.attrs[n] !== undefined ? this.attrs[n] : null; },
+    querySelectorAll(sel) { return queryAll(this, sel); },
+    querySelector(sel) { const r = queryAll(this, sel); return r[0] || null; },
+    contains(other) { return isDescendant(this, other); },
+    closest(sel) { let cur = this; while (cur) { if (matches(cur, sel)) return cur; cur = cur.parentElement; } return null; },
+    compareDocumentPosition() { return 0; },
+  };
+  for (const c of e.children) c.parentElement = e;
+  return e;
+}
+function makeArticle(spec) {
+  const bodyDiv = makeEl('div', {dir: 'auto'}, [], spec.text);
+  const bodyLinks = (spec.bodyLinks || []).map(h => makeEl('a', {href: h}, [], ''));
+  bodyDiv.children = bodyLinks;
+  for (const c of bodyDiv.children) c.parentElement = bodyDiv;
+  const profileLink = makeEl('a', {href: '/' + spec.handle}, [], spec.handle);
+  const permalink = makeEl('a', {href: '/' + spec.handle + '/status/' + spec.tid}, [], '12:00');
+  const extraLinks = (spec.statusLinks || []).map(h => makeEl('a', {href: h}, [], ''));
+  let quoteCard = null;
+  if (spec.quote) {
+    const qLink = makeEl('a', {href: '/' + spec.quote.handle + '/status/' + spec.quote.tid}, [], '');
+    const qDiv = makeEl('div', {dir: 'auto'}, [], spec.quote.text);
+    quoteCard = makeEl('div', {}, [qLink, qDiv], '');
+  }
+  const mainProfile = makeEl('a', {href: '/' + spec.handle}, [], spec.handle + ' Name');
+  // 인용 작성자 프로필 링크가 먼저 오는 경우 (profileFirst).
+  const firstProfile = spec.profileFirst
+    ? makeEl('a', {href: '/' + spec.profileFirst}, [], spec.profileFirst)
+    : null;
+  const kids = [];
+  if (spec.quoteFirst && quoteCard) kids.push(quoteCard);
+  if (firstProfile) kids.push(firstProfile);
+  kids.push(bodyDiv, profileLink, mainProfile, permalink, ...extraLinks);
+  if (!spec.quoteFirst && quoteCard) kids.push(quoteCard);
+  return makeEl('article', {}, kids, '');
+}
+const articles = [""" + ",\n".join(art_js) + r"""].map(makeArticle);
+const docRoot = makeEl('div', {}, articles, '');
+global.document = {
+  querySelectorAll: (sel) => queryAll(docRoot, sel),
+  querySelector: (sel) => queryAll(docRoot, sel)[0] || null,
+};
+global.Node = { DOCUMENT_POSITION_FOLLOWING: 4 };
+const extract = eval(EXTRACT_JS_PLACEHOLDER);
+const result = extract({ tid: TID_PLACEHOLDER, maxReplies: 100, reqHandle: REQHANDLE_PLACEHOLDER });
+console.log(JSON.stringify(result));
+"""
+    script = script.replace("EXTRACT_JS_PLACEHOLDER", json.dumps(_extract_x_post_js()))
+    script = script.replace("TID_PLACEHOLDER", json.dumps(tid))
+    script = script.replace("REQHANDLE_PLACEHOLDER", json.dumps(req_handle))
+    r = subprocess.run(["node", "--input-type=module", "-e", script],
+                       capture_output=True, text=True, timeout=30)
+    if r.returncode != 0:
+        raise AssertionError(f"EXTRACT_JS 실행 실패:\n{r.stderr}")
+    return json.loads(r.stdout.strip().splitlines()[-1])
+
+
+def test_extract_js_main_body_excludes_quote():
+    """인용 div가 본문 div보다 먼저 와도 본문은 메인 글 텍스트이다."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body text",
+          "quote": {"handle": "Author2", "tid": "456", "text": "quoted text"},
+          "quote_first": True}],
+        "123", "Author1")
+    assert result["text"] == "main body text"
+    assert result["quoteStatus"] == "extracted"
+    assert result["quote"]["text"] == "quoted text"
+
+
+def test_extract_js_main_handle_from_permalink():
+    """인용 작성자 프로필 링크가 먼저 와도 작성자는 메인 permalink 핸들이다."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "profile_first": "Author2",
+          "quote": {"handle": "Author2", "tid": "456", "text": "quoted"}}],
+        "123", "Author1")
+    assert result["handle"] == "Author1"
+
+
+def test_extract_js_photo_link_not_quote():
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "status_links": ["/Author1/status/123/photo/1"]}],
+        "123", "Author1")
+    assert result["quoteStatus"] == "none"
+
+
+def test_extract_js_unparsable_quote_candidate_indeterminate():
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "status_links": ["/Other/status/abc"]}],
+        "123", "Author1")
+    assert result["quoteStatus"] == "indeterminate"
+
+
+def test_extract_js_pasted_x_link_in_body_not_quote():
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "check this",
+          "body_links": ["/Other/status/456"]}],
+        "123", "Author1")
+    assert result["quoteStatus"] == "none"
+
+
+def test_extract_js_quote_first_with_pasted_link_in_body():
+    """인용 카드가 먼저 + 본문에 붙여넣은 링크: 인용은 실제 인용 카드,
+    붙여넣은 링크는 인용이 아니다."""
+    result = _run_extract_js(
+        [{"handle": "Author1", "tid": "123", "text": "main body",
+          "quote": {"handle": "Author2", "tid": "456", "text": "quoted"},
+          "quote_first": True,
+          "body_links": ["/Other/status/789"]}],
+        "123", "Author1")
+    assert result["quoteStatus"] == "extracted"
+    assert result["quote"]["id"] == "456"
+    assert result["text"] == "main body"
