@@ -1828,6 +1828,10 @@ function makeArticle(spec) {
     const _bg = bodyEl.getAttribute;
     bodyEl.getAttribute = (n) => (n === 'dir' ? 'auto' : _bg(n));
     bodyEl.children = toCollection(bodyLinkObjs);
+    // 붙여넣은 링크의 부모를 본문 div로 연결한다 — pre-pass walk-up이
+    // 본문 div에서 isAfter로 중단되는 경로를 검증하기 위함이다
+    // (Codex 5차 리뷰). 부모가 null이면 walk-up이 시작도 하지 않는다.
+    for (const _bl of bodyLinkObjs) _bl.parentElement = bodyEl;
     const chainEls = [];
     let headerDiv = null;
     if (spec.headerText != null) {
@@ -1849,7 +1853,9 @@ function makeArticle(spec) {
         tagName: 'DIV', textContent: '', innerText: '',
         children: toCollection([chainQLink, ...quoteEls]), parentElement: art,
         getAttribute: () => null, closest: () => null,
-        querySelector: () => null,
+        // 실제 DOM: querySelector는 자손 중 첫 일치 요소를 반환한다.
+        // (기존 () => null은 walk-up이 카드로 올라가지 못하게 하는 우회였다.)
+        querySelector: (sel) => (sel === 'div[dir="auto"]' ? (quoteEls[0] || null) : null),
         querySelectorAll: (sel) => {
           if (sel === 'div[dir="auto"]') return quoteEls;
           if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
@@ -1858,11 +1864,10 @@ function makeArticle(spec) {
         contains: (el) => el === quoteCardEl || el === chainQLink || quoteEls.includes(el),
       };
       chainQLink.parentElement = quoteCardEl;
-      chainQLink.querySelectorAll = (sel) => {
-        if (sel === 'div[dir="auto"]') return quoteEls;
-        if (sel === 'img[src*="pbs.twimg.com/media"]') return [];
-        return [];
-      };
+      // 실제 DOM: 링크의 자손에는 형제 인용 div가 없다. 인용문은
+      // walk-up으로 찾은 카드에서만 얻어야 한다 (기존 quoteEls 반환은 우회).
+      chainQLink.querySelectorAll = () => [];
+      chainQLink.querySelector = () => null;
       chainEls.push(quoteCardEl);
       statusLinks.push(chainQLink);
     }
