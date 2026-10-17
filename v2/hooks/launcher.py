@@ -101,8 +101,10 @@ def stop():
     print(f"워커 중지 중 (PID {pid})...")
     try:
         os.kill(pid, signal.SIGTERM)
-        # 종료 대기
-        for _ in range(10):
+        # 종료 대기: 워커의 전체 정리 예산은 120초
+        # (grace 105 + SIGKILL 대기 5 + drain 10) + 15초 여유.
+        # 폴이 안 돌 때는 워커가 즉시 종료되므로 이 루프는 몇 초면 끝난다.
+        for _ in range(270):
             time.sleep(0.5)
             if not get_pid():
                 print("워커 중지됨")
@@ -152,6 +154,18 @@ def _pipeline_script_paths():
 # 해석 불가 = 추측해서 PID 종료 대상으로 삼지 않는다.
 _UNPARSEABLE = object()
 
+# CPython이 인정하는 긴 옵션 (값을 먹는 것은 --check-hash-based-pycs뿐).
+_LONG_VALUE_OPTIONS = frozenset({"--check-hash-based-pycs"})
+_LONG_FLAG_OPTIONS = frozenset({
+    "--isolated", "--inspect", "--interactive", "--optimize",
+    "--dont-write-bytecode", "--no-user-site", "--no-site",
+    "--ignore-environment", "--bytes-warning", "--quiet", "--verbose",
+    "--unbuffered", "--warn-default-encoding", "--safe-path",
+    "--help-env", "--help-xoptions", "--help-all",
+})
+# --help/--version은 도움말·버전 출력 후 종료 — 스크립트 실행이 아니다.
+_LONG_TERMINAL_OPTIONS = frozenset({"--help", "--version"})
+
 
 def _script_operand(argv):
     """python argv에서 실제 실행 스크립트 피연산자를 찾는다 (CPython 규칙).
@@ -159,7 +173,10 @@ def _script_operand(argv):
     - `-c`/`-m`/`-` (붙여 쓴 -c<cmd>/-m<mod> 포함)는 스크립트 파일이
       아니므로 None (payload 인자를 스크립트 경로로 오인하지 않는다).
     - 묶인 짧은 옵션(-uW ignore)을 풀어서 해석한다. -W/-X는 값(붙여 쓴
-      값 또는 다음 인자)을 먹고, -u/-B/-E 등은 플래그다.
+      값 또는 다음 인자)을 먹고, -u/-B/-E/-I/-S 등은 플래그다.
+      -h/-V는 도움말·버전 출력 후 종료이므로 None.
+    - 긴 옵션: --check-hash-based-pycs만 값을 먹는다 (다음 인자 또는
+      --opt=val). --help/--version은 None. 미지원 긴 옵션은 _UNPARSEABLE.
     - `--` 뒤의 첫 인자가 스크립트다.
     - 해석할 수 없는 옵션은 _UNPARSEABLE (추측 금지).
     - 첫 번째 비옵션 인자가 스크립트 경로다.
@@ -172,9 +189,24 @@ def _script_operand(argv):
         if a == "-":
             return None
         if a.startswith("--"):
-            # 긴 옵션은 값을 별도 인자로 먹지 않는다 (--opt=val 형태 포함).
-            i += 1
-            continue
+            if "=" in a:
+                name, _val = a.split("=", 1)
+                if name in _LONG_VALUE_OPTIONS or name in _LONG_FLAG_OPTIONS:
+                    i += 1
+                    continue
+                if name in _LONG_TERMINAL_OPTIONS:
+                    return None
+                return _UNPARSEABLE
+            if a in _LONG_VALUE_OPTIONS:
+                # 값을 다음 인자에서 먹는다 (빈 문자열이어도 값이다).
+                i += 2
+                continue
+            if a in _LONG_FLAG_OPTIONS:
+                i += 1
+                continue
+            if a in _LONG_TERMINAL_OPTIONS:
+                return None
+            return _UNPARSEABLE
         if a.startswith("-") and len(a) > 1:
             j = 1
             value_in_next_arg = False
@@ -183,13 +215,16 @@ def _script_operand(argv):
                 if ch in "cm":
                     # -c/-m: 나머지가 값(붙여 쓴 경우) 또는 다음 인자가 값.
                     return None
+                if ch in "hV":
+                    # 도움말·버전 출력 후 종료 — 스크립트 실행이 아니다.
+                    return None
                 if ch in "WX":
                     # 값을 먹는다: 붙여 쓴 값이면 이 인자에서 끝,
                     # 아니면 다음 인자가 값.
                     if j + 1 >= len(a):
                         value_in_next_arg = True
                     break
-                if ch in "uBEsvOObdqiv":
+                if ch in "uBEsvOObdqivIS":
                     j += 1
                     continue
                 # 해석 불가한 짧은 옵션: 추측하지 않는다.
@@ -259,7 +294,7 @@ def _stop_pipeline_processes():
             os.kill(pid, signal.SIGTERM)
         except OSError:
             pass
-    deadline = time.time() + 10
+    deadline = time.time() + 105  # 고아 스케줄러 전체 정리 90초 + 15초 여유
     while time.time() < deadline:
         remaining = [p for p in _pipeline_pids() if p != os.getpid()]
         if not remaining:

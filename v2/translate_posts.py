@@ -299,11 +299,14 @@ def load_cache():
                                              "translations.json")
                 print(f"손상된 번역 캐시를 격리: {quarantine}", file=sys.stderr)
             except FileNotFoundError:
-                # 다른 writer가 그 사이 복원했음 — 다시 읽어본다.
+                # quarantine_file이 소스 소실을 확인한 경우만 여기에 온다
+                # (목적지 실패는 OSError로 변환됨). 다른 writer가 그 사이
+                # 복원/제거했을 수 있으니, 복구본 경로로 계속한다 —
+                # {}를 즉시 반환하면 복구본이 있는데도 버려진다.
                 cache = _read_cache_file(CACHE_FILE)
                 if cache is not None:
                     return cache
-                return {}
+                # 복구본 확인으로 fall through (아래 recovery 블록).
             except OSError as e:
                 # 격리 실패 시 복구본으로 덮지 않고 중단: 격리되지 않은
                 # 손상 파일을 복구본으로 덮으면 복구 증거가 사라진다.

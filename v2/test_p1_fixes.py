@@ -13,6 +13,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -406,6 +407,35 @@ def test_launcher_matching():
     _check("launcher rejects unparseable options",
            pids_for(FakeEntry(b"python3\x00-Z\x00monitor.py\x00",
                               cwd=hooks)) == [])
+    # Long option with a value: `--check-hash-based-pycs always monitor.py`
+    # -> the value is consumed, monitor.py is the script.
+    _check("launcher consumes long-option value",
+           pids_for(FakeEntry(b"python3\x00--check-hash-based-pycs\x00always\x00monitor.py\x00",
+                              cwd=hooks)) == [123456])
+    _check("launcher consumes attached long-option value",
+           pids_for(FakeEntry(b"python3\x00--check-hash-based-pycs=always\x00monitor.py\x00",
+                              cwd=hooks)) == [123456])
+    # -I / -S are valid flags (no value).
+    _check("launcher parses -I flag",
+           pids_for(FakeEntry(b"python3\x00-I\x00monitor.py\x00",
+                              cwd=hooks)) == [123456])
+    _check("launcher parses -S flag",
+           pids_for(FakeEntry(b"python3\x00-S\x00monitor.py\x00",
+                              cwd=hooks)) == [123456])
+    # --help / -h / -V terminate before running any script.
+    _check("launcher rejects --help",
+           pids_for(FakeEntry(b"python3\x00--help\x00monitor.py\x00",
+                              cwd=hooks)) == [])
+    _check("launcher rejects -h",
+           pids_for(FakeEntry(b"python3\x00-h\x00monitor.py\x00",
+                              cwd=hooks)) == [])
+    _check("launcher rejects -V",
+           pids_for(FakeEntry(b"python3\x00-V\x00monitor.py\x00",
+                              cwd=hooks)) == [])
+    # Unknown long option -> do not guess.
+    _check("launcher rejects unknown long option",
+           pids_for(FakeEntry(b"python3\x00--bogus\x00monitor.py\x00",
+                              cwd=hooks)) == [])
 
 
 def test_lock_reentrant():
@@ -460,6 +490,60 @@ def test_build_rejects_unstamped_ib():
         finally:
             for k, v in real.items():
                 setattr(bd, k, v)
+
+
+def test_translate_quarantine_source_gone_uses_recovery():
+    import translate_posts as tp
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        main = td / "translations.json"
+        recovery = td / "translations.json.recovery"
+        main.write_text("{corrupt", encoding="utf-8")
+        recovery.write_text(json.dumps({"a": "A"}), encoding="utf-8")
+        qdir = td / ".quarantine"
+        # 소스가 격리 도중 사라진 경우(FileNotFoundError) -> 복구본 경로로
+        # 계속해야지 {}를 즉시 반환하면 안 된다.
+        with unittest.mock.patch.object(tp, "CACHE_FILE", main), \
+             unittest.mock.patch.object(tp, "RECOVERY_FILE", recovery), \
+             unittest.mock.patch.object(tp, "QUARANTINE_DIR", qdir), \
+             unittest.mock.patch.object(
+                 tp, "quarantine_file",
+                 side_effect=FileNotFoundError("source gone")):
+            cache = tp.load_cache()
+        _check("quarantine source-gone continues to recovery",
+               cache == {"a": "A"})
+
+
+def test_quarantine_file_distinguishes_source_vs_destination():
+    from pipeline_lock import quarantine_file
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        qdir = td / ".quarantine"
+        # (a) 소스가 진짜 사라짐 -> FileNotFoundError, 빈 디렉터리 정리.
+        try:
+            quarantine_file(td / "missing.json", qdir, "missing.json")
+            _check("quarantine missing source raises FileNotFoundError", False)
+        except FileNotFoundError:
+            _check("quarantine missing source raises FileNotFoundError", True)
+        _check("quarantine failure removes reserved empty dir",
+               len(list(qdir.iterdir())) == 0)
+        # (b) 소스가 남아있는데 이동 실패 -> OSError
+        # (FileNotFoundError가 아님), 빈 디렉터리 정리, 소스 보존.
+        src = td / "src.json"
+        src.write_text("{corrupt", encoding="utf-8")
+        with unittest.mock.patch("pipeline_lock.os.replace",
+                                 side_effect=FileNotFoundError("dest gone")):
+            try:
+                quarantine_file(src, qdir, "src.json")
+                _check("quarantine dest failure raises OSError", False)
+            except FileNotFoundError:
+                _check("quarantine dest failure raises OSError", False)
+            except OSError:
+                _check("quarantine dest failure raises OSError", True)
+        _check("quarantine dest failure removes reserved empty dir",
+               len(list(qdir.iterdir())) == 0)
+        _check("quarantine dest failure leaves source intact",
+               src.read_text() == "{corrupt")
 
 
 def test_translate_quarantine_failure_aborts():
@@ -584,6 +668,8 @@ if __name__ == "__main__":
     test_lock_reentrant()
     test_translate_corrupt_recovery_and_merge()
     test_translate_quarantine_failure_aborts()
+    test_translate_quarantine_source_gone_uses_recovery()
+    test_quarantine_file_distinguishes_source_vs_destination()
     test_ingester_guards()
     test_build_toctou_abort()
     test_build_rejects_unstamped_ib()

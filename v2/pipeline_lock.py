@@ -45,8 +45,14 @@ def quarantine_file(path, quarantine_dir, label):
     The destination directory is created by tempfile.mkdtemp(), which
     retries on collision and never returns an existing directory — so
     the move can never overwrite earlier quarantined evidence (os.replace
-    onto a fixed name would). Returns the quarantined path. Raises on
-    failure; the caller must NOT overwrite the original (fail-closed).
+    onto a fixed name would). Returns the quarantined path.
+
+    Failure semantics (so callers can distinguish them):
+    - FileNotFoundError: the SOURCE genuinely disappeared (another writer
+      restored/removed it) — the reserved dir is removed.
+    - Other OSError: the destination or move failed while the source
+      remains — the reserved dir is removed; the caller must NOT
+      overwrite the original (fail-closed).
     """
     path = Path(path)
     quarantine_dir = Path(quarantine_dir)
@@ -54,7 +60,26 @@ def quarantine_file(path, quarantine_dir, label):
     dest_dir = Path(tempfile.mkdtemp(
         prefix=f"{path.name}.corrupt-", dir=str(quarantine_dir)))
     dest = dest_dir / path.name
-    os.replace(path, dest)
+    try:
+        os.replace(path, dest)
+    except FileNotFoundError:
+        # Source absence vs destination failure: os.replace raises the
+        # same error for both. Distinguish by re-checking the source.
+        try:
+            dest_dir.rmdir()
+        except OSError:
+            pass
+        if path.exists():
+            raise OSError(
+                f"격리 이동 실패 — 소스({path})가 남아 있음, 덮어쓰지 않고 중단"
+            )
+        raise
+    except OSError:
+        try:
+            dest_dir.rmdir()
+        except OSError:
+            pass
+        raise
     return dest
 
 
