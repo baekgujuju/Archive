@@ -38,7 +38,7 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
-from pipeline_lock import pipeline_lock
+from pipeline_lock import pipeline_lock, quarantine_file
 
 V2_ROOT = Path(__file__).resolve().parent
 DATA_DIR = V2_ROOT / "data"
@@ -192,14 +192,11 @@ def _merge_save(path, updates, deletions=()):
             # .quarantine/) so the next build's data/ replacement cannot
             # destroy the recovery evidence. The next run sees a missing
             # file and rebuilds; the quarantined bytes stay for recovery.
-            quarantine_dir = V2_ROOT / "hooks" / ".quarantine"
-            quarantine_dir.mkdir(parents=True, exist_ok=True)
-            quarantine = quarantine_dir / (
-                f"{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
-                f"-{secrets.token_hex(4)}"
-            )
+            # The destination is exclusively reserved (mkdtemp) so it can
+            # never overwrite earlier quarantined evidence.
             try:
-                os.replace(path, quarantine)
+                quarantine = quarantine_file(
+                    path, V2_ROOT / "hooks" / ".quarantine", path.name)
                 log(f"{path.name}: 손상 파일 격리 -> {quarantine}")
             except OSError as qe:
                 log(f"{path.name}: 손상 파일 격리 실패 ({qe}) — 덮어쓰지 않고 중단")
@@ -207,14 +204,9 @@ def _merge_save(path, updates, deletions=()):
         if not found:
             disk = {}
         elif not isinstance(disk, dict):
-            quarantine_dir = V2_ROOT / "hooks" / ".quarantine"
-            quarantine_dir.mkdir(parents=True, exist_ok=True)
-            quarantine = quarantine_dir / (
-                f"{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
-                f"-{secrets.token_hex(4)}"
-            )
             try:
-                os.replace(path, quarantine)
+                quarantine = quarantine_file(
+                    path, V2_ROOT / "hooks" / ".quarantine", path.name)
                 log(f"{path.name}: 비-dict 파일 격리 -> {quarantine}")
             except OSError as qe:
                 log(f"{path.name}: 격리 실패 ({qe}) — 덮어쓰지 않고 중단")

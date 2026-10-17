@@ -15,9 +15,12 @@ descendant holding stdout/stderr can never wedge the reaper forever.
 Termination forwarding: each stage (worker -> scheduler -> monitor ->
 hook) installs a SIGTERM handler that ignores further SIGTERM (no
 re-entrancy), calls terminate_current() with its stage budget, then
-exits. Budgets are staggered outward (hook 15 < monitor 30 < scheduler
-45 < worker 60) so an outer stage never SIGKILLs an inner stage before
-that stage finishes cleaning its own session.
+exits. Budgets are staggered outward from ONE total-cleanup deadline:
+a stage's worst-case cleanup is grace + 5s SIGKILL wait + 10s drain,
+so each parent's grace exceeds the child's total:
+hook 15 (total 30) < monitor 45 (total 60) < scheduler 75 (total 90) <
+worker 105 (total 120). An outer stage never SIGKILLs an inner stage
+before that stage finishes cleaning its own session.
 
 CURRENT tracks the active child group for the signal handlers. It is
 cleared on every exit path (success, timeout, exception).
@@ -30,6 +33,11 @@ import time
 
 CURRENT = {"pgid": None}
 _TERMINATING_PGID = None
+# pgids whose group was already terminated by terminate_current(). _cleanup()
+# skips re-escalation for these (the handler and the exception path must
+# not duplicate escalation — the parent's budget must cover ONE cleanup,
+# not two). Cleared when a new child group starts.
+_TERMINATED_PGIDS = set()
 
 
 def _group_alive(pgid):
@@ -81,6 +89,7 @@ def terminate_current(grace=10):
     _TERMINATING_PGID = pgid
     try:
         _escalate(pgid, grace)
+        _TERMINATED_PGIDS.add(pgid)
     finally:
         if _TERMINATING_PGID == pgid:
             _TERMINATING_PGID = None
@@ -89,12 +98,16 @@ def terminate_current(grace=10):
 def _cleanup(proc, grace, drain_timeout=10):
     """Terminate the child group and reap the leader (bounded).
 
-    Used by both the timeout path and the BaseException path. After the
-    group is killed, drains the pipes with a bound: an escaped descendant
-    holding stdout/stderr cannot wedge the reaper. If the drain times
-    out, closes our pipe ends and reaps the leader.
+    Used by both the timeout path and the BaseException path. The group is
+    ALWAYS escalated, even if the leader already exited: a grandchild may
+    still hold stdout/stderr, and skipping escalation would abandon it
+    (and wedge the drain). If terminate_current() already escalated this
+    group (SIGTERM handler path), escalation is skipped — one cleanup,
+    not two. After the group is killed, drains the pipes with a bound: an
+    escaped descendant holding stdout/stderr cannot wedge the reaper. If
+    the drain times out, closes our pipe ends and reaps the leader.
     """
-    if proc.poll() is None:
+    if proc.pid not in _TERMINATED_PGIDS:
         _escalate(proc.pid, grace)
     try:
         out, err = proc.communicate(timeout=drain_timeout)
@@ -125,6 +138,9 @@ def run_grouped(cmd, timeout=None, grace=15, **kw):
         cmd, start_new_session=True, **kw,
     )
     CURRENT["pgid"] = proc.pid
+    # A new group: its pgid must not inherit a stale "already terminated"
+    # mark (pgids can be reused by the OS).
+    _TERMINATED_PGIDS.discard(proc.pid)
     try:
         try:
             out, err = proc.communicate(timeout=timeout)

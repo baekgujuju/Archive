@@ -148,27 +148,55 @@ def _pipeline_script_paths():
     return paths
 
 
-def _script_operand(argv):
-    """python argv에서 실제 실행 스크립트 피연산자를 찾는다.
+# _script_operand가 옵션을 해석할 수 없으면 이 값을 반환한다.
+# 해석 불가 = 추측해서 PID 종료 대상으로 삼지 않는다.
+_UNPARSEABLE = object()
 
-    - `-c`/`-m`/`-`는 스크립트 파일이 아니므로 None (payload 인자를
-      스크립트 경로로 오인하지 않는다).
-    - `-u`/`-B`/`-W`/`-X` 등 플래그는 건너뛴다 (값이 있는 플래그 포함).
+
+def _script_operand(argv):
+    """python argv에서 실제 실행 스크립트 피연산자를 찾는다 (CPython 규칙).
+
+    - `-c`/`-m`/`-` (붙여 쓴 -c<cmd>/-m<mod> 포함)는 스크립트 파일이
+      아니므로 None (payload 인자를 스크립트 경로로 오인하지 않는다).
+    - 묶인 짧은 옵션(-uW ignore)을 풀어서 해석한다. -W/-X는 값(붙여 쓴
+      값 또는 다음 인자)을 먹고, -u/-B/-E 등은 플래그다.
+    - `--` 뒤의 첫 인자가 스크립트다.
+    - 해석할 수 없는 옵션은 _UNPARSEABLE (추측 금지).
     - 첫 번째 비옵션 인자가 스크립트 경로다.
     """
     i = 1
     while i < len(argv):
         a = argv[i]
-        if a in ("-c", "-m", "-"):
+        if a == "--":
+            return argv[i + 1] if i + 1 < len(argv) else None
+        if a == "-":
             return None
-        if a.startswith("-c"):  # -c<inline> (공백 없음)
-            return None
-        if a in ("-W", "-X"):  # 값이 따로 오는 플래그
-            i += 2
-            continue
-        if a.startswith("-"):
+        if a.startswith("--"):
+            # 긴 옵션은 값을 별도 인자로 먹지 않는다 (--opt=val 형태 포함).
             i += 1
             continue
+        if a.startswith("-") and len(a) > 1:
+            j = 1
+            value_in_next_arg = False
+            while j < len(a):
+                ch = a[j]
+                if ch in "cm":
+                    # -c/-m: 나머지가 값(붙여 쓴 경우) 또는 다음 인자가 값.
+                    return None
+                if ch in "WX":
+                    # 값을 먹는다: 붙여 쓴 값이면 이 인자에서 끝,
+                    # 아니면 다음 인자가 값.
+                    if j + 1 >= len(a):
+                        value_in_next_arg = True
+                    break
+                if ch in "uBEsvOObdqiv":
+                    j += 1
+                    continue
+                # 해석 불가한 짧은 옵션: 추측하지 않는다.
+                return _UNPARSEABLE
+            i += 2 if value_in_next_arg else 1
+            continue
+        # 비옵션: 스크립트 경로.
         return a
     return None
 
@@ -200,7 +228,9 @@ def _pipeline_pids():
         if not argv:
             continue
         script = _script_operand(argv)
-        if script is None:
+        if script is None or script is _UNPARSEABLE:
+            # payload(-c/-m)/stdin(-) 또는 해석 불가 옵션: 추측해서
+            # 종료 대상으로 삼지 않는다.
             continue
         script_path = Path(script)
         if not script_path.is_absolute():

@@ -36,7 +36,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
+from pipeline_lock import PipelineLockTimeout, pipeline_lock, quarantine_file  # noqa: E402
 
 V2_ROOT = Path(__file__).parent
 DATA_DIR = V2_ROOT / "data"
@@ -294,13 +294,9 @@ def load_cache():
         if cache is not None:
             return cache
         if CACHE_FILE.exists():
-            QUARANTINE_DIR.mkdir(parents=True, exist_ok=True)
-            quarantine = QUARANTINE_DIR / (
-                f"translations.json.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
-                f"-{secrets.token_hex(4)}"
-            )
             try:
-                os.replace(CACHE_FILE, quarantine)
+                quarantine = quarantine_file(CACHE_FILE, QUARANTINE_DIR,
+                                             "translations.json")
                 print(f"손상된 번역 캐시를 격리: {quarantine}", file=sys.stderr)
             except FileNotFoundError:
                 # 다른 writer가 그 사이 복원했음 — 다시 읽어본다.

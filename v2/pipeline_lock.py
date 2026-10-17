@@ -21,6 +21,7 @@ owner-thread tracking.
 
 import fcntl
 import os
+import tempfile
 import threading
 import time
 from contextlib import contextmanager
@@ -38,6 +39,25 @@ class PipelineLockTimeout(TimeoutError):
     """Raised when the shared pipeline-write lock cannot be acquired."""
 
 
+def quarantine_file(path, quarantine_dir, label):
+    """Move a corrupt file into an exclusively-reserved quarantine dir.
+
+    The destination directory is created by tempfile.mkdtemp(), which
+    retries on collision and never returns an existing directory — so
+    the move can never overwrite earlier quarantined evidence (os.replace
+    onto a fixed name would). Returns the quarantined path. Raises on
+    failure; the caller must NOT overwrite the original (fail-closed).
+    """
+    path = Path(path)
+    quarantine_dir = Path(quarantine_dir)
+    quarantine_dir.mkdir(parents=True, exist_ok=True)
+    dest_dir = Path(tempfile.mkdtemp(
+        prefix=f"{path.name}.corrupt-", dir=str(quarantine_dir)))
+    dest = dest_dir / path.name
+    os.replace(path, dest)
+    return dest
+
+
 @contextmanager
 def pipeline_lock(timeout=DEFAULT_TIMEOUT):
     """Acquire the shared pipeline-write lock (fail-closed on timeout).
@@ -50,8 +70,12 @@ def pipeline_lock(timeout=DEFAULT_TIMEOUT):
     _state only guards the owner/depth bookkeeping (short sections); it is
     never held across the flock wait or the yield, so a contending thread
     can always reach its flock timeout instead of wedging on the mutex.
-    Release clears the owner BEFORE unlocking the flock, so a stale owner
-    can never make a later acquire look "nested" while unlocked.
+    The owner is set ONLY after flock succeeds — never reserved before
+    (a reservation that leaks on open/flock/exception would let a later
+    call enter unlocked). Release clears the owner BEFORE unlocking the
+    flock, so a stale owner can never fake a nested acquire. The fd is
+    consumed (closed=True) BEFORE os.close() runs, so a close exception
+    can never cause a double close of a possibly-reused fd number.
     """
     global _owner, _depth
     me = threading.get_ident()
@@ -59,17 +83,8 @@ def pipeline_lock(timeout=DEFAULT_TIMEOUT):
         if _owner == me:
             _depth += 1
             nested = True
-            reserved = False
-        elif _owner is None:
-            # Reserve ownership before flocking, so a nested call from
-            # this thread (after the outer yield) sees us as the owner.
-            _owner = me
-            _depth = 1
-            nested = False
-            reserved = True
         else:
             nested = False
-            reserved = False
     if nested:
         try:
             yield
@@ -88,19 +103,13 @@ def pipeline_lock(timeout=DEFAULT_TIMEOUT):
                 break
             except BlockingIOError:
                 if time.monotonic() >= deadline:
-                    if reserved:
-                        with _state:
-                            if _owner == me:
-                                _owner = None
-                                _depth = 0
                     raise PipelineLockTimeout(
                         f"공유 파이프라인 락 획득 실패 ({timeout}초) — "
                         "락 없이 쓰지 않고 중단 (fail-closed)"
                     )
                 time.sleep(0.05)
         with _state:
-            # (Re)assert ownership: another thread may have overwritten
-            # the reservation while we waited on the flock.
+            # Owner is set only after flock succeeds.
             _owner = me
             _depth = 1
         try:
@@ -114,11 +123,13 @@ def pipeline_lock(timeout=DEFAULT_TIMEOUT):
             try:
                 fcntl.flock(fd, fcntl.LOCK_UN)
             finally:
-                os.close(fd)
+                # Consume ownership BEFORE close: if close() raises, the
+                # outer finally must not retry it (the fd number may
+                # already be reused by another thread).
                 closed = True
+                os.close(fd)
     finally:
         # Only close if the flock loop raised before the inner finally
-        # ran (timeout path). Never close twice: the fd number may have
-        # been reused by another thread by now.
+        # ran (timeout path). Never close twice.
         if not closed:
             os.close(fd)

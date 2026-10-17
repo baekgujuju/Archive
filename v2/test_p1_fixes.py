@@ -195,9 +195,18 @@ def test_enrich_merge_save_fail_closed():
                 _check("enrich refuses corrupt file", True)
             _check("corrupt file quarantined outside data/",
                    len(list(qdir.glob("cache.json.corrupt-*"))) == 1)
-            _check("quarantine bytes preserved",
-                   (list(qdir.glob("cache.json.corrupt-*"))[0].read_text()
-                    == "{corrupt"))
+            # 격리는 독점 예약 디렉터리(mkdtemp) 안에 원본 이름 그대로 들어간다.
+            qfile = list(qdir.glob("cache.json.corrupt-*/cache.json"))
+            _check("quarantine holds the original bytes",
+                   len(qfile) == 1 and qfile[0].read_text() == "{corrupt")
+            # 두 번째 격리도 첫 번째 증거를 덮지 않는다 (독점 예약).
+            target.write_text("{corrupt2", encoding="utf-8")
+            try:
+                et._merge_save(target, {"k": 2})
+            except RuntimeError:
+                pass
+            _check("second quarantine does not overwrite the first",
+                   len(list(qdir.glob("cache.json.corrupt-*/cache.json"))) == 2)
             # Lock timeout -> raise, never write unlocked.
             import fcntl
             lock_path = pl.LOCK_PATH
@@ -385,6 +394,18 @@ def test_launcher_matching():
     _check("launcher rejects non-python exe",
            pids_for(FakeEntry(b"vim\x00" + script + b"\x00",
                               exe="/usr/bin/vim")) == [])
+    # Attached -m: `python -mtimeit /…/monitor.py` runs the timeit MODULE,
+    # not monitor.py -> NOT matched.
+    _check("launcher rejects attached -m module",
+           pids_for(FakeEntry(b"python3\x00-mtimeit\x00" + script + b"\x00")) == [])
+    # Bundled short options: `-uW ignore monitor.py` -> script is monitor.py.
+    _check("launcher parses bundled -uW with value",
+           pids_for(FakeEntry(b"python3\x00-uW\x00ignore\x00monitor.py\x00",
+                              cwd=hooks)) == [123456])
+    # Unparseable option: do not guess -> NOT matched.
+    _check("launcher rejects unparseable options",
+           pids_for(FakeEntry(b"python3\x00-Z\x00monitor.py\x00",
+                              cwd=hooks)) == [])
 
 
 def test_lock_reentrant():
@@ -466,6 +487,41 @@ def test_translate_quarantine_failure_aborts():
                tp.CACHE_FILE.read_text(encoding="utf-8") == "{corrupt")
 
 
+def test_proc_group_kills_grandchild_after_leader_exit():
+    from proc_group import run_grouped
+    import time as _time
+    # 리더는 즉시 종료되지만, 같은 그룹의 손자가 stdout을 보유하고 잔다.
+    # 리더 종료 여부와 무관하게 그룹 전체가 정리돼야 한다.
+    with tempfile.TemporaryDirectory() as td:
+        pidfile = str(Path(td) / "grandchild.pid")
+        grandchild = (
+            "import os, time; "
+            f"open({pidfile!r}, 'w').write(str(os.getpid())); time.sleep(60)"
+        )
+        child = (
+            "import subprocess, sys; "
+            f"subprocess.Popen([sys.executable, '-c', {grandchild!r}])"
+        )
+        start = _time.monotonic()
+        try:
+            run_grouped([sys.executable, "-c", child], timeout=2, grace=2,
+                        capture_output=True, text=True)
+            _check("proc_group timeout raises (leader exited)", False)
+        except subprocess.TimeoutExpired:
+            _check("proc_group timeout raises (leader exited)", True)
+        _check("proc_group cleanup is bounded after leader exit",
+               _time.monotonic() - start < 30)
+        try:
+            gpid = int(Path(pidfile).read_text())
+            try:
+                os.kill(gpid, 0)
+                _check("grandchild reaped after leader exit", False)
+            except ProcessLookupError:
+                _check("grandchild reaped after leader exit", True)
+        except (OSError, ValueError):
+            _check("grandchild pid recorded", False)
+
+
 def test_proc_group_bounded_drain():
     from proc_group import run_grouped
     import time as _time
@@ -534,6 +590,7 @@ if __name__ == "__main__":
     test_enrich_merge_save_fail_closed()
     test_proc_group_kills_grandchildren()
     test_proc_group_kills_sigterm_ignoring_grandchild()
+    test_proc_group_kills_grandchild_after_leader_exit()
     test_proc_group_bounded_drain()
     test_quarantine_survives_build()
     test_launcher_matching()
