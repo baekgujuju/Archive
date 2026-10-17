@@ -349,21 +349,34 @@ def _current_source_hashes():
 
 
 def _embedded_ib_fingerprint():
-    """ib-library.json에 내장된 canonical fingerprint (없으면 재계산)."""
-    if IB_LIBRARY_JSON.exists():
+    """ib-library.json에 내장된 canonical fingerprint.
+
+    - 라이브러리 있음 + 내장 있음 → 내장 지문 (출처 증명: 이 라이브러리를
+      만든 입력의 지문).
+    - 라이브러리 없음 → canonical_fingerprint() 재계산 (변경 감지 토큰.
+      라이브러리가 없으면 IB 청크가 없으므로 출처 증명이 필요 없고,
+      --check과 일치해야 한다).
+    - 라이브러리 있음 + 내장 없음 → None. 현재 지문으로 대체하지 않는다.
+      무지문 라이브러리는 어떤 입력으로 만들어졌는지 증명할 수 없으므로,
+      현재 지문을 붙이면 오래된 라이브러리에 새 지문이 붙어 다음 --check이
+      "변경 없음"으로 stale 청크를 잔존시킨다 (P1-5). 무지문이면 빌드가
+      fail-closed 한다.
+    """
+    if not IB_LIBRARY_JSON.exists():
         try:
-            data = json.loads(IB_LIBRARY_JSON.read_text(encoding="utf-8"))
-            if isinstance(data, dict) and isinstance(
-                    data.get("canonical_fingerprint"), str):
-                return data["canonical_fingerprint"]
-        except (OSError, ValueError):
-            pass
+            from ib_adapter import canonical_fingerprint
+            return canonical_fingerprint()
+        except Exception as e:
+            print(f"  경고: IB 정본 해시 실패: {e}", file=sys.stderr)
+            return None
     try:
-        from ib_adapter import canonical_fingerprint
-        return canonical_fingerprint()
-    except Exception as e:
-        print(f"  경고: IB 정본 해시 실패: {e}", file=sys.stderr)
-        return None
+        data = json.loads(IB_LIBRARY_JSON.read_text(encoding="utf-8"))
+        if isinstance(data, dict) and isinstance(
+                data.get("canonical_fingerprint"), str):
+            return data["canonical_fingerprint"]
+    except (OSError, ValueError):
+        pass
+    return None
 
 
 def _snapshot_hash(snapshot):
@@ -420,11 +433,22 @@ def _build_data_locked():
     ib_hash = None
     ib_embedded = None
     if IB_LIBRARY_JSON.exists():
-        library, ib_hash = _read_json_bytes(IB_LIBRARY_JSON)
+        try:
+            library, ib_hash = _read_json_bytes(IB_LIBRARY_JSON)
+        except ValueError as e:
+            print(f"에러: {e}", file=sys.stderr)
+            sys.exit(2)
         if isinstance(library, dict) and isinstance(
                 library.get("canonical_fingerprint"), str):
             # 파싱한 바로 그 라이브러리의 내장 지문 (재읽기 아님).
             ib_embedded = library["canonical_fingerprint"]
+        else:
+            # 무지문 라이브러리: 어떤 입력으로 만들어졌는지 증명 불가.
+            # 현재 지문으로 대체하지 않고 fail-closed (어댑터를 먼저 실행).
+            print("에러: ib-library.json에 canonical_fingerprint 없음 — "
+                  "ib_adapter.py를 먼저 실행해 지문을 내장하세요",
+                  file=sys.stderr)
+            sys.exit(2)
         existing = {str(p.get("id") or p.get("tweetId") or "") for p in posts_ib}
         for record in library.get("posts", []):
             if isinstance(record, dict) and str(record.get("id") or "") not in existing:

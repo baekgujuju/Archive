@@ -148,8 +148,38 @@ def _pipeline_script_paths():
     return paths
 
 
+def _script_operand(argv):
+    """python argv에서 실제 실행 스크립트 피연산자를 찾는다.
+
+    - `-c`/`-m`/`-`는 스크립트 파일이 아니므로 None (payload 인자를
+      스크립트 경로로 오인하지 않는다).
+    - `-u`/`-B`/`-W`/`-X` 등 플래그는 건너뛴다 (값이 있는 플래그 포함).
+    - 첫 번째 비옵션 인자가 스크립트 경로다.
+    """
+    i = 1
+    while i < len(argv):
+        a = argv[i]
+        if a in ("-c", "-m", "-"):
+            return None
+        if a.startswith("-c"):  # -c<inline> (공백 없음)
+            return None
+        if a in ("-W", "-X"):  # 값이 따로 오는 플래그
+            i += 2
+            continue
+        if a.startswith("-"):
+            i += 1
+            continue
+        return a
+    return None
+
+
 def _pipeline_pids():
-    """이 checkout의 파이프라인 프로세스 PID 목록 (정확한 argv 대조)."""
+    """이 checkout의 파이프라인 프로세스 PID 목록 (정확한 argv 대조).
+
+    조건: (a) /proc/PID/exe가 python 바이너리, (b) 스크립트 피연산자가
+    파이프라인 스크립트 절대 경로와 정확히 일치 (상대 경로는
+    /proc/PID/cwd 기준으로 해석). 부분 문자열 매칭 금지.
+    """
     script_paths = _pipeline_script_paths()
     found = []
     try:
@@ -161,19 +191,30 @@ def _pipeline_pids():
             continue
         try:
             raw = (entry / "cmdline").read_bytes()
+            exe = os.readlink(entry / "exe")
         except OSError:
+            continue
+        if "python" not in Path(exe).name:
             continue
         argv = [a.decode("utf-8", "ignore") for a in raw.split(b"\x00") if a]
         if not argv:
             continue
-        # (a) python 인터프리터로 실행된 프로세스만 (에디터·셸 제외).
-        interp = Path(argv[0]).name
-        if interp not in ("python", "python3") and "python" not in interp:
+        script = _script_operand(argv)
+        if script is None:
             continue
-        # (b) argv 중 하나가 파이프라인 스크립트 절대 경로와 정확히 일치.
-        if not any(arg in script_paths for arg in argv):
+        script_path = Path(script)
+        if not script_path.is_absolute():
+            try:
+                cwd = os.readlink(entry / "cwd")
+            except OSError:
+                continue
+            script_path = Path(cwd) / script_path
+        try:
+            resolved = str(script_path.resolve())
+        except OSError:
             continue
-        found.append(int(entry.name))
+        if resolved in script_paths:
+            found.append(int(entry.name))
     return found
 
 

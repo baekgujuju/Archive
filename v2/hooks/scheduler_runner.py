@@ -33,8 +33,11 @@ from proc_group import run_grouped, terminate_current
 
 
 def _on_sigterm(signum, frame):
-    """P1-7: SIGTERM을 받으면 현재 자식 그룹(단계)부터 종료시키고 끝낸다."""
-    terminate_current()
+    """P1-7: SIGTERM을 받으면 현재 자식 그룹(단계)부터 종료시키고 끝낸다.
+    진입 즉시 SIGTERM을 무시해 정리 도중 재진입을 막는다.
+    예산 45초 — 모니터(30초)가 정리할 시간을 준다."""
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+    terminate_current(grace=45)
     raise SystemExit(143)
 
 
@@ -75,7 +78,7 @@ def run_step(name, script, timeout):
         env.setdefault("V2_PUBLISH_BRANCH", "main")
         r = run_grouped(
             [sys.executable, str(script)],
-            capture_output=True, text=True, timeout=timeout, env=env)
+            capture_output=True, text=True, timeout=timeout, env=env, grace=45)
         if r.stdout:
             for line in r.stdout.strip().split("\n"):
                 log(f"  [{name}] {line}")

@@ -54,15 +54,10 @@ def log(msg):
 
 def _on_sigterm(signum, frame):
     """P1-7: monitor가 후크 그룹에 SIGTERM을 보내면, 현재 자식 그룹부터
-    종료시키고 후크를 끝낸다. (SIGKILL만으로는 자손이 고아로 남는다.)"""
-    terminate_current()
-    raise SystemExit(143)
-
-
-def _on_sigterm(signum, frame):
-    """P1-7: monitor가 후크 그룹에 SIGTERM을 보내면, 현재 자식 그룹부터
-    종료시키고 후크를 끝낸다. (SIGKILL만으로는 자손이 고아로 남는다.)"""
-    terminate_current()
+    종료시키고 후크를 끝낸다. (SIGKILL만으로는 자손이 고아로 남는다.)
+    진입 즉시 SIGTERM을 무시해 정리 도중 재진입을 막는다."""
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+    terminate_current(grace=15)
     raise SystemExit(143)
 
 

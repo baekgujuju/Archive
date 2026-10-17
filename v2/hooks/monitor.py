@@ -36,8 +36,11 @@ from proc_group import run_grouped, terminate_current
 
 
 def _on_sigterm(signum, frame):
-    """P1-7: SIGTERM을 받으면 현재 자식 그룹(후크)부터 종료시키고 끝낸다."""
-    terminate_current()
+    """P1-7: SIGTERM을 받으면 현재 자식 그룹(후크)부터 종료시키고 끝낸다.
+    진입 즉시 SIGTERM을 무시해 정리 도중 재진입을 막는다.
+    예산 30초 — 후크(15초)가 정리할 시간을 준다."""
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+    terminate_current(grace=30)
     raise SystemExit(143)
 
 
@@ -151,7 +154,7 @@ def main():
         try:
             r = run_grouped(
                 [sys.executable, str(HOOKS_DIR / "post_ingest_hook.py")],
-                capture_output=True, text=True, timeout=3600,
+                capture_output=True, text=True, timeout=3600, grace=30,
             )
         except subprocess.TimeoutExpired:
             print("[monitor] 후크 타임아웃 (3600초) — 그룹 종료, 워터마크 유지, 다음 실행에서 재시도")

@@ -297,12 +297,23 @@ def load_cache():
             QUARANTINE_DIR.mkdir(parents=True, exist_ok=True)
             quarantine = QUARANTINE_DIR / (
                 f"translations.json.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+                f"-{secrets.token_hex(4)}"
             )
             try:
                 os.replace(CACHE_FILE, quarantine)
                 print(f"손상된 번역 캐시를 격리: {quarantine}", file=sys.stderr)
+            except FileNotFoundError:
+                # 다른 writer가 그 사이 복원했음 — 다시 읽어본다.
+                cache = _read_cache_file(CACHE_FILE)
+                if cache is not None:
+                    return cache
+                return {}
             except OSError as e:
-                print(f"손상 캐시 격리 실패 (덮어쓰지 않고 계속): {e}", file=sys.stderr)
+                # 격리 실패 시 복구본으로 덮지 않고 중단: 격리되지 않은
+                # 손상 파일을 복구본으로 덮으면 복구 증거가 사라진다.
+                raise RuntimeError(
+                    f"손상 캐시 격리 실패 — 덮어쓰지 않고 중단: {e}"
+                )
         recovery = _read_cache_file(RECOVERY_FILE)
         if recovery is not None:
             print(f"복구본에서 번역 캐시 복원: {len(recovery)}개", file=sys.stderr)

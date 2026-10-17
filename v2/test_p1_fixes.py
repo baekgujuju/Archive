@@ -29,13 +29,27 @@ def _check(name, cond):
 
 
 def test_lock_exclusive_and_timeout():
-    # Two contenders: second one times out (fail-closed), first one keeps it.
+    import threading
+    # Same-thread nesting is reentrant (no deadlock, no timeout).
     with pipeline_lock(timeout=5):
-        try:
-            with pipeline_lock(timeout=0.5):
-                _check("lock timeout raises (fail-closed)", False)
-        except PipelineLockTimeout:
-            _check("lock timeout raises (fail-closed)", True)
+        with pipeline_lock(timeout=5):
+            _check("same-thread nesting is reentrant", True)
+    # A DIFFERENT thread contending times out (fail-closed).
+    with pipeline_lock(timeout=5):
+        result = []
+
+        def contend():
+            try:
+                with pipeline_lock(timeout=0.5):
+                    result.append("acquired")
+            except PipelineLockTimeout:
+                result.append("timeout")
+
+        t = threading.Thread(target=contend)
+        t.start()
+        t.join()
+        _check("other-thread timeout raises (fail-closed)",
+               result == ["timeout"])
     # After release, it is acquirable again.
     with pipeline_lock(timeout=5):
         _check("lock released after holder exits", True)
@@ -327,31 +341,163 @@ def test_quarantine_survives_build():
 
 def test_launcher_matching():
     import launcher
-    # A python process whose argv contains an exact pipeline script path
-    # is matched (the script need not actually run — argv match only).
-    proc = subprocess.Popen(
-        [sys.executable, "-c", "import time; time.sleep(5)",
-         str(launcher.HOOKS_DIR / "monitor.py")],
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    try:
-        time.sleep(0.5)
-        _check("launcher matches exact pipeline script argv",
-               proc.pid in launcher._pipeline_pids())
-    finally:
-        proc.terminate()
-        proc.wait()
-    # A shell whose args merely CONTAIN the hooks path + a script name is
-    # NOT matched (no substring matching).
-    shell = subprocess.Popen(
-        ["bash", "-c", f"echo {launcher.HOOKS_DIR}/monitor.py; sleep 5"],
-        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    try:
-        time.sleep(0.5)
-        _check("launcher does not match non-python processes",
-               shell.pid not in launcher._pipeline_pids())
-    finally:
-        shell.terminate()
-        shell.wait()
+    from unittest.mock import patch
+
+    class FakePart:
+        def __init__(self, entry, kind):
+            self.entry, self.kind = entry, kind
+
+        def read_bytes(self):
+            return self.entry.cmdline
+
+    class FakeEntry:
+        def __init__(self, cmdline, exe="/usr/bin/python3", cwd="/home/hatch"):
+            self.name = "123456"
+            self.cmdline, self.exe, self.cwd = cmdline, exe, cwd
+
+        def __truediv__(self, kind):
+            return FakePart(self, kind)
+
+    def pids_for(entry):
+        def fake_readlink(path):
+            if isinstance(path, FakePart):
+                return path.entry.exe if path.kind == "exe" else path.entry.cwd
+            raise OSError("unexpected")
+
+        with patch.object(Path, "iterdir", return_value=[entry]), \
+                patch.object(os, "readlink", side_effect=fake_readlink):
+            return launcher._pipeline_pids()
+
+    hooks = str(launcher.HOOKS_DIR)
+    script = (hooks + "/monitor.py").encode()
+    # Exact absolute script operand -> matched.
+    _check("launcher matches exact script operand",
+           pids_for(FakeEntry(b"python3\x00" + script + b"\x00")) == [123456])
+    # -c payload with the script path as a data argument -> NOT matched.
+    _check("launcher rejects -c payload arguments",
+           pids_for(FakeEntry(b"python3\x00-c\x00print(1)\x00" + script + b"\x00")) == [])
+    # Relative script resolved against /proc/PID/cwd -> matched.
+    _check("launcher resolves relative script via cwd",
+           pids_for(FakeEntry(b"python3\x00monitor.py\x00", cwd=hooks)) == [123456])
+    _check("launcher rejects relative script from wrong cwd",
+           pids_for(FakeEntry(b"python3\x00monitor.py\x00", cwd="/tmp")) == [])
+    # Non-python exe -> NOT matched even with a script operand.
+    _check("launcher rejects non-python exe",
+           pids_for(FakeEntry(b"vim\x00" + script + b"\x00",
+                              exe="/usr/bin/vim")) == [])
+
+
+def test_lock_reentrant():
+    # Nested acquisition in the same process must not deadlock.
+    import time as _time
+    start = _time.monotonic()
+    with pipeline_lock(timeout=5):
+        with pipeline_lock(timeout=5):
+            _check("reentrant lock nests without deadlock", True)
+    _check("reentrant lock releases promptly", _time.monotonic() - start < 5)
+
+
+def test_build_rejects_unstamped_ib():
+    import build_data as bd
+
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        real = {k: getattr(bd, k) for k in
+                ("V2_ROOT", "DATA_DIR", "POSTS_JSON", "WEB_INDEX_JSON",
+                 "IB_LIBRARY_JSON", "MEDIA_THUMB", "MEDIA_FULL")}
+        try:
+            bd.V2_ROOT = td
+            bd.DATA_DIR = td / "data"
+            bd.POSTS_JSON = td / "posts.json"
+            bd.WEB_INDEX_JSON = td / "index.json"
+            bd.IB_LIBRARY_JSON = td / "ib-library.json"
+            bd.MEDIA_THUMB = td / "media" / "thumb"
+            bd.MEDIA_FULL = td / "media" / "full"
+            bd.POSTS_JSON.write_text(json.dumps(
+                [{"tweetId": "1", "fullText": "hello", "type": "x",
+                  "sourceUrl": "https://x.com/a/status/1"}]), encoding="utf-8")
+            (td / "release.json").write_text(
+                json.dumps({"app_version": "test"}), encoding="utf-8")
+            # Unstamped library (no canonical_fingerprint): fail closed.
+            bd.IB_LIBRARY_JSON.write_text(
+                json.dumps({"posts": []}), encoding="utf-8")
+            try:
+                bd.build_data()
+                _check("build rejects unstamped IB library", False)
+            except SystemExit as e:
+                _check("build rejects unstamped IB library", e.code == 2)
+            _check("no data/ swap on unstamped IB",
+                   not (td / "data" / "manifest.json").exists())
+            # Stamped library: build succeeds.
+            bd.IB_LIBRARY_JSON.write_text(
+                json.dumps({"posts": [], "canonical_fingerprint": "fp-abc"}),
+                encoding="utf-8")
+            bd.build_data()
+            manifest = json.loads((td / "data" / "manifest.json").read_text())
+            _check("stamped IB library builds",
+                   manifest["source_hash"] is not None)
+        finally:
+            for k, v in real.items():
+                setattr(bd, k, v)
+
+
+def test_translate_quarantine_failure_aborts():
+    import translate_posts as tp
+    from unittest.mock import patch
+
+    with tempfile.TemporaryDirectory() as td:
+        td = Path(td)
+        tp.CACHE_FILE = td / "translations.json"
+        tp.RECOVERY_FILE = td / ".translations-recovery.json"
+        tp.QUARANTINE_DIR = td / ".quarantine"
+        tp._atomic_write_json(tp.RECOVERY_FILE, {"good": {"status": "ok"}})
+        tp.CACHE_FILE.write_text("{corrupt", encoding="utf-8")
+
+        def failing_replace(src, dst):
+            raise OSError("simulated quarantine failure")
+
+        with patch.object(os, "replace", side_effect=failing_replace):
+            try:
+                tp.load_cache()
+                _check("quarantine failure aborts restore", False)
+            except RuntimeError:
+                _check("quarantine failure aborts restore", True)
+        _check("corrupt file NOT overwritten on quarantine failure",
+               tp.CACHE_FILE.read_text(encoding="utf-8") == "{corrupt")
+
+
+def test_proc_group_bounded_drain():
+    from proc_group import run_grouped
+    import time as _time
+    # Escaped descendant (new session, outside the group) holds stdout open.
+    # The drain must time out (bounded) instead of wedging forever.
+    with tempfile.TemporaryDirectory() as td:
+        pidfile = str(Path(td) / "grandchild.pid")
+        grandchild = (
+            "import os, time; "
+            f"open({pidfile!r}, 'w').write(str(os.getpid())); time.sleep(60)"
+        )
+        child = (
+            "import subprocess, sys, time; "
+            f"subprocess.Popen([sys.executable, '-c', {grandchild!r}], "
+            "start_new_session=True); time.sleep(60)"
+        )
+        start = _time.monotonic()
+        try:
+            run_grouped([sys.executable, "-c", child], timeout=1, grace=1,
+                        capture_output=True, text=True)
+            _check("proc_group timeout raises (escaped descendant)", False)
+        except subprocess.TimeoutExpired:
+            _check("proc_group timeout raises (escaped descendant)", True)
+        elapsed = _time.monotonic() - start
+        _check("proc_group drain is bounded (not wedged)",
+               elapsed < 30)
+        # Clean up the escaped grandchild.
+        try:
+            gpid = int(Path(pidfile).read_text())
+            os.kill(gpid, 9)
+        except (OSError, ValueError):
+            pass
 
 
 def test_ib_adapter_input_stability():
@@ -379,12 +525,16 @@ def test_ib_adapter_input_stability():
 
 if __name__ == "__main__":
     test_lock_exclusive_and_timeout()
+    test_lock_reentrant()
     test_translate_corrupt_recovery_and_merge()
+    test_translate_quarantine_failure_aborts()
     test_ingester_guards()
     test_build_toctou_abort()
+    test_build_rejects_unstamped_ib()
     test_enrich_merge_save_fail_closed()
     test_proc_group_kills_grandchildren()
     test_proc_group_kills_sigterm_ignoring_grandchild()
+    test_proc_group_bounded_drain()
     test_quarantine_survives_build()
     test_launcher_matching()
     test_ib_adapter_input_stability()

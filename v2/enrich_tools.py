@@ -196,6 +196,7 @@ def _merge_save(path, updates, deletions=()):
             quarantine_dir.mkdir(parents=True, exist_ok=True)
             quarantine = quarantine_dir / (
                 f"{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+                f"-{secrets.token_hex(4)}"
             )
             try:
                 os.replace(path, quarantine)
@@ -210,6 +211,7 @@ def _merge_save(path, updates, deletions=()):
             quarantine_dir.mkdir(parents=True, exist_ok=True)
             quarantine = quarantine_dir / (
                 f"{path.name}.corrupt-{time.strftime('%Y%m%dT%H%M%S')}"
+                f"-{secrets.token_hex(4)}"
             )
             try:
                 os.replace(path, quarantine)
@@ -971,28 +973,35 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8,
         # vision cache. Baselines advance after each successful save, so a
         # later persist never resubmits an earlier batch's changes over an
         # intervening external correction/deletion.
+        #
+        # The whole persist (merge saves + progress + manifest) runs under
+        # ONE shared-lock hold, so a build cannot interleave between the
+        # merge and the progress/manifest writes. pipeline_lock is
+        # reentrant, so the nested acquisitions inside _merge_save /
+        # update_manifest are no-ops, not deadlocks.
         nonlocal tools_data_initial, cache_initial, vision_initial
-        baselines = {
-            TOOLS_JSON: tools_data_initial,
-            CACHE_JSON: cache_initial,
-            vision_path: vision_initial,
-        }
-        currents = {
-            TOOLS_JSON: tools_data,
-            CACHE_JSON: cache,
-            vision_path: vision_cache,
-        }
-        for path in (TOOLS_JSON, CACHE_JSON, vision_path):
-            updates, deletions = _dict_diff(baselines[path], currents[path])
-            _merge_save(path, updates, deletions)
-            baselines[path] = copy.deepcopy(currents[path])
-        tools_data_initial = baselines[TOOLS_JSON]
-        cache_initial = baselines[CACHE_JSON]
-        vision_initial = baselines[vision_path]
-        save_json_atomic(PROGRESS_JSON, {"total": len(candidates), "remaining":
-                         len(remaining)-processed, "stats": stats,
-                         "pending_details": pending_details})
-        update_manifest()
+        with pipeline_lock():
+            baselines = {
+                TOOLS_JSON: tools_data_initial,
+                CACHE_JSON: cache_initial,
+                vision_path: vision_initial,
+            }
+            currents = {
+                TOOLS_JSON: tools_data,
+                CACHE_JSON: cache,
+                vision_path: vision_cache,
+            }
+            for path in (TOOLS_JSON, CACHE_JSON, vision_path):
+                updates, deletions = _dict_diff(baselines[path], currents[path])
+                _merge_save(path, updates, deletions)
+                baselines[path] = copy.deepcopy(currents[path])
+            tools_data_initial = baselines[TOOLS_JSON]
+            cache_initial = baselines[CACHE_JSON]
+            vision_initial = baselines[vision_path]
+            save_json_atomic(PROGRESS_JSON, {"total": len(candidates), "remaining":
+                             len(remaining)-processed, "stats": stats,
+                             "pending_details": pending_details})
+            update_manifest()
         unresolved = len(remaining)-processed or stats["temporary_failures"] or stats["errors"] or stats["pending_github_look"]
         if unresolved:
             RETRY_MARKER.parent.mkdir(parents=True, exist_ok=True)

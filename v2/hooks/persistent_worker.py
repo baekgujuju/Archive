@@ -41,8 +41,11 @@ from proc_group import run_grouped, terminate_current
 
 
 def _on_sigterm(signum, frame):
-    """P1-7: SIGTERM을 받으면 현재 자식 그룹(폴)부터 종료시키고 끝낸다."""
-    terminate_current()
+    """P1-7: SIGTERM을 받으면 현재 자식 그룹(폴)부터 종료시키고 끝낸다.
+    진입 즉시 SIGTERM을 무시해 정리 도중 재진입을 막는다.
+    예산 60초 — 스케줄러(45초)가 정리할 시간을 준다."""
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+    terminate_current(grace=60)
     raise SystemExit(143)
 
 
@@ -119,7 +122,8 @@ def run_poll():
         # P1-7: 타임아웃 시 스케줄러 그룹 전체를 종료한다.
         r = run_grouped(
             [sys.executable, str(HOOKS_DIR / "scheduler_runner.py")],
-            capture_output=True, text=True, timeout=TIMEOUT_TOTAL, env=env)
+            capture_output=True, text=True, timeout=TIMEOUT_TOTAL, env=env,
+            grace=60)
         # scheduler_runner의 출력을 워커 로그에 기록
         if r.stdout:
             for line in r.stdout.strip().split("\n")[-10:]:  # 마지막 10줄만

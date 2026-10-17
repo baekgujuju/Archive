@@ -9,13 +9,15 @@ Fix: every child is started in its OWN process group (start_new_session).
 On timeout the whole group gets SIGTERM (grace period, so a SIGTERM
 handler upstream can forward the shutdown), then SIGKILL — UNCONDITIONALLY,
 even if the group leader already exited, because a SIGTERM-ignoring
-grandchild may still be alive. Pipes are drained via communicate() so a
-full pipe can never wedge the reaper.
+grandchild may still be alive. Pipes are drained with a BOUND; an escaped
+descendant holding stdout/stderr can never wedge the reaper forever.
 
 Termination forwarding: each stage (worker -> scheduler -> monitor ->
-hook) installs a SIGTERM handler that calls terminate_current(), which
-kills its current child group with the same SIGTERM -> grace -> SIGKILL
-escalation. So a SIGTERM to any stage cascades down the whole chain.
+hook) installs a SIGTERM handler that ignores further SIGTERM (no
+re-entrancy), calls terminate_current() with its stage budget, then
+exits. Budgets are staggered outward (hook 15 < monitor 30 < scheduler
+45 < worker 60) so an outer stage never SIGKILLs an inner stage before
+that stage finishes cleaning its own session.
 
 CURRENT tracks the active child group for the signal handlers. It is
 cleared on every exit path (success, timeout, exception).
@@ -27,6 +29,7 @@ import subprocess
 import time
 
 CURRENT = {"pgid": None}
+_TERMINATING_PGID = None
 
 
 def _group_alive(pgid):
@@ -67,20 +70,53 @@ def _escalate(pgid, grace):
 def terminate_current(grace=10):
     """Kill the currently-running child group (for SIGTERM handlers).
 
-    Full escalation: SIGTERM -> grace -> SIGKILL. The caller then exits.
+    Idempotent: a second call for the same pgid returns immediately, so
+    repeated SIGTERM handlers cannot restart escalation. Full escalation:
+    SIGTERM -> grace -> SIGKILL. The caller then exits.
     """
+    global _TERMINATING_PGID
     pgid = CURRENT.get("pgid")
-    if pgid:
+    if not pgid or _TERMINATING_PGID == pgid:
+        return
+    _TERMINATING_PGID = pgid
+    try:
         _escalate(pgid, grace)
+    finally:
+        if _TERMINATING_PGID == pgid:
+            _TERMINATING_PGID = None
+
+
+def _cleanup(proc, grace, drain_timeout=10):
+    """Terminate the child group and reap the leader (bounded).
+
+    Used by both the timeout path and the BaseException path. After the
+    group is killed, drains the pipes with a bound: an escaped descendant
+    holding stdout/stderr cannot wedge the reaper. If the drain times
+    out, closes our pipe ends and reaps the leader.
+    """
+    if proc.poll() is None:
+        _escalate(proc.pid, grace)
+    try:
+        out, err = proc.communicate(timeout=drain_timeout)
+    except subprocess.TimeoutExpired:
+        for stream in (proc.stdout, proc.stderr):
+            try:
+                if stream is not None:
+                    stream.close()
+            except Exception:
+                pass
+        proc.wait()
+        out, err = b"", b""
+    return out, err
 
 
 def run_grouped(cmd, timeout=None, grace=15, **kw):
-    """subprocess.run with process-group kill on timeout.
+    """subprocess.run with process-group kill on timeout / exception.
 
-    The child is a group leader (start_new_session=True). On timeout:
-    SIGTERM the group, wait up to `grace`, SIGKILL the group
-    (unconditionally — see _escalate), then drain the pipes via
-    communicate() and reap, then raise subprocess.TimeoutExpired.
+    The child is a group leader (start_new_session=True). On timeout or
+    BaseException (KeyboardInterrupt / SystemExit from a SIGTERM handler):
+    kill the whole group, drain the pipes with a bound, reap the leader,
+    then re-raise (TimeoutExpired for timeouts).
     """
     if kw.pop("capture_output", False):
         kw.setdefault("stdout", subprocess.PIPE)
@@ -93,11 +129,11 @@ def run_grouped(cmd, timeout=None, grace=15, **kw):
         try:
             out, err = proc.communicate(timeout=timeout)
         except subprocess.TimeoutExpired:
-            _escalate(proc.pid, grace)
-            # Drain the pipes (a full pipe must not wedge the reaper) and
-            # reap the leader. communicate() returns once the process exits.
-            out, err = proc.communicate()
+            out, err = _cleanup(proc, grace)
             raise subprocess.TimeoutExpired(cmd, timeout, output=out, stderr=err)
+        except BaseException:
+            _cleanup(proc, grace)
+            raise
         return subprocess.CompletedProcess(cmd, proc.returncode, out, err)
     finally:
         CURRENT["pgid"] = None
