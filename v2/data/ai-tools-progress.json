@@ -1,12 +1,12 @@
 {
   "total": 446,
-  "remaining": 10,
+  "remaining": 0,
   "stats": {
     "verified": 0,
     "pending": 0,
-    "pending_github_look": 12,
+    "pending_github_look": 10,
     "cached": 364,
-    "temporary_failures": 60,
+    "temporary_failures": 72,
     "errors": 0
   },
   "pending_details": {
@@ -19,7 +19,7 @@
     "2111274510548885844:69b7bbf0b81223ce.jpg": "temporary analysis or repository API failure",
     "2111274510548885844:b388c3dec2aa0d80.jpg": "temporary analysis or repository API failure",
     "2111157142262808847:64fd3822392e66db.png": "temporary analysis or repository API failure",
-    "2089574903523749987:eb78cb1742206670.jpg": "GitHub screenshot requires verified repository match",
+    "2089574903523749987:eb78cb1742206670.jpg": "temporary analysis or repository API failure",
     "2111186043294896218:819af6b81e2a124b.jpg": "temporary analysis or repository API failure",
     "2111186043294896218:0aa92cbaa47b0a1d.jpg": "temporary analysis or repository API failure",
     "2111186043294896218:47f4f97c70ea6869.jpg": "temporary analysis or repository API failure",
@@ -44,7 +44,7 @@
     "2111370347463446904:98e0d45afc679986.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:71ae489744508596.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:148a71b12eeea6d6.jpg": "temporary analysis or repository API failure",
-    "2077936537170542655:e1700757bc8a6994.jpg": "GitHub screenshot requires verified repository match",
+    "2077936537170542655:e1700757bc8a6994.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:f77783c4cf73d2bd.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:6ce98daae4db643b.jpg": "temporary analysis or repository API failure",
     "2111370347463446904:705ee027fc36898e.jpg": "temporary analysis or repository API failure",
@@ -81,6 +81,16 @@
     "2108200610822861187:d7013183a3f765f5.png": "temporary analysis or repository API failure",
     "2108205259533451648:1b2aa431d0825eb5.jpg": "temporary analysis or repository API failure",
     "2108200610822861187:810791fff0bbc880.png": "temporary analysis or repository API failure",
-    "2108200610822861187:93d2ebe7edf28a34.png": "temporary analysis or repository API failure"
+    "2108200610822861187:93d2ebe7edf28a34.png": "temporary analysis or repository API failure",
+    "2108196720706478249:f8c0025c04175532.png": "temporary analysis or repository API failure",
+    "2108196720706478249:326cbf781f62626f.png": "temporary analysis or repository API failure",
+    "2108439287377363260:db4e214785d0fac6.jpg": "temporary analysis or repository API failure",
+    "2108196720706478249:c992605d310f3d0c.jpg": "temporary analysis or repository API failure",
+    "2108196720706478249:6cd8ffb91b91f3ed.png": "temporary analysis or repository API failure",
+    "2108196720706478249:d3c444251c791148.png": "temporary analysis or repository API failure",
+    "2108196720706478249:b9e9f9e3a3237068.png": "temporary analysis or repository API failure",
+    "2108439287377363260:da60784c6631a5d6.png": "temporary analysis or repository API failure",
+    "2108439287377363260:dd98ec4bf4836b98.jpg": "temporary analysis or repository API failure",
+    "2108439287377363260:bba87dffe87e6c1b.png": "temporary analysis or repository API failure"
   }
 }
