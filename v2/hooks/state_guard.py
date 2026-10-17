@@ -24,11 +24,18 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
-from pipeline_lock import quarantine_file
+# pipeline_lock은 v2/에 있다. state_guard는 monitor·drive_poll·
+# 스케줄러 등 어디서 import되든 동작해야 하므로, 호출자의
+# sys.path 설정에 의존하지 않고 V2_ROOT를 직접 넣는다
+# (drive_poll.py와 동일 패턴). monitor.py는 HOOKS_DIR만 넣어서
+# 이 import가 생산 환경에서 실패했다 (첫 폴 monitor 실패).
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from pipeline_lock import quarantine_file  # noqa: E402
 
 # 복구 마커 파일명 (state 파일명 + 접미사).
 RECOVERY_SUFFIX = ".recovery"

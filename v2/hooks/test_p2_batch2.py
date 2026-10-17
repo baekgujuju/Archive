@@ -997,6 +997,27 @@ def test_ingester_sort_order_casefold(tmp_path):
 
 # ---------- state_guard (P3) ----------
 
+def test_state_guard_imports_without_v2_on_path(tmp_path):
+    # 회귀: state_guard는 monitor.py(HOOKS_DIR만 sys.path)에서도
+    # import돼야 한다. HOOKS_DIR만으로 깨끗한 인터프리터에서
+    # import해 pipeline_lock을 찾는지 확인한다.
+    # cwd를 상속하면 v2/에서 실행 시 현재 디렉터리가 sys.path에
+    # 들어 수정 전 코드도 통과하므로, 빈 디렉터리를 cwd로 하고
+    # -I(격리 모드)로 시작하며, 로드된 모듈이 대상 저장소 경로인지
+    # __file__로 확인한다.
+    hooks_dir = Path(__file__).resolve().parent
+    v2_root = hooks_dir.parent
+    code = ("import sys; sys.path.insert(0, %r); "
+            "import state_guard, pipeline_lock; "
+            "print(state_guard.__file__); print(pipeline_lock.__file__)") % str(hooks_dir)
+    env = {k: v for k, v in os.environ.items() if k != "PYTHONPATH"}
+    r = subprocess.run([sys.executable, "-I", "-c", code],
+                       capture_output=True, text=True, env=env, cwd=tmp_path)
+    assert r.returncode == 0, r.stderr
+    assert str(hooks_dir / "state_guard.py") in r.stdout
+    assert str(v2_root / "pipeline_lock.py") in r.stdout
+
+
 def test_validate_drive_state():
     ok, _ = state_guard.validate_drive_state({"processed": {}, "last_poll": "x"})
     assert ok
