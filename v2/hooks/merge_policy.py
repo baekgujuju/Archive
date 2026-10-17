@@ -105,7 +105,9 @@ def _merge_value(existing, incoming, path, tweet_id, file_id, fingerprint, propo
     if _is_missing(existing):
         if _is_missing(incoming):
             return existing, False
-        return incoming, True
+        # 빈 기존 값 보충 — 수신 값을 통째로 저장하므로 보호 필드를
+        # 모든 깊이에서 제거한다 (중첩 translation 등 기록 방지).
+        return _strip_protected(incoming), True
     if _is_missing(incoming):
         return existing, False
     if existing == incoming:
@@ -122,7 +124,8 @@ def _merge_value(existing, incoming, path, tweet_id, file_id, fingerprint, propo
             new_v = incoming.get(key)
             if key not in existing:
                 if not _is_missing(new_v):
-                    merged[key] = new_v
+                    # 신규 키 추가 — 값 안의 중첩 보호 필드도 제거한다.
+                    merged[key] = _strip_protected(new_v)
                     changed = True
                 continue
             if key not in incoming:
@@ -146,8 +149,8 @@ def _merge_value(existing, incoming, path, tweet_id, file_id, fingerprint, propo
                     continue
                 rid = str(reply["tweetId"])
                 if rid not in by_id:
-                    merged.append(reply)
-                    by_id[rid] = reply
+                    merged.append(_strip_protected(reply))
+                    by_id[rid] = merged[-1]
                     changed = True
                 elif by_id[rid] != reply:
                     proposals.append({
@@ -208,12 +211,30 @@ def check_canonical_duplicates(canonical):
     return dups
 
 
+def _strip_protected(value):
+    """수신 값에서 PROTECTED_FIELDS 키를 모든 깊이에서 제거.
+
+    신규 키 추가·빈 기존 값 보충처럼 수신 값을 통째로 저장하는
+    경로에서 수집기가 중첩 보호 필드(translation·analysis 등)를
+    쓰는 것을 막는다. capturedAt은 제거하지 않는다 — 새 객체의
+    첫 캡처 시각은 인제스터가 적법하게 설정한다.
+    """
+    if isinstance(value, dict):
+        return {k: _strip_protected(v) for k, v in value.items()
+                if k not in PROTECTED_FIELDS}
+    if isinstance(value, list):
+        return [_strip_protected(v) for v in value]
+    return value
+
+
 def _overlay(existing, incoming, path):
     """동일 파일 재인제스트용 재귀 오버레이. Returns (merged, changed).
 
     - 수신 누락/빈 값은 기존 유지 (삭제 없음).
     - PROTECTED_FIELDS·capturedAt은 모든 깊이에서 기존 유지.
-    - dict는 키 단위 재귀 (수신에만 있는 키는 추가, 기존에만 있는 키는 유지).
+    - dict는 키 단위 재귀 (수신에만 있는 키는 보호 필드 제거 후 추가,
+      기존에만 있는 키는 유지).
+    - 타입 불일치 (구조 값 ↔ 스칼라, dict ↔ list) — 기존 유지.
     - replies는 tweetId 기준 합집합 (동일 ID는 재귀 오버레이).
     - media는 미디어 키 기준 합집합 (동일 키는 기존 유지).
     - 그 외 리스트는 동등성 기준 합집합. 스칼라는 수신 승리.
@@ -224,7 +245,7 @@ def _overlay(existing, incoming, path):
     if _is_missing(incoming):
         return existing, False
     if _is_missing(existing):
-        return incoming, True
+        return _strip_protected(incoming), True
     if isinstance(existing, dict) and isinstance(incoming, dict):
         merged = dict(existing)
         changed = False
@@ -233,7 +254,7 @@ def _overlay(existing, incoming, path):
                 continue
             if key not in existing:
                 if not _is_missing(incoming[key]):
-                    merged[key] = incoming[key]
+                    merged[key] = _strip_protected(incoming[key])
                     changed = True
                 continue
             v, c = _overlay(existing[key], incoming[key], f"{path}.{key}")
@@ -253,8 +274,8 @@ def _overlay(existing, incoming, path):
                     continue
                 rid = str(reply["tweetId"])
                 if rid not in by_id:
-                    merged.append(reply)
-                    by_id[rid] = reply
+                    merged.append(_strip_protected(reply))
+                    by_id[rid] = merged[-1]
                     changed = True
                 else:
                     v, c = _overlay(by_id[rid], reply, f"{path}[{rid}]")
@@ -262,6 +283,7 @@ def _overlay(existing, incoming, path):
                         if isinstance(m, dict) and str(m.get("tweetId")) == rid:
                             merged[i] = v
                             break
+                    by_id[rid] = v  # 동일 ID 반복 시 오래된 기준으로 재계산하지 않음.
                     changed = changed or c
             return merged, changed
         if field == "media":
@@ -270,7 +292,7 @@ def _overlay(existing, incoming, path):
             changed = False
             for m in incoming:
                 if _media_key(m) not in keys:
-                    merged.append(m)
+                    merged.append(_strip_protected(m))
                     keys.add(_media_key(m))
                     changed = True
             return merged, changed
@@ -278,9 +300,13 @@ def _overlay(existing, incoming, path):
         changed = False
         for v in incoming:
             if v not in merged:
-                merged.append(v)
+                merged.append(_strip_protected(v))
                 changed = True
         return merged, changed
+    if isinstance(existing, (dict, list)) or isinstance(incoming, (dict, list)):
+        # 타입 불일치 — 구조 값을 스칼라로 교체하면 하위 보호
+        # 필드·기존 데이터가 사라지므로 기존 유지.
+        return existing, False
     if existing != incoming:
         return incoming, True
     return existing, False

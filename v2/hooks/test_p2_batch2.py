@@ -264,7 +264,45 @@ def test_overlay_keeps_nested_missing_and_protected():
     assert result.proposals == []
 
 
-def test_overlay_replies_union_and_media_union():
+def test_overlay_type_mismatch_keeps_existing():
+    # 타입 불일치 (구조 값 ↔ 스칼라) — 기존 유지, 하위 보호 필드 보존.
+    old = _base_record()
+    old["quoted"] = {"tweetId": "456", "fullText": "original",
+                     "translation": "보존"}
+    new = _base_record()
+    new["quoted"] = "not a dict"
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    merged = result.merged[0]
+    assert merged["quoted"] == {"tweetId": "456", "fullText": "original",
+                                "translation": "보존"}
+    assert result.proposals == []
+
+
+def test_merge_new_key_strips_nested_protected():
+    # 신규 키 추가·빈 기존 값 보충에서 중첩 보호 필드는 기록되지 않는다.
+    old = _base_record()
+    old["quoted"] = None
+    new = _base_record()
+    new["quoted"] = {"tweetId": "456", "fullText": "quoted",
+                     "translation": "수집기가 쓴 번역"}
+    result = merge_records([old], [new])
+    assert "translation" not in result.merged[0]["quoted"]
+    assert result.merged[0]["quoted"]["fullText"] == "quoted"
+
+
+def test_overlay_reply_duplicate_id_accumulates():
+    # 수신 replies에 동일 ID가 두 번 — 첫 오버레이의 보충이 사라지지 않는다.
+    old = _base_record()
+    old["replies"] = [{"tweetId": "201", "fullText": "r1"}]
+    new = _base_record()
+    new["replies"] = [{"tweetId": "201",
+                       "sourceUrl": "https://x.com/A/status/201"},
+                      {"tweetId": "201", "fullText": "r1 edited"}]
+    result = merge_records([old], [new], overwrite_tweet_ids={"123"})
+    merged = result.merged[0]
+    assert len(merged["replies"]) == 1
+    assert merged["replies"][0]["sourceUrl"] == "https://x.com/A/status/201"
+    assert merged["replies"][0]["fullText"] == "r1 edited"
     # 리스트는 합집합 (삭제 없음). 동일 답글 ID는 재귀 오버레이.
     old = _base_record()
     old["replies"] = [{"tweetId": "201", "fullText": "r1"}]
@@ -1295,6 +1333,52 @@ def test_drive_poll_conflict_does_not_escalate_on_reingest(poll_env, monkeypatch
     proposals = json.loads((poll_env["hooks"] / ".merge_proposals.json").read_text())
     assert any(p["path"] == "fullText" and p["proposed"] == "B body v2"
                for p in proposals["proposals"])
+
+
+def test_drive_poll_claim_history_survives_reingest(poll_env, monkeypatch):
+    # A가 123을 만들고 B가 충돌(제안)한 뒤, A가 456으로 재처리해도
+    # A의 123 주장은 누적 기록에 남아, B의 재처리가 123을 덮지 못한다.
+    content_a = _valid_html("123", "A body")
+    files = [_drive_file("fid-a", "a.html", content_a)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-a": content_a}))
+    assert drive_poll.main() == 0
+
+    content_b = _valid_html("123", "B body")
+    files = [_drive_file("fid-a", "a.html", content_a),
+             _drive_file("fid-b", "b.html", content_b)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-b": content_b}))
+    assert drive_poll.main() == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert posts[0]["fullText"] == "A body"
+
+    # A를 456으로 재처리 — A의 주장은 {123, 456}으로 누적된다.
+    content_a2 = _valid_html("456", "A body 456")
+    files = [{"id": "fid-a", "name": "a.html",
+              "modifiedTime": "2026-10-18T00:00:00Z",
+              "size": str(len(content_a2))},
+             _drive_file("fid-b", "b.html", content_b)]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-a": content_a2}))
+    assert drive_poll.main() == 0
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    assert sorted(state["processed"]["fid-a"]["claimedTweetIds"]) == ["123", "456"]
+
+    # B를 수정해 재처리해도 123은 여전히 보수적 병합 (제안만).
+    content_b2 = _valid_html("123", "B body v2")
+    files = [{"id": "fid-a", "name": "a.html",
+              "modifiedTime": "2026-10-18T00:00:00Z",
+              "size": str(len(content_a2))},
+             {"id": "fid-b", "name": "b.html",
+              "modifiedTime": "2026-10-18T00:00:00Z",
+              "size": str(len(content_b2))}]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun({"fid-b": content_b2}))
+    assert drive_poll.main() == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert [p["tweetId"] for p in posts] == ["123", "456"]
+    assert posts[0]["fullText"] == "A body"  # B가 덮지 못함.
 
 
 def test_drive_poll_failure_preserves_overwrite_authority(poll_env, monkeypatch):

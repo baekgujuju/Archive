@@ -599,12 +599,20 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
     mark_failures_resolved(fid)
     sys.path.insert(0, str(TOOLS_DIR))
     from capture_contract import VALIDATOR_VERSION  # noqa: E402
+    # 주장 누적: 이 파일이 검증된 상태로 생산한 모든 ID (충돌 포함).
+    # 마지막 생산 목록만 쓰면, 파일이 다른 ID로 재처리될 때 충돌
+    # 이력이 사라져 타 파일이 덮어쓰기로 승격될 수 있다.
+    prior_rec = processed.get(fid, {}) if isinstance(processed, dict) else {}
+    claimed = _claimed_tweet_ids(prior_rec)
+    claimed |= {str(item["tweetId"]) for item in parsed
+                if isinstance(item, dict) and item.get("tweetId") is not None}
     processed[fid] = {
         "modifiedTime": fp[1],
         "size": fp[2],
         "at": _now_iso(),
         "verification": "verified",
         "tweetIds": [str(item["tweetId"]) for item in parsed],
+        "claimedTweetIds": sorted(claimed),
         "content_sha256": content_sha256,
         "parser_version": "ingest_post_html",
         "validator_version": VALIDATOR_VERSION,
@@ -664,13 +672,20 @@ def _verification_of(entry):
 def _claimed_tweet_ids(record):
     """한 processed 항목이 주장하는 tweetId 집합 (숫자 문자열만).
 
+    claimedTweetIds는 검증된 생산의 누적 합집합이다 — 파일이
+    나중에 다른 ID를 생산해도 이전 주장은 사라지지 않는다
+    (충돌 이력 소실로 인한 덮어쓰기 승격 방지). 구형 기록에는
+    claimedTweetIds가 없으므로 tweetIds(마지막 생산)로 마이그레이션.
     tweetIds가 list가 아니면 빈 집합을 반환한다 — 문자열 "123"을
-    문자별로 해석하지 않는다. tweetIds는 마지막 검증 생산만을
-    반영한다 (실패 기록이 지우지 않는다).
+    문자별로 해석하지 않는다. tweetIds는 검증된 생산에서만
+    기록되므로 그 존재 자체가 주장의 증거이다 (실패 기록이
+    지우지 않는다).
     """
     if not isinstance(record, dict):
         return set()
-    raw = record.get("tweetIds")
+    raw = record.get("claimedTweetIds")
+    if not isinstance(raw, list):
+        raw = record.get("tweetIds")
     if not isinstance(raw, list):
         return set()
     return {t for t in raw if isinstance(t, str) and t.isdigit()}
@@ -866,10 +881,10 @@ def main():
             except FileFailure as failure:
                 record = handle_file_failure(f, failure)
                 # processed에 실패 상태 반영 (다음 폴 disposition용).
-                # tweetIds(마지막 검증 생산)는 실패로 지우지 않는다 —
-                # 동일 파일 갱신 권한·소유권 판정에 쓴다. 일시 실패
-                # 한 번으로 갱신 권한을 잃으면 재시도 동작이 중간
-                # 실패 유무에 따라 달라진다.
+                # tweetIds(마지막 검증 생산)와 claimedTweetIds(누적 주장)는
+                # 실패로 지우지 않는다 — 동일 파일 갱신 권한·소유권
+                # 판정에 쓴다. 일시 실패 한 번으로 갱신 권한을 잃으면
+                # 재시도 동작이 중간 실패 유무에 따라 달라진다.
                 prior_rec = processed.get(fid, {}) \
                     if isinstance(processed, dict) else {}
                 failure_rec = {
@@ -881,6 +896,8 @@ def main():
                 }
                 if isinstance(prior_rec.get("tweetIds"), list):
                     failure_rec["tweetIds"] = prior_rec["tweetIds"]
+                if isinstance(prior_rec.get("claimedTweetIds"), list):
+                    failure_rec["claimedTweetIds"] = prior_rec["claimedTweetIds"]
                 processed[fid] = failure_rec
                 state["processed"] = processed
                 atomic_json(state_path, state)
