@@ -3845,5 +3845,27 @@
     "category_ko": "암호화폐 기술적 분석",
     "owner_hint": "tmmrwseoul / TradingView",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a4ce53e28bc16a22cdb0b9ce39c39b3964a282b3af060977e448df7ab5f03cf7": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/squirrellyjs/squirrelly"
+    ],
+    "title": "Squirrelly",
+    "description_ko": "TypeScript로 작성된 가볍고 매우 빠른 JavaScript 템플릿 엔진으로, partial, helper, 커스텀 태그 및 필터 등을 지원합니다.",
+    "category_ko": "템플릿 엔진",
+    "owner_hint": "squirrellyjs",
+    "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:30d69ecdc7493db87ee7aec5278accb00fe010973f063829a906370ab26af9da": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/browser-use/browser-use"
+    ],
+    "title": "browser-use",
+    "description_ko": "AI 에이전트가 웹사이트와 상호작용하고 자동화 작업을 수행할 수 있도록 돕는 오픈소스 라이브러리",
+    "category_ko": "AI / 웹 자동화",
+    "owner_hint": "browser-use",
+    "provider": "gemini"
   }
 }
