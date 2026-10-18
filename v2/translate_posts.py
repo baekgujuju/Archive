@@ -401,7 +401,7 @@ def _translation_numbers(text):
     value = _REPLY_URL_RE.sub('', value)
     value = re.sub(r'@[\w]+|\$[A-Za-z][A-Za-z0-9.]*', '', value)
     # Slash-separated chart intervals use m for minutes, not monetary millions.
-    value = re.sub(r'(?<![\w.])(\d+(?:/\d+)+)m(?=\s+(?:chart|timeframe)\b)',
+    value = re.sub(r'(?<![\w.])(\d+(?:/\d+)+)m(?=\s*(?:chart\b|timeframe\b|차트|시간대))',
                    r'\1',value,flags=re.I)
     native = {'하나':1,'한':1,'첫':1,'둘':2,'두':2,'둘째':2,'셋':3,'세':3,'셋째':3,
               '넷':4,'네':4,'넷째':4,'다섯':5,'여섯':6,'일곱':7,'여덟':8,'아홉':9,'열':10}
