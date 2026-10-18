@@ -91,6 +91,9 @@ def test_needs_translation_foreign(text):
     "BTCUSDT ETHUSDT",
     # 한국어 + 티커 나열은 번역하지 않음.
     "BTC ETH 오를까",
+    # 마침표 포함 티커·약어는 구간으로 묶지 않아 제외 (BRK.A, U.S.A. BTC).
+    "BRK.A",
+    "U.S.A. BTC",
 ])
 def test_needs_translation_skip(text):
     assert tp.needs_reply_translation(text) is False

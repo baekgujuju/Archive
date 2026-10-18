@@ -145,11 +145,14 @@ _REPLY_UPPER_PROSE_WORDS = frozenset(
     'FREE OPEN CLOSE FULL EMPTY QUIET LOUD BRIGHT DARK HEAVY LIGHT DEEP SHALLOW'.split())
 
 # 대문자 단어(1자 포함 — "A TRAP"의 A처럼 기능어 판정에 필요) 및
-# 대문자 구간 내부 구분자 (공백·줄바꿈·쉼표·콜론·마침표 등 문장 부호).
+# 대문자 구간 내부 구분자 (공백·줄바꿈·쉼표·콜론·느낌표·물음표 등).
 # 줄바꿈·콜론이 구간을 끊으면 "THIS IS\nGOOD" / "THIS IS: GOOD"이
 # 기능어만 구간 + 단일 단어 구간으로 쪼개져 누락되므로 구분자에 포함한다.
+# 마침표(.)는 구분자에서 제외한다 — 티커 점("BRK.A", "U.S.A.")이
+# 기능어 "A"와 한 구간으로 묶여 산문으로 오판정되기 때문이다.
+# "THIS IS. GOOD"은 단독 산문 실질어("GOOD") 보존으로 처리된다.
 _REPLY_UPPER_WORD_RE = re.compile(r'[A-Z]+')
-_REPLY_RUN_SEP = ' \t\n\r,;:. /|&+-!?'
+_REPLY_RUN_SEP = ' \t\n\r,;: /|&+-!?'
 # 거래 쌍 기호 접미사 — 6자 이상이어도 티커로 본다 ("BTCUSDT").
 _REPLY_PAIR_SUFFIXES = ('USDT', 'USDC', 'PERP')
 
