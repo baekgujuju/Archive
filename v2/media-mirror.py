@@ -45,6 +45,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from hooks.materialize_media import published_asset_path
 from media_select import select_media_url  # noqa: E402
 from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
 
@@ -296,6 +297,13 @@ def url_to_filename(url, mime_ext=None):
 
 def download_image(url):
     """이미지 다운로드. (성공시 (rel_path, bytes), 실패시 (None, 이유))."""
+    local_asset = published_asset_path(url, MEDIA_DIR)
+    if local_asset is not None and local_asset.exists():
+        if not cached_image_ok(local_asset, local_asset.suffix):
+            return None, 'Captured local image is incomplete'
+        if hashlib.sha256(local_asset.read_bytes()).hexdigest() != local_asset.stem.removeprefix('embedded-'):
+            return None, 'Captured local image hash mismatch'
+        return 'media/full/' + local_asset.name, 'cached'
     # Query-format URLs often have no extension. Check all MIME extensions before
     # opening the network so an existing PNG is not re-downloaded as a JPEG.
     for ext in set(ALLOWED_MIME.values()):

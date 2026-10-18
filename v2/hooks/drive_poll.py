@@ -90,6 +90,7 @@ from state_guard import (  # noqa: E402
     load_state_guarded,
     read_recovery_marker,
 )
+from materialize_media import EmbeddedMediaError, materialize_records
 from merge_policy import (  # noqa: E402
     CanonicalDuplicateError,
     check_canonical_duplicates,
@@ -551,6 +552,14 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
     # (폴 전체 중단 금지).
     try:
         with pipeline_lock():
+            try:
+                parsed = materialize_records(parsed, V2_ROOT / 'media' / 'full')
+            except EmbeddedMediaError as exc:
+                raise FileFailure('media', 'embedded_invalid', stderr=str(exc),
+                                  content_sha256=content_sha256,
+                                  downloaded_path=downloaded_path) from exc
+            _validate_parsed_records(parsed, content_sha256=content_sha256,
+                                     downloaded_path=downloaded_path)
             existing = json.loads(POSTS_JSON.read_text(encoding="utf-8")) \
                 if POSTS_JSON.exists() else []
             if not isinstance(existing, list):
