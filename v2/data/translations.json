@@ -8326,5 +8326,183 @@
     "status": "ok",
     "translated_at": "2026-10-18T06:52:15.825040+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2111369849121231072:2109880501314154859": {
+    "paragraphs": [
+      "유리 치워 주고 있는 중에….\n엄마 애인이 너무 fox이심",
+      "능글남x도도녀",
+      "⏬ 시즌2 𝑂𝑃𝐸𝑁 【토이 대디(TOY DADDY)】"
+    ],
+    "translated": [
+      "유리 치워 주고 있는 중에….\n엄마 애인이 너무 fox이심",
+      "능글남x도도녀",
+      "⏬ 시즌2 오픈 【토이 대디(TOY DADDY)】"
+    ],
+    "content_hash": "863635076dfe699e",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477356+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111369849121231072:2111393884760588316": {
+    "paragraphs": [
+      "we are in the exact opposite situation: majority of stocks are down 50% more from ATH… and very few stocks are holding"
+    ],
+    "translated": [
+      "우리는 정반대 상황에 있습니다. 대부분의 주식이 사상 최고가 대비 50% 이상 하락했고… 버티고 있는 종목은 극소수뿐입니다."
+    ],
+    "content_hash": "8bff7c1ac66bb15d",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477346+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111405001885077924:2111420477189066779": {
+    "paragraphs": [
+      "The funny thing is that in June most of optics-semi-memories stocks were trading at appropriate multiples.",
+      "Cyber security-Palantir was at like 70-80\nApple was at 35\nSemi avg was at 25-30",
+      "Now we have",
+      "Cyber security-Palantir at 100-150x\nApple at 40x\nSemi avg at 15-20"
+    ],
+    "translated": [
+      "재미있는 점은 6월에는 광학·반도체·메모리 관련주 대부분이 적정 밸류에이션 배수에 거래되고 있었다는 겁니다.",
+      "사이버 보안·팔란티어는 70~80배 정도였고\n애플은 35배\n반도체 평균은 25~30배였습니다.",
+      "지금은 이렇습니다.",
+      "사이버 보안·팔란티어는 100~150배\n애플은 40배\n반도체 평균은 15~20배입니다."
+    ],
+    "content_hash": "eb8ffe42e1aff863",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477364+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111419113478529458:2111419131937653116": {
+    "paragraphs": [
+      "2. 재무 데이터 분석가",
+      "Claude가 지원하는 금융 데이터 분석가. 이 프로젝트는 인터랙티브 데이터 시각화를 활용하여 채팅을 통해 재무 데이터를 분석하는 방법을 Claude의 역량을 활용하는 방법을 보여줍니다.",
+      "https://github.com/anthropics/claude-quickstarts/tree/main/financial-data-analyst…"
+    ],
+    "translated": [
+      "2. 재무 데이터 분석가",
+      "Claude가 지원하는 금융 데이터 분석가. 이 프로젝트는 인터랙티브 데이터 시각화를 활용하여 채팅을 통해 재무 데이터를 분석하는 방법을 Claude의 역량을 활용하는 방법을 보여줍니다.",
+      "https://github.com/anthropics/claude-quickstarts/tree/main/financial-data-analyst…"
+    ],
+    "content_hash": "705b0b4ca6216a63",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477397+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111419113478529458:2111419140447863076": {
+    "paragraphs": [
+      "4. 컴퓨터 사용 모범 사례",
+      "컴퓨터 사용 에이전트의 교육적이며 네이티브 macOS 레퍼런스 구현입니다. 컨테이너화된 Computer Use Demo와 달리, 이 프로젝트는 macOS 데스크톱을 직접 실행합니다(VM에서 실행하십시오!). 그리고 보다 신뢰할 수 있고 비용 효율적인 컴퓨터 사용 에이전트를 구축하기"
+    ],
+    "translated": [
+      "4. 컴퓨터 사용 모범 사례",
+      "컴퓨터 사용 에이전트의 교육적이며 네이티브 macOS 레퍼런스 구현입니다. 컨테이너화된 Computer Use Demo와 달리, 이 프로젝트는 macOS 데스크톱을 직접 실행합니다(VM에서 실행하십시오!). 그리고 보다 신뢰할 수 있고 비용 효율적인 컴퓨터 사용 에이전트를 구축하기"
+    ],
+    "content_hash": "27d03e3440ae2cf8",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477407+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111419113478529458:2111419145460056304": {
+    "paragraphs": [
+      "이외, 브라우저 사용 데모/브라우저 도구 모음 빠른 시작/컴퓨터 도구 모음 빠른 시작/자율 코딩 에이전트/관리형 에이전트: 채팅 SDK/CopilotKit 및 AG-UI를 사용한 관리형 에이전트/관리형 에이전트: 일일 브리프/관리형 에이전트: 지식 위키/관리형 에이전트: MCP 서버 (TypeScript)/관리형"
+    ],
+    "translated": [
+      "이외, 브라우저 사용 데모/브라우저 도구 모음 빠른 시작/컴퓨터 도구 모음 빠른 시작/자율 코딩 에이전트/관리형 에이전트: 채팅 SDK/CopilotKit 및 AG-UI를 사용한 관리형 에이전트/관리형 에이전트: 일일 브리프/관리형 에이전트: 지식 위키/관리형 에이전트: MCP 서버 (TypeScript)/관리형"
+    ],
+    "content_hash": "9821534c2db873a9",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477412+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111405001885077924:2111408541068075409": {
+    "paragraphs": [
+      "Evry major bank relains fundamentally bullish on the memory cycle. (Looking at ANR on BBG for Hynix is quite telling) - their S-D models are all based on the pipelines of accelertor suppliers but nobody has any clue about level of inventories, maybe not a pbm for 2027 but after.."
+    ],
+    "translated": [
+      "모든 주요 은행은 여전히 메모리 사이클의 펀더멘털을 낙관적으로 보고 있습니다. (블룸버그에서 하이닉스의 ANR을 보면 잘 드러납니다.) 이들의 수급 모델은 모두 가속기 공급업체들의 공급 계획을 기반으로 하지만, 재고 수준이 어느 정도인지는 아무도 모릅니다. 2027년까지는 문제가 아닐 수도 있지만, 그 이후에는…"
+    ],
+    "content_hash": "48283c197ca4591a",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477376+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111405001885077924:2111405422150385880": {
+    "paragraphs": [
+      "All the FUD that has been released over the week will be corrected somehow over the weekend and then we will close green next week. Wishing thinking? Maybe"
+    ],
+    "translated": [
+      "이번 주 내내 쏟아진 온갖 공포·불확실성·의구심은 주말 사이에 어떻게든 바로잡힐 것이고, 다음 주에는 상승 마감할 겁니다. 희망 사항이냐고요? 그럴지도요."
+    ],
+    "content_hash": "5415779cb16b3a14",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477383+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111419113478529458:2111419117114953935": {
+    "paragraphs": [
+      "1. 고객 지원 담당자",
+      "Claude가 지원하는 고객 지원 담당자. 이 프로젝트는 Claude의 자연어 이해와 생성 능력을 활용하여 AI 지원 고객 지원 시스템을 구축하고 지식 베이스에 접근할 수 있는 방법을 보여줍니다.",
+      "https://github.com/anthropics/claude-quickstarts/tree/main/customer-support-agent…"
+    ],
+    "translated": [
+      "1. 고객 지원 담당자",
+      "Claude가 지원하는 고객 지원 담당자. 이 프로젝트는 Claude의 자연어 이해와 생성 능력을 활용하여 AI 지원 고객 지원 시스템을 구축하고 지식 베이스에 접근할 수 있는 방법을 보여줍니다.",
+      "https://github.com/anthropics/claude-quickstarts/tree/main/customer-support-agent…"
+    ],
+    "content_hash": "fc508a5f20796d9d",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477393+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111408628313788675:2111423517447401793": {
+    "paragraphs": [
+      "What jumped out most to me is the 20%/19%/15% shortages in 2026/2027/2028 🤯🤯"
+    ],
+    "translated": [
+      "가장 눈에 띈 건 2026년/2027년/2028년의 공급 부족률이 각각 20%/19%/15%라는 점이었습니다 🤯🤯"
+    ],
+    "content_hash": "07a18c11fbeb5d52",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477388+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111419113478529458:2111419136547094901": {
+    "paragraphs": [
+      "3. 컴퓨터 사용 데모",
+      "Claude가 데스크톱 컴퓨터를 제어하기 위해 사용할 수 있는 환경 및 도구. 이 프로젝트는 Claude의 컴퓨터 사용 기능을 활용하는 방법을 보여주며, 최신 툴셋 쉐이프에 대한 지원을 포함하고, 각 컴퓨터 액션이 모델이 이름으로 호출하는 멤버 도구를 포함합니다."
+    ],
+    "translated": [
+      "3. 컴퓨터 사용 데모",
+      "Claude가 데스크톱 컴퓨터를 제어하기 위해 사용할 수 있는 환경 및 도구. 이 프로젝트는 Claude의 컴퓨터 사용 기능을 활용하는 방법을 보여주며, 최신 툴셋 쉐이프에 대한 지원을 포함하고, 각 컴퓨터 액션이 모델이 이름으로 호출하는 멤버 도구를 포함합니다."
+    ],
+    "content_hash": "86bb0e8adaba1d17",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477402+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111405001885077924:2111412757958435087": {
+    "paragraphs": [
+      "Have you been adding to memory names on this dip?"
+    ],
+    "translated": [
+      "이번 하락 때 메모리 종목을 추가 매수하고 계신가요?"
+    ],
+    "content_hash": "31222cbdb4741b80",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477369+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2111369849121231072:2111414258768429214": {
+    "paragraphs": [
+      "Thats a different question 👍"
+    ],
+    "translated": [
+      "그건 다른 질문이죠 👍"
+    ],
+    "content_hash": "75d2ee4e8056ff8e",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:58:54.477282+00:00",
+    "chunk": "posts-x.json"
   }
 }
