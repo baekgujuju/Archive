@@ -45,6 +45,16 @@ def _post(parent_id, replies, text="부모 글"):
     "DO NOT SELL, THIS IS A TRAP.",
     "RT @user hello world, this matters",
     "Check this out https://example.com/x — very interesting analysis here.",
+    # 차단 5 (2차 리뷰): 기능어 없는 명령문도 산문.
+    "STAY SAFE",
+    "BUY LOW SELL HIGH",
+    "TO THE MOON",
+    "NOT FINANCIAL ADVICE",
+    "GOOD MORNING",
+    "I LOVE BTC",
+    "U.S. ECONOMY",
+    "A TRAP",
+    "THIS IS GOOD 감사합니다",  # 한국어 혼합 문장의 영어 산문
 ])
 def test_needs_translation_foreign(text):
     assert tp.needs_reply_translation(text) is True
@@ -67,6 +77,15 @@ def test_needs_translation_foreign(text):
     "BTC ETH",
     "BTC ETH SOL",
     "AAPL",
+    # 차단 5 (2차 리뷰): 기능어만으로 구성된 대문자는 티커 나열로 본다.
+    "IT CAN",
+    "I CAN",
+    "DO NOT",
+    # 거래 쌍 기호는 티커로 본다.
+    "BTCUSDT",
+    "BTCUSDT ETHUSDT",
+    # 한국어 + 티커 나열은 번역하지 않음.
+    "BTC ETH 오를까",
 ])
 def test_needs_translation_skip(text):
     assert tp.needs_reply_translation(text) is False
@@ -81,6 +100,14 @@ def test_korean_plus_ticker_not_translated():
     # 일반 한국어 + 티커는 번역하지 않음.
     assert tp.needs_reply_translation("삼성전자 $005930 오늘 좋네요") is False
     assert tp.needs_reply_translation("이 종목 $AAPL 어때요?") is False
+
+
+def test_attached_upper_word_not_stripped_as_ticker():
+    # 한글에 붙은 대문자("FOMO가")는 독립 티커가 아니라 혼합 토큰의
+    # 일부이므로 제거하지 않는다 (기존 \b 경계 동작 유지).
+    assert tp.needs_reply_translation("FOMO가 온다, 일단 소액만.") is True
+    # 독립 대문자 단어는 티커로 제거.
+    assert tp.needs_reply_translation("이거 BTC 어때") is False
 
 
 # --- reply_key 네임스페이스 ---
@@ -180,7 +207,8 @@ def test_group_batches_splits_on_paragraph_limit(monkeypatch):
 
 
 def test_group_batches_single_oversized_job_kept():
-    # 한도 초과하는 단일 작업도 자기만의 배치로 유지 (버려지지 않음).
+    # group_reply_batches는 조각을 나누지 않는다 (분할은 split_reply_job이
+    # 그룹핑 전에 수행). 한도 초과하는 단일 작업도 자기만의 배치로 유지.
     big = "x" * (tp.REPLY_PROVIDER_MAX_CHARS + 100)
     jobs = [{"key": "reply:1:1", "paragraphs": [big],
              "real_indices": [0], "real_paras": [big]}]
@@ -263,6 +291,57 @@ def test_translate_replies_reassembles_split_job(monkeypatch):
     assert entry["translated"][29] == "번역:Paragraph number 29 here."
 
 
+# --- 차단 2 (2차 리뷰): 단일 초과 문단 하위 조각 분할 + 재조립 ---
+
+def test_split_long_paragraph_respects_char_limit():
+    long_para = ("Sentence number one here. " * 400).strip()
+    subs = tp._split_long_paragraph(long_para, tp.REPLY_PROVIDER_MAX_CHARS)
+    assert len(subs) > 1
+    assert all(len(s) <= tp.REPLY_PROVIDER_MAX_CHARS for s in subs)
+    assert " ".join(subs) == long_para
+
+
+def test_split_reply_job_splits_single_over_limit_paragraph():
+    long_para = ("Sentence number one here. " * 400).strip()
+    job = {"key": "reply:1:1", "paragraphs": [long_para],
+           "real_indices": [0], "real_paras": [long_para],
+           "parent_id": "1", "reply_id": "1", "text": long_para,
+           "content_hash": "abc"}
+    frags = tp.split_reply_job(job)
+    assert len(frags) > 1
+    # 모든 조각이 문단/문자 한도 내.
+    assert all(len(f["real_paras"]) <= tp.REPLY_PROVIDER_MAX_PARAGRAPHS
+               for f in frags)
+    assert all(sum(len(p) for p in f["real_paras"]) <= tp.REPLY_PROVIDER_MAX_CHARS
+               for f in frags)
+    # 조각들을 순서대로 합치면 원본 문단 복원.
+    assert " ".join(p for f in frags for p in f["real_paras"]) == long_para
+    assert all(f["key"] == "reply:1:1" for f in frags)
+
+
+def test_translate_replies_reassembles_over_limit_paragraph_across_batches(monkeypatch):
+    # 초과 문단의 하위 조각이 여러 배치에 걸려도 하나의 문단으로 재조립.
+    # (배치당 1문단으로 낮춰 조각이 배치 경계를 넘기게 한다.)
+    monkeypatch.setattr(tp, "REPLY_PROVIDER_MAX_PARAGRAPHS", 1)
+    monkeypatch.setattr(tp, "translate_paragraphs",
+                        lambda paras, strict=False: [f"번역:{p}" for p in paras])
+    monkeypatch.setattr(tp, "save_cache", lambda cache, touched: cache)
+    monkeypatch.setattr(tp.time, "sleep", lambda s: None)
+    long_para = ("Sentence number one here. " * 400).strip()
+    posts = [_post("111", [_reply("222", long_para)])]
+    cache, touched = {}, set()
+    success, failed, remaining = tp.translate_replies(
+        cache, touched, posts=posts, max_per_run=20)
+    assert (success, failed, remaining) == (1, 0, 0)
+    entry = cache["reply:111:222"]
+    assert entry["status"] == "ok"
+    assert len(entry["translated"]) == 1
+    expected = " ".join(
+        f"번역:{s}" for s in tp._split_long_paragraph(
+            long_para, tp.REPLY_PROVIDER_MAX_CHARS))
+    assert entry["translated"][0] == expected
+
+
 # --- 차단 3: strict 번호 검증 ---
 
 def test_translate_paragraphs_strict_duplicate_number(monkeypatch):
@@ -328,6 +407,41 @@ def test_cooldown_lets_later_backlog_proceed():
                           datetime.now(timezone.utc).isoformat())
     jobs = tp.collect_reply_jobs(posts, cache)
     assert [j["key"] for j in jobs] == ["reply:111:333"]
+
+
+# --- 차단 1 (2차 리뷰): 쿨다운/백로그가 남으면 마커 유지를 위해 남은 수에 포함 ---
+
+def test_collect_counts_cooldown_skipped_in_stats():
+    from datetime import datetime, timezone
+    posts = [_post("111", [_reply("222", "This is a great point.")])]
+    cache = _failed_cache("This is a great point.",
+                          datetime.now(timezone.utc).isoformat())
+    stats = {}
+    assert tp.collect_reply_jobs(posts, cache, stats=stats) == []
+    assert stats["cooldown_skipped"] == 1
+
+
+def test_translate_replies_cooldown_only_counts_as_remaining(monkeypatch):
+    # 쿨다운만 남은 경우: 성공/실패 0건이지만 남은 백로그 1건으로 보고해
+    # 후크가 재시도 마커를 유지하고 쿨다운 만료 후 재시도하게 한다.
+    from datetime import datetime, timezone
+    posts = [_post("111", [_reply("222", "This is a great point.")])]
+    cache = _failed_cache("This is a great point.",
+                          datetime.now(timezone.utc).isoformat())
+    monkeypatch.setattr(tp, "save_cache", lambda cache, touched: cache)
+    monkeypatch.setattr(tp.time, "sleep", lambda s: None)
+    assert tp.translate_replies(dict(cache), set(), posts=posts) == (0, 0, 1)
+
+
+def test_cooldown_naive_timestamp_does_not_raise():
+    # 시간대 없는 ISO 문자열(구 캐시 등)도 TypeError 없이 처리.
+    from datetime import datetime
+    posts = [_post("111", [_reply("222", "This is a great point.")])]
+    cache = _failed_cache("This is a great point.",
+                          datetime.now().isoformat())  # naive
+    stats = {}
+    assert tp.collect_reply_jobs(posts, cache, stats=stats) == []
+    assert stats["cooldown_skipped"] == 1
 
 
 # --- translate_replies (orchestrator) ---
@@ -427,3 +541,33 @@ def test_main_processes_replies_when_no_parent_jobs(monkeypatch, tmp_path):
     assert tp.main() == 0
     assert "reply:111:222" in saved
     assert saved["reply:111:222"]["status"] == "ok"
+
+
+def test_main_returns_1_when_reply_backlog_remains(monkeypatch, tmp_path):
+    # 백로그가 남으면 1 반환 → 후크가 재시도 마커를 유지해 다음 폴이
+    # 백로그를 이어서 처리한다 (0이면 마커 삭제 → 백로그 정체).
+    posts = {"posts": [_post("111", [
+        _reply("222", "This is a great point."),
+        _reply("333", "Another great point here."),
+    ], text="한국어 부모 글")]}
+    (tmp_path / "posts-x.json").write_text(
+        json.dumps(posts, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(tp, "DATA_DIR", tmp_path)
+    saved = {}
+    monkeypatch.setattr(tp, "load_cache", lambda: {})
+    monkeypatch.setattr(tp, "save_cache",
+                        lambda cache, touched: saved.update(cache) or cache)
+    monkeypatch.setattr(tp, "translate_paragraphs",
+                        lambda paras, strict=False: [f"번역:{p}" for p in paras])
+    monkeypatch.setattr(tp.time, "sleep", lambda s: None)
+    monkeypatch.setattr(sys, "argv", ["translate_posts.py", "--reply-batch", "1"])
+    assert tp.main() == 1
+    assert len(saved) == 1
+    # 두 번째 폴: 남은 1건 처리 → 전부 완료 → 0.
+    saved2 = {}
+    monkeypatch.setattr(tp, "load_cache", lambda: dict(saved))
+    monkeypatch.setattr(tp, "save_cache",
+                        lambda cache, touched: saved2.update(cache) or cache)
+    monkeypatch.setattr(sys, "argv", ["translate_posts.py"])
+    assert tp.main() == 0
+    assert "reply:111:333" in saved2

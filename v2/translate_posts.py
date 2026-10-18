@@ -118,15 +118,38 @@ _REPLY_URL_RE = re.compile(r'https?://\S+|www\.\S+')
 _REPLY_MENTION_RE = re.compile(r'@[A-Za-z0-9_]+')
 _REPLY_HASHTAG_RE = re.compile(r'#[A-Za-z0-9_가-힣]+')
 _REPLY_TICKER_RE = re.compile(r'\$[A-Za-z][A-Za-z0-9.]*')
-_REPLY_BARE_TICKER_RE = re.compile(r'\b[A-Z]{2,5}\b')
 
 # 전부 대문자인 문장에서 산문을 구분하는 기능어 (관사/대명사/조동사 등).
-# "THIS IS GOOD"은 기능어(IS)가 있어 산문, "BTC ETH"는 기능어가 없어 티커 나열.
+# "THIS IS GOOD"은 기능어(IS)+실질어(GOOD)가 있어 산문,
+# "BTC ETH"는 기능어·실질어 구분이 없어 티커 나열.
+# "IT CAN"은 기능어만으로 구성(실질어 없음) → 티커 나열로 본다.
 _REPLY_UPPER_FUNCTION_WORDS = frozenset(
     'IS ARE WAS WERE BE BEEN THE A AN AND OR NOT DO DOES DID THIS THAT THESE THOSE '
     'IT ITS TO OF IN ON FOR WITH BY AT FROM AS HAVE HAS HAD WILL WOULD CAN COULD '
     'SHOULD IF THEN THAN BUT SO NO YES ALL ANY YOU YOUR WE OUR THEY THEIR HE SHE '
     'HIS HER I AM ME MY US HIM THEM'.split())
+
+# 대문자 구간의 산문을 구분하는 실질어 (동사·형용사/부사·속어).
+# 기능어가 없는 명령문("STAY SAFE", "BUY LOW SELL HIGH")도 산문으로 본다.
+_REPLY_UPPER_PROSE_WORDS = frozenset(
+    'BUY SELL HOLD STAY WATCH WAIT RUN GO KEEP TAKE MAKE GET GIVE CHECK '
+    'LOOK SEE STOP START BUILD BREAK PUMP DUMP SEND LOAD STACK LOVE LIKE '
+    'WANT NEED THINK KNOW FEEL BELIEVE HOPE WISH PRAY WORK PLAY LIVE DIE '
+    'WIN LOSE PAY EARN SAVE SPEND READ WRITE CALL TALK SPEAK SAY TELL ASK '
+    'ANSWER HELP TRY LEARN TEACH SHOW PROVE COME LEAVE SLEEP WAKE EAT DRINK '
+    'DRIVE FLY SWIM FIGHT VOTE MARCH PROTEST MOON REKT HODL WAGMI NGMI '
+    'FOMO FUD BASED CRINGE MID '
+    'GOOD BAD GREAT SAFE HIGH LOW STRONG WEAK NEW OLD BIG SMALL FAST SLOW '
+    'HOT COLD RED GREEN LONG SHORT EARLY LATE HARD EASY TRUE FALSE RIGHT '
+    'WRONG RICH POOR HAPPY SAD ANGRY CRAZY INSANE BULLISH BEARISH DEAD ALIVE '
+    'FREE OPEN CLOSE FULL EMPTY QUIET LOUD BRIGHT DARK HEAVY LIGHT DEEP SHALLOW'.split())
+
+# 대문자 단어(1자 포함 — "A TRAP"의 A처럼 기능어 판정에 필요) 및
+# 대문자 구간 내부 구분자 (공백·쉼표·세미콜론·슬래시 등).
+_REPLY_UPPER_WORD_RE = re.compile(r'[A-Z]+')
+_REPLY_RUN_SEP = ' \t,;/|&+-'
+# 거래 쌍 기호 접미사 — 6자 이상이어도 티커로 본다 ("BTCUSDT").
+_REPLY_PAIR_SUFFIXES = ('USDT', 'USDC', 'PERP')
 
 
 def reply_key(parent_id, reply_id):
@@ -139,22 +162,100 @@ def _is_korean_char(ch):
     return ('가' <= ch <= '힣') or ('ㄱ' <= ch <= 'ㅣ')
 
 
+def _is_word_char(ch):
+    """단어 문자인지 (한글·영문·숫자·밑줄 — \b 경계 판정용)."""
+    return ch.isalnum() or ch == '_'
+
+
+def _is_standalone_upper(text, match):
+    """대문자 단어가 독립 단어인지 (앞뒤가 단어 문자가 아니어야 함).
+
+    "FOMO가"의 FOMO처럼 다른 단어 문자에 붙어 있으면 독립 티커가
+    아니라 혼합 토큰의 일부이므로 제거 대상에서 제외한다.
+    """
+    start, end = match.start(), match.end()
+    if start > 0 and _is_word_char(text[start - 1]):
+        return False
+    if end < len(text) and _is_word_char(text[end]):
+        return False
+    return True
+
+
+def _is_prose_upper_run(words):
+    """대문자 단어 연속 구간이 산문인지 (티커 나열과 구분).
+
+    - 단일 단어: 6자 이상이면 티커 기호(1~5자)가 아니므로 산문으로 본다.
+      (기존 {2,5} 제거 범위를 유지 — "ECONOMY"는 보존, "BTC"는 제거.)
+    - 2단어 이상: 기능어+실질어 조합, 산문 실질어 포함, 6자 이상 단어
+      포함 중 하나라도 해당하면 산문이다.
+      "THIS IS GOOD" → 기능어+실질어 → 산문.
+      "STAY SAFE" / "BUY LOW SELL HIGH" → 산문 실질어 → 산문.
+      "BTC ETH" → 해당 없음 → 티커 나열.
+      "IT CAN" → 기능어만 (실질어 없음) → 티커 나열.
+    """
+    if len(words) == 1:
+        w = words[0]
+        return len(w) >= 6 and not w.endswith(_REPLY_PAIR_SUFFIXES)
+    has_function = any(w in _REPLY_UPPER_FUNCTION_WORDS for w in words)
+    has_content = any(w not in _REPLY_UPPER_FUNCTION_WORDS for w in words)
+    if has_function and has_content:
+        return True
+    if any(w in _REPLY_UPPER_PROSE_WORDS for w in words):
+        return True
+    if any(len(w) >= 6 and not w.endswith(_REPLY_PAIR_SUFFIXES) for w in words):
+        return True
+    return False
+
+
+def _strip_bare_tickers(text):
+    """대문자 약어(티커) 구간만 제거하고, 산문 구간은 보존한다.
+
+    대문자 단어의 연속 구간(run) 단위로 판단한다. 티커 구간은 단어를
+    공백으로 바꿔 이웃 단어가 붙지 않게 하고, 산문 구간은 그대로 둔다.
+    """
+    out = []
+    i = 0
+    n = len(text)
+    while i < n:
+        m = _REPLY_UPPER_WORD_RE.match(text, i)
+        if not m or not _is_standalone_upper(text, m):
+            out.append(text[i])
+            i += 1
+            continue
+        # 연속 대문자 단어 구간 수집 (구분자는 공백/쉼표/슬래시 등만 허용).
+        run = [m]
+        j = m.end()
+        while True:
+            k = j
+            while k < n and text[k] in _REPLY_RUN_SEP:
+                k += 1
+            m2 = _REPLY_UPPER_WORD_RE.match(text, k)
+            if not m2 or not _is_standalone_upper(text, m2):
+                break
+            run.append(m2)
+            j = m2.end()
+        words = [text[x.start():x.end()] for x in run]
+        span_start, span_end = run[0].start(), run[-1].end()
+        if _is_prose_upper_run(words):
+            out.append(text[span_start:span_end])
+        else:
+            out.append(' ' * (span_end - span_start))
+        i = span_end
+    return ''.join(out)
+
+
 def _strip_reply_noise(text):
     """번역 여부 판단용: URL·멘션·해시태그·티커·대문자 약어 제거.
 
-    대문자 약어(티커) 제거는 소문자나 한글이 섞인 경우에만 적용한다.
-    전부 대문자인 문장은 외국어 산문일 수 있다 ("THIS IS GOOD") —
-    기능어가 있으면 산문으로 보고 제거하지 않고, 기능어가 없으면
-    티커 나열로 보고 제거한다 ("BTC ETH").
+    대문자 약어 제거는 구간 단위로 산문 여부를 판단한다 (위
+    _strip_bare_tickers 참조). 한국어 혼합 문장의 영어 산문
+    ("THIS IS GOOD 감사합니다")이 티커로 오제거되지 않는다.
     """
     t = _REPLY_URL_RE.sub('', text)
     t = _REPLY_MENTION_RE.sub('', t)
     t = _REPLY_HASHTAG_RE.sub('', t)
     t = _REPLY_TICKER_RE.sub('', t)
-    if re.search(r'[a-z가-힣]', t):
-        t = _REPLY_BARE_TICKER_RE.sub('', t)
-    elif not any(w in _REPLY_UPPER_FUNCTION_WORDS for w in re.findall(r'[A-Z]+', t)):
-        t = _REPLY_BARE_TICKER_RE.sub('', t)
+    t = _strip_bare_tickers(t)
     return t
 
 
@@ -206,19 +307,26 @@ def _in_reply_failure_cooldown(cached, current_hash):
         failed_dt = datetime.fromisoformat(failed_at)
     except ValueError:
         return False
+    if failed_dt.tzinfo is None:
+        # 시간대 없는 ISO 문자열 (구 캐시 등) — UTC로 간주해 TypeError 방지.
+        failed_dt = failed_dt.replace(tzinfo=timezone.utc)
     return datetime.now(timezone.utc) - failed_dt < REPLY_FAILURE_COOLDOWN
 
 
-def collect_reply_jobs(posts, cache, force=False):
+def collect_reply_jobs(posts, cache, force=False, stats=None):
     """번역이 필요한 답글 수집 (결정적 순서: 글 순서 → 답글 순서).
 
     캐시가 유효하면(해시 일치 + 문단 일치 + 번역 완비) 스킵.
     번역 대상 문단이 하나라도 있는 답글만 작업으로 만든다.
+    쿨다운 중인 외국어 답글은 작업에서 제외하되 stats에
+    'cooldown_skipped'로 세어 남은 백로그로 보고한다
+    (마커 유지 → 쿨다운 만료 후 다음 폴이 재시도).
     Returns: job dict 리스트
       {parent_id, reply_id, key, text, paragraphs, real_indices,
        real_paras, content_hash}
     """
     jobs = []
+    cooldown_skipped = 0
     for post in posts:
         if not isinstance(post, dict):
             continue
@@ -247,15 +355,17 @@ def collect_reply_jobs(posts, cache, force=False):
                                 and all(isinstance(t, str) and t.strip() for t in cached['translated']))
                 if cached.get('content_hash') == h and cached.get('status') == 'ok' and valid_cached:
                     continue
-                # 최근 실패 쿨다운: 실패한 앞쪽 작업을 이번 실행에서 건너뛰어
-                # 뒤쪽 백로그가 진행되게 한다. 쿨다운 후 다음 폴에 재시도.
-                if _in_reply_failure_cooldown(cached, h):
-                    continue
                 if cached.get('content_hash') != h:
                     print(f"  답글 해시 변경 → 재번역: {key[:60]}")
             real_indices = [i for i, p in enumerate(paragraphs)
                             if needs_reply_translation(p) and not is_placeholder(p)]
             if not real_indices:
+                continue
+            # 최근 실패 쿨다운: 실패한 앞쪽 작업을 이번 실행에서 건너뛰어
+            # 뒤쪽 백로그가 진행되게 한다. 쿨다운 후 다음 폴에 재시도.
+            # (작업 목록에서는 빼지만 남은 백로그로 센다.)
+            if cached and not force and _in_reply_failure_cooldown(cached, h):
+                cooldown_skipped += 1
                 continue
             jobs.append({
                 'parent_id': parent_id, 'reply_id': reply_id, 'key': key,
@@ -264,45 +374,104 @@ def collect_reply_jobs(posts, cache, force=False):
                 'real_paras': [paragraphs[i] for i in real_indices],
                 'content_hash': h,
             })
+    if stats is not None:
+        stats['cooldown_skipped'] = cooldown_skipped
     return jobs
+
+
+def _split_long_paragraph(paragraph, max_chars):
+    """초과 문단 하나를 한도 내 하위 조각으로 나눈다.
+
+    문장 경계(마침표/물음표/느낌표 + 공백) 우선, 단일 문장이 여전히
+    초과하면 공백 경계로 나누고, 단일 단어가 초과하면 강제 절단한다.
+    재조립 시 조각들을 ' '로 결합해 원래 문단으로 합친다.
+    """
+    if len(paragraph) <= max_chars:
+        return [paragraph]
+    sentences = re.split(r'(?<=[.!?。！？…])\s+', paragraph)
+    pieces = []
+    cur = ''
+    for s in sentences:
+        if not cur:
+            cur = s
+        elif len(cur) + 1 + len(s) <= max_chars:
+            cur = cur + ' ' + s
+        else:
+            pieces.append(cur)
+            cur = s
+    if cur:
+        pieces.append(cur)
+    result = []
+    for piece in pieces:
+        if len(piece) <= max_chars:
+            result.append(piece)
+            continue
+        words = piece.split(' ')
+        cur = ''
+        for w in words:
+            if not cur:
+                cur = w
+            elif len(cur) + 1 + len(w) <= max_chars:
+                cur = cur + ' ' + w
+            else:
+                result.append(cur)
+                cur = w
+        if cur:
+            result.append(cur)
+    final = []
+    for piece in result:
+        if len(piece) <= max_chars:
+            final.append(piece)
+        else:
+            for i in range(0, len(piece), max_chars):
+                final.append(piece[i:i + max_chars])
+    return final
 
 
 def split_reply_job(job):
     """단일 작업이 provider 한도를 초과하면 한도 내 조각으로 나눈다.
 
     조각은 같은 key를 공유하고 real_indices 부분집합을 갖는다.
-    단일 문단 자체가 문자 한도를 초과하면 나눌 수 없으므로 그대로
-    하나의 조각으로 보낸다 (문단을 자르면 정렬이 깨진다).
+    단일 문단 자체가 문자 한도를 초과하면 문장 경계(→공백 경계)로
+    하위 조각으로 나눠 번역한 뒤 원래 문단으로 합친다
+    (translate_reply_batch / translate_replies에서 ' '로 결합).
+    한도 내 작업은 원본 그대로 반환한다 (호출자 비교용).
     """
     paras = job['real_paras']
     indices = job['real_indices']
     if (len(paras) <= REPLY_PROVIDER_MAX_PARAGRAPHS
-            and sum(len(p) for p in paras) <= REPLY_PROVIDER_MAX_CHARS):
+            and sum(len(p) for p in paras) <= REPLY_PROVIDER_MAX_CHARS
+            and all(len(p) <= REPLY_PROVIDER_MAX_CHARS for p in paras)):
         return [job]
-    fragments = []
-    cur_idx, cur_paras, cur_chars = [], 0, 0
+    # 문단을 단위(unit)로 확장: (문단 위치, 텍스트, 하위 조각 번호).
+    # 하위 조각이 없는 문단은 sub_idx 0 하나만 갖는다.
+    units = []
     for pos, p in zip(indices, paras):
-        n = len(p)
-        if cur_idx and (cur_paras + 1 > REPLY_PROVIDER_MAX_PARAGRAPHS
-                        or cur_chars + n > REPLY_PROVIDER_MAX_CHARS):
-            fragments.append(_reply_fragment(job, cur_idx))
-            cur_idx, cur_paras, cur_chars = [], 0, 0
-        cur_idx.append(pos)
-        cur_paras += 1
-        cur_chars += n
-    if cur_idx:
-        fragments.append(_reply_fragment(job, cur_idx))
+        for si, sub in enumerate(_split_long_paragraph(p, REPLY_PROVIDER_MAX_CHARS)):
+            units.append((pos, sub, si))
+    fragments = []
+    cur_units, cur_chars = [], 0
+    for unit in units:
+        if cur_units and (len(cur_units) + 1 > REPLY_PROVIDER_MAX_PARAGRAPHS
+                          or cur_chars + len(unit[1]) > REPLY_PROVIDER_MAX_CHARS):
+            fragments.append(_reply_fragment_from_units(job, cur_units))
+            cur_units, cur_chars = [], 0
+        cur_units.append(unit)
+        cur_chars += len(unit[1])
+    if cur_units:
+        fragments.append(_reply_fragment_from_units(job, cur_units))
     return fragments
 
 
-def _reply_fragment(job, positions):
-    """작업의 real_indices 부분집합 조각."""
+def _reply_fragment_from_units(job, units):
+    """단위 리스트로 만든 작업 조각 (sub_indices는 재조립 순서용)."""
     return {
         'parent_id': job['parent_id'], 'reply_id': job['reply_id'],
         'key': job['key'], 'text': job['text'],
         'paragraphs': job['paragraphs'],
-        'real_indices': list(positions),
-        'real_paras': [job['paragraphs'][i] for i in positions],
+        'real_indices': [u[0] for u in units],
+        'real_paras': [u[1] for u in units],
+        'sub_indices': [u[2] for u in units],
         'content_hash': job['content_hash'],
     }
 
@@ -333,21 +502,28 @@ def translate_reply_batch(batch):
     """배치(작업 조각 리스트)를 한 번의 provider 호출로 번역.
 
     답글별 경계는 번호([N])로 유지하고, 결과는 답글별 위치 매핑으로 반환한다.
+    하위 조각(초과 문단의 분할)은 같은 위치에 sub_idx 순서대로 결합해
+    원래 문단 하나의 번역문으로 만든다.
     Returns: {key: {문단 위치: 번역문}}
     Raises: 번역 문단 누락/실패 시 RuntimeError (호출자가 답글별 처리).
     """
     flat = []
-    positions = []
+    positions = []  # (key, 문단 위치, 하위 조각 번호)
     for frag in batch:
-        for pos, p in zip(frag['real_indices'], frag['real_paras']):
+        sub_indices = frag.get('sub_indices') or [0] * len(frag['real_paras'])
+        for pos, p, si in zip(frag['real_indices'], frag['real_paras'], sub_indices):
             flat.append(p)
-            positions.append((frag['key'], pos))
+            positions.append((frag['key'], pos, si))
     translated_flat = translate_paragraphs(flat, strict=True)
     if len(translated_flat) != len(flat) or any(not t.strip() for t in translated_flat):
         raise RuntimeError('배치 번역 문단 누락: 완료로 기록하지 않고 재시도합니다.')
+    grouped = {}  # (key, 문단 위치) -> [(하위 조각 번호, 번역문)]
+    for (key, pos, si), t in zip(positions, translated_flat):
+        grouped.setdefault((key, pos), []).append((si, t))
     result = {}
-    for (key, pos), t in zip(positions, translated_flat):
-        result.setdefault(key, {})[pos] = t
+    for (key, pos), items in grouped.items():
+        items.sort(key=lambda x: x[0])
+        result.setdefault(key, {})[pos] = ' '.join(t for _, t in items)
     return result
 
 
@@ -385,14 +561,22 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
         with open(chunk_path, encoding='utf-8') as f:
             data = json.load(f)
         posts = data.get('posts', []) if isinstance(data, dict) else []
-    jobs = collect_reply_jobs(posts, cache, force=force)
+    stats = {}
+    jobs = collect_reply_jobs(posts, cache, force=force, stats=stats)
+    cooldown_skipped = stats.get('cooldown_skipped', 0)
     total = len(jobs)
     if not total:
+        if cooldown_skipped:
+            # 작업은 없지만 쿨다운 대기 중인 백로그가 있음 — 남은 백로그로
+            # 보고해 재시도 마커가 유지되고 쿨다운 만료 후 재시도되게 한다.
+            print(f"답글 번역: 쿨다운 대기 중 {cooldown_skipped}개 — 다음 폴에 재시도.")
+            return 0, 0, cooldown_skipped
         print("번역할 답글이 없습니다.")
         return 0, 0, 0
     jobs = jobs[:max_per_run]
     jobs_by_key = {j['key']: j for j in jobs}
-    print(f"답글 번역 대상: {len(jobs)}개 (전체 미번역 {total}개, 폴당 상한 {max_per_run})")
+    print(f"답글 번역 대상: {len(jobs)}개 "
+          f"(전체 미번역 {total + cooldown_skipped}개, 폴당 상한 {max_per_run})")
     fragments = []
     for job in jobs:
         fragments.extend(split_reply_job(job))
@@ -428,7 +612,14 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
             continue
         consecutive_failures = 0
         for key, pos_map in pos_maps.items():
-            accumulated.setdefault(key, {}).update(pos_map)
+            # 동일 (key, 위치)가 여러 배치에 나타나는 경우는 하위 조각이
+            # 배치 경계를 넘긴 경우뿐이다 — 배치 순서대로 결합한다.
+            # (일반 문단은 한 배치에만 나타나므로 결합이 발생하지 않음.)
+            for pos, t in pos_map.items():
+                if pos in accumulated.get(key, {}):
+                    accumulated[key][pos] = accumulated[key][pos] + ' ' + t
+                else:
+                    accumulated.setdefault(key, {})[pos] = t
         time.sleep(2)
     # 답글별 조립: 완전한 것만 캐시에 저장 (부분 성공은 저장하지 않음).
     # 시도하지 않은 작업(조기 중단)은 실패로 기록하지 않고 그대로 둔다.
@@ -464,7 +655,8 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
         save_cache(cache, touched)
         touched.clear()
     failed = len(failed_keys)
-    remaining = total - success
+    # 남은 백로그 = 미완료 작업 + 쿨다운 대기 중 작업.
+    remaining = total - success + cooldown_skipped
     print(f"답글 번역: 성공 {success}개, 실패 {failed}개, 남은 백로그 {remaining}개")
     return success, failed, remaining
 
@@ -917,7 +1109,12 @@ def main():
     if not args.no_replies:
         print(f"답글 번역: 실패 {reply_failed}개, 남은 백로그 {reply_remaining}개")
     print(f"캐시 파일: {CACHE_FILE}")
-    return 1 if (failed or reply_failed) else 0
+    # 남은 백로그가 있으면 1을 반환한다: 후크는 종료 코드 0일 때만
+    # 재시도 마커를 삭제하므로, 0을 반환하면 백로그가 남아도 마커가
+    # 사라져 다음 폴(새 글 없음)이 "변경 없음"으로 조기 종료해 백로그가
+    # 영구 정체된다. 쿨다운 중인 작업도 남은 백로그에 포함되므로,
+    # 쿨다운 만료 후 다음 폴이 재시도한다. 실패가 아니라 "미완료"임.
+    return 1 if (failed or reply_failed or reply_remaining > 0) else 0
 
 
 if __name__ == '__main__':
