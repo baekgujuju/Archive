@@ -109,6 +109,7 @@ REPLY_KEY_PREFIX = "reply:"
 # 답글 로더는 TARGET_CHUNKS 전체를 순회한다 (X 전용 아님).
 # 웹/IB에 답글이 생겨도 처리되게 하며, 청크 표기는 실제 청크별로 남긴다.
 REPLY_MAX_PER_RUN = 20  # 폴당 최대 답글 수 (bounded — 무제한 장시간 작업 방지)
+BODY_MAX_PER_RUN = 20
 REPLY_PROVIDER_MAX_PARAGRAPHS = 24  # provider 호출당 최대 문단 수
 REPLY_PROVIDER_MAX_CHARS = 6000  # provider 호출당 최대 문자 수
 REPLY_FAILURE_COOLDOWN = timedelta(minutes=60)  # 실패 후 재시도 쿨다운
@@ -301,6 +302,17 @@ def needs_reply_translation(text):
     """
     if not text or not text.strip():
         return False
+    without_urls=_REPLY_URL_RE.sub('',text).strip()
+    # Reference labels and entity-only collaboration headings are identifiers,
+    # not sentences. Do not make "GitHub: URL" or "Codex 🤝 Tailscale" fail
+    # translation and block later prose. Ordinary short replies stay eligible.
+    if _REPLY_URL_RE.search(text) and re.fullmatch(r'[A-Za-z][\w.-]{1,24}:',without_urls):
+        return False
+    entities=without_urls.split('🤝')
+    if len(entities)==2 and all(re.fullmatch(r'[A-Z][A-Za-z0-9._-]*(?:[ \t]+[A-Z][A-Za-z0-9._-]*){0,2}',part.strip()) for part in entities):
+        words=re.findall(r'[A-Za-z]+',without_urls)
+        if not any(word.upper() in _REPLY_UPPER_FUNCTION_WORDS | _REPLY_UPPER_PROSE_WORDS for word in words):
+            return False
     lines=[line.strip() for line in text.splitlines() if line.strip()]
     command = r'^(?:[$>]\s*)?(?:npx\s+\S+|(?:npm|pnpm|yarn)\s+(?:install|add|run|exec|create|dlx)\b|pip3?\s+(?:install|uninstall|show|list)\b|uv\s+(?:pip|run|add|sync)\b|git\s+(?:clone|pull|push|checkout|switch|status|diff|add|commit)\b|python3?\s+(?:-m\s+|\S+\.py\b)|node\s+\S+\.m?js\b|(?:curl|wget)\s+(?:-|https?://))'
     if lines and all(re.match(command,line) for line in lines):
@@ -1148,13 +1160,18 @@ def save_cache(cache, touched):
 
 
 def main():
+    from datetime import datetime, timezone
     parser = argparse.ArgumentParser(description='영어 게시글 문단별 번역 (X/Web/IB)')
     parser.add_argument('--force', action='store_true', help='캐시 무시하고 다시 번역')
+    parser.add_argument('--body-batch',type=int,default=BODY_MAX_PER_RUN,
+                        help=f'실행당 본문 작업 상한 (기본 {BODY_MAX_PER_RUN})')
     parser.add_argument('--chunks',nargs='+',choices=TARGET_CHUNKS,help='지정한 데이터 청크만 갱신')
     parser.add_argument('--reply-batch', type=int, default=REPLY_MAX_PER_RUN,
                         help=f'폴당 답글 번역 상한 (기본 {REPLY_MAX_PER_RUN}, bounded 배치)')
     parser.add_argument('--no-replies', action='store_true', help='답글 번역 건너뜀')
     args = parser.parse_args()
+    if args.body_batch < 1:
+        parser.error('--body-batch must be at least 1')
 
     # --force는 "다시 번역"만 제어한다: 캐시는 항상 로드해 병합 베이스로 쓴다.
     # (예전: --force 시 빈 캐시에서 시작해 최종 저장에서 전역 캐시를 이번 실행분으로
@@ -1171,6 +1188,7 @@ def main():
     to_translate = []  # (post_id, text, chunk)
     skipped_hash = 0
     skipped_ko = 0
+    body_cooldown_skipped = 0
     for chunk_name in (args.chunks or TARGET_CHUNKS):
         chunk_path = DATA_DIR / chunk_name
         if not chunk_path.exists():
@@ -1200,8 +1218,14 @@ def main():
                     continue
                 if cached.get("content_hash") != h:
                     print(f"  해시 변경 → 재번역: {post_id[:40]}")
+                if _in_reply_failure_cooldown(cached,h):
+                    body_cooldown_skipped += 1
+                    continue
 
             to_translate.append((post_id, text, chunk_name))
+
+    body_pending=len(to_translate)+body_cooldown_skipped
+    to_translate=to_translate[:args.body_batch]
 
     print(f"번역 대상: {len(to_translate)}개 "
           f"(해시스킵 {skipped_hash}, 한국어포함스킵 {skipped_ko})")
@@ -1212,7 +1236,7 @@ def main():
         # 답글은 TARGET_CHUNKS 전체를 보므로, 선택 청크가 TARGET_CHUNKS와
         # 겹치면 답글 단계를 건너뛰지 않는다 (X 전용 게이팅 금지).
         if args.no_replies or (args.chunks and not set(args.chunks) & set(TARGET_CHUNKS)):
-            return 0
+            return 1 if body_cooldown_skipped else 0
 
     success, failed, consecutive_failures = 0, 0, 0
     for i, (post_id, text, chunk_name) in enumerate(to_translate):
@@ -1244,7 +1268,6 @@ def main():
                     full_translated.append(translated[ri] if ri < len(translated) else "")
                     ri += 1
 
-            from datetime import datetime, timezone
             cache[post_id] = {
                 "paragraphs": paragraphs,  # 원문 보존
                 "translated": full_translated,
@@ -1259,15 +1282,15 @@ def main():
             touched.add(post_id)
             print(f"  ✓ 번역 완료")
 
-            if (i + 1) % 5 == 0:
-                try:
-                    save_cache(cache, touched)
-                    touched.clear()
-                    print(f"  (캐시 중간 저장)")
-                except Exception as e:
-                    # 중간 저장 실패는 번역 성공과 별개: 최종 저장에서 재시도한다.
-                    print(f"  (캐시 중간 저장 실패 — 최종 저장에서 재시도: {e})",
-                          file=sys.stderr)
+            try:
+                save_cache(cache, touched)
+                touched.clear()
+                print(f"  (완료 본문 즉시 저장)")
+            except Exception as e:
+                # Retain touched keys for a later/final retry. A successful
+                # provider call must not be lost if the next call is killed.
+                print(f"  (캐시 중간 저장 실패 — 최종 저장에서 재시도: {e})",
+                      file=sys.stderr)
 
             time.sleep(2)
         except Exception as e:
@@ -1281,6 +1304,7 @@ def main():
                 "content_hash": content_hash(text),
                 "status": "failed",
                 "error": str(e)[:200],
+                "failed_at": datetime.now(timezone.utc).isoformat(),
             }
             previous=cache.get(post_id)
             if previous and valid_translation_cache(previous, previous.get('paragraphs'), needs_body_translation):
@@ -1311,6 +1335,8 @@ def main():
 
     print(f"\n=== 완료 ===")
     print(f"성공: {success}개, 실패: {failed}개")
+    body_remaining=body_pending-success
+    print(f"본문 번역: 남은 백로그 {body_remaining}개 (쿨다운 {body_cooldown_skipped}개)")
     if not args.no_replies:
         print(f"답글 번역: 실패 {reply_failed}개, 남은 백로그 {reply_remaining}개")
     print(f"캐시 파일: {CACHE_FILE}")
@@ -1319,7 +1345,7 @@ def main():
     # 사라져 다음 폴(새 글 없음)이 "변경 없음"으로 조기 종료해 백로그가
     # 영구 정체된다. 쿨다운 중인 작업도 남은 백로그에 포함되므로,
     # 쿨다운 만료 후 다음 폴이 재시도한다. 실패가 아니라 "미완료"임.
-    return 1 if (failed or reply_failed or reply_remaining > 0) else 0
+    return 1 if (failed or body_remaining > 0 or reply_failed or reply_remaining > 0) else 0
 
 
 if __name__ == '__main__':
