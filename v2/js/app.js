@@ -105,7 +105,7 @@ var ArchiveApp = (function () {
     // 답글 원문 + 문단 정렬 한국어 번역 (부모 translatedBody와 동일 패턴).
     // 번역이 없거나 원문과 캐시 문단이 어긋나면(수정/재정렬/문단 경계 변경)
     // 원문만 표시.
-    var tr=r.translation,text=String(r.fullText||'');
+    var tr=r.translation,text=String(r.fullText||r.text||'');
     if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return '<p class="reply-text">'+linkText(text)+'</p>';
     var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};
     if(!replyParagraphsMatch(text,tr.paragraphs))return '<p class="reply-text">'+linkText(text)+'</p>';
@@ -427,7 +427,8 @@ var ArchiveApp = (function () {
     if (!bookmarks || typeof bookmarks !== 'object' || Array.isArray(bookmarks)) bookmarks = {};
     if (controls) update();
   }
-  return { init: init, refreshSavedState: refreshSavedState, sanitizeHtml: cleanHtml };
+  // replyBody: 테스트용 노출 (text 폴백 검증 — render 테스트에서 사용).
+  return { init: init, refreshSavedState: refreshSavedState, sanitizeHtml: cleanHtml, replyBody: replyBody };
 }());
 
 

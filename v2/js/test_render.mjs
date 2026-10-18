@@ -34,6 +34,12 @@ const {
   repliesHtml,
 } = ctx.window.ArchiveRender;
 
+// app.js도 classic script로 실행 (replyBody 테스트용 — IIFE는
+// 로드 시 DOM을 건드리지 않으므로 최소 컨텍스트로 충분).
+const appSrc = readFileSync(join(__dirname, 'app.js'), 'utf8');
+new vm.Script(appSrc, { filename: 'app.js' }).runInContext(ctx);
+const appReplyBody = ctx.window.ArchiveApp.replyBody;
+
 let pass = 0;
 let fail = 0;
 function check(name, cond, detail = '') {
@@ -247,6 +253,17 @@ const rh7 = repliesHtml({
       translated: ['첫 번째 문단.', '두 번째 문단.'] } }],
 });
 check('답글 문단 경계 변경 시 번역 미표시', rh7.includes('First para here. Second para here.') && !rh7.includes('첫 번째 문단.'));
+// 17. text 전용 답글 (fullText 없음) — 렌더도 text 폴백으로 원문/번역 표시.
+const rh8 = repliesHtml({
+  replies: [{ ...replyBase, text: 'This is a great point.',
+    translation: { status: 'ok', paragraphs: ['This is a great point.'],
+      translated: ['훌륭한 지적이다.'] } }],
+});
+check('render.js replyBodyHtml text 폴백', rh8.includes('This is a great point.') && rh8.includes('훌륭한 지적이다.') && rh8.includes('한국어 번역'));
+const appRh = appReplyBody({ text: 'This is a great point.',
+  translation: { status: 'ok', paragraphs: ['This is a great point.'],
+    translated: ['훌륭한 지적이다.'] } });
+check('app.js replyBody text 폴백', appRh.includes('This is a great point.') && appRh.includes('훌륭한 지적이다.') && appRh.includes('한국어 번역'));
 
 console.log(`\n결과: ${pass} 통과, ${fail} 실패`);
 process.exit(fail ? 1 : 0);
