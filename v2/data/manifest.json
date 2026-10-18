@@ -1,13 +1,13 @@
 {
-  "version": "2026-10-18T15:47:13.569541+00:00",
-  "content_updated_at": "2026-10-18T15:47:13.569565+00:00",
+  "version": "2026-10-18T15:53:14.219523+00:00",
+  "content_updated_at": "2026-10-18T15:53:14.219545+00:00",
   "build": "v2",
-  "source_hash": "bd84c5aeacdacf0c9e628b741d1777dc24d1fad59d234797d3fd81bb98c71504",
+  "source_hash": "3298ca4b31b73e009a1b0e2efa8fb4a054761c8f6664d688cb0e0a1a69434d4f",
   "builder_version": "1.2.0",
   "chunks": {
     "posts-x": {
       "file": "data/posts-x.json",
-      "sha256": "b4d73395d213f2a87184654a49972b225f68ac0aadbac0982827ab8ed8755ecc",
+      "sha256": "8a0c68f48d64a9a9904ea1a485f717822e74d4c563567c30ebb6339de090796f",
       "count": 292
     },
     "posts-web": {
