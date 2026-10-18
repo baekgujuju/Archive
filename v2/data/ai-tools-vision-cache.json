@@ -3795,5 +3795,55 @@
     "category_ko": "암호화폐 차트",
     "owner_hint": "tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:39a4c65be670137b1700224383a3176f1cab6c9d91a9e3a4bad8110aac63b2b5": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView ONDO/USDT 일봉 차트",
+    "description_ko": "바이낸스 ONDO/USDT 일봉 차트로, 급등 후 0.4921 USDT 부근에서 조정하는 모습이다. 여러 이동평균선과 거래량, 수평 지지·저항선 및 상승 추세선이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:20a39742e5d3851b90786d31e3cc04ea936bdaf8d2edeee2cf47e893131f6e1f": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView PYTH/USDT 일봉 차트",
+    "description_ko": "바이낸스 PYTH/USDT 일봉 차트로, 장기 하락 이후 반등하여 0.07642 USDT 부근에서 횡보하는 모습이다. 이동평균선, 거래량, 지지선과 붉은 저항 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b704afdae6ee902bde839fbe9b4dfd7a9ad223df248660a82371e23745b03bb2": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView STX/USDT 일봉 차트",
+    "description_ko": "바이낸스 스택스(STX)/USDT 일봉 차트로, 저점 이후 상승하여 0.3815 USDT 부근에 도달한 모습이다. 여러 이동평균선과 거래량, 수평 지지·저항선 및 붉은색·초록색 가격 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ed2e3b28e40806fc64dce7a5467e5fd3354ba4a05272fc9cfa37dc079787e440": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView Lighter/USDT 일봉 차트",
+    "description_ko": "OKX의 Lighter/USDT 일봉 차트. 급등 후 조정 흐름과 약 3.70 USDT의 현재가, 이동평균선, 거래량, 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d9654d39be0373b91ca0819e76932060e52ccf3bf169a87de1bb3c9d975f26da": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView Lighter/USDT 1시간봉 차트",
+    "description_ko": "OKX의 Lighter/USDT 1시간봉 차트. 하락 이후 약 3.70 USDT로 반등하는 양봉과 이동평균선, 지지·저항 구간이 표시되며, 최근 거래량 증가 구간이 흰색 원으로 강조되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
   }
 }
