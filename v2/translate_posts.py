@@ -119,7 +119,7 @@ REPLY_PROVIDER_MAX_CHARS = 6000  # provider 호출당 최대 문자 수
 REPLY_FAILURE_COOLDOWN = timedelta(minutes=60)  # 실패 후 재시도 쿨다운
 
 # 답글 노이즈: 번역 여부 판단에서 제외 (URL·멘션·해시태그·티커·대문자 약어)
-_REPLY_URL_RE = re.compile(r'https?://\S+|www\.\S+')
+_REPLY_URL_RE = re.compile(r'(?:https?://|www\.)[^\s<>，。；！？、…“”‘’「」『』（）【】《》]+')
 _REPLY_MENTION_RE = re.compile(r'@[A-Za-z0-9_]+')
 _REPLY_HASHTAG_RE = re.compile(r'#[A-Za-z0-9_가-힣]+')
 _REPLY_TICKER_RE = re.compile(r'\$[A-Za-z][A-Za-z0-9.]*')
@@ -308,8 +308,9 @@ def needs_reply_translation(text):
     """
     if not text or not text.strip():
         return False
+    original_text=text
     text=unicodedata.normalize('NFKC',text)
-    without_urls=_REPLY_URL_RE.sub('',text).strip()
+    without_urls=unicodedata.normalize('NFKC',_REPLY_URL_RE.sub('',original_text)).strip()
     identifier=text.strip()
     if (identifier.startswith('[') and identifier.endswith(']')) or (identifier.startswith('`') and identifier.endswith('`')):
         identifier=identifier[1:-1]
@@ -343,7 +344,7 @@ def needs_reply_translation(text):
     command = r'^(?:[$>]\s*)?(?:npx\s+\S+|(?:npm|pnpm|yarn)\s+(?:install|add|run|exec|create|dlx)\b|pip3?\s+(?:install|uninstall|show|list)\b|uv\s+(?:pip|run|add|sync)\b|git\s+(?:clone|pull|push|checkout|switch|status|diff|add|commit)\b|python3?\s+(?:-m\s+|\S+\.py\b)|node\s+\S+\.m?js\b|(?:curl|wget)\s+(?:-|https?://))'
     if lines and all(re.match(command,line) for line in lines):
         return False
-    stripped = _strip_reply_noise(text)
+    stripped = _strip_reply_noise(without_urls)
     # CJK 산문 (일본어 가나 / 중국어·일본어 한자) — 문자가 곧 산문
     if re.search(r'[一-鿿぀-ヿ]', stripped):
         return True
@@ -373,7 +374,7 @@ def _korean_with_isolated_terms(text):
     A foreign multiword phrase or CJK sentence still requires translation.
     This only relaxes mixed Korean prose, never foreign-only short replies.
     """
-    text=unicodedata.normalize('NFKC',text)
+    text=unicodedata.normalize('NFKC',_REPLY_URL_RE.sub('',text))
     if not KO_PAT.search(text):
         return False
     cleaned = _strip_reply_noise(text)
@@ -389,14 +390,16 @@ def _translation_numbers(text):
     import unicodedata
     from collections import Counter
     from decimal import Decimal
-    value = unicodedata.normalize('NFKC', text)
+    # Strip URL tokens before NFKC changes a Chinese delimiter into ASCII.
+    value = unicodedata.normalize('NFKC', _REPLY_URL_RE.sub('', text))
     # Portuguese/Spanish annual-price notation uses a dot for thousands.
     # Restrict the conversion to explicit currency amounts with /ano or /año;
     # a normal decimal such as 2.500 elsewhere must not become 2500.
     value = re.sub(r'(?<=[$€£])(\d{1,3}(?:\.\d{3})+)(?=/(?:ano|año)\b)',
                    lambda m:m[1].replace('.',''),value,flags=re.I)
     # Do not count digits inside source URLs, handles or ticker identifiers.
-    value = re.sub(r'https?://[^\s<>]+|@[\w]+|\$[A-Za-z][A-Za-z0-9.]*', '', value)
+    value = _REPLY_URL_RE.sub('', value)
+    value = re.sub(r'@[\w]+|\$[A-Za-z][A-Za-z0-9.]*', '', value)
     native = {'하나':1,'한':1,'첫':1,'둘':2,'두':2,'둘째':2,'셋':3,'세':3,'셋째':3,
               '넷':4,'네':4,'넷째':4,'다섯':5,'여섯':6,'일곱':7,'여덟':8,'아홉':9,'열':10}
     value = re.sub(r'(?<![가-힣])('+'|'.join(sorted(native,key=len,reverse=True))+r')(?=\s*(?:번째|째|개|가지|명|번|날|달|년|곳|일|주|배|해|포지션))',lambda m:str(native[m[1]]),value)
@@ -439,7 +442,7 @@ def validate_translation_pair(original, translated):
             raise RuntimeError('외국어 문장 미번역 잔존: 번역 완료로 기록하지 않습니다.')
     # Keep URLs and stock symbols literally. Do not treat names/isolated terms
     # as evidence of untranslated prose. Numbers may use Korean punctuation.
-    token_pattern = r'https?://[^\s<>]+|\$[A-Za-z][A-Za-z0-9.]*'
+    token_pattern = _REPLY_URL_RE.pattern + r'|\$[A-Za-z][A-Za-z0-9.]*'
     for token in re.findall(token_pattern, original):
         token=token.rstrip('.,;:!?)]}')
         if token not in translated:
