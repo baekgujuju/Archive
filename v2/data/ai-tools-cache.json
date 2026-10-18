@@ -2545,7 +2545,7 @@
     "version": 3
   },
   "2111655621175153100:41c11ba97dc4e2f0.jpg": {
-    "fingerprint": "23ff58dc97d1d397c3f838b0975b52b3bf949e4b62bc1f31d899dc5c8948a752",
+    "fingerprint": "0808fcd927627c8892beb77a94ed69ec684f6e489b04e1a7c517b59b7afea019",
     "entry": {
       "title": "browser-use",
       "summary_ko": "AI 에이전트가 웹사이트와 상호작용하고 자동화 작업을 수행할 수 있도록 돕는 오픈소스 라이브러리",
@@ -2555,12 +2555,12 @@
       "evidence": [
         "screenshot:phrase:browser use"
       ],
-      "fingerprint": "23ff58dc97d1d397c3f838b0975b52b3bf949e4b62bc1f31d899dc5c8948a752"
+      "fingerprint": "0808fcd927627c8892beb77a94ed69ec684f6e489b04e1a7c517b59b7afea019"
     },
     "version": 3
   },
   "2111589486140227622:aa6128ae223b5cab.jpg": {
-    "fingerprint": "1bc1ae751366bc7ceda5c54f5dd184fe04e67d7031cfb5b1daaa0ed1c3f058a2",
+    "fingerprint": "d5dd5add70babae81ad9e3874efbb311e42bd716f765d317c39039b8fcfa4dfa",
     "entry": null,
     "version": 3
   },
@@ -2625,7 +2625,7 @@
     "version": 3
   },
   "2111582206238003394:715f5c494a6137cb.jpg": {
-    "fingerprint": "27436334774f5482d956c662bfb441e74ca0d67514a9645873c3c59f595dc248",
+    "fingerprint": "7cc9cc5bb3b5daa795b9bba687cd98c108e5d14302e8e601703373ec0d66d63e",
     "entry": null,
     "version": 3
   },
