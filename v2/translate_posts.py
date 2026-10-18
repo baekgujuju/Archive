@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
-v2 번역 스크립트 (수정판)
+v2 본문·답글·인용 번역 및 검증 스크립트
 
-영어 전용 게시글을 문단별로 한국어로 번역.
+외국어 산문과 한국어에 섞인 외국어 문장을 문단별로 한국어로 번역.
 대상: posts-x.json + posts-web.json + posts-ib.json
 
 개선사항 (audit 반영):
-  - content_hash 기반: 해시 일치 시 스킵, 불일치 시 재번역
+  - 원문 해시·문단·실제 번역 검증이 모두 맞을 때만 캐시 재사용
   - 원문 문단 보존 (paragraphs[])
   - 멀티라인 번역 출력 처리 (다음 [N] 마커까지 누적)
   - "Click to Follow/Subscribe" 플레이스홀더 제외
-  - 이미 이중언어(Oliver 등)는 is_english_only로 자동 제외 → 중복 방지
+  - 한국어 고유명사·명령·참조라벨은 보존, 실제 외국어 문장은 번역
+  - 본문/답글 bounded 작업, 실패 쿨다운과 잔여 작업 재시도 유지
+  - 저장 전 공통 검증과 성공 본문 즉시 체크포인트
 
 사용법:
     python3 translate_posts.py              # 번역 실행 (캐시 사용)
@@ -40,6 +42,7 @@ import tempfile
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pipeline_lock import PipelineLockTimeout, pipeline_lock, quarantine_file  # noqa: E402
@@ -303,10 +306,29 @@ def needs_reply_translation(text):
     if not text or not text.strip():
         return False
     without_urls=_REPLY_URL_RE.sub('',text).strip()
+    identifier=text.strip()
+    if (identifier.startswith('[') and identifier.endswith(']')) or (identifier.startswith('`') and identifier.endswith('`')):
+        identifier=identifier[1:-1]
+    if re.fullmatch(r'[A-Za-z][A-Za-z0-9_.-]*',identifier) and ('_' in identifier or re.search(r'[a-z][A-Z]',identifier)):
+        return False
     # Reference labels and entity-only collaboration headings are identifiers,
     # not sentences. Do not make "GitHub: URL" or "Codex 🤝 Tailscale" fail
     # translation and block later prose. Ordinary short replies stay eligible.
     if _REPLY_URL_RE.search(text) and re.fullmatch(r'[A-Za-z][\w.-]{1,24}:',without_urls):
+        return False
+    reference_label=re.sub(r'^[^A-Za-z]+','',without_urls).rstrip(':').strip()
+    if re.fullmatch(r'[A-Za-z][\w.-]{1,24}',reference_label):
+        label=re.sub(r'[^a-z0-9]','',reference_label.lower())
+        for match in _REPLY_URL_RE.finditer(text):
+            url=match[0] if '://' in match[0] else 'https://'+match[0]
+            try:
+                host=(urlsplit(url).hostname or '').lower()
+            except ValueError:
+                continue
+            if label in [re.sub(r'[^a-z0-9]','',part) for part in host.split('.') if part not in {'www','com','org','net','io'}]:
+                return False
+    decorated=re.fullmatch(r'([A-Z][A-Z0-9_]{1,30})\s*[👇↗🔗→]+',text.strip())
+    if decorated and decorated[1] not in _REPLY_UPPER_FUNCTION_WORDS | _REPLY_UPPER_PROSE_WORDS:
         return False
     entities=without_urls.split('🤝')
     if len(entities)==2 and all(re.fullmatch(r'[A-Z][A-Za-z0-9._-]*(?:[ \t]+[A-Z][A-Za-z0-9._-]*){0,2}',part.strip()) for part in entities):
@@ -422,6 +444,17 @@ def validate_translation_pair(original, translated):
         raise RuntimeError('번역 중 원문의 수치가 변경되거나 누락됐습니다.')
 
 
+def validate_translation_group(paragraphs, translated, detector):
+    """Validate each selected paragraph and its combined coverage as one job."""
+    if len(paragraphs)!=len(translated):
+        raise RuntimeError('번역 문단 누락: 원문·번역 문단 수가 다릅니다.')
+    selected=[(p,t) for p,t in zip(paragraphs,translated) if detector(p) and not is_placeholder(p)]
+    for p,t in selected:
+        validate_translation_pair(p,t)
+    if len(selected)>1:
+        validate_translation_pair('\n\n'.join(p for p,t in selected),'\n\n'.join(t for p,t in selected))
+
+
 def valid_translation_cache(cached, paragraphs, detector):
     """Recheck old ok entries by contents, not only shape/status/hash."""
     if not isinstance(cached, dict) or cached.get('status') != 'ok':
@@ -433,9 +466,7 @@ def valid_translation_cache(cached, paragraphs, detector):
             or not all(isinstance(t,str) and t.strip() for t in translated)):
         return False
     try:
-        for p,t in zip(paragraphs,translated):
-            if detector(p) and not is_placeholder(p):
-                validate_translation_pair(p,t)
+        validate_translation_group(paragraphs,translated,detector)
     except RuntimeError:
         return False
     return True
@@ -840,8 +871,8 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
         for pos in job['real_indices']:
             full[pos] = pos_map[pos]
         try:
-            for pos in job['real_indices']:
-                validate_translation_pair(job['paragraphs'][pos], full[pos])
+            validate_translation_group(job['paragraphs'],full,
+                needs_body_translation if job['key'].startswith('quote:') else needs_reply_translation)
         except RuntimeError as exc:
             failed_keys.add(job['key'])
             _record_reply_failure(cache, touched, job, exc)
@@ -872,10 +903,10 @@ def translate_paragraphs(paragraphs, strict=False):
 
     멀티라인 출력 처리: [N] 마커로 시작하는 줄부터 다음 [N] 마커 전까지를
     하나의 번역문으로 누적.
-    strict=True (답글 배치 전용): 번호 중복·범위 밖·누락·빈 번역을
+    strict=True (본문과 답글 배치): 번호 중복·범위 밖·누락·빈 번역을
     조용히 넘기지 않고 예외로 실패시킨다. 원문 속 [N] 형태나 모델의
     번호 착오가 다른 답글 번역으로 잘못 저장되는 것을 막는다.
-    부모 번역은 strict=False (기존 동작 유지).
+    의미·언어·수치·길이 검증은 글별 조립 및 공통 저장 경로에서 수행.
     """
     numbered = "\n".join(f"[{i+1}] {p}" for i, p in enumerate(paragraphs))
     prompt = f"""다음 외국어 문단들을 한국어로 번역해주세요.
@@ -1144,6 +1175,16 @@ def save_cache(cache, touched):
     write. The hook marks retry and the next poll re-attempts.
     """
     with pipeline_lock():
+        # Final shared write barrier: worker and reviewed/manual corrections
+        # must not persist an unvalidated ok entry even if a caller forgets
+        # the earlier per-job validation. Existing untouched entries are not
+        # rewritten or rejected by this migration-safe check.
+        for key in touched:
+            entry=cache.get(key)
+            if isinstance(entry,dict) and entry.get('status')=='ok':
+                detector=needs_reply_translation if str(key).startswith('reply:') else needs_body_translation
+                if not valid_translation_cache(entry,entry.get('paragraphs'),detector):
+                    raise RuntimeError(f'번역 저장 전 검증 실패: {str(key)[:100]}')
         current = _read_cache_file(CACHE_FILE)
         if current is None and CACHE_FILE.exists():
             raise RuntimeError(
@@ -1254,8 +1295,7 @@ def main():
 
         try:
             translated = translate_paragraphs(real_paras, strict=True)
-            for original,result in zip(real_paras,translated):
-                validate_translation_pair(original,result)
+            validate_translation_group(real_paras,translated,needs_body_translation)
             if len(translated) != len(real_paras) or any(not p.strip() for p in translated):
                 raise RuntimeError('번역 문단 누락: 완료로 기록하지 않고 재시도합니다.')
             # 원문 순서대로 매핑 (플레이스홀더는 원문 유지)
