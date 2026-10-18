@@ -3867,5 +3867,157 @@
     "category_ko": "AI / 웹 자동화",
     "owner_hint": "browser-use",
     "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:e122f9070f1322e1ea1cf258c0c954fc3c4ead764ea881d2ee1a4b09df394b71": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Severe correction resembles cycle trough, but no downturn",
+    "description_ko": "삼성전자와 SK하이닉스의 주가 조정 및 낮아진 밸류에이션을 분석한 영문 보고서. 메모리 업황과 AI 메모리 수요가 견조하다는 전망을 제시한다.",
+    "category_ko": "반도체·주식 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0fe22603497e55c2aed2ba36d802cd5ae3bfec674253ea4c997cfa160c5fa8db": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "CVD 누적 볼륨 델타 지표 검색",
+    "description_ko": "차트 플랫폼의 인디케이터 검색창에 cvd를 입력하고 기술적 지표인 누적 볼륨 델타를 찾은 화면.",
+    "category_ko": "금융 차트·기술적 지표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8d9dffd31b3402dccab3b0b33ef6d2e1283dee7297ba3e9a1a6751d7441d48bb": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "일반캔들 · 거래량캔들 · CVD캔들 비교",
+    "description_ko": "가격과 CVD의 상승·하락 조합을 네 가지 사례로 비교한 교육용 도표. 일반 캔들, 매수·매도 거래량, 거래량 델타의 관계를 설명한다.",
+    "category_ko": "투자 교육·거래량 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a1e38ebe867803c2cef8558ca146be7ae7eb036971d6b384859c8177a77bfab5": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "가격과 CVD — 정상 / 흡수 / 소진",
+    "description_ko": "가격과 CVD가 함께 움직이는 정상 상황, CVD가 상승해도 가격이 저항을 넘지 못하는 흡수 상황, 가격 돌파를 CVD가 뒷받침하지 못하는 소진 상황을 비교한다.",
+    "category_ko": "투자 교육·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5245d8dc02bcf4d244f1dcc321b362397d11aa6ca1a0fb8bb34e07340c911a1c": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 어디까지 하락할까?",
+    "description_ko": "하락하는 주가 차트를 배경으로 헤드폰과 안경을 쓴 원숭이 캐릭터가 바나나를 들고 있는 코스피 전망 콘텐츠 썸네일.",
+    "category_ko": "주식시장 전망",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:dca43811ddad1e3828d35974a099fc408907c91bd84dfdd01f9cfdba6a61fb44": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 다이버전스와 상승 추세에 대한 의견",
+    "description_ko": "침팬지(@chimpz77)의 6월 23일 게시물. 주봉과 월봉의 다이버전스를 언급하며 상승 종료 가능성과 실적에 따른 추가 상승 가능성을 함께 설명한다. 가격과 보조지표 차트가 첨부되어 있다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "침팬지 (@chimpz77)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0ced053a806c356c90c6b303c2bce839e842412c1dd30126577dbe49deb192a3": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 상승 추세선 이탈과 하방 압력 분석",
+    "description_ko": "침팬지(@chimpz77)의 7월 7일 게시물. 상승 추세선 이탈과 저항 구간 돌파 실패를 근거로 하방 압력이 더 강하다는 의견을 제시한다. 추세선과 가격 구간을 표시한 코스피 일봉 차트 및 관련 인용 게시물이 포함되어 있다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "침팬지 (@chimpz77)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:500888525c492003cb8b26902345fcb0dc4ece424ab500d1cd98127ad5911cac": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 하락 대응과 리스크 관리 강조",
+    "description_ko": "침팬지(@chimpz77)의 7월 15일 게시물. 이전 하락 전망을 돌아보며 추가 하락의 불확실성과 대응 및 리스크 관리의 중요성을 강조한다. 지지·저항 구간과 예상 가격 경로가 표시된 '침팬지 인사이트' 차트가 첨부되어 있다.",
+    "category_ko": "주식·리스크 관리",
+    "owner_hint": "침팬지 (@chimpz77), 침팬지 인사이트",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9bc1cb6c52ddf8d18a3970873b012253f2f24e2e4a39ee426c073586519a36f1": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 일봉 하락 추세선 차트",
+    "description_ko": "TradingView 형식의 코스피 일봉 차트. 급등 후 하락한 가격 흐름에 두 개의 붉은 하향 추세선이 표시되어 있으며, 화면상 지수 값은 5,668.05다.",
+    "category_ko": "금융 차트·기술적 분석",
+    "owner_hint": "TradingView 차트, 작성자 미상",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d0042b4664cf18f49730f49e3b1bc8b48400170e59f63c8bc7b9d0d3f1db2aaa": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 장기 차트와 피보나치 되돌림",
+    "description_ko": "코스피 장기 일봉 차트에 하향 추세선과 피보나치 기준선이 표시되어 있다. 주요 표시는 고점 9,396.82, 0.618 되돌림 5,009.75, 저점 2,297.99이며, 화면상 지수 값은 5,668.05다.",
+    "category_ko": "금융 차트·피보나치 분석",
+    "owner_hint": "TradingView 차트, 작성자 미상",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8e57bbe3936d30f052ebcaf8a5a762fd77af98ab6a7347f5902cef45371bcce1": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 하락 추세와 피보나치 확장 구간",
+    "description_ko": "코스피 일봉 차트에 두 개의 붉은 하향 추세선과 수평 가격 기준선이 표시되어 있다. 주요 수준은 7,226.47, 6,255.59, 5,284.71, 5,032.28, 4,756.55이며, 화면상 지수 값은 5,668.05다.",
+    "category_ko": "금융 차트·피보나치 분석",
+    "owner_hint": "TradingView 차트, 작성자 미상",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6c9bb818442bb5ceaaa071366705f81575dc8f7d5a29bd67a6d738cbb9e62d7e": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 하락 추세와 기술적 지지 구간",
+    "description_ko": "코스피 일봉 차트에 하락 추세선, ABC 조정 경로, 피보나치 수준이 표시되어 있다. 약 4,750~5,030포인트 구간이 파란색 지지 영역으로 강조되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:11dd219f4742c44aaf1f49b3287593832585fdb04d1d08767f77fc476c2bbbf9": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 ABC 조정 시나리오",
+    "description_ko": "코스피 일봉 차트에 ABC 조정 경로가 표시되어 있으며, B 지점 약 7,221포인트에서 C 지점 약 3,064포인트로 하락하는 예상 경로를 제시한다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:46047b00c954a476893940286c2dee0d9ab74c00a4fd8cab9e23dea9ce79a952": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/chrisryugi/kordoc"
+    ],
+    "title": "kordoc",
+    "description_ko": "HWP·HWPX·PDF·오피스 문서를 Markdown으로 변환하는 한국어 문서 파서 소개 이미지다. 라이브러리, CLI, MCP 서버를 제공하며 PDF 벤치마크 점수 0.963과 한국 공문서 표 구조 일치율 100%를 홍보한다.",
+    "category_ko": "개발 도구·문서 변환",
+    "owner_hint": "chrisryugi",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8a882479ff56feb411144ce447d51a4084fc1be7953d8666bdac24b32b3992e4": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Democratic Congress — Basket Pair: JPMDC26P",
+    "description_ko": "미국 민주당의 상·하원 장악 시나리오에 따른 정책 테마별 롱·숏 바스켓 표다. ACA와 저소득 소비 관련 테마를 긍정적으로, 차세대 방산·자본시장·에너지 인허가·디지털자산 법안 관련 테마를 부정적으로 분류한다.",
+    "category_ko": "금융·정책 테마 투자",
+    "owner_hint": "JP Morgan",
+    "provider": "codex"
   }
 }

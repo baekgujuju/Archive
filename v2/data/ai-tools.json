@@ -207,5 +207,27 @@
       "text-url:no-title-check"
     ],
     "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808"
+  },
+  "2111363482327318750": {
+    "title": "Squirrelly",
+    "summary_ko": "TypeScript로 작성된 가볍고 매우 빠른 JavaScript 템플릿 엔진으로, partial, helper, 커스텀 태그 및 필터 등을 지원합니다.",
+    "category": "템플릿 엔진",
+    "repo_url": "https://github.com/squirrellyjs/squirrelly",
+    "status": "verified",
+    "evidence": [
+      "screenshot:name-match"
+    ],
+    "fingerprint": "d358040d66ad3555db61499cb77359c539d12c41b1b4520391ac44c85f9b95c7"
+  },
+  "2111655621175153100": {
+    "title": "browser-use",
+    "summary_ko": "AI 에이전트가 웹사이트와 상호작용하고 자동화 작업을 수행할 수 있도록 돕는 오픈소스 라이브러리",
+    "category": "AI / 웹 자동화",
+    "repo_url": "https://github.com/browser-use/browser-use",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:browser use"
+    ],
+    "fingerprint": "23ff58dc97d1d397c3f838b0975b52b3bf949e4b62bc1f31d899dc5c8948a752"
   }
 }

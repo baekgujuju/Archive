@@ -2528,5 +2528,110 @@
     "fingerprint": "4473f0c0f114e5c21875ca458d31810ed57d24c6526df52259c601e5eef0900a",
     "entry": null,
     "version": 3
+  },
+  "2111363482327318750:a4e5b27ba2b24a33.jpg": {
+    "fingerprint": "d358040d66ad3555db61499cb77359c539d12c41b1b4520391ac44c85f9b95c7",
+    "entry": {
+      "title": "Squirrelly",
+      "summary_ko": "TypeScript로 작성된 가볍고 매우 빠른 JavaScript 템플릿 엔진으로, partial, helper, 커스텀 태그 및 필터 등을 지원합니다.",
+      "category": "템플릿 엔진",
+      "repo_url": "https://github.com/squirrellyjs/squirrelly",
+      "status": "verified",
+      "evidence": [
+        "screenshot:name-match"
+      ],
+      "fingerprint": "d358040d66ad3555db61499cb77359c539d12c41b1b4520391ac44c85f9b95c7"
+    },
+    "version": 3
+  },
+  "2111655621175153100:41c11ba97dc4e2f0.jpg": {
+    "fingerprint": "23ff58dc97d1d397c3f838b0975b52b3bf949e4b62bc1f31d899dc5c8948a752",
+    "entry": {
+      "title": "browser-use",
+      "summary_ko": "AI 에이전트가 웹사이트와 상호작용하고 자동화 작업을 수행할 수 있도록 돕는 오픈소스 라이브러리",
+      "category": "AI / 웹 자동화",
+      "repo_url": "https://github.com/browser-use/browser-use",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:browser use"
+      ],
+      "fingerprint": "23ff58dc97d1d397c3f838b0975b52b3bf949e4b62bc1f31d899dc5c8948a752"
+    },
+    "version": 3
+  },
+  "2111589486140227622:aa6128ae223b5cab.jpg": {
+    "fingerprint": "1bc1ae751366bc7ceda5c54f5dd184fe04e67d7031cfb5b1daaa0ed1c3f058a2",
+    "entry": null,
+    "version": 3
+  },
+  "2111686757024739648:292b3627f8809b2a.png": {
+    "fingerprint": "cf47b90dcc8d704f0fcae96c2f8d7a3a85b43612d1010e086931a29c395e68e6",
+    "entry": null,
+    "version": 3
+  },
+  "2111686757024739648:77006034ac0ca095.jpg": {
+    "fingerprint": "9b388332f611e791552408f42c9c475c96ddd336cf0e0cd069a943bf2ace01dd",
+    "entry": null,
+    "version": 3
+  },
+  "2111686757024739648:b36ff1fabd48a093.jpg": {
+    "fingerprint": "1a5549f10017480a61c595a7591e1df96f936d793f7b7363c0224a19b03be85a",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:7dbcf0c3688cee6f.jpg": {
+    "fingerprint": "ac0cfc4e40825e290ad95227369c9af79a78caedf1ddf991bf6d9ade79bee8c0",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:ef104794c094fbe9.png": {
+    "fingerprint": "1b67f981e6edaff32bfd622da485376ebecbcc4f35dc305ab92cbbbd64ff7203",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:b4e7ca6dfa778bc2.png": {
+    "fingerprint": "d094b9080c27e8b26af0e52df7477f8abc9aca68c47615b66d92afc5b78cdf37",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:c931517cbc719d96.png": {
+    "fingerprint": "b88d57c8760dfb3148dd8da5d5535db63a5882bb462ad61c8592ac546d48175f",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:fd41d7d2f45854b5.png": {
+    "fingerprint": "15dc245f60a8d96ec1a2a7ac0da54673615f7b74c14d180118ab703b20d033bf",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:82b3015492354ce5.png": {
+    "fingerprint": "d16ff7bf630087050ece0b3eda355478531e813fa2fa4b2f884d4108042629b2",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:f318e8e78a84ec17.png": {
+    "fingerprint": "3ca9ce178a08a55e032e2f72c5b63b9136bd1d3b284c8cd0a4fbf461f5b4d64e",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:96865e486e875dd9.jpg": {
+    "fingerprint": "f3778dbaf80dd2e161ab4bc71c08c35246b77f1b0c81dd0d999e22ae53474f73",
+    "entry": null,
+    "version": 3
+  },
+  "2111669977996824783:4b372e93356e8df7.png": {
+    "fingerprint": "41dac91862030117768b3edd7f3d2c7bc020374fdf632258477403451a29d4cc",
+    "entry": null,
+    "version": 3
+  },
+  "2111582206238003394:715f5c494a6137cb.jpg": {
+    "fingerprint": "27436334774f5482d956c662bfb441e74ca0d67514a9645873c3c59f595dc248",
+    "entry": null,
+    "version": 3
+  },
+  "2111732766270488857:embedded-8a882479ff56feb411144ce447d51a4084fc1be7953d8666bdac24b32b3992e4.png": {
+    "fingerprint": "045c6b192ac68dee9c4994e2c90eb13b5e4c181acb6aca25bd80068b1b01ceef",
+    "entry": null,
+    "version": 3
   }
 }
