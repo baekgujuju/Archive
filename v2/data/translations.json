@@ -6051,61 +6051,73 @@
     "paragraphs": [
       "Summed up my system in 1 reply, well done."
     ],
-    "translated": [],
+    "translated": [
+      "제 매매 시스템을 답글 하나로 요약하셨네요. 훌륭합니다."
+    ],
     "content_hash": "6031c30932e9e9a9",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989970+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030341+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107849364127261138:2107980719309889557": {
     "paragraphs": [
       "Caught $SNDK\n with @i_managed_risk\n using this today 💸"
     ],
-    "translated": [],
+    "translated": [
+      "오늘 이걸 활용해 @i_managed_risk와 함께 $SNDK 매매 기회를 잡았어요 💸"
+    ],
     "content_hash": "d7003b0e0bfcb20a",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989974+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030346+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836535995568551:2107898456597516659": {
     "paragraphs": [
       "Are you just making this shit up?"
     ],
-    "translated": [],
+    "translated": [
+      "너 그냥 이딴 걸 막 지어내는 거야?"
+    ],
     "content_hash": "2c1a8951dcaffb41",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989945+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030221+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836535995568551:2107837504665600443": {
     "paragraphs": [
       "Andrej Karpathy is the GOAT for real with all these prompts..."
     ],
-    "translated": [],
+    "translated": [
+      "이런 프롬프트들을 보면 Andrej Karpathy는 진짜 역대 최고야..."
+    ],
     "content_hash": "43c74c832b4978f6",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989949+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030294+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107886190087266427:2107895842065744131": {
     "paragraphs": [
       "the \"publish anywhere\" pitch is doing a lot of work for a platform that still wants you to self-host"
     ],
-    "translated": [],
+    "translated": [
+      "여전히 직접 호스팅하길 요구하는 플랫폼치고는 ‘어디에나 게시 가능’이라는 홍보 문구에 꽤 많이 기대고 있네요."
+    ],
     "content_hash": "ce4232208adc7e54",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989997+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030382+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107849364127261138:2107859207714131997": {
     "paragraphs": [
       "Just being exposed into $MU\n is a gift."
     ],
-    "translated": [],
+    "translated": [
+      "$MU에 투자하고 있다는 것만으로도 선물이나 다름없죠."
+    ],
     "content_hash": "a1c10f94360f4538",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989984+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030360+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836671605551217:2108034680184303638": {
     "paragraphs": [
@@ -6113,21 +6125,27 @@
       "Unfortunately, tailscale for OpenBSD is a go userland talking via tap(4) and with all the hops to and from userland and crypto in go it ends up adding 150ms latency.",
       "Fun to do egre(4) over wg(4) over urndis(4) to"
     ],
-    "translated": [],
+    "translated": [
+      "WireGuard를 수동으로 딱 한 번 연결하고 끝내고 싶다면 어떻게 해야 할까요?",
+      "안타깝게도 OpenBSD용 tailscale은 tap(4)을 통해 통신하는 Go 사용자 공간 프로그램이라, 사용자 공간을 오가는 여러 단계와 Go에서의 암호화 처리 때문에 결국 지연 시간이 150ms나 추가됩니다.",
+      "urndis(4) 위에 wg(4)을 얹고 그 위에 egre(4)을 얹는 것도 재밌겠네"
+    ],
     "content_hash": "a97f1f65e7ad410a",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989958+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030314+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107849364127261138:2107852019902132269": {
     "paragraphs": [
       "It's working really well for me, too. It's a shame I got here a bit late..."
     ],
-    "translated": [],
+    "translated": [
+      "저도 정말 잘 쓰고 있어요. 좀 늦게 알게 된 게 아쉽네요..."
+    ],
     "content_hash": "51fed8732779e905",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989981+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030355+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107674791243325659:2107969761728680031": {
     "paragraphs": [
@@ -6149,21 +6167,29 @@
       "AI는 쓰면 쓸수록\n내가 모르는 기능이 더 많은 것 같음.",
       "일단 저장하고 하나씩 x.com/HUUK72670323/s…"
     ],
-    "translated": [],
+    "translated": [
+      "클로드 쓰면서도 이런 게 있는 줄 몰랐네.",
+      "요즘 클로드로 직접 프로그램 만들고 있는데\n스킬은 제대로 활용해 본 적이 없음.",
+      "특히 superpowers랑 ui-ux-pro-max-skill은\n지금 만드는 프로그램에도 써먹을 수 있을 듯.",
+      "AI는 쓰면 쓸수록\n내가 모르는 기능이 더 많은 것 같음.",
+      "일단 저장하고 하나씩 x.com/HUUK72670323/s…"
+    ],
     "content_hash": "448234c33692d1ff",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989990+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030372+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107886190087266427:2107988355875270999": {
     "paragraphs": [
       "数据改一处就能同步的话，能少不少重复活。"
     ],
-    "translated": [],
+    "translated": [
+      "데이터를 한 곳에서만 수정해도 동기화된다면 반복 작업을 꽤 줄일 수 있겠네요."
+    ],
     "content_hash": "717db842356fecfe",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989994+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030378+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836535995568551:2107903468480627193": {
     "paragraphs": [
@@ -6181,11 +6207,13 @@
     "paragraphs": [
       "He’s 1 of the best."
     ],
-    "translated": [],
+    "translated": [
+      "그분은 최고 중 한 명이에요."
+    ],
     "content_hash": "3e624dae41982a4e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989978+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030351+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107849364127261138:2105978632653128110": {
     "paragraphs": [
@@ -6194,11 +6222,16 @@
       "🤍퍼펙트 휩 화이트 클레이 대용량 더블기획\n📢19,400원→13,500원(30%OFF)\n✔️[본품]화이트 클레이 대용량150g*2\n✔️[증정]15g 미니&양파쿵야 파우치",
       "올리브영에서 만나보센카"
     ],
-    "translated": [],
+    "translated": [
+      "블랙헤드는 비우고\n양파쿵야 파우치 채우고👀🤍\n10월 올영PICK 특가",
+      "쫀쫀한 생크림 탄력거품으로\n블랙헤드 딥클렌징🫧",
+      "🤍퍼펙트 휩 화이트 클레이 대용량 더블기획\n📢19,400원→13,500원(30%OFF)\n✔️[본품]화이트 클레이 대용량150g*2\n✔️[증정]15g 미니&양파쿵야 파우치",
+      "올리브영에서 만나보센카"
+    ],
     "content_hash": "d54fd3043529e563",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989987+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030364+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836535995568551:2105538201934770339": {
     "paragraphs": [
@@ -6207,72 +6240,90 @@
       "서로 다른 순간에 시작된 생각과 업무를\nNotion 한 곳에 모아보세요⌨️",
       "𝑳𝒊𝒇𝒆 𝒊𝒏 𝑵𝒐𝒕𝒊𝒐𝒏."
     ],
-    "translated": [],
+    "translated": [
+      "일상의 모든 생각이 모이는 곳, 𝑵𝒐𝒕𝒊𝒐𝒏🖤",
+      "문득 떠오른 아이디어부터\n문서와 회의 기록, 진행 중인 프로젝트까지.",
+      "서로 다른 순간에 시작된 생각과 업무를\nNotion 한 곳에 모아보세요⌨️",
+      "Notion 속의 일상."
+    ],
     "content_hash": "b459086c1728802b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989955+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030306+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836671605551217:2107865943892451494": {
     "paragraphs": [
       "localhost has left the building"
     ],
-    "translated": [],
+    "translated": [
+      "localhost가 자리를 떠났습니다"
+    ],
     "content_hash": "f95db1e96245fe7d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989961+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030320+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107849364127261138:2107883669998219399": {
     "paragraphs": [
       "Weekly > Daily > 30 min; 9ema, 21ema, 50e/sma, 200e/sma; Volume and price. All that is needed tbh to get a full picture, could simplify even more. But above all is risk management.",
       "Sitting on my hands in $SNDK\n and $MU\n expecting today to be the bottom of the latest pullback."
     ],
-    "translated": [],
+    "translated": [
+      "주봉 > 일봉 > 30분봉; 9EMA, 21EMA, 50EMA/SMA, 200EMA/SMA; 거래량과 가격. 솔직히 전체 흐름을 파악하는 데 필요한 건 이게 전부고, 더 단순하게 줄일 수도 있어요. 하지만 무엇보다 중요한 건 리스크 관리입니다.",
+      "오늘이 최근 조정의 저점이 될 거라 예상하며 $SNDK와 $MU를 보유한 채 가만히 지켜보고 있습니다."
+    ],
     "content_hash": "75709d33bf85db7c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989967+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030335+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107836671605551217:2107910110085591393": {
     "paragraphs": [
       "Not working for me"
     ],
-    "translated": [],
+    "translated": [
+      "저는 안 되네요"
+    ],
     "content_hash": "675843488aff4754",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989964+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030329+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108052272643264834:2108052840300388798": {
     "paragraphs": [
       "but does it protect my head?"
     ],
-    "translated": [],
+    "translated": [
+      "그런데 내 머리도 보호해 주나요?"
+    ],
     "content_hash": "8306ab79217e6bae",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:30.957330+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030391+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108052272643264834:2108052284945178829": {
     "paragraphs": [
       "Explore it here:"
     ],
-    "translated": [],
+    "translated": [
+      "여기에서 살펴보세요:"
+    ],
     "content_hash": "134e4a5756c25642",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:30.957302+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030387+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108052272643264834:2108060857909354785": {
     "paragraphs": [
       "the helm cli never made rollback previews this easy"
     ],
-    "translated": [],
+    "translated": [
+      "Helm CLI로는 롤백 미리보기가 이렇게 쉬웠던 적이 없어요."
+    ],
     "content_hash": "7404a45c2f1d86b5",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183043+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030405+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108245653843509415:2108247768397697034": {
     "paragraphs": [
@@ -6331,11 +6382,13 @@
     "paragraphs": [
       "Isn’t this what people use ArgoCD for?"
     ],
-    "translated": [],
+    "translated": [
+      "사람들이 ArgoCD를 쓰는 게 바로 이런 용도 아닌가요?"
+    ],
     "content_hash": "e5d924dbadf8e818",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.182987+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:38:34.030397+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108245653843509415:2108272591920353561": {
     "paragraphs": [
