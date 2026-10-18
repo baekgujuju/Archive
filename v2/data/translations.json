@@ -5592,5 +5592,264 @@
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
     "failed_at": "2026-10-18T04:23:07.987772+00:00"
+  },
+  "reply:2094387309449723997:2082108927471214717": {
+    "paragraphs": [
+      "Market breadth: what actually works.",
+      "I tested 45 rules against 1,500 logged breakout trades. the Stockbee Market Monitor, new highs vs new lows, $MMTW, McClellan, % above the 20-day.",
+      "Which ones help, when they help, and when to ignore all of it."
+    ],
+    "translated": [],
+    "content_hash": "4ff0500a45acf01b",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:29:56.091054+00:00"
+  },
+  "reply:2106654769037422755:2106784725377400843": {
+    "paragraphs": [
+      "Hi! Thank you for mentioning :) Let me know if you have any feedback :)"
+    ],
+    "translated": [],
+    "content_hash": "85c10e827e8f0193",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:29:56.091125+00:00"
+  },
+  "reply:2094387309449723997:1655569993881509889": {
+    "paragraphs": [
+      "Sell rules matter 💸",
+      "@Qullamaggie\n maxed out his IB account on a great entry in WKHS",
+      "He sold it 11 days later as it showed weakness after a presentation, with almost 150% gains 🚀",
+      "If he had followed the 10-day sell rule he would've made 350% 📈"
+    ],
+    "translated": [],
+    "content_hash": "fca36a2cc179a9ae",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:29:56.091119+00:00"
+  },
+  "reply:2107365244238545088:2089327477214593238": {
+    "paragraphs": [
+      "Ultimate headless browser for your Hermes/OpenClaw",
+      "- Less memory\n- Crawl more web pages\n- No Chrome opens",
+      "Fast & Lite & Quality & Stealthy"
+    ],
+    "translated": [
+      "Hermes/OpenClaw를 위한 궁극의 헤드리스 브라우저",
+      "- 더 적은 메모리 사용\n- 더 많은 웹페이지 크롤링\n- 크롬 창을 띄우지 않음",
+      "빠르고, 가볍고, 고품질이며, 은밀함"
+    ],
+    "content_hash": "5531bbed3d6fda64",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187720+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2094387309449723997:2088292776047751193": {
+    "paragraphs": [
+      "This is the article I wish I had when I started trading. And probably in year two and three as well.."
+    ],
+    "translated": [
+      "내가 트레이딩을 처음 시작했을 때, 그리고 아마 2~3년 차였을 때도 있었으면 좋았을 글입니다.."
+    ],
+    "content_hash": "a14a5c2361f7b5f0",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187764+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2094387309449723997:2084274299444072897": {
+    "paragraphs": [
+      "Sell into strength or let it run?",
+      "Whatever you decide comes with a side effect",
+      "This is the first data I have seen that says how big that side effect actually is 👇"
+    ],
+    "translated": [
+      "강세일 때 매도할 것인가, 아니면 수익을 계속 달리게 둘 것인가?",
+      "어느 쪽을 결정하든 부작용이 따릅니다.",
+      "그 부작용이 실제로 얼마나 큰지 보여주는 데이터는 이번에 처음 보았습니다 👇"
+    ],
+    "content_hash": "36911ff9a64a6b20",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187770+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2084274299444072897:2084274299444072897": {
+    "paragraphs": [
+      "Everything I've Learned About Taking Profits: What It Costs to Sell Early, Into Strength, or Hold On"
+    ],
+    "translated": [
+      "이익 실현에 대해 내가 배운 모든 것: 조기 매도, 강세일 때 매도, 또는 계속 보유하는 데 드는 비용"
+    ],
+    "content_hash": "c5d00fa833dc65d1",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187752+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107587060660080761:2107587062794973536": {
+    "paragraphs": [
+      "AI 앱 만들던 빌더들이 왜 이렇게 열광하고 있을까?",
+      "1. '트래픽 늘면 적자' 공식의 종말\n모든 AI 임베딩 연산이 유저의 폰이나 브라우저(WebGPU)에서 돌아감. 서버를 거치지 않으니 유저가 1만 명이든 100만 명이든 개발자 통장에서 나가는 API 비용은 영원히 0원임.",
+      "2. 비싼 클라우드 벡터"
+    ],
+    "translated": [
+      "AI 앱 만들던 빌더들이 왜 이렇게 열광하고 있을까?",
+      "1. '트래픽 늘면 적자' 공식의 종말\n모든 AI 임베딩 연산이 유저의 폰이나 브라우저(WebGPU)에서 돌아감. 서버를 거치지 않으니 유저가 1만 명이든 100만 명이든 개발자 통장에서 나가는 API 비용은 영원히 0원임.",
+      "2. 비싼 클라우드 벡터"
+    ],
+    "content_hash": "317fe928573ac17a",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187724+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2084274299444072897:2075582767698690513": {
+    "paragraphs": [
+      "I had a pretty good idea that the top 10 trades made my entire year. I went back to my data to see just how close it was.",
+      "Top 10 trades = 127 risk adjusted R\nTotal risk adjusted R return for 2025: 129",
+      "So yeah, remove the top 10 trades and I am break even."
+    ],
+    "translated": [
+      "상위 10개 트레이딩이 내 1년 성과 전체를 만들었다는 생각은 있었는데, 실제로 얼마나 결정적이었는지 확인해 보려고 데이터를 다시 찾아보았습니다.",
+      "상위 10개 트레이딩 = 위험 조정 수익률(R) 127\n2025년 총 위험 조정 수익률(R): 129",
+      "맞습니다, 상위 10개 트레이딩을 제외하면 손익분기점(본전) 수준입니다."
+    ],
+    "content_hash": "2b5d4284133aba14",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187757+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107361716384481753:2107416359445692778": {
+    "paragraphs": [
+      "저도 이미 몇 개쓰고 유료도 했어요. 도메인도 여기가 수수료 받아먹는 회사보다 나아서 2년차부터는 무조건 여기로 넘어와요. 1년은 프로모션 주는 곳에서 하고요. Workers, D1, R2, KV 다있어요."
+    ],
+    "translated": [
+      "저도 이미 몇 개쓰고 유료도 했어요. 도메인도 여기가 수수료 받아먹는 회사보다 나아서 2년차부터는 무조건 여기로 넘어와요. 1년은 프로모션 주는 곳에서 하고요. Workers, D1, R2, KV 다있어요."
+    ],
+    "content_hash": "9cc97674f88f237c",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187692+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107587060660080761:2107630475506491488": {
+    "paragraphs": [
+      "돈벌고영님 ~ 너무 좋은것 같아 관심있어 좀 알아보다 보니 벡터DB로 임베딩만 해주는 것 같은데 llm이나 벡터DB처리는 따로없는거지요?"
+    ],
+    "translated": [
+      "돈벌고영님 ~ 너무 좋은것 같아 관심있어 좀 알아보다 보니 벡터DB로 임베딩만 해주는 것 같은데 llm이나 벡터DB처리는 따로없는거지요?"
+    ],
+    "content_hash": "d28068d71b394b21",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187729+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2108054131273535742:2108080724050080251": {
+    "paragraphs": [
+      "쉽게 말하면 맥 사용하는 사람한테 이건, 맥북 필수 앱스토어(Homebrew)를 '100배 빠른 초음속 로켓배송'으로 바꿔주는 튜닝 도구 같은 느낌입니다ㅎㅎ"
+    ],
+    "translated": [
+      "쉽게 말하면 맥 사용하는 사람한테 이건, 맥북 필수 앱스토어(Homebrew)를 '100배 빠른 초음속 로켓배송'으로 바꿔주는 튜닝 도구 같은 느낌입니다ㅎㅎ"
+    ],
+    "content_hash": "1279e740491bd5be",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187748+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107365244238545088:2107481410638586272": {
+    "paragraphs": [
+      "Or you could use any app with a browser integrated, login —> do all that you were going to do with the MCP but now in that tab"
+    ],
+    "translated": [
+      "아니면 브라우저가 내장된 아무 앱이나 사용해서 로그인한 뒤, MCP로 하려던 모든 작업을 해당 탭에서 진행할 수도 있습니다."
+    ],
+    "content_hash": "b465d54ef1b22945",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187702+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107365244238545088:2107365904543608887": {
+    "paragraphs": [
+      "mcp is just a cope wrapper so you can get liquidated with better UX"
+    ],
+    "translated": [
+      "MCP는 더 나은 UX로 청산당할 수 있게 해주는 정신승리용 포장재일 뿐입니다."
+    ],
+    "content_hash": "aa9543d70b6f5b3d",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187713+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2108054131273535742:2108054133534286068": {
+    "paragraphs": [
+      "홈브루보다 압도적으로 빠른 4가지 기술적 비밀:",
+      "1. 느려터진 루비(Ruby)와 서브프로세스 박멸\n홈브루는 다운로드 후 무거운 루비를 띄워 경로를 바꾸고 `install_name_tool`로 바이너리를 하나씩 재서명함. zerobrew는 이 모든 과정을 Rust 메모리 안(In-process)에서 한 방에 끝냄.",
+      "2. 맥OS 전용"
+    ],
+    "translated": [
+      "홈브루보다 압도적으로 빠른 4가지 기술적 비밀:",
+      "1. 느려터진 루비(Ruby)와 서브프로세스 박멸\n홈브루는 다운로드 후 무거운 루비를 띄워 경로를 바꾸고 `install_name_tool`로 바이너리를 하나씩 재서명함. zerobrew는 이 모든 과정을 Rust 메모리 안(In-process)에서 한 방에 끝냄.",
+      "2. 맥OS 전용"
+    ],
+    "content_hash": "0df3aa88c21f9106",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187743+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2094387309449723997:2094387309449723997": {
+    "paragraphs": [
+      "Everything I’ve Learned About Position Sizing From a Market Wizard"
+    ],
+    "translated": [
+      "마켓 위저드(Market Wizard)에게서 배운 포지션 사이징에 대한 모든 것"
+    ],
+    "content_hash": "a9006e9fcdd27bd7",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187761+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107365244238545088:2107395978370449671": {
+    "paragraphs": [
+      "I have seen this posted heaps lately and  thought for sure this was containing wallet draining code."
+    ],
+    "translated": [
+      "최근에 이게 엄청 많이 올라오는 걸 봤는데, 지갑을 털어가는 코드가 포함되어 있을 거라 확신했었습니다."
+    ],
+    "content_hash": "d83bffd8766e255d",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187708+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:1975582488472039824:1975582492808888334": {
+    "paragraphs": [
+      "출처 인스타 redzacal님"
+    ],
+    "translated": [
+      "출처 인스타 redzacal님"
+    ],
+    "content_hash": "5f2bb3cc0b82aad0",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187733+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107361716384481753:2107375263386644782": {
+    "paragraphs": [
+      "Jev로 실험하는거 대조군 찾다가 기왕이면 공짜로....하면서 찾았는데 잘 동작하네요 ㅎㅎㅎ 이정도면 굳이 classifier 따로 만들 필요 없이 가져다 써도 되겠어요"
+    ],
+    "translated": [
+      "Jev로 실험하는거 대조군 찾다가 기왕이면 공짜로....하면서 찾았는데 잘 동작하네요 ㅎㅎㅎ 이정도면 굳이 classifier 따로 만들 필요 없이 가져다 써도 되겠어요"
+    ],
+    "content_hash": "ce861262e92cc886",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187640+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107772672432021994:2107866325137883263": {
+    "paragraphs": [
+      "Thanks!"
+    ],
+    "translated": [
+      "감사합니다!"
+    ],
+    "content_hash": "1aa7b1c1d5fb1fd6",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:30:01.187738+00:00",
+    "chunk": "posts-x.json"
   }
 }
