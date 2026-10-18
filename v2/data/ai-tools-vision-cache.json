@@ -3675,5 +3675,125 @@
     "category_ko": "다이어그램 도구·템플릿 소개",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8001989c6156a871914c5ba52599787aa3751af0b8bf9ae654ee069b0fb59d40": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView AVAX/USDT 일봉 차트",
+    "description_ko": "바이낸스 AVAX/USDT의 일봉 차트로, 급등 이후 약 10.8달러 부근에서 횡보하는 가격 흐름을 보여준다. 이동평균선, 거래량, 수평 지지·저항선과 상승 추세선이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:659b54600c563f40e04f59908c4fe52ad071c887b8aaaea0b93494bfb44d4c44": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "WLD/USDT 일봉 차트",
+    "description_ko": "바이낸스 WLD/USDT의 일봉 차트로, 이동평균선과 거래량, 수평 지지·저항선이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:da7a8be05c8e93559dd4d53f8c21725da58d23f52795d79cff1a0c9337ef337d": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "REA: Reverse Engineer Anything",
+    "description_ko": "바이너리, 애플리케이션, 런타임 동작을 역공학하는 MCP 프로젝트의 GitHub README 화면이다. 다국어 문서, MIT 라이선스, 버전 및 GitHub 트렌딩 배지가 보인다.",
+    "category_ko": "GitHub 프로젝트 / 역공학 도구",
+    "owner_hint": "REA / rea-agents",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8a434b38add10a1e716fe92535e4e8f4c02f2e9393c9408f02269410a5175902": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Penguin Solutions(PENG) 일봉 추세 분석",
+    "description_ko": "PENG의 상승 추세에서 갭 상승, 이동평균선 지지, 과열과 분배 신호를 설명한 차트다. 매수·청산 시점에 관한 한국어 주석이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:63173352ae285c3f50e7ddc73080839abee55f00e7d5290dbc1888d71069b769": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Penguin Solutions(PENG) 일봉 박스권 돌파 분석",
+    "description_ko": "PENG가 수개월간 횡보한 뒤 거래량 증가와 함께 상승하는 모습을 보여준다. 과거 고점 저항대와 갭 상승 이후 돌파 구간에 한국어 주석이 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8b9605098bee0903d5458379c790787c58772d6d369f9d6242881c1509c03e9b": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Penguin Solutions(PENG) 주봉 차트",
+    "description_ko": "PENG의 주봉 차트로, 장기 횡보 이후 급등과 조정, 최근 반등을 보여준다. 주요 가격대와 이동평균선, 거래량 및 관심 구간이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d77b1f29fdff11fe323ed5487a868b297a9b682c55f2f946c77e1ddd1477f217": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Penguin Solutions(PENG) 월봉 차트",
+    "description_ko": "PENG의 장기 월봉 차트로, 상승 추세선과 주요 저항선, 최근 급등 구간이 표시되어 있다. 월봉 추세와 일봉 관찰에 관한 한국어 주석이 보인다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:967daed60dca1206f2c8c684c719c2d8e25338d971469e49c91fa5b029efe115": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ONDO/USDT 4시간봉 차트",
+    "description_ko": "TradingView의 바이낸스 ONDO/USDT 4시간봉 차트. 급등 후 조정과 최근 반등을 보여주며 이동평균선, 지지·저항 구간, 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ad5f17dfbabfdee3bfc8788dac3ff2f7d66447b465d432f83afdd9286385053b": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ONDO/USDT 1시간봉 반등 차트",
+    "description_ko": "TradingView의 바이낸스 ONDO/USDT 1시간봉 차트. 급락 후 횡보 구간에서 반등한 모습이며 최근 눌림 구간이 흰색 원으로 강조되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5813b304816254c971256595c33b5443adc0ecc2a7f8f2bf380c7417f9b755ad": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ONDO/USDT 1시간봉 매매 구간 표시",
+    "description_ko": "ONDO/USDT 1시간봉을 확대한 차트. 수평 지지·저항선과 흰색 원으로 강조한 반등 지점, 진입 기준 약 0.4834 및 손절 기준 약 0.4733의 매수 포지션 도구가 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cf4d9bc247e95b6d956933b2ce6fefdbc5926fc6fb1512b8c63de1c76e9dfe20": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ONDO/USDT 일봉 차트",
+    "description_ko": "TradingView의 바이낸스 ONDO/USDT 일봉 차트. 장기간 바닥권 이후 급등과 조정을 보여주며 여러 이동평균선, 추세선, 지지·저항 영역과 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e0c0d5e1683bd6084e8026390169429eb7d40ab37dcc1aaedadce76a2c7593a8": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Aerodrome Finance AERO/USDT 일봉 차트",
+    "description_ko": "TradingView의 MEXC AERO/USDT 일봉 차트. 연초 하락 이후 회복과 최근 상승 흐름을 보여주며 이동평균선, 하락 추세선, 지지·저항 영역 및 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
   }
 }

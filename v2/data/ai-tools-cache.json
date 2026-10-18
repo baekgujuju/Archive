@@ -2403,5 +2403,75 @@
     "fingerprint": "375be72eacd8f65c2223f230fa17b87958239ac23fb2f33871035c8674638960",
     "entry": null,
     "version": 3
+  },
+  "2108135060176294343:text-6ec202e3b4b5c45d": {
+    "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808",
+    "entry": {
+      "title": "feitangyuan/onetake",
+      "summary_ko": "제품 출시 영상, 티저, 기능 데모를 제작하는 코딩 에이전트용 스킬입니다. 장면을 슬라이드처럼 전환하지 않고, 앞선 화면에서 다음 화면으로 자연스럽게 이어지는 원테이크 모션 영상을 만듭니다.",
+      "category": "AI 에이전트용 모션 영상 제작 스킬",
+      "repo_url": "https://github.com/feitangyuan/onetake",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808"
+    },
+    "version": 3
+  },
+  "2108124964285243888:b9e9f9e3a3237068.png": {
+    "fingerprint": "e4de59fc6f14b47334259140d0c38b822b6bf5e76241746c98bc38b803fcf542",
+    "entry": null,
+    "version": 3
+  },
+  "2108124964285243888:d3c444251c791148.png": {
+    "fingerprint": "6fa81f8b5dbc902fbcc4c262ea8b400702a62a6caa6398ec1af5683bf86ddbec",
+    "entry": null,
+    "version": 3
+  },
+  "2108216456597103032:db4e214785d0fac6.jpg": {
+    "fingerprint": "46995258bad4500feaa0666356832d8f62042064d5ee411cd68a53b6e31cf382",
+    "entry": null,
+    "version": 3
+  },
+  "2108216456597103032:dd98ec4bf4836b98.jpg": {
+    "fingerprint": "b93c73073995252ff40ab4ef3096fb322234df233fb8009f33c6741dc06ac4ab",
+    "entry": null,
+    "version": 3
+  },
+  "2108216456597103032:bba87dffe87e6c1b.png": {
+    "fingerprint": "203a5d84c8cc480f3f542d2ca5e85d63515d60e51f8eb98b0140196fe4c8bdaa",
+    "entry": null,
+    "version": 3
+  },
+  "2108216456597103032:da60784c6631a5d6.png": {
+    "fingerprint": "745e697e812081871ac03e8c084cc9f4517cd4eca378e15a39fbfa44a1acf5c0",
+    "entry": null,
+    "version": 3
+  },
+  "2108200610822861187:ead79ff3d3f2a378.png": {
+    "fingerprint": "7383365f4294fdfc9887c5b156750ae6d368ab42fbfdd89ce508e69385bb60ec",
+    "entry": null,
+    "version": 3
+  },
+  "2108200610822861187:d7013183a3f765f5.png": {
+    "fingerprint": "646c4b0cea59b1bc52db54f7c769614d7247d325b57fe54b430aafe4a0715f81",
+    "entry": null,
+    "version": 3
+  },
+  "2108200610822861187:810791fff0bbc880.png": {
+    "fingerprint": "03ccaeb3e203da4851fee658709d47306fe2acd83e4f6100c622bea18eb6998f",
+    "entry": null,
+    "version": 3
+  },
+  "2108200610822861187:93d2ebe7edf28a34.png": {
+    "fingerprint": "5c5b3e2fd22205d826c31f2daa05f74530f3fca2c90ae393c69ba56bbed60580",
+    "entry": null,
+    "version": 3
+  },
+  "2108196720706478249:f8c0025c04175532.png": {
+    "fingerprint": "629d2acfaa2eb01760f7641e97460c77d7075d747bc30408c7095c50e8682ca6",
+    "entry": null,
+    "version": 3
   }
 }

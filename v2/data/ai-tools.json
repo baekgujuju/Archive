@@ -196,5 +196,16 @@
       "text-url:no-title-check"
     ],
     "fingerprint": "3d5e099610ad0182987829495f2e18ebffca00bbecd8be78a0ab6d34269ee34f"
+  },
+  "2108135060176294343": {
+    "title": "feitangyuan/onetake",
+    "summary_ko": "제품 출시 영상, 티저, 기능 데모를 제작하는 코딩 에이전트용 스킬입니다. 장면을 슬라이드처럼 전환하지 않고, 앞선 화면에서 다음 화면으로 자연스럽게 이어지는 원테이크 모션 영상을 만듭니다.",
+    "category": "AI 에이전트용 모션 영상 제작 스킬",
+    "repo_url": "https://github.com/feitangyuan/onetake",
+    "status": "verified",
+    "evidence": [
+      "text-url:no-title-check"
+    ],
+    "fingerprint": "22cb617e7ca91415ace09858eda8adebfe2722e3878b6469f3311c5e606e2808"
   }
 }
