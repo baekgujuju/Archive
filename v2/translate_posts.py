@@ -301,6 +301,10 @@ def needs_reply_translation(text):
     """
     if not text or not text.strip():
         return False
+    lines=[line.strip() for line in text.splitlines() if line.strip()]
+    command = r'^(?:[$>]\s*)?(?:npx\s+\S+|(?:npm|pnpm|yarn)\s+(?:install|add|run|exec|create|dlx)\b|pip3?\s+(?:install|uninstall|show|list)\b|uv\s+(?:pip|run|add|sync)\b|git\s+(?:clone|pull|push|checkout|switch|status|diff|add|commit)\b|python3?\s+(?:-m\s+|\S+\.py\b)|node\s+\S+\.m?js\b|(?:curl|wget)\s+(?:-|https?://))'
+    if lines and all(re.match(command,line) for line in lines):
+        return False
     stripped = _strip_reply_noise(text)
     # CJK 산문 (일본어 가나 / 중국어·일본어 한자) — 문자가 곧 산문
     if re.search(r'[一-鿿぀-ヿ]', stripped):
@@ -905,9 +909,10 @@ URL, 멘션, 종목 기호 및 모든 숫자·배수·연도는 원문 그대로
     elif empty:
         print(f"  경고: 빈 번역 {empty}개 (전체 {len(paragraphs)})", file=sys.stderr)
 
-    for original,result in zip(paragraphs,translated):
-        if needs_reply_translation(original) and not is_placeholder(original):
-            validate_translation_pair(original,result)
+    # The caller validates complete posts/replies before committing each key.
+    # Validating every pair here would make one bad reply reject all other
+    # replies in the same provider batch. Structural marker failures above
+    # still reject the whole batch because paragraph ownership is uncertain.
     return translated
 
 
