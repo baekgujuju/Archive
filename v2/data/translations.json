@@ -4265,7 +4265,7 @@
     "content_hash": "1dbceb9d86a7f5e7",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246163+00:00"
+    "failed_at": "2026-10-18T04:56:10.627643+00:00"
   },
   "reply:2106003114780430513:2106003118282748173": {
     "paragraphs": [
@@ -4275,7 +4275,7 @@
     "content_hash": "0f9767f509fe3cd8",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246151+00:00"
+    "failed_at": "2026-10-18T04:56:10.627631+00:00"
   },
   "reply:1316391190879711233:1316391458899976193": {
     "paragraphs": [
@@ -4285,7 +4285,7 @@
     "content_hash": "a473c1197b11aeb4",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246172+00:00"
+    "failed_at": "2026-10-18T04:56:10.627655+00:00"
   },
   "reply:2041741766395633687:2041771586315776111": {
     "paragraphs": [
@@ -4295,7 +4295,7 @@
     "content_hash": "dbc1bd803fe412d2",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246199+00:00"
+    "failed_at": "2026-10-18T04:56:10.627680+00:00"
   },
   "reply:2041741766395633687:2041787053759680969": {
     "paragraphs": [
@@ -4305,7 +4305,7 @@
     "content_hash": "e344f09efb687dcb",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246214+00:00"
+    "failed_at": "2026-10-18T04:56:10.627690+00:00"
   },
   "reply:2106000342475522264:2106206852145184916": {
     "paragraphs": [
@@ -4315,7 +4315,7 @@
     "content_hash": "0dd62cc824ff466c",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246144+00:00"
+    "failed_at": "2026-10-18T04:56:10.627621+00:00"
   },
   "reply:1316391190879711233:1316392531517558786": {
     "paragraphs": [
@@ -4326,7 +4326,7 @@
     "content_hash": "96190f4dd18ab4e0",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246166+00:00"
+    "failed_at": "2026-10-18T04:56:10.627647+00:00"
   },
   "reply:2041741766395633687:2041960806087025147": {
     "paragraphs": [
@@ -4336,7 +4336,7 @@
     "content_hash": "966fd721d7a4300b",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246270+00:00"
+    "failed_at": "2026-10-18T04:56:10.627699+00:00"
   },
   "reply:1316391190879711233:1316391841923698688": {
     "paragraphs": [
@@ -4346,7 +4346,7 @@
     "content_hash": "015425a53689ab61",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246169+00:00"
+    "failed_at": "2026-10-18T04:56:10.627650+00:00"
   },
   "reply:2034487536194822651:2034488295665934694": {
     "paragraphs": [
@@ -4356,7 +4356,7 @@
     "content_hash": "260f4cd084fd2bbe",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246190+00:00"
+    "failed_at": "2026-10-18T04:56:10.627673+00:00"
   },
   "reply:2041151720601100593:2041151720601100593": {
     "paragraphs": [
@@ -4366,7 +4366,7 @@
     "content_hash": "bc035723d5982681",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246195+00:00"
+    "failed_at": "2026-10-18T04:56:10.627677+00:00"
   },
   "reply:1316391190879711233:1316766054367088640": {
     "paragraphs": [
@@ -4376,7 +4376,7 @@
     "content_hash": "5f52ac07209183d9",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246182+00:00"
+    "failed_at": "2026-10-18T04:56:10.627666+00:00"
   },
   "reply:1316391190879711233:1316392480984625152": {
     "paragraphs": [
@@ -4387,7 +4387,7 @@
     "content_hash": "6d8eeca8498512d1",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246157+00:00"
+    "failed_at": "2026-10-18T04:56:10.627637+00:00"
   },
   "reply:1316391190879711233:1316428649000833027": {
     "paragraphs": [
@@ -4397,7 +4397,7 @@
     "content_hash": "d1f1c00cf0391424",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246186+00:00"
+    "failed_at": "2026-10-18T04:56:10.627670+00:00"
   },
   "reply:2041741766395633687:2042022645244244413": {
     "paragraphs": [
@@ -4407,7 +4407,7 @@
     "content_hash": "c2ad3fc7a860b47d",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246266+00:00"
+    "failed_at": "2026-10-18T04:56:10.627695+00:00"
   },
   "reply:1316391190879711233:1316392545702739968": {
     "paragraphs": [
@@ -4417,7 +4417,7 @@
     "content_hash": "529f13e7a6eadb95",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246179+00:00"
+    "failed_at": "2026-10-18T04:56:10.627662+00:00"
   },
   "reply:2041741766395633687:2041747467243282858": {
     "paragraphs": [
@@ -4427,7 +4427,7 @@
     "content_hash": "a446ef842d199a14",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246204+00:00"
+    "failed_at": "2026-10-18T04:56:10.627684+00:00"
   },
   "reply:2041741766395633687:2041786459959480539": {
     "paragraphs": [
@@ -4437,7 +4437,7 @@
     "content_hash": "ebb7d20da3c3ed2e",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246209+00:00"
+    "failed_at": "2026-10-18T04:56:10.627687+00:00"
   },
   "reply:1316391190879711233:1318678414207946754": {
     "paragraphs": [
@@ -4447,7 +4447,7 @@
     "content_hash": "2de585e19d75a17d",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246176+00:00"
+    "failed_at": "2026-10-18T04:56:10.627658+00:00"
   },
   "reply:2106000342475522264:2106003461318033469": {
     "paragraphs": [
@@ -4457,7 +4457,7 @@
     "content_hash": "d44e27fed587cb3d",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T03:50:23.246100+00:00"
+    "failed_at": "2026-10-18T04:56:10.627560+00:00"
   },
   "reply:2043585233958875219:2043813393812074844": {
     "paragraphs": [
