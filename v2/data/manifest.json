@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-18T04:06:57.275295+00:00",
+  "version": "2026-10-18T04:14:08.781299+00:00",
   "content_updated_at": "2026-10-17T15:19:37.853603+00:00",
   "build": "v2",
   "source_hash": "dc367eada1e172d489b8f43f47690bc1995985cc0f1ff632e66554657a745f67",
@@ -24,8 +24,8 @@
   "app_version": "2.5.8",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "4acc1739bba7462598e0f6e6fcdb82192fd0b92a2203151b04c72c7333903042",
-    "count": 192
+    "sha256": "98fac93004a310d5443333431285759826d1b6cb5dbb30c19bce71796115da89",
+    "count": 212
   },
   "shared_state": {
     "file": "data/shared-state.json",
