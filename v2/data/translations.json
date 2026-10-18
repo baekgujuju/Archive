@@ -9083,20 +9083,62 @@
  },
  "quote:2041704624529228093:quote:anonymous": {
   "paragraphs": [
-   "🚨 O Google tornou público um software de IA que prevê o futuro. Preços de ações. Tendências de vendas. Demanda de energia. Padrões climáticos. Tráfego de servidores. Qualquer série temporal. Grátis. Chama-se TimesFM. Um modelo desenvolvido pelo Google Research, apresentado na ICML 2024, feito especificamente para previsão de séries temporais. Sem precisar treinar seu próprio modelo. Sem diploma em ciência de dados. Sem plataformas caras. Basta fornecer os dados. Ele prevê o que acontecerá a seguir. Eis o que torna isso diferente: → Pré-treinado em grandes volumes de dados. Funciona imediatamente com os SEUS dados.\n→ 200 milhões de parâmetros. Leve e eficiente.\n→ Suporta até 16K de contexto (anos de dados históricos).\n→ Previsões com intervalos de confiança (não só um número).\n→ Funciona com PyTorch e JAX\n→ Já integrado ao BigQuery E aqui está a parte mais louca: Antes, previsão exigia cientistas de dados, semanas de treino e alto custo. Agora: um modelo pronto. Qualquer domínio. Qualquer dado. Só prever. Exemplos: Forneça preços de ações → prevê tendências  \nForneça tráfego de servidor → prevê picos  \nForneça dados de vendas → prevê próximos meses  \nForneça demanda de energia → prevê consumo O custo antes: Terminal Bloomberg: ~$25.000/ano  \nPlataformas corporativas: +$50.000/ano  \nEquipe de dados: +$500.000/ano Agora: pip install timesfm Código aberto. Licença Apache 2.0. Tecnologia nível big tech na mão de qualquer pessoa. Não é mágica. Mas chega perto."
+   "🚨 O Google tornou público um software de IA que prevê o futuro.",
+   "Preços de ações. Tendências de vendas. Demanda de energia. Padrões climáticos. Tráfego de servidores. Qualquer série temporal. Grátis.",
+   "Chama-se TimesFM.",
+   "Um modelo desenvolvido pelo Google Research, apresentado na ICML 2024, feito especificamente para previsão de séries temporais.",
+   "Sem precisar treinar seu próprio modelo. Sem diploma em ciência de dados. Sem plataformas caras. Basta fornecer os dados. Ele prevê o que acontecerá a seguir.",
+   "Eis o que torna isso diferente:",
+   "→ Pré-treinado em grandes volumes de dados. Funciona imediatamente com os SEUS dados.\n→ 200 milhões de parâmetros. Leve e eficiente.\n→ Suporta até 16K de contexto (anos de dados históricos).\n→ Previsões com intervalos de confiança (não só um número).\n→ Funciona com PyTorch e JAX\n→ Já integrado ao BigQuery",
+   "E aqui está a parte mais louca:",
+   "Antes, previsão exigia cientistas de dados, semanas de treino e alto custo.",
+   "Agora: um modelo pronto. Qualquer domínio. Qualquer dado. Só prever.",
+   "Exemplos:",
+   "Forneça preços de ações → prevê tendências  \nForneça tráfego de servidor → prevê picos  \nForneça dados de vendas → prevê próximos meses  \nForneça demanda de energia → prevê consumo",
+   "O custo antes:",
+   "Terminal Bloomberg: ~$25.000/ano  \nPlataformas corporativas: +$50.000/ano  \nEquipe de dados: +$500.000/ano",
+   "Agora:",
+   "pip install timesfm",
+   "Código aberto. Licença Apache 2.0.",
+   "Tecnologia nível big tech na mão de qualquer pessoa.",
+   "Não é mágica.",
+   "Mas chega perto."
   ],
   "translated": [
-   "구글이 미래를 예측하는 AI 소프트웨어를 공개했습니다. 주가. 판매 동향. 에너지 수요. 기후 패턴. 서버 트래픽. 모든 시계열 데이터. 무료."
+   "🚨 구글이 미래를 예측하는 AI 소프트웨어를 공개했습니다.",
+   "주가. 판매 동향. 에너지 수요. 기후 패턴. 서버 트래픽. 모든 시계열 데이터. 무료.",
+   "이름은 TimesFM입니다.",
+   "Google Research에서 개발한 모델로, ICML 2024에서 발표됐으며 시계열 예측 전용으로 만들어졌습니다.",
+   "자신의 모델을 학습시킬 필요 없습니다. 데이터 사이언스 학위도 필요 없습니다. 비싼 플랫폼도 필요 없습니다. 데이터만 제공하면 됩니다. 다음에 일어날 일을 예측해줍니다.",
+   "다른 점은 이렇습니다:",
+   "→ 대량의 데이터로 사전 학습됨. 여러분의 데이터로 바로 동작합니다.\n→ 2억 개 파라미터. 가볍고 효율적입니다.\n→ 최대 16K 컨텍스트 지원 (수년치 과거 데이터).\n→ 신뢰 구간이 포함된 예측 (단순 숫자 하나가 아님).\n→ PyTorch와 JAX에서 동작합니다.\n→ BigQuery에 이미 통합되어 있습니다.",
+   "그리고 가장 놀라운 부분은 이겁니다:",
+   "예전에는 예측을 위해 데이터 사이언티스트, 수주간의 학습, 높은 비용이 필요했습니다.",
+   "이제는: 준비된 모델 하나. 어떤 도메인이든. 어떤 데이터든. 그냥 예측만 하면 됩니다.",
+   "예시:",
+   "주가를 입력 → 동향 예측\n서버 트래픽을 입력 → 피크 예측\n판매 데이터를 입력 → 향후 수개월 예측\n에너지 수요를 입력 → 소비량 예측",
+   "예전 비용:",
+   "블룸버그 터미널: 연 ~25,000달러\n기업용 플랫폼: 연 50,000달러 이상\n데이터 팀: 연 500,000달러 이상",
+   "이제는:",
+   "pip install timesfm",
+   "오픈소스. Apache 2.0 라이선스.",
+   "빅테크 수준의 기술을 누구나 손에 쥘 수 있습니다.",
+   "마법이 아닙니다.",
+   "하지만 거의 비슷합니다."
   ],
   "content_hash": "eb8f2fe33381f7e7",
   "status": "ok"
  },
  "quote:2041741766395633687:quote:anonymous": {
   "paragraphs": [
-   "Someone created a skill in Claude Code that clones any website with just one prompt. It uses Chrome MCP to get the fonts, colors, and exact design directly from the browser. It's not a screenshot. It's the original source. Open source. Web design just changed."
+   "Someone created a skill in Claude Code that clones any website with just one prompt.",
+   "It uses Chrome MCP to get the fonts, colors, and exact design directly from the browser. It's not a screenshot. It's the original source.",
+   "Open source. Web design just changed."
   ],
   "translated": [
-   "누군가 Claude Code에서 단 하나의 프롬프트로 어떤 웹사이트든 복제하는 스킬을 만들었습니다. 브라우저에서 직접 폰트, 색상, 정확한 디자인을 가져오기 위해 Chrome MCP를 사용합니다. 스크린샷이 아닙니다."
+   "누군가 Claude Code에서 단 하나의 프롬프트로 어떤 웹사이트든 복제하는 스킬을 만들었습니다.",
+   "브라우저에서 직접 폰트, 색상, 정확한 디자인을 가져오기 위해 Chrome MCP를 사용합니다. 스크린샷이 아닙니다. 원본 소스 그 자체입니다.",
+   "오픈소스. 웹 디자인이 이제 바뀌었습니다."
   ],
   "content_hash": "0b26c697c09a201e",
   "status": "ok"
