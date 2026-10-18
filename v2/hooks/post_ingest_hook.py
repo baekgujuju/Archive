@@ -974,7 +974,7 @@ def main():
         # 2e. 번역 (실패 시 재시도 마커)
         r = run([sys.executable, str(V2_ROOT / "translate_posts.py")], timeout=1800)
         if r.returncode != 0:
-            log("번역 실패 — 재시도 마커 생성")
+            log("번역 미완료 — 재시도 마커 생성")
             RETRY_TRANSLATION.write_text(
                 datetime.now(timezone.utc).isoformat(), encoding="utf-8")
         else:

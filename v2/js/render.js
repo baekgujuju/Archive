@@ -366,6 +366,44 @@ function normalizeArticle(article) {
  * @param {object} article — 글 객체 (replies 배열 포함 가능)
  * @returns {string} 답글 섹션 HTML (없으면 "")
  */
+/**
+ * 답글 원문 + 문단 정렬 한국어 번역 (app.js replyBody와 동일 패턴).
+ * 번역이 없거나 원문과 캐시 문단이 어긋나면(수정/재정렬/문단 경계 변경)
+ * 원문만 표시.
+ * 모델 출력은 반드시 이스케이프 (raw HTML 삽입 금지).
+ */
+/**
+ * 현재 원문 문단 배열과 캐시 문단 배열을 순서대로 대조한다.
+ * 이어 붙인 문자열 대조는 문단 경계 변경(2문단→1문단 합침 등)을
+ * 탐지하지 못한다. 공백 차이만 있는 변경은 허용한다 (compact 대조).
+ */
+function replyParagraphsMatch(text, cachedParas) {
+  const compact = (t) => String(t).replace(/\s+/g, ' ').trim();
+  const cur = String(text).split('\n\n').map((p) => p.trim()).filter(Boolean);
+  if (cur.length !== cachedParas.length) return false;
+  return cur.every((p, i) => compact(p) === compact(cachedParas[i]));
+}
+
+function replyBodyHtml(r) {
+  const text = String(r.fullText || '');
+  const tr = r.translation;
+  const compact = (t) => String(t).replace(/\s+/g, ' ').trim();
+  if (!tr || tr.status !== 'ok' || !Array.isArray(tr.paragraphs) ||
+      !Array.isArray(tr.translated) || tr.paragraphs.length !== tr.translated.length) {
+    return `<p class="reply-text">${escapeHtml(text)}</p>`;
+  }
+  if (!replyParagraphsMatch(text, tr.paragraphs)) {
+    return `<p class="reply-text">${escapeHtml(text)}</p>`;
+  }
+  return tr.paragraphs.map((t, i) => {
+    const ko = String(tr.translated[i] || '').trim();
+    return `<p class="reply-text">${escapeHtml(t)}</p>` +
+      (ko && compact(ko) !== compact(t)
+        ? `<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>${escapeHtml(ko)}</p>`
+        : '');
+  }).join('');
+}
+
 function repliesHtml(article) {
   const replies = Array.isArray(article?.replies)
     ? article.replies.filter((r) => r && typeof r === 'object')
@@ -375,7 +413,6 @@ function repliesHtml(article) {
   for (const r of replies) {
     const ra = r.author || {};
     const rname = ra.name || ra.handle || '';
-    const rtext = String(r.fullText || '');
     const rwhen = String(r.createdAt || '');
     const rtid = String(r.tweetId || r.id || '');
     const badge = r.isThread ? ' <span class="thread-badge">스레드</span>' : '';
@@ -384,7 +421,7 @@ function repliesHtml(article) {
         `<div class="reply-head"><span class="reply-author">${escapeHtml(rname)}</span>` +
         `<span class="reply-time">${escapeHtml(rwhen)}</span>${badge}` +
         `<button type="button" class="reply-del" data-reply-id="${escapeHtml(rtid)}" aria-label="댓글 삭제" title="댓글 삭제">×</button></div>` +
-        `<p class="reply-text">${escapeHtml(rtext)}</p></div>`
+        `${replyBodyHtml(r)}</div>`
     );
   }
   return (

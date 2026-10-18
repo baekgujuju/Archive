@@ -91,6 +91,26 @@ var ArchiveApp = (function () {
     if(matched<needed){var notice=doc.createElement('p');notice.className='translation-notice';notice.textContent='일부 문단의 번역을 다시 확인해야 합니다. 원문은 그대로 표시합니다.';doc.body.appendChild(notice);}
     return doc.body.innerHTML;
   }
+  function replyParagraphsMatch(text,cachedParas){
+    // 문단 배열을 순서대로 대조한다. 이어 붙인 문자열 대조는
+    // 문단 경계 변경(2문단→1문단 합침 등)을 탐지하지 못한다.
+    // 공백 차이만 있는 변경은 허용한다 (compact 대조).
+    var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};
+    var cur=String(text).split('\n\n').map(function(p){return p.trim();}).filter(Boolean);
+    if(cur.length!==cachedParas.length)return false;
+    for(var i=0;i<cur.length;i++)if(compact(cur[i])!==compact(cachedParas[i]))return false;
+    return true;
+  }
+  function replyBody(r){
+    // 답글 원문 + 문단 정렬 한국어 번역 (부모 translatedBody와 동일 패턴).
+    // 번역이 없거나 원문과 캐시 문단이 어긋나면(수정/재정렬/문단 경계 변경)
+    // 원문만 표시.
+    var tr=r.translation,text=String(r.fullText||'');
+    if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return '<p class="reply-text">'+linkText(text)+'</p>';
+    var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};
+    if(!replyParagraphsMatch(text,tr.paragraphs))return '<p class="reply-text">'+linkText(text)+'</p>';
+    return tr.paragraphs.map(function(t,i){var ko=String(tr.translated[i]||'').trim();return '<p class="reply-text">'+linkText(t)+'</p>'+(ko&&compact(ko)!==compact(t)?'<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(ko)+'</p>':'');}).join('');
+  }
   function renderReplies(a){
     // 답글 HTML (v1 패턴)
     var repliesHtml = '';
@@ -104,7 +124,7 @@ var ArchiveApp = (function () {
         var deleted = load('archive-deleted-replies', []);
         return '<div class="reply" data-reply-id="' + esc(rid) + '"' + (deleted.indexOf(rid) >= 0 ? ' hidden' : '') + '><div class="reply-head"><span class="reply-author">' + esc(rname) +
           '</span><span class="reply-time">' + esc(r.createdAt || '') + '</span>' + badge + '</div>' +
-          '<p class="reply-text">' + linkText(r.fullText || '') + '</p>' + images(r.mediaImages || r.media) + (rid ? '<button type="button" data-hide-reply="' + esc(rid) + '">댓글 숨기기</button><button type="button" data-delete-reply="' + esc(rid) + '">댓글 삭제</button>' : '') + '</div>';
+          replyBody(r) + images(r.mediaImages || r.media) + (rid ? '<button type="button" data-hide-reply="' + esc(rid) + '">댓글 숨기기</button><button type="button" data-delete-reply="' + esc(rid) + '">댓글 삭제</button>' : '') + '</div>';
       }).join('');
       repliesHtml = '<details class="replies"><summary>💬 댓글 ' + replies.length + '개</summary><div class="reply-list">' + items + '</div></details>';
     }

@@ -502,7 +502,7 @@ async function boot() {
   // 큰 HTML 문자열 생성을 다음 프레임으로 양보 (로딩 UI가 먼저 그려지도록)
   await new Promise((resolve) => setTimeout(resolve, 0));
   try {const mapResponse=await fetch('data/media-map.json',{cache:'no-cache'});if(!mapResponse.ok)throw new Error('Media map unavailable');if(mapResponse.ok){window.ArchiveMediaMap=await mapResponse.json();localStorage.setItem('archive-media-map',JSON.stringify(window.ArchiveMediaMap));}}catch(e){try{window.ArchiveMediaMap=JSON.parse(localStorage.getItem('archive-media-map')||'{}');}catch(ignore){}}
-  try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(ignore){}}
+  try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}catch(ignore){}}
   try{const response=await fetch('data/ai-tools.json',{cache:'no-cache'});if(response.ok){window.ArchiveToolMap=await response.json();localStorage.setItem('archive-ai-tools',JSON.stringify(window.ArchiveToolMap));}}catch(e){}
   renderArticles(articles, renderer, container, { offline: false });
   if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
@@ -569,13 +569,29 @@ function applyToolMetadata(articles,toolMap){
     });}catch(e){}
 }
 
+/**
+ * 답글(댓글) 번역 연결. 부모 번역과 같은 translations.json에서
+ * `reply:{부모 tweetId}:{답글 tweetId}` 키로 조회해 각 답글에 연결한다.
+ * 부모 키(순수 tweetId)와 충돌하지 않는다. 번역이 없으면 연결하지 않고
+ * 렌더는 원문만 표시한다.
+ */
+function attachReplyTranslations(article, translations) {
+  var pid = article && (article.tweetId || article.id || article.pinId);
+  if (!pid || !Array.isArray(article.replies) || !translations) return;
+  article.replies.forEach(function (r) {
+    if (!r || typeof r !== 'object') return;
+    var rid = r.tweetId || r.id;
+    if (rid) r.translation = translations['reply:' + pid + ':' + rid];
+  });
+}
+
 function renderArticles(articles, renderer, container, opts = {}) {
   try{applyToolMetadata(articles,(typeof window!=='undefined'&&window.ArchiveToolMap)||JSON.parse(localStorage.getItem('archive-ai-tools')||'{}'));}catch(e){}
 
   function dateOf(a){if(a.type==='x'&&/^\d+$/.test(String(a.tweetId||a.id||''))){try{return Number((BigInt(a.tweetId||a.id)>>22n)+1288834974657n);}catch(e){}}return Date.parse(a.date_saved||a.createdAt||a.date||'')||0;}
   articles=articles.slice().sort((a,b)=>dateOf(b)-dateOf(a));
   articles = articles.map((article) => renderer.normalizeArticle ? renderer.normalizeArticle(article) : article);
-  try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{if(!a.translation)a.translation=translations[a.tweetId||a.id||a.pinId];});}catch(e){}
+  try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{if(!a.translation)a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}catch(e){}
   const offline = !!opts.offline;
   let html;
   try {
