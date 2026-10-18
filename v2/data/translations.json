@@ -4261,213 +4261,257 @@
     "paragraphs": [
       "I admit 345 sins hahaha i ll fix it (greed)"
     ],
-    "translated": [],
+    "translated": [
+      "345가지 죄를 인정합니다 ㅋㅋㅋ 고칠게요 (탐욕)"
+    ],
     "content_hash": "1dbceb9d86a7f5e7",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627643+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:06:11.467313+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106003114780430513:2106003118282748173": {
     "paragraphs": [
       "Capa를 사지 말고 Complexity를 사라."
     ],
-    "translated": [],
+    "translated": [
+      "생산 능력을 사지 말고 복잡성을 사라."
+    ],
     "content_hash": "0f9767f509fe3cd8",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627631+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:06:11.467300+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316391458899976193": {
     "paragraphs": [
       "thank you for sharing"
     ],
-    "translated": [],
+    "translated": [
+      "공유해주셔서 감사합니다."
+    ],
     "content_hash": "a473c1197b11aeb4",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627655+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132350+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2041771586315776111": {
     "paragraphs": [
       "Ya lo probé está muy loco"
     ],
-    "translated": [],
+    "translated": [
+      "벌써 써봤는데 진짜 미쳤네요."
+    ],
     "content_hash": "dbc1bd803fe412d2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627680+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132394+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2041787053759680969": {
     "paragraphs": [
       "Y el latigo?"
     ],
-    "translated": [],
+    "translated": [
+      "채찍은요?"
+    ],
     "content_hash": "e344f09efb687dcb",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627690+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132409+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106000342475522264:2106206852145184916": {
     "paragraphs": [
       "도시바가 HDD에 약 600억 엔을 넣어 생산능력을 2배로 늘리는 계획에 Seagate가 프리마켓에서 10%대 하락했습니다. 공급 확대가 가격 협상력을 건드리는 구간으로 읽힙니다."
     ],
-    "translated": [],
+    "translated": [
+      "도시바가 HDD에 약 600억 엔을 투자해 생산 능력을 2배로 늘리겠다는 계획을 내놓자 Seagate가 프리마켓에서 10%대 하락했습니다. 공급 확대가 가격 협상력에 영향을 미치는 국면으로 읽힙니다."
+    ],
     "content_hash": "0dd62cc824ff466c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627621+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:06:11.467289+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316392531517558786": {
     "paragraphs": [
       "Leaving some money on Table is much better than giving it back to market,",
       "Important Lesson learned in the beginning of career"
     ],
-    "translated": [],
+    "translated": [
+      "수익을 조금 덜 챙기는 편이 시장에 다시 돌려주는 것보다 훨씬 낫습니다.",
+      "커리어 초기에 배운 중요한 교훈"
+    ],
     "content_hash": "96190f4dd18ab4e0",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627647+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132244+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2041960806087025147": {
     "paragraphs": [
       "cloning a site's css is neat but calling it 'web design changed' is a stretch, it's just automated theft of someone else's design system"
     ],
-    "translated": [],
+    "translated": [
+      "사이트의 CSS를 복제하는 건 멋지지만, 그걸 두고 '웹 디자인이 바뀌었다'고 하는 건 과장이죠. 그냥 다른 사람의 디자인 시스템을 자동으로 훔치는 것뿐입니다."
+    ],
     "content_hash": "966fd721d7a4300b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627699+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132419+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316391841923698688": {
     "paragraphs": [
       "Thanks for great reminder. It’s really painful because I didn’t follow the rules. I got mistake because I want to gain profit by lucky. 😞"
     ],
-    "translated": [],
+    "translated": [
+      "좋은 내용을 다시 일깨워주셔서 감사합니다. 규칙을 지키지 않아서 정말 고통스럽네요. 운으로 수익을 내고 싶다는 욕심에 실수했어요. 😞"
+    ],
     "content_hash": "015425a53689ab61",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627650+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132337+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2034487536194822651:2034488295665934694": {
     "paragraphs": [
       "스크리너는, Stock Picking 과정에서의 내 감정을 배제해주는 정말 좋은 도구입니다만 이 개념은 이미 해외에서는 정말 유명하고, 국내에서는 검색식만 몇십 받고 판매하는 분들도 계신데 그 정도는 아닙니다... 결국 셋업 공부는 따로 해야됩니다."
     ],
-    "translated": [],
+    "translated": [
+      "스크리너는, 종목 선정 과정에서의 내 감정을 배제해주는 정말 좋은 도구입니다만 이 개념은 이미 해외에서는 정말 유명하고, 국내에서는 검색식만 몇십 받고 판매하는 분들도 계신데 그 정도는 아닙니다... 결국 셋업 공부는 따로 해야됩니다."
+    ],
     "content_hash": "260f4cd084fd2bbe",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627673+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132383+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041151720601100593:2041151720601100593": {
     "paragraphs": [
       "비개발자를 위한 Claude 활용 가이드"
     ],
-    "translated": [],
+    "translated": [
+      "비개발자를 위한 Claude 활용 가이드"
+    ],
     "content_hash": "bc035723d5982681",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627677+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132388+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316766054367088640": {
     "paragraphs": [
       "@Sommerize\n This guy is mythic in his financial investing wisdom. See this post."
     ],
-    "translated": [],
+    "translated": [
+      "@Sommerize\n이분의 금융 투자 지혜는 전설적인 수준입니다. 이 게시물을 보세요."
+    ],
     "content_hash": "5f52ac07209183d9",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627666+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132371+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316392480984625152": {
     "paragraphs": [
       "Why its difficult to avoid 2nd Mistake..",
       "In Mark's Own word.."
     ],
-    "translated": [],
+    "translated": [
+      "두 번째 실수를 피하기 어려운 이유..",
+      "마크가 직접 한 말로.."
+    ],
     "content_hash": "6d8eeca8498512d1",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627637+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:06:11.467308+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316428649000833027": {
     "paragraphs": [
       "I will frame this all over my walls. This is golden advise and only few people can acknowledge and admit it. I am going through this phase and want to come over the same. Thanks sir."
     ],
-    "translated": [],
+    "translated": [
+      "이 내용을 액자에 넣어 벽마다 걸어두고 싶네요. 정말 귀중한 조언이고, 이를 깨닫고 인정할 수 있는 사람은 많지 않습니다. 저도 지금 이런 시기를 겪고 있고, 극복하고 싶습니다. 감사합니다."
+    ],
     "content_hash": "d1f1c00cf0391424",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627670+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132377+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2042022645244244413": {
     "paragraphs": [
       "npx skillfish add julianromli/ai-skills clone-website"
     ],
-    "translated": [],
+    "translated": [
+      "npx skillfish add julianromli/ai-skills clone-website"
+    ],
     "content_hash": "c2ad3fc7a860b47d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627695+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132414+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1316392545702739968": {
     "paragraphs": [
       "It’s difficult to get a balance between all these points...."
     ],
-    "translated": [],
+    "translated": [
+      "이 모든 사항 사이에서 균형을 잡기가 어렵네요...."
+    ],
     "content_hash": "529f13e7a6eadb95",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627662+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132364+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2041747467243282858": {
     "paragraphs": [
       "ah pos eso ya se hacia, pero si seguro lo hace ahora con un prompt nomas xd"
     ],
-    "translated": [],
+    "translated": [
+      "아, 그거 원래도 되긴 했는데, 이제는 프롬프트 하나만으로 해주나 보네 ㅋㅋ"
+    ],
     "content_hash": "a446ef842d199a14",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627684+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132399+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2041786459959480539": {
     "paragraphs": [
       "Pero es editable luego?"
     ],
-    "translated": [],
+    "translated": [
+      "그런데 나중에 수정도 할 수 있나요?"
+    ],
     "content_hash": "ebb7d20da3c3ed2e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627687+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132404+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:1316391190879711233:1318678414207946754": {
     "paragraphs": [
       "Classic mistakes. We’ve all made them"
     ],
-    "translated": [],
+    "translated": [
+      "전형적인 실수들이죠. 우리 모두 한 번쯤 해봤습니다."
+    ],
     "content_hash": "2de585e19d75a17d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627658+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132358+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106000342475522264:2106003461318033469": {
     "paragraphs": [
       "hdd가 ssd시장에 영향 미치는건 어떻게 생각하시나요 ? \n포트중 하나에 고민거리가 생겻네요 ㅋㅋㅋㅋ"
     ],
-    "translated": [],
+    "translated": [
+      "HDD가 SSD 시장에 영향을 미치는 건 어떻게 생각하시나요?\n포트폴리오에 담긴 종목 중 하나에 고민거리가 생겼네요 ㅋㅋㅋㅋ"
+    ],
     "content_hash": "d44e27fed587cb3d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:56:10.627560+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:06:11.467182+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2043585233958875219:2043813393812074844": {
     "paragraphs": [
       "Agent들이 학습하는 재료가 되겠군"
     ],
-    "translated": [],
+    "translated": [
+      "에이전트들이 학습하는 재료가 되겠군"
+    ],
     "content_hash": "527f7b83d1923d61",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:02:37.747351+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132451+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2043699713883701640:2043735470375612791": {
     "paragraphs": [
@@ -4505,11 +4549,13 @@
     "paragraphs": [
       "you can already do this all in the dom / console …"
     ],
-    "translated": [],
+    "translated": [
+      "이건 이미 DOM이나 콘솔에서 전부 할 수 있는데…"
+    ],
     "content_hash": "e9aca51176d20033",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:02:37.747328+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132430+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2043585233958875219:2043780440398389502": {
     "paragraphs": [
@@ -4565,21 +4611,25 @@
     "paragraphs": [
       "给我，我也学不会啊"
     ],
-    "translated": [],
+    "translated": [
+      "줘도 난 못 배우겠는데."
+    ],
     "content_hash": "53dec0dcec85613c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:02:37.747337+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132435+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2041741766395633687:2042264012113784858": {
     "paragraphs": [
       "where can i find that ! I really really need..."
     ],
-    "translated": [],
+    "translated": [
+      "그거 어디서 찾을 수 있나요! 정말 정말 필요해요..."
+    ],
     "content_hash": "948205c3aef9d4da",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:02:37.747284+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132424+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2043585233958875219:2043739715707240826": {
     "paragraphs": [
@@ -4645,11 +4695,13 @@
     "paragraphs": [
       "Only external links (YouTube/OCW)—no hosted videos/materials. Broken links common (e.g. MIT 8.421, Stanford Theoretical Minimum). Lightly maintained: 5 contributors, last update Dec 2025 (4+ months ago). Raw list only—no roadmap, homework, structure, or credentials."
     ],
-    "translated": [],
+    "translated": [
+      "외부 링크(YouTube/OCW)만 있으며, 직접 호스팅하는 동영상이나 자료는 없습니다. 깨진 링크가 흔합니다(예: MIT 8.421, Stanford Theoretical Minimum). 유지 관리는 드문 편입니다. 기여자는 5명이고, 마지막 업데이트는 2025년 12월입니다(4개월 이상 전). 단순 목록뿐이며, 로드맵이나 과제, 체계적인 구성, 수료 인증은 없습니다."
+    ],
     "content_hash": "0341404f1c90f644",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:02:37.747343+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:16:54.132441+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2045275182563049937:2045346091239887209": {
     "paragraphs": [
