@@ -385,7 +385,7 @@ function replyParagraphsMatch(text, cachedParas) {
 }
 
 function replyBodyHtml(r) {
-  const text = String(r.fullText || '');
+  const text = String(r.fullText || r.text || '');
   const tr = r.translation;
   const compact = (t) => String(t).replace(/\s+/g, ' ').trim();
   if (!tr || tr.status !== 'ok' || !Array.isArray(tr.paragraphs) ||
