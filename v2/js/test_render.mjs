@@ -241,6 +241,12 @@ const rh6 = repliesHtml({
       translated: ['첫 번째 문단.', '두 번째 문단.'] } }],
 });
 check('답글 문단 정렬', rh6.indexOf('First para here.') < rh6.indexOf('첫 번째 문단.') && rh6.indexOf('첫 번째 문단.') < rh6.indexOf('Second para here.') && rh6.indexOf('Second para here.') < rh6.indexOf('두 번째 문단.'));
+const rh7 = repliesHtml({
+  replies: [{ ...replyBase, fullText: 'First para here. Second para here.',
+    translation: { status: 'ok', paragraphs: ['First para here.', 'Second para here.'],
+      translated: ['첫 번째 문단.', '두 번째 문단.'] } }],
+});
+check('답글 문단 경계 변경 시 번역 미표시', rh7.includes('First para here. Second para here.') && !rh7.includes('첫 번째 문단.'));
 
 console.log(`\n결과: ${pass} 통과, ${fail} 실패`);
 process.exit(fail ? 1 : 0);

@@ -368,9 +368,22 @@ function normalizeArticle(article) {
  */
 /**
  * 답글 원문 + 문단 정렬 한국어 번역 (app.js replyBody와 동일 패턴).
- * 번역이 없거나 원문과 캐시 문단이 어긋나면(수정/재정렬) 원문만 표시.
+ * 번역이 없거나 원문과 캐시 문단이 어긋나면(수정/재정렬/문단 경계 변경)
+ * 원문만 표시.
  * 모델 출력은 반드시 이스케이프 (raw HTML 삽입 금지).
  */
+/**
+ * 현재 원문 문단 배열과 캐시 문단 배열을 순서대로 대조한다.
+ * 이어 붙인 문자열 대조는 문단 경계 변경(2문단→1문단 합침 등)을
+ * 탐지하지 못한다. 공백 차이만 있는 변경은 허용한다 (compact 대조).
+ */
+function replyParagraphsMatch(text, cachedParas) {
+  const compact = (t) => String(t).replace(/\s+/g, ' ').trim();
+  const cur = String(text).split('\n\n').map((p) => p.trim()).filter(Boolean);
+  if (cur.length !== cachedParas.length) return false;
+  return cur.every((p, i) => compact(p) === compact(cachedParas[i]));
+}
+
 function replyBodyHtml(r) {
   const text = String(r.fullText || '');
   const tr = r.translation;
@@ -379,7 +392,7 @@ function replyBodyHtml(r) {
       !Array.isArray(tr.translated) || tr.paragraphs.length !== tr.translated.length) {
     return `<p class="reply-text">${escapeHtml(text)}</p>`;
   }
-  if (compact(text) !== compact(tr.paragraphs.join(' '))) {
+  if (!replyParagraphsMatch(text, tr.paragraphs)) {
     return `<p class="reply-text">${escapeHtml(text)}</p>`;
   }
   return tr.paragraphs.map((t, i) => {

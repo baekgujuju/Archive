@@ -37,6 +37,7 @@ import sys
 import time
 import shutil
 import tempfile
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -110,6 +111,7 @@ REPLY_MAX_PER_RUN = 20  # 폴당 최대 답글 수 (bounded — 무제한 장시
 REPLY_PROVIDER_MAX_PARAGRAPHS = 24  # provider 호출당 최대 문단 수
 REPLY_PROVIDER_MAX_CHARS = 6000  # provider 호출당 최대 문자 수
 REPLY_CHUNK = "posts-x.json"  # 캐시 엔트리 chunk 표기
+REPLY_FAILURE_COOLDOWN = timedelta(minutes=60)  # 실패 후 재시도 쿨다운
 
 # 답글 노이즈: 번역 여부 판단에서 제외 (URL·멘션·해시태그·티커·대문자 약어)
 _REPLY_URL_RE = re.compile(r'https?://\S+|www\.\S+')
@@ -117,6 +119,14 @@ _REPLY_MENTION_RE = re.compile(r'@[A-Za-z0-9_]+')
 _REPLY_HASHTAG_RE = re.compile(r'#[A-Za-z0-9_가-힣]+')
 _REPLY_TICKER_RE = re.compile(r'\$[A-Za-z][A-Za-z0-9.]*')
 _REPLY_BARE_TICKER_RE = re.compile(r'\b[A-Z]{2,5}\b')
+
+# 전부 대문자인 문장에서 산문을 구분하는 기능어 (관사/대명사/조동사 등).
+# "THIS IS GOOD"은 기능어(IS)가 있어 산문, "BTC ETH"는 기능어가 없어 티커 나열.
+_REPLY_UPPER_FUNCTION_WORDS = frozenset(
+    'IS ARE WAS WERE BE BEEN THE A AN AND OR NOT DO DOES DID THIS THAT THESE THOSE '
+    'IT ITS TO OF IN ON FOR WITH BY AT FROM AS HAVE HAS HAD WILL WOULD CAN COULD '
+    'SHOULD IF THEN THAN BUT SO NO YES ALL ANY YOU YOUR WE OUR THEY THEIR HE SHE '
+    'HIS HER I AM ME MY US HIM THEM'.split())
 
 
 def reply_key(parent_id, reply_id):
@@ -130,12 +140,21 @@ def _is_korean_char(ch):
 
 
 def _strip_reply_noise(text):
-    """번역 여부 판단용: URL·멘션·해시태그·티커·대문자 약어 제거."""
+    """번역 여부 판단용: URL·멘션·해시태그·티커·대문자 약어 제거.
+
+    대문자 약어(티커) 제거는 소문자나 한글이 섞인 경우에만 적용한다.
+    전부 대문자인 문장은 외국어 산문일 수 있다 ("THIS IS GOOD") —
+    기능어가 있으면 산문으로 보고 제거하지 않고, 기능어가 없으면
+    티커 나열로 보고 제거한다 ("BTC ETH").
+    """
     t = _REPLY_URL_RE.sub('', text)
     t = _REPLY_MENTION_RE.sub('', t)
     t = _REPLY_HASHTAG_RE.sub('', t)
     t = _REPLY_TICKER_RE.sub('', t)
-    t = _REPLY_BARE_TICKER_RE.sub('', t)
+    if re.search(r'[a-z가-힣]', t):
+        t = _REPLY_BARE_TICKER_RE.sub('', t)
+    elif not any(w in _REPLY_UPPER_FUNCTION_WORDS for w in re.findall(r'[A-Z]+', t)):
+        t = _REPLY_BARE_TICKER_RE.sub('', t)
     return t
 
 
@@ -162,6 +181,32 @@ def needs_reply_translation(text):
         if sum(1 for c in word if c.isalpha() and not _is_korean_char(c)) >= 3:
             return True
     return False
+
+
+def _in_reply_failure_cooldown(cached, current_hash):
+    """최근 실패 쿨다운 안인지 (앞쪽 실패 작업이 뒤쪽 백로그를 영구 차단 방지).
+
+    실패 기록의 해시가 현재 해시와 같고, 실패 시점이 쿨다운 안이면 True.
+    실패 기록이 없거나, 해시가 다르거나, 쿨다운이 지났거나, 타임스탬프가
+    없으면 False (재시도).
+    """
+    fail_rec = None
+    if cached.get('status') == 'failed':
+        fail_rec = cached
+    elif isinstance(cached.get('last_attempt'), dict):
+        fail_rec = cached.get('last_attempt')
+    if not fail_rec:
+        return False
+    if fail_rec.get('content_hash') != current_hash:
+        return False
+    failed_at = fail_rec.get('failed_at')
+    if not failed_at:
+        return False
+    try:
+        failed_dt = datetime.fromisoformat(failed_at)
+    except ValueError:
+        return False
+    return datetime.now(timezone.utc) - failed_dt < REPLY_FAILURE_COOLDOWN
 
 
 def collect_reply_jobs(posts, cache, force=False):
@@ -202,6 +247,10 @@ def collect_reply_jobs(posts, cache, force=False):
                                 and all(isinstance(t, str) and t.strip() for t in cached['translated']))
                 if cached.get('content_hash') == h and cached.get('status') == 'ok' and valid_cached:
                     continue
+                # 최근 실패 쿨다운: 실패한 앞쪽 작업을 이번 실행에서 건너뛰어
+                # 뒤쪽 백로그가 진행되게 한다. 쿨다운 후 다음 폴에 재시도.
+                if _in_reply_failure_cooldown(cached, h):
+                    continue
                 if cached.get('content_hash') != h:
                     print(f"  답글 해시 변경 → 재번역: {key[:60]}")
             real_indices = [i for i, p in enumerate(paragraphs)
@@ -218,18 +267,61 @@ def collect_reply_jobs(posts, cache, force=False):
     return jobs
 
 
-def group_reply_batches(jobs):
-    """작업을 provider 호출 단위 배치로 묶는다 (문단/문자 한도 내)."""
+def split_reply_job(job):
+    """단일 작업이 provider 한도를 초과하면 한도 내 조각으로 나눈다.
+
+    조각은 같은 key를 공유하고 real_indices 부분집합을 갖는다.
+    단일 문단 자체가 문자 한도를 초과하면 나눌 수 없으므로 그대로
+    하나의 조각으로 보낸다 (문단을 자르면 정렬이 깨진다).
+    """
+    paras = job['real_paras']
+    indices = job['real_indices']
+    if (len(paras) <= REPLY_PROVIDER_MAX_PARAGRAPHS
+            and sum(len(p) for p in paras) <= REPLY_PROVIDER_MAX_CHARS):
+        return [job]
+    fragments = []
+    cur_idx, cur_paras, cur_chars = [], 0, 0
+    for pos, p in zip(indices, paras):
+        n = len(p)
+        if cur_idx and (cur_paras + 1 > REPLY_PROVIDER_MAX_PARAGRAPHS
+                        or cur_chars + n > REPLY_PROVIDER_MAX_CHARS):
+            fragments.append(_reply_fragment(job, cur_idx))
+            cur_idx, cur_paras, cur_chars = [], 0, 0
+        cur_idx.append(pos)
+        cur_paras += 1
+        cur_chars += n
+    if cur_idx:
+        fragments.append(_reply_fragment(job, cur_idx))
+    return fragments
+
+
+def _reply_fragment(job, positions):
+    """작업의 real_indices 부분집합 조각."""
+    return {
+        'parent_id': job['parent_id'], 'reply_id': job['reply_id'],
+        'key': job['key'], 'text': job['text'],
+        'paragraphs': job['paragraphs'],
+        'real_indices': list(positions),
+        'real_paras': [job['paragraphs'][i] for i in positions],
+        'content_hash': job['content_hash'],
+    }
+
+
+def group_reply_batches(fragments):
+    """작업 조각을 provider 호출 단위 배치로 묶는다 (문단/문자 한도 내).
+
+    입력 조각은 이미 한도 내라고 가정한다 (split_reply_job 경유).
+    """
     batches = []
     cur, cur_paras, cur_chars = [], 0, 0
-    for job in jobs:
-        n = len(job['real_paras'])
-        chars = sum(len(p) for p in job['real_paras'])
+    for frag in fragments:
+        n = len(frag['real_paras'])
+        chars = sum(len(p) for p in frag['real_paras'])
         if cur and (cur_paras + n > REPLY_PROVIDER_MAX_PARAGRAPHS
                     or cur_chars + chars > REPLY_PROVIDER_MAX_CHARS):
             batches.append(cur)
             cur, cur_paras, cur_chars = [], 0, 0
-        cur.append(job)
+        cur.append(frag)
         cur_paras += n
         cur_chars += chars
     if cur:
@@ -238,26 +330,24 @@ def group_reply_batches(jobs):
 
 
 def translate_reply_batch(batch):
-    """배치(작업 리스트)를 한 번의 provider 호출로 번역.
+    """배치(작업 조각 리스트)를 한 번의 provider 호출로 번역.
 
-    답글별 경계는 번호([N])로 유지하고, 결과는 답글별로 분리해 반환한다.
-    Returns: {key: full_translated list}
+    답글별 경계는 번호([N])로 유지하고, 결과는 답글별 위치 매핑으로 반환한다.
+    Returns: {key: {문단 위치: 번역문}}
     Raises: 번역 문단 누락/실패 시 RuntimeError (호출자가 답글별 처리).
     """
     flat = []
-    for job in batch:
-        flat.extend(job['real_paras'])
-    translated_flat = translate_paragraphs(flat)
+    positions = []
+    for frag in batch:
+        for pos, p in zip(frag['real_indices'], frag['real_paras']):
+            flat.append(p)
+            positions.append((frag['key'], pos))
+    translated_flat = translate_paragraphs(flat, strict=True)
     if len(translated_flat) != len(flat) or any(not t.strip() for t in translated_flat):
         raise RuntimeError('배치 번역 문단 누락: 완료로 기록하지 않고 재시도합니다.')
     result = {}
-    idx = 0
-    for job in batch:
-        full = list(job['paragraphs'])
-        for pos in job['real_indices']:
-            full[pos] = translated_flat[idx]
-            idx += 1
-        result[job['key']] = full
+    for (key, pos), t in zip(positions, translated_flat):
+        result.setdefault(key, {})[pos] = t
     return result
 
 
@@ -269,6 +359,7 @@ def _record_reply_failure(cache, touched, job, error):
         "content_hash": job['content_hash'],
         "status": "failed",
         "error": str(error)[:200],
+        "failed_at": datetime.now(timezone.utc).isoformat(),
     }
     previous = cache.get(job['key'])
     if previous and previous.get('status') == 'ok':
@@ -300,58 +391,93 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
         print("번역할 답글이 없습니다.")
         return 0, 0, 0
     jobs = jobs[:max_per_run]
+    jobs_by_key = {j['key']: j for j in jobs}
     print(f"답글 번역 대상: {len(jobs)}개 (전체 미번역 {total}개, 폴당 상한 {max_per_run})")
-    batches = group_reply_batches(jobs)
-    success, failed, consecutive_failures = 0, 0, 0
+    fragments = []
+    for job in jobs:
+        fragments.extend(split_reply_job(job))
+    batches = group_reply_batches(fragments)
+    accumulated = {}  # key -> {문단 위치: 번역문}
+    failed_keys = set()
+    attempted_keys = set()  # 실제 처리한 배치에 들어간 작업 키 (조기 중단 시 미시도 구분)
+    consecutive_failures = 0
     for bi, batch in enumerate(batches):
-        print(f"  [배치 {bi+1}/{len(batches)}] 답글 {len(batch)}개...")
+        print(f"  [배치 {bi+1}/{len(batches)}] 답글 조각 {len(batch)}개...")
+        for frag in batch:
+            attempted_keys.add(frag['key'])
         try:
-            results = translate_reply_batch(batch)
+            pos_maps = translate_reply_batch(batch)
         except Exception as e:
             print(f"  ✗ 배치 실패: {e}", file=sys.stderr)
-            for job in batch:
-                _record_reply_failure(cache, touched, job, e)
-                failed += 1
+            for frag in batch:
+                if frag['key'] not in failed_keys:
+                    failed_keys.add(frag['key'])
+                    _record_reply_failure(cache, touched, jobs_by_key[frag['key']], e)
             consecutive_failures += 1
             if consecutive_failures >= 2:
                 print('연속 답글 배치 실패 2회: 기존 캐시를 보존하고 이번 실행을 종료합니다.', file=sys.stderr)
                 break
+            if touched:
+                try:
+                    save_cache(cache, touched)
+                    touched.clear()
+                except Exception as se:
+                    print(f"  (답글 실패 기록 저장 실패 — 다음 배치에서 재시도: {se})",
+                          file=sys.stderr)
             time.sleep(5)
             continue
         consecutive_failures = 0
-        for job in batch:
-            full = results[job['key']]
-            cache[job['key']] = {
-                "paragraphs": job['paragraphs'],
-                "translated": full,
-                "content_hash": job['content_hash'],
-                "status": "ok",
-                "translated_at": datetime.now(timezone.utc).isoformat(),
-                "chunk": REPLY_CHUNK,
-            }
-            touched.add(job['key'])
-            success += 1
-        try:
-            save_cache(cache, touched)
-            touched.clear()
-            print(f"  (답글 캐시 중간 저장: 배치 {bi+1})")
-        except Exception as e:
-            print(f"  (답글 캐시 중간 저장 실패 — 다음 배치/최종 저장에서 재시도: {e})",
-                  file=sys.stderr)
+        for key, pos_map in pos_maps.items():
+            accumulated.setdefault(key, {}).update(pos_map)
         time.sleep(2)
+    # 답글별 조립: 완전한 것만 캐시에 저장 (부분 성공은 저장하지 않음).
+    # 시도하지 않은 작업(조기 중단)은 실패로 기록하지 않고 그대로 둔다.
+    success = 0
+    for job in jobs:
+        if job['key'] in failed_keys:
+            continue
+        if job['key'] not in attempted_keys:
+            continue
+        pos_map = accumulated.get(job['key'], {})
+        if any(pos not in pos_map or not pos_map[pos].strip()
+               for pos in job['real_indices']):
+            if job['key'] not in failed_keys:
+                failed_keys.add(job['key'])
+                _record_reply_failure(
+                    cache, touched, job,
+                    RuntimeError('배치 번역 누락: 일부 문단 번역 없음'))
+            continue
+        full = list(job['paragraphs'])
+        for pos in job['real_indices']:
+            full[pos] = pos_map[pos]
+        cache[job['key']] = {
+            "paragraphs": job['paragraphs'],
+            "translated": full,
+            "content_hash": job['content_hash'],
+            "status": "ok",
+            "translated_at": datetime.now(timezone.utc).isoformat(),
+            "chunk": REPLY_CHUNK,
+        }
+        touched.add(job['key'])
+        success += 1
     if touched:
         save_cache(cache, touched)
         touched.clear()
+    failed = len(failed_keys)
     remaining = total - success
     print(f"답글 번역: 성공 {success}개, 실패 {failed}개, 남은 백로그 {remaining}개")
     return success, failed, remaining
 
 
-def translate_paragraphs(paragraphs):
+def translate_paragraphs(paragraphs, strict=False):
     """문단 리스트를 한국어로 번역 (Gemini API).
 
     멀티라인 출력 처리: [N] 마커로 시작하는 줄부터 다음 [N] 마커 전까지를
     하나의 번역문으로 누적.
+    strict=True (답글 배치 전용): 번호 중복·범위 밖·누락·빈 번역을
+    조용히 넘기지 않고 예외로 실패시킨다. 원문 속 [N] 형태나 모델의
+    번호 착오가 다른 답글 번역으로 잘못 저장되는 것을 막는다.
+    부모 번역은 strict=False (기존 동작 유지).
     """
     numbered = "\n".join(f"[{i+1}] {p}" for i, p in enumerate(paragraphs))
     prompt = f"""다음 외국어 문단들을 한국어로 번역해주세요.
@@ -369,6 +495,7 @@ URL과 종목 기호는 원문 그대로 보존하세요.
     translated = [""] * len(paragraphs)
     current_idx = -1
     current_lines = []
+    seen_numbers = set()
 
     def flush():
         nonlocal current_idx, current_lines
@@ -381,7 +508,15 @@ URL과 종목 기호는 원문 그대로 보존하세요.
         m = re.match(r'\[(\d+)\]\s*(.*)', line.strip())
         if m:
             flush()
-            current_idx = int(m.group(1)) - 1
+            num = int(m.group(1))
+            if strict:
+                if num < 1 or num > len(paragraphs):
+                    raise RuntimeError(
+                        f'번역 번호 범위 밖: [{num}] (전체 {len(paragraphs)})')
+                if num in seen_numbers:
+                    raise RuntimeError(f'번역 번호 중복: [{num}]')
+                seen_numbers.add(num)
+            current_idx = num - 1
             current_lines = [m.group(2)] if m.group(2) else []
         elif current_idx >= 0:
             # 이전 번호의 계속 (멀티라인)
@@ -390,7 +525,13 @@ URL과 종목 기호는 원문 그대로 보존하세요.
 
     # 개수 검증
     empty = sum(1 for t in translated if not t.strip())
-    if empty:
+    if strict:
+        if len(seen_numbers) != len(paragraphs):
+            raise RuntimeError(
+                f'번역 번호 누락: {len(paragraphs) - len(seen_numbers)}개 문단 번호 없음')
+        if empty:
+            raise RuntimeError(f'번역 빈 문단 {empty}개: 완료로 기록하지 않음')
+    elif empty:
         print(f"  경고: 빈 번역 {empty}개 (전체 {len(paragraphs)})", file=sys.stderr)
 
     return translated
@@ -758,7 +899,8 @@ def main():
                 break
             time.sleep(5)
 
-    save_cache(cache, touched)
+    if touched:
+        save_cache(cache, touched)
     # 부모 키 재병합 방지 (P1-1): 답글 저장 시 부모 스냅샷으로 덮지 않도록
     # touched를 비우고 답글 단계로 넘어간다.
     touched.clear()
