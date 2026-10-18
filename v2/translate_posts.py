@@ -37,6 +37,7 @@ import secrets
 import subprocess
 import sys
 import time
+import unicodedata
 import shutil
 import tempfile
 from datetime import datetime, timedelta, timezone
@@ -305,6 +306,7 @@ def needs_reply_translation(text):
     """
     if not text or not text.strip():
         return False
+    text=unicodedata.normalize('NFKC',text)
     without_urls=_REPLY_URL_RE.sub('',text).strip()
     identifier=text.strip()
     if (identifier.startswith('[') and identifier.endswith(']')) or (identifier.startswith('`') and identifier.endswith('`')):
@@ -369,6 +371,7 @@ def _korean_with_isolated_terms(text):
     A foreign multiword phrase or CJK sentence still requires translation.
     This only relaxes mixed Korean prose, never foreign-only short replies.
     """
+    text=unicodedata.normalize('NFKC',text)
     if not KO_PAT.search(text):
         return False
     cleaned = _strip_reply_noise(text)
@@ -444,15 +447,50 @@ def validate_translation_pair(original, translated):
         raise RuntimeError('번역 중 원문의 수치가 변경되거나 누락됐습니다.')
 
 
-def validate_translation_group(paragraphs, translated, detector):
+def _source_identifier_copy(original, translated, context):
+    """Allow unchanged Korean/identifier labels only with source URL evidence.
+
+    A project name such as 'Agent Memory Repo' may be split into words while
+    its repository slug is agentmemoryrepo. Never allow an unchanged foreign
+    sentence just because that sentence mentions a repository.
+    """
+    norm=lambda s:re.sub(r'\s+',' ',unicodedata.normalize('NFKC',s)).strip().casefold()
+    if norm(original)!=norm(translated):return False
+    identifiers=set()
+    for m in _REPLY_URL_RE.finditer('\n'.join(context)):
+        try:
+            url=urlsplit(m[0] if '://' in m[0] else 'https://'+m[0])
+        except ValueError:
+            continue
+        for part in url.path.split('/'):
+            key=re.sub(r'[^a-z0-9]','',part.lower())
+            if len(key)>=4:identifiers.add(key)
+    if not identifiers:return False
+    source=unicodedata.normalize('NFKC',original)
+    changed=[False]
+    def mask(match):
+        key=re.sub(r'[^a-z0-9]','',match[0].lower())
+        if key in identifiers:
+            changed[0]=True
+            return ''
+        return match[0]
+    masked=re.sub(r'[A-Z][A-Za-z0-9._-]*(?:[ \t]+[A-Z][A-Za-z0-9._-]*){1,5}',mask,source)
+    return changed[0] and not needs_body_translation(masked)
+
+
+def validate_translation_group(paragraphs, translated, detector, context=None):
     """Validate each selected paragraph and its combined coverage as one job."""
     if len(paragraphs)!=len(translated):
         raise RuntimeError('번역 문단 누락: 원문·번역 문단 수가 다릅니다.')
     selected=[(p,t) for p,t in zip(paragraphs,translated) if detector(p) and not is_placeholder(p)]
+    active=[]
     for p,t in selected:
+        if _source_identifier_copy(p,t,context or paragraphs):
+            continue
         validate_translation_pair(p,t)
-    if len(selected)>1:
-        validate_translation_pair('\n\n'.join(p for p,t in selected),'\n\n'.join(t for p,t in selected))
+        active.append((p,t))
+    if len(active)>1:
+        validate_translation_pair('\n\n'.join(p for p,t in active),'\n\n'.join(t for p,t in active))
 
 
 def valid_translation_cache(cached, paragraphs, detector):
@@ -1295,7 +1333,7 @@ def main():
 
         try:
             translated = translate_paragraphs(real_paras, strict=True)
-            validate_translation_group(real_paras,translated,needs_body_translation)
+            validate_translation_group(real_paras,translated,needs_body_translation,context=paragraphs)
             if len(translated) != len(real_paras) or any(not p.strip() for p in translated):
                 raise RuntimeError('번역 문단 누락: 완료로 기록하지 않고 재시도합니다.')
             # 원문 순서대로 매핑 (플레이스홀더는 원문 유지)
