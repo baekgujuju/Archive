@@ -2530,7 +2530,7 @@
     "version": 3
   },
   "2111363482327318750:a4e5b27ba2b24a33.jpg": {
-    "fingerprint": "d358040d66ad3555db61499cb77359c539d12c41b1b4520391ac44c85f9b95c7",
+    "fingerprint": "b6fc5cd95c770504ccb50fe806afccc642d0eadb9a16add6cb77dc7bcea27500",
     "entry": {
       "title": "Squirrelly",
       "summary_ko": "TypeScript로 작성된 가볍고 매우 빠른 JavaScript 템플릿 엔진으로, partial, helper, 커스텀 태그 및 필터 등을 지원합니다.",
@@ -2540,7 +2540,7 @@
       "evidence": [
         "screenshot:name-match"
       ],
-      "fingerprint": "d358040d66ad3555db61499cb77359c539d12c41b1b4520391ac44c85f9b95c7"
+      "fingerprint": "b6fc5cd95c770504ccb50fe806afccc642d0eadb9a16add6cb77dc7bcea27500"
     },
     "version": 3
   },
