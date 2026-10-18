@@ -351,6 +351,11 @@ def _translation_numbers(text):
     from collections import Counter
     from decimal import Decimal
     value = unicodedata.normalize('NFKC', text)
+    # Portuguese/Spanish annual-price notation uses a dot for thousands.
+    # Restrict the conversion to explicit currency amounts with /ano or /año;
+    # a normal decimal such as 2.500 elsewhere must not become 2500.
+    value = re.sub(r'(?<=[$€£])(\d{1,3}(?:\.\d{3})+)(?=/(?:ano|año)\b)',
+                   lambda m:m[1].replace('.',''),value,flags=re.I)
     # Do not count digits inside source URLs, handles or ticker identifiers.
     value = re.sub(r'https?://[^\s<>]+|@[\w]+|\$[A-Za-z][A-Za-z0-9.]*', '', value)
     native = {'하나':1,'한':1,'첫':1,'둘':2,'두':2,'둘째':2,'셋':3,'세':3,'셋째':3,
@@ -358,12 +363,16 @@ def _translation_numbers(text):
     value = re.sub(r'(?<![가-힣])('+'|'.join(sorted(native,key=len,reverse=True))+r')(?=\s*(?:번째|째|개|가지|명|번|날|달|년|곳|일|주|배|해|포지션))',lambda m:str(native[m[1]]),value)
     value = re.sub(r'(?<![가-힣])(하나|둘|셋|넷)(?=로|만|을|를|이|가|은|는|\s|$)',lambda m:str(native[m[1]]),value)
     values=[]
-    units={'k':1000,'m':1000000,'b':1000000000,'천':1000,'千':1000,'만':10000,'万':10000,'억':100000000,'亿':100000000,'億':100000000,'조':1000000000000}
-    for m in re.finditer(r"(?<![A-Za-z0-9_])\d+(?:,\d{3})*(?:\.\d+)?(?:\s*[kKmMbB천만억조千万亿億](?![A-Za-z]))?",value):
-        token=m[0].replace(',','').replace(' ','')
-        unit=token[-1].lower()
-        number=Decimal(token[:-1] if unit in units else token)
-        if unit in units:number*=units[unit]
+    units={'k':1000,'m':1000000,'b':1000000000,'천':1000,'千':1000,'만':10000,'万':10000,'억':100000000,'亿':100000000,'億':100000000,'조':1000000000000,
+           'thousand':1000,'thousands':1000,'mil':1000,'mille':1000,
+           'million':1000000,'millions':1000000,'milhão':1000000,'milhões':1000000,'millón':1000000,'millones':1000000,'millionen':1000000,
+           'billion':1000000000,'billions':1000000000,'bilhão':1000000000,'bilhões':1000000000}
+    unit_pattern='|'.join(re.escape(u) for u in sorted(units,key=len,reverse=True))
+    pattern=r'(?<![A-Za-z0-9_])(?P<number>\d+(?:,\d{3})*(?:\.\d+)?)(?:\s*(?P<unit>'+unit_pattern+r')(?![A-Za-zÀ-ž]))?'
+    for m in re.finditer(pattern,value,re.I):
+        number=Decimal(m['number'].replace(',',''))
+        unit=(m['unit'] or '').lower()
+        if unit:number*=units[unit]
         values.append(number)
     return Counter(values)
 
@@ -381,6 +390,10 @@ def validate_translation_pair(original, translated):
         raise RuntimeError('외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.')
     if not KO_PAT.search(translated):
         raise RuntimeError('한국어 번역이 없는 결과: 번역 완료로 기록하지 않습니다.')
+    source_letters=sum(c.isalpha() for c in _strip_reply_noise(unicodedata.normalize('NFKC',original)))
+    target_letters=sum(c.isalpha() for c in _strip_reply_noise(unicodedata.normalize('NFKC',translated)))
+    if source_letters >= 500 and target_letters < source_letters * 0.20:
+        raise RuntimeError('원문 대비 번역이 지나치게 짧습니다: 요약·대량 누락 여부 검토 필요.')
     # A provider can add a Korean heading while leaving whole foreign sentences.
     for run in re.findall(r"[A-Za-z][A-Za-z’'-]*(?:[ \t]+[A-Za-z][A-Za-z’'-]*){5,}|[一-鿿぀-ヿ]{8,}", original):
         if normalized(run) in normalized(translated):
@@ -855,6 +868,7 @@ def translate_paragraphs(paragraphs, strict=False):
     numbered = "\n".join(f"[{i+1}] {p}" for i, p in enumerate(paragraphs))
     prompt = f"""다음 외국어 문단들을 한국어로 번역해주세요.
 각 문단 번호를 유지하고, 번역만 출력하세요.
+요약하거나 문장을 생략하지 말고 각 문단의 첫 문장부터 마지막 문장까지 모두 번역하세요.
 URL, 멘션, 종목 기호 및 모든 숫자·배수·연도는 원문 그대로 보존하세요.
 한국어와 외국어가 섞였으면 한국어 의미는 유지하고 외국어 문장도 빠짐없이 한국어로 옮기세요.
 영어 원문을 그대로 반환하거나 한국어 제목만 붙이지 마세요. 이미 필요한 기술명은 보존할 수 있습니다.
