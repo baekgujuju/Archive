@@ -106,11 +106,11 @@ def content_hash(text):
 # 묶어 처리한다 (배치). 단, 캐시 엔트리는 답글별로 분리해, 배치 실패 시
 # 답글별 기존 유효 캐시를 보존하고 실패한 건만 재시도한다.
 REPLY_KEY_PREFIX = "reply:"
-REPLY_CHUNKS = ["posts-x.json"]  # 답글은 X 글에만 있음
+# 답글 로더는 TARGET_CHUNKS 전체를 순회한다 (X 전용 아님).
+# 웹/IB에 답글이 생겨도 처리되게 하며, 청크 표기는 실제 청크별로 남긴다.
 REPLY_MAX_PER_RUN = 20  # 폴당 최대 답글 수 (bounded — 무제한 장시간 작업 방지)
 REPLY_PROVIDER_MAX_PARAGRAPHS = 24  # provider 호출당 최대 문단 수
 REPLY_PROVIDER_MAX_CHARS = 6000  # provider 호출당 최대 문자 수
-REPLY_CHUNK = "posts-x.json"  # 캐시 엔트리 chunk 표기
 REPLY_FAILURE_COOLDOWN = timedelta(minutes=60)  # 실패 후 재시도 쿨다운
 
 # 답글 노이즈: 번역 여부 판단에서 제외 (URL·멘션·해시태그·티커·대문자 약어)
@@ -148,8 +148,9 @@ _REPLY_UPPER_PROSE_WORDS = frozenset(
 # 대문자 구간 내부 구분자 (공백·줄바꿈·쉼표·콜론·느낌표·물음표 등).
 # 줄바꿈·콜론이 구간을 끊으면 "THIS IS\nGOOD" / "THIS IS: GOOD"이
 # 기능어만 구간 + 단일 단어 구간으로 쪼개져 누락되므로 구분자에 포함한다.
-# 마침표(.)는 구분자에서 제외한다 — 티커 점("BRK.A", "U.S.A.")이
-# 기능어 "A"와 한 구간으로 묶여 산문으로 오판정되기 때문이다.
+# 마침표(.)는 구분자에서 제외하고 문장 종결일 때만 조건부로 구분한다
+# (_is_sentence_period 참조) — 티커 점("BRK.A", "U.S.A.")이 기능어 "A"와
+# 한 구간으로 묶여 산문으로 오판정되기 때문이다.
 # "THIS IS. GOOD"은 단독 산문 실질어("GOOD") 보존으로 처리된다.
 _REPLY_UPPER_WORD_RE = re.compile(r'[A-Z]+')
 _REPLY_RUN_SEP = ' \t\n\r,;: /|&+-!?'
@@ -215,6 +216,20 @@ def _is_prose_upper_run(words):
     return False
 
 
+def _is_sentence_period(text, dot_pos, run_words):
+    """마침표가 문장 종결인지 (티커/약어 내부 점과 구분).
+
+    - 뒤에 공백/끝이 와야 문장 종결이다 ("BRK.A"의 점은 뒤에 대문자가 옴).
+    - 현재 구간이 2개 이상 1자 단어로만 구성되면 약어("U.S.A.")이므로
+      뒤에 공백이 와도 문장 종결이 아니다.
+    """
+    if dot_pos + 1 < len(text) and text[dot_pos + 1] not in ' \t\n\r':
+        return False
+    if len(run_words) >= 2 and all(len(w) == 1 for w in run_words):
+        return False
+    return True
+
+
 def _strip_bare_tickers(text):
     """대문자 약어(티커) 구간만 제거하고, 산문 구간은 보존한다.
 
@@ -231,12 +246,20 @@ def _strip_bare_tickers(text):
             i += 1
             continue
         # 연속 대문자 단어 구간 수집 (구분자는 공백/쉼표/슬래시 등만 허용).
+        # 마침표는 문장 종결일 때만 구분자 (티커/약어 내부 점은 구간을 끊지 않음).
         run = [m]
         j = m.end()
         while True:
             k = j
-            while k < n and text[k] in _REPLY_RUN_SEP:
-                k += 1
+            while k < n:
+                ch = text[k]
+                if ch in _REPLY_RUN_SEP:
+                    k += 1
+                elif ch == '.' and _is_sentence_period(
+                        text, k, [text[x.start():x.end()] for x in run]):
+                    k += 1
+                else:
+                    break
             m2 = _REPLY_UPPER_WORD_RE.match(text, k)
             if not m2 or not _is_standalone_upper(text, m2):
                 break
@@ -321,7 +344,7 @@ def _in_reply_failure_cooldown(cached, current_hash):
     return datetime.now(timezone.utc) - failed_dt < REPLY_FAILURE_COOLDOWN
 
 
-def collect_reply_jobs(posts, cache, force=False, stats=None):
+def collect_reply_jobs(posts, cache, force=False, stats=None, chunk=None):
     """번역이 필요한 답글 수집 (결정적 순서: 글 순서 → 답글 순서).
 
     캐시가 유효하면(해시 일치 + 문단 일치 + 번역 완비) 스킵.
@@ -329,6 +352,7 @@ def collect_reply_jobs(posts, cache, force=False, stats=None):
     쿨다운 중인 외국어 답글은 작업에서 제외하되 stats에
     'cooldown_skipped'로 세어 남은 백로그로 보고한다
     (마커 유지 → 쿨다운 만료 후 다음 폴이 재시도).
+    chunk는 캐시 엔트리에 기록할 실제 청크 (None이면 주입된 posts).
     Returns: job dict 리스트
       {parent_id, reply_id, key, text, paragraphs, real_indices,
        real_paras, content_hash}
@@ -347,7 +371,7 @@ def collect_reply_jobs(posts, cache, force=False, stats=None):
             reply_id = reply.get('tweetId') or reply.get('id')
             if not reply_id:
                 continue
-            text = reply.get('fullText') or ''
+            text = reply.get('fullText') or reply.get('text') or ''
             if not isinstance(text, str) or not text.strip():
                 continue
             paragraphs = split_paragraphs(text)
@@ -380,7 +404,7 @@ def collect_reply_jobs(posts, cache, force=False, stats=None):
                 'text': text, 'paragraphs': paragraphs,
                 'real_indices': real_indices,
                 'real_paras': [paragraphs[i] for i in real_indices],
-                'content_hash': h,
+                'content_hash': h, 'chunk': chunk,
             })
     if stats is not None:
         stats['cooldown_skipped'] = cooldown_skipped
@@ -553,25 +577,37 @@ def _record_reply_failure(cache, touched, job, error):
     touched.add(job['key'])
 
 
-def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN, force=False):
+def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN, force=False, chunks=None):
     """답글 번역을 bounded 배치로 수행.
 
-    posts가 None이면 DATA_DIR/posts-x.json에서 읽는다 (테스트는 주입).
+    posts가 None이면 DATA_DIR의 TARGET_CHUNKS 전체에서 읽는다
+    (X 전용이 아님 — 웹/IB에 답글이 생겨도 처리. 테스트는 주입).
+    chunks가 주어지면 그 청크만 읽는다 (--chunks 선택).
     Returns (성공, 실패, 남은 백로그).
     - 배치 실패 시 답글별 기존 유효 캐시를 보존하고 실패한 건만 다음 폴에 재시도.
     - 연속 배치 실패 2회 시 이번 실행 종료 (부모 번역과 동일 규칙).
     """
     from datetime import datetime, timezone
     if posts is None:
-        chunk_path = DATA_DIR / REPLY_CHUNKS[0]
-        if not chunk_path.exists():
-            return 0, 0, 0
-        with open(chunk_path, encoding='utf-8') as f:
-            data = json.load(f)
-        posts = data.get('posts', []) if isinstance(data, dict) else []
-    stats = {}
-    jobs = collect_reply_jobs(posts, cache, force=force, stats=stats)
-    cooldown_skipped = stats.get('cooldown_skipped', 0)
+        jobs = []
+        cooldown_skipped = 0
+        for chunk_name in (chunks or TARGET_CHUNKS):
+            chunk_path = DATA_DIR / chunk_name
+            if not chunk_path.exists():
+                continue
+            with open(chunk_path, encoding='utf-8') as f:
+                data = json.load(f)
+            chunk_posts = data.get('posts', []) if isinstance(data, dict) else []
+            chunk_stats = {}
+            chunk_jobs = collect_reply_jobs(
+                chunk_posts, cache, force=force, stats=chunk_stats, chunk=chunk_name)
+            cooldown_skipped += chunk_stats.get('cooldown_skipped', 0)
+            print(f"  [답글 {chunk_name}] 글 {len(chunk_posts)}개, 작업 {len(chunk_jobs)}개")
+            jobs.extend(chunk_jobs)
+    else:
+        stats = {}
+        jobs = collect_reply_jobs(posts, cache, force=force, stats=stats)
+        cooldown_skipped = stats.get('cooldown_skipped', 0)
     total = len(jobs)
     if not total:
         if cooldown_skipped:
@@ -655,7 +691,7 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
             "content_hash": job['content_hash'],
             "status": "ok",
             "translated_at": datetime.now(timezone.utc).isoformat(),
-            "chunk": REPLY_CHUNK,
+            "chunk": job.get('chunk'),
         }
         touched.add(job['key'])
         success += 1
@@ -1019,7 +1055,9 @@ def main():
         print("번역할 글이 없습니다.")
         # 부모 작업이 없어도 답글 백로그는 이어서 처리한다
         # (답글도 없거나 건너뛰면 여기서 종료).
-        if args.no_replies or (args.chunks and REPLY_CHUNKS[0] not in args.chunks):
+        # 답글은 TARGET_CHUNKS 전체를 보므로, 선택 청크가 TARGET_CHUNKS와
+        # 겹치면 답글 단계를 건너뛰지 않는다 (X 전용 게이팅 금지).
+        if args.no_replies or (args.chunks and not set(args.chunks) & set(TARGET_CHUNKS)):
             return 0
 
     success, failed, consecutive_failures = 0, 0, 0
@@ -1106,11 +1144,13 @@ def main():
     touched.clear()
 
     # 답글 번역 (bounded 배치 — 매 폴마다 미번역 백로그를 이어서 처리)
+    # 선택 청크가 있으면 그 청크만, 없으면 TARGET_CHUNKS 전체.
     reply_failed = 0
     reply_remaining = 0
-    if not args.no_replies and (not args.chunks or REPLY_CHUNKS[0] in args.chunks):
+    if not args.no_replies and (not args.chunks or set(args.chunks) & set(TARGET_CHUNKS)):
         _reply_success, reply_failed, reply_remaining = translate_replies(
-            cache, touched, max_per_run=args.reply_batch, force=args.force)
+            cache, touched, max_per_run=args.reply_batch, force=args.force,
+            chunks=args.chunks)
 
     print(f"\n=== 완료 ===")
     print(f"성공: {success}개, 실패: {failed}개")

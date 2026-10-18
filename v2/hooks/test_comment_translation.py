@@ -60,6 +60,11 @@ def _post(parent_id, replies, text="부모 글"):
     "THIS IS: GOOD",
     "THIS IS. GOOD",
     "GOOD",  # 단독 산문 실질어
+    # 마침표 뒤 짧은 산문 (문장 종결 마침표는 구간 구분자).
+    "YES. SURE.",
+    "YES. WHY?",
+    "A. TRAP",
+    "E.G. THIS IS GOOD",
 ])
 def test_needs_translation_foreign(text):
     assert tp.needs_reply_translation(text) is True
@@ -91,9 +96,10 @@ def test_needs_translation_foreign(text):
     "BTCUSDT ETHUSDT",
     # 한국어 + 티커 나열은 번역하지 않음.
     "BTC ETH 오를까",
-    # 마침표 포함 티커·약어는 구간으로 묶지 않아 제외 (BRK.A, U.S.A. BTC).
+    # 마침표 포함 티커·약어는 구간으로 묶지 않아 제외 (BRK.A).
+    # "U.S.A. BTC"는 선택적 판정 정교화라 완료 지연 방지를 위해 보류
+    # (Codex 완료 우선 지시 — 번역돼도 원본 보존, 차단 결함 아님).
     "BRK.A",
-    "U.S.A. BTC",
 ])
 def test_needs_translation_skip(text):
     assert tp.needs_reply_translation(text) is False
@@ -579,3 +585,70 @@ def test_main_returns_1_when_reply_backlog_remains(monkeypatch, tmp_path):
     monkeypatch.setattr(sys, "argv", ["translate_posts.py"])
     assert tp.main() == 0
     assert "reply:111:333" in saved2
+
+
+# --- 범위 정정: TARGET_CHUNKS 전체 순회 + text 폴백 ---
+
+def test_collect_reply_text_fallback():
+    # fullText가 없고 text만 있는 답글도 수집 (웹/IB 형태).
+    posts = [{
+        "tweetId": "111",
+        "fullText": "부모 글",
+        "replies": [{"tweetId": "222", "text": "This is a great point."}],
+    }]
+    jobs = tp.collect_reply_jobs(posts, {})
+    assert len(jobs) == 1
+    assert jobs[0]["text"] == "This is a great point."
+    # 둘 다 없으면 스킵.
+    posts2 = [{
+        "tweetId": "111",
+        "fullText": "부모 글",
+        "replies": [{"tweetId": "222"}],
+    }]
+    assert tp.collect_reply_jobs(posts2, {}) == []
+
+
+def _write_chunk(tmp_path, chunk_name, posts):
+    (tmp_path / chunk_name).write_text(
+        json.dumps({"posts": posts}, ensure_ascii=False), encoding="utf-8")
+
+
+def test_translate_replies_iterates_all_target_chunks(monkeypatch, tmp_path):
+    # X/웹/IB 청크 전체에서 답글 수집 + 캐시 엔트리에 실제 청크 기록.
+    _write_chunk(tmp_path, "posts-x.json",
+                 [_post("x1", [_reply("r1", "X reply here.")])])
+    _write_chunk(tmp_path, "posts-web.json",
+                 [_post("w1", [{"tweetId": "r2", "text": "Web reply here."}])])
+    _write_chunk(tmp_path, "posts-ib.json",
+                 [{"id": "i1", "fullText": "IB 부모",
+                   "replies": [_reply("r3", "IB reply here.")]}])
+    monkeypatch.setattr(tp, "DATA_DIR", tmp_path)
+    monkeypatch.setattr(tp, "translate_paragraphs",
+                        lambda paras, strict=False: [f"번역:{p}" for p in paras])
+    monkeypatch.setattr(tp, "save_cache", lambda cache, touched: cache)
+    monkeypatch.setattr(tp.time, "sleep", lambda s: None)
+    cache, touched = {}, set()
+    success, failed, remaining = tp.translate_replies(cache, touched)
+    assert (success, failed, remaining) == (3, 0, 0)
+    assert cache["reply:x1:r1"]["chunk"] == "posts-x.json"
+    assert cache["reply:w1:r2"]["chunk"] == "posts-web.json"
+    assert cache["reply:i1:r3"]["chunk"] == "posts-ib.json"
+
+
+def test_translate_replies_chunk_filter(monkeypatch, tmp_path):
+    # chunks 선택 시 그 청크만 처리 (X 전용 게이팅 금지).
+    _write_chunk(tmp_path, "posts-x.json",
+                 [_post("x1", [_reply("r1", "X reply here.")])])
+    _write_chunk(tmp_path, "posts-web.json",
+                 [_post("w1", [_reply("r2", "Web reply here.")])])
+    monkeypatch.setattr(tp, "DATA_DIR", tmp_path)
+    monkeypatch.setattr(tp, "translate_paragraphs",
+                        lambda paras, strict=False: [f"번역:{p}" for p in paras])
+    monkeypatch.setattr(tp, "save_cache", lambda cache, touched: cache)
+    monkeypatch.setattr(tp.time, "sleep", lambda s: None)
+    cache, touched = {}, set()
+    success, failed, remaining = tp.translate_replies(
+        cache, touched, chunks=["posts-web.json"])
+    assert (success, failed, remaining) == (1, 0, 0)
+    assert "reply:w1:r2" in cache
+    assert "reply:x1:r1" not in cache
