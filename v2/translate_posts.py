@@ -297,6 +297,24 @@ def _strip_reply_noise(text):
     return t
 
 
+def _machine_config(text):
+    """Recognize JSON configuration made only of identifier keys/literal values."""
+    stripped=text.strip()
+    if not stripped.startswith(('{','[')) and not re.match(r'^"[^"\n]+"\s*:',stripped):
+        return False
+    try:
+        value=json.loads(stripped if stripped.startswith(('{','[')) else '{'+stripped+'}')
+    except (ValueError,TypeError):
+        return False
+    def literal(v):
+        if isinstance(v,dict):
+            return bool(v) and all(re.fullmatch(r'[A-Za-z_][A-Za-z0-9_.-]*',k) and literal(x) for k,x in v.items())
+        if isinstance(v,list):return bool(v) and all(literal(x) for x in v)
+        if isinstance(v,str):return not re.search(r'\s',v)
+        return v is None or isinstance(v,(int,float,bool))
+    return isinstance(value,(dict,list)) and literal(value)
+
+
 def needs_reply_translation(text):
     """답글 문단 하나가 번역 대상인지 (문단 단위 판정).
 
@@ -307,6 +325,8 @@ def needs_reply_translation(text):
     - 일반 한국어+티커는 티커 제거 후 한국어만 남으므로 번역하지 않음.
     """
     if not text or not text.strip():
+        return False
+    if _machine_config(text) or re.fullmatch(r'\s*#*\s*[^\s/\\]+\.(?:docx?|pdf|xlsx?|pptx?|md|txt|py|js|json)\s*',text,re.I):
         return False
     original_text=text
     text=unicodedata.normalize('NFKC',text)
@@ -321,7 +341,7 @@ def needs_reply_translation(text):
     # translation and block later prose. Ordinary short replies stay eligible.
     if _REPLY_URL_RE.search(text) and re.fullmatch(r'[A-Za-z][\w.-]{1,24}:',without_urls):
         return False
-    reference_label=re.sub(r'^[^A-Za-z]+','',without_urls).rstrip(':').strip()
+    reference_label=re.sub(r'^[^A-Za-z]+','',without_urls).rstrip(':…. \t\r\n')
     if re.fullmatch(r'[A-Za-z][\w.-]{1,24}',reference_label):
         label=re.sub(r'[^a-z0-9]','',reference_label.lower())
         for match in _REPLY_URL_RE.finditer(text):
