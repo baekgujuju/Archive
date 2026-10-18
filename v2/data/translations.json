@@ -4660,5 +4660,261 @@
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
     "failed_at": "2026-10-18T03:54:31.292613+00:00"
+  },
+  "reply:2046031096140468506:2046248161593741656": {
+    "paragraphs": [
+      "这是之前整理的「AI全套攻略（持续更新中）」，感兴趣自取～https://pan.quark.cn/s/a07b6473cf32"
+    ],
+    "translated": [
+      "이것은 이전에 정리한 「AI 완벽 공략집(지속 업데이트 중)」입니다. 관심 있으신 분은 가져가세요~https://pan.quark.cn/s/a07b6473cf32"
+    ],
+    "content_hash": "adb1c071c73510ad",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906280+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2048711994363044080:2048816030605267141": {
+    "paragraphs": [
+      "https://youtu.be/XIksouhkwSI?si=o8ETjLnP0y50QOjA…",
+      "Watched day before yesterday,  one query! Do you consider Index, Sectors n ....... ? Or \nNear 52 week high only?",
+      "Thanks Bro...."
+    ],
+    "translated": [
+      "https://youtu.be/XIksouhkwSI?si=o8ETjLnP0y50QOjA…",
+      "그저께 봤는데요, 질문이 하나 있습니다! 지수, 섹터 등도 고려하시나요? 아니면 52주 신고가 근처 종목만 고려하시나요?",
+      "감사합니다...."
+    ],
+    "content_hash": "c3d2cf6b5e058ad8",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906433+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2055088909735035384:2055089501173907824": {
+    "paragraphs": [
+      "해성디에스 Higher Low 두 번 만들면서 빠른 템포의 돌파"
+    ],
+    "translated": [
+      "해성디에스 Higher Low 두 번 만들면서 빠른 템포의 돌파"
+    ],
+    "content_hash": "fd9176f6ffb2a668",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906443+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2048207765303398848:2048351246416048437": {
+    "paragraphs": [
+      "vram 을 20기가 넘게 먹던데.."
+    ],
+    "translated": [
+      "vram 을 20기가 넘게 먹던데.."
+    ],
+    "content_hash": "013aac74373bcce6",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906423+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2046031096140468506:2046111258915537250": {
+    "paragraphs": [
+      "#1 repo on RepoRank!"
+    ],
+    "translated": [
+      "RepoRank 1위 리포지토리!"
+    ],
+    "content_hash": "b3b3cbb7830f394b",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906392+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2071969370742652953:2071996498880188575": {
+    "paragraphs": [
+      "I would add $XSMO\n for small caps momentum. Great performance"
+    ],
+    "translated": [
+      "소형주 모멘텀을 원하신다면 $XSMO 를 추가하는 것을 추천합니다. 성과가 훌륭하거든요."
+    ],
+    "content_hash": "2584a68d360b8a11",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906490+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2071969370742652953:2071969985375899832": {
+    "paragraphs": [
+      "DRAM and EUV, two emerging ETFs, are very suitable for AI memory and lyrithography themes."
+    ],
+    "translated": [
+      "신규 상장 ETF인 DRAM과 EUV 두 가지는 AI 메모리 및 노광(lithography) 테마에 매우 적합합니다."
+    ],
+    "content_hash": "3aaf0c3fd1754c36",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906465+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2071969370742652953:2072160549295505771": {
+    "paragraphs": [
+      "DRAM’s new rival: $DISK",
+      "EUV’s new rival: $LAZR"
+    ],
+    "translated": [
+      "DRAM의 새로운 라이벌: $DISK",
+      "EUV의 새로운 라이벌: $LAZR"
+    ],
+    "content_hash": "ec5dc9d2e4e3f725",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906461+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2046996779418423431:2046996782354469213": {
+    "paragraphs": [
+      "Looking at head-to-head battles, GPT-Image-2 won 86% of the time against Nano-Banana-2, its closest competitor.",
+      "It won 92% of the time against its predecessor, GPT-Image-1.5, which was previously OpenAI’s top-performing image model."
+    ],
+    "translated": [
+      "일대일 대결을 살펴보면, GPT-Image-2는 가장 강력한 경쟁 모델인 Nano-Banana-2를 상대로 86%의 승률을 기록했습니다.",
+      "이전까지 OpenAI에서 가장 성능이 뛰어났던 이미지 모델이자 전작인 GPT-Image-1.5를 상대로는 92%의 승률을 기록했습니다."
+    ],
+    "content_hash": "f58245a7232655f8",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906404+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2057698122206486676:2057698125817790764": {
+    "paragraphs": [
+      "사옹방법",
+      "아래 프롬프트를 넣고 책제목을 쓰시면 됩니다. 개인적인 정리, 내용 적어서 책제목과 같이 입력하면 반영합니다. 다른 도메인(소설, 에세이, 철학, 역사, 과학) 등 개인화해보시기 바랍니다. GPT에 최적화 되어있습니다.",
+      "PREMIUM ANALOG READING ARCHIVE PAGE PROMPT - Public Edition\n책"
+    ],
+    "translated": [
+      "사옹방법",
+      "아래 프롬프트를 넣고 책제목을 쓰시면 됩니다. 개인적인 정리, 내용 적어서 책제목과 같이 입력하면 반영합니다. 다른 도메인(소설, 에세이, 철학, 역사, 과학) 등 개인화해보시기 바랍니다. GPT에 최적화 되어있습니다.",
+      "프리미엄 아날로그 리딩 아카이브 페이지 프롬프트 - 공개 버전\n책"
+    ],
+    "content_hash": "e78b7113da6bf6df",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906453+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2048207765303398848:2048307463729082536": {
+    "paragraphs": [
+      "앗 힘들게 클로바노트와 AI Studio 둘 다 써서 다시 전사 중이었어요 ㅠㅜ"
+    ],
+    "translated": [
+      "앗 힘들게 클로바노트와 AI Studio 둘 다 써서 다시 전사 중이었어요 ㅠㅜ"
+    ],
+    "content_hash": "f6779fafb0d00542",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906417+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2048711994363044080:2048829965890724051": {
+    "paragraphs": [
+      "Index strength is covered through RS\nI am not too strict on sector selection. Sector strength is a bonus not a compulsory one."
+    ],
+    "translated": [
+      "지수의 강세는 RS(상대강도)를 통해 반영됩니다.\n저는 섹터 선정에 그다지 엄격하지 않습니다. 섹터 강세는 보너스일 뿐 필수 조건은 아닙니다."
+    ],
+    "content_hash": "3186b652b23a3808",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906438+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2071969370742652953:2071995648937701399": {
+    "paragraphs": [
+      "A couple of new ETF’s dropped today Photonics $LAZR\n & new memory $DISK"
+    ],
+    "translated": [
+      "오늘 몇 가지 새로운 ETF가 출시되었습니다. 광학 분야의 $LAZR 및 새로운 메모리 분야의 $DISK 입니다."
+    ],
+    "content_hash": "6a5b66bb11336616",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906471+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2071969370742652953:2072145111450783959": {
+    "paragraphs": [
+      "$SOXX\n instead of $SMH\n.",
+      "$BAI\n for AI."
+    ],
+    "translated": [
+      "$SMH 대신 $SOXX.",
+      "$BAI\n for AI."
+    ],
+    "content_hash": "d4a1eb0022b5294b",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906475+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2057697811446284511:2057697811446284511": {
+    "paragraphs": [
+      "PREMIUM ANALOG READING ARCHIVE PAGE PROMPT - Public Edition"
+    ],
+    "translated": [
+      "프리미엄 아날로그 리딩 아카이브 페이지 프롬프트 - 공개 버전"
+    ],
+    "content_hash": "9210e2c2e8c7fdaa",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906448+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2048207765303398848:2048403428154704334": {
+    "paragraphs": [
+      "일단 정말 많이 느립니다...",
+      "현재로선 OAI whisper에 화자 분리하는 Pyannote를 붙여서 같이 쓰는 게 가장 낫더군요."
+    ],
+    "translated": [
+      "일단 정말 많이 느립니다...",
+      "현재로선 OAI whisper에 화자 분리하는 Pyannote를 붙여서 같이 쓰는 게 가장 낫더군요."
+    ],
+    "content_hash": "68fa864291e8270c",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906411+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2071969370742652953:2072076020103225582": {
+    "paragraphs": [
+      "Today we also have a new one for memory $DISK"
+    ],
+    "translated": [
+      "오늘 메모리 관련 새로운 ETF인 $DISK 도 출시되었습니다."
+    ],
+    "content_hash": "9b652d449d3e8d63",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906457+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2048207765303398848:2048352090398011522": {
+    "paragraphs": [
+      "How long does it take to transcribe a one-hour audio file? Nikke did it in 25 seconds."
+    ],
+    "translated": [
+      "1시간짜리 오디오 파일을 전사하는 데 시간이 얼마나 걸릴까요? Nikke는 25초 만에 해냈습니다."
+    ],
+    "content_hash": "85c0d2bae51c105a",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906428+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2046031096140468506:2046260059412517244": {
+    "paragraphs": [
+      "牛逼啊"
+    ],
+    "translated": [
+      "대단하네요!"
+    ],
+    "content_hash": "e99102922ca17c00",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906398+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2046031096140468506:2046057435883045264": {
+    "paragraphs": [
+      "The real question is data freshness. Bloomberg's moat isn't the terminal UI — it's the proprietary, real-time data feeds that most open-source alternatives can't replicate. FinceptTerminal looks impressive architecturally, but it'll live or die based on which free/freemium data"
+    ],
+    "translated": [
+      "진짜 문제는 데이터의 최신성입니다. 블룸버그의 해자는 터미널 UI가 아니라 대부분의 오픈소스 대안이 복제할 수 없는 독점적인 실시간 데이터 피드입니다. FinceptTerminal은 구조적으로 인상적으로 보이지만, 어떤 무료/프리미엄 데이터를 제공하느냐에 따라 성패가 갈릴 것입니다."
+    ],
+    "content_hash": "40a6b12bbabd2622",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:01:45.906382+00:00",
+    "chunk": "posts-x.json"
   }
 }
