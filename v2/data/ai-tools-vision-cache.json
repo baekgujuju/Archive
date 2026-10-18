@@ -3505,5 +3505,175 @@
     "category_ko": "차트 도구 설정",
     "owner_hint": "TradingView",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ac5dcde006e73f9ad11d016a44196eb5c814fd22a6361af2f9d1e27f23292387": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "옥션 마켓 이론",
+    "description_ko": "매도자와 매수자가 균형을 이루는 시장에 새로운 정보가 유입되면 의견 불일치와 불균형이 발생하고, 시장이 새로운 가치를 탐색하며 다시 균형으로 돌아가는 순환을 설명하는 도식.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:18813ffd998a19aa02c8b3ce954cb15049460f1fd8675a4055b20bcf9549a292": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "밸류 에어리어 상향 이동과 시장의 균형·불균형",
+    "description_ko": "세 거래 세션의 거래량 프로파일과 VAH·VAL·POC를 통해 가치 영역의 상향 이동을 설명한다. 오른쪽에는 옥션 마켓 이론과 와이코프 방법론에 따른 균형, 불균형, 새로운 가격의 수용 및 거부 과정을 도식화했다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f1fe66c138d94e986f7315c09f66b4a838b196ba3fec8b424ea71ff799093b28": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "공정가치 영역에서의 균형과 불균형",
+    "description_ko": "거래량 프로파일에 가치 영역과 공정가치를 표시한 차트. 가격이 공정가치 영역 안에서 오가는 상태를 균형, 영역을 벗어나 한쪽으로 강하게 움직이는 상태를 불균형으로 설명한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5385d3e5197b592ce22f686bd85e474c77262f448f6fa28fd813ace97cb996d5": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "시장은 경매장입니다",
+    "description_ko": "참여자들이 오래 머문 가격대를 공정가치로 설명하고, 가치영역 내부의 균형과 영역을 벗어나는 불균형을 비교한 교육용 인포그래픽.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6d854614219634e8b1e73c86fa8b6cab18e8534ba9ae11e02d0672328634900b": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Value Area란? (정규분포 기준)",
+    "description_ko": "정규분포 곡선으로 약 70%의 거래가 집중되는 가치영역, 가장 많이 거래된 가격인 POC, 양쪽 꼬리의 불균형 영역을 설명한 도표.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c25286bc6e7b4b972528936cd309e4fb4b001281d9cf15e57723d618a8488cf2": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "가격 차트와 정규분포 가치영역",
+    "description_ko": "캔들 차트와 거래량 프로파일 옆에 중앙 68%, 양쪽 13.5% 및 2.35% 구간을 표시한 정규분포를 배치해 가격 범위를 비교한 이미지.",
+    "category_ko": "금융 차트 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8ce57e7e8b6f2efb57b0ce2a51ad983f7167bf50f0a82f6c52d6a0cfabc08da2": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "가치영역 경계에서의 반등과 하락 예시",
+    "description_ko": "거래량 프로파일과 세 개의 수평 가격선을 표시한 캔들 차트. 하단에서 상단으로 반등하는 움직임과 상단에서 하단으로 하락하는 움직임을 화살표 및 손익 영역으로 나타냈다.",
+    "category_ko": "금융 차트 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:80e91d5cfa797c3c1596ecefefa611544b8c16fdb3f2c9106e41b8bcb446b14d": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "균형 구간 매매와 상방 돌파 후 되돌림 시나리오",
+    "description_ko": "거래량 프로파일이 있는 횡보 구간에 매수·매도 손익 영역을 표시하고, 상방 돌파 이후 기존 상단 부근으로 되돌렸다가 상승하는 예상 경로를 제시한 캔들 차트.",
+    "category_ko": "금융 차트 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7dea5d943ebf06b9c1f05a2f03479e871e793bdf8a784137d3f1fc5bd55680e3": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Balance(균형)와 Imbalance(불균형)",
+    "description_ko": "가격이 머무는 초록색 A 구간을 균형 상태로, 상방으로 빠르게 확장하는 빨간색 B 구간을 불균형 상태로 표시했다. 횡보 범위 밖으로 나갔다가 복귀한 지점들은 불균형 시도로 표기했다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b0cfddb7f85115233fa539f17ca9dd056f0294cf2541268176b2d1de5f388513": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "볼륨 프로파일 매매법 12강 로드맵",
+    "description_ko": "균형과 불균형, 볼륨 프로파일, 진입 셋업, CVD, 리스크 관리와 복기까지 12단계로 정리한 트레이딩 학습 로드맵.",
+    "category_ko": "투자·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fe89044526ce8b94ba9518478a43fd6519a3fc800fed7e360b8728dcf9991c32": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Semi ETF - SOXX",
+    "description_ko": "반도체 ETF SOXX의 주봉 차트에 장기 상승 채널, 상승·하락 폭, 거래량과 기술적 보조지표를 표시한 분석 이미지.",
+    "category_ko": "금융 차트·기술적 분석",
+    "owner_hint": "dburrows / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d14dddcfddc678da640510b55be671f322a6fe16fe6baba850a7cefdad4d6bf2": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [],
+    "title": "pstack for Grok Bot — all 54 skills",
+    "description_ko": "Grok Bot용 pstack 프로젝트의 54개 스킬을 소개하는 안내 이미지. 코드 작성, 검토, 설명, 개인화 관련 명령과 개발 원칙을 정리하고 플러그인 추가 명령을 보여준다.",
+    "category_ko": "AI 코딩 도구·스킬 모음",
+    "owner_hint": "Lauren Tan · @poteto",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e3016887b8d92c828361e4ce42c4e0b462ec1561adf37d55b2371c89480196fd": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Grok Bot + Opus 5.5 /agent-harness",
+    "description_ko": "Grok Bot과 Opus 5.5를 활용하는 에이전트 하네스의 10단계 가이드를 소개하는 표지 이미지.",
+    "category_ko": "AI 에이전트 활용 가이드",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a3c16051c41947ed40330a1ca6dd585e8bc92e5834276879260a4533f29999ac": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VIX 변동성 지수 일봉 차트",
+    "description_ko": "TradingView의 S&P 500 변동성 지수 차트. 10월 VIX 28과 3월 VIX 35 고점에 화살표가 표시되어 있으며, 수평 기준선과 이동평균선이 함께 보인다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / Venu_7",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4b4baae5115ef96f4803747750e0776d68d36b28373bf5a1904627de9be0350d": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "시장 심리 사이클과 극도의 공포 구간",
+    "description_ko": "축적부터 추세 형성, 낙관, FOMO, 고점, 하락과 절망까지 시장 심리를 곡선으로 나타낸 도식. 첫 번째 상승 이후 조정 지점에 현재 위치가 극도의 공포 구간이라는 표시가 있다.",
+    "category_ko": "투자 심리 도식",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cff4ffbab86c438c3bdefa06fcc55beb734b93c2efc7413af8cbc71ea1dd914b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "그것이 만드는 것 — 다이어그램 유형 안내",
+    "description_ko": "미니멀 라이트·미니멀 다크·풀 에디터의 정적 버전을 소개하는 한국어 안내 화면. 아키텍처, IT 현황, 순서도, 시퀀스, 상태 머신, 데이터 모델, 타임라인, 스윔레인, 사분면, 레이더, 루프, 중첩 계층 구조 예시가 배열되어 있다.",
+    "category_ko": "다이어그램 도구·템플릿 소개",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:963a347553bc9bad6cd412954cbce849474950090130b27d6d87a181244f900d": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "다이어그램 및 데이터 시각화 예시 모음",
+    "description_ko": "트리, 조직도, 레이어 스택, 벤 다이어그램, 피라미드, 막대 그래프, 트리맵, 선 그래프, 간트 차트, 산점도와 여러 프로세스·데이터 흐름 도식을 격자로 소개하는 한국어 화면.",
+    "category_ko": "다이어그램 도구·템플릿 소개",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }
