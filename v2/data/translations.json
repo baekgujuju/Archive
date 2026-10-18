@@ -4916,5 +4916,261 @@
     "status": "ok",
     "translated_at": "2026-10-18T04:01:45.906382+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2089327156274790890:2089407512202064327": {
+    "paragraphs": [
+      "Nice!"
+    ],
+    "translated": [
+      "좋네요!"
+    ],
+    "content_hash": "1eff8a6a46836f53",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783325+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2094395258410811871": {
+    "paragraphs": [
+      "looks useful thanks"
+    ],
+    "translated": [
+      "유용해 보이네요, 감사합니다"
+    ],
+    "content_hash": "74181f990a6395cf",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783363+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2083473942241780203:2083476325759848463": {
+    "paragraphs": [
+      "그런데 왜 반대일까?\n최근 미국 기술주는 큰 폭의 조정을 받음. 이런 경우",
+      "‘꽤 빠졌네..단기 반등이 나올 수 있다’",
+      "라는 기대로 콜옵션 매수 수요가 증가할 수 있음.\n그 결과 Call IV > Put IV",
+      "이걸 리버스 스큐(Reverse Skew)라고 함."
+    ],
+    "translated": [
+      "그런데 왜 반대일까?\n최근 미국 기술주는 큰 폭의 조정을 받음. 이런 경우",
+      "‘꽤 빠졌네..단기 반등이 나올 수 있다’",
+      "라는 기대로 콜옵션 매수 수요가 증가할 수 있음.\n그 결과 Call IV > Put IV",
+      "이걸 리버스 스큐(Reverse Skew)라고 함."
+    ],
+    "content_hash": "a30eb081bf698c5f",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783305+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2102737744342696323": {
+    "paragraphs": [
+      "“无窗口”不等于更隐秘。真正卡住 Agent 的往往是指纹、验证码、登录态和限流。轻量方案适合批量静态页；遇到重 JS 页面，兼容性、失败重试和代理成本才是生产边界。"
+    ],
+    "translated": [
+      "\"창이 없다\"는 것이 더 은밀하다는 것을 뜻하진 않습니다. 에이전트의 발목을 잡는 실제 요인은 주로 브라우저 지문, 캡차, 로그인 상태 및 속도 제한입니다. 경량화 솔루션은 대량의 정적 페이지에 적합하며, JS 비중이 높은 페이지의 경우 호환성, 실패 재시도, 프록시 비용이 실제 운영의 한계선이 됩니다."
+    ],
+    "content_hash": "902a6dbfa7184572",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783376+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2102737582639747099": {
+    "paragraphs": [
+      "无窗口≠隐秘。真正决定爬取成功率的是浏览器指纹、TLS 特征、行为节奏、验证码与会话隔离；轻量化往往牺牲兼容性。上线前更该看失败率、单页成本和封禁率。"
+    ],
+    "translated": [
+      "창 없음 ≠ 은밀함. 크롤링 성공률을 실제로 결정짓는 것은 브라우저 지문, TLS 특징, 행동 패턴, 캡차, 세션 격리입니다. 경량화는 흔히 호환성을 희생하곤 합니다. 실제 서비스 운영 전에 더 유심히 봐야 할 것은 실패율, 페이지당 단가, 차단율입니다."
+    ],
+    "content_hash": "189c2d8e04ed5856",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783381+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2080269292688335111:2080307826493136896": {
+    "paragraphs": [
+      "othing beats learning from the masters and their stories."
+    ],
+    "translated": [
+      "거장들과 그들의 이야기로부터 배우는 것보다 더 좋은 것은 없습니다."
+    ],
+    "content_hash": "d439bbf8d7cad9d1",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783115+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327156274790890:2089403014033428625": {
+    "paragraphs": [
+      "Works like a charm with my Hermes on Windows!"
+    ],
+    "translated": [
+      "Windows 환경의 내 Hermes에서 완벽하게 잘 작동하네요!"
+    ],
+    "content_hash": "90d676e9610da80a",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783321+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327156274790890:2089409589989056538": {
+    "paragraphs": [
+      "Finally, a decent headless browser for my 1G‑mem Linux server.🫡"
+    ],
+    "translated": [
+      "마침내 1G 메모리 Linux 서버에 쓸 만한 괜찮은 헤드리스 브라우저가 나왔군요.🫡"
+    ],
+    "content_hash": "b41f818464b3303b",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783330+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2097622728660357490": {
+    "paragraphs": [
+      "Fun fact: \"Molí\" is Catalan for windmill 😉"
+    ],
+    "translated": [
+      "흥미로운 사실: \"Molí\"는 카탈루냐어로 풍차라는 뜻입니다 😉"
+    ],
+    "content_hash": "7f9a8cb350ec792e",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783367+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089574903523749987:2090614678187876498": {
+    "paragraphs": [
+      "public-apis 볼 때 저는 카테고리보다 무료 한도부터 봐요. 하루 100콜짜리는 데모까진 잘 되는데 막상 앱에 붙이면 금방 막히더라고요"
+    ],
+    "translated": [
+      "public-apis 볼 때 저는 카테고리보다 무료 한도부터 봐요. 하루 100콜짜리는 데모까진 잘 되는데 막상 앱에 붙이면 금방 막히더라고요"
+    ],
+    "content_hash": "a8a4617685fa5375",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783405+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2095703042368946449": {
+    "paragraphs": [
+      "Anti-anti-scraping, huh?"
+    ],
+    "translated": [
+      "안티 안티 스크래핑이라니, 흥미롭네요?"
+    ],
+    "content_hash": "962351e8be5865b0",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783342+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2083473942241780203:2083475500027265221": {
+    "paragraphs": [
+      "뭐가 비싼거냐구? 그냥 수치가 높으면 비쌈.",
+      "예시: 첫번째 스샷에 $tsla\n 8월 7일 만기(담주) call보다 put이 0.5만큼 더 변동성 수치가 높음. \n두번째 스샷 12월 15일은 초록색(Call) 그래프가 거의 3포인트 차이가 남. 콜이 더 비싸다는 뜻임.",
+      "그런데 0.5포인트 차이는 그냥 같다고침."
+    ],
+    "translated": [
+      "뭐가 비싼거냐구? 그냥 수치가 높으면 비쌈.",
+      "예시: 첫번째 스샷에 $tsla\n 8월 7일 만기(담주) call보다 put이 0.5만큼 더 변동성 수치가 높음. \n두번째 스샷 12월 15일은 초록색(Call) 그래프가 거의 3포인트 차이가 남. 콜이 더 비싸다는 뜻임.",
+      "그런데 0.5포인트 차이는 그냥 같다고침."
+    ],
+    "content_hash": "09c0b73eb5fa5486",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783278+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2098771596500762902": {
+    "paragraphs": [
+      "Stealth scraping alt data is getting out of hand."
+    ],
+    "translated": [
+      "스텔스 스크래핑으로 대체 데이터를 수집하는 일이 정도를 넘어서고 있습니다."
+    ],
+    "content_hash": "bf3f4e8450251b77",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783372+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2083473942241780203:2083475834237779977": {
+    "paragraphs": [
+      "📌 일반적인 경우는?",
+      "대부분의 미국 주식은 Put IV > Call IV 형태가 많다고 배움. (이유는 투자자들이 하락 위험을 대비하기 위해 풋옵션을 많이 매수하기 때문)",
+      "그래서 평소에는 풋이 콜보다 비싼 것이 오히려 정상적인 스큐."
+    ],
+    "translated": [
+      "📌 일반적인 경우는?",
+      "대부분의 미국 주식은 Put IV > Call IV 형태가 많다고 배움. (이유는 투자자들이 하락 위험을 대비하기 위해 풋옵션을 많이 매수하기 때문)",
+      "그래서 평소에는 풋이 콜보다 비싼 것이 오히려 정상적인 스큐."
+    ],
+    "content_hash": "d80d37d5342a2b53",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783292+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2083473942241780203:2083474320165400954": {
+    "paragraphs": [
+      "옵션 가격에는 내재변동성(Implied Volatility, IV)이 반영되는데, 행사가(Strike)마다 IV가 서로 다름. ⭐️이거 중요⭐️",
+      "근데 이거 하나씩 열어보기 귀찮으니까. 행사가별로 IV가 기울어져 있는 그래프 옵션 스큐(Volatility Skew)를 열어보자."
+    ],
+    "translated": [
+      "옵션 가격에는 내재변동성(Implied Volatility, IV)이 반영되는데, 행사가(Strike)마다 IV가 서로 다름. ⭐️이거 중요⭐️",
+      "근데 이거 하나씩 열어보기 귀찮으니까. 행사가별로 IV가 기울어져 있는 그래프 옵션 스큐(Volatility Skew)를 열어보자."
+    ],
+    "content_hash": "0306149fe5d4133c",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783268+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327156274790890:2101588778980987001": {
+    "paragraphs": [
+      "A headless browser (Headless Browser) is a browser that does not display a window and is controlled by a program. \"Headless\" refers to the absence of a visible graphical interface."
+    ],
+    "translated": [
+      "헤드리스 브라우저(Headless Browser)는 창을 표시하지 않고 프로그램으로 제어하는 브라우저입니다. \"헤드리스\"는 눈에 보이는 그래픽 인터페이스가 없음을 뜻합니다."
+    ],
+    "content_hash": "9c1e499f1ca3c067",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783317+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089331487342829862:2089331487342829862": {
+    "paragraphs": [
+      "Securing the Infrastructure of Intelligence"
+    ],
+    "translated": [
+      "인텔리전스 인프라의 보안 확보"
+    ],
+    "content_hash": "28a5983e05b58894",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783393+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327156274790890:2100485279387992129": {
+    "paragraphs": [
+      "What is a headless browser?"
+    ],
+    "translated": [
+      "헤드리스 브라우저란 무엇인가요?"
+    ],
+    "content_hash": "6734359335a64b92",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783311+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2097299184739066359": {
+    "paragraphs": [
+      "Stealth is a cost center, not a feature. If the output isn't monetizable data, you are just burning cycles to avoid detection. Who pays for the proxy bill?"
+    ],
+    "translated": [
+      "스텔스는 기능이 아니라 비용 센터(비용 발생 요인)입니다. 결과물이 수익화할 수 있는 데이터가 아니라면 탐지를 피하려고 연산 자원만 낭비하는 셈입니다. 프록시 비용은 누가 내나요?"
+    ],
+    "content_hash": "59535caaa44524f7",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783353+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2089327477214593238:2097304515120615905": {
+    "paragraphs": [
+      "Moli’s stealth has no cost"
+    ],
+    "translated": [
+      "Moli의 스텔스는 비용이 들지 않습니다"
+    ],
+    "content_hash": "f71b518d0ae74cd2",
+    "status": "ok",
+    "translated_at": "2026-10-18T04:08:56.783358+00:00",
+    "chunk": "posts-x.json"
   }
 }
