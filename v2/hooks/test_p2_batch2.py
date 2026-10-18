@@ -1346,6 +1346,64 @@ def test_drive_poll_legacy_revalidation_batch(poll_env, monkeypatch):
     assert len(posts) == 7
 
 
+def test_drive_poll_legacy_batch_skips_non_html(poll_env, monkeypatch):
+    # 회귀: 비-HTML 미검증 항목이 배치 슬롯을 영구 점유하면 HTML
+    # 항목이 재검증되지 않는 라이브락 (생산 첫 폴에서 0건 확인).
+    # 가장 오래된 미검증 6건이 비-HTML이어도 HTML 2건이 재검증된다.
+    legacy = {"processed": {}}
+    files = []
+    downloads = {}
+    for i, ext in enumerate(["hwpx", "pdf", "png", "docx", "zip", "mp4"]):
+        fid = f"legacy-bin-{i}"
+        legacy["processed"][fid] = {"modifiedTime": f"2026-10-01T00:00:0{i}Z",
+                                    "size": "10"}
+        files.append({"id": fid, "name": f"old-{i}.{ext}",
+                      "modifiedTime": f"2026-10-01T00:00:0{i}Z", "size": "10"})
+    for i in range(2):
+        fid = f"legacy-html-{i}"
+        tid = str(2000 + i)
+        content = _valid_html(tid, f"html {i}")
+        legacy["processed"][fid] = {"modifiedTime": "2026-10-17T00:00:00Z",
+                                    "size": str(len(content))}
+        files.append(_drive_file(fid, f"html-{i}.html", content))
+        downloads[fid] = content
+    (poll_env["tmp"] / "legacy.json").write_text(json.dumps(legacy), encoding="utf-8")
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run", FakeRun(downloads))
+    rc = drive_poll.main()
+    assert rc == 0
+    state = json.loads((poll_env["hooks"] / ".drive_poll_state.json").read_text())
+    assert all(state["processed"][f"legacy-html-{i}"]["verification"] == "verified"
+               for i in range(2))
+    # 비-HTML 항목은 미검증으로 남지만 배치를 막지 않는다.
+    assert all(state["processed"][f"legacy-bin-{i}"]["verification"] == "unverified"
+               for i in range(6))
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert len(posts) == 2
+
+
+def test_drive_poll_non_string_name_does_not_crash(poll_env, monkeypatch):
+    # 회귀 (Codex 핫픽스 2 리뷰 비차단 보완점): 비문자열 파일명이
+    # 처리 루프까지 오면 "Unsupported ..." + name 연결에서 TypeError.
+    # _is_html_name은 비문자열을 False로 처리하므로, 로그만 안전하면
+    # 폴 전체가 해당 파일을 건너뛰고 정상 완료한다.
+    files = [
+        {"id": "fid-none", "name": None,
+         "modifiedTime": "2026-10-18T00:00:00Z", "size": "10"},
+        {"id": "fid-int", "name": 123,
+         "modifiedTime": "2026-10-18T00:00:00Z", "size": "10"},
+        _drive_file("fid-ok", "ok.html", _valid_html("3000", "ok")),
+    ]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run",
+                        FakeRun({"fid-ok": _valid_html("3000", "ok")}))
+    rc = drive_poll.main()
+    assert rc == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert len(posts) == 1
+    assert posts[0]["tweetId"] == "3000"
+
+
 def test_drive_poll_merge_conflict_becomes_proposal(poll_env, monkeypatch):
     old = {
         "tweetId": "111", "sourceUrl": "https://x.com/Author1/status/111",
