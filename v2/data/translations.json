@@ -6329,31 +6329,37 @@
     "paragraphs": [
       "I'm literally doing this right now"
     ],
-    "translated": [],
+    "translated": [
+      "제가 지금 딱 그걸 하고 있어요."
+    ],
     "content_hash": "4ccc2c1f7056eb03",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183133+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615622+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108052272643264834:2108304040685920278": {
     "paragraphs": [
       "Helm Dashboard = the new ArgoCD? tbh still a neat UI for rollbacks."
     ],
-    "translated": [],
+    "translated": [
+      "Helm Dashboard = 새로운 ArgoCD? 솔직히 롤백용으로는 여전히 괜찮은 UI네요."
+    ],
     "content_hash": "5db88482d68466a9",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183050+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615480+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108077430389019121:2108088135179747675": {
     "paragraphs": [
       "Have you figured out if selling after 3 days vs 5 days is better? Wondering if you’ve tested both and found one to have better results"
     ],
-    "translated": [],
+    "translated": [
+      "3일 후 매도하는 것과 5일 후 매도하는 것 중 어느 쪽이 더 나은지 확인해 보셨나요? 둘 다 테스트해 보고 어느 쪽의 성과가 더 좋았는지 궁금합니다."
+    ],
     "content_hash": "3004b65e9b589aba",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183069+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615560+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108196720706478249:2108200862216761346": {
     "paragraphs": [
@@ -6361,22 +6367,29 @@
       "타래? 읽어보면 알겠지만 최소 1시간봉까지는 쪼개 내려가는 것이 이롭다.",
       "본좌는 안 피곤하면 1분봉까지 내려가고, 컨디션이 영 아닌 날에는 5~15분봉에서 해결함. x.com/tmmrwseoul/sta…"
     ],
-    "translated": [],
+    "translated": [
+      "걍 뭐 설명하다 올려서 여기에도 올림. ONDO 매수했음.",
+      "타래? 읽어보면 알겠지만 최소 1시간봉까지는 쪼개 내려가는 것이 이롭다.",
+      "본좌는 안 피곤하면 1분봉까지 내려가고, 컨디션이 영 아닌 날에는 5~15분봉에서 해결함. x.com/tmmrwseoul/sta…"
+    ],
     "content_hash": "2214cede924babb3",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183084+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615582+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108077430389019121:2108109366251622519": {
     "paragraphs": [
       "This is a very smart approach, but increases the complexity and its not easy",
       "But well executed, it obvisouly has huge edge"
     ],
-    "translated": [],
+    "translated": [
+      "아주 현명한 접근법이지만, 복잡성이 높아지고 쉽지 않죠.",
+      "하지만 잘 실행하면 확실히 엄청난 우위가 있죠."
+    ],
     "content_hash": "93aa14860ea1b93c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183064+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615552+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108052272643264834:2108058749827215464": {
     "paragraphs": [
@@ -6394,63 +6407,77 @@
     "paragraphs": [
       "I'll probably do a full guide on REA at https://forwardfuture.com (go subscribe)"
     ],
-    "translated": [],
+    "translated": [
+      "아마 https://forwardfuture.com 에 REA 종합 가이드를 올릴 것 같아요. 구독해 주세요."
+    ],
     "content_hash": "32cb245f51a3fb2b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183095+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615599+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108077430389019121:2108107818964500728": {
     "paragraphs": [
       "As a Bayesian, my entries, exits, setups, and position size on every trade all depend on current market conditions. That's why I run a situational-awareness check every day.",
       "In a choppy market like this one, I sell my entire position within 1–3 days of entry. In a low-volatility"
     ],
-    "translated": [],
+    "translated": [
+      "베이지안으로서 저는 모든 거래의 진입, 청산, 매매 패턴, 포지션 규모를 현재 시장 상황에 따라 결정합니다. 그래서 매일 시장 상황을 점검합니다.",
+      "지금처럼 등락이 심한 시장에서는 진입 후 1~3일 안에 포지션을 전량 매도합니다. 변동성이 낮은"
+    ],
     "content_hash": "8e0517ba3a684a9b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183056+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615540+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108124964285243888:2108125384416145444": {
     "paragraphs": [
       "이런 플레이는 강세청산의 이점입니다. 이번 추세에서 약세청산을 노렸다면 10EMA나 20EMA 이탈마감에서 청산이 나가기 때문에, 어제는 시장에서 나오는 시간이지 들어가는 시간이 아닙니다.",
       "강세청산을 이용하면 자유도가 더 높아진다는 소리입니다."
     ],
-    "translated": [],
+    "translated": [
+      "이런 플레이는 강세청산의 이점입니다. 이번 추세에서 약세청산을 노렸다면 10EMA나 20EMA 이탈마감에서 청산이 나가기 때문에, 어제는 시장에서 나오는 시간이지 들어가는 시간이 아닙니다.",
+      "강세청산을 이용하면 자유도가 더 높아진다는 소리입니다."
+    ],
     "content_hash": "dbefe7d228a03137",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183078+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615571+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108077430389019121:2108094641006629330": {
     "paragraphs": [
       "Yes I have written about it here"
     ],
-    "translated": [],
+    "translated": [
+      "네, 여기에 그에 관해 쓴 글이 있습니다."
+    ],
     "content_hash": "aee77686d738dc20",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183074+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615565+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108245653843509415:2108258088952496203": {
     "paragraphs": [
       "totally. feels like the early wild west of napster. lawsuits incoming."
     ],
-    "translated": [],
+    "translated": [
+      "완전 동감해요. 냅스터 초기의 무법지대 같은 느낌이네요. 소송이 밀려오겠어요."
+    ],
     "content_hash": "a278f545c95178cb",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183101+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615608+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108245653843509415:2108247053306622445": {
     "paragraphs": [
       "Wonder if we can reverse engineer Excel"
     ],
-    "translated": [],
+    "translated": [
+      "Excel도 리버스 엔지니어링할 수 있을지 궁금하네요."
+    ],
     "content_hash": "ab3c0da9dc6e2f4c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183130+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615618+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108245653843509415:2089327156274790890": {
     "paragraphs": [
@@ -6459,131 +6486,160 @@
       "- 1/7 memory, 2/3 CPU, 4× faster cold start\n- Crawl more web pages\n- Full automation support",
       "Open source, Pure Rust."
     ],
-    "translated": [],
+    "translated": [
+      "Chrome은 AI 에이전트가 쓰기에는 너무 무거웠습니다.",
+      "Moli: AI 에이전트를 위한 궁극의 헤드리스 브라우저",
+      "- 메모리 사용량 1/7, CPU 사용량 2/3, 콜드 스타트 속도 4배\n- 더 많은 웹페이지 크롤링\n- 완전한 자동화 지원",
+      "오픈 소스, 순수 Rust로 구현."
+    ],
     "content_hash": "f80a3fb77c9e3ba2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183126+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615613+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108218393568719269:2108263558312308961": {
     "paragraphs": [
       "the permission-hardened tools thing is what gets me, most agents just yolo your whole filesystem"
     ],
-    "translated": [],
+    "translated": [
+      "권한 통제를 강화한 도구라는 점이 특히 마음에 드네요. 대부분의 에이전트는 파일 시스템 전체를 그냥 막 건드리잖아요."
+    ],
     "content_hash": "e1c346da6c5f3f4e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183091+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615594+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108245653843509415:2108253690696016068": {
     "paragraphs": [
       "Napster moment, piracy in the wild.  I'd expect this to be met with some lawsuits for anyone trying to publish."
     ],
-    "translated": [],
+    "translated": [
+      "냅스터의 순간이네요. 불법 복제가 세상에 풀려난 거죠. 이걸 공개하려는 사람들은 소송에 직면할 것 같습니다."
+    ],
     "content_hash": "755fd66084ece656",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183098+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615603+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108218393568719269:2108218405862121952": {
     "paragraphs": [
       "GitHub Repository:"
     ],
-    "translated": [],
+    "translated": [
+      "GitHub 저장소:"
+    ],
     "content_hash": "6a327864b18895ed",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183087+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615587+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108977796576109007:2109078371103818115": {
     "paragraphs": [
       "이안님 혹시 지금 QQQ는 신고가 근처에서 강세인데 iwm같은건 좀 디커플링 되고 같이 못가고 마켓 브레쓰도 안좋은거같은데 항상 스크리너에 소형주 위주로 잡혀서 월초 스탑이 많이 터진거같은데 이런 경우에는 어떤식으로 매매하시나요?? 대형주만 건든다거나 다른 방법을 이용하시나요?"
     ],
-    "translated": [],
+    "translated": [
+      "이안님 혹시 지금 QQQ는 신고가 근처에서 강세인데 iwm같은건 좀 디커플링 되고 같이 못가고 마켓 브레쓰도 안좋은거같은데 항상 스크리너에 소형주 위주로 잡혀서 월초 스탑이 많이 터진거같은데 이런 경우에는 어떤식으로 매매하시나요?? 대형주만 건든다거나 다른 방법을 이용하시나요?"
+    ],
     "content_hash": "df0de7d7f5f21a48",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183137+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615627+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108175372131217670:2108175373662097773": {
     "paragraphs": [
       "요즘 GitHub에서 빠르게 뜨고 있는 REA 👇"
     ],
-    "translated": [],
+    "translated": [
+      "요즘 GitHub에서 빠르게 뜨고 있는 REA 👇"
+    ],
     "content_hash": "11247e6492c8565c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:08.183081+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615576+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2108976671005323605": {
     "paragraphs": [
       "I'm definitely impressed with your high level of detail and diligence."
     ],
-    "translated": [],
+    "translated": [
+      "세세하게 살피시는 모습과 성실함에 정말 감탄했습니다."
+    ],
     "content_hash": "867af22a82ee51a1",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:43:17.769488+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615632+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109347761581969734:2109354776366567765": {
     "paragraphs": [
       "yes i agree. so incredible, the amount of stocks it brings to your radar."
     ],
-    "translated": [],
+    "translated": [
+      "네, 동의해요. 덕분에 정말 엄청나게 많은 종목을 눈여겨보게 되네요."
+    ],
     "content_hash": "d639086457793332",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715402+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540643+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2109318433473020173": {
     "paragraphs": [
       "Hi @AmeetRai\n thanks for your content, what is your strategy for stop loss?"
     ],
-    "translated": [],
+    "translated": [
+      "안녕하세요 @AmeetRai\n콘텐츠 감사합니다. 손절 전략은 어떻게 되시나요?"
+    ],
     "content_hash": "0ffa49c68dcb369e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715375+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540584+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109412212431565299:2109574745003806802": {
     "paragraphs": [
       "I'll bookmark it"
     ],
-    "translated": [],
+    "translated": [
+      "북마크해 둘게요"
+    ],
     "content_hash": "55539d995a6f0cf6",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715423+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540679+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109955140195385660:2109986802346197096": {
     "paragraphs": [
       "Nice, verified citations could make Korean legal research way smoother."
     ],
-    "translated": [],
+    "translated": [
+      "좋네요. 검증된 출처 인용이 있으면 한국 법률 자료 조사가 훨씬 수월해지겠어요."
+    ],
     "content_hash": "6c36d36c6879c1cb",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715428+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540685+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2108886685434150916": {
     "paragraphs": [
       "Confluence is fine until the MAs converge from a sideways base - that's where everyone's stop sits at the same price. I size down when support is that obvious."
     ],
-    "translated": [],
+    "translated": [
+      "여러 조건이 겹치는 건 좋지만, 횡보 구간에서 이동평균선들이 수렴하면 얘기가 달라집니다. 모두의 손절 주문이 같은 가격에 몰리거든요. 저는 지지선이 그렇게 뚜렷할 때는 포지션 규모를 줄입니다."
+    ],
     "content_hash": "e3f1eb8e61940596",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715379+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540593+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109347761581969734:2109844591243387120": {
     "paragraphs": [
       "How to scan HVE on TradingView any idea?"
     ],
-    "translated": [],
+    "translated": [
+      "TradingView에서 HVE를 검색하는 방법 아시는 분 있나요?"
+    ],
     "content_hash": "082f7222b55d0469",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715408+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540654+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2089327156274790890": {
     "paragraphs": [
@@ -6592,101 +6648,124 @@
       "- 1/7 memory, 2/3 CPU, 4× faster cold start\n- Crawl more web pages\n- Full automation support",
       "Open source, Pure Rust."
     ],
-    "translated": [],
+    "translated": [
+      "Chrome은 AI 에이전트가 쓰기에는 너무 무거웠습니다",
+      "Moli: AI 에이전트를 위한 궁극의 헤드리스 브라우저",
+      "- 메모리 사용량 1/7, CPU 사용량 2/3, 콜드 스타트 속도 4배\n- 더 많은 웹페이지 크롤링\n- 완벽한 자동화 지원",
+      "오픈 소스, 순수 Rust로 구현."
+    ],
     "content_hash": "f80a3fb77c9e3ba2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715383+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540603+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2109126053021307224": {
     "paragraphs": [
       "Confluence helped me too, until I counted 🤔 Every condition I stacked left fewer trades to test. How many of those exact-spot pullbacks do you see in a year?"
     ],
-    "translated": [],
+    "translated": [
+      "저도 여러 조건을 함께 확인하는 게 도움이 됐어요. 직접 세어 보기 전까지는요 🤔 조건을 하나씩 추가할수록 검증할 매매 사례가 줄어들더군요. 정확히 그 자리까지 되돌림이 나오는 경우가 1년에 몇 번이나 있나요?"
+    ],
     "content_hash": "c7aa5ab2423d6eed",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715371+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540532+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109347761581969734:2109652596906746122": {
     "paragraphs": [
       "@AMIT55B\n can we get this?"
     ],
-    "translated": [],
+    "translated": [
+      "@AMIT55B\n이거 받아볼 수 있을까요?"
+    ],
     "content_hash": "da0ff3927a74a265",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715413+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540663+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2109092507044725062": {
     "paragraphs": [
       "confluence 101: when a moving average and horizontal support stack on the same spot, the chart is basically double-texting you 😏"
     ],
-    "translated": [],
+    "translated": [
+      "컨플루언스 기초: 이동평균선과 수평 지지선이 같은 지점에 겹치면, 차트가 사실상 너한테 메시지를 두 번 연달아 보내는 셈이지 😏"
+    ],
     "content_hash": "e73ebb8fce69cc62",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715364+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615648+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109347761581969734:2109820097766502471": {
     "paragraphs": [
       "Thank you!"
     ],
-    "translated": [],
+    "translated": [
+      "감사합니다!"
+    ],
     "content_hash": "3afdda2c098fc834",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715410+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540659+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109298980454850615:2109306227993833891": {
     "paragraphs": [
       "Really appreciate these summary cards. To the point easy to follow. Would you be kind enough to do a 'Short Squeeze', EP of Qullamaggie please when you do decide to do more, otherwise its fine? Thanks"
     ],
-    "translated": [],
+    "translated": [
+      "이런 요약 카드 정말 감사합니다. 핵심만 담겨 있어 이해하기 쉬워요. 나중에 더 만드실 계획이 있다면 Qullamaggie의 '숏 스퀴즈'와 EP도 다뤄주실 수 있을까요? 어려우시면 괜찮습니다. 감사합니다."
+    ],
     "content_hash": "b28d9088370f6a8e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715390+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540619+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109347761581969734:2109617951812821031": {
     "paragraphs": [
       "How can you build than scanner on finviz?"
     ],
-    "translated": [],
+    "translated": [
+      "finviz에서 그 스캐너를 어떻게 만들 수 있나요?"
+    ],
     "content_hash": "b40c253b720967bb",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715405+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540649+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109347761581969734:2109348429256425922": {
     "paragraphs": [
       "Cheers 🥂"
     ],
-    "translated": [],
+    "translated": [
+      "건배 🥂"
+    ],
     "content_hash": "50dfade02c4d1dac",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715399+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540638+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109298980454850615:2109312150871347383": {
     "paragraphs": [
       "the ones that got stopped out at least had a stop"
     ],
-    "translated": [],
+    "translated": [
+      "손절당한 사람들은 적어도 손절선은 설정해 뒀네요"
+    ],
     "content_hash": "2cd9f4cbe5e35871",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715396+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540632+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109606535370305931:2109639634980647187": {
     "paragraphs": [
       "컥.. ppt master 지금 쓰고 오겠슴다"
     ],
-    "translated": [],
+    "translated": [
+      "컥.. ppt master 지금 쓰고 오겠슴다"
+    ],
     "content_hash": "abe646e199207dab",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715416+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540668+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109257204348145817:2105978632653128110": {
     "paragraphs": [
@@ -6695,382 +6774,462 @@
       "🤍퍼펙트 휩 화이트 클레이 대용량 더블기획\n📢19,400원→13,500원(30%OFF)\n✔️[본품]화이트 클레이 대용량150g*2\n✔️[증정]15g 미니&양파쿵야 파우치",
       "올리브영에서 만나보센카"
     ],
-    "translated": [],
+    "translated": [
+      "블랙헤드는 비우고\n양파쿵야 파우치 채우고👀🤍\n10월 올영PICK 특가",
+      "쫀쫀한 생크림 탄력거품으로\n블랙헤드 딥클렌징🫧",
+      "🤍퍼펙트 휩 화이트 클레이 대용량 더블기획\n📢19,400원→13,500원(30%OFF)\n✔️[본품]화이트 클레이 대용량150g*2\n✔️[증정]15g 미니&양파쿵야 파우치",
+      "올리브영에서 만나보센카"
+    ],
     "content_hash": "d54fd3043529e563",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715386+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540609+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109298980454850615:2109310545090269425": {
     "paragraphs": [
       "Thank you!",
       "Please elaborate - what exactly?"
     ],
-    "translated": [],
+    "translated": [
+      "감사합니다!",
+      "좀 더 자세히 설명해 주세요. 정확히 무엇을 말씀하시는 건가요?"
+    ],
     "content_hash": "07696ddc0f9f38ef",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715393+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540626+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109412212431565299:2109412217917747682": {
     "paragraphs": [
       "Thank you for taking a look! I'm introducing trending AI-related GitHub repositories every day. If you're looking to discover the latest open-source AI projects, please be sure to follow! 🐾\n@trendtech33566"
     ],
-    "translated": [],
+    "translated": [
+      "살펴봐 주셔서 감사합니다! 매일 주목받는 AI 관련 GitHub 저장소를 소개하고 있습니다. 최신 오픈 소스 AI 프로젝트를 발견하고 싶으시다면 꼭 팔로우해 주세요! 🐾\n@trendtech33566"
+    ],
     "content_hash": "0fd1423b0b70e9c8",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715419+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540673+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108875238796583045:2108878151694930252": {
     "paragraphs": [
       "Amit paji🕉🪯👏 just a basic query. So, this you do when the stock is above 100 DMA right and in uptrend, right?"
     ],
-    "translated": [],
+    "translated": [
+      "아미트 형님🕉🪯👏 기초적인 질문 하나만 드릴게요. 이건 주가가 100일 이동평균선 위에 있고 상승 추세일 때 하시는 거죠?"
+    ],
     "content_hash": "75b81974dafa73f6",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:49:43.715321+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:39:48.615637+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2079228159849811991:2084696559191556271": {
     "paragraphs": [
       "Is this the real Qullamaggie?  Or is this David"
     ],
-    "translated": [],
+    "translated": [
+      "진짜 Qullamaggie인가요? 아니면 David인가요?"
+    ],
     "content_hash": "711b6e8360ca00f7",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099446+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888201+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110052362286960974:2110078427370008994": {
     "paragraphs": [
       "Looked so good at the day after the white dot, whats is that btw, RMV?"
     ],
-    "translated": [],
+    "translated": [
+      "흰 점이 나온 다음 날에는 정말 좋아 보였는데요. 그런데 그게 뭔가요, RMV인가요?"
+    ],
     "content_hash": "2069bfa6910acadd",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099480+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888327+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110102222793331024:2110149418095919323": {
     "paragraphs": [
       "The more smoothly the backtesting goes, the less I dare to go live with real trading."
     ],
-    "translated": [],
+    "translated": [
+      "백테스트가 순조롭게 진행될수록 오히려 실전 매매에 나설 엄두가 나지 않습니다."
+    ],
     "content_hash": "ff31b6ccf4bfdb14",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099423+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540698+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110102222793331024:2110251222015844418": {
     "paragraphs": [
       "Makes a lot of sense my friend."
     ],
-    "translated": [],
+    "translated": [
+      "정말 일리 있는 말이야, 친구."
+    ],
     "content_hash": "e4386654b6c25760",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099430+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888123+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110450574705475874:2110471556916822484": {
     "paragraphs": [
       "You still consider $NBIS\n a leader?"
     ],
-    "translated": [],
+    "translated": [
+      "아직도 $NBIS를 주도주로 보시나요?"
+    ],
     "content_hash": "7404a9bbad5cda6a",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099468+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888302+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110102222793331024:2110342920549151017": {
     "paragraphs": [
       "Is it really ?"
     ],
-    "translated": [],
+    "translated": [
+      "정말인가요?"
+    ],
     "content_hash": "e5cc731d44a18cb9",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099439+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888188+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2098394627871326337:2100894327685697622": {
     "paragraphs": [
       "Still with girl friend why dont get married? Its time to get marry"
     ],
-    "translated": [],
+    "translated": [
+      "아직도 여자친구와 사귀고 있는데 왜 결혼하지 않나요? 이제 결혼할 때도 됐잖아요."
+    ],
     "content_hash": "ffa244bee0204f9f",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099465+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888295+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110384129821028537:2110387531241885767": {
     "paragraphs": [
       "Its very illustrative!"
     ],
-    "translated": [],
+    "translated": [
+      "아주 이해하기 쉽게 보여주네요!"
+    ],
     "content_hash": "c8f678a02cdbb1c5",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099458+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888281+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110384129821028537:2110392048696410615": {
     "paragraphs": [
       "Good stuff here. You and @mfitchic\n are two accounts I like keeping on my radar."
     ],
-    "translated": [],
+    "translated": [
+      "좋은 내용이네요. 당신과 @mfitchic은 제가 계속 주목하는 두 계정입니다."
+    ],
     "content_hash": "7354fa5114e7613d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099462+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888288+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110052362286960974:2110054412265701775": {
     "paragraphs": [
       "True"
     ],
-    "translated": [],
+    "translated": [
+      "맞아요."
+    ],
     "content_hash": "3cbc87c7681f34db",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099489+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888338+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110384129821028537:2110386477838254147": {
     "paragraphs": [
       "Nice graph"
     ],
-    "translated": [],
+    "translated": [
+      "좋은 그래프네요."
+    ],
     "content_hash": "480ed585cebc8bc7",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099455+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888273+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110450574705475874:2110452498305863922": {
     "paragraphs": [
       "How would u define a pivot at a key level? A full high volume candle or a hammer etc?"
     ],
-    "translated": [],
+    "translated": [
+      "주요 가격대에서의 피벗을 어떻게 정의하시나요? 거래량이 많이 실린 장대 캔들인가요, 아니면 망치형 같은 건가요?"
+    ],
     "content_hash": "ca7fbaf3016fd542",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099471+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888309+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110264088941023486:2110267790640976095": {
     "paragraphs": [
       "DESIGN.md 쓰라는 거군요"
     ],
-    "translated": [],
+    "translated": [
+      "DESIGN.md 쓰라는 거군요"
+    ],
     "content_hash": "f6c56f2cf010aa41",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099378+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:41:09.540690+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110052362286960974:2110070383080886505": {
     "paragraphs": [
       "As soon as someone see series of HL’s , they say it is a textbook VCP. But the base was still 50%+ deep and had overhead supply above"
     ],
-    "translated": [],
+    "translated": [
+      "사람들은 저점이 연속으로 높아지는 모습만 보면 교과서적인 VCP라고 합니다. 하지만 베이스의 조정 깊이는 여전히 50%가 넘었고, 위쪽에는 매물대도 있었어요."
+    ],
     "content_hash": "08bf3cd7c2dfcde8",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099486+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888333+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110052362286960974:2110053173083705741": {
     "paragraphs": [
       "i believe u just curious why it need more basing? should have smoked the greedy at this point with this second significant pullback….that means mu as well correct"
     ],
-    "translated": [],
+    "translated": [
+      "말씀은 믿어요. 다만 왜 베이스를 더 다져야 하는지 궁금해서요. 이번 두 번째 큰 조정이면 욕심부리던 사람들은 이미 호되게 당했을 텐데요…. MU도 마찬가지라는 말씀이죠?"
+    ],
     "content_hash": "3848b69cfd09a50d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099477+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888322+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2079228159849811991:2079667317529551241": {
     "paragraphs": [
       "This is very crucial."
     ],
-    "translated": [],
+    "translated": [
+      "이건 정말 중요합니다."
+    ],
     "content_hash": "977e44818a4a54d0",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099442+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888194+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110384129821028537:2110384598358147520": {
     "paragraphs": [
       "if there's above-noise autocorrelation in trade returns, you can optimise the strategy through a simple equity curve filter, ie trade less or smaller size or not at all when hitting a streak of losers at or above a certain length."
     ],
-    "translated": [],
+    "translated": [
+      "거래 수익률에 잡음 수준을 넘어서는 자기상관이 있다면, 간단한 자산 곡선 필터로 전략을 최적화할 수 있습니다. 즉, 연속 손실 횟수가 일정 기준에 도달하거나 이를 넘으면 거래 빈도나 포지션 규모를 줄이거나 아예 거래하지 않는 겁니다."
+    ],
     "content_hash": "74a0895a1507a8d8",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099449+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888235+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110052362286960974:2110062411008905607": {
     "paragraphs": [
       "Same as MU, neither were ever ready for me.  Process dependent I suppose."
     ],
-    "translated": [],
+    "translated": [
+      "MU와 마찬가지로, 제 기준에서는 둘 다 진입할 준비가 된 적이 없었어요. 매매 방식에 따라 다르겠죠."
+    ],
     "content_hash": "ddfe286c23d9c12f",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099474+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888316+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110102222793331024:2110316715372364153": {
     "paragraphs": [
       "Known scam, do not download. It uses cookies to break into your X, instagram and crypto wallets"
     ],
-    "translated": [],
+    "translated": [
+      "이미 알려진 사기이니 다운로드하지 마세요. 쿠키를 이용해 여러분의 X, 인스타그램, 암호화폐 지갑에 침입합니다."
+    ],
     "content_hash": "9d263c11213d65dd",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099434+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888179+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110384129821028537:2110386192759853403": {
     "paragraphs": [
       "Never thought about that. Does it work in practice though?"
     ],
-    "translated": [],
+    "translated": [
+      "그런 생각은 해본 적 없네요. 그런데 실전에서도 효과가 있나요?"
+    ],
     "content_hash": "076c87584c51fef3",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:08:55.099452+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888241+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109986266041209220:2110013405574947011": {
     "paragraphs": [
       "Excellent post!"
     ],
-    "translated": [],
+    "translated": [
+      "훌륭한 게시글입니다!"
+    ],
     "content_hash": "1bf64440d16d68e2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379686+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367188+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110574717992354044:2110587973653639524": {
     "paragraphs": [
       "That bear flag break plus the weekly 50SMA loss is ugly. If support doesn’t show up fast, another leg lower is on the table. You’re tracking the structure well, and @Annthraxx1\n is another read I’d keep close for the spillover risk."
     ],
-    "translated": [],
+    "translated": [
+      "약세 깃발 패턴의 하향 이탈에 주봉 50주 단순이동평균선까지 무너졌으니 상황이 좋지 않네요. 빠르게 지지세가 나타나지 않으면 추가 하락도 가능합니다. 가격 구조를 잘 추적하고 계시네요. 파급 위험을 살펴보려면 @Annthraxx1의 분석도 꾸준히 챙겨보겠습니다."
+    ],
     "content_hash": "7230f3a1fb9e2c9f",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379724+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367242+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110430669742444898:2110431990159949968": {
     "paragraphs": [
       "Sharing your post @AmeetRai\n outside twitter.\nI do follow the same."
     ],
-    "translated": [],
+    "translated": [
+      "@AmeetRai 님의 게시글을 트위터 밖에도 공유하고 있습니다.\n저도 같은 방식을 따릅니다."
+    ],
     "content_hash": "c477ecd9a2fd2bc4",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379710+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367215+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109986266041209220:2109989004280045816": {
     "paragraphs": [
       "Patience pays in investing too. @JohnWuestlbik2\n explains it better than anyone I follow."
     ],
-    "translated": [],
+    "translated": [
+      "투자에서도 인내는 보상을 가져다줍니다. 제가 팔로우하는 사람 중에서는 @JohnWuestlbik2가 이를 가장 잘 설명합니다."
+    ],
     "content_hash": "6800a22adf60d0ab",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379689+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367194+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110430669742444898:2110435874500477227": {
     "paragraphs": [
       "Delayed ep"
     ],
-    "translated": [],
+    "translated": [
+      "지연된 EP"
+    ],
     "content_hash": "cac78599c0692c30",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379712+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367220+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110337831625486506:2110373288388026391": {
     "paragraphs": [
       "#TUPRS bist"
     ],
-    "translated": [],
+    "translated": [
+      "#TUPRS 이스탄불 증권거래소"
+    ],
     "content_hash": "dae6e8fad46c9701",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379660+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888355+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2090426909758734542:2090426909758734542": {
     "paragraphs": [
       "5 Things Qullamaggie Learned From Dan Zanger"
     ],
-    "translated": [],
+    "translated": [
+      "Qullamaggie가 Dan Zanger에게 배운 5가지"
+    ],
     "content_hash": "680d81218bd260b2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379676+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367164+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110574717992354044:2110586283534004656": {
     "paragraphs": [
       "I’m blowing up 😭"
     ],
-    "translated": [],
+    "translated": [
+      "저 계좌 터지고 있어요 😭"
+    ],
     "content_hash": "e144df38b18ae05a",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379718+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367232+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110476003126419635:2110485648662532539": {
     "paragraphs": [
       "Thanks"
     ],
-    "translated": [],
+    "translated": [
+      "감사합니다."
+    ],
     "content_hash": "bb47b8ff5f623996",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379672+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367155+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110430669742444898:2110433926816620838": {
     "paragraphs": [
       "Day-2 entries are where the edge is. @MattSevenich\n breaks down setups like this really well."
     ],
-    "translated": [],
+    "translated": [
+      "둘째 날 진입에 우위가 있죠. @MattSevenich는 이런 매매 패턴을 정말 잘 분석합니다."
+    ],
     "content_hash": "c34d669ce72a881d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379707+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367210+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110574717992354044:2110584919814717735": {
     "paragraphs": [
       "South Korea goes TIMBER"
     ],
-    "translated": [],
+    "translated": [
+      "한국 시장이 와르르 무너집니다."
+    ],
     "content_hash": "215fabf3c81fb8a1",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379732+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367267+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110476003126419635:2110476233297522786": {
     "paragraphs": [
       "Your way of laying this out works well. I appreciate following investors like you and @soulehoward1\n."
     ],
-    "translated": [],
+    "translated": [
+      "이렇게 정리해 주시니 이해가 잘 되네요. 당신과 @soulehoward1 같은 투자자들을 팔로우할 수 있어 감사하게 생각합니다."
+    ],
     "content_hash": "2b5e1e9b9a6a5347",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379667+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367111+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110574717992354044:2110583238699933784": {
     "paragraphs": [
       "Fair point—a rebound can happen before the underlying risks improve. You and @QueenB1__\n are longtime follows I enjoy for market perspective. What would make a rally in $CRWV\n sustainable?"
     ],
-    "translated": [],
+    "translated": [
+      "일리 있는 말씀이네요. 근본적인 위험이 개선되기 전에 반등이 나올 수도 있죠. 당신과 @QueenB1__는 시장을 바라보는 관점이 좋아서 오랫동안 즐겨 팔로우해 왔습니다. $CRWV의 상승세가 지속되려면 무엇이 필요할까요?"
+    ],
     "content_hash": "7a9a8a95f64a735e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379728+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367261+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110574717992354044:2110581477113229594": {
     "paragraphs": [
       "Down 45% means someone already blew up."
     ],
-    "translated": [],
+    "translated": [
+      "45% 하락했다면 누군가는 이미 계좌가 터졌다는 뜻이죠."
+    ],
     "content_hash": "935a9140a75d852d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379721+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367237+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2090426909758734542:2085063651199737991": {
     "paragraphs": [
@@ -7079,61 +7238,349 @@
       "With the help of AI I've now made it into an interactive app",
       "Let me know if you want a discount code 👇"
     ],
-    "translated": [],
+    "translated": [
+      "3년 전 저는 Qullamaggie 심층 분석 리서치 자료 모음을 공개했습니다.",
+      "@TheShortBear는 Tim Grittani의 매매 기법이 공개된 이후 최고의 자료라고 평가했습니다.",
+      "이제 AI의 도움으로 이를 인터랙티브 앱으로 만들었습니다.",
+      "할인 코드가 필요하시면 알려주세요 👇"
+    ],
     "content_hash": "fd11594ed7760695",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379679+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367174+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110337831625486506:2110412650148773917": {
     "paragraphs": [
       "Bro - How do you decide when to enter? Strong Start on the same day? GTT Order previous day?"
     ],
-    "translated": [],
+    "translated": [
+      "형, 진입 시점은 어떻게 정하나요? 당일 초반에 강하게 출발하면 들어가나요? 아니면 전날 GTT 주문을 걸어두나요?"
+    ],
     "content_hash": "0f926413b1a7bec7",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379615+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:42:28.888345+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110574717992354044:2110577249535873390": {
     "paragraphs": [
       "unreal, I dont know what the hell is happining there anymore and why this shit impacting US so much ugh"
     ],
-    "translated": [],
+    "translated": [
+      "말도 안 돼. 이제 거기서 대체 무슨 일이 벌어지는 건지도 모르겠고, 이 망할 일이 왜 미국에 이렇게 큰 영향을 주는지도 모르겠네. 아휴."
+    ],
     "content_hash": "26f1e9629bce16ff",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379715+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367226+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109986266041209220:2095694094148448605": {
     "paragraphs": [
       "Shop LEGO best sellers at Amazon"
     ],
-    "translated": [],
+    "translated": [
+      "Amazon에서 LEGO 베스트셀러를 쇼핑하세요."
+    ],
     "content_hash": "259d17981d0f048c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379693+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367200+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110430669742444898:2110469950070554772": {
     "paragraphs": [
       "You do the same when institutions go out of a stock the you wait until the next day before you go short? Thanks"
     ],
-    "translated": [],
+    "translated": [
+      "기관이 어떤 종목에서 빠져나갈 때도 같은 방식으로 하시나요? 다음 날까지 기다렸다가 공매도에 진입하시나요? 감사합니다."
+    ],
     "content_hash": "e02e974f0ec7fdd8",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379703+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367205+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2109986266041209220:2109986267647594564": {
     "paragraphs": [
       "PS: If you want to improve your stock selection, I created a free checklist with the criteria I use to filter out mediocre stocks and focus on high-quality opportunities.",
       "Get my 360° Stock Selection Checklist 👇"
     ],
-    "translated": [],
+    "translated": [
+      "추신: 종목 선정 능력을 높이고 싶으신 분들을 위해, 제가 평범한 종목을 걸러내고 양질의 투자 기회에 집중할 때 사용하는 기준을 담은 무료 체크리스트를 만들었습니다.",
+      "저의 360° 종목 선정 체크리스트를 받아보세요 👇"
+    ],
     "content_hash": "6f6960fe371dfe57",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T05:15:20.379683+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367181+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110574717992354044:2110598989662077336": {
+    "paragraphs": [
+      "right into previous support from months ago.",
+      "the clowns will buy the dip"
+    ],
+    "translated": [
+      "몇 달 전의 이전 지지선에 곧바로 진입.",
+      "저 멍청이들은 저가 매수에 나설 것이다."
+    ],
+    "content_hash": "061b61f362b69994",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367279+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110574717992354044:2110577676180398290": {
+    "paragraphs": [
+      "Don't you think Leopold is again? He came back and bought the same stocks and market rallied. He loaded up on same names. They became a target again. He's blowing up right?"
+    ],
+    "translated": [
+      "Leopold가 또 당하고 있는 것 같지 않나요? 그가 돌아와 같은 종목들을 샀고 시장이 상승했죠. 같은 종목들을 대거 사들였어요. 그 종목들이 다시 표적이 됐네요. 그 사람 계좌 터지고 있는 거 맞죠?"
+    ],
+    "content_hash": "2256abdb7c06ce4f",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:44:02.367271+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110819159567200450:2110823356329046485": {
+    "paragraphs": [
+      "Post the charts pls."
+    ],
+    "translated": [
+      "차트 좀 올려주세요."
+    ],
+    "content_hash": "896dc03c8ea6b02b",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848472+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110745660136067271:2110753282004029449": {
+    "paragraphs": [
+      "I got long $SOXL\n, $RAM\n and $NBIS\n - Thanks to your teachings ! I was salivaitng when I saw this cause I vivdly remember your sharing your trade from 5th Aug 2024. I think you were long $TQQQ\n that day.  Have no plans of holding over the weekend - Will trim atleast 75% or more by"
+    ],
+    "translated": [
+      "가르쳐 주신 덕분에 $SOXL, $RAM, $NBIS 롱(매수) 포지션을 잡았습니다! 2024년 8월 5일 거래를 공유해 주셨던 게 생생히 기억나서 이걸 보고 침을 꼴깍 삼켰네요. 그날 $TQQQ 롱 포지션이었던 것 같습니다. 주말 동안 보유할 생각은 없으며, 적어도 75% 이상은 줄일 예정입니다."
+    ],
+    "content_hash": "398c42338aa43012",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848358+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110819159567200450:2110821863404478924": {
+    "paragraphs": [
+      "Aksel, what’s the most efficient way to find such setups? Do you upload the image to an AI and ask it to scan for such patterns?"
+    ],
+    "translated": [
+      "Aksel 님, 이런 셋업을 찾는 가장 효율적인 방법은 무엇인가요? 이미지를 AI에 업로드하고 이런 패턴을 스캔해 달라고 요청하시나요?"
+    ],
+    "content_hash": "07ef0c10a37a7122",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848476+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110795087714144374:2110796719915164077": {
+    "paragraphs": [
+      "Yes. Agree!",
+      "Would love to hear some plausible explanations..",
+      "Best one I have is that 9M shares more often represents broader participation in the trade vs raw dollarvolume"
+    ],
+    "translated": [
+      "네. 동의합니다!",
+      "그럴듯한 설명을 들어보고 싶네요..",
+      "제가 생각하는 가장 유력한 설명은, 단순 달러 거래대금에 비해 900만 주라는 거래량이 트레이드에 대한 더 광범위한 참여를 나타내는 경우가 많다는 점입니다."
+    ],
+    "content_hash": "1ef991b644be40cd",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848502+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110745660136067271:2110748826864931147": {
+    "paragraphs": [
+      "Nice read. If it fades like July 23, @JohnWuestlbik2\n does great breakdown maps. Worth checking before adding that 4th."
+    ],
+    "translated": [
+      "좋은 분석입니다. 7월 23일처럼 상승 동력을 잃고 꺾인다면, @JohnWuestlbik2 님이 작성한 훌륭한 상세 분석 맵이 있습니다. 4번째 포지션을 추가하기 전에 확인해 볼 만합니다."
+    ],
+    "content_hash": "3cb9c1e74c528249",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848451+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2100597669542437013:2100704227081212261": {
+    "paragraphs": [
+      "I thought he only trades when 10 day is above 20 day on qqq"
+    ],
+    "translated": [
+      "qqq의 10일선이 20일선 위에 있을 때만 거래하는 줄 알았습니다."
+    ],
+    "content_hash": "bfeaaf9e6122d348",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848510+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2105445711592755431:2105445996444729700": {
+    "paragraphs": [
+      "Appreciate every post"
+    ],
+    "translated": [
+      "올려주시는 모든 게시물에 감사드립니다."
+    ],
+    "content_hash": "9ade175023eab393",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848518+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107472304645296198:2107493434076635463": {
+    "paragraphs": [
+      "Most alpha on X hands down"
+    ],
+    "translated": [
+      "X에서 단연 으뜸인 알파입니다."
+    ],
+    "content_hash": "29f4aaab5553c355",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848463+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110745660136067271:2110751856687194575": {
+    "paragraphs": [
+      "Took two positions 👊🏼 best of fortunes to you mr jeff"
+    ],
+    "translated": [
+      "두 개의 포지션을 잡았습니다 👊🏼 Jeff 님에게 행운이 함께하기를 바랍니다."
+    ],
+    "content_hash": "c0e8aa8ad1379659",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848458+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110795087714144374:2110823485530677752": {
+    "paragraphs": [
+      "No. It matters. Just that \"more isnt better\".",
+      "12x+ against under 2x showed no reliable difference"
+    ],
+    "translated": [
+      "아닙니다. 중요합니다. 단지 \"수치가 더 크다고 해서 무조건 더 좋은 것은 아니다\"라는 뜻입니다.",
+      "12배 이상과 2배 미만을 비교했을 때 신뢰할 만한 차이가 나타나지 않았습니다."
+    ],
+    "content_hash": "4bf375a4e2e809f7",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848491+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110745660136067271:2110765087745053120": {
+    "paragraphs": [
+      "Nice, thanks for sharing Jeff. What did you buy today?"
+    ],
+    "translated": [
+      "좋네요, 공유해 주셔서 감사합니다 Jeff. 오늘은 무엇을 매수하셨나요?"
+    ],
+    "content_hash": "dafb6beb66ab9ebe",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848438+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110819159567200450:2110820722847490482": {
+    "paragraphs": [
+      "Looks like quant and ethereum"
+    ],
+    "translated": [
+      "퀀트와 이더리움 같아 보이네요."
+    ],
+    "content_hash": "1440782761707409",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848467+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2105445711592755431:2105446543704949189": {
+    "paragraphs": [
+      "Welcome Sherif"
+    ],
+    "translated": [
+      "환영합니다, Sherif 님."
+    ],
+    "content_hash": "482a1a05cbb8183b",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848526+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110795087714144374:2110795495291474355": {
+    "paragraphs": [
+      "Very surprising man.  I thought it would be the other way around. I had to read that 3 times to make sure I wasn’t tripping out"
+    ],
+    "translated": [
+      "정말 놀랍네요. 저는 반대일 줄 알았습니다. 헛것을 보는 게 아닌지 확인하려고 세 번이나 다시 읽었네요."
+    ],
+    "content_hash": "846b4110e4ac4afe",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848496+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110795087714144374:2110821725533319300": {
+    "paragraphs": [
+      "Are you saying for EP gappers, RVol has no relevance in determining setup quality?"
+    ],
+    "translated": [
+      "EP 갭상승 종목의 경우, 셋업의 품질을 결정하는 데 RVol이 아무런 관련이 없다는 말씀이신가요?"
+    ],
+    "content_hash": "5316eaa7364658db",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848486+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2107237563425493147:2107237563425493147": {
+    "paragraphs": [
+      "How to make money in stocks (full guide)"
+    ],
+    "translated": [
+      "주식으로 돈 버는 방법 (전체 가이드)"
+    ],
+    "content_hash": "a3edb96cc7e9943b",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848514+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110745660136067271:2110755363293130965": {
+    "paragraphs": [
+      "or rule out the possibility it craps today"
+    ],
+    "translated": [
+      "아니면 오늘 폭락할 가능성을 배제하거나"
+    ],
+    "content_hash": "aa2b4340e4756e36",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848428+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110795087714144374:2110829980900823194": {
+    "paragraphs": [
+      "I think it’s because generally high RVOL can indicate aggressive buying or selling"
+    ],
+    "translated": [
+      "일반적으로 높은 RVOL은 공격적인 매수나 매도를 나타낼 수 있기 때문이라고 생각합니다."
+    ],
+    "content_hash": "8a5f01842a6e8308",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848506+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110819159567200450:2110823290138763683": {
+    "paragraphs": [
+      "The most efficient way is to come to a point that you start wearing eye glasses. :) It is manual scanning for me. I enjoy getting a feel of the overall market and charts. You might figure out an AI scanner. Alert me to any finding. :)"
+    ],
+    "translated": [
+      "가장 효율적인 방법은 안경을 쓰기 시작하는 단계에 이르는 것입니다. :) 저에게는 수동 스캔입니다. 시장 전반과 차트의 감을 잡는 것을 즐기거든요. AI 스캐너를 개발해보실 수도 있겠네요. 찾은 게 있다면 알려주세요. :)"
+    ],
+    "content_hash": "137fb094f4233d3b",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848482+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110745660136067271:2110746326862565548": {
+    "paragraphs": [
+      "I put on some SNXX on the 30 min ORB."
+    ],
+    "translated": [
+      "30분 ORB 기준으로 SNXX를 일부 매수했습니다."
+    ],
+    "content_hash": "ffe59911e17fd687",
+    "status": "ok",
+    "translated_at": "2026-10-18T06:45:24.848445+00:00",
+    "chunk": "posts-x.json"
   }
 }
