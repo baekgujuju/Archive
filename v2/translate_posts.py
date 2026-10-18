@@ -400,6 +400,9 @@ def _translation_numbers(text):
     # Do not count digits inside source URLs, handles or ticker identifiers.
     value = _REPLY_URL_RE.sub('', value)
     value = re.sub(r'@[\w]+|\$[A-Za-z][A-Za-z0-9.]*', '', value)
+    # Slash-separated chart intervals use m for minutes, not monetary millions.
+    value = re.sub(r'(?<![\w.])(\d+(?:/\d+)+)m(?=\s+(?:chart|timeframe)\b)',
+                   r'\1',value,flags=re.I)
     native = {'하나':1,'한':1,'첫':1,'둘':2,'두':2,'둘째':2,'셋':3,'세':3,'셋째':3,
               '넷':4,'네':4,'넷째':4,'다섯':5,'여섯':6,'일곱':7,'여덟':8,'아홉':9,'열':10}
     value = re.sub(r'(?<![가-힣])('+'|'.join(sorted(native,key=len,reverse=True))+r')(?=\s*(?:번째|째|개|가지|명|번|날|달|년|곳|일|주|배|해|포지션))',lambda m:str(native[m[1]]),value)
