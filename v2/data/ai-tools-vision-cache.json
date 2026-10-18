@@ -3315,5 +3315,195 @@
     "category_ko": "원자재 차트",
     "owner_hint": "tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d2cd2298c82205c2da452e3a01d60c22b0b78b20915623710916057c14f43111": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "글로벌 금융시장 배경 이미지",
+    "description_ko": "짙은 남색 배경에 점으로 표현한 세계 지도, 상승하는 캔들 차트, 거래량 막대와 곡선이 배치된 금융 테마 이미지.",
+    "category_ko": "금융 배경 이미지",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e36c8fe22230bfafc0cdc9a3648cdb15f9455b99d85c3845dab61cc54a26ed87": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Oracle(ORCL) 30분봉 차트",
+    "description_ko": "오라클 주가의 하락 흐름과 이동평균선, 거래량, 지지·저항 구간을 표시한 차트. 노란 선으로 최근 저점 부근의 하락 경로를 강조했다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d9f3a02bf7cb464b62d2f9c543073c22dd97d00c623ccca93042baa1b336d7ad": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "CoreWeave(CRWV) 30분봉 차트",
+    "description_ko": "코어위브 주가의 하락과 저점 부근 반등을 보여주는 차트. 이동평균선, 거래량, 가격 구간 및 노란 추세선이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5e435ef59474fce165fa57e6d0a7e0cf87e3a006579c3619456f6792bb614486": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "iShares Semiconductor ETF 일봉 차트",
+    "description_ko": "반도체 ETF의 5월부터 10월까지 가격 흐름을 나타낸 일봉 차트. 최근 급락과 함께 여러 이동평균선, 거래량 및 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "ETF 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1c4efa34efb5492daeb1078a10aa618c723ea1097a7f821b6aa892adfe616316": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "정장 차림 남성의 인물 사진",
+    "description_ko": "안경을 쓰고 짙은 정장과 붉은 계열 넥타이를 착용한 남성이 기하학적인 벽을 배경으로 서 있는 사진.",
+    "category_ko": "인물 사진",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f609e56887f56563b6c4af78ee816ea0a5a8dfeb7721883e04dd797535390b26": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "반도체 ETF의 2025년 4월 반등 시작 캔들",
+    "description_ko": "반도체 ETF 30분봉 차트에서 관세 관련 급락 이후 반등 시작 지점을 노란 화살표로 표시했다. 해당 캔들을 기준으로 시작하는 곡선 지표가 함께 나타난다.",
+    "category_ko": "ETF 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b055b6a76f2808a86ad12b5d2a098c5567303e316d75bf8f82335e0b2252f1be": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "반도체 ETF의 aVWAP 하단 도달 차트",
+    "description_ko": "반도체 ETF 30분봉 차트에 하락 채널과 녹색 aVWAP 곡선을 표시했다. 과거 저점과 최근 가격이 곡선에 닿는 구간을 노란 원으로 강조했다.",
+    "category_ko": "ETF 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3f3af2d0fd5afd59ae5f69e5d93c6d6a9f44379f4f9b108e78b4fd36131d24c6": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView VIX 일봉 차트",
+    "description_ko": "S&P 500 변동성 지수 VIX의 일봉 차트. 최근 장대 양봉으로 지수가 21.69까지 약 31.85% 급등했으며, 이동평균선과 주요 가격대 및 저항 구간이 표시되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cf7b25fe125aaa08d05de3ef614484923feb03cbf35c05fa9b4429bcc1dcf663": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Roundhill Memory ETF — DRAM October '26",
+    "description_ko": "메모리 ETF DRAM의 일봉 차트. 고점 이후 횡보하다 상승 추세선 아래로 하락한 모습이며, 노란 화살표가 46.88 부근의 최근 가격을 가리킨다.",
+    "category_ko": "금융·ETF 기술적 분석",
+    "owner_hint": "TradingView / Roundhill",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b4c318192da7c1cf5a921405c8543e0b71386b4fa70eb5323dd00c532e519cdb": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ARK Innovation ETF — ARKK October '21",
+    "description_ko": "ARKK의 2020~2022년 일봉 차트. 수평 저항선과 상승 지지선이 표시되어 있으며, 노란 화살표는 2021년 10월 부근을 강조한다. 이후 반등과 큰 폭의 하락이 이어진다.",
+    "category_ko": "금융·ETF 기술적 분석",
+    "owner_hint": "TradingView / ARK Invest",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:59b52abfb24f964c09db41fa5122dea65bbd2050f24b88d982f9ef6b93b79378": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Cisco Systems — CSCO Oct '00",
+    "description_ko": "시스코의 1999~2000년 일봉 차트. 급등 후 형성된 횡보 구간과 상승 추세선 이탈이 표시되어 있고, 노란 화살표가 2000년 10월 하락 구간을 강조한다.",
+    "category_ko": "금융·주식 기술적 분석",
+    "owner_hint": "TradingView / Cisco Systems",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:941c48ba305f2916912e44f454c13d0127a246fb2b9135c6c27f2d9462be6148": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Invesco QQQ — early Oct '21",
+    "description_ko": "QQQ의 2021~2022년 일봉 차트. 흰 원과 노란 화살표가 2021년 10월 초 조정 구간을 강조하며, 이후 신고점 형성과 2022년 하락 흐름을 보여준다.",
+    "category_ko": "금융·ETF 기술적 분석",
+    "owner_hint": "TradingView / Invesco",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:458eb4dc2138fa0bab2d945fbe98572584f16f77140aab3cdcfecd6de1b322f0": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Memory and Storage",
+    "description_ko": "AI 설비투자, HBM 및 서버 메모리 수요 증가와 공급 제약을 설명하는 영문 보고서 발췌. DRAM·NAND 공급 부족 전망과 마이크론의 장기 공급계약 확대, 고객 자금 약정 및 수익성 개선 가능성을 다룬다.",
+    "category_ko": "반도체·메모리 산업 분석",
+    "owner_hint": "출처 미표시; 본문에 JPM 및 글로벌 메모리팀 언급",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8948ec75f7571e7bf1fe700fc966aa6fdd5a8da2a0efa2fd1ff2aeb108e8212f": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Memory and Storage",
+    "description_ko": "AI 투자와 HBM·DRAM 수요 증가, 메모리 공급 제약, 장기 공급 계약에 따른 메모리 산업의 사업 모델 변화를 분석한 보고서.",
+    "category_ko": "반도체 산업 분석",
+    "owner_hint": "J.P. Morgan 추정",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d3e985add8b03726217418b15bdd11610e8d5ad7a21e27a11da044787a35aab4": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "claude-quickstarts",
+    "description_ko": "Claude API로 배포 가능한 애플리케이션을 빠르게 만들 수 있도록 돕는 프로젝트 모음의 GitHub 저장소 화면. MIT 라이선스와 약 1.81만 개의 스타가 표시되어 있다.",
+    "category_ko": "GitHub 저장소·AI 개발 예제",
+    "owner_hint": "Anthropic",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a02eccd73026ef6f04d99894ec9072a0d44a21781686c780bfa796b7c629d0ee": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "S&P 500과 Nasdaq McClellan Summation Index",
+    "description_ko": "S&P 500 지수, 나스닥 맥클렐런 합산 지수 및 MACD를 비교한 차트. 지표 저점과 주가 흐름의 관계를 빨간 원과 화살표로 강조했다.",
+    "category_ko": "주식 시장 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:abaea02f8953d8fe935891e7b22a8b71ba2c081c425ab63cac1816f0794af7e8": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "A Classic Case of Market Leadership",
+    "description_ko": "1990년 약세장에서 암젠 주가가 50일 이동평균선 부근을 유지하며 상대적 강세를 보인 사례를 설명하는 투자 서적 페이지.",
+    "category_ko": "투자 서적·주도주 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4879ad01a97b72b4af67d7892194066c585c61fbb4c2e6089b9d2373c58c2474": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "볼륨 프로파일의 Balance와 Imbalance",
+    "description_ko": "거래량 프로파일의 가치 영역과 공정가치를 표시하고, 가격이 해당 영역 안에 있는 균형 상태와 영역을 벗어난 불균형 상태를 설명하는 도표.",
+    "category_ko": "거래량 프로파일 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fca75eaab691ca844bc95f706c1444bebf287f8b16b58f7cec5db7c0d37caef3": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "고정 범위 볼륨 프로파일(FRVP) 설정",
+    "description_ko": "TradingView의 고정 범위 볼륨 프로파일 도구 선택과 설정 화면. 행 크기 300, 델타 볼륨, 가치 영역 비율 70 및 VAH·VAL·POC 표시 설정이 보인다.",
+    "category_ko": "차트 도구 설정",
+    "owner_hint": "TradingView",
+    "provider": "codex"
   }
 }

@@ -3983,10 +3983,21 @@
       "save this for later.",
       "i'll leave the repo below"
     ],
-    "translated": [],
+    "translated": [
+      "이건 진짜 미쳤습니다.",
+      "1인 개발자가 전적으로 개인 기기에서 작동하며 ElevenLabs를 100% 무료로 대체할 수 있는 프로젝트를 오픈소스로 공개했습니다.",
+      "해당 GitHub 리포지토리의 스타 수는 19.4K개에 달합니다.",
+      "다음과 같은 작업이 가능합니다:",
+      "→ 깨끗한 오디오 클립으로 목소리 복제\n→ 모든 동영상을 646개 언어로 더빙\n→ 오디오북 생성, 음성 받아쓰기, 텍스트 변환(전사)\n→ 단 하나의 엔진 대신 14개의 TTS 엔진 중 선택",
+      "ElevenLabs는 32개 언어를 지원하는 반면, 이 도구는 646개 언어를 지원합니다.",
+      "글자 수당 요금이 없으며, 사용량 제한도 없고, 오디오 데이터가 컴퓨터 외부로 전송되지 않습니다.",
+      "나중에 참고할 수 있도록 저장해 두세요.",
+      "아래에 리포지토리 링크를 남겨두겠습니다."
+    ],
     "content_hash": "1cbae733d7e05aba",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained"
+    "status": "ok",
+    "translated_at": "2026-10-18T01:15:47.873318+00:00",
+    "chunk": "posts-x.json"
   },
   "2111091037972181403": {
     "paragraphs": [
@@ -4031,9 +4042,219 @@
       "During June's selloff, the VIX barely moved. This time, we're seeing volatility expand alongside the selling pressure, which can be an encouraging sign of a potential short-term washout.",
       "Not confirmation of a bottom, but definitely something I'm paying attention to!"
     ],
-    "translated": [],
+    "translated": [
+      "오늘 시장에서 가장 고무적으로 보고 있는 현상 중 하나는 $VIX가 +35% 급등해 현재 22 부근에 있다는 점입니다!",
+      "26~30까지 빠르게 치솟는다면 흥미로울 것 같습니다.",
+      "역사적으로 VIX 급등을 동반한 급격한 매도세는 공포 매도 및 잠재적인 중간 저점과 맞물리는 경우가 많았습니다.",
+      "저는 시장의 고점이나 저점을 예측하는 사람은 아니지만, 이는 주의 깊게 지켜볼 만합니다!",
+      "6월 급락 당시에는 VIX가 거의 움직이지 않았습니다. 이번에는 매도 압력과 함께 변동성이 확대되고 있는데, 이는 단기적으로 투매가 마무리될 가능성을 보여주는 고무적인 신호일 수 있습니다.",
+      "바닥이 확인됐다는 뜻은 아니지만, 분명히 주목하고 있는 현상입니다!"
+    ],
     "content_hash": "94f587c7c2596346",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained"
+    "status": "ok",
+    "translated_at": "2026-10-18T01:16:13.074951+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111172530497311187": {
+    "paragraphs": [
+      "The #semis have become extended above the long-term moving average several times over the past 10 years. All instances have ended with a significant corrective drawdown toward the bottom of the channel or a significant time correction.",
+      "The rally in the spring of 2026 looks like an exhaustion parabolic run. After recently making a lower high on weak breadth and failing momentum, there is a real risk that the move down could be a big one.",
+      "If you are there, have a selling strategy...the street is vested and will not ring a bell.",
+      "$SOXX"
+    ],
+    "translated": [
+      "#semis는 지난 10년 동안 여러 차례 장기 이동평균선을 크게 웃돌았습니다. 그때마다 채널 하단을 향한 큰 폭의 가격 조정이나 상당한 기간 조정으로 이어졌습니다.",
+      "2026년 봄의 랠리는 상승 에너지가 소진되는 포물선형 급등처럼 보입니다. 최근 상승 참여 종목이 줄고 모멘텀이 약해지는 가운데 이전보다 낮은 고점을 형성한 만큼, 큰 폭의 하락으로 이어질 실질적인 위험이 있습니다.",
+      "해당 종목을 보유하고 있다면 매도 전략을 마련하세요...월가는 이해관계가 얽혀 있어 매도 시점을 알려주지 않을 것입니다.",
+      "$SOXX"
+    ],
+    "content_hash": "b4dbab79b1152008",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:16:36.280953+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111186043294896218": {
+    "paragraphs": [
+      "Every day $DRAM\n resembles the $ARKK\n '21 top and $CSCO\n 2000 top more and more. These were all leaders in the previous cycle that eventually spilled out to the rest of the market.",
+      "While in CSCO's case, the $QQQ\n was already in a bear market. In the 2021 case though, the QQQ made a new high on the backs of the FAANG stocks hiding money while remaining \"strong.\" I think it's fair to equate FAANG in '21 to MAG7 today.",
+      "We can see the circled Oct '21 QQQ chart as pic #4. From there, we went on to make new highs in the next month before the real bear market kicked off.",
+      "What kept the indices so strong back then, was the crowding into FAANG names before the market unwind. Similar to the fact the $MAGS\n stocks are trading near highs today.",
+      "In Martin Pring's Technical Analysis Explained, he speaks on rising interest rates coming for the smaller more leveraged companies first because their borrowing costs and balance sheets suffer most. Investors respond by moving into large, financially strong blue chips. The averages are heavily weighted towards those names, hold up while the majority of stocks are already in bear markets. Pring argues \"quality\" leadership masks weakness. The market looks healthy at the index level but is weak underneath the surface. We can all attest this is the behavior we have been experiencing for months.",
+      "The biggest indicator of this is new highs contracting, while the index rises or \"seems healthy near highs.\" Currently just ~45% of all S&P stocks are trading above their 200 day. For context, the historical average is roughly 73% when the index is hitting new highs. In December '21, the S&P set a record after record while only 42% of its stocks were above their 200 days. Bear market of '22 officially kicked off at the top of the year, Jan 4th, 2022.",
+      "There was nothing but disbelief about the underlying environment changing at the end of '21 even though the leaders had already been dramatically shot, as we're seeing today. The mistake I made then was to not adjust to the environment quick enough which led to a brutal start to '22.",
+      "How I'm personally handling this is to go complete day trader mode and look for 1-3 opportunities a week to look to extract some coin in this market. There is complete lack of consistency in this tape on the day to day. Buying oversold bounces and selling them into strength worked well for me this week. Weak names retesting support-turned-resistance levels on bounces are shorts in my eyes in the future.",
+      "Tough to be positive with what we're seeing out there this week! Either you will recognize the shifting environment and make the proper adjustments .... or you wont and will continue to complain about how hard the market is to social media. 🤷‍♂️",
+      "Control what you can control. 🫡"
+    ],
+    "translated": [
+      "$DRAM은 날이 갈수록 $ARKK의 2021년 고점, $CSCO의 2000년 고점과 점점 더 닮아가고 있습니다. 이들은 모두 이전 사이클의 주도주였고, 결국 이들의 하락이 시장 전체로 번졌습니다.",
+      "다만 CSCO의 경우에는 $QQQ가 이미 약세장에 들어선 상태였습니다. 반면 2021년에는 자금의 피난처 역할을 하며 ‘강세’를 유지한 FAANG 종목들에 힘입어 QQQ가 신고가를 기록했습니다. 2021년의 FAANG을 오늘날의 MAG7에 견주는 것은 타당하다고 생각합니다.",
+      "네 번째 이미지에서 동그라미로 표시된 2021년 10월의 QQQ 차트를 볼 수 있습니다. 그 시점 이후 다음 달에 신고가를 경신한 뒤 본격적인 약세장이 시작됐습니다.",
+      "당시 지수들이 그토록 강세를 유지했던 이유는 시장이 무너지기 전 자금이 FAANG 종목들로 몰렸기 때문입니다. 오늘날 $MAGS 종목들이 고점 부근에서 거래되고 있는 것과 비슷합니다.",
+      "마틴 프링은 자신의 저서 『Technical Analysis Explained』에서 금리 상승이 규모가 작고 부채 의존도가 높은 기업들을 먼저 덮친다고 설명합니다. 이들의 차입 비용과 재무 상태가 가장 큰 타격을 받기 때문입니다. 이에 투자자들은 규모가 크고 재무적으로 탄탄한 우량주로 이동합니다. 지수는 이런 종목들의 비중이 높기 때문에, 대다수 종목이 이미 약세장에 들어섰어도 버팁니다. 프링은 ‘우량주’가 주도하는 장세가 시장의 취약함을 가린다고 주장합니다. 지수만 보면 시장이 건전해 보이지만, 그 이면은 취약하다는 것입니다. 우리 모두 지난 몇 달간 바로 이런 움직임을 경험해 왔습니다.",
+      "이를 가장 잘 보여주는 지표는 지수가 상승하거나 ‘고점 부근에서 건전해 보이는’ 동안에도 신고가를 기록하는 종목 수는 줄어든다는 것입니다. 현재 S&P 구성 종목 중 200일 이동평균선 위에서 거래되는 종목은 약 45%에 불과합니다. 참고로 지수가 신고가를 기록할 때 이 비율의 역사적 평균은 약 73%입니다. 2021년 12월에는 S&P가 연일 사상 최고치를 경신했지만, 200일 이동평균선 위에 있는 종목은 42%에 불과했습니다. 2022년 약세장은 연초인 2022년 1월 4일에 본격적으로 시작됐습니다.",
+      "2021년 말에도 지금처럼 주도주들이 이미 크게 무너진 상태였지만, 사람들은 시장의 근본적인 환경이 바뀌고 있다는 사실을 도무지 믿으려 하지 않았습니다. 당시 제가 저지른 실수는 변화한 환경에 충분히 빠르게 적응하지 못한 것이었고, 그 결과 2022년 초에 혹독한 손실을 겪었습니다.",
+      "저는 개인적으로 완전히 데이트레이딩 모드로 전환하고, 이 시장에서 조금이라도 수익을 낼 수 있는 기회를 일주일에 1~3번 찾는 식으로 대응하고 있습니다. 요즘 장세는 하루하루 움직임에 일관성이 전혀 없습니다. 이번 주에는 과매도 반등을 매수한 뒤 상승세가 붙을 때 매도하는 전략이 잘 통했습니다. 앞으로는 약한 종목들이 반등하면서 지지선에서 저항선으로 바뀐 가격대를 재시험할 때 공매도 기회로 볼 생각입니다.",
+      "이번 주 시장에서 나타나는 모습을 보면 낙관하기가 어렵습니다! 변화하는 환경을 인식하고 적절히 대응하든지… 아니면 그러지 못한 채 소셜미디어에서 시장이 얼마나 어려운지만 계속 불평하게 되겠죠. 🤷‍♂️",
+      "자신이 통제할 수 있는 것에 집중하세요. 🫡"
+    ],
+    "content_hash": "0f1b8685391e5f75",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:16:59.193628+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111157142262808847": {
+    "paragraphs": [
+      "VIX over 20"
+    ],
+    "translated": [
+      "VIX 20 초과"
+    ],
+    "content_hash": "3d9b9b3ba05698f9",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:16:23.470973+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111408628313788675": {
+    "paragraphs": [
+      "JP Morgan calls for a re-rating in memory stocks:",
+      "- The memory S/D inbalance is deepening\n- Rising AI/hyperscalers CAPEX\n- Rising HBM content per AI accelerator\n- HBM/DRAM wafer tradeoff becoming steeper with HBM4E consuming 4x more wafers per bit than DRAM\n- SCA/lTA framework is significantly improving the forward visibility for memory producers",
+      "Just observe how cheap the Memory Big 3 have become:\nSamsung: 2.99x FY2027 earnings\nSK hynix: 2.72x FY2027 earnings\nMicron $MU\n: 4.96x FY2027 earnings",
+      "Samsung and SK hynix are trading BELOW 3x next year's earnings, that is quite insane. Why? Is 2028 going to be a horrible year compared to 2027? No, 2028 profits will be even higher than 2027. What about 2029, will that year become horrible then? Nope, profits may moderate a bit but there is no sign of any earnings collapse with AI demand continuing to rise.",
+      "$MU\n $SKHY\n $SNDK\n $005930.KS $DRAM"
+    ],
+    "translated": [
+      "JP모건, 메모리 주식의 밸류에이션 재평가 필요성 제기:",
+      "- 메모리 수급 불균형 심화\n- AI 및 하이퍼스케일러의 설비투자(CAPEX) 증가\n- AI 가속기당 HBM 탑재량 증가\n- HBM4E가 비트당 DRAM 대비 4배 더 많은 웨이퍼를 소모하면서 HBM 생산 확대에 따른 DRAM 생산 여력 감소가 더욱 심화\n- SCA/LTA 체계가 메모리 생산업체의 향후 실적 가시성을 크게 개선",
+      "메모리 빅3가 얼마나 저평가됐는지 살펴보세요:\n삼성전자: 2027회계연도 이익 대비 2.99배\nSK하이닉스: 2027회계연도 이익 대비 2.72배\n마이크론 $MU\n: 2027회계연도 이익 대비 4.96배",
+      "삼성전자와 SK하이닉스가 내년 이익의 3배에도 못 미치는 가격에 거래되고 있다니, 정말 말도 안 되는 수준입니다. 왜일까요? 2028년이 2027년에 비해 끔찍한 해가 될까요? 아닙니다. 2028년 이익은 2027년보다 더 높을 것입니다. 그렇다면 2029년은 끔찍한 해가 될까요? 그것도 아닙니다. 이익이 다소 둔화될 수는 있지만, AI 수요가 계속 증가하고 있어 이익이 급감할 조짐은 전혀 없습니다.",
+      "$MU\n $SKHY\n $SNDK\n $005930.KS $DRAM"
+    ],
+    "content_hash": "b83badcc4eac21c7",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:18:23.411592+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111369849121231072": {
+    "paragraphs": [
+      "WE ARE HERE imho !! I believe we’re currently at the first sign of extreme fear. We haven’t seen anything close to the euphoria of 1999, when almost every stock was rocketing higher in a vertical frenzy. 2026 is simply not comparable to 1999.",
+      "I lived through that market, and nothing today comes close. Anyone claiming otherwise either wasn’t born yet, was still in school, or had never actually invested $SPY\n $IWM\n $NDX",
+      "The Nasdaq Composite rose roughly 84–86% in 1999 alone. The Nasdaq had dozens of days with 2%+ moves. Momentum was so strong that even pullbacks of 10–15% were quickly bought.",
+      "1999 and 2026 tech valuations are not comparable. Valuations were extreme. The Nasdaq traded at well over 100× earnings, currently Nasdaq companies trade at multiples that are a fraction of the 1999/2000",
+      "Nasdaq would need to rise roughly another 65% from today’s levels by the end of December to be comparable to 1999",
+      "Cut the nonsense and send this to your gurus who clearly never traded in 1999."
+    ],
+    "translated": [
+      "제 생각엔 우리가 바로 여기에 와 있습니다!! 지금은 극단적 공포의 첫 징후가 나타나는 시점이라고 봅니다. 거의 모든 주식이 광란 속에서 수직으로 치솟던 1999년의 도취감에 근접한 모습은 아직 전혀 보지 못했습니다. 2026년은 1999년과 도저히 비교할 수 없습니다.",
+      "저는 그 시장을 직접 겪었고, 지금은 그때와 비교할 수준도 아닙니다. 다르다고 주장하는 사람은 당시 태어나지도 않았거나, 아직 학교에 다니고 있었거나, 실제로 투자해 본 적이 없었던 사람일 겁니다. $SPY\n$IWM\n$NDX",
+      "나스닥 종합지수는 1999년 한 해에만 약 84~86% 상승했습니다. 나스닥이 하루에 2% 이상 움직인 날이 수십 번이나 됐습니다. 상승 모멘텀이 워낙 강해서 10~15% 조정이 와도 매수세가 빠르게 유입됐습니다.",
+      "1999년과 2026년의 기술주 밸류에이션은 비교할 수 없습니다. 당시 밸류에이션은 극단적인 수준이었습니다. 나스닥은 주가수익비율이 100배를 훌쩍 넘었지만, 현재 나스닥 기업들의 이익 대비 주가 배수는 1999~2000년 당시의 일부에 불과합니다.",
+      "1999년과 비교할 만한 수준이 되려면 나스닥은 12월 말까지 현재 수준에서 약 65% 더 올라야 합니다.",
+      "헛소리는 그만하고, 1999년에 거래해 본 적이 없는 게 분명한 여러분의 투자 고수들에게 이 글을 보내세요."
+    ],
+    "content_hash": "bc2378c3b2dab689",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:17:56.456934+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111186751285031098": {
+    "paragraphs": [
+      "A CLASSIC CASE OF MARKET LEADERSHIP- MARK MINVERVINI\n\"During the entire 1990 bear market, I observed that Amgen's stock price barely dropped below its 50-day moving average for any length of time. As the market continued in a precipitous downtrend, Amgen moved sideways and marked time. This is how a stock can improve its relative strength ranking during a market correction even without the stock rallying very much\"",
+      "Look for stocks that refuse to break while the market is correcting.\nMy checklist: \n• Above the 50/21 EMA \n• Relative Strength >80-90\n• Near 52WH\n• Tight price action \n• Strong earning growth\nThe best stocks often don't wait for the market to recover."
+    ],
+    "translated": [
+      "시장 주도주의 전형적인 사례 - 마크 미너비니\n“1990년 약세장 내내 나는 암젠의 주가가 50일 이동평균선 아래로 내려가더라도 그 상태가 오래 지속되는 경우는 거의 없다는 점을 관찰했다. 시장이 가파른 하락세를 이어가는 동안에도 암젠은 횡보하며 때를 기다렸다. 이처럼 시장 조정기에는 주가가 크게 오르지 않더라도 상대강도 순위가 높아질 수 있다.”",
+      "시장이 조정받는 동안에도 무너지지 않는 종목을 찾아라.\n나의 점검 목록:\n• 50일 및 21일 지수이동평균선(EMA) 위에 있는 주가\n• 상대강도 >80-90\n• 52주 최고가 부근\n• 좁은 범위에서 움직이는 주가\n• 높은 이익 성장률\n최고의 종목들은 시장이 회복될 때까지 기다려주지 않는 경우가 많다."
+    ],
+    "content_hash": "93013c2f1c338757",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:17:13.211088+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111405001885077924": {
+    "paragraphs": [
+      "BofA on Memory:",
+      "\"Overall, the recent correction in memory stocks appears largely disconnected from memory fundamentals and reflects excessive concern over an AI-memory boom-bust cycle.",
+      "We also see the potential for the global memory TAM to double from near-US$1.0tn in 2026 to US$2.0tn+ in 2030, with OP potentially reaching US$1.0tn and the industry's market cap consequently reaching US$10tn, versus only a few trillion dollars currently.\"",
+      "$DRAM"
+    ],
+    "translated": [
+      "BofA의 메모리 반도체 전망:",
+      "\"전반적으로 최근 메모리 반도체 주가 조정은 메모리 반도체의 펀더멘털과 대체로 무관하며, AI 메모리의 호황·불황 사이클에 대한 과도한 우려를 반영하는 것으로 보입니다.",
+      "또한 글로벌 메모리 반도체의 전체 잠재시장(TAM)이 2026년 약 1조 달러에서 2030년 2조 달러 이상으로 두 배 확대될 가능성이 있다고 봅니다. 영업이익(OP)은 1조 달러에 이를 수 있으며, 이에 따라 업계 시가총액도 현재 수조 달러 수준에서 10조 달러에 도달할 수 있습니다.\"",
+      "$DRAM"
+    ],
+    "content_hash": "de32445666ef12ee",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:18:08.278284+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111233383368167453": {
+    "paragraphs": [
+      "Weekend chart 📈📉 $SPY\n $QQQ\n $SMH\n $XLK\n $NVDA\n $AMZN\n $META\n $AAPL",
+      "The chart below is the Nasdaq McClellan Summation index.  3 years of data in it , that's relevant because we need context and reference points to identify washout and stretch conditions.",
+      "On the top panel is the S&P $SPX so you can see how price correlates with the oscilator readings.",
+      "Notice how bottoms in the oscilator came with pullbacks/corrections in the S&P. Now the oscilator is even lower than when it was during the April pullback and yet the S&P is still pretty close to AThs relatively to the aggressive downside on the Summation index.",
+      "This says two things:",
+      "1. Big cap did its job and saved the S&P from a bigger correction while breadth was looking like shit 💩",
+      "2. We are BOTTOMING.",
+      "You do you but as I said on my pinned Post , if the dip materializes you buy the damn thing.",
+      "Enjoy your weekend 🤝💚"
+    ],
+    "translated": [
+      "주말 차트 📈📉 $SPY\n $QQQ\n $SMH\n $XLK\n $NVDA\n $AMZN\n $META\n $AAPL",
+      "아래 차트는 나스닥 매클렐런 서메이션 지수입니다. 3년 치 데이터가 담겨 있는데, 투매와 과도한 쏠림 상태를 파악하려면 맥락과 비교 기준이 필요하다는 점에서 중요합니다.",
+      "상단 패널에는 S&P $SPX가 있어 주가와 오실레이터 수치가 어떤 상관관계를 보이는지 확인할 수 있습니다.",
+      "오실레이터가 바닥을 찍을 때 S&P에서도 하락이나 조정이 나타났다는 점에 주목하세요. 지금 오실레이터는 4월 조정 당시보다도 낮지만, 서메이션 지수의 가파른 하락에 비하면 S&P는 여전히 사상 최고치에 꽤 가까이 있습니다.",
+      "이는 두 가지를 말해줍니다.",
+      "1. 시장 전반의 상승 참여도가 개판인 상황에서도 💩 대형주가 제 역할을 하며 S&P의 더 큰 조정을 막았습니다.",
+      "2. 지금 바닥을 다지고 있습니다.",
+      "판단은 각자 알아서 하시되, 고정 게시물에서도 말했듯이 하락이 실제로 나오면 망설이지 말고 사세요.",
+      "즐거운 주말 보내세요 🤝💚"
+    ],
+    "content_hash": "074f155f0eca239c",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:17:39.629085+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111462527918035411": {
+    "paragraphs": [
+      "Han\n@sustain_abund",
+      "Show translation\n매우 중요한순간에 휴방을 때려서 구독자들한테 미안한데 그래서 휴가가서도 새벽 4시까진 브리핑함.",
+      "일단 테크니컬 오버셀 반등 플레이를 봤으면 이건 컨트래리안이고 하따이기때문에 더 내릴걸 염두해야한다고 봄.",
+      "컨트래리안은 정확히 여기다 라고 짚는 플레이인데 틀리면 손절도 할줄알아야함.",
+      "내가 말했던 속슬 하따가 97-95였는데 평단 컷으로 손절타겟을 했고 이런게 리스크 매니지라고 생각함.",
+      "어찌됐든 계좌는 지켜야하지않는가?",
+      "틀리는게 왜 무서움? 신도아니고말이지.",
+      "빅스 터지는데 자존심때문에 팔지마셈 이러는게 더 위험한 것이라고 생각함. 기적같이 월요일날 반등해서 올라도 난 내 리스크 매니지 손절 알림을 후회하지않음. 이게 트레이더라고생각함.\nLast edited\n11:21 PM · Oct 17, 2026\n·1,268\n Views\n2\n3\n26\n1"
+    ],
+    "translated": [
+      "한\n@sustain_abund",
+      "Show translation\n매우 중요한순간에 휴방을 때려서 구독자들한테 미안한데 그래서 휴가가서도 새벽 4시까진 브리핑함.",
+      "일단 테크니컬 오버셀 반등 플레이를 봤으면 이건 컨트래리안이고 하따이기때문에 더 내릴걸 염두해야한다고 봄.",
+      "컨트래리안은 정확히 여기다 라고 짚는 플레이인데 틀리면 손절도 할줄알아야함.",
+      "내가 말했던 속슬 하따가 97-95였는데 평단 컷으로 손절타겟을 했고 이런게 리스크 매니지라고 생각함.",
+      "어찌됐든 계좌는 지켜야하지않는가?",
+      "틀리는게 왜 무서움? 신도아니고말이지.",
+      "빅스 터지는데 자존심때문에 팔지마셈 이러는게 더 위험한 것이라고 생각함. 기적같이 월요일날 반등해서 올라도 난 내 리스크 매니지 손절 알림을 후회하지않음. 이게 트레이더라고생각함.\nLast edited\n11:21 PM · Oct 17, 2026\n·1,268\n Views\n2\n3\n26\n1"
+    ],
+    "content_hash": "970489b1d87f667b",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:18:55.782440+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2111422065463247324": {
+    "paragraphs": [
+      "Claude-Quickstarts 입니다.",
+      "Repo : https://github.com/anthropics/claude-quickstarts…"
+    ],
+    "translated": [
+      "Claude-Quickstarts 입니다.",
+      "저장소 : https://github.com/anthropics/claude-quickstarts…"
+    ],
+    "content_hash": "a883113288a3dd44",
+    "status": "ok",
+    "translated_at": "2026-10-18T01:18:36.634314+00:00",
+    "chunk": "posts-x.json"
   }
 }

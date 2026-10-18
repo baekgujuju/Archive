@@ -2188,5 +2188,105 @@
     "fingerprint": "00dc60c976a12ab731f8b334836bb301e9d52e54423d9af06090440ecda1f795",
     "entry": null,
     "version": 3
+  },
+  "2111274510548885844:18779d00bcf46095.jpg": {
+    "fingerprint": "9f542882d7437dcf34598906cde6063c24cafcf92f9cf6a7594fa20a4b38ad2e",
+    "entry": null,
+    "version": 3
+  },
+  "2111274510548885844:8e1f986f37738fba.jpg": {
+    "fingerprint": "d4465cdf40fa8ccc23824bdf56ecd4bf4111bbe5b2d4798b86045fb9e08b92a2",
+    "entry": null,
+    "version": 3
+  },
+  "2111274510548885844:863da6408bcfbac1.jpg": {
+    "fingerprint": "4f925fe9765349239bb004493a9f220a151e751d0a89574c41cc587578ecff99",
+    "entry": null,
+    "version": 3
+  },
+  "2111274510548885844:1db6ba48d7ac394d.jpg": {
+    "fingerprint": "e9007e2abb93c251db01823755ea007718015a46454ca2b025694d1d4f1689c4",
+    "entry": null,
+    "version": 3
+  },
+  "2111274510548885844:0a0170b25e6c044f.png": {
+    "fingerprint": "4b57535c7a4abe49a4760feab91339489e04a777faec631747ea2d25d1ab6ebf",
+    "entry": null,
+    "version": 3
+  },
+  "2111274510548885844:69b7bbf0b81223ce.jpg": {
+    "fingerprint": "2daab0b70d0fda82ae0c6364a4d8af455a53a0331c5df402d36206e39de76532",
+    "entry": null,
+    "version": 3
+  },
+  "2111274510548885844:b388c3dec2aa0d80.jpg": {
+    "fingerprint": "8c6a0b804156288464658ef6baac1d95a5d0a05698850e2ab1505f2f9f891fa2",
+    "entry": null,
+    "version": 3
+  },
+  "2111157142262808847:64fd3822392e66db.png": {
+    "fingerprint": "997c92dc04200596a5387011f622a337b9589239dfd2664632f106a8c7b8a699",
+    "entry": null,
+    "version": 3
+  },
+  "2111186043294896218:819af6b81e2a124b.jpg": {
+    "fingerprint": "2d8a8f0699c9e2b22c48c3dae6d34a9b0d7b3bfc7c6dfafd7ba4edfc8cbf2ef8",
+    "entry": null,
+    "version": 3
+  },
+  "2111186043294896218:0aa92cbaa47b0a1d.jpg": {
+    "fingerprint": "2a2b90bae6a6ef59a8bf7d87d21b19d122d643434faa7d06987dfa1554aa5ab4",
+    "entry": null,
+    "version": 3
+  },
+  "2111186043294896218:47f4f97c70ea6869.jpg": {
+    "fingerprint": "8565d77dde7497191c0ffe00e41953ad5ded4c1b4d6d29884252d1210ddb01af",
+    "entry": null,
+    "version": 3
+  },
+  "2111186043294896218:bd98d4e1a9cba486.jpg": {
+    "fingerprint": "a2c64e68e43705e20ee7fd8b09625bb1360c6427c56a2c3b6f1c4b4101d3e196",
+    "entry": null,
+    "version": 3
+  },
+  "2111408628313788675:e98d3fd3cc407851.png": {
+    "fingerprint": "6ec90ae82bbb8ef33e3e8c3046b6f37b80e91cdd4151ab548980979ab49db1bc",
+    "entry": null,
+    "version": 3
+  },
+  "2111408628313788675:a27ffd7d1845ee40.jpg": {
+    "fingerprint": "aa79eda12a92929b3bd9655af62e20a6457697b4db1bfa760613f768c38175dd",
+    "entry": null,
+    "version": 3
+  },
+  "2111422065463247324:e69ac914d24f85cf.jpg": {
+    "fingerprint": "8f3393b878021dcaf9d1b775f9535ae02301afa620ca4bb59c48492983f95ce1",
+    "entry": {
+      "title": "anthropics/claude-quickstarts",
+      "summary_ko": "Claude API를 활용해 배포 가능한 애플리케이션을 빠르게 개발할 수 있도록 예제 프로젝트와 기본 구조를 제공하는 모음입니다. 지식 베이스에 접근하는 AI 고객 지원 에이전트 등의 구현 예제를 바탕으로 기능을 확장하고 맞춤화할 수 있습니다.",
+      "category": "Claude API 애플리케이션 개발 예제",
+      "repo_url": "https://github.com/anthropics/claude-quickstarts",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "8f3393b878021dcaf9d1b775f9535ae02301afa620ca4bb59c48492983f95ce1"
+    },
+    "version": 3
+  },
+  "2111422065463247324:text-b3731f96b1a0159d": {
+    "fingerprint": "3d5e099610ad0182987829495f2e18ebffca00bbecd8be78a0ab6d34269ee34f",
+    "entry": {
+      "title": "anthropics/claude-quickstarts",
+      "summary_ko": "Claude API를 활용해 배포 가능한 애플리케이션을 빠르게 개발할 수 있도록 예제 프로젝트와 기본 구조를 제공하는 모음입니다. 지식 베이스에 접근하는 AI 고객 지원 에이전트 등의 예제를 바탕으로 기능을 확장하고 맞춤화할 수 있습니다.",
+      "category": "Claude API 애플리케이션 개발용 퀵스타트 예제 모음",
+      "repo_url": "https://github.com/anthropics/claude-quickstarts",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "3d5e099610ad0182987829495f2e18ebffca00bbecd8be78a0ab6d34269ee34f"
+    },
+    "version": 3
   }
 }
