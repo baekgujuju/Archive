@@ -145,9 +145,11 @@ _REPLY_UPPER_PROSE_WORDS = frozenset(
     'FREE OPEN CLOSE FULL EMPTY QUIET LOUD BRIGHT DARK HEAVY LIGHT DEEP SHALLOW'.split())
 
 # 대문자 단어(1자 포함 — "A TRAP"의 A처럼 기능어 판정에 필요) 및
-# 대문자 구간 내부 구분자 (공백·쉼표·세미콜론·슬래시 등).
+# 대문자 구간 내부 구분자 (공백·줄바꿈·쉼표·콜론·마침표 등 문장 부호).
+# 줄바꿈·콜론이 구간을 끊으면 "THIS IS\nGOOD" / "THIS IS: GOOD"이
+# 기능어만 구간 + 단일 단어 구간으로 쪼개져 누락되므로 구분자에 포함한다.
 _REPLY_UPPER_WORD_RE = re.compile(r'[A-Z]+')
-_REPLY_RUN_SEP = ' \t,;/|&+-'
+_REPLY_RUN_SEP = ' \t\n\r,;:. /|&+-!?'
 # 거래 쌍 기호 접미사 — 6자 이상이어도 티커로 본다 ("BTCUSDT").
 _REPLY_PAIR_SUFFIXES = ('USDT', 'USDC', 'PERP')
 
@@ -184,8 +186,9 @@ def _is_standalone_upper(text, match):
 def _is_prose_upper_run(words):
     """대문자 단어 연속 구간이 산문인지 (티커 나열과 구분).
 
-    - 단일 단어: 6자 이상이면 티커 기호(1~5자)가 아니므로 산문으로 본다.
-      (기존 {2,5} 제거 범위를 유지 — "ECONOMY"는 보존, "BTC"는 제거.)
+    - 단일 단어: 산문 실질어 목록에 있거나, 6자 이상이면 티커 기호(1~5자)가
+      아니므로 산문으로 본다. (기존 {2,5} 제거 범위를 유지 — "ECONOMY"는
+      보존, "BTC"는 제거. 단, 산문 실질어인 "GOOD" 단독도 보존.)
     - 2단어 이상: 기능어+실질어 조합, 산문 실질어 포함, 6자 이상 단어
       포함 중 하나라도 해당하면 산문이다.
       "THIS IS GOOD" → 기능어+실질어 → 산문.
@@ -195,6 +198,8 @@ def _is_prose_upper_run(words):
     """
     if len(words) == 1:
         w = words[0]
+        if w in _REPLY_UPPER_PROSE_WORDS:
+            return True
         return len(w) >= 6 and not w.endswith(_REPLY_PAIR_SUFFIXES)
     has_function = any(w in _REPLY_UPPER_FUNCTION_WORDS for w in words)
     has_content = any(w not in _REPLY_UPPER_FUNCTION_WORDS for w in words)

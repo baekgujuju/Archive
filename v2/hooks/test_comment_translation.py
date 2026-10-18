@@ -55,6 +55,11 @@ def _post(parent_id, replies, text="부모 글"):
     "U.S. ECONOMY",
     "A TRAP",
     "THIS IS GOOD 감사합니다",  # 한국어 혼합 문장의 영어 산문
+    # 차단 5 (3차 리뷰): 줄바꿈·콜론·마침표가 구간을 끊어도 산문 보존.
+    "THIS IS\nGOOD",
+    "THIS IS: GOOD",
+    "THIS IS. GOOD",
+    "GOOD",  # 단독 산문 실질어
 ])
 def test_needs_translation_foreign(text):
     assert tp.needs_reply_translation(text) is True
