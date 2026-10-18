@@ -577,12 +577,27 @@ function applyToolMetadata(articles,toolMap){
  */
 function attachReplyTranslations(article, translations) {
   var pid = article && (article.tweetId || article.id || article.pinId);
-  if (!pid || !Array.isArray(article.replies) || !translations) return;
-  article.replies.forEach(function (r) {
-    if (!r || typeof r !== 'object') return;
-    var rid = r.tweetId || r.id;
-    if (rid) r.translation = translations['reply:' + pid + ':' + rid];
-  });
+  if (!pid || !translations) return;
+  function visit(node, path, depth, ancestors) {
+    if (!node || typeof node !== 'object' || depth > 8 || ancestors.has(node)) return;
+    var seen = new Set(ancestors); seen.add(node);
+    var q = node.quoted;
+    if (q && typeof q === 'object' && !Array.isArray(q) && !seen.has(q)) {
+      var qp = path.concat(['quote', String(q.tweetId || q.id || 'anonymous')]);
+      q.translation = translations[['quote', String(pid)].concat(qp).join(':')];
+      visit(q, qp, depth + 1, seen);
+    }
+    (Array.isArray(node.replies) ? node.replies : []).forEach(function(r) {
+      if (!r || typeof r !== 'object' || seen.has(r)) return;
+      var rid = r.tweetId || r.id;
+      if (!rid) return;
+      var rp = path.concat(['reply', String(rid)]);
+      var key = path.length ? ['quote', String(pid)].concat(rp).join(':') : 'reply:' + pid + ':' + rid;
+      r.translation = translations[key];
+      visit(r, rp, depth + 1, seen);
+    });
+  }
+  visit(article, [], 0, new Set());
 }
 
 function renderArticles(articles, renderer, container, opts = {}) {

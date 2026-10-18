@@ -315,6 +315,62 @@ def needs_reply_translation(text):
     return False
 
 
+
+TRANSLATION_VALIDATION_VERSION = 2
+
+
+def needs_body_translation(text):
+    """Use the existing multilingual prose detector for mixed body paragraphs too."""
+    return bool(needs_reply_translation(text) and not is_placeholder(text))
+
+
+def validate_translation_pair(original, translated):
+    """Reject unverifiable success; this is not a semantic translation score."""
+    import unicodedata
+    from collections import Counter
+    if not isinstance(translated, str) or not translated.strip():
+        raise RuntimeError('번역 결과가 비어 있습니다.')
+    normalized = lambda value: re.sub(r'\s+', ' ', unicodedata.normalize('NFKC', value)).strip().casefold()
+    if normalized(original) == normalized(translated):
+        raise RuntimeError('외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.')
+    if not KO_PAT.search(translated):
+        raise RuntimeError('한국어 번역이 없는 결과: 번역 완료로 기록하지 않습니다.')
+    # A provider can add a Korean heading while leaving whole foreign sentences.
+    for run in re.findall(r"[A-Za-z][A-Za-z’'-]*(?:[ \t]+[A-Za-z][A-Za-z’'-]*){5,}|[一-鿿぀-ヿ]{8,}", original):
+        if normalized(run) in normalized(translated):
+            raise RuntimeError('외국어 문장 미번역 잔존: 번역 완료로 기록하지 않습니다.')
+    # Keep URLs and stock symbols literally. Do not treat names/isolated terms
+    # as evidence of untranslated prose. Numbers may use Korean punctuation.
+    token_pattern = r'https?://[^\s<>]+|\$[A-Za-z][A-Za-z0-9.]*'
+    for token in re.findall(token_pattern, original):
+        token=token.rstrip('.,;:!?)]}')
+        if token not in translated:
+            raise RuntimeError('번역 중 URL 또는 종목 기호가 누락됐습니다.')
+    numbers=lambda value: Counter(n.replace(',', '') for n in re.findall(r'(?<![A-Za-z0-9_])\d+(?:,\d{3})*(?:\.\d+)?', value))
+    source_numbers=numbers(original); target_numbers=numbers(translated)
+    if any(target_numbers[n] < count for n,count in source_numbers.items()):
+        raise RuntimeError('번역 중 원문의 수치가 변경되거나 누락됐습니다.')
+
+
+def valid_translation_cache(cached, paragraphs, detector):
+    """Recheck old ok entries by contents, not only shape/status/hash."""
+    if not isinstance(cached, dict) or cached.get('status') != 'ok':
+        return False
+    translated=cached.get('translated')
+    if (not isinstance(paragraphs,list) or cached.get('paragraphs') != paragraphs
+            or not isinstance(translated,list) or len(translated)!=len(paragraphs)
+            or not all(isinstance(p,str) for p in paragraphs)
+            or not all(isinstance(t,str) and t.strip() for t in translated)):
+        return False
+    try:
+        for p,t in zip(paragraphs,translated):
+            if detector(p) and not is_placeholder(p):
+                validate_translation_pair(p,t)
+    except RuntimeError:
+        return False
+    return True
+
+
 def _in_reply_failure_cooldown(cached, current_hash):
     """최근 실패 쿨다운 안인지 (앞쪽 실패 작업이 뒤쪽 백로그를 영구 차단 방지).
 
@@ -344,6 +400,39 @@ def _in_reply_failure_cooldown(cached, current_hash):
     return datetime.now(timezone.utc) - failed_dt < REPLY_FAILURE_COOLDOWN
 
 
+
+def iter_translation_children(post, max_depth=8):
+    """Yield (node, cache key) for replies and recursively nested quote objects.
+
+    Existing reply keys remain byte-for-byte compatible. Quote keys include
+    their context path so the same quoted ID cannot alias another snapshot.
+    """
+    root_id=str(post.get('tweetId') or post.get('id') or '')
+    if not root_id:
+        return
+    def visit(node, path, depth, ancestors):
+        if depth > max_depth or not isinstance(node,dict) or id(node) in ancestors:
+            return
+        ancestors=ancestors | {id(node)}
+        quote=node.get('quoted')
+        if isinstance(quote,dict):
+            ident=str(quote.get('tweetId') or quote.get('id') or 'anonymous')
+            qpath=path+['quote',ident]
+            yield quote, ':'.join(['quote',root_id]+qpath)
+            yield from visit(quote,qpath,depth+1,ancestors)
+        for reply in node.get('replies') or []:
+            if not isinstance(reply,dict):
+                continue
+            rid=reply.get('tweetId') or reply.get('id')
+            if not rid:
+                continue
+            rpath=path+['reply',str(rid)]
+            key=reply_key(root_id,rid) if not path else ':'.join(['quote',root_id]+rpath)
+            yield reply,key
+            yield from visit(reply,rpath,depth+1,ancestors)
+    yield from visit(post,[],0,set())
+
+
 def collect_reply_jobs(posts, cache, force=False, stats=None, chunk=None):
     """번역이 필요한 답글 수집 (결정적 순서: 글 순서 → 답글 순서).
 
@@ -365,26 +454,20 @@ def collect_reply_jobs(posts, cache, force=False, stats=None, chunk=None):
         parent_id = post.get('tweetId') or post.get('id')
         if not parent_id:
             continue
-        for reply in post.get('replies') or []:
+        for reply, key in iter_translation_children(post):
             if not isinstance(reply, dict):
                 continue
-            reply_id = reply.get('tweetId') or reply.get('id')
-            if not reply_id:
-                continue
+            reply_id = reply.get('tweetId') or reply.get('id') or key.split(':')[-1]
             text = reply.get('fullText') or reply.get('text') or ''
             if not isinstance(text, str) or not text.strip():
                 continue
             paragraphs = split_paragraphs(text)
             if not paragraphs:
                 continue
-            key = reply_key(parent_id, reply_id)
             h = content_hash(text)
             cached = cache.get(key)
             if cached and not force:
-                valid_cached = (cached.get('paragraphs') == paragraphs
-                                and isinstance(cached.get('translated'), list)
-                                and len(cached['translated']) == len(cached['paragraphs'])
-                                and all(isinstance(t, str) and t.strip() for t in cached['translated']))
+                valid_cached = valid_translation_cache(cached, paragraphs, needs_reply_translation)
                 if cached.get('content_hash') == h and cached.get('status') == 'ok' and valid_cached:
                     continue
                 if cached.get('content_hash') != h:
@@ -570,7 +653,7 @@ def _record_reply_failure(cache, touched, job, error):
         "failed_at": datetime.now(timezone.utc).isoformat(),
     }
     previous = cache.get(job['key'])
-    if previous and previous.get('status') == 'ok':
+    if previous and valid_translation_cache(previous, previous.get('paragraphs'), needs_reply_translation):
         cache[job['key']] = dict(previous, last_attempt=failure)
     else:
         cache[job['key']] = failure
@@ -685,11 +768,19 @@ def translate_replies(cache, touched, posts=None, max_per_run=REPLY_MAX_PER_RUN,
         full = list(job['paragraphs'])
         for pos in job['real_indices']:
             full[pos] = pos_map[pos]
+        try:
+            for pos in job['real_indices']:
+                validate_translation_pair(job['paragraphs'][pos], full[pos])
+        except RuntimeError as exc:
+            failed_keys.add(job['key'])
+            _record_reply_failure(cache, touched, job, exc)
+            continue
         cache[job['key']] = {
             "paragraphs": job['paragraphs'],
             "translated": full,
             "content_hash": job['content_hash'],
             "status": "ok",
+            "validation_version": TRANSLATION_VALIDATION_VERSION,
             "translated_at": datetime.now(timezone.utc).isoformat(),
             "chunk": job.get('chunk'),
         }
@@ -718,7 +809,9 @@ def translate_paragraphs(paragraphs, strict=False):
     numbered = "\n".join(f"[{i+1}] {p}" for i, p in enumerate(paragraphs))
     prompt = f"""다음 외국어 문단들을 한국어로 번역해주세요.
 각 문단 번호를 유지하고, 번역만 출력하세요.
-URL과 종목 기호는 원문 그대로 보존하세요.
+URL, 멘션, 종목 기호 및 모든 숫자·배수·연도는 원문 그대로 보존하세요.
+한국어와 외국어가 섞였으면 한국어 의미는 유지하고 외국어 문장도 빠짐없이 한국어로 옮기세요.
+영어 원문을 그대로 반환하거나 한국어 제목만 붙이지 마세요. 이미 필요한 기술명은 보존할 수 있습니다.
 형식: [번호] 번역문
 번역문이 여러 줄이어도 됩니다. 다음 번호가 나오기 전까지가 하나의 번역문입니다.
 
@@ -770,6 +863,9 @@ URL과 종목 기호는 원문 그대로 보존하세요.
     elif empty:
         print(f"  경고: 빈 번역 {empty}개 (전체 {len(paragraphs)})", file=sys.stderr)
 
+    for original,result in zip(paragraphs,translated):
+        if needs_reply_translation(original) and not is_placeholder(original):
+            validate_translation_pair(original,result)
     return translated
 
 
@@ -1029,7 +1125,7 @@ def main():
             if not post_id:
                 continue
             text = get_post_text(post)
-            if not any(is_english_only(p) and not is_placeholder(p) for p in split_paragraphs(text)):
+            if not any(needs_body_translation(p) for p in split_paragraphs(text)):
                 skipped_ko += 1
                 continue
 
@@ -1037,10 +1133,7 @@ def main():
             cached = cache.get(post_id)
             if cached and not args.force:
                 # 해시 일치 시 스킵, 불일치 시 재번역
-                valid_cached = (cached.get('paragraphs') == split_paragraphs(text)
-                                and isinstance(cached.get('translated'), list)
-                                and len(cached['translated']) == len(cached['paragraphs'])
-                                and all(isinstance(t,str) and t.strip() for t in cached['translated']))
+                valid_cached = valid_translation_cache(cached, split_paragraphs(text), needs_body_translation)
                 if cached.get("content_hash") == h and cached.get("status") == "ok" and valid_cached:
                     skipped_hash += 1
                     continue
@@ -1065,7 +1158,7 @@ def main():
         print(f"\n[{i+1}/{len(to_translate)}] [{chunk_name}] {post_id[:40]}...")
         paragraphs = split_paragraphs(text)
         # 플레이스홀더 제외 (번역은 하되 마킹)
-        real_paras = [p for p in paragraphs if is_english_only(p) and not is_placeholder(p)]
+        real_paras = [p for p in paragraphs if needs_body_translation(p)]
         skipped_ph = len(paragraphs) - len(real_paras)
         if skipped_ph:
             print(f"  플레이스홀더 제외: {skipped_ph}개")
@@ -1075,14 +1168,16 @@ def main():
         print(f"  문단 수: {len(real_paras)}")
 
         try:
-            translated = translate_paragraphs(real_paras)
+            translated = translate_paragraphs(real_paras, strict=True)
+            for original,result in zip(real_paras,translated):
+                validate_translation_pair(original,result)
             if len(translated) != len(real_paras) or any(not p.strip() for p in translated):
                 raise RuntimeError('번역 문단 누락: 완료로 기록하지 않고 재시도합니다.')
             # 원문 순서대로 매핑 (플레이스홀더는 원문 유지)
             full_translated = []
             ri = 0
             for p in paragraphs:
-                if is_placeholder(p) or not is_english_only(p):
+                if not needs_body_translation(p):
                     full_translated.append(p)  # 플레이스홀더는 번역하지 않음
                 else:
                     full_translated.append(translated[ri] if ri < len(translated) else "")
@@ -1094,6 +1189,7 @@ def main():
                 "translated": full_translated,
                 "content_hash": content_hash(text),
                 "status": "ok",
+                "validation_version": TRANSLATION_VALIDATION_VERSION,
                 "translated_at": datetime.now(timezone.utc).isoformat(),
                 "chunk": chunk_name,
             }
@@ -1126,7 +1222,7 @@ def main():
                 "error": str(e)[:200],
             }
             previous=cache.get(post_id)
-            if previous and previous.get('status') == 'ok':
+            if previous and valid_translation_cache(previous, previous.get('paragraphs'), needs_body_translation):
                 # Keep the last successful version; its old hash still triggers a retry.
                 cache[post_id] = dict(previous, last_attempt=failure)
             else:

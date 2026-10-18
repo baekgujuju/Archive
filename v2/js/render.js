@@ -404,6 +404,21 @@ function replyBodyHtml(r) {
   }).join('');
 }
 
+function quotedBodyHtml(q, depth = 0, ancestors = new Set()) {
+  if (!q || typeof q !== 'object' || Array.isArray(q) || ancestors.has(q) || depth > 8) return '';
+  const seen = new Set(ancestors); seen.add(q);
+  const qa = q.author || {};
+  const name = typeof qa === 'string' ? qa : qa.name || qa.handle || '';
+  const imgs = (Array.isArray(q.media) ? q.media : []).map(m => {
+    const url = typeof m === 'string' ? m : m?.url || m?.src || '';
+    return url ? `<img src="${escapeHtml(url)}" loading="lazy" alt="인용글 이미지">` : '';
+  }).join('');
+  return `<details class="quoted" open><summary>🔗 인용글${name ? ' · ' + escapeHtml(name) : ''}</summary>` +
+    `<div class="quoted-body"><div><span class="quoted-author">${escapeHtml(name)}</span>` +
+    `<span class="quoted-time">${escapeHtml(q.createdAt || '')}</span></div>` + replyBodyHtml(q) +
+    (imgs ? `<div class="quoted-media">${imgs}</div>` : '') + quotedBodyHtml(q.quoted, depth + 1, seen) + '</div></details>';
+}
+
 function repliesHtml(article) {
   const replies = Array.isArray(article?.replies)
     ? article.replies.filter((r) => r && typeof r === 'object')
@@ -421,7 +436,7 @@ function repliesHtml(article) {
         `<div class="reply-head"><span class="reply-author">${escapeHtml(rname)}</span>` +
         `<span class="reply-time">${escapeHtml(rwhen)}</span>${badge}` +
         `<button type="button" class="reply-del" data-reply-id="${escapeHtml(rtid)}" aria-label="댓글 삭제" title="댓글 삭제">×</button></div>` +
-        `${replyBodyHtml(r)}</div>`
+        `${replyBodyHtml(r)}${quotedBodyHtml(r.quoted)}</div>`
     );
   }
   return (
@@ -507,31 +522,7 @@ function articleCard(article, options = {}) {
   const media = imgs.length ? `<div class="post-media">${imgs.join('')}</div>` : '';
 
   // 인용글 섹션 (quoted) — 기본 표시(open), 접기 가능
-  let quotedHtml = '';
-  const q = a.quoted;
-  if (q && typeof q === 'object' && !Array.isArray(q)) {
-    const qtext = String(q.fullText || '').trim();
-    const qauthor = q.author || {};
-    const qname = qauthor.name || qauthor.handle || '';
-    const qwhen = q.createdAt || '';
-    const qimgs = [];
-    for (const m of q.media || []) {
-      const mu = typeof m === 'string' ? m : m?.url || m?.src || '';
-      if (mu) qimgs.push(`<img src="${escapeHtml(mu)}" loading="lazy" alt="인용글 이미지">`);
-    }
-    const qmediaHtml = qimgs.length ? `<div class="quoted-media">${qimgs.join('')}</div>` : '';
-    if (qtext || qimgs.length) {
-      const qlabel = qname ? `🔗 인용글 · ${escapeHtml(qname)}` : '🔗 인용글';
-      quotedHtml =
-        `<details class="quoted" open><summary>${qlabel}</summary>` +
-        `<div class="quoted-body">` +
-        `<div><span class="quoted-author">${escapeHtml(qname)}</span>` +
-        `<span class="quoted-time">${escapeHtml(qwhen)}</span></div>` +
-        (qtext ? `<p class="quoted-text">${escapeHtml(qtext)}</p>` : '') +
-        qmediaHtml +
-        `</div></details>`;
-    }
-  }
+  const quotedHtml = quotedBodyHtml(a.quoted);
 
   const rawUrl = a.sourceUrl || a.source_url || '';
   const url = /^https?:\/\//i.test(rawUrl) ? rawUrl : '';

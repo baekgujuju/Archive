@@ -111,6 +111,12 @@ var ArchiveApp = (function () {
     if(!replyParagraphsMatch(text,tr.paragraphs))return '<p class="reply-text">'+linkText(text)+'</p>';
     return tr.paragraphs.map(function(t,i){var ko=String(tr.translated[i]||'').trim();return '<p class="reply-text">'+linkText(t)+'</p>'+(ko&&compact(ko)!==compact(t)?'<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(ko)+'</p>':'');}).join('');
   }
+  function renderQuoted(q, depth, ancestors) {
+    depth=depth||0; ancestors=ancestors||new Set();
+    if(!q||typeof q!=='object'||Array.isArray(q)||depth>8||ancestors.has(q))return '';
+    var seen=new Set(ancestors);seen.add(q);
+    return '<details class="quoted" open><summary>인용 게시글</summary><blockquote><p>'+esc(author(q))+'</p>'+replyBody(q)+images(q.media||q.mediaImages)+renderQuoted(q.quoted,depth+1,seen)+'</blockquote></details>';
+  }
   function renderReplies(a){
     // 답글 HTML (v1 패턴)
     var repliesHtml = '';
@@ -124,7 +130,7 @@ var ArchiveApp = (function () {
         var deleted = load('archive-deleted-replies', []);
         return '<div class="reply" data-reply-id="' + esc(rid) + '"' + (deleted.indexOf(rid) >= 0 ? ' hidden' : '') + '><div class="reply-head"><span class="reply-author">' + esc(rname) +
           '</span><span class="reply-time">' + esc(r.createdAt || '') + '</span>' + badge + '</div>' +
-          replyBody(r) + images(r.mediaImages || r.media) + (rid ? '<button type="button" data-hide-reply="' + esc(rid) + '">댓글 숨기기</button><button type="button" data-delete-reply="' + esc(rid) + '">댓글 삭제</button>' : '') + '</div>';
+          replyBody(r) + images(r.mediaImages || r.media) + renderQuoted(r.quoted) + (rid ? '<button type="button" data-hide-reply="' + esc(rid) + '">댓글 숨기기</button><button type="button" data-delete-reply="' + esc(rid) + '">댓글 삭제</button>' : '') + '</div>';
       }).join('');
       repliesHtml = '<details class="replies"><summary>💬 댓글 ' + replies.length + '개</summary><div class="reply-list">' + items + '</div></details>';
     }
@@ -155,7 +161,7 @@ var ArchiveApp = (function () {
     var urlHtml=renderUrlContents(a);
     return '<h1>' + esc(title(a)) + '</h1>'+toolInfo(a)+'<p class="meta">' + esc(metadata(a)) + '</p><div class="aa-body" data-highlight-post="'+esc(String(a.id??a.tweetId??a.sourceUrl??''))+'">' +
       translatedBody(a) + '</div>' + images(a.mediaImages) +
-      (q && typeof q === 'object' ? '<details class="quoted" open><summary>인용 게시글</summary><blockquote><p>' + esc(author(q)) + '</p><p class="aa-text">' + esc(q.fullText || '') + '</p>' + images(q.media || q.mediaImages) + '</blockquote></details>' : '') +
+      renderQuoted(q) +
       repliesHtml + urlHtml +
       '<p>' + esc((a.topics || []).join(' · ')) + '</p>' + (url ? '<a href="' + esc(url) + '" target="_self" rel="noopener noreferrer">원문 보기 ↗</a>' : '');
   }
