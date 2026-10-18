@@ -5263,21 +5263,27 @@
       "So we built PineTS: an open-source runtime that executes native Pine Script® v5 and v6 anywhere JavaScript runs.",
       "Repo: https://github.com/LuxAlgo/PineTS"
     ],
-    "translated": [],
+    "translated": [
+      "Pine Script®는 2013년 한 웹사이트에서 탄생했습니다. 이후 10년 넘게 이 언어로 만든 모든 도구는 그곳에서만 실행할 수 있었습니다.",
+      "그래서 저희는 JavaScript가 실행되는 곳이라면 어디서든 네이티브 Pine Script® v5와 v6를 실행하는 오픈 소스 런타임 PineTS를 만들었습니다.",
+      "저장소: https://github.com/LuxAlgo/PineTS"
+    ],
     "content_hash": "f6ff32d6c0b92fdb",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875584+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783657+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2101644770389143770:2101688790070735187": {
     "paragraphs": [
       "Great! VS Code also has a built-in feature to share your localhost—just one click, no installation needed."
     ],
-    "translated": [],
+    "translated": [
+      "좋네요! VS Code에도 로컬호스트를 공유하는 내장 기능이 있어요. 설치할 필요 없이 클릭 한 번이면 됩니다."
+    ],
     "content_hash": "1e4913ceffc0dbe6",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875578+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783644+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2098934529667051893:2098974621303513237": {
     "paragraphs": [
@@ -5307,21 +5313,25 @@
     "paragraphs": [
       "free your fvckin asshole"
     ],
-    "translated": [],
+    "translated": [
+      "네 빌어먹을 똥구멍이나 풀어"
+    ],
     "content_hash": "a2a864c3796e4125",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875569+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783627+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2100311522383684071:2100821642238668916": {
     "paragraphs": [
       "I am sorry man … couple of weeks back, it worked with the free subscription. They must to change it, apologies dude"
     ],
-    "translated": [],
+    "translated": [
+      "미안해요… 몇 주 전에는 무료 구독으로도 됐어요. 그사이에 바뀌었나 보네요. 미안해요"
+    ],
     "content_hash": "3a6f8a50b5df49fa",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875572+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783633+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2102498561636094324:2102498566929600898": {
     "paragraphs": [
@@ -5329,21 +5339,27 @@
       "Every indicator in the LuxAlgo Library, hundreds of scripts, already run through PineTS every day.",
       "The most-used indicators ever on TradingView, executing on an independent engine."
     ],
-    "translated": [],
+    "translated": [
+      "단순한 데모가 아닙니다.",
+      "LuxAlgo 라이브러리의 모든 지표, 수백 개의 스크립트가 이미 매일 PineTS를 통해 실행되고 있습니다.",
+      "TradingView에서 역대 가장 많이 사용된 지표들이 독립적인 엔진에서 실행됩니다."
+    ],
     "content_hash": "b9610c14c3afef5b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875587+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783663+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2100782813507416114:2100782813507416114": {
     "paragraphs": [
       "PAPER DECONSTRUCTION ENGINE  (논문해체분석엔진)"
     ],
-    "translated": [],
+    "translated": [
+      "논문 해체 분석 엔진 (논문해체분석엔진)"
+    ],
     "content_hash": "20d19d1c8c405c85",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875575+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783639+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2098934529667051893:2098939495873950101": {
     "paragraphs": [
@@ -5378,21 +5394,28 @@
       "💙퍼펙트 휩 대용량 더블기획\n📢17,600원→11,600원(34%OFF)\n✔️[본품]퍼펙트 휩 대용량150g*2 \n✔️[증정]15g 미니&양파쿵야 인형키링",
       "이 구성 어떻게 지나쳐👀?\n지금 올리브영에서 만나보센카"
     ],
-    "translated": [],
+    "translated": [
+      "센카 양파쿵야 콜라보 오픈\n10월 올영 PICK 특가",
+      "쫀쫀한 생크림 탄력거품으로\n말끔촉촉 데일리클렌징🫧",
+      "💙퍼펙트 휩 대용량 더블기획\n📢17,600원→11,600원(34%OFF)\n✔️[본품]퍼펙트 휩 대용량150g*2 \n✔️[증정]15g 미니&양파쿵야 인형키링",
+      "이 구성 어떻게 지나쳐👀?\n지금 올리브영에서 만나보센카"
+    ],
     "content_hash": "122df1e02b41201b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875556+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783596+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2099769376132260162:2100179017530020268": {
     "paragraphs": [
       "bartender 장기 사용자인데 버그에 질렸던 차에 잘 넘어왔습니다. 감사합니다"
     ],
-    "translated": [],
+    "translated": [
+      "bartender 장기 사용자인데 버그에 질렸던 차에 잘 넘어왔습니다. 감사합니다"
+    ],
     "content_hash": "993babdada95d43e",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875560+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783609+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2101644770389143770:2102347236726448168": {
     "paragraphs": [
@@ -5400,31 +5423,39 @@
       "The biggest names in crypto take the stage at Marina Bay Sands.",
       "Less than 48 hours to lock in US$599, before the final price increase on 23 September."
     ],
-    "translated": [],
+    "translated": [
+      "TOKEN2049 싱가포르가 이제 딱 2주 앞으로 다가왔습니다.",
+      "암호화폐 업계의 거물들이 마리나 베이 샌즈 무대에 오릅니다.",
+      "9월 23일 마지막 가격 인상 전, 미화 599달러에 구매할 수 있는 시간이 48시간도 채 남지 않았습니다."
+    ],
     "content_hash": "4e285b53f84e6939",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875581+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783651+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2100311522383684071:2100502360057430180": {
     "paragraphs": [
       "do mcp for chatgpt"
     ],
-    "translated": [],
+    "translated": [
+      "ChatGPT용 MCP를 만들어 주세요"
+    ],
     "content_hash": "0325b84f88ddc441",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875566+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783620+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2098934529667051893:2098995664017633288": {
     "paragraphs": [
       "Impressive share"
     ],
-    "translated": [],
+    "translated": [
+      "인상적인 공유"
+    ],
     "content_hash": "de23b99e5e678cda",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875553+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783529+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2097115240437878867:2097115571708166255": {
     "paragraphs": [
@@ -5442,11 +5473,13 @@
     "paragraphs": [
       "주의) macOS 27에서은 개판입니다. 저도 애용하고 있습니다"
     ],
-    "translated": [],
+    "translated": [
+      "주의) macOS 27에서는 개판입니다. 저도 애용하고 있습니다"
+    ],
     "content_hash": "df3a4b90b75bb13c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:15:59.875563+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783615+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2102498561636094324:2102498570054070278": {
     "paragraphs": [
@@ -5454,112 +5487,137 @@
       "Vela is our open-source charting library: Apache-2.0, a native WebGL2 renderer, drawings, multi-chart layouts, and a public scripting port.",
       "Anyone can register the Pine engine,"
     ],
-    "translated": [],
+    "translated": [
+      "런타임에는 차트가 필요합니다. 저희가 기반으로 삼을 만한 오픈 소스 차트가 없어서 그것도 직접 만들었습니다.",
+      "Vela는 저희의 오픈 소스 차트 라이브러리입니다. Apache-2.0 라이선스, 네이티브 WebGL2 렌더러, 그리기 도구, 다중 차트 레이아웃, 공개 스크립팅 인터페이스를 제공합니다.",
+      "누구나 Pine 엔진을 등록할 수 있습니다."
+    ],
     "content_hash": "dce726581106accf",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:16:11.122422+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783669+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104608133712904547:2104616956456554935": {
     "paragraphs": [
       "Do you guys have custom indicator options ? Whether its using python or any other language"
     ],
-    "translated": [],
+    "translated": [
+      "사용자 지정 지표 기능이 있나요? Python이든 다른 언어든 사용할 수 있는지 궁금합니다."
+    ],
     "content_hash": "5edc10086832c364",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:16:11.122458+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783679+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104436024093147159:2104436024093147159": {
     "paragraphs": [
       "린다 라슈케(Linda Raschke)의 12가지 기술적 트레이딩 원칙(12 Technical Trading Rules)"
     ],
-    "translated": [],
+    "translated": [
+      "린다 라슈케(Linda Raschke)의 12가지 기술적 트레이딩 원칙(12가지 기술적 트레이딩 규칙)"
+    ],
     "content_hash": "cc5922c804d63aa4",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:16:11.122452+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783674+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106758239396172254:2106759558433517665": {
     "paragraphs": [
       "Apple's own virtualization tool leaves third parties with little chance of survival."
     ],
-    "translated": [],
+    "translated": [
+      "애플의 자체 가상화 도구 때문에 서드파티 업체들이 살아남을 여지가 거의 없습니다."
+    ],
     "content_hash": "58f4a8b035aff9eb",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095617+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787974+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106728039472152810:2106763500462985457": {
     "paragraphs": [
       "is cohance life sciences is good setup according to you?"
     ],
-    "translated": [],
+    "translated": [
+      "보시기에 cohance life sciences는 매매하기 좋은 자리인가요?"
+    ],
     "content_hash": "5fdec8c386c0fbd7",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095601+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787945+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106728039472152810:2106735641111192014": {
     "paragraphs": [
       "One more example sir 🙏"
     ],
-    "translated": [],
+    "translated": [
+      "예시 하나만 더 부탁드립니다, 선생님 🙏"
+    ],
     "content_hash": "c0ded2f58330445b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095614+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787969+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104608133712904547:2104609922805809462": {
     "paragraphs": [
       "Thank you! Working on the mobile app. That will be out soon along with more assets"
     ],
-    "translated": [],
+    "translated": [
+      "감사합니다! 모바일 앱을 개발 중이에요. 더 많은 자산과 함께 곧 출시될 예정입니다."
+    ],
     "content_hash": "279258baac19c415",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095576+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783696+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107034668977848430:2107041897898455073": {
     "paragraphs": [
       "PRO 몇 번에 토큰이 그렇게 빠지면 FLASH로 손이 가겠어요 ㅠㅠ"
     ],
-    "translated": [],
+    "translated": [
+      "PRO 몇 번에 토큰이 그렇게 빠지면 FLASH로 손이 가겠어요 ㅠㅠ"
+    ],
     "content_hash": "a9135ce8a1f6f98d",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095622+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787986+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104918615686332428:2104928198353895578": {
     "paragraphs": [
       "This is the good corner of X. You and @Timsave1234\n  actually explain the move."
     ],
-    "translated": [],
+    "translated": [
+      "여기가 X의 좋은 구석이네요. 당신과 @Timsave1234는 실제로 주가 움직임의 이유를 설명해주시니까요."
+    ],
     "content_hash": "2873c00d7bf1ae12",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095592+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787915+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106728039472152810:2106844758362505267": {
     "paragraphs": [
       "Gran movimiento que hay que saber llevarlo."
     ],
-    "translated": [],
+    "translated": [
+      "큰 움직임인 만큼 잘 대응할 줄 알아야 합니다."
+    ],
     "content_hash": "2260b19f0f01124a",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095609+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787959+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106796010823663783:2106799731523633354": {
     "paragraphs": [
       "And more stress, more and faster decision-making, more room for error, bigger drawdowns…",
       "Definitely not for everyone :)"
     ],
-    "translated": [],
+    "translated": [
+      "스트레스는 더 커지고, 더 많은 결정을 더 빠르게 내려야 하고, 실수할 여지도 늘고, 고점 대비 하락폭도 더 커지고…",
+      "확실히 누구에게나 맞는 건 아니죠 :)"
+    ],
     "content_hash": "e57e514eef498ff2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095620+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787981+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2105819303471976479:2105892170263650792": {
     "paragraphs": [
@@ -5567,51 +5625,63 @@
       "I truly appreciate your insights and this new approach to LLMs.",
       "I wish I had access to such technology"
     ],
-    "translated": [],
+    "translated": [
+      "제안해주신 대로 확률미적분에 관한 3b1b 스타일의 해설 영상을 만들었습니다. 전문 교육 과정에서 이 주제를 처음 접했던 때가 떠올랐습니다.",
+      "통찰력 있는 의견과 LLM에 대한 이 새로운 접근 방식에 진심으로 감사드립니다.",
+      "저도 이런 기술을 이용할 수 있으면 좋겠어요."
+    ],
     "content_hash": "387ce58e1f9b7ad3",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095598+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787939+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106728039472152810:2095223824992137355": {
     "paragraphs": [
       "Launch ads in minutes. Find customers for a lifetime."
     ],
-    "translated": [],
+    "translated": [
+      "몇 분 만에 광고를 시작하세요. 평생 함께할 고객을 만나세요."
+    ],
     "content_hash": "3d9b806a3841f4ce",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095611+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787964+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104920514297000294:2095223825059262507": {
     "paragraphs": [
       "Launch products now and grow your business with X Ads. @1x_tech\n’s NEO robot campaign shows how X can turn a product announcement into action. As @Kenny___Rose\n put it, X was the perfect launch platform."
     ],
-    "translated": [],
+    "translated": [
+      "지금 제품을 출시하고 X 광고로 비즈니스를 성장시키세요. @1x_tech의 NEO 로봇 캠페인은 X가 어떻게 제품 발표를 실제 행동으로 이어지게 하는지 보여줍니다. @Kenny___Rose의 말처럼, X는 완벽한 출시 플랫폼이었습니다."
+    ],
     "content_hash": "d9023f143ba66dd7",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095596+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787928+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104608133712904547:2104625508533350489": {
     "paragraphs": [
       "What tools and indicators are we missing?"
     ],
-    "translated": [],
+    "translated": [
+      "어떤 도구와 지표가 빠져 있나요?"
+    ],
     "content_hash": "6e3dd6720bc1a8a3",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095585+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783709+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106728039472152810:2106761494012866657": {
     "paragraphs": [
       "Can we get an another book sir, jo basically case studies pe based ho only.."
     ],
-    "translated": [],
+    "translated": [
+      "선생님, 기본적으로 사례 연구만으로 구성된 책을 한 권 더 내주실 수 있을까요?"
+    ],
     "content_hash": "173cc6bf19b51246",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095605+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787953+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104608133712904547:2104608983994511557": {
     "paragraphs": [
@@ -5621,72 +5691,91 @@
       "Also, we need an App!",
       "Otherwise, TOP product!"
     ],
-    "translated": [],
+    "translated": [
+      "계속 사용하고 있는데, 정말 최고예요.",
+      "딱 한 가지만요.",
+      "지표가 어떤 기능을 하는지 한눈에 파악할 수 있도록 설명 이미지가 좀 더 있으면 좋겠어요.",
+      "그리고 앱도 필요해요!",
+      "그 외에는 최고의 제품이에요!"
+    ],
     "content_hash": "8de7ab7a20c4c009",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095568+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783691+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104918615686332428:2105118599425708364": {
     "paragraphs": [
       "Got on a couple,  namely mrna, I think semis are looking interesting here,"
     ],
-    "translated": [],
+    "translated": [
+      "몇 종목에 진입했는데, 그중 하나가 mrna예요. 지금 반도체주가 흥미로워 보이네요."
+    ],
     "content_hash": "235c97479124c1cd",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095588+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787820+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104608133712904547:2104621954682724366": {
     "paragraphs": [
       "Yes, we have our own scripting language:"
     ],
-    "translated": [],
+    "translated": [
+      "네, 저희만의 스크립팅 언어가 있습니다:"
+    ],
     "content_hash": "64d076db6debfa2c",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095493+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783684+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2104608133712904547:2104611610178506992": {
     "paragraphs": [
       "When are we gonna get the same tools to TradingView e.g I’ve got multiple indicators that aren’t on your terminal ?"
     ],
-    "translated": [],
+    "translated": [
+      "TradingView에서 쓰는 것과 같은 도구들은 언제 제공되나요? 예를 들어 제가 쓰는 지표 중 여러 개가 여러분의 터미널에는 없어요."
+    ],
     "content_hash": "196757e970849a00",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:22:58.095580+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:27:36.783702+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107361716384481753:2107367909903466845": {
     "paragraphs": [
       "저거 오픈소스도 공개되어있어서 Vram 8기가 이하면 Flash, 24G 면 일반버전도 로컬 구동할 수 있게 했더라구요.",
       "저도 지금 Flash 하나 로컬에서 구동중이에요."
     ],
-    "translated": [],
+    "translated": [
+      "저거 오픈소스도 공개되어있어서 Vram 8기가 이하면 Flash, 24G 면 일반버전도 로컬 구동할 수 있게 했더라구요.",
+      "저도 지금 Flash 하나 로컬에서 구동중이에요."
+    ],
     "content_hash": "bbd21f772866e763",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:23:07.987767+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787996+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107280358307987503:2107280359885054036": {
     "paragraphs": [
       "OpenAI 공식 글 👇"
     ],
-    "translated": [],
+    "translated": [
+      "OpenAI 공식 글 👇"
+    ],
     "content_hash": "a4210102857354c2",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:23:07.987734+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.787991+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107361716384481753:2107365708338532448": {
     "paragraphs": [
       "무료로 이렇게 퍼주면 남는게 있나 싶어요 진짜.\n더 싼 clef flash 도 있어요.\nprobability랑 confidence를 반환하는데 clef flash로 1차 돌리고 confidence가 좀 낮으면 clef 로 다시 돌리는 식으로 만들어서 쓰고 있습니다."
     ],
-    "translated": [],
+    "translated": [
+      "무료로 이렇게 퍼주면 남는게 있나 싶어요 진짜.\n더 싼 clef flash 도 있어요.\n확률이랑 신뢰도를 반환하는데 clef flash로 1차 돌리고 신뢰도가 좀 낮으면 clef 로 다시 돌리는 식으로 만들어서 쓰고 있습니다."
+    ],
     "content_hash": "a73dca2eb9081290",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:23:07.987772+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.788001+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2094387309449723997:2082108927471214717": {
     "paragraphs": [
@@ -5694,21 +5783,27 @@
       "I tested 45 rules against 1,500 logged breakout trades. the Stockbee Market Monitor, new highs vs new lows, $MMTW, McClellan, % above the 20-day.",
       "Which ones help, when they help, and when to ignore all of it."
     ],
-    "translated": [],
+    "translated": [
+      "시장의 상승세 확산 정도: 실제로 효과가 있는 지표들.",
+      "기록해 둔 돌파 매매 1,500건을 대상으로 45가지 규칙을 검증했습니다. Stockbee Market Monitor, 신고가 대비 신저가 종목 수, $MMTW, 맥클레런 지표, 20일 이동평균선 위에 있는 종목 비율 등을 살펴봤습니다.",
+      "어떤 지표가 도움이 되는지, 언제 도움이 되는지, 그리고 언제 이 모든 것을 무시해야 하는지."
+    ],
     "content_hash": "4ff0500a45acf01b",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:29:56.091054+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.788008+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2106654769037422755:2106784725377400843": {
     "paragraphs": [
       "Hi! Thank you for mentioning :) Let me know if you have any feedback :)"
     ],
-    "translated": [],
+    "translated": [
+      "안녕하세요! 언급해 주셔서 감사합니다 :) 피드백이 있으면 알려주세요 :)"
+    ],
     "content_hash": "85c10e827e8f0193",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:29:56.091125+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.788019+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2094387309449723997:1655569993881509889": {
     "paragraphs": [
@@ -5717,11 +5812,16 @@
       "He sold it 11 days later as it showed weakness after a presentation, with almost 150% gains 🚀",
       "If he had followed the 10-day sell rule he would've made 350% 📈"
     ],
-    "translated": [],
+    "translated": [
+      "매도 규칙이 중요합니다 💸",
+      "@Qullamaggie는 WKHS의 좋은 진입 시점에 IB 계좌의 자금을 전부 투입했습니다.",
+      "그는 11일 뒤 프레젠테이션 이후 주가가 약세를 보이자 거의 150%의 수익을 내고 매도했습니다 🚀",
+      "10일 매도 규칙을 따랐다면 350%의 수익을 냈을 겁니다 📈"
+    ],
     "content_hash": "fca36a2cc179a9ae",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:29:56.091119+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.788014+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107365244238545088:2089327477214593238": {
     "paragraphs": [
@@ -6033,11 +6133,13 @@
     "paragraphs": [
       "the unattended mode is the part that gets my attention"
     ],
-    "translated": [],
+    "translated": [
+      "제 관심을 끄는 부분은 무인 실행 모드입니다."
+    ],
     "content_hash": "b5dc78dfc938f10a",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989888+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.788024+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107859139938660811:2108233104808968655": {
     "paragraphs": [
@@ -6067,11 +6169,13 @@
     "paragraphs": [
       "my substack: https://substack.com/@beamnxw :)"
     ],
-    "translated": [],
+    "translated": [
+      "제 서브스택: https://substack.com/@beamnxw :)"
+    ],
     "content_hash": "f6137b47bf3ec71f",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T04:36:20.989939+00:00"
+    "status": "ok",
+    "translated_at": "2026-10-18T06:31:07.788034+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2107849364127261138:2107995988157972537": {
     "paragraphs": [
