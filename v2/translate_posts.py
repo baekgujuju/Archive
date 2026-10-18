@@ -361,6 +361,8 @@ def needs_reply_translation(text):
         if not any(word.upper() in _REPLY_UPPER_FUNCTION_WORDS | _REPLY_UPPER_PROSE_WORDS for word in words):
             return False
     lines=[line.strip() for line in text.splitlines() if line.strip()]
+    if lines and all(re.match(r'^(?:[$>]\s*)?ollama\s+(?:serve|list|pull|run|show|stop|rm|ps|create|cp|push|--version)\b',line) for line in lines):
+        return False
     command = r'^(?:[$>]\s*)?(?:npx\s+\S+|(?:npm|pnpm|yarn)\s+(?:install|add|run|exec|create|dlx)\b|pip3?\s+(?:install|uninstall|show|list)\b|uv\s+(?:pip|run|add|sync)\b|git\s+(?:clone|pull|push|checkout|switch|status|diff|add|commit)\b|python3?\s+(?:-m\s+|\S+\.py\b)|node\s+\S+\.m?js\b|(?:curl|wget)\s+(?:-|https?://))'
     if lines and all(re.match(command,line) for line in lines):
         return False
