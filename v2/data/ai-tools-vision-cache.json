@@ -4039,5 +4039,15 @@
     "category_ko": "금융·투자 종목 비교",
     "owner_hint": "@RealNickMugalli",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:87ab6d1e5d98da6c65ec39b46953a271f78af3fb830f3c1f899bc8ce14a77eb5": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "거래량 차트와 매수·매도 지표",
+    "description_ko": "베이지색 배경에 빨간색과 청록색 거래량 막대가 표시되어 있으며, 오른쪽 아래에 매도량 1.89K와 매수량 618이 보입니다.",
+    "category_ko": "금융·트레이딩 차트",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }

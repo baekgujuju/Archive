@@ -20274,6 +20274,140 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2111689249854779408",
+      "sourceUrl": "https://x.com/Mason_yoon94/status/2111689249854779408",
+      "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+      "createdAt": "2026-10-18T05:22:05.000Z",
+      "fullText": "이게 어렵다면 말씀해주세요 \n더 쉬운지표가 있습니다",
+      "author": {
+        "handle": "@Mason_yoon94",
+        "name": "https://x.com/Mason_yoon94/status/2111689249854779408 · Mason_yoon94 · 2026-10-18T05:22:05.000Z"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-87ab6d1e5d98da6c65ec39b46953a271f78af3fb830f3c1f899bc8ce14a77eb5.png"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2111686757024739648",
+          "sourceUrl": "https://x.com/Mason_yoon94/status/2111686757024739648",
+          "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+          "createdAt": "2026-10-18T05:12:10.000Z",
+          "fullText": "저도 거래 할 때 1순위로 보는 내용이라서 \n정말 정말 중요한 내용이라 생각합니다 \n\n저는 CVD를 봅니다. \n\nCVD는 이 델타를 봉마다 계속 더한 캔들 입니다.\nCumulative Volume Delta.\n한국어로는 누적 거래량 델타입니다.\n\n즉 위로 민 거래량 − 아래로 민 거래량 = 하나의 봉에서 델타의 누적을\n거래량은 죽었는데 가격이 안 빠질 때 \n\n보통은 거래량이 확 죽으면 가격은 빠지는 게 정상이다.\n그런데 안 빠지고 버틴다면 누군가 그 가격에서 계속 받아 주고 있다는 뜻이다.\n\n개인적으로 내가 제일 좋아하던 자리다.",
+          "author": {
+            "handle": "@Mason_yoon94",
+            "name": "원문 · Mason_yoon94 · 2026-10-18T05:12:10.000Z"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0fe22603497e55c2aed2ba36d802cd5ae3bfec674253ea4c997cfa160c5fa8db.png"
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8d9dffd31b3402dccab3b0b33ef6d2e1283dee7297ba3e9a1a6751d7441d48bb.jpg"
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a1e38ebe867803c2cef8558ca146be7ae7eb036971d6b384859c8177a77bfab5.jpg"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111688339875307762",
+          "sourceUrl": "https://x.com/theodore_invest/status/2111688339875307762",
+          "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+          "createdAt": "2026-10-18T05:18:28.000Z",
+          "fullText": "오호!!",
+          "author": {
+            "handle": "@theodore_invest",
+            "name": "원문 · theodore_invest · 2026-10-18T05:18:28.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111691800423596266",
+          "sourceUrl": "https://x.com/theodore_invest/status/2111691800423596266",
+          "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+          "createdAt": "2026-10-18T05:32:13.000Z",
+          "fullText": "이게 훨씬 직관적이긴 하네요 절대적 거래량 안에서 매수 매도가 표시되다보니. 다만 질문이 있습니다. CVD가 하락했다는 것은 매도 거래량이 더 많다는건데 이때 가격이 오르면 단위당 상승 힘 > 하락 힘 이라고 판단해서 상승 다이버전스인거죠? \n\n그러면 실제 예시에서 클라이맥스 매도 음봉에 CVD 음봉, 그리고 그 다음 아래꼬리 도지에 CVD양봉이 되었는데, 가격 변화가 없을 때 CVD로 매수힘을 먼저 파악해서 추세 반전을 잡는건가요? 만약 저기서 장대음봉 뒤에 장대양봉이 나오면서 CVD가 하락했으면 앞서 배운 상승 다이버전스로 이해할 수 있었을텐데, 약간 명확하게 개념이 자리잡히지가 않네요",
+          "author": {
+            "handle": "@theodore_invest",
+            "name": "원문 · theodore_invest · 2026-10-18T05:32:13.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111694352208781478",
+          "sourceUrl": "https://x.com/Mason_yoon94/status/2111694352208781478",
+          "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+          "createdAt": "2026-10-18T05:42:21.000Z",
+          "fullText": "답변이 길어질 것 같습니다. \n\n우선 유튜브나 보통 교육자료에서는 \n너무 예쁘게 나오는 다이버전스만 찾아서 보여줍니다. \n실상은 근데 그렇지 않거든요 \n\nCVD가 떨어지면 \n그 구간에서 매도가 더 많았다는 뜻입니다.\n세 가지만 기억하면 됩니다.\n\n1. 가격은 저점을 낮추는데 CVD는 저점을 높인다\n= 매도 힘이 줄고 있다 > 상승 다이버전스.\n\n2. 가격은 거의 그대로인데 CVD가 양으로 바뀐다\n= 그 자리에서 매수가 받아내고 있다 > 흡수\n\n3. 가격은 오르는데 CVD는 떨어진다\n= 올라간 힘이 약하다 > 다이버전스 아님\n\n말씀하신 박스 구간은 2번에 가깝습니다.\n장대음봉으로 매도가 터졌고, \n\n다음 도지에서 CVD가 양으로 바뀌면서 \n그 저점을 받아낸 모습입니다.\n\n반전 확정이 아니라, \n저점이 지켜졌는지 다음 종가를 봐야하는 자리입니다!\n\n실제로 제가 가격 변화가 없을 때 추세 반전을 잡을때는\n다음 종가가 그 저점을 지키고 위로 마감할 때 \n반전 후보로 보는데 체크리스트는 아래에 두겠습니다\n\nCVD 양전환 = 힌트\n빅트레이드 반복 = 힌트\n오더플로우 흡수 = 힌트\n종가가 저점을 지킴 = 반전 확인",
+          "author": {
+            "handle": "@Mason_yoon94",
+            "name": "원문 · Mason_yoon94 · 2026-10-18T05:42:21.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111695757741047979",
+          "sourceUrl": "https://x.com/theodore_invest/status/2111695757741047979",
+          "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+          "createdAt": "2026-10-18T05:47:56.000Z",
+          "fullText": "긴 답변해주셔서 감사합니다^^ 이제야 제대로 이해가 됐네요. 기존에 알고 있던 rsi 다이버전스 개념과 일맥상통하니 cvd는 좀 더 디테일하게 알 수 있어서 좋을 것 같습니다. 여태껏 들어본적 없는 지표인데 엄청나신 내공이 느껴지네요, 많이 배우겠습니다 🫶",
+          "author": {
+            "handle": "@theodore_invest",
+            "name": "원문 · theodore_invest · 2026-10-18T05:47:56.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111695912703852994",
+          "sourceUrl": "https://x.com/Mason_yoon94/status/2111695912703852994",
+          "capturedAt": "2026-10-18T15:02:38.397551+00:00",
+          "createdAt": "2026-10-18T05:48:33.000Z",
+          "fullText": "메세지로 설명 정말 잘되어있는 유튜브 영상 하나 보내드릴게요!",
+          "author": {
+            "handle": "@Mason_yoon94",
+            "name": "원문 · Mason_yoon94 · 2026-10-18T05:48:33.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.6",
+        "requested_url": "https://x.com/Mason_yoon94/status/2111689249854779408",
+        "observed_main_url": "https://x.com/Mason_yoon94/status/2111689249854779408",
+        "author_handle": "Mason_yoon94",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
