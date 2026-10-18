@@ -170,7 +170,9 @@ def reply_key(parent_id, reply_id):
 
 def _is_korean_char(ch):
     """한글 음절/자모인지."""
-    return ('가' <= ch <= '힣') or ('ㄱ' <= ch <= 'ㅣ')
+    return (('가' <= ch <= '힣') or ('ㄱ' <= ch <= 'ㅣ')
+            or ('\u1100' <= ch <= '\u11ff') or ('\ua960' <= ch <= '\ua97f')
+            or ('\ud7b0' <= ch <= '\ud7ff'))
 
 
 def _is_word_char(ch):
