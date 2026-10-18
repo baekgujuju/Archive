@@ -31,6 +31,7 @@ const {
   urlInlineHtml,
   normalizeArticle,
   articleCard,
+  repliesHtml,
 } = ctx.window.ArchiveRender;
 
 let pass = 0;
@@ -200,6 +201,46 @@ const dictAuthorCard = articleCard({
   sourceUrl: 'https://x.com/a/555',
 }, { idx: 0 });
 check('card author 객체 정규화', dictAuthorCard.includes('트레이더 제씨') && !dictAuthorCard.includes('[object Object]'));
+
+// 16. repliesHtml — 답글 번역 표시 (원문 → 문단 정렬 번역)
+const replyBase = {
+  author: { handle: '@u', name: 'User' },
+  tweetId: '222',
+  createdAt: '2026-10-18',
+};
+const rh1 = repliesHtml({
+  replies: [{ ...replyBase, fullText: 'This is a great point.',
+    translation: { status: 'ok', paragraphs: ['This is a great point.'],
+      translated: ['훌륭한 지적이다.'] } }],
+});
+check('답글 번역 표시', rh1.includes('This is a great point.') && rh1.includes('훌륭한 지적이다.') && rh1.includes('한국어 번역'));
+check('답글 원문이 번역보다 먼저', rh1.indexOf('This is a great point.') < rh1.indexOf('훌륭한 지적이다.'));
+const rh2 = repliesHtml({ replies: [{ ...replyBase, fullText: '한국어 답글입니다.' }] });
+check('답글 번역 없으면 원문만', rh2.includes('한국어 답글입니다.') && !rh2.includes('translation-ko'));
+const rh3 = repliesHtml({
+  replies: [{ ...replyBase, fullText: 'Hello world here.',
+    translation: { status: 'ok', paragraphs: ['Hello world here.'],
+      translated: ['<script>alert(1)</script>안녕'] } }],
+});
+check('답글 번역 이스케이프', rh3.includes('&lt;script&gt;') && !rh3.includes('<script>alert(1)'));
+const rh4 = repliesHtml({
+  replies: [{ ...replyBase, fullText: 'Edited reply text here.',
+    translation: { status: 'ok', paragraphs: ['Original reply text here.'],
+      translated: ['원본 답글 번역'] } }],
+});
+check('답글 원문·캐시 불일치 시 번역 미표시', rh4.includes('Edited reply text here.') && !rh4.includes('원본 답글 번역'));
+const rh5 = repliesHtml({
+  replies: [{ ...replyBase, fullText: 'Same text here.',
+    translation: { status: 'ok', paragraphs: ['Same text here.'],
+      translated: ['Same text here.'] } }],
+});
+check('답글 번역이 원문과 같으면 미표시', !rh5.includes('translation-ko'));
+const rh6 = repliesHtml({
+  replies: [{ ...replyBase, fullText: 'First para here.\n\nSecond para here.',
+    translation: { status: 'ok', paragraphs: ['First para here.', 'Second para here.'],
+      translated: ['첫 번째 문단.', '두 번째 문단.'] } }],
+});
+check('답글 문단 정렬', rh6.indexOf('First para here.') < rh6.indexOf('첫 번째 문단.') && rh6.indexOf('첫 번째 문단.') < rh6.indexOf('Second para here.') && rh6.indexOf('Second para here.') < rh6.indexOf('두 번째 문단.'));
 
 console.log(`\n결과: ${pass} 통과, ${fail} 실패`);
 process.exit(fail ? 1 : 0);
