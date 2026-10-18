@@ -1382,6 +1382,28 @@ def test_drive_poll_legacy_batch_skips_non_html(poll_env, monkeypatch):
     assert len(posts) == 2
 
 
+def test_drive_poll_non_string_name_does_not_crash(poll_env, monkeypatch):
+    # 회귀 (Codex 핫픽스 2 리뷰 비차단 보완점): 비문자열 파일명이
+    # 처리 루프까지 오면 "Unsupported ..." + name 연결에서 TypeError.
+    # _is_html_name은 비문자열을 False로 처리하므로, 로그만 안전하면
+    # 폴 전체가 해당 파일을 건너뛰고 정상 완료한다.
+    files = [
+        {"id": "fid-none", "name": None,
+         "modifiedTime": "2026-10-18T00:00:00Z", "size": "10"},
+        {"id": "fid-int", "name": 123,
+         "modifiedTime": "2026-10-18T00:00:00Z", "size": "10"},
+        _drive_file("fid-ok", "ok.html", _valid_html("3000", "ok")),
+    ]
+    monkeypatch.setattr(drive_poll, "list_drive_files", lambda inbox_id: files)
+    monkeypatch.setattr(drive_poll, "run",
+                        FakeRun({"fid-ok": _valid_html("3000", "ok")}))
+    rc = drive_poll.main()
+    assert rc == 0
+    posts = json.loads((poll_env["xbm"] / "posts.json").read_text())
+    assert len(posts) == 1
+    assert posts[0]["tweetId"] == "3000"
+
+
 def test_drive_poll_merge_conflict_becomes_proposal(poll_env, monkeypatch):
     old = {
         "tweetId": "111", "sourceUrl": "https://x.com/Author1/status/111",

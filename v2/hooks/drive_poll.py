@@ -880,7 +880,9 @@ def main():
                     continue
             # 신규 파일은 배치 제한 없이 처리한다.
             if not _is_html_name(name):
-                log("Unsupported material remains pending: " + name)
+                # name이 비문자열이어도 로그 연결에서 TypeError 없이
+                # 건너뛴다 (Codex 핫픽스 2 리뷰 비차단 보완점).
+                log(f"Unsupported material remains pending: {name!r}")
                 continue
             if not INGEST_SCRIPT.exists():
                 return 1
