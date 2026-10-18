@@ -321,7 +321,47 @@ TRANSLATION_VALIDATION_VERSION = 2
 
 def needs_body_translation(text):
     """Use the existing multilingual prose detector for mixed body paragraphs too."""
-    return bool(needs_reply_translation(text) and not is_placeholder(text))
+    return bool(needs_reply_translation(text) and not is_placeholder(text)
+                and not _korean_with_isolated_terms(text))
+
+
+def _korean_with_isolated_terms(text):
+    """Korean prose may legitimately retain names, acronyms and code terms.
+
+    A foreign multiword phrase or CJK sentence still requires translation.
+    This only relaxes mixed Korean prose, never foreign-only short replies.
+    """
+    if not KO_PAT.search(text):
+        return False
+    cleaned = _strip_reply_noise(text)
+    if any(c.isalpha() and not _is_korean_char(c) and not ('A' <= c <= 'Z' or 'a' <= c <= 'z' or 'À' <= c <= 'ž') for c in cleaned):
+        return False
+    if re.search(r'[一-鿿぀-ヿ]{3,}', cleaned):
+        return False
+    return not re.search(r"[A-Za-zÀ-ž][A-Za-zÀ-ž’'-]*(?:[ \t]+[A-Za-zÀ-ž][A-Za-zÀ-ž’'-]*){2,}", cleaned)
+
+
+def _translation_numbers(text):
+    """Compare numeric values across common Korean count/unit spellings."""
+    import unicodedata
+    from collections import Counter
+    from decimal import Decimal
+    value = unicodedata.normalize('NFKC', text)
+    # Do not count digits inside source URLs, handles or ticker identifiers.
+    value = re.sub(r'https?://[^\s<>]+|@[\w]+|\$[A-Za-z][A-Za-z0-9.]*', '', value)
+    native = {'하나':1,'한':1,'첫':1,'둘':2,'두':2,'둘째':2,'셋':3,'세':3,'셋째':3,
+              '넷':4,'네':4,'넷째':4,'다섯':5,'여섯':6,'일곱':7,'여덟':8,'아홉':9,'열':10}
+    value = re.sub(r'(?<![가-힣])('+'|'.join(sorted(native,key=len,reverse=True))+r')(?=\s*(?:번째|째|개|가지|명|번|날|달|년|곳|일|주|배|해|포지션))',lambda m:str(native[m[1]]),value)
+    value = re.sub(r'(?<![가-힣])(하나|둘|셋|넷)(?=로|만|을|를|이|가|은|는|\s|$)',lambda m:str(native[m[1]]),value)
+    values=[]
+    units={'k':1000,'m':1000000,'b':1000000000,'천':1000,'千':1000,'만':10000,'万':10000,'억':100000000,'亿':100000000,'億':100000000,'조':1000000000000}
+    for m in re.finditer(r"(?<![A-Za-z0-9_])\d+(?:,\d{3})*(?:\.\d+)?(?:\s*[kKmMbB천만억조千万亿億](?![A-Za-z]))?",value):
+        token=m[0].replace(',','').replace(' ','')
+        unit=token[-1].lower()
+        number=Decimal(token[:-1] if unit in units else token)
+        if unit in units:number*=units[unit]
+        values.append(number)
+    return Counter(values)
 
 
 def validate_translation_pair(original, translated):
@@ -331,6 +371,8 @@ def validate_translation_pair(original, translated):
     if not isinstance(translated, str) or not translated.strip():
         raise RuntimeError('번역 결과가 비어 있습니다.')
     normalized = lambda value: re.sub(r'\s+', ' ', unicodedata.normalize('NFKC', value)).strip().casefold()
+    if normalized(original) == normalized(translated) and _korean_with_isolated_terms(original):
+        return
     if normalized(original) == normalized(translated):
         raise RuntimeError('외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.')
     if not KO_PAT.search(translated):
@@ -346,8 +388,7 @@ def validate_translation_pair(original, translated):
         token=token.rstrip('.,;:!?)]}')
         if token not in translated:
             raise RuntimeError('번역 중 URL 또는 종목 기호가 누락됐습니다.')
-    numbers=lambda value: Counter(n.replace(',', '') for n in re.findall(r'(?<![A-Za-z0-9_])\d+(?:,\d{3})*(?:\.\d+)?', value))
-    source_numbers=numbers(original); target_numbers=numbers(translated)
+    source_numbers=_translation_numbers(original); target_numbers=_translation_numbers(translated)
     if any(target_numbers[n] < count for n,count in source_numbers.items()):
         raise RuntimeError('번역 중 원문의 수치가 변경되거나 누락됐습니다.')
 
@@ -465,15 +506,16 @@ def collect_reply_jobs(posts, cache, force=False, stats=None, chunk=None):
             if not paragraphs:
                 continue
             h = content_hash(text)
+            detector = needs_body_translation if key.startswith('quote:') else needs_reply_translation
             cached = cache.get(key)
             if cached and not force:
-                valid_cached = valid_translation_cache(cached, paragraphs, needs_reply_translation)
+                valid_cached = valid_translation_cache(cached, paragraphs, detector)
                 if cached.get('content_hash') == h and cached.get('status') == 'ok' and valid_cached:
                     continue
                 if cached.get('content_hash') != h:
                     print(f"  답글 해시 변경 → 재번역: {key[:60]}")
             real_indices = [i for i, p in enumerate(paragraphs)
-                            if needs_reply_translation(p) and not is_placeholder(p)]
+                            if detector(p) and not is_placeholder(p)]
             if not real_indices:
                 continue
             # 최근 실패 쿨다운: 실패한 앞쪽 작업을 이번 실행에서 건너뛰어
