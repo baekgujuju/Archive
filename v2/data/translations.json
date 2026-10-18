@@ -6064,5 +6064,213 @@
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
     "failed_at": "2026-10-18T04:36:30.957302+00:00"
+  },
+  "reply:2108052272643264834:2108060857909354785": {
+    "paragraphs": [
+      "the helm cli never made rollback previews this easy"
+    ],
+    "translated": [],
+    "content_hash": "7404a45c2f1d86b5",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183043+00:00"
+  },
+  "reply:2108245653843509415:2108247768397697034": {
+    "paragraphs": [
+      "I'm literally doing this right now"
+    ],
+    "translated": [],
+    "content_hash": "4ccc2c1f7056eb03",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183133+00:00"
+  },
+  "reply:2108052272643264834:2108304040685920278": {
+    "paragraphs": [
+      "Helm Dashboard = the new ArgoCD? tbh still a neat UI for rollbacks."
+    ],
+    "translated": [],
+    "content_hash": "5db88482d68466a9",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183050+00:00"
+  },
+  "reply:2108077430389019121:2108088135179747675": {
+    "paragraphs": [
+      "Have you figured out if selling after 3 days vs 5 days is better? Wondering if you’ve tested both and found one to have better results"
+    ],
+    "translated": [],
+    "content_hash": "3004b65e9b589aba",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183069+00:00"
+  },
+  "reply:2108196720706478249:2108200862216761346": {
+    "paragraphs": [
+      "걍 뭐 설명하다 올려서 여기에도 올림. ONDO 매수했음.",
+      "타래? 읽어보면 알겠지만 최소 1시간봉까지는 쪼개 내려가는 것이 이롭다.",
+      "본좌는 안 피곤하면 1분봉까지 내려가고, 컨디션이 영 아닌 날에는 5~15분봉에서 해결함. x.com/tmmrwseoul/sta…"
+    ],
+    "translated": [],
+    "content_hash": "2214cede924babb3",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183084+00:00"
+  },
+  "reply:2108077430389019121:2108109366251622519": {
+    "paragraphs": [
+      "This is a very smart approach, but increases the complexity and its not easy",
+      "But well executed, it obvisouly has huge edge"
+    ],
+    "translated": [],
+    "content_hash": "93aa14860ea1b93c",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183064+00:00"
+  },
+  "reply:2108052272643264834:2108058749827215464": {
+    "paragraphs": [
+      "Isn’t this what people use ArgoCD for?"
+    ],
+    "translated": [],
+    "content_hash": "e5d924dbadf8e818",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.182987+00:00"
+  },
+  "reply:2108245653843509415:2108272591920353561": {
+    "paragraphs": [
+      "I'll probably do a full guide on REA at https://forwardfuture.com (go subscribe)"
+    ],
+    "translated": [],
+    "content_hash": "32cb245f51a3fb2b",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183095+00:00"
+  },
+  "reply:2108077430389019121:2108107818964500728": {
+    "paragraphs": [
+      "As a Bayesian, my entries, exits, setups, and position size on every trade all depend on current market conditions. That's why I run a situational-awareness check every day.",
+      "In a choppy market like this one, I sell my entire position within 1–3 days of entry. In a low-volatility"
+    ],
+    "translated": [],
+    "content_hash": "8e0517ba3a684a9b",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183056+00:00"
+  },
+  "reply:2108124964285243888:2108125384416145444": {
+    "paragraphs": [
+      "이런 플레이는 강세청산의 이점입니다. 이번 추세에서 약세청산을 노렸다면 10EMA나 20EMA 이탈마감에서 청산이 나가기 때문에, 어제는 시장에서 나오는 시간이지 들어가는 시간이 아닙니다.",
+      "강세청산을 이용하면 자유도가 더 높아진다는 소리입니다."
+    ],
+    "translated": [],
+    "content_hash": "dbefe7d228a03137",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183078+00:00"
+  },
+  "reply:2108077430389019121:2108094641006629330": {
+    "paragraphs": [
+      "Yes I have written about it here"
+    ],
+    "translated": [],
+    "content_hash": "aee77686d738dc20",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183074+00:00"
+  },
+  "reply:2108245653843509415:2108258088952496203": {
+    "paragraphs": [
+      "totally. feels like the early wild west of napster. lawsuits incoming."
+    ],
+    "translated": [],
+    "content_hash": "a278f545c95178cb",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183101+00:00"
+  },
+  "reply:2108245653843509415:2108247053306622445": {
+    "paragraphs": [
+      "Wonder if we can reverse engineer Excel"
+    ],
+    "translated": [],
+    "content_hash": "ab3c0da9dc6e2f4c",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183130+00:00"
+  },
+  "reply:2108245653843509415:2089327156274790890": {
+    "paragraphs": [
+      "Chrome was too heavy for AI agents",
+      "Moli: The Ultimate headless browser for AI agents",
+      "- 1/7 memory, 2/3 CPU, 4× faster cold start\n- Crawl more web pages\n- Full automation support",
+      "Open source, Pure Rust."
+    ],
+    "translated": [],
+    "content_hash": "f80a3fb77c9e3ba2",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183126+00:00"
+  },
+  "reply:2108218393568719269:2108263558312308961": {
+    "paragraphs": [
+      "the permission-hardened tools thing is what gets me, most agents just yolo your whole filesystem"
+    ],
+    "translated": [],
+    "content_hash": "e1c346da6c5f3f4e",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183091+00:00"
+  },
+  "reply:2108245653843509415:2108253690696016068": {
+    "paragraphs": [
+      "Napster moment, piracy in the wild.  I'd expect this to be met with some lawsuits for anyone trying to publish."
+    ],
+    "translated": [],
+    "content_hash": "755fd66084ece656",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183098+00:00"
+  },
+  "reply:2108218393568719269:2108218405862121952": {
+    "paragraphs": [
+      "GitHub Repository:"
+    ],
+    "translated": [],
+    "content_hash": "6a327864b18895ed",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183087+00:00"
+  },
+  "reply:2108977796576109007:2109078371103818115": {
+    "paragraphs": [
+      "이안님 혹시 지금 QQQ는 신고가 근처에서 강세인데 iwm같은건 좀 디커플링 되고 같이 못가고 마켓 브레쓰도 안좋은거같은데 항상 스크리너에 소형주 위주로 잡혀서 월초 스탑이 많이 터진거같은데 이런 경우에는 어떤식으로 매매하시나요?? 대형주만 건든다거나 다른 방법을 이용하시나요?"
+    ],
+    "translated": [],
+    "content_hash": "df0de7d7f5f21a48",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183137+00:00"
+  },
+  "reply:2108175372131217670:2108175373662097773": {
+    "paragraphs": [
+      "요즘 GitHub에서 빠르게 뜨고 있는 REA 👇"
+    ],
+    "translated": [],
+    "content_hash": "11247e6492c8565c",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:08.183081+00:00"
+  },
+  "reply:2108875238796583045:2108976671005323605": {
+    "paragraphs": [
+      "I'm definitely impressed with your high level of detail and diligence."
+    ],
+    "translated": [],
+    "content_hash": "867af22a82ee51a1",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T04:43:17.769488+00:00"
   }
 }
