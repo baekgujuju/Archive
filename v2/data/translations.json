@@ -4256,5 +4256,207 @@
     "status": "ok",
     "translated_at": "2026-10-18T01:18:36.634314+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:1316391190879711233:1317102320052678659": {
+    "paragraphs": [
+      "I admit 345 sins hahaha i ll fix it (greed)"
+    ],
+    "translated": [],
+    "content_hash": "1dbceb9d86a7f5e7",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246163+00:00"
+  },
+  "reply:2106003114780430513:2106003118282748173": {
+    "paragraphs": [
+      "Capa를 사지 말고 Complexity를 사라."
+    ],
+    "translated": [],
+    "content_hash": "0f9767f509fe3cd8",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246151+00:00"
+  },
+  "reply:1316391190879711233:1316391458899976193": {
+    "paragraphs": [
+      "thank you for sharing"
+    ],
+    "translated": [],
+    "content_hash": "a473c1197b11aeb4",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246172+00:00"
+  },
+  "reply:2041741766395633687:2041771586315776111": {
+    "paragraphs": [
+      "Ya lo probé está muy loco"
+    ],
+    "translated": [],
+    "content_hash": "dbc1bd803fe412d2",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246199+00:00"
+  },
+  "reply:2041741766395633687:2041787053759680969": {
+    "paragraphs": [
+      "Y el latigo?"
+    ],
+    "translated": [],
+    "content_hash": "e344f09efb687dcb",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246214+00:00"
+  },
+  "reply:2106000342475522264:2106206852145184916": {
+    "paragraphs": [
+      "도시바가 HDD에 약 600억 엔을 넣어 생산능력을 2배로 늘리는 계획에 Seagate가 프리마켓에서 10%대 하락했습니다. 공급 확대가 가격 협상력을 건드리는 구간으로 읽힙니다."
+    ],
+    "translated": [],
+    "content_hash": "0dd62cc824ff466c",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246144+00:00"
+  },
+  "reply:1316391190879711233:1316392531517558786": {
+    "paragraphs": [
+      "Leaving some money on Table is much better than giving it back to market,",
+      "Important Lesson learned in the beginning of career"
+    ],
+    "translated": [],
+    "content_hash": "96190f4dd18ab4e0",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246166+00:00"
+  },
+  "reply:2041741766395633687:2041960806087025147": {
+    "paragraphs": [
+      "cloning a site's css is neat but calling it 'web design changed' is a stretch, it's just automated theft of someone else's design system"
+    ],
+    "translated": [],
+    "content_hash": "966fd721d7a4300b",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246270+00:00"
+  },
+  "reply:1316391190879711233:1316391841923698688": {
+    "paragraphs": [
+      "Thanks for great reminder. It’s really painful because I didn’t follow the rules. I got mistake because I want to gain profit by lucky. 😞"
+    ],
+    "translated": [],
+    "content_hash": "015425a53689ab61",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246169+00:00"
+  },
+  "reply:2034487536194822651:2034488295665934694": {
+    "paragraphs": [
+      "스크리너는, Stock Picking 과정에서의 내 감정을 배제해주는 정말 좋은 도구입니다만 이 개념은 이미 해외에서는 정말 유명하고, 국내에서는 검색식만 몇십 받고 판매하는 분들도 계신데 그 정도는 아닙니다... 결국 셋업 공부는 따로 해야됩니다."
+    ],
+    "translated": [],
+    "content_hash": "260f4cd084fd2bbe",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246190+00:00"
+  },
+  "reply:2041151720601100593:2041151720601100593": {
+    "paragraphs": [
+      "비개발자를 위한 Claude 활용 가이드"
+    ],
+    "translated": [],
+    "content_hash": "bc035723d5982681",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246195+00:00"
+  },
+  "reply:1316391190879711233:1316766054367088640": {
+    "paragraphs": [
+      "@Sommerize\n This guy is mythic in his financial investing wisdom. See this post."
+    ],
+    "translated": [],
+    "content_hash": "5f52ac07209183d9",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246182+00:00"
+  },
+  "reply:1316391190879711233:1316392480984625152": {
+    "paragraphs": [
+      "Why its difficult to avoid 2nd Mistake..",
+      "In Mark's Own word.."
+    ],
+    "translated": [],
+    "content_hash": "6d8eeca8498512d1",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246157+00:00"
+  },
+  "reply:1316391190879711233:1316428649000833027": {
+    "paragraphs": [
+      "I will frame this all over my walls. This is golden advise and only few people can acknowledge and admit it. I am going through this phase and want to come over the same. Thanks sir."
+    ],
+    "translated": [],
+    "content_hash": "d1f1c00cf0391424",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246186+00:00"
+  },
+  "reply:2041741766395633687:2042022645244244413": {
+    "paragraphs": [
+      "npx skillfish add julianromli/ai-skills clone-website"
+    ],
+    "translated": [],
+    "content_hash": "c2ad3fc7a860b47d",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246266+00:00"
+  },
+  "reply:1316391190879711233:1316392545702739968": {
+    "paragraphs": [
+      "It’s difficult to get a balance between all these points...."
+    ],
+    "translated": [],
+    "content_hash": "529f13e7a6eadb95",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246179+00:00"
+  },
+  "reply:2041741766395633687:2041747467243282858": {
+    "paragraphs": [
+      "ah pos eso ya se hacia, pero si seguro lo hace ahora con un prompt nomas xd"
+    ],
+    "translated": [],
+    "content_hash": "a446ef842d199a14",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246204+00:00"
+  },
+  "reply:2041741766395633687:2041786459959480539": {
+    "paragraphs": [
+      "Pero es editable luego?"
+    ],
+    "translated": [],
+    "content_hash": "ebb7d20da3c3ed2e",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246209+00:00"
+  },
+  "reply:1316391190879711233:1318678414207946754": {
+    "paragraphs": [
+      "Classic mistakes. We’ve all made them"
+    ],
+    "translated": [],
+    "content_hash": "2de585e19d75a17d",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246176+00:00"
+  },
+  "reply:2106000342475522264:2106003461318033469": {
+    "paragraphs": [
+      "hdd가 ssd시장에 영향 미치는건 어떻게 생각하시나요 ? \n포트중 하나에 고민거리가 생겻네요 ㅋㅋㅋㅋ"
+    ],
+    "translated": [],
+    "content_hash": "d44e27fed587cb3d",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-18T03:50:23.246100+00:00"
   }
 }
