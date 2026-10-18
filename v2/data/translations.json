@@ -8978,5 +8978,17 @@
     "status": "ok",
     "translated_at": "2026-10-18T13:39:07.376363+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2111823404953489719:2111823568489312389": {
+    "paragraphs": [
+      "해당 포스팅에 영감을 얻어 정리하였습니다.https://x.com/RealNickMugalli/status/2111806127558082807 · RealNickMugalli"
+    ],
+    "translated": [
+      "해당 게시물에서 영감을 받아 정리했습니다.https://x.com/RealNickMugalli/status/2111806127558082807 · RealNickMugalli"
+    ],
+    "content_hash": "eccc919f2852231d",
+    "status": "ok",
+    "translated_at": "2026-10-18T14:57:24.929527+00:00",
+    "chunk": "posts-x.json"
   }
 }

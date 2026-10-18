@@ -19254,7 +19254,7 @@
       "tweetId": "2111686757024739648",
       "sourceUrl": "https://x.com/mason_yoon94/status/2111686757024739648",
       "capturedAt": "2026-10-18T13:28:44.313493+00:00",
-      "createdAt": "",
+      "createdAt": "2026-10-18T05:12:10.000Z",
       "fullText": "거래량은 죽었는데 가격이 안 빠질 때 \n\n보통은 거래량이 확 죽으면 가격은 빠지는 게 정상이다.\n그런데 안 빠지고 버틴다면 누군가 그 가격에서 계속 받아 주고 있다는 뜻이다.\n\n개인적으로 내가 제일 좋아하던 자리다.",
       "author": {
         "handle": "@Mason_yoon94",
@@ -19288,6 +19288,63 @@
             "name": "TheoDore (@theodore_invest)"
           },
           "media": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111689642194206853",
+          "sourceUrl": "https://x.com/Mason_yoon94/status/2111689642194206853",
+          "capturedAt": "2026-10-18T14:54:43.580555+00:00",
+          "createdAt": "2026-10-18T05:23:38.000Z",
+          "fullText": "예시사진",
+          "author": {
+            "handle": "@Mason_yoon94",
+            "name": "원문 · Mason_yoon94 · 2026-10-18T05:23:38.000Z"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d463080482255c34314fb3cb1e7bf3b115c06dc2649872b24d6d51f5f3b033fd.jpg"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111689249854779408",
+          "sourceUrl": "https://x.com/Mason_yoon94/status/2111689249854779408",
+          "capturedAt": "2026-10-18T14:54:43.580555+00:00",
+          "createdAt": "2026-10-18T05:22:05.000Z",
+          "fullText": "이게 어렵다면 말씀해주세요 \n더 쉬운지표가 있습니다",
+          "author": {
+            "handle": "@Mason_yoon94",
+            "name": "원문 · Mason_yoon94 · 2026-10-18T05:22:05.000Z"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-87ab6d1e5d98da6c65ec39b46953a271f78af3fb830f3c1f899bc8ce14a77eb5.png"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2061896199805026589",
+          "sourceUrl": "https://x.com/Starlink/status/2061896199805026589",
+          "capturedAt": "2026-10-18T14:54:43.580555+00:00",
+          "createdAt": "",
+          "fullText": "빠르고 안정적인 인터넷 서비스를 통해 스트리밍, 화상통화, 온라인 게임 등을 마음껏 이용하세요.\n\n몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
+          "author": {
+            "handle": "@Starlink",
+            "name": "원문 · Starlink ·"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-9d9122820c0c855ec51a2215d30ddb826dcd98aaf309d162c1161b668c213bed.jpg"
+            }
+          ],
           "stats": {},
           "isThread": false
         }
@@ -20059,6 +20116,161 @@
         "replies_scope": {
           "collected": 0,
           "max": 100
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2111823404953489719",
+      "sourceUrl": "https://x.com/Alisvolatprop12/status/2111823404953489719",
+      "capturedAt": "2026-10-18T14:54:37.787555+00:00",
+      "createdAt": "2026-10-18T14:15:10.000Z",
+      "fullText": "Cantor Fitzgerald의 반도체/AI 기업 목표가와 현재 주가 괴리도(업사이드) 순으로 정렬한 표입니다.\n\n목표가를 제시한 28개 기업을 대상으로 한 데이터이고, 목표가 제시일이 오래된 곳도 최근에 새로 낸 곳, 상향/유지/하향도 함께 정리했으니 참고하시길 바랍니다.\n\n투자 조언/권고가 아닙니다.",
+      "author": {
+        "handle": "@Alisvolatprop12",
+        "name": "https://x.com/Alisvolatprop12/status/2111823404953489719 · Alisvolatprop12 · 2026-10-18T14:15:10.000Z"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-2529e90935504100238159596e4c96a6408fd88af97f0ba9a08cfad0f7e5a687.jpg"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2111823568489312389",
+          "sourceUrl": "https://x.com/Alisvolatprop12/status/2111823568489312389",
+          "capturedAt": "2026-10-18T14:54:37.787555+00:00",
+          "createdAt": "2026-10-18T14:15:49.000Z",
+          "fullText": "해당 포스팅에 영감을 얻어 정리하였습니다.https://x.com/RealNickMugalli/status/2111806127558082807 · RealNickMugalli",
+          "author": {
+            "handle": "@Alisvolatprop12",
+            "name": "원문 · Alisvolatprop12 · 2026-10-18T14:15:49.000Z"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5f9d6640f4a86b35ae65c71b3ece5ed3548ed413e4c5dca1b5abcb2e0e699f23.jpg"
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c58b8dab3751425e875d354523220d52de7440ac29f1b1e7a3bae135ef17144a.jpg"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111827934076182998",
+          "sourceUrl": "https://x.com/jessikim0317/status/2111827934076182998",
+          "capturedAt": "2026-10-18T14:54:37.787555+00:00",
+          "createdAt": "2026-10-18T14:33:10.000Z",
+          "fullText": "저...\n낼 블랙먼데이 라며 많이들\n떨고 계시던데 알리스님은\n어떻게 생각하시나요?🤭",
+          "author": {
+            "handle": "@jessikim0317",
+            "name": "원문 · jessikim0317 · 2026-10-18T14:33:10.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111830209708331318",
+          "sourceUrl": "https://x.com/Alisvolatprop12/status/2111830209708331318",
+          "capturedAt": "2026-10-18T14:54:37.787555+00:00",
+          "createdAt": "2026-10-18T14:42:12.000Z",
+          "fullText": "뭐… 큰 걱정 할 필요 있겠습니까. 다 아는 이야기인데요.",
+          "author": {
+            "handle": "@Alisvolatprop12",
+            "name": "원문 · Alisvolatprop12 · 2026-10-18T14:42:12.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111824650124800193",
+          "sourceUrl": "https://x.com/Alexgernberg/status/2111824650124800193",
+          "capturedAt": "2026-10-18T14:54:37.787555+00:00",
+          "createdAt": "2026-10-18T14:20:07.000Z",
+          "fullText": "만약 조정 구간이 온다면 어떤 노이즈를 만들어낼까 생각했었는데 공포마케팅이 제법 먹히나봅니다. 감사합니다!",
+          "author": {
+            "handle": "@Alexgernberg",
+            "name": "원문 · Alexgernberg · 2026-10-18T14:20:07.000Z"
+          },
+          "media": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.6",
+        "requested_url": "https://x.com/Alisvolatprop12/status/2111823404953489719",
+        "observed_main_url": "https://x.com/Alisvolatprop12/status/2111823404953489719",
+        "author_handle": "Alisvolatprop12",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2111829688427639079",
+      "sourceUrl": "https://x.com/Mason_yoon94/status/2111829688427639079",
+      "capturedAt": "2026-10-18T14:54:49.001555+00:00",
+      "createdAt": "2026-10-18T14:40:08.000Z",
+      "fullText": "CVD 다이버전스는 \n딱 두개 뿐입니다.\n\n나머지는 다이버전스가 나도 \n근거로 채용 하면안됩니다\n\n사진의 1번과 2번만 기억하면 끝이에요",
+      "author": {
+        "handle": "@Mason_yoon94",
+        "name": "https://x.com/Mason_yoon94/status/2111829688427639079 · Mason_yoon94 · 2026-10-18T14:40:08.000Z"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-094f7c354ad782d6fa32c7299f026372293272468de827876fe0e90fa6e93e78.jpg"
+        }
+      ],
+      "stats": {},
+      "quoted": {
+        "tweetId": "2111686757024739648",
+        "sourceUrl": "https://x.com/Mason_yoon94/status/2111686757024739648",
+        "capturedAt": "2026-10-18T14:54:49.001555+00:00",
+        "createdAt": "",
+        "fullText": "",
+        "author": {
+          "handle": "@Mason_yoon94",
+          "name": "https://x.com/Mason_yoon94/status/2111686757024739648 · Mason_yoon94"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-357085181543899aa2774ad0a4b2bac113353dcbec6d13bb718e5507681a4215.jpg"
+          }
+        ],
+        "stats": {}
+      },
+      "replies": [],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.6",
+        "requested_url": "https://x.com/Mason_yoon94/status/2111829688427639079",
+        "observed_main_url": "https://x.com/Mason_yoon94/status/2111829688427639079",
+        "author_handle": "Mason_yoon94",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
         },
         "capture_type": "text"
       }

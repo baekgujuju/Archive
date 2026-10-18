@@ -4019,5 +4019,25 @@
     "category_ko": "금융·정책 테마 투자",
     "owner_hint": "JP Morgan",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:094f7c354ad782d6fa32c7299f026372293272468de827876fe0e90fa6e93e78": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "가격과 CVD 다이버전스를 활용한 매매 패턴",
+    "description_ko": "시장가 매수량과 매도량의 차이인 델타를 설명하고, 가격과 누적 거래량 델타(CVD)의 움직임을 비교한 네 가지 사례를 제시한다. 지정가 매수·매도 위치와 롱·숏 진입 및 매수 회피 상황을 도식으로 표시한다.",
+    "category_ko": "금융·투자 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2529e90935504100238159596e4c96a6408fd88af97f0ba9a08cfad0f7e5a687": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Cantor Fitzgerald 반도체·AI 목표가 vs 10/16 종가 — 업사이드 순",
+    "description_ko": "반도체·AI 관련 28개 종목의 목표가, 2026년 10월 16일 종가, 상승 여력, 목표가 발표 날짜와 조치를 비교한 표다. 상승 여력 순으로 MKSI, WDC, MU 등이 나열되며, 가격 출처는 Yahoo Finance, 목표가 출처는 @RealNickMugalli 게시물로 표기되어 있다.",
+    "category_ko": "금융·투자 종목 비교",
+    "owner_hint": "@RealNickMugalli",
+    "provider": "codex"
   }
 }
