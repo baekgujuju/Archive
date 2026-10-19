@@ -37,6 +37,14 @@
 
  'use strict';
 
+// Network data remains usable when Safari storage is full or unavailable.
+let activeTranslationMap = null;
+function saveOptionalJsonCache(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); return true; }
+  catch (error) { console.warn('[bootstrap] 보조 캐시 저장 생략: ' + key); return false; }
+}
+
+
 function showContentUpdated(manifest, offline) {
   const value=manifest&&(manifest.content_updated_at||manifest.version);
   const date=new Date(value||'');
@@ -501,9 +509,9 @@ async function boot() {
   updateLoading('화면 그리는 중...');
   // 큰 HTML 문자열 생성을 다음 프레임으로 양보 (로딩 UI가 먼저 그려지도록)
   await new Promise((resolve) => setTimeout(resolve, 0));
-  try {const mapResponse=await fetch('data/media-map.json',{cache:'no-cache'});if(!mapResponse.ok)throw new Error('Media map unavailable');if(mapResponse.ok){window.ArchiveMediaMap=await mapResponse.json();localStorage.setItem('archive-media-map',JSON.stringify(window.ArchiveMediaMap));}}catch(e){try{window.ArchiveMediaMap=JSON.parse(localStorage.getItem('archive-media-map')||'{}');}catch(ignore){}}
-  try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();localStorage.setItem('archive-translations',JSON.stringify(translations));articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}}catch(e){try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}catch(ignore){}}
-  try{const response=await fetch('data/ai-tools.json',{cache:'no-cache'});if(response.ok){window.ArchiveToolMap=await response.json();localStorage.setItem('archive-ai-tools',JSON.stringify(window.ArchiveToolMap));}}catch(e){}
+  try {const mapResponse=await fetch('data/media-map.json',{cache:'no-cache'});if(!mapResponse.ok)throw new Error('Media map unavailable');if(mapResponse.ok){window.ArchiveMediaMap=await mapResponse.json();saveOptionalJsonCache('archive-media-map',window.ArchiveMediaMap);}}catch(e){try{window.ArchiveMediaMap=JSON.parse(localStorage.getItem('archive-media-map')||'{}');}catch(ignore){}}
+  try {if(!manifest.translations)throw new Error('No translations');const response=await fetch('data/translations.json',{cache:'no-cache'});if(response.ok){const translations=await response.json();activeTranslationMap=translations;saveOptionalJsonCache('archive-translations',translations);articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}}catch(e){try{const translations=activeTranslationMap||JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}catch(ignore){}}
+  try{const response=await fetch('data/ai-tools.json',{cache:'no-cache'});if(response.ok){window.ArchiveToolMap=await response.json();saveOptionalJsonCache('archive-ai-tools',window.ArchiveToolMap);}}catch(e){}
   renderArticles(articles, renderer, container, { offline: false });
   if(typeof window!=='undefined' && window.dispatchEvent) window.dispatchEvent(new Event('archive-data-loaded'));
   showOfflineBadge(false);
@@ -606,7 +614,7 @@ function renderArticles(articles, renderer, container, opts = {}) {
   function dateOf(a){if(a.type==='x'&&/^\d+$/.test(String(a.tweetId||a.id||''))){try{return Number((BigInt(a.tweetId||a.id)>>22n)+1288834974657n);}catch(e){}}return Date.parse(a.date_saved||a.createdAt||a.date||'')||0;}
   articles=articles.slice().sort((a,b)=>dateOf(b)-dateOf(a));
   articles = articles.map((article) => renderer.normalizeArticle ? renderer.normalizeArticle(article) : article);
-  try{const translations=JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{if(!a.translation)a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}catch(e){}
+  try{const translations=activeTranslationMap||JSON.parse(localStorage.getItem('archive-translations')||'{}');articles.forEach(a=>{if(!a.translation)a.translation=translations[a.tweetId||a.id||a.pinId];attachReplyTranslations(a,translations);});}catch(e){}
   const offline = !!opts.offline;
   let html;
   try {

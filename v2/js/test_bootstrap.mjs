@@ -283,6 +283,27 @@ function runBootstrap(env) {
   check('T8: 깨진 청크 제외하고 렌더링', env.renderedCards.length === 2);
 }
 
+// A storage failure must not discard a successful network translation response.
+for (const mode of ['full','stale','blocked']) {
+  const original = 'Fresh source';
+  const post = {tweetId:'1',fullText:original,replies:[{tweetId:'200',fullText:'Reply'}],quoted:{tweetId:'300',fullText:'Quote'}};
+  const fresh = {'1':{status:'ok',paragraphs:[original],translated:['새 본문 번역']},'reply:1:200':{status:'ok',paragraphs:['Reply'],translated:['새 댓글 번역']},'quote:1:quote:300':{status:'ok',paragraphs:['Quote'],translated:['새 인용 번역']}};
+  const env=makeEnv({manifestRes:{...MANIFEST_V1,translations:{sha256:'fresh'}},chunkRes:{...CHUNKS_V1,'data/posts-x.json':{posts:[post]},'data/translations.json':fresh},quotaFail:true});
+  if(mode==='stale')env.store.set('archive-translations',JSON.stringify({'1':{status:'ok',translated:['오래된 번역']}}));
+  if(mode==='blocked')env.localStorage.getItem=()=>{throw new Error('SecurityError');};
+  await runBootstrap(env);
+  const a=env.renderedCards.find(x=>x.article.tweetId==='1')?.article;
+  check('T9 '+mode+': 새 본문 번역 표시',a?.translation?.translated?.[0]==='새 본문 번역');
+  check('T9 '+mode+': 새 댓글 번역 유지',a?.replies?.[0]?.translation?.translated?.[0]==='새 댓글 번역');
+  check('T9 '+mode+': 새 인용 번역 유지',a?.quoted?.translation?.translated?.[0]==='새 인용 번역');
+}
+{
+ const cached={'1':{status:'ok',paragraphs:['hello'],translated:['오프라인 번역']}};
+ const env=makeEnv({manifestRes:{...MANIFEST_V1,translations:{sha256:'cached'}},chunkRes:{...CHUNKS_V1,'data/translations.json':new Error('network')}});
+ env.store.set('archive-translations',JSON.stringify(cached));await runBootstrap(env);
+ check('T10: 번역 네트워크 실패 시 기존 캐시 사용',env.renderedCards.find(x=>x.article.tweetId==='1')?.article.translation?.translated?.[0]==='오프라인 번역');
+}
+
 console.log(`\n결과: ${passed} 통과, ${failed} 실패`);
 process.exit(failed ? 1 : 0);
 
