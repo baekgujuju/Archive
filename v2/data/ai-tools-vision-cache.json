@@ -4049,5 +4049,185 @@
     "category_ko": "금융·트레이딩 차트",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f9117cd44166966207745b66a9ffb42b594b426f0b633502f345af41b4a271da": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "FCC의 SpaceX D2D 위성 서비스 조건부 승인",
+    "description_ko": "FCC가 SpaceX의 D2D 위성망에 대해 일부 승인과 일부 판단 유보를 내린 문서다. 비정지궤도 위성 15,000기의 궤도 구성과 이동위성서비스(MSS), 우주 기반 보완 커버리지(SCS), 고정위성서비스(FSS)가 기재되어 있다.",
+    "category_ko": "위성통신·규제",
+    "owner_hint": "미국 연방통신위원회(FCC), SpaceX",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5405a2bf549b5fa0e3c3ede6ce91d81c0f47faf6725ecf5c4c959e0cabfbef2e": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SpaceX lags in the race for mobile spectrum",
+    "description_ko": "EchoStar, SpaceX, Verizon, AT&T, T-Mobile의 주파수 보유량을 저대역·중대역·FirstNet으로 비교한 막대그래프다. SpaceX의 주파수 보유량이 주요 이동통신사보다 적다는 점을 보여준다.",
+    "category_ko": "이동통신·주파수 비교",
+    "owner_hint": "Reuters Breakingviews",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cebd8a32e113abcacc0e26740dc13a9982633fd3869f4aa6c22e769ab9ece145": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "KT SAT x STARLINK",
+    "description_ko": "KT SAT의 Starlink 공식 리셀러 소개 화면이다. 저궤도 위성 인터넷으로 지상 네트워크가 닿지 않는 지역에도 연결을 제공한다는 설명과 지구 주변 위성망 이미지가 있다.",
+    "category_ko": "위성 인터넷·서비스 소개",
+    "owner_hint": "KT SAT, Starlink",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2aacfba998ce169284de54d94aa0cf325e90c538542a03b2bfc6c048d3f0344e": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GCT의 설계 매출에서 반복 칩 매출로 이어지는 사업 단계",
+    "description_ko": "라이선스·기존 설계·맞춤 개발을 통한 매출, 통신망 인증과 제조사 제품 채택, 단말 생산 확대에 따른 칩·모듈 반복 주문의 세 단계를 설명한다. 하단에는 Phase 2 진입과 파트너의 기능·레퍼런스 확보를 기대하는 투자 의견이 있다.",
+    "category_ko": "반도체·사업화 및 투자 분석",
+    "owner_hint": "GCT 관련 분석 자료, 작성자 미상",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8e70fa2dbeb86af273abb57d02b9e511ee378245acc8057213a7a89db074120b": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "위성 서비스 가입과 GCT 신규 칩 매출의 관계",
+    "description_ko": "기존 휴대폰으로 위성 서비스에 가입하는 경우에는 GCT 신규 칩 수요가 불명확하지만, 새 단말 설치·교체 과정에서 GCT 칩 탑재 제품이 채택되면 출하 대수에 따라 칩 매출이 발생한다는 흐름도다.",
+    "category_ko": "반도체·매출 구조 분석",
+    "owner_hint": "GCT 관련 분석 자료, 작성자 미상",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:19190d076cc4f1f09d6d34354d7ec38d03b6fb9e1dd91719be4e528a8cb4de66": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "통신 단말 유형별 GCT 제품의 적용 범위",
+    "description_ko": "가정용 5G 인터넷, 위성·지상 겸용 단말, 저전력 센서·계량기, 스타링크 연결 소형 기지국을 비교한다. GCT의 5G 모뎀·RF 송수신기와 IoT 칩 역할을 구분하고, 소형 기지국용 공개 GCT 제품은 없다고 표시한다.",
+    "category_ko": "통신 반도체·제품 적용 분석",
+    "owner_hint": "GCT 관련 분석 자료, 작성자 미상",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d87c64413c1d57065073e01d5b243e4ebe6316f00a82ca879804a50d0dfd78d6": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "스타링크 접시 옆에 작은 기지국을?",
+    "description_ko": "스타링크 접시가 위성 인터넷을 받고, 추가한 소형 기지국과 실내 펨토셀이 주변 휴대폰에 이동통신 연결을 제공하는 구상을 설명한 그림.",
+    "category_ko": "위성 인터넷·소형 기지국 구성도",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:abe63acccaebdcd3e886f11545638f5dbd541f77aeea0acc3d6ae6bcd0a2040e": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "위성·이동통신 장비별 구성 요소와 GCT 공급 영역",
+    "description_ko": "위성사업자 겸용 UE, FWA 게이트웨이, 위성 겸용 IoT 모듈, 스타링크 펨토셀 구상의 구성 요소를 비교한다. GCT 칩·라이선스 공급 영역과 다른 업체 공급 영역, GCT에 해당 제품이 없는 펨토셀 베이스밴드 영역을 표시한다.",
+    "category_ko": "통신 반도체·제품 구성 비교",
+    "owner_hint": "GCT",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f4bc9f701d435797dc99f0a7847bc1160dc6f8201d463e50d5458e70a8cb38bd": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "칩 가격만큼 중요한 것, 한 번에 설치할 수 있는가",
+    "description_ko": "옥상에서 작업자가 위성 접시와 통신 장비를 설치하는 장면으로, 칩 가격과 함께 장비의 통합 설치 편의성이 중요하다는 메시지를 전달한다.",
+    "category_ko": "통신 장비 설치·구축",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:817c8535e6b82e0351c55dd1c822c3cf57ca1f681ad93718400ebceb694e142f": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "이용 상황별 위성·펨토셀 연결 경로와 역할",
+    "description_ko": "지상 기지국이 없는 야외, 집·사업장·시설 주변, 별도 지상 인터넷 회선이 있는 장소를 구분하여 휴대폰의 연결 경로와 통신 공백 보완 역할을 정리한 표.",
+    "category_ko": "통신 연결 방식 비교표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2c27afc1f82a1104b835616c972a447a6a94dd07894e45f43e6090dc383d8fc4": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "스타링크·소형 기지국 제품화 가설과 구매 동기",
+    "description_ko": "이동통신 기능을 넣은 차세대 스타링크 단말, 기존 접시에 연결하는 추가 장치, 기업·농장·리조트용 소형 기지국, 이동식·재난 대응 장비의 구매 동기와 수요 발생 지점을 비교한다.",
+    "category_ko": "통신 장비 사업화·수요 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:23cb55187a41aba0efecede10e11cb48e5ecb65e39700f216faf45a8b921649e": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GCT가 펨토셀 시장에 참여하는 3가지 경로",
+    "description_ko": "GCT의 펨토셀 시장 참여 경로를 기지국 칩 신규 개발, 한 장비에 두 역할 통합, 고객 맞춤 개발·라이선스로 나누어 설명한다. 각 경로의 개발 필요성, 기존 제품과의 거리, 계약 및 채택 조건을 제시한다.",
+    "category_ko": "통신 반도체 시장 진출 전략",
+    "owner_hint": "GCT",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4a5fb94bc2ee8822a871a76965af351f729e79878f61c5bb09a636bd44ae8a00": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "LTE-A 이종 네트워크의 셀 간 간섭",
+    "description_ko": "피코셀과 펨토셀이 있는 LTE-A 이종 네트워크에서 인접 셀 간 간섭으로 매크로셀의 커버리지와 수신 성능이 저하된다는 영문 설명이다. femto 단어가 주황색으로 강조되어 있다.",
+    "category_ko": "이동통신 기술",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8794f0dc0dde887a0b151d4a3dd1956dad4ba282f9442b136d94f6551a663871": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GCT 장비 채택 시나리오별 연간 매출 추정",
+    "description_ko": "신규 장비 출하량, 기능 탑재율, GCT 점유율과 장비당 45달러 매출을 기준으로 세 가지 시나리오를 비교한 표다. 연간 GCT 매출은 각각 18만 달러, 675만 달러, 6,750만 달러로 제시된다.",
+    "category_ko": "기업 매출 시나리오",
+    "owner_hint": "GCT",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:737d41a92077beeb93fa728112db2c3235b2a8951516ee2816e5ca9c8dd6de3d": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GCT와 SpaceX 관련 투자 가설 확인 항목",
+    "description_ko": "SpaceX 단말 사양, 장비 내부 부품과 제조사, GCT 공동 개발 발표, 고객 단말 용도, 공급 기능과 계약 대가, 반복 발주 여부를 통해 투자 가설을 검증하는 표다.",
+    "category_ko": "투자 분석 체크리스트",
+    "owner_hint": "GCT, SpaceX",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:692085b028b07dff824448bfcb12882bb53b44189a09ee597b142e5cd516ff86": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GCTS의 2029년 시나리오별 기업가치 추정",
+    "description_ko": "약세·기준·강세 시나리오에 따라 매출, 기업가치 대비 매출 배수, 순차입금 및 시가총액을 비교한다. 시가총액 대표값은 각각 3,500만 달러, 3억 5,000만 달러, 13억 7,500만 달러이며, 현재 시가총액은 2026년 10월 18일 기준 1,420만 달러로 표시되어 있다.",
+    "category_ko": "기업가치 평가",
+    "owner_hint": "GCTS",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2516d4a26af3fff5d4c98f5d41232ff815a6d19386133aefc11c4bda51448380": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "달러 기호와 반도체 칩 일러스트",
+    "description_ko": "커다란 달러 기호와 반도체 칩을 검은색 곡선 무늬와 결합한 흑백 이미지다.",
+    "category_ko": "반도체·금융 일러스트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4aa69b9d6e464c6368584c0c957652b4ef82d9c49f107673c256b3feed0cf5d6": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Indian Railway Finance Corp. 일봉 돌파 패턴",
+    "description_ko": "인도 NSE의 Indian Railway Finance Corp. 일봉과 거래량 차트다. 강한 상승 추세 이후 좁은 가격 범위의 횡보 구간과 피벗 고점 돌파 진입 지점을 영문 주석으로 표시한다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Indian Railway Finance Corp.",
+    "provider": "codex"
   }
 }
