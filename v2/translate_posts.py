@@ -434,7 +434,7 @@ def _translation_numbers(text):
            'thousand':1000,'thousands':1000,'mil':1000,'mille':1000,
            'million':1000000,'millions':1000000,'milhão':1000000,'milhões':1000000,'millón':1000000,'millones':1000000,'millionen':1000000,
            'billion':1000000000,'billions':1000000000,'bilhão':1000000000,'bilhões':1000000000}
-    unit_pattern='|'.join(re.escape(u) for u in sorted(units,key=len,reverse=True))
+    unit_pattern='|'.join(re.escape(u)+(r'(?!-[A-Za-z])' if u in {'k','m','b'} else '') for u in sorted(units,key=len,reverse=True))
     pattern=r'(?<![A-Za-z0-9_])(?P<number>\d+(?:,\d{3})*(?:\.\d+)?)(?:\s*(?P<unit>'+unit_pattern+r')(?![A-Za-zÀ-ž]))?'
     for m in re.finditer(pattern,value,re.I):
         number=Decimal(m['number'].replace(',',''))
