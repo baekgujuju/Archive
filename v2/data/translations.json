@@ -1825,8 +1825,8 @@
     "translated": [],
     "content_hash": "ffd23b35222c43a5",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-18T22:38:39.883341+00:00"
+    "error": "한국어 번역이 없는 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-19T03:08:19.491935+00:00"
   },
   "ib_pin_153193": {
     "paragraphs": [
@@ -2041,7 +2041,7 @@
     "content_hash": "c9fc67fd041e7ddb",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-18T22:38:39.883341+00:00"
+    "failed_at": "2026-10-19T03:08:52.938417+00:00"
   },
   "ib_pin_464396": {
     "paragraphs": [
@@ -9392,11 +9392,16 @@
       "Stanford, MIT, Harvard... all the courses. All in one place. Completely free.",
       "Github: http://github.com/Developer-Y/math-science-video-lectures…"
     ],
-    "translated": [],
+    "translated": [
+      "누군가 아이비리그 전체의 수학 및 과학 커리큘럼을 오픈소스로 공개했습니다.",
+      "스탠퍼드, MIT, 하버드... 모든 강의. 모두 한곳에. 완전 무료.",
+      "Github: http://github.com/Developer-Y/math-science-video-lectures…"
+    ],
     "content_hash": "18dc3be98542e39d",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-18T22:38:39.883341+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-19T03:09:28.321207+00:00",
+    "chunk": "posts-x.json"
   },
   "quote:2089327477214593238:quote:anonymous": {
     "paragraphs": [
@@ -9813,7 +9818,7 @@
     "content_hash": "0c5ad500cc02b565",
     "status": "failed",
     "error": "번역 중 원문의 수치가 변경되거나 누락됐습니다.",
-    "failed_at": "2026-10-18T23:34:42.303879+00:00"
+    "failed_at": "2026-10-19T03:09:28.325802+00:00"
   },
   "quote:2106758239396172254:quote:anonymous": {
     "paragraphs": [
