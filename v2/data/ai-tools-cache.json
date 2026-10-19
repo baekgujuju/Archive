@@ -930,7 +930,7 @@
     "version": 3
   },
   "2110735663859450138:ad67f83dcdd54966.jpg": {
-    "fingerprint": "a2fe0f1b665d720ece873fbf5cd7b72e0e3bf5f6a9185e0550c8404a80b6f8e7",
+    "fingerprint": "d37f7c3e11c503b5b29db3c1ad4c588c1a99c2ea145dc2d1160f86fbf1ead856",
     "entry": null,
     "version": 3
   },
@@ -1570,7 +1570,7 @@
     "version": 3
   },
   "2110745660136067271:56db3cbfe93a9cfd.jpg": {
-    "fingerprint": "888a8c6927a6faa0e7d42a84b4d04fe9a857c9a153ba28bebc8cff9bc4608de4",
+    "fingerprint": "b847fbd7ec893e77ace6b8e818e43dcacbca7e7c66888a316e748e1a8b241f2a",
     "entry": null,
     "version": 3
   },
@@ -2530,7 +2530,7 @@
     "version": 3
   },
   "2111363482327318750:a4e5b27ba2b24a33.jpg": {
-    "fingerprint": "b6fc5cd95c770504ccb50fe806afccc642d0eadb9a16add6cb77dc7bcea27500",
+    "fingerprint": "33a7c8444825fdb9bf8430a71bda64647543d58a09bbe8379ba284b325162102",
     "entry": {
       "title": "Squirrelly",
       "summary_ko": "TypeScript로 작성된 가볍고 매우 빠른 JavaScript 템플릿 엔진으로, partial, helper, 커스텀 태그 및 필터 등을 지원합니다.",
@@ -2540,12 +2540,12 @@
       "evidence": [
         "screenshot:name-match"
       ],
-      "fingerprint": "b6fc5cd95c770504ccb50fe806afccc642d0eadb9a16add6cb77dc7bcea27500"
+      "fingerprint": "33a7c8444825fdb9bf8430a71bda64647543d58a09bbe8379ba284b325162102"
     },
     "version": 3
   },
   "2111655621175153100:41c11ba97dc4e2f0.jpg": {
-    "fingerprint": "0808fcd927627c8892beb77a94ed69ec684f6e489b04e1a7c517b59b7afea019",
+    "fingerprint": "0d554a9508e736d4f44f57ec32db15bef075cc3e91976e87ec07f4b3c95dda6f",
     "entry": {
       "title": "browser-use",
       "summary_ko": "AI 에이전트가 웹사이트와 상호작용하고 자동화 작업을 수행할 수 있도록 돕는 오픈소스 라이브러리",
@@ -2555,7 +2555,7 @@
       "evidence": [
         "screenshot:phrase:browser use"
       ],
-      "fingerprint": "0808fcd927627c8892beb77a94ed69ec684f6e489b04e1a7c517b59b7afea019"
+      "fingerprint": "0d554a9508e736d4f44f57ec32db15bef075cc3e91976e87ec07f4b3c95dda6f"
     },
     "version": 3
   },
@@ -2625,7 +2625,7 @@
     "version": 3
   },
   "2111582206238003394:715f5c494a6137cb.jpg": {
-    "fingerprint": "7cc9cc5bb3b5daa795b9bba687cd98c108e5d14302e8e601703373ec0d66d63e",
+    "fingerprint": "98c1149075f8d117d2f4a898c4b86d289dfc7e3a3af5d4f069212b0144b2bb78",
     "entry": null,
     "version": 3
   },

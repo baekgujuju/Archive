@@ -217,7 +217,7 @@
     "evidence": [
       "screenshot:name-match"
     ],
-    "fingerprint": "b6fc5cd95c770504ccb50fe806afccc642d0eadb9a16add6cb77dc7bcea27500"
+    "fingerprint": "33a7c8444825fdb9bf8430a71bda64647543d58a09bbe8379ba284b325162102"
   },
   "2111655621175153100": {
     "title": "browser-use",
@@ -228,6 +228,6 @@
     "evidence": [
       "screenshot:phrase:browser use"
     ],
-    "fingerprint": "0808fcd927627c8892beb77a94ed69ec684f6e489b04e1a7c517b59b7afea019"
+    "fingerprint": "0d554a9508e736d4f44f57ec32db15bef075cc3e91976e87ec07f4b3c95dda6f"
   }
 }

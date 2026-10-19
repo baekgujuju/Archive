@@ -1684,8 +1684,8 @@
     "translated": [],
     "content_hash": "95c0a94a2ef6cf0e",
     "status": "failed",
-    "error": "번역 중 원문의 수치가 변경되거나 누락됐습니다.",
-    "failed_at": "2026-10-18T23:42:17.338614+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-19T03:00:34.477135+00:00"
   },
   "ib_pin_690320": {
     "paragraphs": [
@@ -1759,7 +1759,7 @@
     "content_hash": "0c089eccb3b375cd",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T23:42:30.034011+00:00"
+    "failed_at": "2026-10-19T03:00:47.132880+00:00"
   },
   "ib_pin_493898": {
     "paragraphs": [
@@ -9506,7 +9506,7 @@
     "content_hash": "fb1ca087b6ba97dc",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-18T23:42:37.232993+00:00"
+    "failed_at": "2026-10-19T03:00:54.429976+00:00"
   },
   "quote:2063592410018673104:quote:2063140448152265135": {
     "paragraphs": [
