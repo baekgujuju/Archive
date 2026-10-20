@@ -12418,8 +12418,8 @@
     "translated": [],
     "content_hash": "7468c2cd6e468188",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-20T00:32:05.445332+00:00"
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-20T13:13:19.810605+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12654,8 +12654,8 @@
     "translated": [],
     "content_hash": "c9e077821043585a",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-20T00:35:09.557941+00:00"
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-20T13:17:24.881547+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13244,8 +13244,8 @@
     "translated": [],
     "content_hash": "b8962dde60ce9b0b",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-20T00:36:39.508050+00:00"
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-20T13:21:25.410625+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13422,8 +13422,8 @@
     "translated": [],
     "content_hash": "4f76bb0aaa41cee1",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-20T00:36:39.510745+00:00"
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-20T13:21:25.410673+00:00"
   },
   "reply:2111680050311688665:2111686077836894509": {
     "paragraphs": [
@@ -13446,7 +13446,7 @@
     "content_hash": "fa5946699cdf11e7",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412302+00:00"
+    "failed_at": "2026-10-20T13:21:25.410720+00:00"
   },
   "reply:2108954220841816471:2109163730521207277": {
     "paragraphs": [
@@ -13456,7 +13456,7 @@
     "content_hash": "dbf4dd0203632afe",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412341+00:00"
+    "failed_at": "2026-10-20T13:21:25.410751+00:00"
   },
   "reply:2112286960752714130:2112286974921097490": {
     "paragraphs": [
@@ -13466,7 +13466,7 @@
     "content_hash": "6ad61e6264ccf172",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412365+00:00"
+    "failed_at": "2026-10-20T13:25:30.670717+00:00"
   },
   "reply:2111879987611521450:2111905390359421136": {
     "paragraphs": [
@@ -13476,7 +13476,7 @@
     "content_hash": "8de2354c1186129a",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.411302+00:00"
+    "failed_at": "2026-10-20T13:21:25.410688+00:00"
   },
   "reply:2112016108161282109:2112015623391969565": {
     "paragraphs": [
@@ -13487,7 +13487,7 @@
     "content_hash": "5ee96f2887e272d3",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412257+00:00"
+    "failed_at": "2026-10-20T13:21:25.410706+00:00"
   },
   "reply:2108954220841816471:2108956474504331336": {
     "paragraphs": [
@@ -13497,7 +13497,7 @@
     "content_hash": "83585c7a2d3c445b",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412336+00:00"
+    "failed_at": "2026-10-20T13:21:25.410744+00:00"
   },
   "reply:2112178425725136936:2112179259477512526": {
     "paragraphs": [
@@ -13507,7 +13507,7 @@
     "content_hash": "081db0ecd6a04ba2",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412326+00:00"
+    "failed_at": "2026-10-20T13:21:25.410738+00:00"
   },
   "reply:2112286960752714130:2112286980574982434": {
     "paragraphs": [
@@ -13517,7 +13517,7 @@
     "content_hash": "f455987226791915",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412371+00:00"
+    "failed_at": "2026-10-20T13:25:30.670729+00:00"
   },
   "reply:2112178425725136936:2112180113513329080": {
     "paragraphs": [
@@ -13527,7 +13527,7 @@
     "content_hash": "a054c141e2cf39dc",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412320+00:00"
+    "failed_at": "2026-10-20T13:21:25.410733+00:00"
   },
   "reply:2112178425725136936:2112179953030553944": {
     "paragraphs": [
@@ -13537,7 +13537,7 @@
     "content_hash": "4acd4e91a827a56d",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412313+00:00"
+    "failed_at": "2026-10-20T13:21:25.410726+00:00"
   },
   "reply:2112143385482113214:2112143554537492943": {
     "paragraphs": [
@@ -13547,7 +13547,7 @@
     "content_hash": "4e9549ee3df6b2bc",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412351+00:00"
+    "failed_at": "2026-10-20T13:21:25.410765+00:00"
   },
   "reply:2111879987611521450:2111880393666515167": {
     "paragraphs": [
@@ -13557,7 +13557,7 @@
     "content_hash": "4dfd56d38a1f7ff1",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.411369+00:00"
+    "failed_at": "2026-10-20T13:21:25.410696+00:00"
   },
   "quote:2112299628695888087:quote:2108954220841816471": {
     "paragraphs": [
@@ -13568,7 +13568,7 @@
     "content_hash": "f4a6a24e169310f8",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412383+00:00"
+    "failed_at": "2026-10-20T13:25:30.670765+00:00"
   },
   "reply:2112286960752714130:2112286968474472833": {
     "paragraphs": [
@@ -13578,7 +13578,7 @@
     "content_hash": "d5a2b93a1aa8e775",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412356+00:00"
+    "failed_at": "2026-10-20T13:21:25.410770+00:00"
   },
   "reply:2112299628695888087:2112301627436917204": {
     "paragraphs": [
@@ -13602,7 +13602,7 @@
     "content_hash": "47551671bfb500a2",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412377+00:00"
+    "failed_at": "2026-10-20T13:25:30.670756+00:00"
   },
   "reply:2112282151098216596:2112282153191084265": {
     "paragraphs": [
@@ -13614,7 +13614,7 @@
     "content_hash": "cbc241096c074ef6",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412277+00:00"
+    "failed_at": "2026-10-20T13:21:25.410713+00:00"
   },
   "reply:2108954220841816471:2109023028126621706": {
     "paragraphs": [
@@ -13624,7 +13624,7 @@
     "content_hash": "46f57a1be35ff5b9",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412346+00:00"
+    "failed_at": "2026-10-20T13:21:25.410758+00:00"
   },
   "reply:2112286960752714130:2112286973163675824": {
     "paragraphs": [
@@ -13634,7 +13634,7 @@
     "content_hash": "f4d7666cedb4d21a",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412360+00:00"
+    "failed_at": "2026-10-20T13:25:30.670672+00:00"
   },
   "reply:2112299628695888087:2112301974557536340": {
     "paragraphs": [
