@@ -1,14 +1,14 @@
 {
-  "version": "2026-10-19T15:09:13.382686+00:00",
-  "content_updated_at": "2026-10-19T08:26:21.519476+00:00",
+  "version": "2026-10-20T00:28:29.558789+00:00",
+  "content_updated_at": "2026-10-20T00:28:29.558817+00:00",
   "build": "v2",
-  "source_hash": "572bcf39bf54052654e97754cdc4443c50981fc949c7236b809656ce9b5eb4b7",
+  "source_hash": "1590f0f8d825a6159ff9c39f84ceb3a3e45f07ba3d0df0b6fed377fe95b21a73",
   "builder_version": "1.2.0",
   "chunks": {
     "posts-x": {
       "file": "data/posts-x.json",
-      "sha256": "94ec797e3bf5f83082b5f5001f9ce1f4bd196bbebe3f522e11368e568215f593",
-      "count": 294
+      "sha256": "2295f1f116616f2394b4a9e4a1463af031bae960f9d14f0e6b91c6faa9332f31",
+      "count": 328
     },
     "posts-web": {
       "file": "data/posts-web.json",
@@ -24,8 +24,8 @@
   "app_version": "2.5.8",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "fd509ec2dad8419eba23121399ae46f12912cb2b123d007041c97ed509db22e7",
-    "count": 592
+    "sha256": "a668a5b6a83766e469cbbeb5d457b941f31ce6d0db941c457eed8811b94d81e7",
+    "count": 624
   },
   "shared_state": {
     "file": "data/shared-state.json",

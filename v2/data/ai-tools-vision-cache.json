@@ -4229,5 +4229,195 @@
     "category_ko": "주식 기술적 분석",
     "owner_hint": "TradingView / Indian Railway Finance Corp.",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:14fc3d6429feaf5dbaf97cf6e82c1693fc74936c66eaad83f9a1e469b162bb34": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "업비트 CHIP/KRW 4시간봉 차트",
+    "description_ko": "유에스디에이아이(CHIP)의 가격이 54.5원으로 표시된 거래 화면. 10월 중순 급등 구간이 청록색 원으로 강조되어 있으며 이후 하락 흐름이 보인다.",
+    "category_ko": "암호화폐 가격 차트",
+    "owner_hint": "업비트",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6a5e990ec0cad8f8ef9c99eaa990216877210013a9d17e392f2f58e139425e8d": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "chip의 시세를 조절하는 컨버랜드",
+    "description_ko": "경기도웨일_KR 계정의 X 게시물. CHIP 차트의 특정 구간을 붉은 원으로 표시한 기사 미리보기와 짧은 논평이 담겨 있다.",
+    "category_ko": "암호화폐 관련 소셜미디어 게시물",
+    "owner_hint": "경기도웨일_KR (@KDW_KOREA)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:25ac078143135c9fbb33ba71191847fdcab17e39a2757c0063e7b8b364568de5": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "알트코인에서 -90% 수익률을 피하는 방법",
+    "description_ko": "경기도웨일_KR 계정의 X 기사 미리보기. 영화 장면 이미지와 함께 마켓메이커의 물량 및 적은 자본으로 시장을 구축하는 방식에 관한 도입부가 보인다.",
+    "category_ko": "암호화폐 관련 소셜미디어 게시물",
+    "owner_hint": "경기도웨일_KR (@KDW_KOREA)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b2e1fa1b294f724248fc07f5d5c3e2947f35b12510c219c18acebe9ae9d1bae7": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "암호화폐 전체 시가총액 주봉 기술적 분석",
+    "description_ko": "TradingView의 암호화폐 전체 시가총액 주봉 차트. 약 2.71조 달러 수준에 이동평균선, 하락 채널, 지지·저항 영역과 큰 컵 형태의 곡선이 표시되어 있다.",
+    "category_ko": "암호화폐 시장 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d6024cc93d577309bad085f720a69c331fdfe0f888f876a2853e46a59ccfc23f": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Circle Internet Group CRCL 일봉 기술적 분석",
+    "description_ko": "CRCL 주가가 약 82.14달러로 표시된 TradingView 차트. 이동평균선과 지지·저항 구간, 'wedge pop' 및 'ema crossback' 주석, 상승을 예상하는 주황색 화살표가 보인다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:faef85029031c57619fb0c8737962ac288bb6a46d652e90e8f5605c3b2593d89": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "암호화폐 전체 시가총액 월봉 기술적 분석",
+    "description_ko": "TradingView의 암호화폐 전체 시가총액 월봉 차트. 약 2.71조 달러 수준에서 장기 이동평균선, 하락 채널, 수평 지지·저항선과 컵 형태의 곡선이 표시되어 있다.",
+    "category_ko": "암호화폐 시장 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:741c58bdf07b2d5403c713d24cb4ebaf148937beadb8ff2d73d61338a284b623": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "BTC / M1 장기 차트와 돌파 후 재시험",
+    "description_ko": "BTC/M1 비율의 장기 차트. 큰 컵 형태와 과거 저항선 접점이 표시되어 있으며, 신고점 이후 기존 저항선을 재시험한 구간에 'RETEST'라는 주석이 붙어 있다.",
+    "category_ko": "비트코인 장기 기술적 분석",
+    "owner_hint": "MrGert / GertvanLagen.substack.com",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4ff213aeb83df01f24baf55975c5c3a612c8e956c42710b633fa851f6b93f861": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "황금빛 눈의 갑옷 기사와 전장",
+    "description_ko": "검은 갑옷과 망토를 입고 눈에서 황금빛을 내는 인물이 전면에 있으며, 뒤로 군대와 거대한 성곽이 펼쳐진 판타지 일러스트.",
+    "category_ko": "판타지 일러스트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6a8758c75bc14ef73bc83cf2d720e5936ae0fb94f548bd01a91ff4200945df2a": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AI 밸류체인 성장률 합성 모델",
+    "description_ko": "2025~2028년 첨단 패키징, 액체냉각, HBM, 광통신, 커스텀 ASIC 등 9개 AI 인프라 산업의 성장률 추정치를 비교한 표. 여러 지표를 혼합한 투자 판단용 합성 모델이라고 명시되어 있다.",
+    "category_ko": "AI 산업 전망",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cf7127a8fc1ccecd93041db3baabc6ed75bc543f3fd352b092d7b8c4d81cbbc4": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AI 밸류체인 성장률 전망과 누적 성장 잠재력 순위",
+    "description_ko": "AI 관련 9개 산업의 2025~2028년 성장률과 성장 동인을 정리하고, 연도별 성장률을 복리 적용한 누적 성장 배수를 비교한다. HBM 4.10배, 첨단 패키징 3.05배, 커스텀 ASIC 2.98배 순으로 제시한다.",
+    "category_ko": "AI 산업 전망",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:92898a61b38e084d2bf3f17cde57754e705357ec58c6e099b5301c8c4e04dfee": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "BTCUSDT 5분봉 급락과 미결제약정 변화",
+    "description_ko": "바이낸스 비트코인 선물 가격이 약 81,000달러로 하락한 차트. 미결제약정, 누적 거래 지표, 거래량과 펀딩비 등 여러 보조 지표가 함께 표시되어 있다.",
+    "category_ko": "암호화폐 시장 차트",
+    "owner_hint": "Velo / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3a127fe40fe9caf0beae9704a5e83d9b2f59468642800097275301c588448224": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "BTCUSDT 5분봉 반등과 현물 누적 거래 델타",
+    "description_ko": "비트코인 선물 가격이 급락 후 약 81,882달러까지 반등한 차트. 미결제약정, 현물 및 선물 누적 거래 델타, 거래량, 청산과 펀딩비 지표를 함께 보여준다.",
+    "category_ko": "암호화폐 시장 차트",
+    "owner_hint": "Velo / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e2bc28c7e23e8c3b2c045eadea40c8d29dfbac5d8857a64bf3b8b8d449a19c6e": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "파란 구체가 표시된 음성 인터페이스",
+    "description_ko": "검은 배경 중앙 아래에 파란색과 흰색이 섞인 구체가 있으며, 왼쪽 위에는 메뉴 모양 버튼, 오른쪽 위에는 조절 슬라이더 모양 버튼이 표시된 모바일 화면.",
+    "category_ko": "모바일 음성 인터페이스",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3e29d0b60aa3f72191f53515ba7fe51fb7598498ee97f15b68a37d00df05f3d2": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "모네로(XMR/USDT) 1시간봉 돌파와 단기 조정",
+    "description_ko": "TradingView의 모네로 1시간봉 차트. 560달러 부근의 돌파 구간을 흰 원으로 표시했으며, 이후 607달러 부근까지 급등한 뒤 586달러 부근으로 조정받는 모습이다. 이동평균선, 거래량, 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:88c75b1e6a722ae58c7aac113173452d35bbe796e8aeb516ed91da980403f2c3": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "모네로 일봉의 추세 결합과 돌파 구간",
+    "description_ko": "모네로 일봉에서 장기 추세와 단기 추세가 만나는 구간을 매수 관심 지점으로 표시했다. 610달러 부근은 지엽적 돌파 구간으로, 그 위쪽은 완연한 돌파 구간으로 주석을 달았다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cba1a119b1a0778bd586aba9923049022fcf77eaf540da65bf7d2e2ece392232": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "모네로 월봉의 장기 셋업과 상대강도",
+    "description_ko": "2020년 전후부터 이어지는 모네로 월봉 차트. 장기간의 횡보 이후 상승하며 과거 주요 가격대를 넘어서는 흐름을 보여준다. 월봉 셋업을 일봉의 시간 관점으로 해석하는 문구와 강한 상대강도에 대한 주석이 있다.",
+    "category_ko": "암호화폐 장기 차트 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b79ff8c9048f12983b9d7813727574b187c78b75910b532bfec28fd2b6bf49ae": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "모네로 일봉의 셋업 완성과 시장 대비 강세",
+    "description_ko": "모네로가 조정과 횡보를 거쳐 589달러 부근으로 상승하는 일봉 차트. 550달러와 567달러 부근의 수평선, 상단 저항 영역을 표시했다. 시장 하락 시 버티고 반등 시 상승하는 모습에 주목한 주석이 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9779ec4bf4540754215afeccb3cb2887567f39c2a29d14e51b85332c490486b4": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "암호화폐 전체 시가총액과 모네로의 상대강도 비교",
+    "description_ko": "암호화폐 전체 시가총액 TOTAL의 일봉 차트. 최근 고점에서 하락해 약 2.68조 달러에 위치하며 여러 이동평균선 아래로 내려온 모습이다. 모네로와 비교하면 상대강도의 차이가 명확하다는 주석이 있다.",
+    "category_ko": "암호화폐 시장 비교 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c87f1305fc1db5fbe3cb09ab1011655e05825bf07d4188bd2ef1c901e2e37fa7": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "승리하는 성장주의 3단계 사이클",
+    "description_ko": "성장주 주가의 흐름을 멀티플 확장, 조정·횡보, EPS 상향 및 Beat & Raise의 세 단계로 설명하는 도식이다. 기대에서 실적 증거로 이동하며 더 높은 가치로 상승하는 과정을 주가와 시간 축으로 표현했다.",
+    "category_ko": "성장주 투자 교육",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }
