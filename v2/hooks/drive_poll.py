@@ -670,6 +670,75 @@ def _is_html_name(name):
     return isinstance(name, str) and name.lower().endswith((".html", ".htm"))
 
 
+def delete_verified_inbox_file(f, record, *, inbox_id, max_bytes):
+    """정본·현재 지문을 재검증한 표준 X 캡처만 완전 삭제한다.
+
+    크기 정책이 없으면 fail-closed. 생성기 두 종류의 <tweetId>.html
+    이름만 허용하여 책·기타 HTML을 삭제 대상으로 추정하지 않는다.
+    삭제 실패는 인제스트 성공을 취소하지 않는다 (다음 폴에서 재시도).
+    """
+    fid = f.get("id")
+
+    def skip(reason):
+        log(f"Drive 삭제 보류: {fid} ({reason})")
+        return False
+
+    if (not fid or not f.get("modifiedTime") or not isinstance(record, dict)
+            or record.get("verification") != "verified"):
+        return skip("명시적 검증 기록 없음")
+    tids = record.get("tweetIds")
+    if (record.get("legacyBaseline") or not record.get("content_sha256")
+            or not record.get("validator_version")
+            or not isinstance(tids, list) or not tids
+            or any(not isinstance(t, str) or not t.isdigit() for t in tids)):
+        return skip("검증 증거 불충분")
+    # 책·임의 HTML은 보존한다. 표준 생성기의 파일명만 허용한다.
+    if f.get("name") not in {t + ".html" for t in tids}:
+        return skip("표준 X 캡처 파일명 아님")
+    if type(max_bytes) is not int or max_bytes <= 0:
+        return skip("삭제 허용 크기 정책 미설정")
+    try:
+        size = int(f.get("size", ""))
+    except (TypeError, ValueError):
+        return skip("크기 불명")
+    if size <= 0 or size > max_bytes:
+        return skip("크기 정책 범위 밖")
+    if file_fingerprint(f) != (fid, record.get("modifiedTime"), str(record.get("size", ""))):
+        return skip("검증 지문 불일치")
+    try:
+        with pipeline_lock():
+            # 실패/격리 이력이 남은 파일과 미해결 병합 제안도 보존한다.
+            if any(r.get("fileId") == fid and
+                   (r.get("status") != "resolved" or r.get("evidence_path"))
+                   for r in load_failures()["records"].values()):
+                return skip("실패 또는 격리 기록")
+            if any(p.get("fileId") == fid for p in load_proposals()["proposals"]):
+                return skip("병합 제안 존재")
+            canonical = json.loads(POSTS_JSON.read_text(encoding="utf-8"))
+            if (not isinstance(canonical, list)
+                    or any(not isinstance(p, dict) for p in canonical)
+                    or check_canonical_duplicates(canonical)):
+                return skip("정본 구조 또는 중복 오류")
+            canonical_ids = {p.get("tweetId") for p in canonical}
+            if not set(tids) <= canonical_ids:
+                return skip("정본 tweetId 누락")
+            current = [entry for entry in list_drive_files(inbox_id)
+                       if entry.get("id") == fid]
+            if (len(current) != 1 or current[0] != f):
+                return skip("수신함 파일 메타데이터 변경 또는 소실")
+            log(f"Drive 완전 삭제 시작: {fid}; 정본 검증 {len(tids)}건")
+            response = run(["hatch_gws_cli", "drive", "files", "delete",
+                            "--params", json.dumps({"fileId": fid})])
+            if response.returncode != 0:
+                # CLI 출력에는 자격증명이 포함될 수 있으므로 기록하지 않는다.
+                return skip(f"완전 삭제 실패 rc={response.returncode}")
+            log(f"Drive 완전 삭제 완료: {fid}")
+            return True
+    except (OSError, ValueError, RuntimeError, subprocess.TimeoutExpired,
+            PipelineLockTimeout, TypeError, AttributeError):
+        return skip("삭제 검증/요청 실패; 다음 폴 재시도")
+
+
 def _verification_of(entry):
     """processed 항목의 검증 상태 (구형 항목 마이그레이션 포함)."""
     if not isinstance(entry, dict):
@@ -866,6 +935,9 @@ def main():
                 ) == (fp[1], fp[2])
                 if fingerprint_match:
                     if verification == "verified":
+                        delete_verified_inbox_file(
+                            f, previous, inbox_id=inbox_id,
+                            max_bytes=cfg.get("inbox_delete_max_bytes"))
                         continue
                     if verification == "quarantined":
                         continue  # 운영자 검토 대기 — 자동 재시도 없음.
@@ -932,6 +1004,9 @@ def main():
             if was_revalidation:
                 revalidated += 1
             # process_file이 성공 기록·상태 저장을 마쳤다.
+            delete_verified_inbox_file(
+                f, processed.get(fid), inbox_id=inbox_id,
+                max_bytes=cfg.get("inbox_delete_max_bytes"))
         state["processed"] = processed
         state["last_poll"] = _now_iso()
         atomic_json(state_path, state)

@@ -73,3 +73,29 @@
 - **자격증명**: git push는 기존 `~/.git-credentials` (credential.helper store) 사용.
   새로 저장하는 비밀값 없음. Gemini 키는 `~/.gemini/.api_key` 런타임 참조.
 - **게시 게이트**: `V2_PUBLISH=1` 명시 없이는 어떤 경로로도 push하지 않음
+
+### HTML 수신함 완전 삭제 (리뷰 후 활성화)
+
+`drive_poll.py`는 인제스트·로컬 원본 보관·성공 상태 저장을 모두 마친 뒤,
+정본 `~/workspace/x-bookmarks/posts.json`을 다시 읽어 모든 `tweetIds`의 존재를
+확인하고 Drive 수신함의 현재 메타데이터가 동일한 경우에만 `files delete`를
+호출한다. 기존 명시적 `verified` 항목도 같은 검사를 거쳐 삭제를 재시도한다.
+삭제 실패는 인제스트 성공 상태를 유지하며 다음 폴에서 재시도한다.
+
+삭제 허용 크기는 `drive_archive_config.json`의 `inbox_delete_max_bytes`
+(양의 정수, 바이트 단위)로 지정한다. **대용량 기준이 확정되지 않았으므로
+기본값은 없으며 미설정 시 삭제하지 않는다.** 운영 설정·서비스 변경은 별도 리뷰
+후 진행한다. 파일 크기가 불명확하거나 설정값을 초과하면 보존한다.
+
+기존 두 생성기(`x_post_to_html.py`, `ios-bookmarklet.js`)가 출력하는
+`<tweetId>.html` 이름만 삭제 후보로 허용한다. 책·기타 HTML과 이름이 바뀐
+캡처는 보존한다. legacy 기록, 실패/격리 증거가 남은 파일, 병합 제안이 있는
+파일, 정본·상태·메타데이터 검증이 애매한 파일은 삭제하지 않는다.
+Drive 삭제 요청 전후에는 파일 ID와 결과만 기록하며 CLI 출력은 기록하지 않는다.
+
+검증: `python -m pytest -q v2/hooks/test_inbox_delete.py v2/hooks/test_p2_batch2.py`
+(테스트의 Drive 요청은 모두 모의 처리하며 실제 수신함에는 접근하지 않는다.)
+
+운영 검증 한계: Drive 재조회와 삭제 요청은 별개의 호출이므로 그 사이의 외부
+파일 변경을 원자적으로 차단하지는 못한다. 이 워크트리의 검증 환경은
+`hatch_gws_cli` privsep 소켓 접근이 차단되어 실제 삭제 CLI 실행은 검증하지 않았다.
