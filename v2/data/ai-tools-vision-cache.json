@@ -5600,5 +5600,177 @@
     "category_ko": "주식 차트 기술적 분석",
     "owner_hint": "tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5106a7868146f95946a3b27dbe6373a166cce2588c58e888aa1079b2997ddca1": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 일봉 차트 — 베이스 초기화와 재형성",
+    "description_ko": "TradingView 일봉 차트로, 급락 전 구간의 BASE 5와 주요 가격·이동평균선 이탈에 따른 베이스 초기화, 이후 BASE 0 및 BASE 1 형성을 표시한다. 지지·저항 수평선과 추세선, 이동평균선, 거래량이 함께 나타난다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:15d869ba0b1bcdfd0a0f351ce0ab23c61a75953ce847a14d18b7fbfc1d7b5d31": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 일봉 차트 — 돌파 실패와 베이스 구분",
+    "description_ko": "과거 횡보 구간의 돌파 실패와 급락 후 베이스 초기화를 주석으로 설명한다. 이후 상승 과정은 BASE 1과 BASE 2로 표시되어 있으며, 월봉급 저항 가격이 지지로 전환되는 구간도 강조되어 있다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bc9d4d44d049e924e93d608ccb7b1b7e96baf99d9be66cd47b28a0b920e0edbf": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 일봉 확대 차트 — 바닥 형성과 BASE 0",
+    "description_ko": "2025년 말부터 2026년 초까지의 하락과 반등 구간을 확대했다. 청록색 곡선으로 여러 바닥 형태를 표시하고, 약 17,600원과 19,400원 부근의 수평 가격대 및 이후 BASE 0 구간을 강조한다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5eb48ef7e90c2616bed6e8fe0a2a188028f075fb405ff950cc75fff880b3a13e": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 일봉 확대 차트 — BASE 0·1·2",
+    "description_ko": "2026년 초 이후 상승 과정을 BASE 0, 삼각 수렴 형태의 BASE 1, 상단 박스권의 BASE 2로 나누어 표시한다. 최근 종가 37,400원과 함께 주요 수평 저항선, 이동평균선 및 거래량을 보여준다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b7b1c5ce8cd947db088c9cd890197a5ea782023ad1e2b7b736e3870613548aa5": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 주봉 장기 차트 — 월봉급 지지·저항",
+    "description_ko": "2021년 무렵부터 2026년까지의 주봉 흐름을 보여준다. '월봉급 지지/저항 가격 2015년부터'라는 주석과 함께 장기 가격대를 표시하고, 최근 상승 구간의 수렴 패턴과 박스권을 그려 놓았다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:11a2ab5f281f6fdb436ae25290ab34f8cc3548f3e584e337e500ce4332218357": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 주봉 확대 차트 — 주요 가격대와 상승 추세",
+    "description_ko": "2025년부터 2026년 봄까지의 주봉 차트다. 약 15,080원의 장기 기준선, 17,000~19,000원대 박스권, 여러 수렴 추세선과 최근 34,000~36,000원 부근의 짧은 조정 구간이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bf07bdc44f0e797c3a327e0c924e5d409c5db627e18f65046ce18e3f5a84572f": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔 월봉 차트 — 장기 상승과 가격 박스",
+    "description_ko": "2024년 하반기부터 2026년 4월까지의 월봉 차트다. 약 25,000~28,000원 부근의 가격 박스와 15,090원 수평선이 표시되어 있으며, 최근 월봉은 종가 37,400원과 상승률 38.52%로 나타난다.",
+    "category_ko": "주식 기술적 분석 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8526cc42c9db2a9ae977e72b580e3583fb7c9e6b795aa58b9cafc82ab8178de8": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔루션 월봉: 저항 돌파와 지지 전환",
+    "description_ko": "TradingView의 마이크로컨텍솔루션(098120) 월봉 차트. 15,090원 주요 가격의 지지 전환과 높아지는 저점, 약 24,000~29,000원 저항 구간 돌파 후 되돌림, 37,400원까지의 상승을 화살표와 주석으로 설명한다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:05923636b6b78efce7d2441daeaaf6f1b637f4a2aa1c6747dcab0123ff83eb33": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔루션 장기 월봉 차트",
+    "description_ko": "2014년부터 2026년까지의 장기 가격 흐름을 보여준다. 과거 고점 부근인 15,090원 수평선과 최근 저항 구간이 표시되어 있으며, 최근 가격은 37,400원으로 나타난다.",
+    "category_ko": "주식 장기 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fd316399b0a49c387a2471ebb903e953d7dd759353253f0af8893e17e961c467": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔루션 주봉: BASE 0과 BASE 1",
+    "description_ko": "주봉 차트에 BASE 0과 BASE 1로 표기한 가격 기반 구간, 여러 지지·저항 영역, 이동평균선과 거래량이 표시되어 있다. 최근 주가는 약 24,000~28,000원 저항 영역을 넘어 37,400원에 도달한 모습이다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9a3ff386e71bb18b1392e2daea0cf925ac4e1ee4a977be2e147cb474b41c3aac": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔루션 주봉: 돌파 매수 구간",
+    "description_ko": "주봉상 저항선 돌파 부근을 주황색 원으로 강조한다. 주봉·월봉의 BASE 1과 일봉의 BASE 2 구간을 표시하고, 돌파 매수와 상위 시간대 추세에 대한 기대를 주석으로 설명한다.",
+    "category_ko": "주식 매매 전략 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e721106e07d02b30944de1008a969ff9a61428623dbb92e8ec5c98aca0c5dab7": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "마이크로컨텍솔루션 일봉: BASE 2 돌파",
+    "description_ko": "일봉 차트에서 약 29,000~32,000원 저항선 돌파와 최근 37,400원 부근 상승을 주황색 원으로 강조한다. 하단에는 상위 시간대 기반 구간과 거래량이 표시되고, 우측에는 이동평균 대비 상승률 및 ATR 관련 수치가 제시되어 있다.",
+    "category_ko": "주식 매매 전략 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1897313fdc4503704685cef657af8ccfb058b5c4d3b997bb28773197ba0b6250": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피 일봉 기술적 분석 차트",
+    "description_ko": "코스피의 일봉 캔들, 이동평균선, 지지·저항 구간과 추세선을 표시한 TradingView 차트다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f3dae8a40a4b0cd2361624989116b8d7ec9a1a6a6172ef4374bd84eeab909cfd": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Tight and Logical Stop Loss",
+    "description_ko": "상승 후 돌파 진입 지점과 직전 저점 아래의 손절 위치를 도식으로 설명하는 TraderLion 트레이딩 교육 자료다.",
+    "category_ko": "트레이딩 교육",
+    "owner_hint": "TraderLion",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fc519f7d90a3e7d6aea099fd504d5991c07190709f19f4425837dbfb0854d60d": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "백도 System V34 매매 신호 차트",
+    "description_ko": "TradingMisa의 TradingView 차트로, 스윙 고점 스윕과 5분 CISD 확인, 숏 진입가 2,445.20, 손절가 2,463.60, 1차 목표가 2,423.12를 표시한다.",
+    "category_ko": "금융·트레이딩 지표",
+    "owner_hint": "TradingMisa",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:78560b1ce05491ea4e025eb67fe1a177873085662600018687403822a2be7255": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "백도 System V34 단기 차트 확대 화면",
+    "description_ko": "같은 매매 설정의 단기 가격 흐름을 확대한 TradingView 차트다. 5분 CISD 확인선과 숏 진입·손절 수준, 최근 반등 구간이 표시되어 있다.",
+    "category_ko": "금융·트레이딩 지표",
+    "owner_hint": "TradingMisa",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bb8e69124dfce04b72accde28b203c5d50783501bd8ba5d40154ae71667e68ed": {
+    "index": 4,
+    "is_github": true,
+    "github_urls": [
+      "https://harness2.github.io"
+    ],
+    "title": "Harness²: Recursive Agent Harnessing for an Open World",
+    "description_ko": "모델 가중치를 고정한 채 프롬프트·도구·메모리 등 에이전트 실행 환경을 재귀적으로 개선하는 프레임워크 소개 화면이다. 작업 수준과 개선 체계 수준의 재귀 구조를 설명하며 논문, 프로젝트 웹사이트, 문서 및 Apache 2.0 라이선스를 안내한다.",
+    "category_ko": "AI·에이전트 프레임워크",
+    "owner_hint": "harness2",
+    "provider": "codex"
   }
 }
