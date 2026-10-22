@@ -4,9 +4,9 @@
   "stats": {
     "verified": 0,
     "pending": 0,
-    "pending_github_look": 26,
+    "pending_github_look": 28,
     "cached": 671,
-    "temporary_failures": 5,
+    "temporary_failures": 3,
     "errors": 0
   },
   "pending_details": {
@@ -21,7 +21,7 @@
     "2112082731652030821:embedded-23e3adea78a6f6d33bf6dafb2c8242624893fe27f4402963a5ae495cef0020b5.jpg": "temporary analysis or repository API failure",
     "2089574903523749987:eb78cb1742206670.jpg": "temporary analysis or repository API failure",
     "2111802461149364647:embedded-0397bdb4114e66f4c89d2660837b518acef52e0489efc581c9fada906d9415f8.png": "GitHub screenshot requires verified repository match",
-    "2111802461149364647:embedded-c20fd9e65c998f633edd9adc8c22ad79ac488ba18016d2dcf8b18b498d9bf500.png": "temporary analysis or repository API failure",
+    "2111802461149364647:embedded-c20fd9e65c998f633edd9adc8c22ad79ac488ba18016d2dcf8b18b498d9bf500.png": "GitHub screenshot requires verified repository match",
     "2111304598833238080:b6fa7c1bb3485b47.jpg": "GitHub screenshot requires verified repository match",
     "2111071792500490393:57409462d5965790.jpg": "GitHub screenshot requires verified repository match",
     "2089574903523749987:bd6d980071ac7d72.jpg": "GitHub screenshot requires verified repository match",
@@ -31,7 +31,7 @@
     "2107836535995568551:c57a5ab436a808fa.jpg": "GitHub screenshot requires verified repository match",
     "2089327477214593238:8552a9e4d437d224.jpg": "GitHub screenshot requires verified repository match",
     "2108245653843509415:86475eac4c71ca84.jpg": "GitHub screenshot requires verified repository match",
-    "2107674791243325659:753e659bcbbcec09.jpg": "temporary analysis or repository API failure",
+    "2107674791243325659:753e659bcbbcec09.jpg": "GitHub screenshot requires verified repository match",
     "2107859139938660811:082932b84c760a20.jpg": "GitHub screenshot requires verified repository match",
     "2108173081441435912:e712ec45c1a5367f.jpg": "GitHub screenshot requires verified repository match",
     "2107365492797346155:f30bea55c962816e.png": "GitHub screenshot requires verified repository match",
