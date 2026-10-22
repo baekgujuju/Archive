@@ -5772,5 +5772,137 @@
     "category_ko": "AI·에이전트 프레임워크",
     "owner_hint": "harness2",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:dd6378616d80a189887240185b637c82b6c0c26f81da44f88a96254d293029cd": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Task-Level Recursion and Harnessing-Level Recursion",
+    "description_ko": "에이전트가 초기 하네스를 실행하고, 불변·도메인별 하네스 후보를 평가·결합한 뒤 경험을 반영해 다음 작업의 하네스를 개선하는 재귀적 흐름도.",
+    "category_ko": "AI 에이전트 아키텍처",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:54bca6d901a1e76544e8cf33428a98ad14d55850fa6a470e84556820cc6a9a82": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [
+      "https://harness2.github.io"
+    ],
+    "title": "Harness²: Recursive Agent Harnessing for an Open World",
+    "description_ko": "Harness² 연구 소개 슬라이드. 코드·웹·오피스 영역의 성능 비교와 작업 수준 재귀 예산에 따른 성능을 설명하는 차트 틀이 보이며, 실제 데이터 막대나 곡선은 표시되지 않는다.",
+    "category_ko": "AI 에이전트 연구 프로젝트",
+    "owner_hint": "Northwestern University · Google Cloud AI Research",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fe5b91db5dd4f44be400b56054a6c417e8d3f61c78f7a41105f376bc85b8d27a": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Agent Harness Components: Context, Middleware, Tool Interface, and Orchestration",
+    "description_ko": "고정된 모델을 둘러싼 하네스 구성도. 시스템 프롬프트·가드레일·메모리·스킬을 통한 컨텍스트 구성, 플러그인 미들웨어, 도구 지침·스크립트, 하위 에이전트 오케스트레이션의 관계를 보여준다.",
+    "category_ko": "AI 에이전트 시스템 구성도",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:563a56fb8b51a2524b6f7444fa416748a0b9766ee71fc5a9275ba18104028132": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Learn Harness Engineering",
+    "description_ko": "AI 코딩 에이전트의 하네스 설계, 상태 관리, 검증과 제어를 다루는 한국어 강의 사이트. 상단에 GitHub 아이콘이 보인다.",
+    "category_ko": "AI 코딩 에이전트 교육",
+    "owner_hint": "Learn Harness Engineering",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5456308b7d3fdf386b386425a350eb3035294ccf0cf0a1b520ad30b5e1a3ee0f": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "세션 연속성(continuity) 흐름",
+    "description_ko": "PROGRESS.md, DECISIONS.md, 검증 메모와 Git 체크포인트를 활용해 다음 에이전트 세션이 작업을 이어받는 과정을 설명한다.",
+    "category_ko": "에이전트 세션 연속성",
+    "owner_hint": "Learn Harness Engineering",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3568a61ee1f0c68e86e8b035f86b22e91d8b1299f4a500e9e1b5f72ffccaf75a": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "클린 상태의 다섯 가지 차원",
+    "description_ko": "빌드와 테스트 통과, 진행 상황 갱신, 임시 파일 제거, 표준 시작 경로 확인을 통한 작업 인계 흐름을 설명한다.",
+    "category_ko": "개발 작업 검증 및 인계",
+    "owner_hint": "Learn Harness Engineering",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:67512b2c5701af17be0cc28e08a3adb0ee2e415ea770abb9418c8f94c60a6e71": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "어드밴스드 마이크로 디바이스 주식회사 일봉 차트",
+    "description_ko": "AMD의 캔들, 이동평균선, 거래량과 가격대별 매물대를 표시한 차트. 노란 선과 화살표로 지지 구간과 반등 경로를 표시했다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / AMD",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9f0249edf827fbcae858621f247ef4a4f2451ee409c716d8ea44993ddfaa2f7f": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Marvell Technology, Inc. 일봉 차트",
+    "description_ko": "마벨 테크놀로지의 가격 흐름과 이동평균선, 거래량, 매물대를 보여준다. 지지·저항 영역과 예상 반등 경로가 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Marvell Technology",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:47cd092ac60e5702af6ad39c3f3005603c1fd5f72f137f9a51a9eff0b7a9aa14": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Lumentum Holdings, Inc. 일봉 차트",
+    "description_ko": "루멘텀 홀딩스의 가격과 이동평균선, 거래량을 보여준다. 지지·저항 영역과 과거 저점, 반등을 예상하는 구간이 노란색으로 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView / Lumentum Holdings",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e52a0687501fb7f9821e261326770c074ae39bec92bdaa0cd7fd98c90d56bb61": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AXT, Inc. 일봉 주가 차트",
+    "description_ko": "나스닥 상장사 AXT의 캔들 차트에 이동평균선, 거래량, 가격대별 매물대와 지지·저항 구간을 표시한 화면.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:80e68b8820bbfb4c1c83dab117f997e7b54134158b93c5f35ca0f3d7e3e46cbd": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "MinishLab/semble",
+    "description_ko": "에이전트용 코드 검색 프로젝트의 GitHub 소개 카드. grep과 파일 읽기 대비 토큰을 99% 적게 사용한다고 홍보하며 기여자, 이슈, 스타, 포크 수를 표시한다.",
+    "category_ko": "개발 도구·코드 검색",
+    "owner_hint": "MinishLab",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:dbbf923a10dbce822d6b6e18a79c39fc7af6f24f8f008fce119efffb44587311": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "EQUITY RESEARCH",
+    "description_ko": "투자 리서치를 주제와 문제, 차트와 데이터, 예측과 모델, 산업과 시장, 가치평가와 전략의 다섯 층으로 표현한 일러스트.",
+    "category_ko": "금융·투자 리서치",
+    "owner_hint": "Logue / @AlexZio00",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:23e3adea78a6f6d33bf6dafb2c8242624893fe27f4402963a5ae495cef0020b5": {
+    "index": 3,
+    "is_github": true,
+    "github_urls": [],
+    "title": "엑스에르지 (XERJ)",
+    "description_ko": "Rust 기반 로컬 AI 검색 도구 XERJ의 한국어 README 화면. GitHub 트렌딩 배지, 프로젝트 상태, 코드 검색과 참조 코딩 기능, 설치 예시 및 보안 설명을 포함한다.",
+    "category_ko": "개발 도구·AI 코드 검색",
+    "owner_hint": "xerj.org / @xerj_org",
+    "provider": "codex"
   }
 }

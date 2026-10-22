@@ -2775,17 +2775,17 @@
     "version": 3
   },
   "2075954014014013696:embedded-4ff213aeb83df01f24baf55975c5c3a612c8e956c42710b633fa851f6b93f861.jpg": {
-    "fingerprint": "657685794d227de9ea7eac1b3d4fd183efe6dc32ba8a3ebbc98a2d5d5023ff00",
+    "fingerprint": "4d2cfff4822335d05ad61424514f3629033e571a7250a573354f6f0860a7d9a8",
     "entry": null,
     "version": 3
   },
   "2075954014014013696:embedded-6a8758c75bc14ef73bc83cf2d720e5936ae0fb94f548bd01a91ff4200945df2a.jpg": {
-    "fingerprint": "023053225dbbc42c47965d59f42786986d36f9096ae36a737b00fdac98f56183",
+    "fingerprint": "797812db828daf48cd282d4dd5e36db3d1f9abe869babd5bf005e3edf1d95dfa",
     "entry": null,
     "version": 3
   },
   "2075954014014013696:embedded-cf7127a8fc1ccecd93041db3baabc6ed75bc543f3fd352b092d7b8c4d81cbbc4.jpg": {
-    "fingerprint": "4ba64f0fbb3b656554ada9b37b332fdc7349321e5ef9c799aeb5b8db762e3650",
+    "fingerprint": "99aa7361ea2aca1785de4b24fc2dce9a845d80f4cdee15f67bdd45854f3431c8",
     "entry": null,
     "version": 3
   },
@@ -3506,6 +3506,51 @@
   },
   "2112814265266733478:embedded-78560b1ce05491ea4e025eb67fe1a177873085662600018687403822a2be7255.jpg": {
     "fingerprint": "657816bb87cc2cd0d14c9f412dd3a7e0b6a03c5b0c80679b5eede4945399a97d",
+    "entry": null,
+    "version": 3
+  },
+  "2112550213990982051:embedded-dd6378616d80a189887240185b637c82b6c0c26f81da44f88a96254d293029cd.jpg": {
+    "fingerprint": "bb7eef0e15e4c6f0a1db2d6bf03b0f31523eb820e4b7f0758d7d61c3559b53f8",
+    "entry": null,
+    "version": 3
+  },
+  "2112550213990982051:embedded-fe5b91db5dd4f44be400b56054a6c417e8d3f61c78f7a41105f376bc85b8d27a.jpg": {
+    "fingerprint": "c943efbbabc5656138ec08d57c2d7f334a463c1b4ff9512d2952e3ca1ee8076c",
+    "entry": null,
+    "version": 3
+  },
+  "2112550213990982051:embedded-5456308b7d3fdf386b386425a350eb3035294ccf0cf0a1b520ad30b5e1a3ee0f.jpg": {
+    "fingerprint": "838eac6e2664746758892b718ff45fa5d295f50740f6bf9199f97ca7a877464b",
+    "entry": null,
+    "version": 3
+  },
+  "2112550213990982051:embedded-3568a61ee1f0c68e86e8b035f86b22e91d8b1299f4a500e9e1b5f72ffccaf75a.jpg": {
+    "fingerprint": "26bf3a58c8724c01225ff44d31c46694b3ad35b5e5ab64ad4621f4a5acee5955",
+    "entry": null,
+    "version": 3
+  },
+  "2112864297227538507:embedded-67512b2c5701af17be0cc28e08a3adb0ee2e415ea770abb9418c8f94c60a6e71.jpg": {
+    "fingerprint": "2b7b5ae45aaffa4c7df83b98718e2b8608e4bef81d4bbe76faee3249d75b1a12",
+    "entry": null,
+    "version": 3
+  },
+  "2112864297227538507:embedded-9f0249edf827fbcae858621f247ef4a4f2451ee409c716d8ea44993ddfaa2f7f.jpg": {
+    "fingerprint": "71af0c66907287a190c855e2a9bd6841655f2eaa18e6635c95a55b8fb2059399",
+    "entry": null,
+    "version": 3
+  },
+  "2112864297227538507:embedded-47cd092ac60e5702af6ad39c3f3005603c1fd5f72f137f9a51a9eff0b7a9aa14.jpg": {
+    "fingerprint": "efc5411d022e590fdb65a2519e637bc1e80bc796c39392112577568b71cd355f",
+    "entry": null,
+    "version": 3
+  },
+  "2112864297227538507:embedded-e52a0687501fb7f9821e261326770c074ae39bec92bdaa0cd7fd98c90d56bb61.jpg": {
+    "fingerprint": "1c6a57825f7e287abcdfcf1f4b819e4f948fa886728ad65e9c25e7a2d11d0500",
+    "entry": null,
+    "version": 3
+  },
+  "2112143385482113214:embedded-dbbf923a10dbce822d6b6e18a79c39fc7af6f24f8f008fce119efffb44587311.jpg": {
+    "fingerprint": "b3dc8574bdc800188a7336a0e8cb6a953e1a71dda23f29306f11cbb66377c19d",
     "entry": null,
     "version": 3
   }
