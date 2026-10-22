@@ -12419,7 +12419,7 @@
     "content_hash": "7468c2cd6e468188",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:13:19.810605+00:00"
+    "failed_at": "2026-10-22T00:41:37.179516+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12655,7 +12655,7 @@
     "content_hash": "c9e077821043585a",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:17:24.881547+00:00"
+    "failed_at": "2026-10-22T00:45:42.274343+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13245,7 +13245,7 @@
     "content_hash": "b8962dde60ce9b0b",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410625+00:00"
+    "failed_at": "2026-10-22T00:49:42.910221+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13423,7 +13423,7 @@
     "content_hash": "4f76bb0aaa41cee1",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410673+00:00"
+    "failed_at": "2026-10-22T00:49:42.910238+00:00"
   },
   "reply:2111680050311688665:2111686077836894509": {
     "paragraphs": [
@@ -13446,7 +13446,7 @@
     "content_hash": "fa5946699cdf11e7",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410720+00:00"
+    "failed_at": "2026-10-22T00:49:42.910278+00:00"
   },
   "reply:2108954220841816471:2109163730521207277": {
     "paragraphs": [
@@ -13456,7 +13456,7 @@
     "content_hash": "dbf4dd0203632afe",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410751+00:00"
+    "failed_at": "2026-10-22T00:53:48.157520+00:00"
   },
   "reply:2112286960752714130:2112286974921097490": {
     "paragraphs": [
@@ -13466,7 +13466,7 @@
     "content_hash": "6ad61e6264ccf172",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:25:30.670717+00:00"
+    "failed_at": "2026-10-22T00:53:48.157608+00:00"
   },
   "reply:2111879987611521450:2111905390359421136": {
     "paragraphs": [
@@ -13476,7 +13476,7 @@
     "content_hash": "8de2354c1186129a",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410688+00:00"
+    "failed_at": "2026-10-22T00:49:42.910248+00:00"
   },
   "reply:2112016108161282109:2112015623391969565": {
     "paragraphs": [
@@ -13487,7 +13487,7 @@
     "content_hash": "5ee96f2887e272d3",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410706+00:00"
+    "failed_at": "2026-10-22T00:49:42.910264+00:00"
   },
   "reply:2108954220841816471:2108956474504331336": {
     "paragraphs": [
@@ -13497,7 +13497,7 @@
     "content_hash": "83585c7a2d3c445b",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410744+00:00"
+    "failed_at": "2026-10-22T00:49:42.910305+00:00"
   },
   "reply:2112178425725136936:2112179259477512526": {
     "paragraphs": [
@@ -13507,7 +13507,7 @@
     "content_hash": "081db0ecd6a04ba2",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410738+00:00"
+    "failed_at": "2026-10-22T00:49:42.910298+00:00"
   },
   "reply:2112286960752714130:2112286980574982434": {
     "paragraphs": [
@@ -13527,7 +13527,7 @@
     "content_hash": "a054c141e2cf39dc",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410733+00:00"
+    "failed_at": "2026-10-22T00:49:42.910292+00:00"
   },
   "reply:2112178425725136936:2112179953030553944": {
     "paragraphs": [
@@ -13537,7 +13537,7 @@
     "content_hash": "4acd4e91a827a56d",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410726+00:00"
+    "failed_at": "2026-10-22T00:49:42.910284+00:00"
   },
   "reply:2112143385482113214:2112143554537492943": {
     "paragraphs": [
@@ -13547,7 +13547,7 @@
     "content_hash": "4e9549ee3df6b2bc",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410765+00:00"
+    "failed_at": "2026-10-22T00:53:48.157582+00:00"
   },
   "reply:2111879987611521450:2111880393666515167": {
     "paragraphs": [
@@ -13557,7 +13557,7 @@
     "content_hash": "4dfd56d38a1f7ff1",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410696+00:00"
+    "failed_at": "2026-10-22T00:49:42.910256+00:00"
   },
   "quote:2112299628695888087:quote:2108954220841816471": {
     "paragraphs": [
@@ -13578,7 +13578,7 @@
     "content_hash": "d5a2b93a1aa8e775",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410770+00:00"
+    "failed_at": "2026-10-22T00:53:48.157591+00:00"
   },
   "reply:2112299628695888087:2112301627436917204": {
     "paragraphs": [
@@ -13614,7 +13614,7 @@
     "content_hash": "cbc241096c074ef6",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410713+00:00"
+    "failed_at": "2026-10-22T00:49:42.910271+00:00"
   },
   "reply:2108954220841816471:2109023028126621706": {
     "paragraphs": [
@@ -13624,7 +13624,7 @@
     "content_hash": "46f57a1be35ff5b9",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:21:25.410758+00:00"
+    "failed_at": "2026-10-22T00:53:48.157571+00:00"
   },
   "reply:2112286960752714130:2112286973163675824": {
     "paragraphs": [
@@ -13634,7 +13634,7 @@
     "content_hash": "f4d7666cedb4d21a",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:25:30.670672+00:00"
+    "failed_at": "2026-10-22T00:53:48.157601+00:00"
   },
   "reply:2112299628695888087:2112301974557536340": {
     "paragraphs": [
@@ -13646,5 +13646,45 @@
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
     "failed_at": "2026-10-20T00:55:47.708520+00:00"
+  },
+  "reply:2110426389388444039:2112234961873109286": {
+    "paragraphs": [
+      "강력했던 하락추세가 소강상태에 접어들었고, 상승추세로 돌아뛸 수 있다는 뜻입니다. 6일 꼬리로 지지가 나오는 움직임에 저 꼬리를 스탑으로 (LoD) 진입했습니다.",
+      "6. 그 후 이틀간 (10/7일, 8일) 제 anticipation buy 이후 원했던 움직임이 나와주며, 포지션을 완성했습니다.",
+      "(이어서)"
+    ],
+    "translated": [],
+    "content_hash": "05ad6be665c63bea",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T00:49:42.910204+00:00"
+  },
+  "reply:2110426389388444039:2112234600378544449": {
+    "paragraphs": [
+      "4. 작은 추세는 7월 발현된 이후, 되돌림을 거쳐 9월 중순 상단을 찍고 되돌림이 주요가격까지 내려온 상황. EMA로 치면 100EMA와 50EMA 사이에서 6일 지지가 나왔습니다.",
+      "5.그 되돌림을 하나의 정말 작은 추세로 본다면, 곡이 완만해진 상황이었습니다. 이게 무슨 뜻이냐- \n(이어서)"
+    ],
+    "translated": [],
+    "content_hash": "ba993dc1d1da27d3",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T00:49:42.910131+00:00"
+  },
+  "reply:2110426389388444039:2112123754977677786": {
+    "paragraphs": [
+      "김용범, 이억원 둘이서 독박에 피박으로 제물됐네.",
+      "정치권에서 또 증시개입하려고 꼬리짜르기 시전.",
+      "누차 말하지만 레버리지ETF가 잘못이 있는게 아니라 삼성전자, SK하이닉스 두개만 출시하게한게 문제라니까.",
+      "토지허가제 지정한 동네 집값 폭등하는거 보고도 배운게 없냐 진짜 ㅋㅋㅋㅋ",
+      "https://x.com/blazingbees/status/2112103974803591679 · blazingbees",
+      "제발 한국 증시에 더 이상 정치가 개입하지마라.\n이 이상으로 혼탁하게 하지말란 말이다.",
+      "빠져야 할 때 시원하게 털고 가야 \n올라야 할 때도 잘 오르게 되는건데\n인위적으로 개입할수록 점점 더 꼬인다니까?",
+      "이번 6~7월 때도 보고 배운게 없어?"
+    ],
+    "translated": [],
+    "content_hash": "7ef38717b0152e53",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T00:49:42.910214+00:00"
   }
 }

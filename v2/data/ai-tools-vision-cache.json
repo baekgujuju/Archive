@@ -4419,5 +4419,115 @@
     "category_ko": "성장주 투자 교육",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b7482439c02b2bde977f3d0c47ff3a9d5ed2dfaf8ac0d6da8bf041e865b17d66": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "실적 시즌을 앞둔 주식 차트 분석 영상",
+    "description_ko": "어두운 거래 플랫폼에서 두 개의 주가 차트와 거래량을 비교하는 영상 화면이다. 왼쪽에는 카니발(CCL) 차트가 보인다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:27b5a8ba20a6104ecc578efacca4f314d68729cc024146ed5e8e316bd82d13b6": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Lucian Icons — 무료 오픈소스 애니메이션 SVG 아이콘",
+    "description_ko": "lucianLabs의 아이콘 프로젝트 소개 페이지다. MIT 라이선스의 아이콘 211개를 제공하며, 전구 아이콘의 상태 전환 예시와 소스 받기 버튼이 보인다.",
+    "category_ko": "오픈소스·아이콘 라이브러리",
+    "owner_hint": "lucianLabs",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5176d93b3d860510af83bcb54715ec03913e43581f159676af99baf973d659ea": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NVIDIA·Broadcom·Oracle의 5년 CDS 스프레드",
+    "description_ko": "2026년 10월 19일 기준 세 기업의 CDS 스프레드 추이를 비교한 그래프다. 오라클이 가장 높은 수준으로 상승했고 브로드컴, 엔비디아 순으로 나타난다.",
+    "category_ko": "금융·신용위험",
+    "owner_hint": "Michael Kramer / Mott Capital Management; 데이터: LSEG",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:266c6c1593c9b586c3118fd114c0c64d8cf240e4d2e31911923f9f7e772ea1d0": {
+    "index": 3,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Lucian Icons — 눌러 보고 싶은 아이콘 211개",
+    "description_ko": "무료 오픈소스 아이콘 프로젝트의 홍보 이미지다. 검은 배경에 하트와 알림 등의 아이콘 카드가 배치되어 있다.",
+    "category_ko": "오픈소스·아이콘 라이브러리",
+    "owner_hint": "@lucian__03",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3b6e97c8212adadbc522e3cd25f3f8bed06190cd2e722a91a8f06866b09ea3e1": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "IOVA — Iovance Biotherapeutics 일봉 차트",
+    "description_ko": "Deepvue에서 표시한 IOVA 주가와 거래량 차트다. 상승 구간과 조정 구간에 추세선이 그어져 있으며 종가는 14.86달러로 표시된다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "Deepvue",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8409e73f145956f1e1efde7a9745a4a3dd3571acf625666080569d3568faea8e": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "OSCR — Oscar Health 일봉 차트",
+    "description_ko": "Deepvue에서 표시한 OSCR 주가와 거래량 차트다. 이동평균선과 수평 저항선이 표시되어 있으며 종가는 33.66달러다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "Deepvue",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2a5b72ce80f19347d6e0d5f7cfa2d9b469a2f857ba62fe073c641df8e1a2c17a": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView 모네로 일봉 차트",
+    "description_ko": "KuCoin의 모네로·테더 일봉 차트로, 가격 상승 구간과 이동평균선, 거래량, 주요 가격대를 표시한다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:281955df8f9d9bdcd435c26b75125f540f1fbfdedee42d9c7597a55d73fc23a6": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView 모네로 1시간봉 차트",
+    "description_ko": "MEXC의 모네로·USDT 1시간봉 차트로, 급등 이후 가격 흐름과 이동평균선, 지지 구간 및 거래량을 보여준다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:484ebafd239a13a08d425541aad13d0b6c540b0ea57587f1c0df90f97df3ebed": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Slack Technologies 주가 분석 화면",
+    "description_ko": "트레이딩 프로그램에서 Slack Technologies의 주가 차트 두 개를 나란히 표시하며, 이동평균선과 추세선 및 거래량을 분석한다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f7e0aad752c47316576563aac8146090257b513759d8d129a2bb5ac919360b9b": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "수식은 그대로, 문장만 한국어로",
+    "description_ko": "스크롤 동작과 두 프레임 사이의 오프셋을 설명하는 기술 문서를 한국어로 번역한 화면이다. 수식은 원형을 유지하고 본문 문장만 번역하는 기능을 강조한다.",
+    "category_ko": "기술 문서 번역",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:371da85e27b58552862bae846f10ddce949ece1dba3f32bb4e939804f4741e2e": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView 코스피 일봉 기술적 분석",
+    "description_ko": "코스피 일봉 차트에 이동평균선, 가격 밴드, 추세선과 매매 신호를 표시하고, 하단에 RSI 및 MACD 지표를 배치한 화면이다.",
+    "category_ko": "주가지수 차트",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }

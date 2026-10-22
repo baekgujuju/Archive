@@ -2838,5 +2838,60 @@
     "fingerprint": "3e07b8cbdb3ed0c010675ea2ae6c2da72b7bd5d39b047d164af51868c8430310",
     "entry": null,
     "version": 3
+  },
+  "2112586894290923618:embedded-b7482439c02b2bde977f3d0c47ff3a9d5ed2dfaf8ac0d6da8bf041e865b17d66.jpg": {
+    "fingerprint": "468df5e2f4f36fd5ad22ee148eb44fdf5ec7c5c7c70b8f691c734de69a644a95",
+    "entry": null,
+    "version": 3
+  },
+  "2112839269203243034:embedded-5176d93b3d860510af83bcb54715ec03913e43581f159676af99baf973d659ea.jpg": {
+    "fingerprint": "57cb1c23cca54b6134eb484198b37c391cc840ce9d35fceb5a6cb8f4987cba25",
+    "entry": null,
+    "version": 3
+  },
+  "2112746369240739887:embedded-3b6e97c8212adadbc522e3cd25f3f8bed06190cd2e722a91a8f06866b09ea3e1.jpg": {
+    "fingerprint": "1212e78baba4a1fdd9c10f194006cfaf79bdfd26585ae89c63f4790f1ef1782d",
+    "entry": null,
+    "version": 3
+  },
+  "2112746369240739887:embedded-8409e73f145956f1e1efde7a9745a4a3dd3571acf625666080569d3568faea8e.jpg": {
+    "fingerprint": "4a96f4095434ac11a44dbe47bcfd37eca92bbe233f51cff0ec201f20a6a120a3",
+    "entry": null,
+    "version": 3
+  },
+  "2112348661577626067:embedded-2a5b72ce80f19347d6e0d5f7cfa2d9b469a2f857ba62fe073c641df8e1a2c17a.png": {
+    "fingerprint": "95ce68f17ea32b321dfb92378e4c32618d55fd70f28ea4397ce9343c3f06769a",
+    "entry": null,
+    "version": 3
+  },
+  "2112348661577626067:embedded-281955df8f9d9bdcd435c26b75125f540f1fbfdedee42d9c7597a55d73fc23a6.png": {
+    "fingerprint": "0e6c0e1554d216ee025b05504a8b8c7cb7d4cb862b5a1602e8a5972f3796bea4",
+    "entry": null,
+    "version": 3
+  },
+  "2112872526447779963:embedded-484ebafd239a13a08d425541aad13d0b6c540b0ea57587f1c0df90f97df3ebed.jpg": {
+    "fingerprint": "7f0977a8e31924d90eb4c5309f9956e09cfafa204bbf869dbc8824a0fec44f84",
+    "entry": null,
+    "version": 3
+  },
+  "2112907854097334441:embedded-f7e0aad752c47316576563aac8146090257b513759d8d129a2bb5ac919360b9b.jpg": {
+    "fingerprint": "41770cc3323e19b90869f2f67e76e2285964d93ae8b3e480c3826df2e5d6985e",
+    "entry": {
+      "title": "midagedev/mwoyeo",
+      "summary_ko": "Mwoyeo는 macOS용 실시간 온디바이스 화면 번역 앱입니다. 화면 내 렌즈 영역의 텍스트를 실시간으로 인식하여 그 자리에서 지정한 언어로 즉시 번역해 줍니다.",
+      "category": "macOS 화면 번역 유틸리티",
+      "repo_url": "https://github.com/midagedev/mwoyeo",
+      "status": "verified",
+      "evidence": [
+        "text-url:no-title-check"
+      ],
+      "fingerprint": "41770cc3323e19b90869f2f67e76e2285964d93ae8b3e480c3826df2e5d6985e"
+    },
+    "version": 3
+  },
+  "2112797252431606163:embedded-371da85e27b58552862bae846f10ddce949ece1dba3f32bb4e939804f4741e2e.jpg": {
+    "fingerprint": "1fd692b0696d9016e5041fa7a6cdd20e9b0c242259bc23ef4c1177ca53730d40",
+    "entry": null,
+    "version": 3
   }
 }
