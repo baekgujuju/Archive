@@ -6046,5 +6046,55 @@
     "category_ko": "주식·기술적 분석 교육",
     "owner_hint": "AlbertRay",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7382ecbf3eba1eff44d0549c4e6978109991c452fd6837c23b55b9cbc0907c83": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Monero / Tether 1시간 차트",
+    "description_ko": "TradingView의 KuCoin XMR/USDT 1시간봉 차트. 약 599.55 USDT의 가격과 이동평균선, 거래량, 지지·저항선 및 추세 패턴이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c46f711e715cc00f6ab52acf76d2a40915388a9aa44de69b836b17b9f15163c5": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Monero / Tether 4시간 차트",
+    "description_ko": "TradingView의 KuCoin XMR/USDT 4시간봉 차트. 약 599.49 USDT의 가격과 이동평균선, 거래량, 수평 저항선 및 수렴 추세선이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:31a6b1c6a1c3053795d757fb5952ab7f86869a73c26733f69230eb231e66edbb": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Silver Cup and Handle Pattern",
+    "description_ko": "은 현물 XAG/USD 일봉에서 컵 앤 핸들 패턴을 설명하는 TradingView 차트. 컵 모양의 곡선과 핸들 추세선, 매수 지점으로 표시한 초록색 화살표가 보인다.",
+    "category_ko": "귀금속 차트 패턴 분석",
+    "owner_hint": "JulianKomar / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c1ff6a1cff7e55d0b669cd88c238552c2e0675ccf470b8e2765b1b9637021aa7": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SAND · 1H 시장 분석 대시보드",
+    "description_ko": "SAND 1시간봉과 EMA 20·50·100·200, 전일 고점 및 오더블록 영역을 표시한 대시보드. 오른쪽에는 Coinbase 프리미엄, 거래소별 현물·선물 CVD, 미결제약정과 청산 지표가 배치되어 있다.",
+    "category_ko": "암호화폐 시장 지표 대시보드",
+    "owner_hint": "WHITEPEACH",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a727242fcc1ed06764c25bf8bc34e5eaeae9583996079cffa292359bdd43dc96": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hyperliquid SAND SHORT 2X +11.0%",
+    "description_ko": "Hyperliquid의 SAND 2배 레버리지 숏 포지션 수익 공유 이미지. 수익률 +11.0%, 진입 가격 0.062006, 마크 가격 0.058597과 추천 링크 접두부가 표시되어 있다.",
+    "category_ko": "암호화폐 거래 수익 인증",
+    "owner_hint": "Hyperliquid",
+    "provider": "codex"
   }
 }
