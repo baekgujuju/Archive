@@ -175,10 +175,17 @@ class TestIBCanonical(unittest.TestCase):
         print("  ✓ norm_url 의미있는 쿼리 보존")
 
     def test_snapshot_63_preserved(self):
-        from ib_adapter import load_snapshot
+        # 계약: load_snapshot은 IB 라이브러리 파일의 전체 posts를 누락 없이
+        # 반환한다. 작성 당시 63건이던 라이브러리가 98건으로 성장해 하드코딩
+        # 수치가 낡았다 — 원본 파일과 전수 대조로 바꾸고, 초기 스냅샷 63건
+        # 이상이라는 하한(append-only, 축소 금지)은 유지한다.
+        import json as _json
+        from ib_adapter import IB_LIBRARY_JSON, load_snapshot
         snapshot = load_snapshot()
-        self.assertEqual(len(snapshot), 63)
-        print("  ✓ 스냅샷 63건 보존 (실제 로드)")
+        stored = _json.loads(IB_LIBRARY_JSON.read_text(encoding="utf-8"))
+        self.assertEqual(len(snapshot), len(stored.get("posts", [])))
+        self.assertGreaterEqual(len(snapshot), 63)
+        print(f"  ✓ 스냅샷 전수 보존 (실제 로드 {len(snapshot)}건)")
 
 
 def main():

@@ -1,0 +1,46 @@
+# X Archive v2 영속 워커 — systemd 시스템 서비스
+#
+# 정본(영속 보관): ~/workspace/article-archive/repo-full/v2/hooks/systemd/archive-worker.service
+# 설치 위치: /etc/systemd/system/archive-worker.service (/etc는 VM 교체 시 소실되므로
+#   x-drive-inbox-monitor 크론의 watchdog 단계가 정본에서 복원한다)
+#
+# 동작:
+#   - 5분마다 scheduler_runner.py 실행 (Drive 인제스트 → 빌드 → 발행)
+#   - Restart=always: OOM/SIGKILL/크래시 시 10초 내 자동 재시작
+#   - 워커 자체가 flock으로 singleton 보장 (중복 실행 불가)
+#   - 중지 시 SIGTERM → 워커가 105초 grace로 자식 그룹 정리 (TimeoutStopSec=150)
+#
+# 관리:
+#   systemctl status archive-worker
+#   systemctl restart archive-worker
+#   systemctl stop archive-worker   # launcher.py stop 대신 이것 사용
+#   journalctl -u archive-worker -n 50
+
+[Unit]
+Description=X Archive v2 persistent worker (5-min drive poll)
+After=network-online.target
+Wants=network-online.target
+
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=root
+# drive_poll.py 등이 Path.home()로 ~/workspace를 찾으므로 HOME 고정
+# (지정 없으면 root 서비스의 HOME=/root가 되어 설정 파일을 못 찾음)
+Environment=HOME=/home/hatch
+# hatch_gws_cli 등 /opt/hatch/bin 도구 사용을 위한 PATH
+Environment=PATH=/opt/hatch/bin:/opt/hatch-image/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Private network configuration; values are never committed. Missing file fails closed.
+EnvironmentFile=/home/hatch/.config/archive-worker/network.env
+ExecCondition=/usr/bin/test ! -e /home/hatch/workspace/article-archive/repo-full/v2/hooks/.worker-maintenance.json
+WorkingDirectory=/home/hatch/workspace/article-archive/repo-full/v2/hooks
+ExecStart=/usr/bin/python3 /home/hatch/workspace/article-archive/repo-full/v2/hooks/persistent_worker.py
+Restart=always
+RestartSec=10
+TimeoutStopSec=150
+KillMode=control-group
+
+[Install]
+WantedBy=default.target
