@@ -9027,8 +9027,8 @@
       "translated": [],
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
-      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T05:17:55.000244+00:00"
+      "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+      "failed_at": "2026-10-22T06:29:33.508807+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12692,8 +12692,8 @@
     "translated": [],
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:13:54.398655+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:26:36.658244+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13286,8 +13286,8 @@
     "translated": [],
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:17:55.001183+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:29:33.512560+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13371,30 +13371,18 @@
     "paragraphs": [
       "PS: If you want to improve your stock selection, I created a free checklist with the criteria I use to filter out mediocre stocks and focus on high-quality opportunities.",
       "Get my 360° Stock Selection Checklist 👇",
-      "Filter Out Mediocre Stocks: My 360° Stock Selection Checklist https://t.co/lKZj2SsCDj"
+      "Filter Out Mediocre Stocks: My 360° Stock Selection Checklist (https://t.co/lKZj2SsCDj)  https://t.co/lKZj2SsCDj"
     ],
     "translated": [
-      "추신: 종목 선정 능력을 높이고 싶으시다면, 제가 평범한 종목을 걸러내고 우량한 투자 기회에 집중할 때 사용하는 기준을 담은 무료 체크리스트를 만들었습니다.",
-      "제 360° 종목 선정 체크리스트를 받아보세요 👇",
-      "평범한 종목 걸러내기: 나의 360° 종목 선정 체크리스트 https://t.co/lKZj2SsCDj"
+      "추신: 종목 선정 능력을 개선하고 싶으시다면, 제가 평범한 종목을 걸러내고 질 높은 기회에 집중하기 위해 사용하는 기준을 담은 무료 체크리스트를 만들었습니다.",
+      "저의 360° 종목 선정 체크리스트를 받아보세요 👇",
+      "평범한 종목 걸러내기: 저의 360° 종목 선정 체크리스트 (https://t.co/lKZj2SsCDj)  https://t.co/lKZj2SsCDj"
     ],
-    "content_hash": "d3be6663fb5e3322",
+    "content_hash": "e1d43b14dd8a34ab",
     "status": "ok",
     "validation_version": 2,
-    "translated_at": "2026-10-20T00:36:39.512562+00:00",
-    "chunk": "posts-x.json",
-    "last_attempt": {
-      "paragraphs": [
-        "PS: If you want to improve your stock selection, I created a free checklist with the criteria I use to filter out mediocre stocks and focus on high-quality opportunities.",
-        "Get my 360° Stock Selection Checklist 👇",
-        "Filter Out Mediocre Stocks: My 360° Stock Selection Checklist (https://t.co/lKZj2SsCDj)  https://t.co/lKZj2SsCDj"
-      ],
-      "translated": [],
-      "content_hash": "e1d43b14dd8a34ab",
-      "status": "failed",
-      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T05:17:55.001193+00:00"
-    }
+    "translated_at": "2026-10-22T06:29:33.514135+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111879987611521450:2111883184216404254": {
     "paragraphs": [
@@ -13426,30 +13414,18 @@
     "paragraphs": [
       "Starlink는 도서산간지역 및 오지에서도 빠르고 안정적인 인터넷을 제공합니다. 휴대 가능하고 설치가 용이한 Starlink Mini는 어디에서나 작동합니다.",
       "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
-      "주문하기 https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8"
+      "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8"
     ],
     "translated": [
       "Starlink는 도서산간지역 및 오지에서도 빠르고 안정적인 인터넷을 제공합니다. 휴대 가능하고 설치가 용이한 Starlink Mini는 어디에서나 작동합니다.",
       "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
-      "주문하기 https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8"
+      "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8"
     ],
-    "content_hash": "aa73b240705c4f73",
+    "content_hash": "2d9c3e65301588f4",
     "status": "ok",
     "validation_version": 2,
-    "translated_at": "2026-10-20T00:36:39.505287+00:00",
-    "chunk": "posts-x.json",
-    "last_attempt": {
-      "paragraphs": [
-        "Starlink는 도서산간지역 및 오지에서도 빠르고 안정적인 인터넷을 제공합니다. 휴대 가능하고 설치가 용이한 Starlink Mini는 어디에서나 작동합니다.",
-        "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
-        "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8"
-      ],
-      "translated": [],
-      "content_hash": "2d9c3e65301588f4",
-      "status": "failed",
-      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T05:17:55.000827+00:00"
-    }
+    "translated_at": "2026-10-22T06:29:33.510392+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111820320956952991:2111864672689479773": {
     "paragraphs": [
@@ -13508,11 +13484,14 @@
     "paragraphs": [
       "GitHub - leopard627/fire-your-seo-agency: Fire your SEO·GEO agency 🔥 A Claude Code skill that... (https://t.co/s2iYJjM1UJ)  https://t.co/s2iYJjM1UJ"
     ],
-    "translated": [],
+    "translated": [
+      "GitHub - leopard627/fire-your-seo-agency: SEO·GEO 대행사를 해고하세요 🔥 …하는 Claude Code 스킬 (https://t.co/s2iYJjM1UJ)  https://t.co/s2iYJjM1UJ"
+    ],
     "content_hash": "98911601b2fe57d4",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:17:55.004399+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.514574+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108954220841816471:2109163730521207277": {
     "paragraphs": [
@@ -13581,11 +13560,14 @@
     "paragraphs": [
       "Seasonality looks bullish, but rising yields and oil are real headwinds. The market setup echoes themes \n@john_grobe1 (https://x.com/john_grobe1) \n has discussed."
     ],
-    "translated": [],
+    "translated": [
+      "계절성은 강세를 시사하지만, 금리와 유가 상승은 실질적인 역풍입니다. 현재 시장 상황은\n@john_grobe1 (https://x.com/john_grobe1)\n님이 논의해 온 주제들과 유사한 양상을 보입니다."
+    ],
     "content_hash": "d74d2060f9e11208",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:17:55.004422+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.515011+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112286960752714130:2112286980574982434": {
     "paragraphs": [
@@ -13808,8 +13790,8 @@
     "translated": [],
     "content_hash": "688ac05f147f559e",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:17:55.000185+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:29:33.507598+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13867,11 +13849,21 @@
       "CVD는 이 델타를 봉마다 계속 더한 캔들 입니다.\nCumulative Volume Delta.\n한국어로는 누적 거래량 델타입니다.",
       "즉 위로 민 거래량 − 아래로 민 거래량 = 하나의 봉에서 델타의 누적을  x.com/AlexZio00/stat…"
     ],
-    "translated": [],
+    "translated": [
+      "메이슨",
+      "@Mason_yoon94",
+      "·",
+      "9h",
+      "저도 거래 할 때 1순위로 보는 내용이라서 \n정말 정말 중요한 내용이라 생각합니다",
+      "저는 CVD를 봅니다.",
+      "CVD는 이 델타를 봉마다 계속 더한 캔들입니다.\n누적 거래량 델타.\n한국어로는 누적 거래량 델타입니다.",
+      "즉 위로 민 거래량 − 아래로 민 거래량 = 하나의 봉에서 델타의 누적을  x.com/AlexZio00/stat…"
+    ],
     "content_hash": "6016f67d7b396825",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:17:55.000815+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.510091+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112861554693574817:2112868875092316280": {
     "paragraphs": [
@@ -14031,21 +14023,27 @@
     "paragraphs": [
       "Mark is a smart man\nSuggest you people on the silver and gold train listen and learn what futures markets do"
     ],
-    "translated": [],
+    "translated": [
+      "Mark는 똑똑한 사람입니다.\n은과 금 열차에 탄 여러분이 귀를 기울이고 선물 시장이 어떻게 작동하는지 배우기를 권합니다."
+    ],
     "content_hash": "8869e9d0f3f7cf20",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230754+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.518870+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112746369240739887:2112765643049041957": {
     "paragraphs": [
       "Looks like the semis is about to make another leg higher. (thanks SPCX and SMCI) But Overnight/premarket is always kind of fake news. Let's see what Wednesday brings. I have high hopes thou."
     ],
-    "translated": [],
+    "translated": [
+      "반도체 주식들이 또 한 번 상승 파동을 만들어 내려는 것으로 보입니다. (SPCX와 SMCI 덕분입니다) 하지만 야간 거래/장전 시장은 항상 일종의 가짜 뉴스 같은 면이 있습니다. 수요일에 어떤 결과가 나올지 살펴봅시다. 그래도 기대가 큽니다."
+    ],
     "content_hash": "e746c99623780419",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230608+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.515562+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112348661577626067:2112348676542935281": {
     "paragraphs": [
@@ -14068,11 +14066,14 @@
     "paragraphs": [
       "Absolutely. Taking profits is such an important part of the whole investment process."
     ],
-    "translated": [],
+    "translated": [
+      "전적으로 동의합니다. 이익을 실현하는 것은 전체 투자 과정에서 매우 중요한 부분입니다."
+    ],
     "content_hash": "6dec3a9611b9acdb",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230725+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.517309+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112777626712444966:2112777744136458376": {
     "paragraphs": [
@@ -14082,8 +14083,8 @@
     "translated": [],
     "content_hash": "2f4473d8072f8507",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230683+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:29:33.515715+00:00"
   },
   "reply:2112797252431606163:2112454560765870149": {
     "paragraphs": [
@@ -14118,8 +14119,8 @@
     "translated": [],
     "content_hash": "d1cfe1c5cd9aecad",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230693+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:29:33.515861+00:00"
   },
   "reply:2112370971802001870:2111179374615560206": {
     "paragraphs": [
@@ -14127,11 +14128,16 @@
       "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
       "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=283i9pn5kppgrf7bq63kc7gqa7)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=283i9pn5kppgrf7bq63kc7gqa7"
     ],
-    "translated": [],
+    "translated": [
+      "Starlink로 이동 중에도 초고속 인터넷을 이용하세요. 와이파이 공유기가 내장된 Starlink Mini는 여행, 캠핑, 보트 타기, 원격 근무 등 다양한 활동에 적합합니다.",
+      "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
+      "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=283i9pn5kppgrf7bq63kc7gqa7)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=283i9pn5kppgrf7bq63kc7gqa7"
+    ],
     "content_hash": "27ada2d8852023ad",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230703+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.516167+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112348661577626067:2112348670809313686": {
     "paragraphs": [
@@ -14150,11 +14156,14 @@
     "paragraphs": [
       "Translation whoever owns \n$SLV (https://x.com/search?q=%24SLV&src=cashtag_click) \n.  I already shorted and now I need the sheep to listen to me and sell the stock to drive down prices for my short.  Ignore th huge spread between Comex and Shanghai"
     ],
-    "translated": [],
+    "translated": [
+      "$SLV (https://x.com/search?q=%24SLV&src=cashtag_click) 를 소유한 사람이든 누구든 번역하자면: 나는 이미 숏(공매도)을 쳤고, 이제 내 숏 포지션을 위해 주가를 떨어뜨리도록 부화뇌동하는 양 떼들이 내 말을 듣고 주식을 매도해야 한다. Comex와 상하이 간의 엄청난 스프레드는 무시해라."
+    ],
     "content_hash": "b7c27868dd46e399",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230739+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.518237+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112797252431606163:2095223825059262507": {
     "paragraphs": [
@@ -14173,21 +14182,27 @@
     "paragraphs": [
       "You’re a fucking moron, just shut your fatass up. You’ve been saying this for 10 months. Do you intentionally try to fuck over your low IQ followers?"
     ],
-    "translated": [],
+    "translated": [
+      "너는 진짜 멍청한 놈이니까 그 뚱뚱한 입 좀 다물어라. 너 지난 10개월 동안 계속 이 소리만 해대고 있잖아. 지능 낮은 너의 팔로워들 엿먹이려고 일부러 이러는 거냐?"
+    ],
     "content_hash": "652ecb42bd823514",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230710+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.516637+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016904402347462916": {
     "paragraphs": [
       "First of all, GFYS! Second, I'm not fat. Third, I haven't been saying this for the past 10-months. Now FO!"
     ],
-    "translated": [],
+    "translated": [
+      "첫째, 가서 너나 엿먹어라! 둘째, 나 안 뚱뚱하다. 셋째, 나는 지난 10개월 동안 이런 말을 한 적이 없다. 이제 꺼져라!"
+    ],
     "content_hash": "a8d025908e156587",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230718+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.517017+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112240353181130917:2112240916014719035": {
     "paragraphs": [
@@ -14221,21 +14236,27 @@
     "paragraphs": [
       "Exhausted charts don’t correct slowly"
     ],
-    "translated": [],
+    "translated": [
+      "에너지가 고갈된 차트는 천천히 조정받지 않습니다."
+    ],
     "content_hash": "ecb02a3c6de71167",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230760+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.519103+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016893334006992904": {
     "paragraphs": [
       "Why because it's up...you could miss a run up if your selling into this because your focusing on price only."
     ],
-    "translated": [],
+    "translated": [
+      "왜냐하면 올라가고 있으니까요... 오직 가격에만 집중해서 이 상황에서 매도하다가는 추가 상승장을 놓칠 수 있습니다."
+    ],
     "content_hash": "37608189b042397f",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230746+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.518546+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112797252431606163:2112797671522172942": {
     "paragraphs": [
@@ -14254,11 +14275,14 @@
     "paragraphs": [
       "The difference between you and the pathetic pico-top buyers here in the comments tells everything.\nAged very well."
     ],
-    "translated": [],
+    "translated": [
+      "당신과 여기 댓글에 있는 한심한 초고점(pico-top) 매수자들 사이의 차이가 모든 것을 말해줍니다.\n시간이 지나고 보니 정말 정확한 말이 되었네요."
+    ],
     "content_hash": "1aa1813583ab1c15",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:22:00.230731+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:29:33.517640+00:00",
+    "chunk": "posts-x.json"
   },
   "2112082731652030821": {
     "paragraphs": [
@@ -15090,6 +15114,387 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-22T06:16:11.822062+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112967172876046449": {
+    "paragraphs": [
+      "I systematically trail my stops using moving averages alongside R-multiples to lock in gains without getting shaken out.",
+      "Once a trade reaches a specific R-multiple target, I lock in profit and pivot my trail to key moving averages. This removes my emotions from the trend and keeps me in the move until the structure actually breaks.",
+      "Let the system take you out."
+    ],
+    "translated": [
+      "저는 작은 가격 변동에 흔들려 청산되지 않으면서 수익을 확보하기 위해 이동평균과 R배수를 함께 활용해 손절선을 체계적으로 조정합니다.",
+      "거래가 특정 R배수 목표에 도달하면 수익을 확보하고, 이후에는 주요 이동평균을 기준으로 손절선을 조정합니다. 이렇게 하면 추세를 따라가는 과정에서 감정을 배제하고, 추세 구조가 실제로 무너질 때까지 포지션을 유지할 수 있습니다.",
+      "시스템이 청산 시점을 결정하게 하세요."
+    ],
+    "content_hash": "ea2490486f54c432",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:27:05.464435+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2070143059845861695": {
+    "paragraphs": [
+      "This time is different",
+      "장폴 로드리그라는 교통지리학자가 그린 그림 한 장이 있습니다. 자산 가격이 거품을 만들고 터지는 과정을 네 단계로 나눈 도표입니다. 세로축에는 가치를, 가로축에는 시간을 두고, 그 위로 완만하게 비스듬히 올라가는 점선 하나가 평균을 표시합니다. 가격은 그 평균선을 따라 조용히 출발해 점점 가팔라지다가 꼭대기에서 폭발하듯 솟구치고, 결국 평균으로, 때로는 평균을 한참 밑도는 바닥까지 되돌아옵니다.",
+      "이 글은 역사적 시장참여자의 심리를 들여다본 한 편의 생각일 뿐이며, 특정 종목의 매수매도 권유가 절대 아닙니다.",
+      "(https://x.com/simplspark/article/2070143059845861695/media/2070111531258560512)",
+      "이 그림에서 저는 늘 한 지점에 눈이 멈춥니다. 곡선의 가장 높은 자리입니다. 로드리그는 그 정점에 한 마디를 적어 넣었습니다. 새로운 패러다임!!!. 느낌표를 세 개나 붙여서 말입니다.",
+      "이 작은 디테일에 거의 모든 이야기가 담겨 있다고 생각합니다. 거품의 심리를 그린 표준 지도에서, 이번에는 구조적으로 다르다는 확신은 거품이 아니라는 증거가 아니라 거품의 꼭대기를 알리는 표식으로 그려져 있습니다. 우연이 아니라 설계입니다. 새로운 시대가 열렸다는 외침이 가장 크게 울려 퍼지는 바로 그 순간이, 곡선이 꺾이기 직전이라는 것입니다.",
+      "지금 반도체 업계, 그중에서도 메모리 업계에는 하나의 이야기가 강물처럼 흐르고 있습니다. AI 수요가 반도체를 더 이상 경기를 타지 않는 산업으로 바꿔 놓았다는 이야기입니다. 마이크론의 경영진은 메모리 산업이 인공지능 덕분에 구조적으로 달라졌다고 말하고, 앞으로 오년 치 생산 물량을 가격 하한선과 함께 묶은 천억 달러 규모의 장기 계약을 잇따라 맺었습니다. 엔비디아의 젠슨 황은 새로운 산업혁명이 시작되었다고 선언합니다.",
+      "저는 시장에서 가장 변하지 않는 것이 바로 사람의 마음이라고 믿습니다. 기술도 바뀌고 자산의 종류도 바뀌지만, 값이 오를 때 사람이 흥분하고 값이 떨어질 때 사람이 두려워하는 그 심리의 흐름만큼은 백 년 전이나 지금이나 동일하다고 믿습니다. 그래서 저는 과거의 사례를 꺼내어 그때 시장에 있던 사람들의 마음이 어땠을지 헤아려 보고, 그것을 지금 우리의 마음과 나란히 놓아 보는 일이 결코 한가한 회고가 아니라고 생각합니다. 오히려 현재를 읽는 가장 믿을 만한 방법 가운데 하나라고 봅니다. 그런 마음으로 저는 이 이야기를 역사라는 거울 앞에 세워 보고 싶습니다.",
+      "그리고 미리 제 생각을 분명히 밝혀 두겠습니다. 투자자의 심리라는 잣대로 보면, 이번에도 다르지 않을 것입니다. 똑같은 문장이, 똑같은 곡선의 똑같은 자리에서, 지난 백 년 동안 반복되어 왔기 때문입니다. 다만 저는 폭락이 언제 올지는 점치지 않습니다. 중요한 것은 결과를 맞히는 일이 아니라, 우리가 지금 곡선의 어디쯤 서 있는지를 우선적으로 인지하는 일이라고 믿습니다.",
+      "거품의 일생, 네 국면",
+      "먼저 지도를 펴 보겠습니다. 로드리그는 거품의 일생을 네 국면으로 나눴습니다.",
+      "첫째는 잠복기입니다. 정보가 빠른 소수의 돈이 조용히, 조심스럽게 들어옵니다. 흔히 영리한 돈이라 부르는 자금입니다. 가격은 슬그머니 오르지만 대중은 아무것도 눈치채지 못합니다.",
+      "둘째는 인식기입니다. 흐름을 알아챈 투자자들이 합류합니다. 짧은 매도가 한두 번 찾아와 가슴을 쓸어내리게 하지만, 영리한 돈은 이 순간을 오히려 기회로 삼아 더 사들입니다. 이쯤에서 언론이 슬슬 관심을 보이기 시작합니다.",
+      "셋째는 광기입니다. 누구나 가격이 오르는 것을 보고, 대중이 일생에 한 번뿐인 기회라며 뛰어듭니다. 관심이 열광으로, 열광이 탐욕으로, 탐욕이 망상으로 옮겨 갑니다. 로드리그는 바로 이 국면의 끝자락에서, 완전히 새로운 펀더멘털을 들먹이며 영구히 높은 고원에 올라섰다는 식의 정당화가 등장하고, 그러면 거품은 곧 무너진다고 적었습니다.",
+      "넷째는 붕괴기입니다. 어느 순간 방아쇠가 당겨지고, 거의 모두가 동시에 상황이 변했음을 깨닫습니다. 정점의 새로운 패러다임에서 시작해 부정, 정상으로의 복귀라는 착각, 다시 한번 속이는 반등, 공포, 투항, 절망을 거쳐 평균으로 돌아갑니다. 뒤늦게 들어온 대중이 값이 빠지는 자산을 손에 쥔 채 남겨지고, 영리한 돈은 이미 오래전에 빠져나간 뒤입니다.",
+      "참여자의 순서를 눈여겨봐야 합니다. 영리한 돈에서 기관으로, 기관에서 대중으로 바통이 넘어갑니다. 이 그림은 사실 하이먼 민스키와 찰스 킨들버거가 정리한 고전적인 거품 해부도를 시각으로 옮긴 후예입니다. 그들이 말한 대체와 호황과 행복감과 차익 실현과 패닉의 단계가 이 곡선 안에 그대로 들어 있습니다. 로드리그가 그려 넣은, 영리한 돈이 슬그머니 빠져나가는 장면은 킨들버거가 말한 차익 실현의 순간과 정확히 포개집니다.",
+      "이 모든 것의 밑바닥에는 카르멘 라인하트와 케네스 로고프의 통찰이 깔려 있습니다. 그들은 팔백 년에 걸친 금융 위기의 역사를 훑은 끝에 이렇게 적었습니다.",
+      "이번에는 다르다는 증후군의 본질은 단순하다, 그것은 금융 위기란 다른 나라 다른 시대의 다른 사람들에게나 일어나는 일이고 지금 여기 우리에게는 일어나지 않는다는 굳은 믿음에 뿌리를 둔다, 우리는 더 잘하고 있고 더 똑똑하며 과거의 실수에서 배웠다, 낡은 가치 평가의 규칙은 더 이상 적용되지 않는다.",
+      "바로 이 마지막 한 줄이 오늘 주장의 뼈대입니다.",
+      "정점마다 나오는 문장이 있었습니다",
+      "이 곡선이 그저 추상이 아님을 보여 드리기 위해, 역사의 정점들을 하나씩 지나가 보겠습니다. 매번 문장 속의 명사만 바뀌었을 뿐 골격은 그대로였습니다.",
+      "1929년, 영구히 높은 고원",
+      "1929년 가을, 예일대학교의 경제학자이자 제 프사의 주인공인 어빙 피셔는 한 만찬 자리에서 주가가 영구히 높은 고원처럼 보이는 곳에 이르렀다고 말했습니다 (\"Stocks have reached a permanently high plateau\").  몇 달 안에 시장이 지금보다 훨씬 높아질 것이라고도 했습니다. 그때 다우지수는 8년 만에 여섯 배가 올라 있었습니다.",
+      "이 새로운 시대의 주인공은 라디오였습니다. 라디오는 그 시절의 인터넷이자 인공지능이었습니다. 회사 이름에 라디오만 붙으면 주가가 솟구쳤고, 그 한가운데에 RCA가 있었습니다. RCA의 주가는 1921년 1달러 반에서 1929년 549달러까지 치솟았습니다. 배당은 한 푼도 주지 않았고, 이익의 일흔 배가 넘는 값에 거래되던 주식이었습니다. 그리고 라디오에 걸었던 사람들은 기술에 관해서는 옳았습니다.",
+      "라디오를 갖춘 미국의 가정은 1925년 275만 가구에서 1929년 1,025만 가구로, 다시 대공황을 지나며 1939년 2,750만 가구로 불어났습니다. 라디오는 정말로 세상을 바꿨습니다. 그러나 그들은 주식에 관해서는 틀렸습니다. RCA는 정점에서 거의 98퍼센트가 빠졌고, 1929년의 주가를 회복하는 데 수십 년이 걸렸습니다. 제니스와 필코 같은 후발 주자들이 더 싼 값에 치고 들어오면서, 한때 천하를 쥐었던 회사의 자리도 흔들렸습니다.",
+      "피셔의 영구히 높은 고원도 오래가지 못했습니다. 그 연설이 있고 채 보름이 지나기 전에 검은 월요일과 검은 화요일이 닥쳤고, 다우는 결국 고점에서 거의 90퍼센트가 빠졌습니다.",
+      "2000년, 신경제와 어두운 섬유",
+      "1990년대 끝자락에는 신경제라는 말이 시대를 휩쓸었습니다. 어느 지역 연방준비은행은 연차 보고서의 제목을 아예 새로운 패러다임이라고 달았습니다. 희소성이라는 낡은 경제의 첫 번째 전제는 새로운 경제의 지배적 특징이 아니라고 그 보고서는 적었습니다.",
+      "이 시대에도 정점의 약속은 곳곳에서 굳어졌습니다. 통신과 광케이블 쪽에서 새로운 패러다임은 가장 구체적인 모습을 띠었습니다. 인터넷 트래픽이 100일마다 두 배로 늘어난다는 주장이었습니다.",
+      "한 수학자가 실제로는 1년에 두 배 수준이라고 반박했지만, 사람들은 듣지 않았습니다. 이 부풀려진 수요 이야기에 기대어 통신사들은 어마어마한 길이의 광케이블을 땅에 묻었고, 장비 회사들은 미래의 물량을 미리 계약과 금융으로 묶었습니다. 거품이 터지고 4년이 지난 뒤에도 그 케이블의 대부분이 빛 한번 보지 못한 채 어둠 속에 잠겨 있었습니다. 사람들은 그것을 어두운 섬유라고 불렀습니다. 그 시절 잘나가던 통신 장비 회사의 주가는 100달러 부근에서 1달러 수준으로 무너졌고, 어떤 회사는 매출이 16억 달러에서 3억 달러로 거의 하룻밤 새 쪼그라들었습니다.",
+      "닷컴 기업들도 미래의 성장을 믿고 몇 년 치 광고와 회선을 미리 사들였습니다. 매출은 없는데 비용만 장기로 고정한 셈이어서, 현금이 마르자 그 약속들이 거꾸로 목을 졸랐습니다. 특히 장비 회사가 고객에게 돈을 빌려주어 자기 장비를 사게 만든 순환 금융은, 뒤에서 보게 될 오늘날 인공지능 생태계의 모습과 소름 끼치도록 리듬이 맞습니다. 한편 거품이 절정에 달한 순간 사상 최대 규모로 맺어진 AOL과 타임워너의 합병은, 새로운 경제가 옛 경제를 집어삼켰다는 선언처럼 보였지만 몇 해 지나지 않아 역사에 남을 실패로 기록되었습니다.",
+      "2008년, 떨어지지 않는다던 집값",
+      "2000년대 중반에는 거시 차원의 이번에는 다르다가 등장했습니다. 대안정기라는 말이었습니다. 경기 순환이라는 짐승이 마침내 길들여졌다는 믿음이었습니다. 그 미시적 토대에는 미국의 집값이 전국적으로 떨어진 적은 한 번도 없다는, 주택 담보 대출 모형 깊숙이 박힌 신앙이 있었습니다. 당시 연방준비제도의 수장은 서브프라임 시장의 문제가 더 넓은 경제로 번지는 일은 억제될 것이라고 말했습니다. 그 뒤에 무슨 일이 벌어졌는지는 모두가 압니다.",
+      "부동산에도 정점의 시그널은 있었습니다. 집값이 영원히 오를 것처럼 보이던 무렵, 미국의 대형 주택 건설사들은 앞으로 몇 년 치 사업에 쓸 땅을 미리 잡아 두려고 토지 옵션 계약을 잇따라 맺었습니다. 적지 않은 계약금을 걸어 두고, 정해진 기간 안에 정해진 값으로 택지를 단계적으로 사들이기로 약속하는 방식이었습니다.",
+      "직접 땅을 떠안는 대신 땅을 모아 주는 별도의 회사에 맡겨 두고 옵션만 쥐는, 이른바 토지 비축도 함께 유행했습니다. 모두가 공급 병목을 두려워했고, 지금 잡아 두지 않으면 다음 몇 년의 물량을 놓친다고 믿었습니다. 그러나 집값이 무너지자 건설사들은 그 옵션을 한꺼번에 내던졌습니다.",
+      "계약금을 통째로 포기하고 사업 전체에서 손을 떼는 일이 줄을 이었고, 땅을 모아 두었던 회사들은 팔리지 않는 택지만 잔뜩 안은 채 현금이 말라 결국 대출 기관에 사업을 넘겼습니다. 그러는 사이 신규 주택 착공은 거의 80퍼센트가 줄어 반세기 만의 최저로 떨어졌고, 그 바닥에서 2년을 머물렀습니다. 정점에서 미래의 물량을 묶었던 계약이, 가격이 꺾이자 위약과 포기로 변하는 그 그림은 여기서도 똑같았습니다.",
+      "원자재 슈퍼사이클과 피크 오일",
+      "원자재에도 그들만의 이번에는 다르다가 있었습니다. 중국이 끌어올린 원자재 슈퍼사이클입니다. 구리는 10년 사이 열 배 가까이 올라 사상 최고를 찍었고, 철광석도 한 자릿수에서 180달러를 넘겼습니다. 이야기는 늘 구조적이었고, 더 오래 더 강하게였습니다. 중국의 도시화가 수요를 영원히 새로 깔아 놓았다는 것이었습니다. 원유는 피크 오일이라는 서사를 타고 한때 배럴당 140달러 부근까지 치솟았다가 그해 안에 30달러 근처로 무너졌습니다. 셰일이 그 구조적 부족이라는 신화를 깨뜨렸습니다.",
+      "니프티 피프티, 그리고 일본의 땅과 골프장",
+      "1970년대 초의 미국에는 어떤 값을 주고 사도 좋다던 50개 남짓의 우량 성장주가 있었습니다. 사람들은 그것을 한 번만 결정하면 되는 주식이라 불렀습니다. 한 번 사면 값이 얼마가 되든 영원히 들고 가면 된다는 뜻이었습니다. 연금과 은행 신탁 같은 기관들이 이 믿음으로 이 종목들에 돈을 쏟아부었고, 그 열기가 값을 밀어 올려 정점에서 이 주식들의 PER는 평균 40배를 넘겼습니다.",
+      "시장 전체가 19배 남짓이던 때에 폴라로이드는 90배, 에이번은 65배에 거래되었습니다. 그러나 1973년과 1974년의 약세장이 닥치자, 한 칼럼니스트의 표현대로 그 종목들은 한 놈씩 끌려 나가 총살당했습니다. 폴라로이드는 고점에서 90퍼센트 넘게, 에이번은 86퍼센트, 제록스는 71퍼센트가 빠졌습니다. 영원히 들고 가겠다던 그 한 번의 결정이 가장 큰 손실로 돌아온 것입니다.",
+      "일본은 더 극적입니다. 1989년의 마지막 거래일, 닛케이 지수는 사상 최고에서 한 해를 마쳤습니다. 일본의 땅값은 떨어지지 않는다는 믿음이 온 나라를 덮고 있었습니다. 정점에서 도쿄의 부동산은 스퀘어 피트당 13만 달러를 넘겨, 맨해튼보다 350배 비싸게 거래되었습니다. 도쿄 황궁 자리의 값어치가 캘리포니아주 전체와 맞먹는다는 계산이 사람들의 입에 오르내렸습니다. 한 저명한 경제학자는 21세기는 일본의 것이라고 단언했습니다.",
+      "이 부동산 광기에도 장기 계약의 클러스터라 부를 만한 것이 있었습니다. 바로 골프장 회원권의 예탁금 제도입니다. 호황의 절정에서 골프장 사업자들은 거액의 예탁금을 받고 회원권을 팔았습니다. 정해진 기간이 지나면 그 돈을 돌려주기로 약속한, 수십 년짜리 장기 채무였습니다.",
+      "사업자들은 그렇게 미리 받은 회원들의 돈을 부동산과 주식에 쏟아부었습니다. 회원권은 주식처럼 거래되었고, 은행은 회원권을 담보로 시세의 90퍼센트까지 돈을 빌려주었습니다.",
+      "정점에서 일본 골프 회원권의 시가 총액은 2천억 달러에 이르러 도쿄 증권거래소 전체와 맞먹었습니다. 그러나 거품이 터지자 회원들은 한꺼번에 예탁금 반환을 요구했고, 그 요구액은 10조 엔, 우리 돈으로 환산하면 어마어마한 규모에 달했습니다. 회원들의 돈으로 부동산과 주식에 투자했던 사업자들은 줄줄이 파산을 선언했습니다. 한 골프장은 정원이 2천 명인데 6만 명에게 회원권을 팔았다가 경찰의 압수수색을 받았습니다. 묶어 두면 안전하다고 믿었던 장기 약속이, 가격이 무너지자 갚을 수 없는 빚으로 돌변한 것입니다. 닛케이는 그 뒤 80퍼센트 넘게 빠졌고, 1989년의 고점을 다시 보기까지 무려 34년이 걸렸습니다.",
+      "이 모든 사례에서 이번에는 다르다가 위험했던 까닭은, 그것이 틀린 분석이어서가 아닙니다. 오히려 그 순간에는 대개 진실의 알맹이를 품고 있었기에 위험했습니다. 인터넷은 진짜였고, 중국의 도시화도 진짜였으며, 일본의 제조업이 일어선 것도 진짜였습니다. 진짜 변화가 일어나고 있다는 것과, 그 변화가 이미 가격과 계약에 지나치게 반영되어 있다는 것은 전혀 다른 이야기입니다. 이 둘을 헷갈리는 데서 늘 비극이 시작되었습니다.",
+      "정점의 의식, 장기 계약의 클러스터링",
+      "지금까지는 정점마다 되풀이된 그 확신을 따라왔습니다. 이제 그 확신이 가장 위험한 형태로 굳는 순간을 보겠습니다. 미래의 물량을 미리 사고파는 장기 공급 계약이 한꺼번에 쏟아질 때입니다. 앞서 본 토지 옵션이나 골프장 예탁금처럼, 종이 위의 주식이 아니라 실물을 두고 맺는 약속이 정점에서 군집합니다. 로드리그의 곡선에서 광기가 붕괴로 넘어가는 그 길목에는 거의 언제나 이 의식이 치러집니다.",
+      "수요자가 부족을 가장 두려워하고, 구조적이라는 이야기가 가장 시끄럽고, 공급자가 가장 좋은 조건을 받아 낼 수 있는 바로 그 순간에, 앞으로 몇 년 치 물량을, 그리고 점점 더 가격까지 묶는 계약이 무더기로 체결됩니다. 원자재와 산업재의 역사는 이 의식의 기록이라 해도 좋습니다.",
+      "2008년 봄, 폴리실리콘 가격이 사상 최고로 치솟았을 때, 태양광 회사들은 사실상 종신 계약이라 부를 만한 10년짜리 고정가 계약을 앞다투어 맺었습니다. 그 무렵 어느 중국 태양광 회사가 미국 회사와 맺은 10년 계약이 대표적입니다. 계약 가격이 시장 가격보다 한참 쌌으니 그때는 영리한 거래로 보였습니다. 그러나 가격이 무너지자 이 회사는 계약을 깨고 거액의 위약금을 물어야 했고, 결국 파산 절차에 들어갔습니다. 묶었다고 믿었던 계약이 가격 폭락 앞에서는 위약금과 소송으로 변했습니다.",
+      "같은 해, 발틱 운임 지수가 사상 최고를 찍었을 때 선주들은 정점의 운임에 몇 년짜리 용선 계약을 묶고 새 배를 주문했습니다. 그 지수는 일곱 달 만에 94퍼센트가 빠졌습니다. 정점에서 비싼 용선을 묶은 회사들은 줄줄이 쓰러졌습니다.",
+      "우라늄도, 희토류도 같은 길을 걸었습니다. 가격이 천정부지로 솟구치자 사용자들이 물량을 확보하려 장기 계약에 매달렸고, 그 군집이 정점을 만들었으며, 이후 가격은 폭락했고 신생 광산들은 무더기로 사라졌습니다.",
+      "그리고 리튬이 있습니다. 2022년 가을, 중국의 배터리용 탄산리튬 가격이 사상 최고를 찍었을 무렵 자동차 회사와 배터리 회사들이 광산과 장기 공급 계약을 맺는 일이 전례 없이 줄을 이었습니다. 가격이 무너진 뒤의 결산은 냉정했습니다. 한 조사 기관의 분석에 따르면, 그 몇 년 사이 맺어진 리튬과 니켈과 코발트 계약 32건 가운데 17건이 취소되거나 다시 협상되거나 미뤄졌습니다. 절반이 넘는 페이퍼 상의 계약이 가격 앞에서 힘을 잃은 것입니다.",
+      "여기서 의미심장한 대목이 하나 있습니다. 리튬 가격이 무너진 뒤에 맺어진 다음 싸이클의 계약에는 점점 가격 하한선이 들어가기 시작했고, 일부는 침체기에 실제로 작동했습니다. 바로 이 가격 하한선이라는 구조가 지금 마이크론의 장기 계약을 떠받치는 핵심 장치이기도 합니다. 정점에서 묶은 계약이 깨지고, 그 학습이 다음 계약에 하한선이라는 안전장치를 만들어 넣는다는 흐름. 우리는 지금 그 흐름의 한복판에 서 있습니다.",
+      "지금,",
+      "이제 곡선의 현재 위치로 돌아오겠습니다. 마이크론이 어제 발표한 분기 실적은 글자 그대로 기록적이었습니다. 매출은 414억 달러를 넘겨 일년 전보다 세 배 넘게 뛰었고, 매출총이익률은 84퍼센트를 넘어 사상 최고를 찍었습니다. 다음 분기 매출 전망치는 500억 달러였습니다. 2022년 말만 해도 50달러를 밑돌던 주가는 현재 1200달러를 넘어섰습니다.",
+      "이 모든 이야기의 핵심은 최고경영자의 입에서 나온 한 문장에 담겨 있습니다. 메모리 산업이 인공지능의 확산으로 구조적으로 달라졌다는 말입니다. 그는 공급이 구조적으로 제약되어 있으며 메모리 공급이 늘어나는 수요를 따라 잡으려면 최소 몇년이라고 덧붙였습니다.",
+      "그리고 정점의 의식, 장기 계약이 등장합니다. 마이크론은 열여섯 건의 전략적 고객 계약을 맺었습니다. 대부분 5년짜리이고, 회사 디램 물량의 5분의 1가량과 낸드 물량의 3분의 1가량을 다년간의 계약으로 묶었습니다. 그 가운데 열네 건은 최소 계약 가격만 잡아도 누적 매출이 1,000억 달러에 이릅니다. 고객이 선납한 현금과 약정만 220억 달러에 달하고, 이 가운데 상당액은 순수한 현금 예치금입니다. 사든 안 사든 값을 치러야 하는 구조이고(take-or-pay), 가장 큰 계약에는 현재 시장 가격 수준의 상한선과 기간 내내 적용되는 하한선이 함께 들어 있습니다. 회사는 이 하한선이 과거 어떤 호황기의 분기 최고 마진도 크게 웃도는 든든한 이익률을 보장한다고 밝혔습니다.",
+      "언론과 애널리스트는 이것을 한마디로 요약했습니다. 인공지능이 메모리의 30년 호황 불황 사이클을 끝냈다는 것입니다. 다만 정확히 해 둘 것이 있습니다. 30년 사이클을 끝냈다거나 더 이상 경기를 타지 않는다거나 수요의 바닥이 생겼다는 표현은 언론과 애널리스트가 다듬은 말이지, 최고경영자가 그대로 한 말은 아닙니다. 그가 쓴 표현은 구조적으로 달라졌다, 구조적 강점, 지속성과 예측 가능성이었습니다. 이 차이는 작아 보여도 중요합니다.",
+      "이 이야기를 떠받치는 강세 논거들도 분명 실재합니다. 세 회사가 디램의 95퍼센트 넘게를 나눠 가지고 있고, 한때 스무 곳에 이르던 공급자는 거듭된 호황과 불황을 거치며 셋으로 줄었습니다. 인공지능 메모리 한 조각은 보통 디램보다 몇 배의 생산 능력을 잡아먹어 범용 디램을 갉아먹고 시장 전체를 조입니다. 어떤 애널리스트들은 메모리가 곧 새로운 연산이라는 표현까지 만들어 냈습니다. 젠슨 황은 새로운 산업혁명이 시작되었다며, 10년이 끝나기 전에 수조 달러의 인공지능 인프라 투자가 일어날 것이라고 말합니다.",
+      "이 모든 것이 가리키는 것은 우리가 현재 붕괴로 넘어가는 길목, 새로운 패러다임이라고 적힌 바로 그 정점입니다. 폭발하는 주가, 일생에 한 번뿐이라는 대중의 확신, 이번에는 구조적으로 다르다는 이야기, 그리고 몇 년 치 생산 능력을 가격 하한선과 함께 묶는 계약의 클러스터링. 피셔의 영구히 높은 고원, 어느 연방준비은행의 새로운 패러다임, 그리고 10년 고정가에 발이 묶였던 태양광 회사와 정확히 같은 자리입니다.",
+      "이 곡선이 우리에게 주는 것은 미래의 예언이 아니라 현재의 좌표입니다.",
+      "지금 우리는 인공지능이 반도체의 순환을 끝냈다는 이야기를 듣고 있습니다. 그 이야기는 몇 년 치 생산 능력을 묶은 1,000억 달러의 계약으로 단단히 굳었고, 사상 최고의 가치 평가와 함께 울려 퍼지고 있습니다. 이것은 피셔의 영구히 높은 고원과, 어느 연방준비은행의 새로운 패러다임과, 도쿄의 땅값은 떨어지지 않는다와, 10년 고정가에 발이 묶였던 태양광 회사와, 명사만 바뀐 똑같은 문장이고 똑같은 의식이며 곡선의 똑같은 자리입니다.",
+      "정점에서는 누구나 사이클을 길들였다고 믿었습니다. 세 회사의 과점도, 인공지능 메모리의 생산 부담도 하강의 깊이나 속도를 누그러뜨릴 수는 있겠지만, 인간이 같은 자리에서 같은 방식으로 흥분하고 두려워하는 그 본성 자체를 없애지는 못합니다.",
+      "라인하트와 로고프의 책은 한 가지 잔인한 관찰로 끝을 맺습니다. 사람의 기억은 짧고, 그래서 같은 일은 너무도 쉽게 되풀이된다는 것. 그리고 금융의 역사에서 가장 비싼 값을 치르게 한 말은 언제나 같았다는 것입니다.",
+      "이번에도, 다르지 않을 것입니다."
+    ],
+    "translated": [
+      "이번에는 다르다",
+      "장폴 로드리그라는 교통지리학자가 그린 그림 한 장이 있습니다. 자산 가격이 거품을 만들고 터지는 과정을 네 단계로 나눈 도표입니다. 세로축에는 가치를, 가로축에는 시간을 두고, 그 위로 완만하게 비스듬히 올라가는 점선 하나가 평균을 표시합니다. 가격은 그 평균선을 따라 조용히 출발해 점점 가팔라지다가 꼭대기에서 폭발하듯 솟구치고, 결국 평균으로, 때로는 평균을 한참 밑도는 바닥까지 되돌아옵니다.",
+      "이 글은 역사적 시장참여자의 심리를 들여다본 한 편의 생각일 뿐이며, 특정 종목의 매수매도 권유가 절대 아닙니다.",
+      "(https://x.com/simplspark/article/2070143059845861695/media/2070111531258560512)",
+      "이 그림에서 저는 늘 한 지점에 눈이 멈춥니다. 곡선의 가장 높은 자리입니다. 로드리그는 그 정점에 한 마디를 적어 넣었습니다. 새로운 패러다임!!!. 느낌표를 세 개나 붙여서 말입니다.",
+      "이 작은 디테일에 거의 모든 이야기가 담겨 있다고 생각합니다. 거품의 심리를 그린 표준 지도에서, 이번에는 구조적으로 다르다는 확신은 거품이 아니라는 증거가 아니라 거품의 꼭대기를 알리는 표식으로 그려져 있습니다. 우연이 아니라 설계입니다. 새로운 시대가 열렸다는 외침이 가장 크게 울려 퍼지는 바로 그 순간이, 곡선이 꺾이기 직전이라는 것입니다.",
+      "지금 반도체 업계, 그중에서도 메모리 업계에는 하나의 이야기가 강물처럼 흐르고 있습니다. AI 수요가 반도체를 더 이상 경기를 타지 않는 산업으로 바꿔 놓았다는 이야기입니다. 마이크론의 경영진은 메모리 산업이 인공지능 덕분에 구조적으로 달라졌다고 말하고, 앞으로 오년 치 생산 물량을 가격 하한선과 함께 묶은 천억 달러 규모의 장기 계약을 잇따라 맺었습니다. 엔비디아의 젠슨 황은 새로운 산업혁명이 시작되었다고 선언합니다.",
+      "저는 시장에서 가장 변하지 않는 것이 바로 사람의 마음이라고 믿습니다. 기술도 바뀌고 자산의 종류도 바뀌지만, 값이 오를 때 사람이 흥분하고 값이 떨어질 때 사람이 두려워하는 그 심리의 흐름만큼은 백 년 전이나 지금이나 동일하다고 믿습니다. 그래서 저는 과거의 사례를 꺼내어 그때 시장에 있던 사람들의 마음이 어땠을지 헤아려 보고, 그것을 지금 우리의 마음과 나란히 놓아 보는 일이 결코 한가한 회고가 아니라고 생각합니다. 오히려 현재를 읽는 가장 믿을 만한 방법 가운데 하나라고 봅니다. 그런 마음으로 저는 이 이야기를 역사라는 거울 앞에 세워 보고 싶습니다.",
+      "그리고 미리 제 생각을 분명히 밝혀 두겠습니다. 투자자의 심리라는 잣대로 보면, 이번에도 다르지 않을 것입니다. 똑같은 문장이, 똑같은 곡선의 똑같은 자리에서, 지난 백 년 동안 반복되어 왔기 때문입니다. 다만 저는 폭락이 언제 올지는 점치지 않습니다. 중요한 것은 결과를 맞히는 일이 아니라, 우리가 지금 곡선의 어디쯤 서 있는지를 우선적으로 인지하는 일이라고 믿습니다.",
+      "거품의 일생, 네 국면",
+      "먼저 지도를 펴 보겠습니다. 로드리그는 거품의 일생을 네 국면으로 나눴습니다.",
+      "첫째는 잠복기입니다. 정보가 빠른 소수의 돈이 조용히, 조심스럽게 들어옵니다. 흔히 영리한 돈이라 부르는 자금입니다. 가격은 슬그머니 오르지만 대중은 아무것도 눈치채지 못합니다.",
+      "둘째는 인식기입니다. 흐름을 알아챈 투자자들이 합류합니다. 짧은 매도가 한두 번 찾아와 가슴을 쓸어내리게 하지만, 영리한 돈은 이 순간을 오히려 기회로 삼아 더 사들입니다. 이쯤에서 언론이 슬슬 관심을 보이기 시작합니다.",
+      "셋째는 광기입니다. 누구나 가격이 오르는 것을 보고, 대중이 일생에 한 번뿐인 기회라며 뛰어듭니다. 관심이 열광으로, 열광이 탐욕으로, 탐욕이 망상으로 옮겨 갑니다. 로드리그는 바로 이 국면의 끝자락에서, 완전히 새로운 펀더멘털을 들먹이며 영구히 높은 고원에 올라섰다는 식의 정당화가 등장하고, 그러면 거품은 곧 무너진다고 적었습니다.",
+      "넷째는 붕괴기입니다. 어느 순간 방아쇠가 당겨지고, 거의 모두가 동시에 상황이 변했음을 깨닫습니다. 정점의 새로운 패러다임에서 시작해 부정, 정상으로의 복귀라는 착각, 다시 한번 속이는 반등, 공포, 투항, 절망을 거쳐 평균으로 돌아갑니다. 뒤늦게 들어온 대중이 값이 빠지는 자산을 손에 쥔 채 남겨지고, 영리한 돈은 이미 오래전에 빠져나간 뒤입니다.",
+      "참여자의 순서를 눈여겨봐야 합니다. 영리한 돈에서 기관으로, 기관에서 대중으로 바통이 넘어갑니다. 이 그림은 사실 하이먼 민스키와 찰스 킨들버거가 정리한 고전적인 거품 해부도를 시각으로 옮긴 후예입니다. 그들이 말한 대체와 호황과 행복감과 차익 실현과 패닉의 단계가 이 곡선 안에 그대로 들어 있습니다. 로드리그가 그려 넣은, 영리한 돈이 슬그머니 빠져나가는 장면은 킨들버거가 말한 차익 실현의 순간과 정확히 포개집니다.",
+      "이 모든 것의 밑바닥에는 카르멘 라인하트와 케네스 로고프의 통찰이 깔려 있습니다. 그들은 팔백 년에 걸친 금융 위기의 역사를 훑은 끝에 이렇게 적었습니다.",
+      "이번에는 다르다는 증후군의 본질은 단순하다, 그것은 금융 위기란 다른 나라 다른 시대의 다른 사람들에게나 일어나는 일이고 지금 여기 우리에게는 일어나지 않는다는 굳은 믿음에 뿌리를 둔다, 우리는 더 잘하고 있고 더 똑똑하며 과거의 실수에서 배웠다, 낡은 가치 평가의 규칙은 더 이상 적용되지 않는다.",
+      "바로 이 마지막 한 줄이 오늘 주장의 뼈대입니다.",
+      "정점마다 나오는 문장이 있었습니다",
+      "이 곡선이 그저 추상이 아님을 보여 드리기 위해, 역사의 정점들을 하나씩 지나가 보겠습니다. 매번 문장 속의 명사만 바뀌었을 뿐 골격은 그대로였습니다.",
+      "1929년, 영구히 높은 고원",
+      "1929년 가을, 예일대학교의 경제학자이자 제 프사의 주인공인 어빙 피셔는 한 만찬 자리에서 주가가 영구히 높은 고원처럼 보이는 곳에 이르렀다고 말했습니다 (\"주가는 영구적으로 높은 고원에 도달했다\"). 몇 달 안에 시장이 지금보다 훨씬 높아질 것이라고도 했습니다. 그때 다우지수는 8년 만에 여섯 배가 올라 있었습니다.",
+      "이 새로운 시대의 주인공은 라디오였습니다. 라디오는 그 시절의 인터넷이자 인공지능이었습니다. 회사 이름에 라디오만 붙으면 주가가 솟구쳤고, 그 한가운데에 RCA가 있었습니다. RCA의 주가는 1921년 1달러 반에서 1929년 549달러까지 치솟았습니다. 배당은 한 푼도 주지 않았고, 이익의 일흔 배가 넘는 값에 거래되던 주식이었습니다. 그리고 라디오에 걸었던 사람들은 기술에 관해서는 옳았습니다.",
+      "라디오를 갖춘 미국의 가정은 1925년 275만 가구에서 1929년 1,025만 가구로, 다시 대공황을 지나며 1939년 2,750만 가구로 불어났습니다. 라디오는 정말로 세상을 바꿨습니다. 그러나 그들은 주식에 관해서는 틀렸습니다. RCA는 정점에서 거의 98퍼센트가 빠졌고, 1929년의 주가를 회복하는 데 수십 년이 걸렸습니다. 제니스와 필코 같은 후발 주자들이 더 싼 값에 치고 들어오면서, 한때 천하를 쥐었던 회사의 자리도 흔들렸습니다.",
+      "피셔의 영구히 높은 고원도 오래가지 못했습니다. 그 연설이 있고 채 보름이 지나기 전에 검은 월요일과 검은 화요일이 닥쳤고, 다우는 결국 고점에서 거의 90퍼센트가 빠졌습니다.",
+      "2000년, 신경제와 어두운 섬유",
+      "1990년대 끝자락에는 신경제라는 말이 시대를 휩쓸었습니다. 어느 지역 연방준비은행은 연차 보고서의 제목을 아예 새로운 패러다임이라고 달았습니다. 희소성이라는 낡은 경제의 첫 번째 전제는 새로운 경제의 지배적 특징이 아니라고 그 보고서는 적었습니다.",
+      "이 시대에도 정점의 약속은 곳곳에서 굳어졌습니다. 통신과 광케이블 쪽에서 새로운 패러다임은 가장 구체적인 모습을 띠었습니다. 인터넷 트래픽이 100일마다 두 배로 늘어난다는 주장이었습니다.",
+      "한 수학자가 실제로는 1년에 두 배 수준이라고 반박했지만, 사람들은 듣지 않았습니다. 이 부풀려진 수요 이야기에 기대어 통신사들은 어마어마한 길이의 광케이블을 땅에 묻었고, 장비 회사들은 미래의 물량을 미리 계약과 금융으로 묶었습니다. 거품이 터지고 4년이 지난 뒤에도 그 케이블의 대부분이 빛 한번 보지 못한 채 어둠 속에 잠겨 있었습니다. 사람들은 그것을 어두운 섬유라고 불렀습니다. 그 시절 잘나가던 통신 장비 회사의 주가는 100달러 부근에서 1달러 수준으로 무너졌고, 어떤 회사는 매출이 16억 달러에서 3억 달러로 거의 하룻밤 새 쪼그라들었습니다.",
+      "닷컴 기업들도 미래의 성장을 믿고 몇 년 치 광고와 회선을 미리 사들였습니다. 매출은 없는데 비용만 장기로 고정한 셈이어서, 현금이 마르자 그 약속들이 거꾸로 목을 졸랐습니다. 특히 장비 회사가 고객에게 돈을 빌려주어 자기 장비를 사게 만든 순환 금융은, 뒤에서 보게 될 오늘날 인공지능 생태계의 모습과 소름 끼치도록 리듬이 맞습니다. 한편 거품이 절정에 달한 순간 사상 최대 규모로 맺어진 AOL과 타임워너의 합병은, 새로운 경제가 옛 경제를 집어삼켰다는 선언처럼 보였지만 몇 해 지나지 않아 역사에 남을 실패로 기록되었습니다.",
+      "2008년, 떨어지지 않는다던 집값",
+      "2000년대 중반에는 거시 차원의 이번에는 다르다가 등장했습니다. 대안정기라는 말이었습니다. 경기 순환이라는 짐승이 마침내 길들여졌다는 믿음이었습니다. 그 미시적 토대에는 미국의 집값이 전국적으로 떨어진 적은 한 번도 없다는, 주택 담보 대출 모형 깊숙이 박힌 신앙이 있었습니다. 당시 연방준비제도의 수장은 서브프라임 시장의 문제가 더 넓은 경제로 번지는 일은 억제될 것이라고 말했습니다. 그 뒤에 무슨 일이 벌어졌는지는 모두가 압니다.",
+      "부동산에도 정점의 시그널은 있었습니다. 집값이 영원히 오를 것처럼 보이던 무렵, 미국의 대형 주택 건설사들은 앞으로 몇 년 치 사업에 쓸 땅을 미리 잡아 두려고 토지 옵션 계약을 잇따라 맺었습니다. 적지 않은 계약금을 걸어 두고, 정해진 기간 안에 정해진 값으로 택지를 단계적으로 사들이기로 약속하는 방식이었습니다.",
+      "직접 땅을 떠안는 대신 땅을 모아 주는 별도의 회사에 맡겨 두고 옵션만 쥐는, 이른바 토지 비축도 함께 유행했습니다. 모두가 공급 병목을 두려워했고, 지금 잡아 두지 않으면 다음 몇 년의 물량을 놓친다고 믿었습니다. 그러나 집값이 무너지자 건설사들은 그 옵션을 한꺼번에 내던졌습니다.",
+      "계약금을 통째로 포기하고 사업 전체에서 손을 떼는 일이 줄을 이었고, 땅을 모아 두었던 회사들은 팔리지 않는 택지만 잔뜩 안은 채 현금이 말라 결국 대출 기관에 사업을 넘겼습니다. 그러는 사이 신규 주택 착공은 거의 80퍼센트가 줄어 반세기 만의 최저로 떨어졌고, 그 바닥에서 2년을 머물렀습니다. 정점에서 미래의 물량을 묶었던 계약이, 가격이 꺾이자 위약과 포기로 변하는 그 그림은 여기서도 똑같았습니다.",
+      "원자재 슈퍼사이클과 피크 오일",
+      "원자재에도 그들만의 이번에는 다르다가 있었습니다. 중국이 끌어올린 원자재 슈퍼사이클입니다. 구리는 10년 사이 열 배 가까이 올라 사상 최고를 찍었고, 철광석도 한 자릿수에서 180달러를 넘겼습니다. 이야기는 늘 구조적이었고, 더 오래 더 강하게였습니다. 중국의 도시화가 수요를 영원히 새로 깔아 놓았다는 것이었습니다. 원유는 피크 오일이라는 서사를 타고 한때 배럴당 140달러 부근까지 치솟았다가 그해 안에 30달러 근처로 무너졌습니다. 셰일이 그 구조적 부족이라는 신화를 깨뜨렸습니다.",
+      "니프티 피프티, 그리고 일본의 땅과 골프장",
+      "1970년대 초의 미국에는 어떤 값을 주고 사도 좋다던 50개 남짓의 우량 성장주가 있었습니다. 사람들은 그것을 한 번만 결정하면 되는 주식이라 불렀습니다. 한 번 사면 값이 얼마가 되든 영원히 들고 가면 된다는 뜻이었습니다. 연금과 은행 신탁 같은 기관들이 이 믿음으로 이 종목들에 돈을 쏟아부었고, 그 열기가 값을 밀어 올려 정점에서 이 주식들의 PER는 평균 40배를 넘겼습니다.",
+      "시장 전체가 19배 남짓이던 때에 폴라로이드는 90배, 에이번은 65배에 거래되었습니다. 그러나 1973년과 1974년의 약세장이 닥치자, 한 칼럼니스트의 표현대로 그 종목들은 한 놈씩 끌려 나가 총살당했습니다. 폴라로이드는 고점에서 90퍼센트 넘게, 에이번은 86퍼센트, 제록스는 71퍼센트가 빠졌습니다. 영원히 들고 가겠다던 그 한 번의 결정이 가장 큰 손실로 돌아온 것입니다.",
+      "일본은 더 극적입니다. 1989년의 마지막 거래일, 닛케이 지수는 사상 최고에서 한 해를 마쳤습니다. 일본의 땅값은 떨어지지 않는다는 믿음이 온 나라를 덮고 있었습니다. 정점에서 도쿄의 부동산은 스퀘어 피트당 13만 달러를 넘겨, 맨해튼보다 350배 비싸게 거래되었습니다. 도쿄 황궁 자리의 값어치가 캘리포니아주 전체와 맞먹는다는 계산이 사람들의 입에 오르내렸습니다. 한 저명한 경제학자는 21세기는 일본의 것이라고 단언했습니다.",
+      "이 부동산 광기에도 장기 계약의 클러스터라 부를 만한 것이 있었습니다. 바로 골프장 회원권의 예탁금 제도입니다. 호황의 절정에서 골프장 사업자들은 거액의 예탁금을 받고 회원권을 팔았습니다. 정해진 기간이 지나면 그 돈을 돌려주기로 약속한, 수십 년짜리 장기 채무였습니다.",
+      "사업자들은 그렇게 미리 받은 회원들의 돈을 부동산과 주식에 쏟아부었습니다. 회원권은 주식처럼 거래되었고, 은행은 회원권을 담보로 시세의 90퍼센트까지 돈을 빌려주었습니다.",
+      "정점에서 일본 골프 회원권의 시가 총액은 2천억 달러에 이르러 도쿄 증권거래소 전체와 맞먹었습니다. 그러나 거품이 터지자 회원들은 한꺼번에 예탁금 반환을 요구했고, 그 요구액은 10조 엔, 우리 돈으로 환산하면 어마어마한 규모에 달했습니다. 회원들의 돈으로 부동산과 주식에 투자했던 사업자들은 줄줄이 파산을 선언했습니다. 한 골프장은 정원이 2천 명인데 6만 명에게 회원권을 팔았다가 경찰의 압수수색을 받았습니다. 묶어 두면 안전하다고 믿었던 장기 약속이, 가격이 무너지자 갚을 수 없는 빚으로 돌변한 것입니다. 닛케이는 그 뒤 80퍼센트 넘게 빠졌고, 1989년의 고점을 다시 보기까지 무려 34년이 걸렸습니다.",
+      "이 모든 사례에서 이번에는 다르다가 위험했던 까닭은, 그것이 틀린 분석이어서가 아닙니다. 오히려 그 순간에는 대개 진실의 알맹이를 품고 있었기에 위험했습니다. 인터넷은 진짜였고, 중국의 도시화도 진짜였으며, 일본의 제조업이 일어선 것도 진짜였습니다. 진짜 변화가 일어나고 있다는 것과, 그 변화가 이미 가격과 계약에 지나치게 반영되어 있다는 것은 전혀 다른 이야기입니다. 이 둘을 헷갈리는 데서 늘 비극이 시작되었습니다.",
+      "정점의 의식, 장기 계약의 클러스터링",
+      "지금까지는 정점마다 되풀이된 그 확신을 따라왔습니다. 이제 그 확신이 가장 위험한 형태로 굳는 순간을 보겠습니다. 미래의 물량을 미리 사고파는 장기 공급 계약이 한꺼번에 쏟아질 때입니다. 앞서 본 토지 옵션이나 골프장 예탁금처럼, 종이 위의 주식이 아니라 실물을 두고 맺는 약속이 정점에서 군집합니다. 로드리그의 곡선에서 광기가 붕괴로 넘어가는 그 길목에는 거의 언제나 이 의식이 치러집니다.",
+      "수요자가 부족을 가장 두려워하고, 구조적이라는 이야기가 가장 시끄럽고, 공급자가 가장 좋은 조건을 받아 낼 수 있는 바로 그 순간에, 앞으로 몇 년 치 물량을, 그리고 점점 더 가격까지 묶는 계약이 무더기로 체결됩니다. 원자재와 산업재의 역사는 이 의식의 기록이라 해도 좋습니다.",
+      "2008년 봄, 폴리실리콘 가격이 사상 최고로 치솟았을 때, 태양광 회사들은 사실상 종신 계약이라 부를 만한 10년짜리 고정가 계약을 앞다투어 맺었습니다. 그 무렵 어느 중국 태양광 회사가 미국 회사와 맺은 10년 계약이 대표적입니다. 계약 가격이 시장 가격보다 한참 쌌으니 그때는 영리한 거래로 보였습니다. 그러나 가격이 무너지자 이 회사는 계약을 깨고 거액의 위약금을 물어야 했고, 결국 파산 절차에 들어갔습니다. 묶었다고 믿었던 계약이 가격 폭락 앞에서는 위약금과 소송으로 변했습니다.",
+      "같은 해, 발틱 운임 지수가 사상 최고를 찍었을 때 선주들은 정점의 운임에 몇 년짜리 용선 계약을 묶고 새 배를 주문했습니다. 그 지수는 일곱 달 만에 94퍼센트가 빠졌습니다. 정점에서 비싼 용선을 묶은 회사들은 줄줄이 쓰러졌습니다.",
+      "우라늄도, 희토류도 같은 길을 걸었습니다. 가격이 천정부지로 솟구치자 사용자들이 물량을 확보하려 장기 계약에 매달렸고, 그 군집이 정점을 만들었으며, 이후 가격은 폭락했고 신생 광산들은 무더기로 사라졌습니다.",
+      "그리고 리튬이 있습니다. 2022년 가을, 중국의 배터리용 탄산리튬 가격이 사상 최고를 찍었을 무렵 자동차 회사와 배터리 회사들이 광산과 장기 공급 계약을 맺는 일이 전례 없이 줄을 이었습니다. 가격이 무너진 뒤의 결산은 냉정했습니다. 한 조사 기관의 분석에 따르면, 그 몇 년 사이 맺어진 리튬과 니켈과 코발트 계약 32건 가운데 17건이 취소되거나 다시 협상되거나 미뤄졌습니다. 절반이 넘는 페이퍼 상의 계약이 가격 앞에서 힘을 잃은 것입니다.",
+      "여기서 의미심장한 대목이 하나 있습니다. 리튬 가격이 무너진 뒤에 맺어진 다음 싸이클의 계약에는 점점 가격 하한선이 들어가기 시작했고, 일부는 침체기에 실제로 작동했습니다. 바로 이 가격 하한선이라는 구조가 지금 마이크론의 장기 계약을 떠받치는 핵심 장치이기도 합니다. 정점에서 묶은 계약이 깨지고, 그 학습이 다음 계약에 하한선이라는 안전장치를 만들어 넣는다는 흐름. 우리는 지금 그 흐름의 한복판에 서 있습니다.",
+      "지금,",
+      "이제 곡선의 현재 위치로 돌아오겠습니다. 마이크론이 어제 발표한 분기 실적은 글자 그대로 기록적이었습니다. 매출은 414억 달러를 넘겨 일년 전보다 세 배 넘게 뛰었고, 매출총이익률은 84퍼센트를 넘어 사상 최고를 찍었습니다. 다음 분기 매출 전망치는 500억 달러였습니다. 2022년 말만 해도 50달러를 밑돌던 주가는 현재 1200달러를 넘어섰습니다.",
+      "이 모든 이야기의 핵심은 최고경영자의 입에서 나온 한 문장에 담겨 있습니다. 메모리 산업이 인공지능의 확산으로 구조적으로 달라졌다는 말입니다. 그는 공급이 구조적으로 제약되어 있으며 메모리 공급이 늘어나는 수요를 따라 잡으려면 최소 몇년이라고 덧붙였습니다.",
+      "그리고 정점의 의식, 장기 계약이 등장합니다. 마이크론은 열여섯 건의 전략적 고객 계약을 맺었습니다. 대부분 5년짜리이고, 회사 디램 물량의 5분의 1가량과 낸드 물량의 3분의 1가량을 다년간의 계약으로 묶었습니다. 그 가운데 열네 건은 최소 계약 가격만 잡아도 누적 매출이 1,000억 달러에 이릅니다. 고객이 선납한 현금과 약정만 220억 달러에 달하고, 이 가운데 상당액은 순수한 현금 예치금입니다. 사든 안 사든 값을 치러야 하는 구조이고(take-or-pay), 가장 큰 계약에는 현재 시장 가격 수준의 상한선과 기간 내내 적용되는 하한선이 함께 들어 있습니다. 회사는 이 하한선이 과거 어떤 호황기의 분기 최고 마진도 크게 웃도는 든든한 이익률을 보장한다고 밝혔습니다.",
+      "언론과 애널리스트는 이것을 한마디로 요약했습니다. 인공지능이 메모리의 30년 호황 불황 사이클을 끝냈다는 것입니다. 다만 정확히 해 둘 것이 있습니다. 30년 사이클을 끝냈다거나 더 이상 경기를 타지 않는다거나 수요의 바닥이 생겼다는 표현은 언론과 애널리스트가 다듬은 말이지, 최고경영자가 그대로 한 말은 아닙니다. 그가 쓴 표현은 구조적으로 달라졌다, 구조적 강점, 지속성과 예측 가능성이었습니다. 이 차이는 작아 보여도 중요합니다.",
+      "이 이야기를 떠받치는 강세 논거들도 분명 실재합니다. 세 회사가 디램의 95퍼센트 넘게를 나눠 가지고 있고, 한때 스무 곳에 이르던 공급자는 거듭된 호황과 불황을 거치며 셋으로 줄었습니다. 인공지능 메모리 한 조각은 보통 디램보다 몇 배의 생산 능력을 잡아먹어 범용 디램을 갉아먹고 시장 전체를 조입니다. 어떤 애널리스트들은 메모리가 곧 새로운 연산이라는 표현까지 만들어 냈습니다. 젠슨 황은 새로운 산업혁명이 시작되었다며, 10년이 끝나기 전에 수조 달러의 인공지능 인프라 투자가 일어날 것이라고 말합니다.",
+      "이 모든 것이 가리키는 것은 우리가 현재 붕괴로 넘어가는 길목, 새로운 패러다임이라고 적힌 바로 그 정점입니다. 폭발하는 주가, 일생에 한 번뿐이라는 대중의 확신, 이번에는 구조적으로 다르다는 이야기, 그리고 몇 년 치 생산 능력을 가격 하한선과 함께 묶는 계약의 클러스터링. 피셔의 영구히 높은 고원, 어느 연방준비은행의 새로운 패러다임, 그리고 10년 고정가에 발이 묶였던 태양광 회사와 정확히 같은 자리입니다.",
+      "이 곡선이 우리에게 주는 것은 미래의 예언이 아니라 현재의 좌표입니다.",
+      "지금 우리는 인공지능이 반도체의 순환을 끝냈다는 이야기를 듣고 있습니다. 그 이야기는 몇 년 치 생산 능력을 묶은 1,000억 달러의 계약으로 단단히 굳었고, 사상 최고의 가치 평가와 함께 울려 퍼지고 있습니다. 이것은 피셔의 영구히 높은 고원과, 어느 연방준비은행의 새로운 패러다임과, 도쿄의 땅값은 떨어지지 않는다와, 10년 고정가에 발이 묶였던 태양광 회사와, 명사만 바뀐 똑같은 문장이고 똑같은 의식이며 곡선의 똑같은 자리입니다.",
+      "정점에서는 누구나 사이클을 길들였다고 믿었습니다. 세 회사의 과점도, 인공지능 메모리의 생산 부담도 하강의 깊이나 속도를 누그러뜨릴 수는 있겠지만, 인간이 같은 자리에서 같은 방식으로 흥분하고 두려워하는 그 본성 자체를 없애지는 못합니다.",
+      "라인하트와 로고프의 책은 한 가지 잔인한 관찰로 끝을 맺습니다. 사람의 기억은 짧고, 그래서 같은 일은 너무도 쉽게 되풀이된다는 것. 그리고 금융의 역사에서 가장 비싼 값을 치르게 한 말은 언제나 같았다는 것입니다.",
+      "이번에도, 다르지 않을 것입니다."
+    ],
+    "content_hash": "cc9c11f1dd8744a6",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:27:19.295722+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2081746526012059985": {
+    "paragraphs": [
+      "50년 경력 시장의 마법사 Peter Brandt의  Memoir",
+      "피터 브란트 선생이 어제 트위터에 본인의 짧은 회고록을 올려주셔서, 중요한 부분을 번역하고 제 생각이나 경험을 조금 덧붙여봤습니다. 총 11편의 짧은 글로 나누어봤어요.",
+      "원글을 통으로 읽으시려면:",
+      "https://x.com/tmmrwseoul/status/2081401865678508434?s=20",
+      "1.",
+      "\"It was profitable from the start although the firm has had four losing years. The average of the four was -8%. Minor, but losses nevertheless. Last losing year was 2013 at -15% or so.  But during the first four years I cannot even remember how many accounts I blew. Some blew up quickly. Others lured me into think I was on to something only to have the account bleed to death slowly.\"",
+      "생각보다 이건 오래 걸려. 최고의 선수도 시작까지 4년을 늪에 빠져있었고, 커리어가 시작되고 나서도 어느 순간에는 한 번씩 패배를 보내야했어.  커리어 사상 최악의 해가 -15% 였다는 말, 리스크를 용납하지 않았다는 말이기도.",
+      "2.",
+      "\"... slowly I kept solving problems. That is what trading really is -- a huge problem solving game. Those that break even until they figure it out stand a chance.\"    \"There have been struggles along the way. Problem solving never ends. When one is kind of solved the next one pops up. Being a self-funded professional commodity trader is not easy work or everyone would be doing it.\"",
+      "트레이딩은 문제가 끝나지 않고 계속해서 반복돼. 이걸 계속해서 해결해나가는 게임이고, 문제의 답을 알기 전까지 어떻게든 본전으로 버텨내야만이 과실을 취할 수 있어.",
+      "3.",
+      "\"When I came back to trading in 2006 everything had changed. Trades were made on a computer using a computer. I was used to calling my orders into the pits. I dramatically changed my risk management protocol in  I actually seriously wondered whether I could remember how I traded and whether my style would still work. 2007 was profitable, and 2008 was my last triple digit annual return. My style still worked.\"",
+      "이 게임에서는 변하는건 없어, pit에서 전화주문을 넣었던 시절부터 컴퓨터 시대까지도.",
+      "4.",
+      "\"But the episode resulted in the most dramatic changes in risk management I had even taken. This too is another story unto itself. Anyway, here I am, still trading cause I love it. And because it has been very profitable for me.\"",
+      "피터 브란트의 그 꼰대같은 거래방식은 결국 경험에서. 2013년 커리어 사상 최악의 패배 이후에. 그는 50년을 버텨냈어.",
+      "5.",
+      "\"My main measure of success has not been ROR for years and never was win rate. All the changes I have made since 2014 have been aimed at cutting asset volatility to the nubs. I feel fortunate that I have been able to this, not have but a few small losing months in a decade. ROR has not been my concern. From the early 1980s I believed that if I sought excellence in the things I could control that the profits would work themselves out.\"",
+      "2014년부터는 ROR에 대한 집착을 버렸고, 처음부터 승률에 집착하지 않았어. 2014년부터는 안정성에, 변동성을 통제하는 것에 집중했으니.. 통제할 수 있는 부분을 통제하면, 수익은 저절로 따라오게 되어있어.",
+      "6.",
+      "\"Renaissance Technology is the single most profitable trading firm in the world with an average ROR in the high 40s, low 50s. Stan Druckenmiller is the best independent trade alive IMO. He averages in the 40s.  .... Jack calculated that my average compound ROR was in the low 50s. I do not accept Jack's numbers. In the first place, prop traders should NEVER use compound growth. We are always taking money out of accounts. My stats put me in the low to mid 40s. But that is with only millions of AUM. Stan does his 40s with billions. There is a huge difference, some of you understand this, some of you don't, yet.\"",
+      "생활비를 여기서 벌어다 쓰면, 복리성장은 신경쓰지 말아야해. 매달 여기서 빼내는 돈인걸.  드라켄밀러의 ROR은 40대고, 르네상스는 4말5초야. Jack은 내 ROR을 50초로 계산했지만, 실제로는 40 초중반일거야.",
+      "드라켄밀러는 billions로 40대를 찍어내고, 브란트는 millions로 같은 숫자를 만들어내.  이 차이는 정말 커, 드라켄밀러가 훨씬 어렵지.",
+      "이안: 개인적으로는 계좌 숫자가 올라간 이후 숨이 턱턱 차올라, 500만원일때가 편했는데. 그때의 내 수익률로 자위하는 것만으로 멈췄다면 난 지금 정말 다 잃었을 것만 같은. 5억대부터 계좌에서 발작을 해댔어. 14억을 최근에 찍어봤는데 반절을 또 날렸어. 이젠 아무렇지도 않아, 한 번 와봤던 길이여서. 속도를 원만하게 줄이고 있고, 이 변동성을 원만히 통제할 방법을 찾고 있어. 드라켄밀러는 어떤 게임을 하고 있을까. 브란트는. 나의 ROR과 그들의 ROR은 다를 수밖에.",
+      "7.",
+      "\"I recommend futures, not equities. The leverage is magic, but know it is also dangerous. Do not expect to be profitable for four or five years. If it is three, then great. Your job in the meanwhile is to learn how to lose. Great traders only become great traders because they became skilled at losing. Lose your capital and game over for you. Next, get rid of social media. It is a trap. Follow me if you must, but turn your eyes and ears away from anyone claiming big profits of knowing where some markets is going. You need a starting point. Put together some rules, if that is your thing, and commit to them.\"",
+      "피터는 현물보다 선물을 추천해. 레버리지는 마법과 같아, 위험하다는 것은 알아야해. 처음 시작했을땐, 이기는 법을 배우는 것이 아니라 지는 방법을 배워야해. 잘 패배하는 기술을 배워야해. 돈을 전부 잃으면 넌 끝이야.  소셜미디어를 지워. \"예측\"이 가능하다는 누구의 말도 듣지 마. 시작점을 잡아야해, 규칙을 만들어. 규칙을 지켜.",
+      "8.",
+      "\"You don't want to do it the way I suggest? That's fine. Everyone needs to find their own way, so welcome to the landmine. Trading is a math problem to solve.\"",
+      "피터의 말을 들을 필요도 없어, 스스로의 방법은 스스로 찾아내야해. 지뢰밭에 온 것을 환영해. 트레이딩은 수많은 수학문제들과 같아.",
+      "9.",
+      "\"Price is all that matters. Fundamentals are meant to decieve you. Everything you could possibly know about a market is already reflected in price. Price is king.\"",
+      "가격이 정말 전부야. 펀더멘탈은 너를 속이기 위해 존재해. 너가 시장에서 알 수 있는 모든 것은 이미 가격에 반영되어있어. 가격은 왕이야.",
+      "10.",
+      "\"It was my father's generation who owned most of the memberships. They all had the same advice. Cut your losses really quickly and have some technique that allows you to let profits grow. Small losses and much larger profits is the only math that works. Ignore me on this at your own peril.\"",
+      "피터의 아버지 세대는 모두 피터에게 같은 말을 해줬어. loser를 빠르게 잘라내라고, 이길 수 있는 방법을 찾으라고. 작은 손실과 그보다 큰 수익이 유일한 답이니깐.",
+      "11.",
+      "\"I sometimes ask my wife to pinch me so that I can wake up from this life as a full time commodity futures contracts for my own risk.\"",
+      "\"난 가끔 와이프에게 날 꼬집어달라고 해, 내가 이 삶에서 일어날 수 있게끔. 이 삶에서 깨어날 수 있게끔. 내 안전을 위해서.\"",
+      "이안: 피터의 이 문장이 내겐 길게 맴도는. 내 눈은 항상 너와 함께일때도 다른 곳을 보고있어서, 내 삶을 즐기지 못 하고 있는 저주에 걸린 것 같다는 자각이 올해 봄에 불현듯 닥쳐와 힘들었었어.  이걸 몰입의 선물이라고 부르든, 저주라고 부르든."
+    ],
+    "translated": [
+      "50년 경력 시장의 마법사 Peter Brandt의  Memoir",
+      "피터 브란트 선생이 어제 트위터에 본인의 짧은 회고록을 올려주셔서, 중요한 부분을 번역하고 제 생각이나 경험을 조금 덧붙여봤습니다. 총 11편의 짧은 글로 나누어봤어요.",
+      "원글을 통으로 읽으시려면:",
+      "https://x.com/tmmrwseoul/status/2081401865678508434?s=20",
+      "1.",
+      "\"처음부터 수익이 났지만, 회사가 손실을 본 해도 네 번 있었습니다. 그 네 해의 평균 수익률은 -8%였습니다. 크지는 않았지만 어쨌든 손실이었죠. 마지막으로 손실을 본 해는 2013년으로, 수익률은 -15% 정도였습니다. 하지만 처음 네 해 동안은 계좌를 몇 개나 날렸는지 기억조차 나지 않습니다. 어떤 계좌는 순식간에 날아갔습니다. 다른 계좌들은 뭔가 감을 잡았다고 생각하게 만들더니 결국 서서히 손실이 쌓여 바닥났습니다.\"",
+      "생각보다 이건 오래 걸려. 최고의 선수도 시작까지 4년을 늪에 빠져있었고, 커리어가 시작되고 나서도 어느 순간에는 한 번씩 패배를 보내야했어.  커리어 사상 최악의 해가 -15% 였다는 말, 리스크를 용납하지 않았다는 말이기도.",
+      "2.",
+      "\"... 저는 천천히 문제를 하나씩 해결해 나갔습니다. 트레이딩이란 실제로 그런 것입니다. 거대한 문제 해결 게임이죠. 해법을 알아낼 때까지 손익분기점을 유지하는 사람들에게는 기회가 있습니다.\" \"그 과정에서 어려움도 있었습니다. 문제 해결은 끝이 없습니다. 하나가 어느 정도 해결되면 다음 문제가 튀어나옵니다. 자기 자금으로 거래하는 전문 원자재 트레이더로 사는 것은 쉬운 일이 아닙니다. 쉬웠다면 누구나 하고 있겠죠.\"",
+      "트레이딩은 문제가 끝나지 않고 계속해서 반복돼. 이걸 계속해서 해결해나가는 게임이고, 문제의 답을 알기 전까지 어떻게든 본전으로 버텨내야만이 과실을 취할 수 있어.",
+      "3.",
+      "\"2006년에 트레이딩으로 돌아왔을 때는 모든 것이 달라져 있었습니다. 거래는 컴퓨터를 이용해 컴퓨터상에서 이루어졌습니다. 저는 거래소의 피트에 전화로 주문을 넣는 방식에 익숙했습니다. 저는 위험 관리 절차를 대폭 바꾸었습니다. 실제로 제가 어떻게 거래했는지 기억해 낼 수 있을지, 제 방식이 여전히 통할지 진지하게 고민했습니다. 2007년에는 수익을 냈고, 2008년은 연간 세 자릿수 수익률을 기록한 마지막 해였습니다. 제 방식은 여전히 통했습니다.\"",
+      "이 게임에서는 변하는건 없어, pit에서 전화주문을 넣었던 시절부터 컴퓨터 시대까지도.",
+      "4.",
+      "\"하지만 그 사건을 계기로 저는 지금까지 했던 것 중 가장 큰 폭으로 위험 관리 방식을 바꾸었습니다. 이것 역시 그 자체로 별도의 이야기입니다. 어쨌든 저는 여전히 여기서 거래하고 있습니다. 트레이딩을 사랑하기 때문입니다. 그리고 제게 매우 큰 수익을 안겨 주었기 때문이기도 합니다.\"",
+      "피터 브란트의 그 꼰대같은 거래방식은 결국 경험에서. 2013년 커리어 사상 최악의 패배 이후에. 그는 50년을 버텨냈어.",
+      "5.",
+      "\"수년 동안 제 성공의 주된 척도는 수익률(ROR)이 아니었으며, 승률은 애초부터 아니었습니다. 2014년 이후 제가 해 온 모든 변화는 자산 변동성을 극한까지 줄이는 데 목적이 있었습니다. 이렇게 할 수 있었고, 10년 동안 소폭 손실을 본 달이 몇 번밖에 없었다는 점에서 저는 운이 좋다고 느낍니다. 수익률은 제 관심사가 아니었습니다. 1980년대 초부터 저는 제가 통제할 수 있는 일에서 탁월함을 추구하면 수익은 저절로 따라올 것이라고 믿었습니다.\"",
+      "2014년부터는 ROR에 대한 집착을 버렸고, 처음부터 승률에 집착하지 않았어. 2014년부터는 안정성에, 변동성을 통제하는 것에 집중했으니.. 통제할 수 있는 부분을 통제하면, 수익은 저절로 따라오게 되어있어.",
+      "6.",
+      "\"Renaissance Technology는 평균 수익률이 40%대 후반에서 50%대 초반인, 세계에서 가장 수익성이 높은 트레이딩 회사입니다. 제 생각에 Stan Druckenmiller는 현존하는 최고의 독립 트레이더입니다. 그의 평균 수익률은 40%대입니다. .... Jack은 제 평균 복리 수익률이 50%대 초반이라고 계산했습니다. 저는 Jack의 수치를 받아들이지 않습니다. 우선 자기자본으로 거래하는 트레이더는 절대로 복리 성장을 기준으로 삼아서는 안 됩니다. 우리는 계좌에서 늘 돈을 인출하기 때문입니다. 제 통계에 따르면 제 수익률은 40%대 초반에서 중반입니다. 하지만 이는 운용자산(AUM)이 수백만 달러에 불과한 상태에서 낸 성과입니다. Stan은 수십억 달러를 운용하면서 40%대 수익률을 냅니다. 여기에는 엄청난 차이가 있습니다. 여러분 중에는 이를 이해하는 분도 있고, 아직 이해하지 못하는 분도 있습니다.\"",
+      "생활비를 여기서 벌어다 쓰면, 복리성장은 신경쓰지 말아야해. 매달 여기서 빼내는 돈인걸.  드라켄밀러의 ROR은 40대고, 르네상스는 4말5초야. Jack은 내 ROR을 50초로 계산했지만, 실제로는 40 초중반일거야.",
+      "드라켄밀러는 billions로 40대를 찍어내고, 브란트는 millions로 같은 숫자를 만들어내.  이 차이는 정말 커, 드라켄밀러가 훨씬 어렵지.",
+      "이안: 개인적으로는 계좌 숫자가 올라간 이후 숨이 턱턱 차올라, 500만원일때가 편했는데. 그때의 내 수익률로 자위하는 것만으로 멈췄다면 난 지금 정말 다 잃었을 것만 같은. 5억대부터 계좌에서 발작을 해댔어. 14억을 최근에 찍어봤는데 반절을 또 날렸어. 이젠 아무렇지도 않아, 한 번 와봤던 길이여서. 속도를 원만하게 줄이고 있고, 이 변동성을 원만히 통제할 방법을 찾고 있어. 드라켄밀러는 어떤 게임을 하고 있을까. 브란트는. 나의 ROR과 그들의 ROR은 다를 수밖에.",
+      "7.",
+      "\"저는 주식이 아니라 선물을 권합니다. 레버리지는 마법 같지만, 동시에 위험하다는 점도 알아 두세요. 네다섯 해 동안은 수익을 낼 것이라고 기대하지 마세요. 세 해 만에 된다면 훌륭한 일이죠. 그동안 여러분이 해야 할 일은 손실을 보는 법을 배우는 것입니다. 위대한 트레이더가 위대한 트레이더가 된 것은 손실을 다루는 데 능숙해졌기 때문입니다. 자본을 잃으면 여러분의 게임은 끝납니다. 다음으로 소셜 미디어를 끊으세요. 그것은 함정입니다. 꼭 그래야겠다면 저를 팔로우해도 좋지만, 큰 수익을 올렸다고 하거나 어떤 시장이 어디로 갈지 안다고 주장하는 사람에게는 눈과 귀를 돌리세요. 여러분에게는 출발점이 필요합니다. 규칙을 따르는 방식이 자신에게 맞는다면 몇 가지 규칙을 정하고 철저히 지키세요.\"",
+      "피터는 현물보다 선물을 추천해. 레버리지는 마법과 같아, 위험하다는 것은 알아야해. 처음 시작했을땐, 이기는 법을 배우는 것이 아니라 지는 방법을 배워야해. 잘 패배하는 기술을 배워야해. 돈을 전부 잃으면 넌 끝이야.  소셜미디어를 지워. \"예측\"이 가능하다는 누구의 말도 듣지 마. 시작점을 잡아야해, 규칙을 만들어. 규칙을 지켜.",
+      "8.",
+      "\"제가 제안한 방식대로 하고 싶지 않으신가요? 괜찮습니다. 누구나 자기만의 길을 찾아야 하니까요. 지뢰밭에 오신 것을 환영합니다. 트레이딩은 풀어야 할 수학 문제입니다.\"",
+      "피터의 말을 들을 필요도 없어, 스스로의 방법은 스스로 찾아내야해. 지뢰밭에 온 것을 환영해. 트레이딩은 수많은 수학문제들과 같아.",
+      "9.",
+      "\"중요한 것은 오직 가격입니다. 펀더멘털은 여러분을 속이기 위한 것입니다. 시장에 관해 여러분이 알 수 있는 모든 것은 이미 가격에 반영되어 있습니다. 가격이 왕입니다.\"",
+      "가격이 정말 전부야. 펀더멘탈은 너를 속이기 위해 존재해. 너가 시장에서 알 수 있는 모든 것은 이미 가격에 반영되어있어. 가격은 왕이야.",
+      "10.",
+      "\"거래소 회원권 대부분을 보유한 사람들은 제 아버지 세대였습니다. 그들은 모두 같은 조언을 했습니다. 손실은 아주 신속하게 끊고, 이익은 계속 커지도록 둘 수 있는 기법을 갖추라는 것이었습니다. 작은 손실과 그보다 훨씬 큰 이익만이 성립하는 유일한 계산입니다. 이 점에 관한 제 말을 무시한다면 그 위험은 여러분이 감수해야 합니다.\"",
+      "피터의 아버지 세대는 모두 피터에게 같은 말을 해줬어. loser를 빠르게 잘라내라고, 이길 수 있는 방법을 찾으라고. 작은 손실과 그보다 큰 수익이 유일한 답이니깐.",
+      "11.",
+      "\"저는 때때로 제 위험을 감수하며 전업으로 원자재 선물 계약을 거래하는 이 삶이 꿈이라면 깨어날 수 있도록 아내에게 저를 꼬집어 달라고 합니다.\"",
+      "\"난 가끔 와이프에게 날 꼬집어달라고 해, 내가 이 삶에서 일어날 수 있게끔. 이 삶에서 깨어날 수 있게끔. 내 안전을 위해서.\"",
+      "이안: 피터의 이 문장이 내겐 길게 맴도는. 내 눈은 항상 너와 함께일때도 다른 곳을 보고있어서, 내 삶을 즐기지 못 하고 있는 저주에 걸린 것 같다는 자각이 올해 봄에 불현듯 닥쳐와 힘들었었어.  이걸 몰입의 선물이라고 부르든, 저주라고 부르든."
+    ],
+    "content_hash": "322cb50e54540f65",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:27:53.424766+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112950289024069993": {
+    "paragraphs": [
+      "𝗟𝗲𝘁 𝘁𝗵𝗲 𝗺𝗮𝗿𝗸𝗲𝘁 𝗽𝗿𝗼𝘃𝗲 𝗶𝘁.",
+      "(QQQ 728, SPY 774. No reclaim, no reason to force it.)",
+      "\"Patience to wait for the correct setups. Patience to wait for the correct market conditions. And patience, once you're in the trade, to wait for the trade to play out. There's many types of patience. You need to be constantly patient.\"",
+      "(clip: Oct 28, 2021)",
+      "𝗕𝗲 𝗹𝗮𝘁𝗲 𝗮𝗻𝗱 𝗿𝗶𝗴𝗵𝘁, 𝗼𝗿 𝗲𝗮𝗿𝗹𝘆 𝗮𝗻𝗱 𝘄𝗿𝗼𝗻𝗴?"
+    ],
+    "translated": [
+      "시장이 스스로 증명하게 하라.",
+      "(QQQ 728, SPY 774. 해당 수준을 회복하지 못하면, 무리할 이유도 없다.)",
+      "\"올바른 매매 기회를 기다리는 인내심. 올바른 시장 여건을 기다리는 인내심. 그리고 일단 매매에 진입했다면, 그 매매가 전개될 때까지 기다리는 인내심. 인내심에는 여러 종류가 있습니다. 끊임없이 인내해야 합니다.\"",
+      "(영상: 10월 28일, 2021년)",
+      "늦더라도 맞을 것인가, 아니면 일찍 나서서 틀릴 것인가?"
+    ],
+    "content_hash": "6bb6a1fdbcecaea0",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:28:20.588773+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2059621023184736453": {
+    "paragraphs": [
+      "계좌레벨에서의 베팅로직 (4) 부제: 포지션 사이징/포트폴리오 관리방법에 대해",
+      "2025년 12월 10일 작성한 글입니다.",
+      "포지션 관리/포트폴리오 관리방법에 대해-",
+      "1. 개별 포지션 trade를 전체 계좌로 연계해서 생각",
+      "x라는 주식을 사서 100% 수익이 났다고 생각해봅시다. 손익비는 1:3이였어요. 손실 났을땐 33% 손실인겁니다.",
+      "이때 X라는 주식의 포지션 사이즈가 전체 포트 대비 1%에 불과하다면-",
+      "전체 포트의 1% 벌거나 0.33%를 잃는 구조인겁니다.",
+      "수익에 만족하시나요? 만족하지 않는다면, 지속가능하면서 수익이 극대화되는 포지션 사이즈를 고민해봐야합니다.",
+      "전 포지션을 잡을때, 해당 포지션에 한해 손익비 계산도 하지만, 전체 계좌 대비 손익비를 계산할때가 더 많습니다. 그럼 저 예시와 같은 거래를 할때, 이미 1%의 수익과 0.33%의 손실에 만족/각오하고 들어간게 됩니다.",
+      "2. 지속가능하면서 수익이 극대화되는 포지션 사이징 방법/베팅방법",
+      "쉽게 접근해봅시다. 베팅은 가능한데, 풀 포지션 베팅이 어려운 기회들이 있죠.",
+      "이때 우린 pilot buy를 합니다.",
+      "제 pilot buy의 비중은 보통 평균적인 포지션의 10~50% 정도를 적용하고는 합니다.",
+      "손익비가 너무 좋고, 셋업이 완벽한 경우에는?",
+      "전 평균적인 포지션의 2배 정도를 베팅합니다.",
+      "그럼 평균적인 포지션 사이징은 어찌해야할까요?",
+      "여러가지 방법이 있습니다만, 대표적으로는 Kelly criterion이 있습니다. 이건 조금 이따 다시 살펴보기로 하고, 조금 더 직관적으로 이야기해보겠습니다.",
+      "평균적인 포지션을 10% 정도로 설정하고 생각해봅시다. 손익비는 최소 1:2, 손절가 10%, 승률 50%라고 단순계산하겠습니다. 한 번 잃을 시 전체 포지션의 ~1%를 잃습니다.",
+      "이걸 1R이라고 합니다. R multiple.",
+      "한 트레이드에서 내가 감수하기로 한 고정된 손실 범위= 1R",
+      "한 번 벌면 전체 포지션의 2% 이상을 법니다. 2R을 번거에요.",
+      "최소 손익비 구간을 지나서 해당 포지션에서 100% 수익이 나왔다고 가정해봅시다. 실손익비 1:10.",
+      "전체 포트 기준 10%의 수익이 됩니다. 10R의 수익.",
+      "Risk가 1%니, (전체 포트에서 10%를 평균 포지션 사이즈로 잡았을 시)",
+      "Reward도 높을수는 없습니다. 다만 반복시행시, 무시할 수 없는 수익이 쌓이게 됩니다.",
+      "이게 하이베타에 집착하게 되는 요인입니다. 회전율을 끌어올려 수익을 극대화하기 위해서.",
+      "그래도 만족스럽지 않다면, risk를 올리면 됩니다. 당연한 말이지만, 손익비를 개선하는 방법도 있겠습니다.",
+      "2배를 원한다면, 2배의 변동성을 감수하고 평균적인 포지션 사이즈를 10%에서 20%로 올려주면 됩니다. 더 위험해지는 대신 수익이 올라가겠죠.",
+      "혹은 컨빅션 벳을 할때만, 예외적으로 평균적인 포지션의 2배 정도를 잡아서 하나의 포지션으로 만들어주는 방법도 있습니다. (보통 10%라면, 이 포지션은 20%를 잡아주는)",
+      "평균 포지션 사이즈를 결정할때, 수익만 생각하지 말고 하방을 먼저 고려해야합니다. 특히 초반에는 반복시행이 가능한 사이즈여야 합니다. 벌고 나서 수익쿠션을 방패삼아 포지션 사이즈를 얼마간 키워보는건 괜찮습니다.",
+      "2-2. Kelly Criterion",
+      "켈리 공식은, 자산을 가장 빠르게 (기하성장률 최대화) 불리는 최적의 베팅비율을 계산하는 공식입니다.",
+      "f = (bp - q) / b",
+      "f= 한번 베팅할 비율",
+      "b= 손익비",
+      "p= 승률",
+      "q= 1-p",
+      "이론적으로는 full kelly가 좋다고 하지만, 현실적으로는 위험합니다. 하방이 너무 열려있어요. 그래서 보통 half kelly 내지 1/4 kelly를 적용합니다.",
+      "예시를 들어보겠습니다, 손익비 1:2 (2R), 승률 50%라면 full kelly 적용시 평균적인 포지션 사이즈는 25%가 됩니다. half kelly는 12.5%.",
+      "저는 지난 한달간 수익쿠션을 방패삼아 하나의 포지션에 25% 정도의 포지션 사이징을 잡으려고 하고 있다고 말씀드린 적이 있는데요, 비슷한 논리에서 나온 숫자입니다. (작년 11~12월)",
+      "2-3. 레버리지를 적용한 kelly criterion",
+      "레버리지를 사용시, kelly criterion을 그대로 적용할 필요는 없습니다.",
+      "2배 레버리지로 매매할때 평소 half kelly를 적용중이라면, 1/4 kelly를 적용하는 것이 정석적입니다.",
+      "이럴 경우 역설적이게도 레버리지가 현물보다 안전한 부분도 생기게 됩니다. 시장 노출도는 반으로 줄이고, 같은 이익을 노리는 것이기 때문에 이기적이지요.",
+      "전 레버리지 사용시 매번 이렇게 사용하지는 않습니다. 단순 포지션 자체를 키우기 위해서 사용하는 경우도 있지만, 해당 종목의 일변동폭 (adr%)를 높여주기 위해서 사용하는 경우가 더 많기 때문인데요. 그래도 이런 개념은 알고 있는 것이 좋습니다.",
+      "크립토 선물에서는 이 논리를 극한까지 밀고가서 exploit하고 있습니다만.. 이건 다음 아티클에서 설명해볼게요.",
+      "글을 마치며-",
+      "포지션 사이징을 너무 엄격하게 하실 필요는 없습니다. 개념을 이해하시고 숙지만 하시면 됩니다. 포지션 사이징과 계좌 관리, 리스크 관리는 결국 베팅로직입니다.",
+      "그리고 이게 가격을 보는 눈보다 훨씬 중요합니다."
+    ],
+    "translated": [
+      "계좌레벨에서의 베팅로직 (4) 부제: 포지션 사이징/포트폴리오 관리방법에 대해",
+      "2025년 12월 10일 작성한 글입니다.",
+      "포지션 관리/포트폴리오 관리방법에 대해-",
+      "1. 개별 포지션 trade를 전체 계좌로 연계해서 생각",
+      "x라는 주식을 사서 100% 수익이 났다고 생각해봅시다. 손익비는 1:3이였어요. 손실 났을땐 33% 손실인겁니다.",
+      "이때 X라는 주식의 포지션 사이즈가 전체 포트 대비 1%에 불과하다면-",
+      "전체 포트의 1% 벌거나 0.33%를 잃는 구조인겁니다.",
+      "수익에 만족하시나요? 만족하지 않는다면, 지속가능하면서 수익이 극대화되는 포지션 사이즈를 고민해봐야합니다.",
+      "전 포지션을 잡을때, 해당 포지션에 한해 손익비 계산도 하지만, 전체 계좌 대비 손익비를 계산할때가 더 많습니다. 그럼 저 예시와 같은 거래를 할때, 이미 1%의 수익과 0.33%의 손실에 만족/각오하고 들어간게 됩니다.",
+      "2. 지속가능하면서 수익이 극대화되는 포지션 사이징 방법/베팅방법",
+      "쉽게 접근해봅시다. 베팅은 가능한데, 풀 포지션 베팅이 어려운 기회들이 있죠.",
+      "이때 우린 pilot buy를 합니다.",
+      "제 pilot buy의 비중은 보통 평균적인 포지션의 10~50% 정도를 적용하고는 합니다.",
+      "손익비가 너무 좋고, 셋업이 완벽한 경우에는?",
+      "전 평균적인 포지션의 2배 정도를 베팅합니다.",
+      "그럼 평균적인 포지션 사이징은 어찌해야할까요?",
+      "여러가지 방법이 있습니다만, 대표적으로는 Kelly criterion이 있습니다. 이건 조금 이따 다시 살펴보기로 하고, 조금 더 직관적으로 이야기해보겠습니다.",
+      "평균적인 포지션을 10% 정도로 설정하고 생각해봅시다. 손익비는 최소 1:2, 손절가 10%, 승률 50%라고 단순계산하겠습니다. 한 번 잃을 시 전체 포지션의 ~1%를 잃습니다.",
+      "이걸 1R이라고 합니다. R multiple.",
+      "한 트레이드에서 내가 감수하기로 한 고정된 손실 범위= 1R",
+      "한 번 벌면 전체 포지션의 2% 이상을 법니다. 2R을 번거에요.",
+      "최소 손익비 구간을 지나서 해당 포지션에서 100% 수익이 나왔다고 가정해봅시다. 실손익비 1:10.",
+      "전체 포트 기준 10%의 수익이 됩니다. 10R의 수익.",
+      "Risk가 1%니, (전체 포트에서 10%를 평균 포지션 사이즈로 잡았을 시)",
+      "Reward도 높을수는 없습니다. 다만 반복시행시, 무시할 수 없는 수익이 쌓이게 됩니다.",
+      "이게 하이베타에 집착하게 되는 요인입니다. 회전율을 끌어올려 수익을 극대화하기 위해서.",
+      "그래도 만족스럽지 않다면, risk를 올리면 됩니다. 당연한 말이지만, 손익비를 개선하는 방법도 있겠습니다.",
+      "2배를 원한다면, 2배의 변동성을 감수하고 평균적인 포지션 사이즈를 10%에서 20%로 올려주면 됩니다. 더 위험해지는 대신 수익이 올라가겠죠.",
+      "혹은 컨빅션 벳을 할때만, 예외적으로 평균적인 포지션의 2배 정도를 잡아서 하나의 포지션으로 만들어주는 방법도 있습니다. (보통 10%라면, 이 포지션은 20%를 잡아주는)",
+      "평균 포지션 사이즈를 결정할때, 수익만 생각하지 말고 하방을 먼저 고려해야합니다. 특히 초반에는 반복시행이 가능한 사이즈여야 합니다. 벌고 나서 수익쿠션을 방패삼아 포지션 사이즈를 얼마간 키워보는건 괜찮습니다.",
+      "2-2. 켈리 기준",
+      "켈리 공식은, 자산을 가장 빠르게 (기하성장률 최대화) 불리는 최적의 베팅비율을 계산하는 공식입니다.",
+      "f = (bp - q) / b",
+      "f= 한번 베팅할 비율",
+      "b= 손익비",
+      "p= 승률",
+      "q= 1-p",
+      "이론적으로는 full kelly가 좋다고 하지만, 현실적으로는 위험합니다. 하방이 너무 열려있어요. 그래서 보통 half kelly 내지 1/4 kelly를 적용합니다.",
+      "예시를 들어보겠습니다, 손익비 1:2 (2R), 승률 50%라면 full kelly 적용시 평균적인 포지션 사이즈는 25%가 됩니다. half kelly는 12.5%.",
+      "저는 지난 한달간 수익쿠션을 방패삼아 하나의 포지션에 25% 정도의 포지션 사이징을 잡으려고 하고 있다고 말씀드린 적이 있는데요, 비슷한 논리에서 나온 숫자입니다. (작년 11~12월)",
+      "2-3. 레버리지를 적용한 kelly criterion",
+      "레버리지를 사용시, kelly criterion을 그대로 적용할 필요는 없습니다.",
+      "2배 레버리지로 매매할때 평소 half kelly를 적용중이라면, 1/4 kelly를 적용하는 것이 정석적입니다.",
+      "이럴 경우 역설적이게도 레버리지가 현물보다 안전한 부분도 생기게 됩니다. 시장 노출도는 반으로 줄이고, 같은 이익을 노리는 것이기 때문에 이기적이지요.",
+      "전 레버리지 사용시 매번 이렇게 사용하지는 않습니다. 단순 포지션 자체를 키우기 위해서 사용하는 경우도 있지만, 해당 종목의 일변동폭 (adr%)를 높여주기 위해서 사용하는 경우가 더 많기 때문인데요. 그래도 이런 개념은 알고 있는 것이 좋습니다.",
+      "크립토 선물에서는 이 논리를 극한까지 밀고가서 exploit하고 있습니다만.. 이건 다음 아티클에서 설명해볼게요.",
+      "글을 마치며-",
+      "포지션 사이징을 너무 엄격하게 하실 필요는 없습니다. 개념을 이해하시고 숙지만 하시면 됩니다. 포지션 사이징과 계좌 관리, 리스크 관리는 결국 베팅로직입니다.",
+      "그리고 이게 가격을 보는 눈보다 훨씬 중요합니다."
+    ],
+    "content_hash": "f333760500930183",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:28:32.224776+00:00",
     "chunk": "posts-x.json"
   }
 }

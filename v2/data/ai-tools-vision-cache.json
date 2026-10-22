@@ -4659,5 +4659,215 @@
     "category_ko": "금융·ETF 차트",
     "owner_hint": "TradingView 사용자 tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:11ad5d8e9cd7d0af89b390f2ab6dfff0c49279229fc9a3f9bd519721102e4afe": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Risk and Return",
+    "description_ko": "위험과 수익의 관계를 곡선으로 표현한 도표. 보수적, 공격적, 과도한 위험 구간을 표시한다.",
+    "category_ko": "투자 위험 관리",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f8cbe0f54b9d5dabcbe9909e4be7007f808770916d3bb2f7c40e122c3fc31661": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TSLA Trading Charts",
+    "description_ko": "테슬라 주가 차트 두 개를 나란히 배치한 트레이딩 화면. 추세선, 이동평균선, 거래량과 분석 주석이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d533146e5e235df19a5c4ed658387f880e0789927e070f9cfcae3f32392b7f4b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "My history career as a trader",
+    "description_ko": "피터 브랜트가 29세부터 선물 거래로 생계를 유지해 온 경험과 트레이딩 경력을 회고하는 소셜 미디어 게시물.",
+    "category_ko": "트레이더 경력 및 경험",
+    "owner_hint": "The Factor Report / @PeterLBrandt",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3bdedaae089f80b4f5f5797635ea2d173e167867e90ebeb3bbc8373d7967360b": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Calmar Ratio Formula",
+    "description_ko": "연평균 수익률을 최대 낙폭으로 나누어 칼마 비율을 계산하는 스프레드시트 예시. 수익률 20과 최대 낙폭 70을 참조하는 수식이 보인다.",
+    "category_ko": "투자 성과 지표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a5cd31981ed5719472fae3023a12acfa9d668511fb2696206eb58c3b2ca1ea4a": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "“New Paradigm”!!!",
+    "description_ko": "시장 거품 도표의 정점 부근을 잘라낸 이미지. 새로운 패러다임이라는 문구와 부정 단계를 나타내는 글자가 보인다.",
+    "category_ko": "시장 거품 및 투자 심리",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d28f114d8750a725e1f8664c36a3a5c7a89e922240c2f14666d6b3bdc08bab5e": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Market Bubble Phases",
+    "description_ko": "시간에 따른 가치 평가 변화를 통해 시장 거품의 형성과 붕괴를 설명하는 도표. 잠행, 인식, 광풍, 붕괴 단계와 탐욕·부정·공포·투매·절망 등의 심리를 표시한다.",
+    "category_ko": "시장 주기 및 투자 심리",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7f79a8d388595f042b163ece3bad01c29f88ce5ebc2ed90bfaf388dbae38c620": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Moving Your Stop to Breakeven",
+    "description_ko": "손절선을 진입 가격인 본전 수준으로 옮기는 방법을 설명하는 교육 슬라이드. 매매 스타일과 시장 상황에 따른 조정 지침 및 진입점·기존 손절선·본전 손절선 도식이 있다.",
+    "category_ko": "트레이딩 손절 및 위험 관리",
+    "owner_hint": "TraderLion / Ultimate Trading Guide",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:06d18d22d09807f7adacc6eeba234ead7c812d56cd207f7297ff3d9efa180b01": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView MTUM/QQQ 및 MTUM/SPY 상대강도 차트",
+    "description_ko": "검은 배경의 TradingView 차트로, 상단에는 MTUM/QQQ 비율의 일봉과 여러 이동평균선, 지지·저항 구간 및 매매 신호가 표시되어 있다. 하단에는 MTUM/SPY 비율의 일봉 차트가 있으며, 최근 상승 후 조정하는 모습이다.",
+    "category_ko": "금융·투자 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:55e58fc34816fa0a05c3f60d97e85f76ab94b9159fbb6d390ad1280142a29704": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Percent of Stocks Above 5-Day Average",
+    "description_ko": "5일 이동평균선 위에 있는 종목 비율을 보여주는 TradingView 일봉 차트. 마지막 표시값은 42.01이며 여러 이동평균선과 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "금융·주식 시장 너비 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2f92afff6a75fb0eb894cc51c18acfed7a30e55d32c33c9dc9030c02ec09d533": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Percent of Stocks Above 20-Day Average",
+    "description_ko": "20일 이동평균선 위에 있는 종목 비율을 보여주는 TradingView 일봉 차트. 마지막 표시값은 36.76이며 최근 하락 흐름과 지지·저항 구간이 보인다.",
+    "category_ko": "금융·주식 시장 너비 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ed9580b5565fec74588b2ac489843d21010981fef3927b3513eff6082ec89610": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Percent of Stocks Above 50-Day Average",
+    "description_ko": "50일 이동평균선 위에 있는 종목 비율을 보여주는 TradingView 일봉 차트. 마지막 표시값은 51.67이며 이동평균선, 매매 신호와 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "금융·주식 시장 너비 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:57b0dcc826a57fdd77387540f40da52b6924ff0255ad84d42b36f43c25b99c7e": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Percent of Stocks Above 100-Day Average",
+    "description_ko": "100일 이동평균선 위에 있는 종목 비율을 보여주는 TradingView 일봉 차트. 마지막 표시값은 46.73이며 최근 반등 이후 하락한 모습과 지지·저항 구간이 보인다.",
+    "category_ko": "금융·주식 시장 너비 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4b5141622f4ff7f4989fc15c3a38f0869dccb2c7a751bb624e31b17bf4746ecc": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Percent of Stocks Above 200-Day Average",
+    "description_ko": "200일 이동평균선 위에 있는 종목 비율을 보여주는 TradingView 일봉 차트. 마지막 표시값은 51.19이며 장기 추이와 여러 이동평균선 및 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "금융·주식 시장 너비 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5c16bfc61e4fd8c6c5bc203bdd16ddceb26e899777a3731b492c05fead33dc7d": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Invesco S&P 500 Equal Weight ETF",
+    "description_ko": "S&P 500 동일가중 ETF인 RSP의 TradingView 일봉 차트. 마지막 표시 가격은 202.80달러이며 이동평균선, 지지 구간과 거래량 관련 지표가 보인다.",
+    "category_ko": "금융·ETF 가격 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d88fe667c77d2f8496e555311897c701688a03a307cc7f52b9f0da14f9d154bf": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "State Street SPDR S&P 500 ETF",
+    "description_ko": "S&P 500 추종 ETF인 SPY의 TradingView 일봉 차트. 마지막 표시 가격은 738.65달러이며 최근 급등 흐름, 이동평균선과 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "금융·ETF 가격 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0d3dc84ae8b1afa8e1a2f7b961cf17438e51faa96733aaf88ed3c90322f92b36": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "iShares Russell 2000 ETF (IWM) 일봉 차트",
+    "description_ko": "러셀 2000 ETF의 일봉 차트로, 이동평균선과 지지·저항 구간이 표시되어 있다. 최근 상승 후 275.97달러 부근으로 조정받는 모습이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:14c857676f18709972f39dc562c8a68376760e4601afa3e69831fb1aa07a92e0": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ARK Innovation ETF (ARKK) 일봉 차트",
+    "description_ko": "ARK 혁신 ETF의 일봉 차트로, 여러 이동평균선과 지지·저항 영역이 표시되어 있다. 최근 가격은 74.51달러이며 상단 저항 구간에서 하락한 모습이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:649241af404e8f739469e3a8774f461ce537996a9e85bda75722cc9bbfab16bf": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "시장 폭 지표 일별 집계표",
+    "description_ko": "2018년 7~8월의 시장 폭 지표를 정리한 표다. 상승·하락 종목 수, 기간별 비율, T2108 및 S&P 지수 등을 색상으로 구분해 보여준다.",
+    "category_ko": "금융·시장 지표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9cc60349c245337b473034546354cefebf4f3b514161cd2e03eb5727aed39ea9": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 주가 돌파 및 지지·저항 전환 분석",
+    "description_ko": "티에스이(131290) 차트에 넥라인, 돌파, 추세의 시작 및 지지·저항 전환 후 되돌림 지점을 화살표와 원으로 표시한 기술적 분석 이미지다.",
+    "category_ko": "금융·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:824e7dd4adf22b9530fb39cc7ef1dca99cf4171db4b375e8a6c97e11438db56a": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 월봉 장기 차트",
+    "description_ko": "티에스이의 2011년부터 2026년까지 월봉 가격 흐름과 거래량을 보여준다. 장기간의 등락 이후 최근 주가가 190,400원 부근까지 급등한 모습이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:58ad7a207f689ddddb4546c02c568ab90bc89630ffb70552f33304a0ee219528": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 일봉 상승 추세와 타이트한 베이스 분석",
+    "description_ko": "티에스이의 일봉 차트로, 이동평균선을 따라 이어지는 상승 추세와 최근 좁은 가격 범위의 베이스를 강조한다. 수렴 추세선, 수평 가격선 및 거래량이 함께 표시되어 있다.",
+    "category_ko": "금융·기술적 분석",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
   }
 }
