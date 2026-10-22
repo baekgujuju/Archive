@@ -9012,7 +9012,24 @@
     "content_hash": "eccc919f2852231d",
     "status": "ok",
     "translated_at": "2026-10-18T14:57:24.929527+00:00",
-    "chunk": "posts-x.json"
+    "chunk": "posts-x.json",
+    "last_attempt": {
+      "paragraphs": [
+        "해당 포스팅에 영감을 얻어 정리하였습니다.\nhttps://x.com/RealNickMugalli/status/2111806127558082807  · RealNickMugalli",
+        "Nicholas Mugalli",
+        "@RealNickMugalli",
+        "·",
+        "1h",
+        "Wall Street’s most respected tech analyst just dropped their updated price targets across the entire semi & AI ecosystem:",
+        "$MU: $2,000.00\n$SKHY: $300.00\n$SNDK: $2,900.00\n$STX: $1,300.00\n$WDC: $900.00\n$ADI: $550.00\n$AEIS: $450.00\n$AMAT: $850.00\n$AMD: $700.00  x.com/realnickmugall…",
+        "(https://x.com/RealNickMugalli/status/2111806127558082807/photo/1)"
+      ],
+      "translated": [],
+      "content_hash": "fde61472bb6ba52d",
+      "status": "failed",
+      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+      "failed_at": "2026-10-22T01:48:04.616347+00:00"
+    }
   },
   "reply:2111689249854779408:2111695757741047979": {
     "paragraphs": [
@@ -12146,6 +12163,7 @@
       "누구는 5시간 리밋이 금방 바닥나고 누구는 넉넉하다고 합니다.",
       "--> 차이는 설정과 습관입니다.",
       "⭐️ 클로드코드 꿀팁 12개를 제대로 알려드립니다. ⭐️",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111775913872642048)",
       "명령어와 프롬프트는 전부 복붙할 수 있게 넣었습니다.",
       "--> 한 번에 다 읽기엔 긴데.. 북마크 먼저 해두시는거 어떠실까요???",
       "⚠️ 시작 전에.. 버전부터 확인하세요 ⚠️",
@@ -12172,6 +12190,7 @@
       "3. 최종 코드에서 버그 찾는 리뷰는 high effort로",
       "각 서브에이전트에 실제로 어떤 effort를 줬는지 표시하고",
       "메인에는 결론과 근거 파일 경로만 가져와줘.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111778253040128000)",
       "매번 말하기 귀찮으면 에이전트를 파일로 만들어두면 됩니다.",
       "--> 예를 들어 프로젝트의 .claude/agents/ 폴더에 light-research.md로 저장합니다.",
       "---",
@@ -12193,6 +12212,7 @@
       "자동 압축이 기준으로 삼는 창 크기를 60만 토큰으로 줄이는 겁니다.",
       "1M을 다 채우기 전에 클로드가 알아서 대화를 요약하고 공간을 비웁니다.",
       "(기본값으로 돌리려면 /autocompact auto를 치면 됩니다.)",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111778944471191552)",
       "⚠️ 두 번째 주의해야할 것: 캐시 만료 ⚠️",
       "하나의 세션에서 오래 쓰시는 분들은 이거 꼭 보세요.",
       "클로드코드는 요청할 때마다 앞의 대화를 통째로 다시 보냅니다. 그래도 빠르고 싼 이유는 캐시 덕분입니다. 이미 처리한 앞부분은 다시 계산하지 않습니다.",
@@ -12201,6 +12221,7 @@
       "API 키나 추가 사용량 크레딧: 5분",
       "서브에이전트: 구독이어도 5분",
       "제 화면에 ~852k uncached라고 뜬 적이 있습니다. 이 상태에서 \"이어서 해줘\" 한 줄만 보내도 약 85만 토큰을 캐시 없이 처음부터 다시 처리해야 합니다. 사용량이 한 번에 크게 빠질 수 있습니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111779184389615616)",
       "캐시가 깨지는 대표적인 경우는 이렇습니다.",
       "오래 쉬었다가 거대한 세션을 다시 이어갈 때",
       "긴 세션 중간에 모델을 바꿀 때 (모델마다 캐시가 따로입니다)",
@@ -12208,6 +12229,7 @@
       "대처법은 간단합니다.",
       "자리 비우기 전에 정리하세요. 캐시가 살아 있을 때 /compact 하시거나, 아예 그냥 /clear 명령어로 새롭게 채팅을 시작하세요.",
       "최신 버전으로 업데이트하세요. v2.1.299부터는 20만 토큰이 넘는 대화를 54분쯤 그냥 두면 1시간 캐시가 끝나기 전에 클로드코드가 알아서 압축해 둡니다. 끄고 싶으면 (/config의 Idle compaction에서 끌 수 있습니다.)",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111779403353239553)",
       "3. /doctor prompt-audit로 오래된 지침 대청소하기",
       "예전에 좋다고 복붙한 CLAUDE.md. 실수할 때마다 하나씩 추가했던 규칙들.",
       "대부분 옛날 모델 기준으로 쓴 겁니다.",
@@ -12225,6 +12247,7 @@
       "설치한 플러그인의 스킬과 에이전트는 보고만 하고 고치자고 하지는 않습니다.",
       "기준은 지금 쓰고 있는 모델입니다. 그 모델 기준으로 오래된 프롬프트 패턴을 찾아 보고서와 수정 제안을 만듭니다.",
       "(settings 파일이나 .mcp.json처럼 키가 들어 있을 수 있는 파일은 읽지 않습니다.)",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111779793163481088)",
       "4. 클로드코드가 같은 실수를 반복할 때... 작업 환경 자체를 고치기",
       "⛏️ AI가 또 삽질하고 있을 때. 한 문제로 몇 시간째 고군분투하고 있을 때. ⛏️",
       "같은 지적을 세 번째 하고 있다면 모델 탓이 아닙니다. 작업 환경 탓입니다.",
@@ -12240,6 +12263,7 @@
       "각각 왜 생겼는지(잘못된 가정, 빠진 맥락, 코드 구조, 테스트 부재) 구분하고",
       "다시는 안 생기게 하려면 CLAUDE.md, .claude/rules, 스킬,",
       "훅, 테스트 중 어디를 어떻게 고쳐야 하는지 가장 작은 수정안만 제안해줘.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111780187742613504)",
       "3. 제안을 보고 괜찮은 것만 반영합니다.",
       "4. 효과를 확인합니다. 예전에 틀렸던 요청을 다시 시켜보고 이번엔 안 틀리는지 봅니다.",
       "⚠️ 전부 CLAUDE.md에 쌓으면 안 됩니다. ⚠️",
@@ -12250,6 +12274,7 @@
       "절대 어기면 안 되는 규칙은 Hooks와 권한 설정으로 (10번)",
       "같은 버그가 또 나는 건 회귀 테스트로",
       "이렇게 쌓인 규칙은 가끔 3번 /doctor prompt-audit로 대청소합니다. 4번이 쌓고 3번이 정리합니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111780468555386880)",
       "5. Claude-Mem으로 세션 간 작업 기억 유지하기",
       "클로드코드는 세션이 끝나면 대화를 잊습니다.",
       "\"저번에 그거 왜 그렇게 했더라?\"\n\"그 오류 어떻게 고쳤었지?\"",
@@ -12262,6 +12287,7 @@
       "기본 Auto Memory는 클로드가 중요하다고 판단한 내용과 프로젝트에서 배운 것들을 요약해서 메모로 남깁니다. /memory로 볼 수 있고 설치가 필요 없습니다.",
       "claude-mem은 이전 세션에서 어떤 작업을 했고 어떤 오류를 어떻게 해결했고 왜 그런 결정을 내렸는지까지 자동으로 기록합니다. 다음 세션에서 필요한 기록을 찾아 꺼내 씁니다.",
       "제 화면에서는 토큰 절감률이 87%까지 찍혔습니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111780718489784320)",
       "설치 방법은 터미널에서 한 줄으로 설치 가능합니다.",
       "markdown",
       "npx claude-mem install",
@@ -12289,11 +12315,13 @@
       "4. 한도 도트바: Pro나 Max용. 5시간과 7일 사용량, 초기화까지 남은 시간을 점 막대로",
       "5. 선명한 게이지: 라임색 모델 배지와 사선 게이지. 컨텍스트 토큰 수까지",
       "프롬프트 전문은 원래 게시물에 있습니다. 그대로 복붙하면 클로드가 바로 만들어서 적용해줍니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111781069594984448)",
       "1번 미니멀: \nhttps://x.com/lucian__03/status/2103173295118098750",
       "2번 파스텔 블록: \nhttps://x.com/lucian__03/status/2103173396075065594",
       "3번 Nord Powerline: \nhttps://x.com/lucian__03/status/2103173518573916178",
       "4번 한도 도트바: \nhttps://x.com/lucian__03/status/2103173612832444536",
       "5번 선명한 게이지: \nhttps://x.com/lucian__03/status/2103173754218258607",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111781230316511232)",
       "7. 클로드코드가 직접 실행하고 결과까지 검증하게 만들기",
       "클로드가 \"구현 완료했습니다!\" 합니다. 실행해 보면 안 됩니다. 버튼이 안 눌리거나 화면이 깨지거나 아예 안 뜹니다.",
       "테스트는 통과했는데 앱은 안 되는 경우가 생각보다 많습니다.",
@@ -12303,6 +12331,7 @@
       "/run-skill-generator: 이 프로젝트를 실행하는 방법(명령과 환경 변수, 준비 단계)을 스킬로 저장합니다. 실행 절차가 복잡한 프로젝트라면 이걸 먼저 하세요.",
       "/verify는 한 번 확인한 방법을 프로젝트 스킬(.claude/skills/verify/)로 저장해 두고 다음부터 다시 씁니다.",
       "이렇게 씁니다",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111781360159649792)",
       "1. 기능을 구현하고 테스트와 빌드부터 확인",
       "2. /run으로 앱 실행",
       "3. 웹이면 실제로 클릭하고 입력해 보기. CLI 도구면 샘플 입력으로 실제 출력 보기",
@@ -12318,6 +12347,7 @@
       "/security-review: 내 브랜치와 원격 기본 브랜치의 차이에서 보안 문제(인증, 입력 검증, 정보 노출 등)를 점검합니다.",
       "/simplify: 중복이나 비효율, 너무 복잡한 구조를 정리하고 고칩니다. 버그 찾는 도구는 아닙니다. 버그는 /code-review 담당입니다.",
       "추천 순서",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111781494196932608)",
       "1. /simplify로 먼저 코드를 정리하고",
       "2. /verify로 실제로 되는지 확인하고 (7번)",
       "3. /code-review로 버그를 찾고",
@@ -12335,6 +12365,7 @@
       "(Plan Mode에서 클로드는 파일을 읽고 계획만 세웁니다. 코드는 내가 승인한 다음에 고칩니다.)",
       "흐름은 탐색 → 계획 → 승인 → 구현 → 검증 순서입니다.",
       "다만 오타 수정이나 한 줄 고치기에는 계획이 오히려 낭비입니다. 공식 문서 기준이 깔끔합니다. 바꿀 내용을 한 문장으로 설명할 수 있으면 계획은 건너뛰세요.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111781749609160704)",
       "10. Hooks로 중요한 규칙을 자동으로 강제하기",
       "CLAUDE.md에 \"이 파일은 절대 건드리지 마\"라고 적어둬도 클로드는 가끔 건드립니다.",
       "🔥 CLAUDE.md는 참고 지침인데, Hooks는 강제 규칙입니다. 🔥",
@@ -12343,9 +12374,11 @@
       "PostToolUse: 실행 직후입니다. 고친 파일을 자동으로 포맷하거나 린트를 돌립니다.",
       "Stop: 클로드가 답을 끝내려고 할 때입니다. 테스트가 안 끝났으면 못 끝내게 합니다.",
       "예시: 운영 설정 파일 수정 막기",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111781873815101441)",
       "이런 Hook도 클로드코드에게 만들어 달라고 시켜도 됩니다.",
       "--> \"config/production.env 수정을 막는 PreToolUse 훅 만들어줘.\"",
       "이런 데 쓰면 좋습니다",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111782060411211776)",
       "코드 파일을 고칠 때마다 프로젝트 포맷터 자동 실행 (PostToolUse)",
       "중요한 폴더를 건드리기 전에 한 번 더 승인 받기 (PreToolUse)",
       "테스트를 안 돌렸으면 작업을 못 끝내게 하기 (Stop)",
@@ -12362,6 +12395,7 @@
       "그러면 .claude/worktrees/feature-auth/ 폴더가 생기고 worktree-feature-auth라는 새 브랜치에서 작업합니다.",
       "--> ⭐️ 두 세션이 서로의 파일을 건드리지 않습니다. ⭐️",
       "알아두면 좋은 것도 있습니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111782193941155840)",
       "새 worktree는 지금 내가 있는 브랜치가 아니라 원격 기본 브랜치(main)에서 시작합니다.",
       "claude --worktree \"#1234\"처럼 PR 번호를 주면 그 PR에서 시작합니다.",
       "세션을 끝낼 때 worktree 정리까지 챙겨줍니다. 작업한 게 남아 있으면 지우기 전에 남길지 지울지 물어봅니다.",
@@ -12378,10 +12412,12 @@
       "어떻게 동작하나...",
       "매 턴이 끝날 때마다 별도의 작고 빠른 모델이 조건과 지금까지의 대화를 읽고 조건을 채웠는지 판단합니다. 아직이면 클로드가 다음 턴을 이어서 시작합니다.",
       "목표에 \"테스트 명령과 결과를 대화에 출력할 것\" 같은 확인 방법을 꼭 넣어야 합니다. 그래야 판정 모델이 진짜 통과했는지 알 수 있습니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111782398086324224)",
       "/loop이나 Stop 훅이랑 뭐가 달라요?",
       "--> goal은 턴이 끝나면 바로 다음 턴을 시작합니다. 판정 모델이 목표 달성을 판단하면 멈춥니다.",
       "/loop은 정해진 간격으로 같은 작업을 반복합니다. 예를 들면 /loop 5m 배포 상태 확인해줘.",
       "Stop 훅은 턴이 끝나려 할 때 내가 짠 스크립트가 조건을 검사합니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111782530265600000)",
       "따로 써도 좋지만 합치면 더 좋습니다.",
       "1. /plan으로 범위와 완료 조건을 정하고 (9번)",
       "2. claude -w로 작업마다 worktree를 나누고 (11번)",
@@ -12389,6 +12425,7 @@
       "4. /goal로 9번에서 정한 완료 조건을 채울 때까지 반복하고 (12번)",
       "5. /run과 /verify로 실제로 띄워서 확인하고 (7번)",
       "6. /code-review로 새 컨텍스트에서 검수합니다 (8번)",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111782665707978754)",
       "정리",
       "1. effort는 작업마다 다르게. 서브에이전트에 나눠 맡기기.",
       "2. 컨텍스트는 끝까지 채우지 말고 캐시 만료 조심.",
@@ -12403,6 +12440,7 @@
       "11. 병렬 작업은 worktree로.",
       "12. 될 때까지는 /goal로.",
       "클로드코드는 업데이트가 정말 빠릅니다. 새 기능이 나오면 또 정리해서 올리겠습니다.",
+      "(https://x.com/lucian__03/article/2111802461149364647/media/2111782829210374144)",
       "도움 되셨으면 북마크 해두시고 클로드코드 쓰는 친구한테 공유 한 번만 해주세요.",
       "읽어주셔서 감사드립니다!",
       "제가 예전에 올렸던 X 원글",
@@ -12416,10 +12454,10 @@
       "statusline 디자인 5종: \nhttps://x.com/lucian__03/status/2103173166973718537"
     ],
     "translated": [],
-    "content_hash": "7468c2cd6e468188",
+    "content_hash": "de48ef59fcc66de0",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T00:41:37.179516+00:00"
+    "failed_at": "2026-10-22T01:44:03.986414+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -13230,22 +13268,22 @@
   },
   "reply:2112225009917624565:2112228784929746987": {
     "paragraphs": [
-      "Highly recommend to read \n@ShakePryzby1\n post about making adjustments..",
+      "Highly recommend to read \n@ShakePryzby1 (https://x.com/ShakePryzby1) \n post about making adjustments..",
       "Qullamaggie once said that the real edge, and challenge, lies in being able to adapt",
       "Out of curiousity I also checked how Shake's adjustment would effect Qullamaggies trades in raging bull market.",
       "76 of the 255 breakouts that traded at +4R still ended at or below the buy price using the 10 day SMA exit..",
       "Selling half at 4R and trailing the rest turned all 76 into winners.",
       "The average trade still dropped from about +1.20R to +0.93R.",
-      "https://x.com/ShakePryzby1/status/2110094061340356997 · ShakePryzby1",
+      "https://x.com/ShakePryzby1/status/2110094061340356997  · ShakePryzby1",
       "Making Adjustments:",
       "\"The fact is this market is a Trader's Dream and a Swing Trader's Nightmare.\"",
       "Recognition of the underlying environment is the utmost important aspect in trade management for me. I spent Friday and most of the weekend maniacally going over all of my trades  x.com/ShakePryzby1/s…"
     ],
     "translated": [],
-    "content_hash": "b8962dde60ce9b0b",
+    "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T00:49:42.910221+00:00"
+    "failed_at": "2026-10-22T01:48:04.617336+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13340,7 +13378,19 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-20T00:36:39.512562+00:00",
-    "chunk": "posts-x.json"
+    "chunk": "posts-x.json",
+    "last_attempt": {
+      "paragraphs": [
+        "PS: If you want to improve your stock selection, I created a free checklist with the criteria I use to filter out mediocre stocks and focus on high-quality opportunities.",
+        "Get my 360° Stock Selection Checklist 👇",
+        "Filter Out Mediocre Stocks: My 360° Stock Selection Checklist (https://t.co/lKZj2SsCDj)  https://t.co/lKZj2SsCDj"
+      ],
+      "translated": [],
+      "content_hash": "e1d43b14dd8a34ab",
+      "status": "failed",
+      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+      "failed_at": "2026-10-22T01:48:04.617347+00:00"
+    }
   },
   "reply:2111879987611521450:2111883184216404254": {
     "paragraphs": [
@@ -13383,7 +13433,19 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-20T00:36:39.505287+00:00",
-    "chunk": "posts-x.json"
+    "chunk": "posts-x.json",
+    "last_attempt": {
+      "paragraphs": [
+        "Starlink는 도서산간지역 및 오지에서도 빠르고 안정적인 인터넷을 제공합니다. 휴대 가능하고 설치가 용이한 Starlink Mini는 어디에서나 작동합니다.",
+        "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
+        "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-stay_studio&twclid=2br4e60kz32ohisd413abvghq8"
+      ],
+      "translated": [],
+      "content_hash": "2d9c3e65301588f4",
+      "status": "failed",
+      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+      "failed_at": "2026-10-22T01:48:04.616962+00:00"
+    }
   },
   "reply:2111820320956952991:2111864672689479773": {
     "paragraphs": [
@@ -13440,13 +13502,13 @@
   },
   "reply:2112042427595051095:2112042431487291406": {
     "paragraphs": [
-      "GitHub - leopard627/fire-your-seo-agency: Fire your SEO·GEO agency 🔥 A Claude Code skill that... https://t.co/s2iYJjM1UJ"
+      "GitHub - leopard627/fire-your-seo-agency: Fire your SEO·GEO agency 🔥 A Claude Code skill that... (https://t.co/s2iYJjM1UJ)  https://t.co/s2iYJjM1UJ"
     ],
     "translated": [],
-    "content_hash": "fa5946699cdf11e7",
+    "content_hash": "98911601b2fe57d4",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T00:49:42.910278+00:00"
+    "failed_at": "2026-10-22T01:48:04.620189+00:00"
   },
   "reply:2108954220841816471:2109163730521207277": {
     "paragraphs": [
@@ -13501,13 +13563,13 @@
   },
   "reply:2112178425725136936:2112179259477512526": {
     "paragraphs": [
-      "Seasonality looks bullish, but rising yields and oil are real headwinds. The market setup echoes themes \n@john_grobe1\n has discussed."
+      "Seasonality looks bullish, but rising yields and oil are real headwinds. The market setup echoes themes \n@john_grobe1 (https://x.com/john_grobe1) \n has discussed."
     ],
     "translated": [],
-    "content_hash": "081db0ecd6a04ba2",
+    "content_hash": "d74d2060f9e11208",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T00:49:42.910298+00:00"
+    "failed_at": "2026-10-22T01:48:04.620210+00:00"
   },
   "reply:2112286960752714130:2112286980574982434": {
     "paragraphs": [
@@ -13517,7 +13579,7 @@
     "content_hash": "f455987226791915",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:25:30.670729+00:00"
+    "failed_at": "2026-10-22T01:52:09.859362+00:00"
   },
   "reply:2112178425725136936:2112180113513329080": {
     "paragraphs": [
@@ -13568,7 +13630,7 @@
     "content_hash": "f4a6a24e169310f8",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:25:30.670765+00:00"
+    "failed_at": "2026-10-22T01:52:09.859434+00:00"
   },
   "reply:2112286960752714130:2112286968474472833": {
     "paragraphs": [
@@ -13588,7 +13650,7 @@
     "content_hash": "92046d3078a22db7",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:51:42.412390+00:00"
+    "failed_at": "2026-10-22T01:52:09.859442+00:00"
   },
   "reply:2112119031595667492:2111871993532580058": {
     "paragraphs": [
@@ -13596,13 +13658,13 @@
       "Part of our OrcaCyber model series: Nano, Zero, Ultra.",
       "Based on our early evals, Nano is the most capable local model in its under-16GB class. 27B parameters. 262K context. Vision. Fully offline.",
       "Early benchmarks:",
-      "orcarouter/OrcaCyber-Nano-1.0 · Hugging Face https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu"
+      "orcarouter/OrcaCyber-Nano-1.0 · Hugging Face (https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu)  https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu"
     ],
     "translated": [],
-    "content_hash": "47551671bfb500a2",
+    "content_hash": "b477c068ed03f5a6",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T13:25:30.670756+00:00"
+    "failed_at": "2026-10-22T01:52:09.859422+00:00"
   },
   "reply:2112282151098216596:2112282153191084265": {
     "paragraphs": [
@@ -13645,7 +13707,7 @@
     "content_hash": "b6312e6049a64381",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-20T00:55:47.708520+00:00"
+    "failed_at": "2026-10-22T01:52:09.859449+00:00"
   },
   "reply:2110426389388444039:2112234961873109286": {
     "paragraphs": [
@@ -13676,15 +13738,132 @@
       "정치권에서 또 증시개입하려고 꼬리짜르기 시전.",
       "누차 말하지만 레버리지ETF가 잘못이 있는게 아니라 삼성전자, SK하이닉스 두개만 출시하게한게 문제라니까.",
       "토지허가제 지정한 동네 집값 폭등하는거 보고도 배운게 없냐 진짜 ㅋㅋㅋㅋ",
-      "https://x.com/blazingbees/status/2112103974803591679 · blazingbees",
+      "https://x.com/blazingbees/status/2112103974803591679  · blazingbees",
       "제발 한국 증시에 더 이상 정치가 개입하지마라.\n이 이상으로 혼탁하게 하지말란 말이다.",
       "빠져야 할 때 시원하게 털고 가야 \n올라야 할 때도 잘 오르게 되는건데\n인위적으로 개입할수록 점점 더 꼬인다니까?",
       "이번 6~7월 때도 보고 배운게 없어?"
     ],
     "translated": [],
-    "content_hash": "7ef38717b0152e53",
+    "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T00:49:42.910214+00:00"
+    "failed_at": "2026-10-22T01:48:04.616296+00:00"
+  },
+  "2111732766270488857": {
+    "paragraphs": [
+      "$JPM (https://x.com/search?q=%24JPM&src=cashtag_click) \n 제이피모건쪽 자료입니다.\n참고의 의미로 읽어봐보세요~",
+      "* **시나리오**: 민주당 하원, 민주당 상원 독점 (확률 62%)",
+      "* **바스켓 페어 티커**: `JPMDC26P`",
+      "#### **1. 긍정적 / 매수 포지션 (POSITIVE / LONGS - `JPMDC26L`)**",
+      "* **오바마케어(ACA) 관련주 (ACA Exchange Levered / `JPUSACA`)**",
+      "* **내용**: ACA 강화 프리미엄 세액 공제가 연장될 가능성이 높아 거래소에 노출된 건강관리조직(MCO) 및 병원 관련주를 지원함.",
+      "* **저소득층 소비 관련주 (Low End Consumer Spend / `JP1XLOCD`)**",
+      "* **내용**: 가계 지원책 및 맞춤형 재정 프로그램 지원 가능성이 높아져 저소득층의 재량 소비 수요를 뒷받침함.",
+      "#### **2. 부정적 / 매도·숏 포지션 (NEGATIVE / SHORTS - `JPMDC26S`)**",
+      "* **차세대 국방/방산주 (Next Generation Defense / `JP1XNXDF`)**",
+      "* **내용**: 국방 예산 증액 가능성이 낮아짐; 중소형 방산 기업(드론/우주/미사일 방어 시스템)이 더 큰 예산 위험에 직면함.",
+      "* **자본시장 노출주 (Capital Markets Exposed / `JPUSCAPM`)**",
+      "* **내용**: 감세 및 규제 완화 동력이 약화되고 감독 및 조사가 강화되면서 딜(M&A) 및 발행 모멘텀에 부담을 줌.",
+      "* **에너지 인허가 관련주 (Energy Permitting / `JPAMPERM`)**",
+      "* **내용**: 인허가 개혁 가능성이 낮아지고 승인 일정이 지연될 위험이 있어 국내 에너지 프로젝트 승인에 대한 단기적 지원이 줄어듦.",
+      "* **CLARITY 법안 노출주 (CLARITY Act Exposed / `JPUSCLAR`)**",
+      "* **내용**: 디지털 자산 시장 구조 법안의 진전 가능성이 사라지면서 주요 플레이어들이 소외될 가능성이 커짐."
+    ],
+    "translated": [],
+    "content_hash": "8d47765bd4bcc6ee",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:39:58.871984+00:00"
+  },
+  "quote:2111829688427639079:quote:2111686757024739648": {
+    "paragraphs": [
+      "Mason",
+      "@Mason_yoon94",
+      "·",
+      "9h",
+      "저도 거래 할 때 1순위로 보는 내용이라서 \n정말 정말 중요한 내용이라 생각합니다",
+      "저는 CVD를 봅니다.",
+      "CVD는 이 델타를 봉마다 계속 더한 캔들 입니다.\nCumulative Volume Delta.\n한국어로는 누적 거래량 델타입니다.",
+      "즉 위로 민 거래량 − 아래로 민 거래량 = 하나의 봉에서 델타의 누적을  x.com/AlexZio00/stat…"
+    ],
+    "translated": [],
+    "content_hash": "6016f67d7b396825",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:48:04.616945+00:00"
+  },
+  "reply:2112861554693574817:2112868875092316280": {
+    "paragraphs": [
+      "the stop only works if the level actually invalidates the setup"
+    ],
+    "translated": [],
+    "content_hash": "dacfabc7c707ee5e",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859494+00:00"
+  },
+  "reply:2112861554693574817:2112869691731415444": {
+    "paragraphs": [
+      "What are your system regarding progressive exposure and market conditions?"
+    ],
+    "translated": [],
+    "content_hash": "5d96009c54797145",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859481+00:00"
+  },
+  "reply:2112861554693574817:2112868040690000333": {
+    "paragraphs": [
+      "In which timeframe you put SL? Daily/hourly"
+    ],
+    "translated": [],
+    "content_hash": "c00317205b4df7dc",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859476+00:00"
+  },
+  "quote:2112227317250674783:quote:2112226180774662405": {
+    "paragraphs": [
+      "추세의 큰 흐름을 볼 시 wedge pop 이후 ema crossback 단계입니다. 강한 추세 발현을 목전에 두고 있는 것으로 보입니다.",
+      "작은 추세의 흐름과 큰 추세의 흐름이 공통적으로 겹치면서, 그것이 서서히 위를 향하기 시작하는 순간을 노리면 되겠습니다.",
+      "1/2  x.com/ChillMonkey__/…"
+    ],
+    "translated": [],
+    "content_hash": "5d9d653a4ee2bdb8",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859457+00:00"
+  },
+  "reply:2112550213990982051:2107130125594861722": {
+    "paragraphs": [
+      "세계 최고 수준의 위성군을 보유한 Starlink는 기존에 인터넷이 너무 비싸거나, 불안정하거나, 아예 연결할 수 없었던 지역에 초고속 인터넷을 제공합니다. 어디에서나 안정적인 연결로 스트리밍, 화상통화, 게임, 업무에 활용할 수 있습니다.",
+      "자세히 알아보기 (https://www.starlink.com/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_plr_v4s_stc_ko-kr_egn-montana-everywhere&twclid=241phqfjy713271z9rblu7jrk6)  https://www.starlink.com/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_plr_v4s_stc_ko-kr_egn-montana-everywhere&twclid=241phqfjy713271z9rblu7jrk6"
+    ],
+    "translated": [],
+    "content_hash": "d10b7c992efc2421",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859463+00:00"
+  },
+  "reply:2112814265266733478:2112815863430811985": {
+    "paragraphs": [
+      "근데 지표를 끄고 타임 세션만 볼까요. 명확하게 아시아 고점을 스윕하고 올라오는 움직임이 눈에 들어옵니다. 4시간봉으로 보면? 오히려 Internal bsl 스윕 후 FVG을 채워주는 롱 셋업이 더 유리해보이기까지 합니다.",
+      "지표는 그냥 도구일 뿐입니다. 스스로 보는 눈을 기르는 것에 더 집중해야 함 👀"
+    ],
+    "translated": [],
+    "content_hash": "777b7f2d606f35c9",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859469+00:00"
+  },
+  "reply:2112861554693574817:2112862270648946965": {
+    "paragraphs": [
+      "Great breakdown. Mapping stops to structure makes sense. \n@shiny_4125 (https://x.com/shiny_4125) \n and you are my go-to for risk framing."
+    ],
+    "translated": [],
+    "content_hash": "61586dce28a56cb8",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T01:52:09.859489+00:00"
   }
 }

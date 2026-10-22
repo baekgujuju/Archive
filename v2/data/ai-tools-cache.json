@@ -2845,17 +2845,17 @@
     "version": 3
   },
   "2112839269203243034:embedded-5176d93b3d860510af83bcb54715ec03913e43581f159676af99baf973d659ea.jpg": {
-    "fingerprint": "57cb1c23cca54b6134eb484198b37c391cc840ce9d35fceb5a6cb8f4987cba25",
+    "fingerprint": "8099247e52de52e78ffda3d93356d2acb81fd90a64794dcbc9cffe9af74b1ed6",
     "entry": null,
     "version": 3
   },
   "2112746369240739887:embedded-3b6e97c8212adadbc522e3cd25f3f8bed06190cd2e722a91a8f06866b09ea3e1.jpg": {
-    "fingerprint": "1212e78baba4a1fdd9c10f194006cfaf79bdfd26585ae89c63f4790f1ef1782d",
+    "fingerprint": "a0b437cd777b05300692b6579ef49d6acaf10e200c56d46610cd43d56a004367",
     "entry": null,
     "version": 3
   },
   "2112746369240739887:embedded-8409e73f145956f1e1efde7a9745a4a3dd3571acf625666080569d3568faea8e.jpg": {
-    "fingerprint": "4a96f4095434ac11a44dbe47bcfd37eca92bbe233f51cff0ec201f20a6a120a3",
+    "fingerprint": "388c724bcb5c8cec5de953677040ef648233f0a107e4b50ccd9cb49707283dea",
     "entry": null,
     "version": 3
   },
@@ -2875,18 +2875,8 @@
     "version": 3
   },
   "2112907854097334441:embedded-f7e0aad752c47316576563aac8146090257b513759d8d129a2bb5ac919360b9b.jpg": {
-    "fingerprint": "41770cc3323e19b90869f2f67e76e2285964d93ae8b3e480c3826df2e5d6985e",
-    "entry": {
-      "title": "midagedev/mwoyeo",
-      "summary_ko": "Mwoyeo는 macOS용 실시간 온디바이스 화면 번역 앱입니다. 화면 내 렌즈 영역의 텍스트를 실시간으로 인식하여 그 자리에서 지정한 언어로 즉시 번역해 줍니다.",
-      "category": "macOS 화면 번역 유틸리티",
-      "repo_url": "https://github.com/midagedev/mwoyeo",
-      "status": "verified",
-      "evidence": [
-        "text-url:no-title-check"
-      ],
-      "fingerprint": "41770cc3323e19b90869f2f67e76e2285964d93ae8b3e480c3826df2e5d6985e"
-    },
+    "fingerprint": "53822b3715eda89b52e7e3a7594f47135aa08c17983856613e1c16b8df3213cd",
+    "entry": null,
     "version": 3
   },
   "2112797252431606163:embedded-371da85e27b58552862bae846f10ddce949ece1dba3f32bb4e939804f4741e2e.jpg": {
