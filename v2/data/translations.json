@@ -12629,52 +12629,31 @@
   },
   "2108954220841816471": {
     "paragraphs": [
-      "$BTC\n / M1 [1M] - the 7-year resistance has now flipped into a 3-year support.",
+      "$BTC (https://x.com/search?q=%24BTC%20OR%20bitcoin%3Anative&src=smarttag_click) \n / M1 [1M] - the 7-year resistance has now flipped into a 3-year support.",
       "All set for a 2017-type expansive move 🧨"
     ],
     "translated": [
-      "$BTC\n / M1 [1M] - 7년간의 저항선이 이제 3년간의 지지선으로 전환되었습니다.",
-      "2017년과 같은 큰 폭의 상승을 위한 모든 준비가 끝났습니다 🧨"
+      "$BTC (https://x.com/search?q=%24BTC%20OR%20bitcoin%3Anative&src=smarttag_click)\n/ M1 [1M] - 7년간의 저항선이 이제 3년간의 지지선으로 전환되었습니다.",
+      "2017년과 같은 폭발적인 상승을 위한 모든 준비가 끝났습니다 🧨"
     ],
-    "content_hash": "d92ca63cfa591891",
+    "content_hash": "b22af7c5be071a08",
     "status": "ok",
     "validation_version": 2,
-    "translated_at": "2026-10-20T00:34:30.557547+00:00",
-    "chunk": "posts-x.json",
-    "last_attempt": {
-      "paragraphs": [
-        "$BTC (https://x.com/search?q=%24BTC%20OR%20bitcoin%3Anative&src=smarttag_click) \n / M1 [1M] - the 7-year resistance has now flipped into a 3-year support.",
-        "All set for a 2017-type expansive move 🧨"
-      ],
-      "translated": [],
-      "content_hash": "b22af7c5be071a08",
-      "status": "failed",
-      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T04:49:00.415036+00:00"
-    }
+    "translated_at": "2026-10-22T06:14:17.384166+00:00",
+    "chunk": "posts-x.json"
   },
   "2112263964759412841": {
     "paragraphs": [
-      "Impressive how stron \n$HTFL\n is holding up."
+      "Impressive how stron \n$HTFL (https://x.com/search?q=%24HTFL&src=cashtag_click) \n is holding up."
     ],
     "translated": [
-      "$HTFL이 이렇게 강하게 버티고 있다니 인상적이네요."
+      "$HTFL (https://x.com/search?q=%24HTFL&src=cashtag_click)이 이렇게 강하게 버티고 있는 게 인상적이네요."
     ],
-    "content_hash": "4156fea090164bb8",
+    "content_hash": "b49c1937fe074464",
     "status": "ok",
     "validation_version": 2,
-    "translated_at": "2026-10-20T00:34:42.491135+00:00",
-    "chunk": "posts-x.json",
-    "last_attempt": {
-      "paragraphs": [
-        "Impressive how stron \n$HTFL (https://x.com/search?q=%24HTFL&src=cashtag_click) \n is holding up."
-      ],
-      "translated": [],
-      "content_hash": "b49c1937fe074464",
-      "status": "failed",
-      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T04:53:05.509060+00:00"
-    }
+    "translated_at": "2026-10-22T06:14:27.083385+00:00",
+    "chunk": "posts-x.json"
   },
   "2112286960752714130": {
     "paragraphs": [
@@ -13773,11 +13752,15 @@
       "크립토는 up only다 ㅉㅉ",
       "역사상 전례없는 클라이막스를 만들고 나서 죽어라 하하"
     ],
-    "translated": [],
+    "translated": [
+      "크립토는 오르기만 한다 ㅉㅉ",
+      "역사상 전례없는 클라이막스를 만들고 나서 죽어라 하하"
+    ],
     "content_hash": "b6312e6049a64381",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.079947+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.159719+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110426389388444039:2112234961873109286": {
     "paragraphs": [
@@ -13848,11 +13831,30 @@
       "* **CLARITY 법안 노출주 (CLARITY Act Exposed / `JPUSCLAR`)**",
       "* **내용**: 디지털 자산 시장 구조 법안의 진전 가능성이 사라지면서 주요 플레이어들이 소외될 가능성이 커짐."
     ],
-    "translated": [],
+    "translated": [
+      "$JPM (https://x.com/search?q=%24JPM&src=cashtag_click) \n 제이피모건쪽 자료입니다.\n참고의 의미로 읽어봐보세요~",
+      "* **시나리오**: 민주당 하원, 민주당 상원 독점 (확률 62%)",
+      "* **바스켓 페어 티커**: `JPMDC26P`",
+      "#### **1. 긍정적 / 매수 포지션 (POSITIVE / LONGS - `JPMDC26L`)**",
+      "* **오바마케어(ACA) 관련주 (ACA Exchange Levered / `JPUSACA`)**",
+      "* **내용**: ACA 강화 프리미엄 세액 공제가 연장될 가능성이 높아 거래소에 노출된 건강관리조직(MCO) 및 병원 관련주를 지원함.",
+      "* **저소득층 소비 관련주 (저소득층 소비 지출 / `JP1XLOCD`)**",
+      "* **내용**: 가계 지원책 및 맞춤형 재정 프로그램 지원 가능성이 높아져 저소득층의 재량 소비 수요를 뒷받침함.",
+      "#### **2. 부정적 / 매도·숏 포지션 (NEGATIVE / SHORTS - `JPMDC26S`)**",
+      "* **차세대 국방/방산주 (차세대 국방 / `JP1XNXDF`)**",
+      "* **내용**: 국방 예산 증액 가능성이 낮아짐; 중소형 방산 기업(드론/우주/미사일 방어 시스템)이 더 큰 예산 위험에 직면함.",
+      "* **자본시장 노출주 (자본시장 노출 / `JPUSCAPM`)**",
+      "* **내용**: 감세 및 규제 완화 동력이 약화되고 감독 및 조사가 강화되면서 딜(M&A) 및 발행 모멘텀에 부담을 줌.",
+      "* **에너지 인허가 관련주 (Energy Permitting / `JPAMPERM`)**",
+      "* **내용**: 인허가 개혁 가능성이 낮아지고 승인 일정이 지연될 위험이 있어 국내 에너지 프로젝트 승인에 대한 단기적 지원이 줄어듦.",
+      "* **CLARITY 법안 노출주 (CLARITY 법안 노출 / `JPUSCLAR`)**",
+      "* **내용**: 디지털 자산 시장 구조 법안의 진전 가능성이 사라지면서 주요 플레이어들이 소외될 가능성이 커짐."
+    ],
     "content_hash": "8d47765bd4bcc6ee",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T05:09:49.319721+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:14:06.441030+00:00",
+    "chunk": "posts-x.json"
   },
   "quote:2111829688427639079:quote:2111686757024739648": {
     "paragraphs": [
@@ -13875,31 +13877,40 @@
     "paragraphs": [
       "the stop only works if the level actually invalidates the setup"
     ],
-    "translated": [],
+    "translated": [
+      "손절은 그 가격대가 실제로 해당 매매 시나리오를 무효화하는 경우에만 효과가 있습니다."
+    ],
     "content_hash": "dacfabc7c707ee5e",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080072+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.162122+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112861554693574817:2112869691731415444": {
     "paragraphs": [
       "What are your system regarding progressive exposure and market conditions?"
     ],
-    "translated": [],
+    "translated": [
+      "시장 상황에 따른 점진적인 포지션 확대에 관해 어떤 체계를 갖고 계신가요?"
+    ],
     "content_hash": "5d96009c54797145",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080058+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.161493+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112861554693574817:2112868040690000333": {
     "paragraphs": [
       "In which timeframe you put SL? Daily/hourly"
     ],
-    "translated": [],
+    "translated": [
+      "손절은 어느 시간봉을 기준으로 설정하시나요? 일봉/시간봉"
+    ],
     "content_hash": "c00317205b4df7dc",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080052+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.161223+00:00",
+    "chunk": "posts-x.json"
   },
   "quote:2112227317250674783:quote:2112226180774662405": {
     "paragraphs": [
@@ -13910,51 +13921,66 @@
     "translated": [],
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080018+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:16:59.160069+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
       "세계 최고 수준의 위성군을 보유한 Starlink는 기존에 인터넷이 너무 비싸거나, 불안정하거나, 아예 연결할 수 없었던 지역에 초고속 인터넷을 제공합니다. 어디에서나 안정적인 연결로 스트리밍, 화상통화, 게임, 업무에 활용할 수 있습니다.",
       "자세히 알아보기 (https://www.starlink.com/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_plr_v4s_stc_ko-kr_egn-montana-everywhere&twclid=241phqfjy713271z9rblu7jrk6)  https://www.starlink.com/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_plr_v4s_stc_ko-kr_egn-montana-everywhere&twclid=241phqfjy713271z9rblu7jrk6"
     ],
-    "translated": [],
+    "translated": [
+      "세계 최고 수준의 위성군을 보유한 Starlink는 기존에 인터넷이 너무 비싸거나, 불안정하거나, 아예 연결할 수 없었던 지역에 초고속 인터넷을 제공합니다. 어디에서나 안정적인 연결로 스트리밍, 화상통화, 게임, 업무에 활용할 수 있습니다.",
+      "자세히 알아보기 (https://www.starlink.com/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_plr_v4s_stc_ko-kr_egn-montana-everywhere&twclid=241phqfjy713271z9rblu7jrk6)  https://www.starlink.com/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_plr_v4s_stc_ko-kr_egn-montana-everywhere&twclid=241phqfjy713271z9rblu7jrk6"
+    ],
     "content_hash": "d10b7c992efc2421",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080032+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.160441+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112814265266733478:2112815863430811985": {
     "paragraphs": [
       "근데 지표를 끄고 타임 세션만 볼까요. 명확하게 아시아 고점을 스윕하고 올라오는 움직임이 눈에 들어옵니다. 4시간봉으로 보면? 오히려 Internal bsl 스윕 후 FVG을 채워주는 롱 셋업이 더 유리해보이기까지 합니다.",
       "지표는 그냥 도구일 뿐입니다. 스스로 보는 눈을 기르는 것에 더 집중해야 함 👀"
     ],
-    "translated": [],
+    "translated": [
+      "근데 지표를 끄고 시간대별 세션만 볼까요. 명확하게 아시아 고점을 스윕하고 올라오는 움직임이 눈에 들어옵니다. 4시간봉으로 보면? 오히려 내부 매수측 유동성을 스윕한 후 FVG을 채워주는 매수 셋업이 더 유리해보이기까지 합니다.",
+      "지표는 그냥 도구일 뿐입니다. 스스로 보는 눈을 기르는 것에 더 집중해야 함 👀"
+    ],
     "content_hash": "777b7f2d606f35c9",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080040+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.160969+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112861554693574817:2112862270648946965": {
     "paragraphs": [
       "Great breakdown. Mapping stops to structure makes sense. \n@shiny_4125 (https://x.com/shiny_4125) \n and you are my go-to for risk framing."
     ],
-    "translated": [],
+    "translated": [
+      "훌륭한 분석입니다. 시장 구조에 맞춰 손절 지점을 정하는 건 타당하네요.\n@shiny_4125 (https://x.com/shiny_4125)\n님과 당신은 제가 위험 관리의 틀을 잡을 때 가장 믿고 참고하는 분들입니다."
+    ],
     "content_hash": "61586dce28a56cb8",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080065+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.161879+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112367388503257439:2112375491386814639": {
     "paragraphs": [
       "주성엔지니어링 가장 두꺼운 매물대이자, S/R Flip 구간으로의 회귀",
       "소부장 주도 코스닥 강세에 동의한다면 시장이 주는 놀라운 기회"
     ],
-    "translated": [],
+    "translated": [
+      "주성엔지니어링 가장 두꺼운 매물대이자, 지지·저항 전환 구간으로의 회귀",
+      "소부장 주도 코스닥 강세에 동의한다면 시장이 주는 놀라운 기회"
+    ],
     "content_hash": "b82e83a8ec3c59d1",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080099+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.163893+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112367388503257439:2112358681170104647": {
     "paragraphs": [
@@ -13968,30 +13994,38 @@
     "translated": [],
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080085+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:16:59.163391+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
       "삼성전기 주요 지점 S/R Flip",
       "5EMA 위로 가격이 올라타길 기대"
     ],
-    "translated": [],
+    "translated": [
+      "삼성전기 주요 지점 지지·저항 전환",
+      "5EMA 위로 가격이 올라타길 기대"
+    ],
     "content_hash": "c89fb18bb844584f",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080093+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.163626+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112861554693574817:2112843584567406916": {
     "paragraphs": [
       "The cheapest DeepSeek V4.1 Flash and GLM 5.3 Flash anywhere.",
       "Get $5 free (https://app.openscale.so/invite/X5?s=c8&utm_source=x&utm_medium=paid_social&utm_campaign=c8&utm_content=both&twclid=22wrksdmdqsfwx2kgvtym3mel7)  https://app.openscale.so/invite/X5?s=c8&utm_source=x&utm_medium=paid_social&utm_campaign=c8&utm_content=both&twclid=22wrksdmdqsfwx2kgvtym3mel7"
     ],
-    "translated": [],
+    "translated": [
+      "어디서도 이보다 저렴할 수 없는 DeepSeek V4.1 Flash와 GLM 5.3 Flash.",
+      "$5 무료로 받기 (https://app.openscale.so/invite/X5?s=c8&utm_source=x&utm_medium=paid_social&utm_campaign=c8&utm_content=both&twclid=22wrksdmdqsfwx2kgvtym3mel7)  https://app.openscale.so/invite/X5?s=c8&utm_source=x&utm_medium=paid_social&utm_campaign=c8&utm_content=both&twclid=22wrksdmdqsfwx2kgvtym3mel7"
+    ],
     "content_hash": "4b5c21b9cd978940",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080078+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.163041+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016935771329176026": {
     "paragraphs": [
@@ -14019,11 +14053,16 @@
       "달리 말하면, 여기서 신규진입을 노릴때는 1시간 4시간봉을 끼고 보면서 확인하는 것이 좋다는 말이다.",
       "6/7"
     ],
-    "translated": [],
+    "translated": [
+      "- 현재 추세가 상위 시간봉과 연계가 되어있는 점도 그러하다. 상위 시간봉의 추세가 발현될 가능성이 높은 시간대라는 말.",
+      "달리 말하면, 여기서 신규진입을 노릴때는 1시간 4시간봉을 끼고 보면서 확인하는 것이 좋다는 말이다.",
+      "6/7"
+    ],
     "content_hash": "22683e273bb76e21",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080152+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.167029+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016999879521030475": {
     "paragraphs": [
@@ -14055,18 +14094,21 @@
     "translated": [],
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080124+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:16:59.165338+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
       "1시간봉. 비슷한 이야기다. 여기서는 돌파가 실패한 것으로 떠있다. continuation을 생각해야된다는 소리. 베이스의 완성도가 정리가 필요해졌다. \n1시간봉과 4시간봉에서 지금 자리 부근에서 타이트한 움직임이 나와주며 베이스 안 레인지를 계속해서 좁혀나가는 것을 기대해볼 수 있다.\n3/7"
     ],
-    "translated": [],
+    "translated": [
+      "1시간봉. 비슷한 이야기다. 여기서는 돌파가 실패한 것으로 떠있다. 추세 지속을 생각해야된다는 소리. 베이스의 완성도가 정리가 필요해졌다.\n1시간봉과 4시간봉에서 지금 자리 부근에서 좁은 폭의 움직임이 나와주며 베이스 안 가격 범위를 계속해서 좁혀나가는 것을 기대해볼 수 있다.\n3/7"
+    ],
     "content_hash": "2aead62150294815",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080137+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.166183+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112777626712444966:2112777809777308095": {
     "paragraphs": [
@@ -14095,11 +14137,14 @@
     "paragraphs": [
       "원래 한시간봉 아래의 타임프레임도 연계를 해야하지만, 그냥 넘어가자.. \n아무튼 다시 일봉과 연계해볼까\n주요가격 부근까지 4일차 상승마감, 파라볼릭 상승세, 상승의 힘이 어느정도 꺾인 상태. 4시간과 1시간봉에서는 타이트한 continuation 움직임을 예상해볼 수 있다. (혹은 바래볼 수 있다)\n 4/7"
     ],
-    "translated": [],
+    "translated": [
+      "원래 한시간봉 아래의 시간봉도 연계를 해야하지만, 그냥 넘어가자..\n아무튼 다시 일봉과 연계해볼까\n주요가격 부근까지 4일차 상승마감, 포물선형 상승세, 상승의 힘이 어느정도 꺾인 상태. 4시간과 1시간봉에서는 좁은 폭의 추세 지속 움직임을 예상해볼 수 있다. (혹은 바래볼 수 있다)\n4/7"
+    ],
     "content_hash": "d7a7ec0b4fcd52e6",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080144+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.166708+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016927449083174939": {
     "paragraphs": [
@@ -14115,11 +14160,14 @@
     "paragraphs": [
       "Launch products now and grow your business with X Ads. \n@1x_tech (https://x.com/1x_tech) \n’s NEO robot campaign shows how X can turn a product announcement into action. As \n@Kenny___Rose (https://x.com/Kenny___Rose) \n put it, X was the perfect launch platform."
     ],
-    "translated": [],
+    "translated": [
+      "지금 제품을 출시하고 X 광고로 사업을 성장시키세요.\n@1x_tech (https://x.com/1x_tech)\n의 NEO 로봇 캠페인은 X가 제품 발표를 어떻게 행동으로 이어지게 할 수 있는지 보여줍니다.\n@Kenny___Rose (https://x.com/Kenny___Rose)\n의 말처럼, X는 완벽한 출시 플랫폼이었습니다."
+    ],
     "content_hash": "0963975b40083c76",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080110+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.164592+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016901767590715397": {
     "paragraphs": [
@@ -14146,21 +14194,28 @@
       "이건 다 책에서 가르쳐주는 것들. 시장 앞에서 배우는 것들.",
       "추세를 추종한다며. Momentum following 한다며. \nChasing을 할거면 제대로 해야. 추세가 뭔지도 모르면서 어떻게 잡아 세우게."
     ],
-    "translated": [],
+    "translated": [
+      "이건 다 책에서 가르쳐주는 것들. 시장 앞에서 배우는 것들.",
+      "추세를 추종한다며. 모멘텀을 추종한다며.\n추격 매매를 할거면 제대로 해야. 추세가 뭔지도 모르면서 어떻게 잡아 세우게."
+    ],
     "content_hash": "72e7c778561244d8",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080131+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.165683+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112797252431606163:2112803392636793155": {
     "paragraphs": [
       "That is 주식 😬"
     ],
-    "translated": [],
+    "translated": [
+      "그게 주식이죠 😬"
+    ],
     "content_hash": "148ea8baab08eb26",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080117+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.164775+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016920737014018467": {
     "paragraphs": [
@@ -14186,11 +14241,14 @@
     "paragraphs": [
       "미장 soxx도그럴까요??"
     ],
-    "translated": [],
+    "translated": [
+      "미장 soxx도그럴까요??"
+    ],
     "content_hash": "7d01d2f3acce6305",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:57:06.080104+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:59.163963+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2034633173234012448": {
     "paragraphs": [
@@ -14423,6 +14481,615 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-22T06:01:54.380242+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2080370789790937413": {
+    "paragraphs": [
+      "횡보장에서의 셋업/핸들링",
+      "이미 트위터에 올렸던 내용이지만, 질문이 많아서 아티클로 정리합니다.",
+      "횡보장, 그러니깐 choppy market에서는 강세장에서의 플레이 스타일이 먹히지 않습니다. 추세추종자들의 무덤이에요. 추세인줄 알았으나, 중력의 힘을 이기지 못 하고 바닥으로 떨어지는 종목이 절대다수인. 전통적인 추세추종자들은 그래서 이 기간동안 시장을 떠나있기도 합니다. 이 구간은 누군가에게는 easy money szn이기도 하겠죠. 전 이 기간동안 시장에서 남아있습니다. R값을 벌어내며, 계좌를 키워가며. 언젠가 만날 첫 추세를 먹었을때의 알파를 생각하면서.",
+      "제가 이 기간에서 트레이딩하는 방식에 대해 몇가지 소개해보겠습니다. 지엽적인 돌파, 리버설/지지, 데이 트레이딩, 그리고 베이스 0/stage 1 돌파입니다. 이 기간동안은 종가매매가 정석적이나, 트레이딩의 많은 것들이 그렇듯 항상 그런 것은 아닙니다.",
+      "제가 작년 연말 챠피 마켓에서 매매할때의 조건을 적어놓은 것은 다음과 같습니다.",
+      "추세가 살아있는지, 주요매물대 위에 가격이 위치하였는지, htf와 ltf 구조가 비슷한 말을 하고 있는지 (종목,섹터,시장 모두 일치하면 당연히 더 좋음), 세번째 higher low면 금상첨화, 가격변동폭이 줄어들었는지, 그러하더래도 일변동폭은 충분한지, 이평선의 배열이 어떠한지, 모여있는지, 주요이평을 지켜주고 있는지, 거래량의 변화가 있는지, 눈에 잡히는 \"최소 상방\"이 어디인지. 최소 여기까진 가겠다 싶은 지점을 말하는겁니다 (저항대가 어딘지), 그 저항대를 뚫을 가능성이 높아보이는 셋업이면 더욱 좋고, (상방 저항대를 네번 건드려줬는지), 과거 이 종목이 현재와 비슷한 움직임을 보여줄때 결과가 어떠했는지, 손익비가 맞는지.",
+      "현재는 이 조건에 전부 들어맞는 것은 나타나지 않는데요, 이유는 단순합니다. 그때의 지수 상황과 지금이 다르기 때문이에요. 기본 골자는 비슷합니다.",
+      "1. 지엽적인 돌파",
+      "횡보장에서 지엽적인 돌파를 잡아내기 위해서는, 전체적인 시장의 흐름과 궤가 맞아떨어져야합니다. 일반적으로 모든 상황에서 그렇지만, 횡보장에서의 지엽적인 돌파 셋업을 잡을때는 특히나 더 HTF 구조가 유지되고 있는 상황인지가 중요합니다. 원래 시장에서 지엽적인 돌파는 갭의 형태로 나타나는 경우가 많은데, 현재 시장 안에서 갭을 믿기는 어렵습니다. (choppy market이니)",
+      "다음 예시는 26년 6/29일 RIVN입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080344984256159744)",
+      "2026년 6월 29일 당시 QQQ 첫 두시간이 지난 상황. 개장시 시장의 양봉을 anticipate한 이후 진입.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080346013571883008)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080343454400569344)",
+      "POC 위에 있는",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080344192925253632)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080344669372952576)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080347028484460545)",
+      "2. 리버설/지지",
+      "리버설, 지지에서 잡는 방식은 여러가지가 있습니다만, 공통점은 역시 HTF 구조가 유지되어야한다는것입니다. 그리고 잡는 위치는 주요가격이여야하며, 그 자리에서 리버설을 보일 수 있는 움직임이 나와야한다는 공통점도 있습니다. 확률을 더 끌어올리기 위해서 마감에 진입하는 것이 정석이기도 합니다만, 이건 장세에 따라 달라지기도 합니다. 결국 일종의 예측 플레이기 때문에 더 깐깐하게 봐야한다는 소리에요.",
+      "2-1. 파라볼릭 하락 리버설",
+      "하락세가 곡진 파라볼릭한 형태면 더 좋고, 하이베타일수록 이 방법이 더 잘 먹힙니다. 이유는 파라볼릭한 하락일수록 그 상승되돌림이 거칠 것이고, 하이베타일수록 그 되돌림이 극대화되기 때문인데요.",
+      "매도는 역시 강세에 하는 것이 원칙입니다.",
+      "예시는 2026년 7/17일 HUT입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080350212368031744)",
+      "섹터 ETF가 주요가격에 걸려있으며, 주봉상 구조를 유지하고 있음. (해당차트는 일봉)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080349008460222464)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080348809985728512)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080349167894044672)",
+      "스탑 LOD로 걸고 목표수익에 계산시 손익비 1:5",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080349701447282689)",
+      "2-2. 일반적인 리버설",
+      "2026년 6/25일 종가의 APP입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080351893034094592)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080352211952091136)",
+      "2026년 6월 9일 2:30~3:30 VELO입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080353416501714944)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080354220386242560)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080352874639572992)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080352761825439744)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080354341404426240)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080354741146857472)",
+      "3. 데이트레이딩",
+      "그냥 오버나잇 끌지 말고 단타 치라는 소립니다. 돈이 몰리는 쪽에서 거래를 하는게 낫겠고, 변동폭이 큰 쪽이 낫다보니 필연적으로 촉매가 있는 종목에 들어가는 경우가 많습니다. 그러다보니 EP 조건에서 탈락한 종목들에 들어가는 경우가 꽤 있어요. 또는 지엽적인 돌파에 잡았다가 오버나잇 갈 것 없이 돌파까지 확장이 나온 경우 잘라버리는 경우도 있는데.. 이건 데이트레이딩을 목적으로 하지 않았으나 얻어걸린 케이스겠죠. 아티클 사진 제한 때문에 넘어가겠습니다.",
+      "4. base 0 돌파/ stage 1 돌파/ K자",
+      "죽일듯이 내려가서 더 이상 매물대가 없는 청소상태인 종목에서, 추세전환을 시도할때, 이평선이 모이며 꽤 긴 기간동안 베이스를 착실히 쌓았을때 그 자리에서 나오는 돌파는 횡보장에서 먹히는 몇 안 되는 돌파 셋업입니다.",
+      "위치가 낮다보니, 그리고 저항가격이 청소되어 약하다보니 돌파를 확장/과열로 보는 choppy market에서도 먹히는 돌파라서 그렇습니다.",
+      "SATL 2026년  1/5~7일, 3/19일",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080359106947473408)",
+      "스탑 돌파 당일 LOD. 짧은 베이스 0 돌파. 짧은 베이스기 때문에 주요저항가격에서 매도",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080359910857224192)",
+      "K자 셋업. 스탑 LOD 혹은 갭 채우는 가격으로. 꽤 긴 기간 셋업을 만들었고, 구조가 좋기 때문에 상방을 열어봐도 되는. (좋은 장세의 돌파에게 기대하듯이)",
+      "7/20일 BULL (전 그 전에 진입했습니다)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080360840482656256)",
+      "베이스 0 돌파, 스탑 LOD",
+      "6/10일 TDUP",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080361925511368704)",
+      "두달 걸린 베이스",
+      "2024 11/18~19일 TDUP",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080362711339429888)",
+      "세달가까이 걸린 베이스 0",
+      "+",
+      "끝마치며 일종의 choppy market에서 통하는 돌파 셋업들의 진입/매도 논리를 ATR% from 50MA로 설명시:",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080366453619060736)",
+      "https://x.com/tmmrwseoul/status/2075607968633307417?s=20",
+      "베이스 0은 제대로 된 돌파처럼 핸들링 해도 되는 이유가 여기에 있어요. 잘 생각해보세요!",
+      "횡보장에서는 지지에 잡고, 시계열이 빨라지는 이유:",
+      "Choppy market에서는 한 발 빠르게 사서, 조그마한 과열에 파는 것이 중요해요. 그렇기 때문에 시계열이 빨라지는.. 조금 더 고급지게 말하면, 오버나잇 리스크를 최대한 줄여줘야하기 때문에 시계열을 빠르게 하는겁니다. 방향이 정해진 시장이 아니니깐.",
+      "사는점이 단기 저점 부근, 파는 점이 단기 고점 부근이여야 하는.  혹은 사는 점이 평균 근처, 파는 점이 단기 고점 부근이여야 하는. 결국 같은 이야기.",
+      "25년 10월~ 26년 1월 choppy market에 대한 개인적인 memoir:",
+      "https://x.com/tmmrwseoul/status/2042082818206134718?s=20",
+      "choppy market에서의 거래들은 결국 전부 위치에 대한 이야기. 결국 전부 시계열에 관한 이야기. 결국 전부 시장과의 연계, 섹터와의 연계, 그리고 확장/과열에 대한 이야기.",
+      "정말 마지막으로.. 횡보장을 보낼때마다 제가 당시에 느끼는 것들과 배운 것들, 제가 찾는 셋업과 핸들링과정의 개념/이론을 트위터에 공유하고 있습니다. 하이라이트 글 뒤적거리면서 찾아보셔도 좋을 것 같아요."
+    ],
+    "translated": [
+      "횡보장에서의 셋업/핸들링",
+      "이미 트위터에 올렸던 내용이지만, 질문이 많아서 아티클로 정리합니다.",
+      "횡보장, 그러니까 등락이 심한 시장에서는 강세장에서의 매매 방식이 먹히지 않습니다. 추세추종자들의 무덤이에요. 추세인 줄 알았으나, 중력의 힘을 이기지 못하고 바닥으로 떨어지는 종목이 절대다수인 시장입니다. 전통적인 추세추종자들은 그래서 이 기간 동안 시장을 떠나 있기도 합니다. 이 구간은 누군가에게는 쉽게 돈을 버는 시기이기도 하겠죠. 전 이 기간 동안 시장에 남아 있습니다. R값을 벌어내며, 계좌를 키워가며. 언젠가 만날 첫 추세를 잡았을 때의 초과수익을 생각하면서.",
+      "제가 이 기간에서 트레이딩하는 방식에 대해 몇가지 소개해보겠습니다. 지엽적인 돌파, 리버설/지지, 데이 트레이딩, 그리고 베이스 0/stage 1 돌파입니다. 이 기간동안은 종가매매가 정석적이나, 트레이딩의 많은 것들이 그렇듯 항상 그런 것은 아닙니다.",
+      "제가 작년 연말 챠피 마켓에서 매매할때의 조건을 적어놓은 것은 다음과 같습니다.",
+      "추세가 살아있는지, 주요매물대 위에 가격이 위치하였는지, htf와 ltf 구조가 비슷한 말을 하고 있는지 (종목,섹터,시장 모두 일치하면 당연히 더 좋음), 세번째 higher low면 금상첨화, 가격변동폭이 줄어들었는지, 그러하더래도 일변동폭은 충분한지, 이평선의 배열이 어떠한지, 모여있는지, 주요이평을 지켜주고 있는지, 거래량의 변화가 있는지, 눈에 잡히는 \"최소 상방\"이 어디인지. 최소 여기까진 가겠다 싶은 지점을 말하는겁니다 (저항대가 어딘지), 그 저항대를 뚫을 가능성이 높아보이는 셋업이면 더욱 좋고, (상방 저항대를 네번 건드려줬는지), 과거 이 종목이 현재와 비슷한 움직임을 보여줄때 결과가 어떠했는지, 손익비가 맞는지.",
+      "현재는 이 조건에 전부 들어맞는 것은 나타나지 않는데요, 이유는 단순합니다. 그때의 지수 상황과 지금이 다르기 때문이에요. 기본 골자는 비슷합니다.",
+      "1. 지엽적인 돌파",
+      "횡보장에서 지엽적인 돌파를 잡아내기 위해서는, 전체적인 시장의 흐름과 궤가 맞아떨어져야합니다. 일반적으로 모든 상황에서 그렇지만, 횡보장에서의 지엽적인 돌파 셋업을 잡을때는 특히나 더 HTF 구조가 유지되고 있는 상황인지가 중요합니다. 원래 시장에서 지엽적인 돌파는 갭의 형태로 나타나는 경우가 많은데, 현재 시장 안에서 갭을 믿기는 어렵습니다. (choppy market이니)",
+      "다음 예시는 26년 6/29일 RIVN입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080344984256159744)",
+      "2026년 6월 29일 당시 QQQ 첫 두시간이 지난 상황. 개장시 시장의 양봉을 anticipate한 이후 진입.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080346013571883008)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080343454400569344)",
+      "POC 위에 있는",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080344192925253632)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080344669372952576)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080347028484460545)",
+      "2. 리버설/지지",
+      "리버설, 지지에서 잡는 방식은 여러가지가 있습니다만, 공통점은 역시 HTF 구조가 유지되어야한다는것입니다. 그리고 잡는 위치는 주요가격이여야하며, 그 자리에서 리버설을 보일 수 있는 움직임이 나와야한다는 공통점도 있습니다. 확률을 더 끌어올리기 위해서 마감에 진입하는 것이 정석이기도 합니다만, 이건 장세에 따라 달라지기도 합니다. 결국 일종의 예측 플레이기 때문에 더 깐깐하게 봐야한다는 소리에요.",
+      "2-1. 파라볼릭 하락 리버설",
+      "하락세가 곡진 파라볼릭한 형태면 더 좋고, 하이베타일수록 이 방법이 더 잘 먹힙니다. 이유는 파라볼릭한 하락일수록 그 상승되돌림이 거칠 것이고, 하이베타일수록 그 되돌림이 극대화되기 때문인데요.",
+      "매도는 역시 강세에 하는 것이 원칙입니다.",
+      "예시는 2026년 7/17일 HUT입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080350212368031744)",
+      "섹터 ETF가 주요가격에 걸려있으며, 주봉상 구조를 유지하고 있음. (해당차트는 일봉)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080349008460222464)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080348809985728512)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080349167894044672)",
+      "스탑 LOD로 걸고 목표수익에 계산시 손익비 1:5",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080349701447282689)",
+      "2-2. 일반적인 리버설",
+      "2026년 6/25일 종가의 APP입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080351893034094592)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080352211952091136)",
+      "2026년 6월 9일 2:30~3:30 VELO입니다.",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080353416501714944)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080354220386242560)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080352874639572992)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080352761825439744)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080354341404426240)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080354741146857472)",
+      "3. 데이트레이딩",
+      "그냥 오버나잇 끌지 말고 단타 치라는 소립니다. 돈이 몰리는 쪽에서 거래를 하는게 낫겠고, 변동폭이 큰 쪽이 낫다보니 필연적으로 촉매가 있는 종목에 들어가는 경우가 많습니다. 그러다보니 EP 조건에서 탈락한 종목들에 들어가는 경우가 꽤 있어요. 또는 지엽적인 돌파에 잡았다가 오버나잇 갈 것 없이 돌파까지 확장이 나온 경우 잘라버리는 경우도 있는데.. 이건 데이트레이딩을 목적으로 하지 않았으나 얻어걸린 케이스겠죠. 아티클 사진 제한 때문에 넘어가겠습니다.",
+      "4. base 0 돌파/ stage 1 돌파/ K자",
+      "죽일듯이 내려가서 더 이상 매물대가 없는 청소상태인 종목에서, 추세전환을 시도할때, 이평선이 모이며 꽤 긴 기간동안 베이스를 착실히 쌓았을때 그 자리에서 나오는 돌파는 횡보장에서 먹히는 몇 안 되는 돌파 셋업입니다.",
+      "위치가 낮다보니, 그리고 저항가격이 청소되어 약하다보니 돌파를 확장/과열로 보는 choppy market에서도 먹히는 돌파라서 그렇습니다.",
+      "SATL 2026년  1/5~7일, 3/19일",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080359106947473408)",
+      "스탑 돌파 당일 LOD. 짧은 베이스 0 돌파. 짧은 베이스기 때문에 주요저항가격에서 매도",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080359910857224192)",
+      "K자 셋업. 스탑 LOD 혹은 갭 채우는 가격으로. 꽤 긴 기간 셋업을 만들었고, 구조가 좋기 때문에 상방을 열어봐도 되는. (좋은 장세의 돌파에게 기대하듯이)",
+      "7/20일 BULL (전 그 전에 진입했습니다)",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080360840482656256)",
+      "베이스 0 돌파, 스탑 LOD",
+      "6/10일 TDUP",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080361925511368704)",
+      "두달 걸린 베이스",
+      "2024 11/18~19일 TDUP",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080362711339429888)",
+      "세달가까이 걸린 베이스 0",
+      "+",
+      "끝마치며 일종의 choppy market에서 통하는 돌파 셋업들의 진입/매도 논리를 ATR% from 50MA로 설명시:",
+      "(https://x.com/tmmrwseoul/article/2080370789790937413/media/2080366453619060736)",
+      "https://x.com/tmmrwseoul/status/2075607968633307417?s=20",
+      "베이스 0은 제대로 된 돌파처럼 핸들링 해도 되는 이유가 여기에 있어요. 잘 생각해보세요!",
+      "횡보장에서는 지지에 잡고, 시계열이 빨라지는 이유:",
+      "Choppy market에서는 한 발 빠르게 사서, 조그마한 과열에 파는 것이 중요해요. 그렇기 때문에 시계열이 빨라지는.. 조금 더 고급지게 말하면, 오버나잇 리스크를 최대한 줄여줘야하기 때문에 시계열을 빠르게 하는겁니다. 방향이 정해진 시장이 아니니깐.",
+      "사는점이 단기 저점 부근, 파는 점이 단기 고점 부근이여야 하는.  혹은 사는 점이 평균 근처, 파는 점이 단기 고점 부근이여야 하는. 결국 같은 이야기.",
+      "25년 10월~ 26년 1월 choppy market에 대한 개인적인 memoir:",
+      "https://x.com/tmmrwseoul/status/2042082818206134718?s=20",
+      "choppy market에서의 거래들은 결국 전부 위치에 대한 이야기. 결국 전부 시계열에 관한 이야기. 결국 전부 시장과의 연계, 섹터와의 연계, 그리고 확장/과열에 대한 이야기.",
+      "정말 마지막으로.. 횡보장을 보낼때마다 제가 당시에 느끼는 것들과 배운 것들, 제가 찾는 셋업과 핸들링과정의 개념/이론을 트위터에 공유하고 있습니다. 하이라이트 글 뒤적거리면서 찾아보셔도 좋을 것 같아요."
+    ],
+    "content_hash": "52353314db8b672a",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:14:39.186439+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2053150518323929283": {
+    "paragraphs": [
+      "UNDERCUT&RALLY 실전예시 (FIL/USDT)",
+      "지난번 아티클에서 설명한 언더컷 앤 랠리/웁스 리버설의 실전예시를 보여드리겠습니다.",
+      "제가 실제로 거래에 참여한 종목입니다.",
+      "종목은 FIL/USDT.",
+      "1시간봉으로 거래했으니 그에 맞게 당시 차트 먼저 올리고 시작하겠습니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053144089881944065)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053144173797425152)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053144429150736385)",
+      "일봉상 큰 매물대를 돌파 한 후, 되돌림이 진행되고 있고",
+      "4시간봉, 1시간봉에서 그 모습을 확인할 수 있으며 당시 위치한 구간이 베이스 카운팅상 베이스 1이라는 것까지 확인할 수 있습니다.",
+      "1시간봉에서는 되돌림의 모양새가 보이는데요. 50EMA에서 지지가 나오면서 삼각수렴/VCP를 확인할 수 있습니다. 당시 위치한 구간은 큰 레인지 안에서 삼각수렴 이후 타이트한 박스를 만들어나간 상황이였습니다.",
+      "저는 제 실수로 조금 일찍 들어갔지만, 차트상 우리는 저 사각형 레인지의 돌파를 기다려야합니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145285480919040)",
+      "이내 15분봉에서 돌파에 필요한 첫 역치구간에 닿았고..",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145675081367552)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145421158260736)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145741955371008)",
+      "곧이어 돌파까지 이어지며 매수가 가능했습니다.",
+      "(저는 조금 일찍 진입한 상태지만, 원활한 설명을 위해 그냥 저기서 잡았다고 치고 설명을 이어가겠습니다)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145997854068736)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053146245636694016)",
+      "좋은 셋업에서 돌파까지 나왔으니, 저 자리에서 진입은 근거가 확실한 진입인데요.",
+      "이내 가돌파로 끝나고 거래량 실린 음봉이 박히면서 스탑이 터졌습니다. 여기까지는 흔히 만나볼 수 있는, 기분 더러운 상황.",
+      "다시 강조하지만, 진입했다면 스탑이 터져야합니다.",
+      "최소한 포지션을 줄여줬어야합니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053146482275221504)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053146616270659585)",
+      "하지만 이내 상황이 다시 급변합니다. 하락 이후 곧바로 다시 가격 범위 안으로 들어온 이후 주요역치 구간에서 1시간봉 마감까지 끝내버리면서, 직전 음봉은 그저 OOPS REVERSAL로 변합니다. UNDERCUT AND RALLY를 시사하는 순간이기도 했습니다.",
+      "무슨 뜻이냐? 기분이 나쁘더라도, 다시 잡아야한다는 소리입니다. 방금 내가 털린 것은 자연스러운 상황이였고, 내가 털린 그 구간을 만들고 다시 올렸기에 어떠한 추가 근거가 생긴 상황이라는 소리에요. 짜증이 밀려오더라도 용기를 가지고 다시 잡아야합니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053143808758710272)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053147745624743936)",
+      "결과.",
+      "깔끔한 돌파와 확장, 같은 종목에서 1승 1패.",
+      "손익비는 1:7까지 확장. 같은 비율로 진입했을시, 총 6배 (6R)만큼 벌었다는 소리.",
+      "결론:",
+      "0. 셋업이 좋고, 손익비가 좋은 구간에서 어떤 역치를 닿으면 진입하자",
+      "털려야되면 털려라.",
+      "OOPS REVERSAL/ UNDERCUT&RALLY라면 개의치 말고 다시 잡아라",
+      "무한반복하자."
+    ],
+    "translated": [
+      "UNDERCUT&RALLY 실전예시 (FIL/USDT)",
+      "지난번 아티클에서 설명한 언더컷 앤 랠리/웁스 리버설의 실전예시를 보여드리겠습니다.",
+      "제가 실제로 거래에 참여한 종목입니다.",
+      "종목은 FIL/USDT.",
+      "1시간봉으로 거래했으니 그에 맞게 당시 차트 먼저 올리고 시작하겠습니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053144089881944065)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053144173797425152)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053144429150736385)",
+      "일봉상 큰 매물대를 돌파 한 후, 되돌림이 진행되고 있고",
+      "4시간봉, 1시간봉에서 그 모습을 확인할 수 있으며 당시 위치한 구간이 베이스 카운팅상 베이스 1이라는 것까지 확인할 수 있습니다.",
+      "1시간봉에서는 되돌림의 모양새가 보이는데요. 50EMA에서 지지가 나오면서 삼각수렴/VCP를 확인할 수 있습니다. 당시 위치한 구간은 큰 레인지 안에서 삼각수렴 이후 타이트한 박스를 만들어나간 상황이였습니다.",
+      "저는 제 실수로 조금 일찍 들어갔지만, 차트상 우리는 저 사각형 레인지의 돌파를 기다려야합니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145285480919040)",
+      "이내 15분봉에서 돌파에 필요한 첫 역치구간에 닿았고..",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145675081367552)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145421158260736)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145741955371008)",
+      "곧이어 돌파까지 이어지며 매수가 가능했습니다.",
+      "(저는 조금 일찍 진입한 상태지만, 원활한 설명을 위해 그냥 저기서 잡았다고 치고 설명을 이어가겠습니다)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053145997854068736)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053146245636694016)",
+      "좋은 셋업에서 돌파까지 나왔으니, 저 자리에서 진입은 근거가 확실한 진입인데요.",
+      "이내 가돌파로 끝나고 거래량 실린 음봉이 박히면서 스탑이 터졌습니다. 여기까지는 흔히 만나볼 수 있는, 기분 더러운 상황.",
+      "다시 강조하지만, 진입했다면 스탑이 터져야합니다.",
+      "최소한 포지션을 줄여줬어야합니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053146482275221504)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053146616270659585)",
+      "하지만 이내 상황이 다시 급변합니다. 하락 이후 곧바로 다시 가격 범위 안으로 들어온 뒤 주요 임계 구간에서 1시간봉 마감까지 이루어지면서, 직전 음봉은 그저 하락 이탈 후 즉시 반등하는 반전 패턴으로 바뀝니다. 기존 저점을 밑돈 뒤 다시 상승하는 패턴을 시사하는 순간이기도 했습니다.",
+      "무슨 뜻이냐? 기분이 나쁘더라도, 다시 잡아야한다는 소리입니다. 방금 내가 털린 것은 자연스러운 상황이였고, 내가 털린 그 구간을 만들고 다시 올렸기에 어떠한 추가 근거가 생긴 상황이라는 소리에요. 짜증이 밀려오더라도 용기를 가지고 다시 잡아야합니다.",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053143808758710272)",
+      "(https://x.com/tmmrwseoul/article/2053150518323929283/media/2053147745624743936)",
+      "결과.",
+      "깔끔한 돌파와 확장, 같은 종목에서 1승 1패.",
+      "손익비는 1:7까지 확장. 같은 비율로 진입했을시, 총 6배 (6R)만큼 벌었다는 소리.",
+      "결론:",
+      "0. 셋업이 좋고, 손익비가 좋은 구간에서 어떤 역치를 닿으면 진입하자",
+      "털려야되면 털려라.",
+      "OOPS REVERSAL/ UNDERCUT&RALLY라면 개의치 말고 다시 잡아라",
+      "무한반복하자."
+    ],
+    "content_hash": "ce91646e438bdc34",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:14:50.780759+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2056534818419294398": {
+    "paragraphs": [
+      "미국시장 Market Breath 확인 방법 (1)",
+      "마켓 브레스 확인하는 방법에 대해 적어보겠습니다.",
+      "글이 조금 길고, 정보가 좀 많은데요. 어려운 내용은 없으니 너무 복잡하게 생각하지 마시고 하나씩~",
+      "1. MTUM",
+      "모멘텀 주식들을 모아놓은 ETF입니다. 단독으로 보는 것은 큰 의미가 없고, 지수와 비교할때 의미가 생깁니다.",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056524686729809920)",
+      "첫 차트 상단은 MTUM, 하단은 SPX.",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056526417345777664)",
+      "두번째 차트 상단은 MTUM/QQQ, 하단은 MTUM/SPY",
+      "이렇게 볼때,",
+      "MTUM의 추세가 이어지고 있는지 확인해볼 수 있고",
+      "MTUM의 지수대비 상대강도를 파악할 수 있습니다.",
+      "이 차트가 제가 3월 중순 시장에서 추세를 믿으며 버텨볼 수 있는 근거중 하나가 되어줬습니다.",
+      "또, 4월 중순 마켓브레스가 상단을 쳤다는 근거중 하나로 작용하기도 했습니다. 같은 자리를 5월 초에 한 번 더 두드리고 떨어진 모습입니다. 썩 유쾌한 모습은 아니지요.",
+      "하지만 하단의 MTUM/SPY를 보면, 이쪽에서의 모멘텀은 (역시 꺾이고는 있지만) 상대적으로 SPY 보다 강하다는 것을 알 수 있고- 저는 이걸 QQQ 종목들에게만 우선적으로 퍼졌던 시장의 온기가 SPY 종목들에게도 퍼지는 과정 속에 있구나로 5월 초 움직임을 이해했습니다.",
+      "아직 MTUM 차트에서 추세도 꺾이지는 않은 모습이기 때문에, 더더욱 긍정적인 생각을 해볼 수 있겠지요.",
+      "2. MMFD, MMTW, MMFI, MMOH,MMTH",
+      "n일선 위에 있는 시장 종목 비율을 나타내주는 차트입니다. 5,20,50,100,200일선.",
+      "원래 차트 줄 긋듯이 그으시고 보시면 됩니다.",
+      "3월말부터 마켓 브레스가 좋아졌다는걸 바로 알 수 있었기도, 4/17일 즈음부터 마켓브레스가 꺾이고 있다는걸 알 수 있게도 해준 차트들입니다.",
+      "저는 보통 20,50일선 (MMTW, MMFI)를 중요하게 확인하고,",
+      "MMFD는 제시님 피셜 FOMO indicator 라고.. 저도 그렇게 사용중입니다.",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056527921234563072)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056527965920661504)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056528002872377344)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056528046518329344)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056528086041235456)",
+      "3. RSP, QQQE, IWM, ARKK",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056529769026777089)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056529846109696000)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056529919040266240)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056530111214804992)",
+      "RSP와 QQQE는 각 SnP와 나스닥 동일비중 etf입니다.",
+      "RSP의 위치와 SPY의 위치, QQQE의 움직임과 나스닥의 움직임을 각 비교해서 보시면 됩니다. RSP나 QQQE가 상대적으로 강세를 보일 경우 마켓 브레스가 널리 퍼진 상태라고 볼 수 있겠습니다.",
+      "IWM은 러셀 지수. 개잡주... 애네가 오르면 마켓 브레스가 좋다는 뜻이겠죠.",
+      "ARKK는 한술 더 떠서 기술주 개잡주들 모아놓은 etf입니다. 애네가 뛰면 easy money szn...",
+      "3월 중순~말 RSP, QQQE, IWM 모두 매우 중요한 자리까지 떨어진 이후 지지가 확인되는 것을 볼 즈음 (24년 겨울 고점) 개인적으로 그것을 근거로 더 적극적인 공세전환을 해봤습니다.",
+      "4. STOCKBEE MM (MARKET MONITOR)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056533301704409088)",
+      "https://stockbee.blogspot.com/p/mm.html",
+      "쿨라메기도 애용하는 (?) stockbee!",
+      "사담인데 친절하셔서 좋아합니다 (질문에 답변을 잘해주세요)",
+      "마켓 브레스 전문가입니다. 링크 타고 들어가시면 표로 한 눈에 현재 상황을 볼 수 있어서 자주 사용합니다.",
+      "5. 이거 이외에도..",
+      "이제 MAGS라던가, 각 섹터 etf들을 확인하거나 하는 식으로 전체적인 시장의 상황을 확인해줘야합니다. 어떤 섹터가 강세로 전환하고 있는지, 어떤 섹터가 laggard고 빅테크는 어떤지 등.",
+      "VIX도 확인하고, SKEW도 확인하면서 현재 변동성이나 위험레벨은 어떤지도 확인해야하구요. DXY나 채권금리도 확인하면 좋습니다.",
+      "한번에 다 소화하려면 벅차실텐데요, 적응하면 그냥저냥 별 생각없이 하루의 일과가 됩니다.",
+      "마지막 한줄:",
+      "마켓브레스로 일회일비할거면 그냥 안 보는게 낫습니다.",
+      "큰 그림을 봐야합니다. 위치와 흐름을 가늠하고, 준비하고 계획하고 대응하는 방식으로 사용하시길!",
+      "다음 아티클은 한국시장 마켓브레스를 확인하는 방법으로 돌아오겠습니다.",
+      "END."
+    ],
+    "translated": [
+      "미국시장 Market Breath 확인 방법 (1)",
+      "마켓 브레스 확인하는 방법에 대해 적어보겠습니다.",
+      "글이 조금 길고, 정보가 좀 많은데요. 어려운 내용은 없으니 너무 복잡하게 생각하지 마시고 하나씩~",
+      "1. MTUM",
+      "모멘텀 주식들을 모아놓은 ETF입니다. 단독으로 보는 것은 큰 의미가 없고, 지수와 비교할때 의미가 생깁니다.",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056524686729809920)",
+      "첫 차트 상단은 MTUM, 하단은 SPX.",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056526417345777664)",
+      "두번째 차트 상단은 MTUM/QQQ, 하단은 MTUM/SPY",
+      "이렇게 볼때,",
+      "MTUM의 추세가 이어지고 있는지 확인해볼 수 있고",
+      "MTUM의 지수대비 상대강도를 파악할 수 있습니다.",
+      "이 차트가 제가 3월 중순 시장에서 추세를 믿으며 버텨볼 수 있는 근거중 하나가 되어줬습니다.",
+      "또, 4월 중순 마켓브레스가 상단을 쳤다는 근거중 하나로 작용하기도 했습니다. 같은 자리를 5월 초에 한 번 더 두드리고 떨어진 모습입니다. 썩 유쾌한 모습은 아니지요.",
+      "하지만 하단의 MTUM/SPY를 보면, 이쪽에서의 모멘텀은 (역시 꺾이고는 있지만) 상대적으로 SPY 보다 강하다는 것을 알 수 있고- 저는 이걸 QQQ 종목들에게만 우선적으로 퍼졌던 시장의 온기가 SPY 종목들에게도 퍼지는 과정 속에 있구나로 5월 초 움직임을 이해했습니다.",
+      "아직 MTUM 차트에서 추세도 꺾이지는 않은 모습이기 때문에, 더더욱 긍정적인 생각을 해볼 수 있겠지요.",
+      "2. MMFD, MMTW, MMFI, MMOH,MMTH",
+      "n일선 위에 있는 시장 종목 비율을 나타내주는 차트입니다. 5,20,50,100,200일선.",
+      "원래 차트 줄 긋듯이 그으시고 보시면 됩니다.",
+      "3월말부터 마켓 브레스가 좋아졌다는걸 바로 알 수 있었기도, 4/17일 즈음부터 마켓브레스가 꺾이고 있다는걸 알 수 있게도 해준 차트들입니다.",
+      "저는 보통 20,50일선 (MMTW, MMFI)를 중요하게 확인하고,",
+      "MMFD는 제시님 피셜 FOMO indicator 라고.. 저도 그렇게 사용중입니다.",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056527921234563072)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056527965920661504)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056528002872377344)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056528046518329344)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056528086041235456)",
+      "3. RSP, QQQE, IWM, ARKK",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056529769026777089)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056529846109696000)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056529919040266240)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056530111214804992)",
+      "RSP와 QQQE는 각 SnP와 나스닥 동일비중 etf입니다.",
+      "RSP의 위치와 SPY의 위치, QQQE의 움직임과 나스닥의 움직임을 각 비교해서 보시면 됩니다. RSP나 QQQE가 상대적으로 강세를 보일 경우 마켓 브레스가 널리 퍼진 상태라고 볼 수 있겠습니다.",
+      "IWM은 러셀 지수. 개잡주... 애네가 오르면 마켓 브레스가 좋다는 뜻이겠죠.",
+      "ARKK는 한술 더 떠서 기술주 개잡주들 모아놓은 ETF입니다. 얘네가 뛰면 쉽게 돈 버는 시즌...",
+      "3월 중순~말 RSP, QQQE, IWM 모두 매우 중요한 자리까지 떨어진 이후 지지가 확인되는 것을 볼 즈음 (24년 겨울 고점) 개인적으로 그것을 근거로 더 적극적인 공세전환을 해봤습니다.",
+      "4. STOCKBEE MM (시장 모니터)",
+      "(https://x.com/tmmrwseoul/article/2056534818419294398/media/2056533301704409088)",
+      "https://stockbee.blogspot.com/p/mm.html",
+      "쿨라메기도 애용하는 (?) stockbee!",
+      "사담인데 친절하셔서 좋아합니다 (질문에 답변을 잘해주세요)",
+      "마켓 브레스 전문가입니다. 링크 타고 들어가시면 표로 한 눈에 현재 상황을 볼 수 있어서 자주 사용합니다.",
+      "5. 이거 이외에도..",
+      "이제 MAGS라던가, 각 섹터 etf들을 확인하거나 하는 식으로 전체적인 시장의 상황을 확인해줘야합니다. 어떤 섹터가 강세로 전환하고 있는지, 어떤 섹터가 laggard고 빅테크는 어떤지 등.",
+      "VIX도 확인하고, SKEW도 확인하면서 현재 변동성이나 위험레벨은 어떤지도 확인해야하구요. DXY나 채권금리도 확인하면 좋습니다.",
+      "한번에 다 소화하려면 벅차실텐데요, 적응하면 그냥저냥 별 생각없이 하루의 일과가 됩니다.",
+      "마지막 한줄:",
+      "마켓브레스로 일회일비할거면 그냥 안 보는게 낫습니다.",
+      "큰 그림을 봐야합니다. 위치와 흐름을 가늠하고, 준비하고 계획하고 대응하는 방식으로 사용하시길!",
+      "다음 아티클은 한국시장 마켓브레스를 확인하는 방법으로 돌아오겠습니다.",
+      "END."
+    ],
+    "content_hash": "0ca2f79ccddeb905",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:15:00.266733+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2056576747836146145": {
+    "paragraphs": [
+      "국내시장 Market Breath 확인 방법 (2)",
+      "1편은 미국시장 브레스 확인 방법에 대해 설명했고, 후속편입니다. 혹여 전편을 읽지 않으셨다면, 더 빠른 이해를 위해 그것부터 읽으시는 것을 추천드립니다.",
+      "링크: \nhttps://x.com/tmmrwseoul/status/2056534818419294398?s=20",
+      "시작하겠습니다.",
+      "1. Momentum ETF",
+      "한국식 MTUM ETF 대용은 두가지입니다.",
+      "하나는 미래에셋 tiger momentum etf (147970),",
+      "다른 하나는 삼성 kodex MSCI momentum etf (275280)",
+      "전자가 종목이 압축되어있고, 조금 더 중소형주 편입이 되어있습니다.",
+      "후자는 종목이 더 분산되어있고, 대형주의 힘이 더 크게 작용합니다.",
+      "기준방식도 전자는 가격 + 이익추정치 + 거래대금이고/ 후자는 6/12개월 가격 모멘텀 (미국 MTUM과 비슷한) 방식으로 이루어져 있습니다.",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056566836897226752)",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056566775953944576)",
+      "차트 보시면 아시겠지만, 둘이 비슷하게 움직여요. 이미 1편에서 이 차트 활용방식에 대해 설명했기 때문에 넘어가겠습니다.",
+      "2. Index-ADR Chart",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056571893755658240)",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056572065113931776)",
+      "ADR=상승종목수/하락종목수 ​×100",
+      "오른 종목 수와 내린 종목수의 비율을 나타내는 수치입니다.",
+      "국내시장에서 MMFD 같은 지표가 없어서, 이것이 그 자리를 대체합니다.",
+      "지금 차트를 보시면 아시겠지만, 코스피와 코스닥 마켓브레스 둘 다 역대급 바닥에 위치해있습니다. 상승장이라는 것이 믿기지 않을 정도로, 최근 예민하게 반응한 모습.",
+      "시간을 땡겨서 넓게 보면, 현재 마켓브레스가 바닥권까지 떨어졌다고 볼 수 있겠습니다. 마켓브레스는 평균회귀의 성격이 강하다는 것을 염두에 두고 본다면.. 뭐 그렇습니다.",
+      "해당 차트는 여기서 확인해볼 수 있습니다: \nhttp://adrinfo.kr/chart_indx",
+      "3. EQUAL WEIGHT",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056573721633308673)",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056574134931644416)",
+      "미국시장 편에서 설명한 QQQE,RSP 등의 대용입니다. 보는 방식도 같습니다.",
+      "티커는 KOSDAQ 150 EWI INDEX, KOSPI200EW 입니다.",
+      "4. 이외에도..",
+      "미국시장과 똑같이 각 섹터 ETF들도 확인해야겠고, 대형주들은 어떤지 등 확인해봐야겠습니다. Vkospi 역시 확인해야겠구요. (코스피 변동성지수)",
+      "이미 앞선 아티클에서 설명했으니 넘어가겠습니다.",
+      "마지막 한 줄:",
+      "마켓 브레스의 습성을 이해해야합니다.",
+      "평균회귀의 성격이 강하며,",
+      "지수와 같이 봐야만 하는 지표들입니다. 따로 보는 것은 큰 의미가 없어요.",
+      "END."
+    ],
+    "translated": [
+      "국내시장 Market Breath 확인 방법 (2)",
+      "1편은 미국시장 브레스 확인 방법에 대해 설명했고, 후속편입니다. 혹여 전편을 읽지 않으셨다면, 더 빠른 이해를 위해 그것부터 읽으시는 것을 추천드립니다.",
+      "링크: \nhttps://x.com/tmmrwseoul/status/2056534818419294398?s=20",
+      "시작하겠습니다.",
+      "1. 모멘텀 ETF",
+      "한국식 MTUM ETF 대용은 두가지입니다.",
+      "하나는 미래에셋 타이거 모멘텀 ETF (147970),",
+      "다른 하나는 삼성 코덱스 MSCI 모멘텀 ETF (275280)",
+      "전자가 종목이 압축되어있고, 조금 더 중소형주 편입이 되어있습니다.",
+      "후자는 종목이 더 분산되어있고, 대형주의 힘이 더 크게 작용합니다.",
+      "기준방식도 전자는 가격 + 이익추정치 + 거래대금이고/ 후자는 6/12개월 가격 모멘텀 (미국 MTUM과 비슷한) 방식으로 이루어져 있습니다.",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056566836897226752)",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056566775953944576)",
+      "차트 보시면 아시겠지만, 둘이 비슷하게 움직여요. 이미 1편에서 이 차트 활용방식에 대해 설명했기 때문에 넘어가겠습니다.",
+      "2. 지수-ADR 차트",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056571893755658240)",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056572065113931776)",
+      "ADR=상승종목수/하락종목수 ​×100",
+      "오른 종목 수와 내린 종목수의 비율을 나타내는 수치입니다.",
+      "국내시장에서 MMFD 같은 지표가 없어서, 이것이 그 자리를 대체합니다.",
+      "지금 차트를 보시면 아시겠지만, 코스피와 코스닥 마켓브레스 둘 다 역대급 바닥에 위치해있습니다. 상승장이라는 것이 믿기지 않을 정도로, 최근 예민하게 반응한 모습.",
+      "시간을 땡겨서 넓게 보면, 현재 마켓브레스가 바닥권까지 떨어졌다고 볼 수 있겠습니다. 마켓브레스는 평균회귀의 성격이 강하다는 것을 염두에 두고 본다면.. 뭐 그렇습니다.",
+      "해당 차트는 여기서 확인해볼 수 있습니다: \nhttp://adrinfo.kr/chart_indx",
+      "3. 동일 가중",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056573721633308673)",
+      "(https://x.com/tmmrwseoul/article/2056576747836146145/media/2056574134931644416)",
+      "미국시장 편에서 설명한 QQQE,RSP 등의 대용입니다. 보는 방식도 같습니다.",
+      "티커는 KOSDAQ 150 EWI INDEX, KOSPI200EW 입니다.",
+      "4. 이외에도..",
+      "미국시장과 똑같이 각 섹터 ETF들도 확인해야겠고, 대형주들은 어떤지 등 확인해봐야겠습니다. Vkospi 역시 확인해야겠구요. (코스피 변동성지수)",
+      "이미 앞선 아티클에서 설명했으니 넘어가겠습니다.",
+      "마지막 한 줄:",
+      "마켓 브레스의 습성을 이해해야합니다.",
+      "평균회귀의 성격이 강하며,",
+      "지수와 같이 봐야만 하는 지표들입니다. 따로 보는 것은 큰 의미가 없어요.",
+      "END."
+    ],
+    "content_hash": "76a0ea2b5fda75c8",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:15:35.399405+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2057288965288567018": {
+    "paragraphs": [
+      "계좌 레벨에서의 베팅로직 (2) 부제: 계좌 전체 변동성에 대한 개인적인 생각",
+      "1월 2일 작성글입니다. 계좌 레벨에서의 베팅로직 2탄이에요. 시리즈로 이어집니다.",
+      "계좌 전체 변동성에 대한 개인적인 생각—",
+      "지금 쓰려는 글이 적어도 나에게만이라도 “정답”에 가까운 생각인지, 아니면 그럴듯한 오해와 엉뚱한 생각들이 섞여 있는지는 솔직히 잘 모르겠습니다. 그래서 제가 마음대로 읽어온 대가들의 인터뷰나 발언들, 그리고 제 개인적인 경험들을 제 논리에 섞어 적어봅니다.",
+      "저는 변동성을 두 가지로 생각합니다.",
+      "1.종목 자체, 혹은 포지션의 변동성과",
+      "2.계좌 전체의 변동성.",
+      "저는 이 두 가지 모두를 특별히 두려워하는 편은 아닙니다.  종목 자체의 변동성이 크다는 말은, 내 포지션의 결과가 비교적 빠르게 나온다는 말이 되고,",
+      "반복시행 가능한 엣지가 있다면 회전율과 시간 효율을 극대화할 수 있는 고마운 trait이 됩니다.",
+      "계좌 전체의 변동성 역시 마찬가지입니다. 이걸 경계하는 것이 정석이라고 배워왔고, 제 경험이 아직 깊지 못하니 3년쯤 지나 다시 이 글을 볼때 어쩌면 후회하고 있을지도 모르겠습니다. 다만 아직까지는, 계좌 전체의 변동성 역시 반복시행 가능한 구조 안에만 있다면 저에겐 blessing에 가깝다고 생각하고 있습니다.",
+      "계좌 전체의 변동성 없이는 큰 수익을 노려보기가 구조적으로 힘듭니다. 상방을 열어두려면, 필연적으로 변동폭은 커질 수밖에 없어요.",
+      "계좌 변동성은 상방을 열기 위해 필연적으로 지불해야 하는 비용에 가깝다고 생각합니다. 물론 하방도 함께 열리는 양날의 검이긴 합니다만... 하방은 관리가 가능합니다. 여기서 말하는 하방관리는 \"타이트한 스탑만 있으면 된다”는 단순한 이야기와는 조금 다릅니다. 현실에서는 슬리피지, 갭, 연속 손절 같은 것들이 항상 예고 없이 등장합니다. 그래서 계좌 전체의 변동성은 스탑 하나만으로 완전히 제어되지는 않습니다. 적어도 제가 배운 바로는,",
+      "타이트한 스탑과 포지션 사이징이 함께 작동해야 그나마 하방이 관리된다는 느낌을 받습니다.",
+      "수익이 쌓이기 시작하면, 그 수익 역시 하방을 흡수해주는 완충재 역할을 하게 됩니다. 저는 이걸 수익 쿠션이 리스크를 흡수하는 장치가 된다고 받아들이고 있습니다.",
+      "“우리는 항상 1월 1일을 기준으로 하우스가 새로 시작된다고 믿어왔다. 아마 그게 우리가 마이너스 연도를 한 번도 겪지 않은 이유일 거다. 내가 수익 구간에 있을 때는 오히려 훨씬 더 공격적으로 플레이한다. 많은 운용자들을 보면 연 20% 정도 수익이 나면 ‘올해는 여기까지다, 연간 목표 달성했고 하이 워터마크도 만들었으니 이제 쉬자’라며 해변으로 가버린다. 나는 정반대다. 솔직히 이런 태도는 조지 소로스에게서 많이 배웠다. 이미 20~30% 올라와 있다면, 그건 집 돈(house money)으로 게임하는 상태다. 바로 그때가 60~70%를 노려야 할 타이밍이다.”",
+      "– 스탠리 드러켄밀러 –",
+      "연중 빠르게 이미 30% 안팎을 벌어두었다면, 그건 아마도 easy money,  혹은 bull market 시즌일 가능성이 높겠죠. 그래서 드러켄밀러가 저렇게 말했을 거라 생각합니다. 저는 조금 다른 부분에 집중했습니다. 20~30% 벌어둔 수익이 단순한 숫자가 아니라, 하방을 흡수할 수 있는 여력을 만들어줬다는 점입니다. 그렇기 때문에 조금 더 공격적인 시도를 해볼 수 있는 구조가 만들어졌다고 받아들였습니다.",
+      "결국 수익 쿠션을 방패 삼아 계좌 전체의 변동폭을 키운다는 이야기겠죠.",
+      "저는 새로운 계좌에서 트레이딩을 시작할 때마다 이걸 걷기 시작하는 것과 비슷하다고 느낍니다.",
+      "첫 두 번의 발걸음이 꼬이지 않는 것이 무엇보다 중요합니다. 초반의 실패는 의사결정을 빠르게 왜곡시키고, 반대로 초반의 몇 번의 성공은 판단 속도를 눈에 띄게 정상화시켜 줍니다. 그래서 첫 두 번, 세 번의 거래가 비교적 깔끔하게 끝난 이후부터는 얼마를 잃든, 얼마를 벌든, 어떤 변동성을 겪고 있든 그다음부터는 훨씬 수월하게 나아가집니다. 반대로 첫 발자국에서 스텝이 꼬이면, 다시 원점으로 돌아옵니다. 지루할 정도로 속도가 나지 않고, 두세 번의 성공적인 거래가 나오기 전까지는 제대로 걷지 못하는 느낌이 듭니다.",
+      "그래서 그 전까지는 저는 절대 변동폭을 키우지 않습니다. 아직 계좌가 제대로 나아가지도 못한 상태에서 괜히 뒷걸음을 치고 싶지는 않거든요.",
+      "그러니 저는 계좌가 세 보 전진, 이 보 후퇴하는 것에 대해서는 별다른 생각이 없습니다. 오히려 꽤 선호하는 편입니다. 남들이 한 발 겨우 떼는 시간 동안 그 다섯 발자국을 전부 겪고 싶다는 생각뿐입니다.",
+      "“그러니까 말이야, 계좌가 작다면 연 수백 퍼센트 수익을 내는 게 그렇게 어려운 일이 아니야. 진짜로 그래. 계좌가 작을 때는 어렵지 않아. 단기 스윙 트레이더라면 충분히 가능한 얘기고, 대부분의 해에 아마 몇백 퍼센트씩은 벌 수 있을 거야. 그리고 중요한 건 이거야. 몇 년만 지나면 더 이상 작은 계좌가 아니라는 거지. 그게 바로 이 게임에서 가장 아름다운 부분이야.”",
+      "– Qullamaggie –",
+      "\"이것이 바로 더 큰 드로우다운을 감내하며 쌓아 올린다는 것이 진짜로 무엇을 의미하는지이며, 대부분의 사람들이 외면하는 지점이다. 사람들은 여전히 “10%를 잃으면 11%를 벌어야 회복되고, 50%를 잃으면 본전까지 100%를 벌어야 한다”는 단순한 산수에 갇혀 있다. 하지만 Qullamaggie는 한때 거의 –50%까지 내려간 적이 있었고, 2019년 같은 시기에도 –15%에서 –25% 수준의 드로우다운은 일상적이었다. 그러한 드로우다운을 감내할 수 있었던 내성 자체가, 그가 2021년에 1억 달러에 도달할 수 있었던 이유였다.\"",
+      "트레이딩은 계좌가 작을 때 더 유리하다는 생각을 저 역시 자주 합니다. 계좌 전체의 변동폭을 심리적으로 받아내기가 훨씬 수월하고, 상대적으로 조금 더 공격적인 베팅이 가능해집니다.",
+      "(다만 그 전제에는, 반복시행 가능한 엣지가 이미 존재해야 하겠죠)",
+      "제가 처음 트레이딩을 시작했을 때부터 Sharpe ratio를 크게 믿지 않았던 이유도 여기에 있습니다. 변동성 자체를 위험과 동일시해버리는 공식은 제 전략을 설명해주지 못했기 때문입니다. (저 공식은 다른 문제들도 있습니다)",
+      "개인적인 이야기지만, 저는 제가 푼돈으로 트레이딩을 시작할 수 있었던 것에 오히려 감사하게 되었습니다. 배수진을 치고, 잃어봐야 크게 잃을 것도 없는 상태에서 받아낼 것은 전부 받아가겠다는 생각으로 버틸 수 있었으니까요.",
+      "제 계좌가 두 배가 되기까지 걸리는 시간은 아직까지 전혀 느려지지 않았습니다. 계좌 전체의 변동폭을 감내하고 있기 때문이라고 생각합니다. 물론 drawdown이 없지는 않습니다. 종종 발생합니다. 10월 10일, 꽤 컸던 제 미실현 수익의 30%가 날아갔던 날도 있었으니깐요. 그건 안전장치가 충분하지 않았던 탓이기도 하고 제 능력 부족이 컸습니다.",
+      "지금은, 그 역시 어느정도는 제가 운용하는 전략의 불가피한 downside 중 하나라고 받아들이고 있습니다.",
+      "(drawdown을 크게 겪고 있어서도, 자주 겪어서도 안 되겠지만요.)",
+      "계좌 전체의 변동폭을 감내하라는 생각은 분명 위험할 수 있는 생각입니다. 누군가에게는 성향상, 혹은 계좌 크기상 전혀 어울리지 않는 조언일 수도 있습니다.",
+      "다만 적어도 지금의 저는, 이 방식이 잘 먹혀왔고 아직은 변동폭을 경계할 생각이 없습니다. 이 생각이 옳았는지는 아마 시간이 알려주겠죠.",
+      "(https://x.com/tmmrwseoul/article/2057288965288567018/media/2057287861695819776)",
+      "유사한 차트/표 많이 보셨을겁니다, 제시 리버모어의 net worth.  어마무시한 변동성, 위험한 순간들  좋지 않은 끝.  상방을 위해 변동폭을 감내하려면, 하방을 보호할 궁리를 무엇보다 열심히 해야합니다.",
+      "요약:",
+      "0. 반복시행 가능한 구조",
+      "1.계좌 변동성 = 상방을 열기 위한 필연적 비용",
+      "2. 수익 쿠션 = 리스크 흡수 장치",
+      "3. 상방을 열고 난 후에 하방을 철저히 관리하자. (타이트한 스탑, 포지션 사이징 등)",
+      "+ 계좌가 작을수록 편하다",
+      "번외: 계좌가 작다면 분산? 올인?",
+      "1. 그 어떤 경우에도 올인이 옳은 선택이 되는 경우는 없습니다.",
+      "도박하러 와서 한 번에 목숨줄을 걸어버리는 것은 정말 멍청한 선택입니다.",
+      "포지션 사이즈/비중을 남들보다 크게 걸어보는 방법은 괜찮습니다.",
+      "2. 분산을 하되, 하이베타 위주로 굴려야합니다.",
+      "스몰캡 하이베타. 계좌가 커지면 건드리기 어려울 종목들.",
+      "변동폭이 높으니 빠른 결과가 나오고, 그 업보를 쌓고 쌓다보면..",
+      "옳은 방향으로 이어갈 시 우리가 상상한 것보다 빠르게 계좌의 크기가 커집니다.",
+      "\"that's the beauty of this game, your account size won't be small anymore after a few years\" -Q-"
+    ],
+    "translated": [],
+    "content_hash": "799ab57f41281367",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:15:22.026270+00:00"
+  },
+  "2057285825046675786": {
+    "paragraphs": [
+      "계좌 레벨에서의 베팅로직 (1) 부제:RAF- 리스크를 관리하는 방법에 대하여",
+      "계좌 레벨에서의 베팅로직에 대해 적어보겠습니다. 시리즈로 쓸 생각입니다.",
+      "첫 편은 리스크 관리로 시작합니다. 트레이딩의 알파이자 오메가..",
+      "당연히 하이베타를 건드리면 리스크 관리가 제일 중요해지겠죠. shit the bed할거면 안 하는게 낫다는 말은 전에 여러번 했으니, 리스크 관리법에 대하여 자세히 이야기해보겠습니다.",
+      "RAF는 리스크/계좌 관리 운용법 정도로 받아들이시면 되겠습니다.",
+      "**RAF=Risk Appetite Framework",
+      "https://t.co/ttJ5V6dLqH",
+      "이에 관해 직접 읽고 싶으신 분들은 이 pdf로 읽으시면 됩니다. 직접적으로 트레이딩에 관한 문서는 아닙니다만.. 일맥상통하는 내용이라 가져왔습니다.",
+      "이 문서는 리스크 관리법을 여러가지의 용어로 규정합니다.",
+      "1. Risk Appetite = 계좌의 의도된 변동성",
+      "본인이 의도적으로 감수하기로 한 손실 영역",
+      "2. Risk Capacity = 한 번의 실수로 계좌가 죽지 않을 임계점",
+      "계좌가 물리적으로 버틸 수 있는 최대 손실",
+      "3. Risk Limits = 포지션 사이즈 / 섹터 집중도 / 레버리지 상한선",
+      "실제 매매 규칙 (사이즈, 레버, 동시 포지션)",
+      "4. Risk Profile = 실제 노출도",
+      "현재 본인의 포지션 상태",
+      "Risk Profile> Risk Appetite = 시스템 붕괴",
+      "각 용어를 자세히 설명해보자면...",
+      "Risk Appetite- Risk capacity 안에서 의도적으로 감수하는 리스크 얼만큼의 변동성을 감수한 전략을 사용할 것인지. 일 변동성, 월 변동성으로 수치화할 수 있으면 좋습니다.  -10% 수준까지를 정상적으로 보고 -12%이상을 경고 내지 전략 축소로 보는 등..  ->손실을 허용하지 않으려 하면 결국 허용 불가능한 손실을 얻어맞게 됩니다.  작은 손실을 받아들일줄 알아야만 해요. 손절을 미루거나/물타기를 하거나/포지션 축소를 하지 않는 등.. 손실을 통제하지 않는 것과 다름 없습니다. Good Loss는 사전에 리스크 크기가 정해져있고, 계좌에 치명적이지 않으며 전략의 일부여야합니다.  지속가능한 전략이어야한다는 소리겠죠.  감정적으로나, 실제 계좌로나.   Bad Loss는 사전에 정의되지 않은 손실입니다. 계좌의 구조를 파괴하고, 복구확률을 감소시킵니다.  정신적으로나 실제 계좌로나 반복시행이 불가능해집니다.",
+      "Risk Capacity-  규제·자본·운영 조건에서 감당 가능한 최대 리스크를 뜻합니다. 이 계좌가 한 사이클에서 절대적으로 넘어가면 안 되는 손실을 의미합니다.  예시를 들자면.. -20%에서 정신적으로나 전략적으로 실패하고 -40%에서는 복구확률 자체가 구조적으로 희박해집니다.  ->물리적 한계점을 뜻합니다. Capacity는 선택하는 것이 아닙니다. 그 임계점을 넘어가면 카지노에서 쫒겨난다는 소리입니다.",
+      "Risk Limits- 실생활 매매규칙을 뜻합니다. (하드룰) 예시를 들자면.. 포지션당 손실을 정합니다. 보통 이걸 1R이라고 부르는데요, -0.5%~2.5% 수준으로 설정하는 것이 좋습니다. 동시에 홀딩할 포지션 갯수를 정합니다.  여러조건에 맞춰서 설정하는 것이 좋습니다. 현재 승률, 시황 등등.. 교과서에서는 3~6개를 추천하곤 합니다. 섹터 집중도를 정합니다. 동일 테마에 얼마나 넣을 것인지. 최대 30~40%를 넘기지 않는 것이 좋겠습니다.  레버리지를 정합니다.  일일/주간 손실 제한을 걸어놓습니다. 몇프로 잃으면 매매를 종료할 것인지. -2R -> 매매종료 이런식으로..  ->Limit를 넘기는 순간 바로 시스템적 조치가 있어야합니다. 넘겼는데도 불구하고 의자에 앉아서 미련을 부린다면, RAF는 없는 것이겠죠.",
+      "Risk Profile- 현재 기준 실제계좌 상태/포지션 노출도를 말합니다. 레버리지를 몇배 적용중인지, 상관된 포지션을 몇개 들고 있는지, 스탑/손절이 실제로 작동하고 있는지..  -> Risk Profile은 체감하는 것이 아니라 숫자로 확인할 수 있어야합니다.",
+      "번외-",
+      "1.“평소엔 규칙을 준수하는데 이번 한 번만 너무 좋아보여서..\"",
+      "안됩니다. Risk Appetite이 존재하지 않는 매매에요. 시스템은 존중하라고 있는 것입니다.",
+      "2.스트레스 테스트.  극악의 상황 속에서 계좌가 어찌 되는지, 내가 어찌 되는지. 예시로 관련 포지션 전부 동시손절, 연패중, 슬리피지로 인해 스탑이 밀린 상태일때.. 규칙이 지켜지는지를 확인해야합니다.  지켜지지 않는다면 설정한 전략은 허울 좋은 헛소리일 뿐입니다.",
+      "3. 트레이딩 실력. 트레이딩 실력은 방향을 얼마나 잘 맞추냐/승률이 얼마나 높은지가 아닌 리스크를 시스템에 고정하고 반복시행하는 능력에서 나옵니다.",
+      "하이베타를 건드릴수록, 승률이 낮고 손익비가 높은 거래를 지향할수록 리스크 관리법과 규칙은 더 중요해집니다."
+    ],
+    "translated": [
+      "계좌 레벨에서의 베팅로직 (1) 부제:RAF- 리스크를 관리하는 방법에 대하여",
+      "계좌 레벨에서의 베팅로직에 대해 적어보겠습니다. 시리즈로 쓸 생각입니다.",
+      "첫 편은 리스크 관리로 시작합니다. 트레이딩의 알파이자 오메가..",
+      "당연히 하이베타를 건드리면 리스크 관리가 제일 중요해지겠죠. 완전히 망칠 거면 안 하는 게 낫다는 말은 전에 여러 번 했으니, 리스크 관리법에 대하여 자세히 이야기해보겠습니다.",
+      "RAF는 리스크/계좌 관리 운용법 정도로 받아들이시면 되겠습니다.",
+      "**RAF=위험 감수 체계",
+      "https://t.co/ttJ5V6dLqH",
+      "이에 관해 직접 읽고 싶으신 분들은 이 pdf로 읽으시면 됩니다. 직접적으로 트레이딩에 관한 문서는 아닙니다만.. 일맥상통하는 내용이라 가져왔습니다.",
+      "이 문서는 리스크 관리법을 여러가지의 용어로 규정합니다.",
+      "1. Risk Appetite = 계좌의 의도된 변동성",
+      "본인이 의도적으로 감수하기로 한 손실 영역",
+      "2. Risk Capacity = 한 번의 실수로 계좌가 죽지 않을 임계점",
+      "계좌가 물리적으로 버틸 수 있는 최대 손실",
+      "3. Risk Limits = 포지션 사이즈 / 섹터 집중도 / 레버리지 상한선",
+      "실제 매매 규칙 (사이즈, 레버, 동시 포지션)",
+      "4. Risk Profile = 실제 노출도",
+      "현재 본인의 포지션 상태",
+      "Risk Profile> Risk Appetite = 시스템 붕괴",
+      "각 용어를 자세히 설명해보자면...",
+      "위험 감수 성향- 위험 감당 능력 안에서 의도적으로 감수하는 리스크. 얼만큼의 변동성을 감수한 전략을 사용할 것인지. 일 변동성, 월 변동성으로 수치화할 수 있으면 좋습니다. -10% 수준까지를 정상적으로 보고 -12%이상을 경고 내지 전략 축소로 보는 등.. ->손실을 허용하지 않으려 하면 결국 허용 불가능한 손실을 얻어맞게 됩니다. 작은 손실을 받아들일 줄 알아야만 해요. 손절을 미루거나/물타기를 하거나/포지션 축소를 하지 않는 등.. 손실을 통제하지 않는 것과 다름없습니다. 좋은 손실은 사전에 리스크 크기가 정해져 있고, 계좌에 치명적이지 않으며 전략의 일부여야 합니다. 지속가능한 전략이어야 한다는 소리겠죠. 감정적으로나, 실제 계좌로나. 나쁜 손실은 사전에 정의되지 않은 손실입니다. 계좌의 구조를 파괴하고, 복구 확률을 감소시킵니다. 정신적으로나 실제 계좌로나 반복 시행이 불가능해집니다.",
+      "Risk Capacity-  규제·자본·운영 조건에서 감당 가능한 최대 리스크를 뜻합니다. 이 계좌가 한 사이클에서 절대적으로 넘어가면 안 되는 손실을 의미합니다.  예시를 들자면.. -20%에서 정신적으로나 전략적으로 실패하고 -40%에서는 복구확률 자체가 구조적으로 희박해집니다.  ->물리적 한계점을 뜻합니다. Capacity는 선택하는 것이 아닙니다. 그 임계점을 넘어가면 카지노에서 쫒겨난다는 소리입니다.",
+      "Risk Limits- 실생활 매매규칙을 뜻합니다. (하드룰) 예시를 들자면.. 포지션당 손실을 정합니다. 보통 이걸 1R이라고 부르는데요, -0.5%~2.5% 수준으로 설정하는 것이 좋습니다. 동시에 홀딩할 포지션 갯수를 정합니다.  여러조건에 맞춰서 설정하는 것이 좋습니다. 현재 승률, 시황 등등.. 교과서에서는 3~6개를 추천하곤 합니다. 섹터 집중도를 정합니다. 동일 테마에 얼마나 넣을 것인지. 최대 30~40%를 넘기지 않는 것이 좋겠습니다.  레버리지를 정합니다.  일일/주간 손실 제한을 걸어놓습니다. 몇프로 잃으면 매매를 종료할 것인지. -2R -> 매매종료 이런식으로..  ->Limit를 넘기는 순간 바로 시스템적 조치가 있어야합니다. 넘겼는데도 불구하고 의자에 앉아서 미련을 부린다면, RAF는 없는 것이겠죠.",
+      "Risk Profile- 현재 기준 실제계좌 상태/포지션 노출도를 말합니다. 레버리지를 몇배 적용중인지, 상관된 포지션을 몇개 들고 있는지, 스탑/손절이 실제로 작동하고 있는지..  -> Risk Profile은 체감하는 것이 아니라 숫자로 확인할 수 있어야합니다.",
+      "번외-",
+      "1.“평소엔 규칙을 준수하는데 이번 한 번만 너무 좋아보여서..\"",
+      "안됩니다. Risk Appetite이 존재하지 않는 매매에요. 시스템은 존중하라고 있는 것입니다.",
+      "2.스트레스 테스트.  극악의 상황 속에서 계좌가 어찌 되는지, 내가 어찌 되는지. 예시로 관련 포지션 전부 동시손절, 연패중, 슬리피지로 인해 스탑이 밀린 상태일때.. 규칙이 지켜지는지를 확인해야합니다.  지켜지지 않는다면 설정한 전략은 허울 좋은 헛소리일 뿐입니다.",
+      "3. 트레이딩 실력. 트레이딩 실력은 방향을 얼마나 잘 맞추냐/승률이 얼마나 높은지가 아닌 리스크를 시스템에 고정하고 반복시행하는 능력에서 나옵니다.",
+      "하이베타를 건드릴수록, 승률이 낮고 손익비가 높은 거래를 지향할수록 리스크 관리법과 규칙은 더 중요해집니다."
+    ],
+    "content_hash": "b89e050ee9fbbebb",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:15:49.746825+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2110180342103732506": {
+    "paragraphs": [
+      "1. Money View 강좌\n8년전 나온 유튜브 동영상 모음집입니다. 그의 Money View를 통해 현대 금융의 흐름을 되짚습니다. 특히 그림자 금융의 현대적 의미를 천착합니다.",
+      "그는 그림자 금융을 불법적인 뭔가 음습한 것으로 보는 시각을 넘어서서 “Money market funding of capital market lending”이라고 해석합니다. 저는 페리 교수의 이 문장을 이해하는데 거의 1년이 걸렸는데, 이처럼 그림자 금융을 간결하고 정곡을 찌르는 표현은 없었다고 봅니다.",
+      "https://t.co/LvSvscxrCG \n이 동영상을 정리한 pdf 파일\nhttps://t.co/y25lss0rW1"
+    ],
+    "translated": [
+      "1. Money View 강좌\n8년전 나온 유튜브 동영상 모음집입니다. 그의 Money View를 통해 현대 금융의 흐름을 되짚습니다. 특히 그림자 금융의 현대적 의미를 천착합니다.",
+      "그는 그림자 금융을 불법적인 뭔가 음습한 것으로 보는 시각을 넘어서서 “자본시장의 대출을 위한 단기금융시장에서의 자금 조달”이라고 해석합니다. 저는 페리 교수의 이 문장을 이해하는데 거의 1년이 걸렸는데, 이처럼 그림자 금융을 간결하고 정곡을 찌르는 표현은 없었다고 봅니다.",
+      "https://t.co/LvSvscxrCG \n이 동영상을 정리한 pdf 파일\nhttps://t.co/y25lss0rW1"
+    ],
+    "content_hash": "11932a5f9c127dff",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:00.606383+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112908192153845982": {
+    "paragraphs": [
+      "Grok \n@Bot (https://x.com/Bot) \n 에서 클로드 연결해 쓰는법. 봇에 물어보면 자기가 알아서 연결해줌.",
+      "내 Claude 구독을 Grok Bot에서 쓸 수 있게 연결해줘.",
+      "다음 단계를 순서대로 해줘:\n1. 터미널을 열고 Claude Code CLI를 설치해. (curl -fsSL https://t.co/pGqIQUtZwX  | bash 실행)\n2. 설치 확인 후 `claude setup-token` 을 실행해서 로그인 링크와 코드를 나한테 보내줘. 내가 직접 로그인할 거야.\n3. 내가 로그인한 후 토큰을 안전하게 저장하고, 이후 자동으로 로드되도록 설정해.\n4. 간단한 테스트 프롬프트를 Claude Code로 보내서 제대로 작동하는지 확인하고 결과를 알려줘.",
+      "로그인 링크가 나오면 바로 나한테 알려주고, 그 다음 단계로 진행해. 모든 과정은 한국어로 설명해줘."
+    ],
+    "translated": [
+      "Grok \n@Bot (https://x.com/Bot) \n 에서 클로드 연결해 쓰는법. 봇에 물어보면 자기가 알아서 연결해줌.",
+      "내 Claude 구독을 Grok Bot에서 쓸 수 있게 연결해줘.",
+      "다음 단계를 순서대로 해줘:\n1. 터미널을 열고 Claude Code CLI를 설치해. (curl -fsSL https://t.co/pGqIQUtZwX  | bash 실행)\n2. 설치 확인 후 `claude setup-token`을 실행해서 로그인 링크와 코드를 나한테 보내줘. 내가 직접 로그인할 거야.\n3. 내가 로그인한 후 토큰을 안전하게 저장하고, 이후 자동으로 로드되도록 설정해.\n4. 간단한 테스트 프롬프트를 Claude Code로 보내서 제대로 작동하는지 확인하고 결과를 알려줘.",
+      "로그인 링크가 나오면 바로 나한테 알려주고, 그 다음 단계로 진행해. 모든 과정은 한국어로 설명해줘."
+    ],
+    "content_hash": "302e12d8414d4cf8",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:16:11.822062+00:00",
     "chunk": "posts-x.json"
   }
 }

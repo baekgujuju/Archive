@@ -4529,5 +4529,135 @@
     "category_ko": "주가지수 차트",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7adb2207940c06f8db2e8536f51865e57a3c78de83ccedc0815a2a4c18e85d22": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Risk Appetite Framework",
+    "description_ko": "위험 선호도 관리 체계의 일부를 보여주는 이미지로, 위험 선호도를 모니터링하고 관리하는 단계가 표시되어 있다.",
+    "category_ko": "위험 관리 프레임워크",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:795e958d4ce018ea43e6201b50c95d9df6e81679bd4dacb6728a49b40f017e69": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hewlett Packard Enterprise Company 일봉 차트",
+    "description_ko": "TradingView의 HPE 일봉 차트로, 주가와 거래량, 여러 이동평균선, 지지·저항 구간을 표시한다.",
+    "category_ko": "미국 주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:58f2f70686d6c549200da5e004d90597189948a0cdc5564fe5d5d1fa0728c8f5": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "KOSDAQ 지수 및 ADR 차트",
+    "description_ko": "코스닥 지수 추이와 시장 등락 비율을 나타내는 ADR 지표를 위아래로 비교한 화면이다.",
+    "category_ko": "시장 지수 및 시장 폭 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d5717b11f8350f6f008303f21986a48782ea34767b546b61c60481856a9e0533": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SAMSUNG KODEX MSCI Momentum ETF 일봉 차트",
+    "description_ko": "TradingView의 KODEX MSCI 모멘텀 ETF 차트로, 이동평균선과 거래량, 가격 구간 및 변동성 관련 지표를 표시한다.",
+    "category_ko": "국내 ETF 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:664431389ebb21a0e5807f811fc2f2b7668a21d140b38954d16fa4eb3b6a4084": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Mirae Asset Tiger Momentum ETF 일봉 차트",
+    "description_ko": "TradingView의 TIGER 모멘텀 ETF 차트로, 상승 후 조정 중인 가격 흐름과 이동평균선, 거래량 및 기술적 지표를 보여준다.",
+    "category_ko": "국내 ETF 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0021d035b6e7f6d5abeba92d606d830c9ddb3b13d4f076c01f9ab7ddeae4dc23": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Index-ADR Chart — KOSPI",
+    "description_ko": "코스피 지수와 ADR 지표를 비교하는 화면으로, 기간 선택 버튼과 코스닥 전환 버튼이 있다.",
+    "category_ko": "시장 지수 및 시장 폭 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b09b3810c26fe35b98865318fd96f64051db1ebfb8cc36e58c2c614ebaa76902": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Index-ADR Chart — KOSDAQ",
+    "description_ko": "코스닥 지수와 ADR 지표를 비교하는 화면으로, 최근 하락 흐름과 하단의 장기 기간 선택 영역을 보여준다.",
+    "category_ko": "시장 지수 및 시장 폭 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b71c2ae87c2d87724e7645d6d8c9bdd9e0ee894820257fc69dbea4cf4c4b89a2": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "KOSDAQ 150 EWI index 일봉 차트",
+    "description_ko": "코스닥 150 동일가중지수의 일봉 차트. 이동평균선과 지지·저항 구간이 표시되어 있으며, 최근 지수는 1,591.87로 하락했다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fd62ccc90d9c537a9244a4a61234ec8f0a09f05f6437c1342c6f0423ccc93ce3": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "KOSPI-200 Equally Weighted Index 일봉 차트",
+    "description_ko": "코스피 200 동일가중지수의 일봉 차트. 최근 고점 이후 하락하며 4,001.28을 기록했고, 이동평균선과 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e590fc8a096f6b63b096220e0c51cf9072c664b316bde67bafb7fd7809921784": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "제시 리버모어 순자산 변화 그래프 일부",
+    "description_ko": "순자산의 급격한 증가와 감소를 나타낸 선 그래프의 일부. 약 16억 달러의 정점과 여러 시점의 자산 및 부채 금액이 표시되어 있다.",
+    "category_ko": "금융·자산 추이",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:50b6f9f9e1522096c8225d17ef75ddf5788e40cc7944a2dc1ead0f2f03c593bc": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Jessie Livermore Net Worth (Logarithmic Scale)",
+    "description_ko": "제시 리버모어의 연도별 순자산 변화 그래프. 1930년 직전의 큰 자산 증가와 이후 급락을 보여준다. 제목은 로그 척도라고 표기하지만 세로축에는 0과 음수 값도 나타난다.",
+    "category_ko": "금융·자산 추이",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:aaea5f26224bd0e6b322e93498c4759a65bbecc0e8ce59d211f216b818c17a2e": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "MTUM/QQQ 및 MTUM/SPY 상대가격 차트",
+    "description_ko": "모멘텀 ETF인 MTUM을 QQQ 및 SPY와 비교한 상대가격 차트. 위쪽에는 이동평균선과 지지·저항 구간이, 아래쪽에는 MTUM/SPY 비율 추이가 표시되어 있다.",
+    "category_ko": "금융·ETF 상대강도",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b19f1dfc96a86bb84f979c097aa08d4aa6d3ce2adfebf10a9d82170fc8c14f78": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "iShares MSCI USA Momentum Factor ETF 일봉 차트",
+    "description_ko": "MTUM ETF의 일봉과 거래량 차트. 4월 이후 급등한 뒤 최근 294.32로 조정받는 모습이며, 하단에는 S&P 500 지수 비교 차트가 배치되어 있다.",
+    "category_ko": "금융·ETF 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
   }
 }
