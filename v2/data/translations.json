@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:24:10.435008+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T05:37:07.396649+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12597,26 +12597,16 @@
   },
   "2112178425725136936": {
     "paragraphs": [
-      "Q4 and post-midterm seasonality remain overwhelmingly bullish.\nHistorically, the fourth quarter has been the strongest quarter of the year for the S&P 500 in terms of consistency of positive returns. Over roughly the past 80 years, Q4 has produced a positive return about 80% of the time, compared with approximately 60%–64% for the other three quarters.\nThe midterm election cycle adds another powerful seasonal tailwind. Stocks have historically performed particularly well as the uncertainty surrounding midterm elections is removed. Depending on the precise starting period used, recent historical studies put the S&P 500's positive rate during Q4 of midterm years at roughly 83%–85%. \nGiven the backdrop of strong earnings growth and, at least for now, no clear evidence of recession, history argues that the bulls should continue to receive the benefit of the doubt.\nHowever, seasonality is a tendency—not a guarantee. Fed tightening, deteriorating breadth, rising interest rates and elevated oil prices represent meaningful counterweights. At a minimum, those conditions increase the probability of volatility and make the current environment considerably less straightforward than the historical averages suggest. \nIndividual stocks have already been correcting beneath the surface of the major indexes. More than 35% of S&P 500 stocks are currently down 20% or more from their 52-week highs, even as the index itself remains relatively close to record territory. In other words, a significant correction has already occurred—it has simply been masked by the strength of a relatively small number of heavily weighted stocks.\nInterestingly, the 87 Crash  is one of the historical analogs worth keeping in mind following a Fed tightening. The comparison should not be interpreted as a prediction of another crash, but the monetary-policy parallel is real: the Fed raised the discount rate from 5.5% to 6.0% on September 4, 1987, while market interest rates were already rising sharply. \nThe seasonal winds are clearly at the market's back. The question is whether tightening financial conditions, weak participation and rising oil become strong enough headwinds to overpower them.\nThe 10-year Treasury yield spiked 125 basis points in just seven months. We looked at prior cases when the 10-year Treasury yield jumped more than 125 basis points in seven months and found 13 prior cases. Only seven of the 13 cases (54%) had positive returns three months later. http://minervini.com"
+      "Q4 and post-midterm seasonality remain overwhelmingly bullish.\nHistorically, the fourth quarter has been the strongest quarter of the year for the S&P 500 in terms of consistency of positive returns. Over roughly the past 80 years, Q4 has produced a positive return about 80% of the time, compared with approximately 60%–64% for the other three quarters.\nThe midterm election cycle adds another powerful seasonal tailwind. Stocks have historically performed particularly well as the uncertainty surrounding midterm elections is removed. Depending on the precise starting period used, recent historical studies put the S&P 500's positive rate during Q4 of midterm years at roughly 83%–85%. \nGiven the backdrop of strong earnings growth and, at least for now, no clear evidence of recession, history argues that the bulls should continue to receive the benefit of the doubt.\nHowever, seasonality is a tendency—not a guarantee. Fed tightening, deteriorating breadth, rising interest rates and elevated oil prices represent meaningful counterweights. At a minimum, those conditions increase the probability of volatility and make the current environment considerably less straightforward than the historical averages suggest. \nIndividual stocks have already been correcting beneath the surface of the major indexes. More than 35% of S&P 500 stocks are currently down 20% or more from their 52-week highs, even as the index itself remains relatively close to record territory. In other words, a significant correction has already occurred—it has simply been masked by the strength of a relatively small number of heavily weighted stocks.\nInterestingly, the 87 Crash  is one of the historical analogs worth keeping in mind following a Fed tightening. The comparison should not be interpreted as a prediction of another crash, but the monetary-policy parallel is real: the Fed raised the discount rate from 5.5% to 6.0% on September 4, 1987, while market interest rates were already rising sharply. \nThe seasonal winds are clearly at the market's back. The question is whether tightening financial conditions, weak participation and rising oil become strong enough headwinds to overpower them.\nThe 10-year Treasury yield spiked 125 basis points in just seven months. We looked at prior cases when the 10-year Treasury yield jumped more than 125 basis points in seven months and found 13 prior cases. Only seven of the 13 cases (54%) had positive returns three months later. https://t.co/JXzFFTmMtn"
     ],
     "translated": [
-      "Q4 및 중간선거 이후의 계절성은 여전히 압도적으로 강세를 뒷받침합니다.\n역사적으로 4분기는 S&P 500이 플러스 수익률을 기록하는 일관성 측면에서 연중 가장 강한 분기였습니다. 대략 지난 80년 동안 Q4가 플러스 수익률을 기록한 비율은 약 80%로, 다른 세 분기의 약 60%–64%와 비교됩니다.\n중간선거 주기는 또 하나의 강력한 계절적 순풍을 더합니다. 역사적으로 주식은 중간선거를 둘러싼 불확실성이 해소되면서 특히 좋은 성과를 보였습니다. 분석 기간의 시작점을 정확히 어디로 잡느냐에 따라 차이는 있지만, 최근 역사적 연구에 따르면 중간선거가 있는 해의 Q4에 S&P 500이 플러스 수익률을 기록한 비율은 대략 83%–85%입니다.\n견조한 이익 성장과 적어도 현재로서는 경기침체의 뚜렷한 증거가 없다는 배경을 고려하면, 역사적 흐름은 여전히 강세론자들의 판단에 무게를 실어줘야 함을 시사합니다.\n그러나 계절성은 경향일 뿐, 보장은 아닙니다. 연준의 긴축, 시장 상승 참여 종목의 감소, 금리 상승, 높은 유가는 상당한 상쇄 요인입니다. 최소한 이러한 여건은 변동성이 발생할 가능성을 높이며, 현재 환경을 역사적 평균이 시사하는 것보다 훨씬 복잡하게 만듭니다.\n주요 지수의 표면 아래에서는 개별 종목들이 이미 조정을 겪고 있습니다. 현재 S&P 500 구성 종목의 35% 이상이 52주 최고가 대비 20% 이상 하락한 상태인데도, 지수 자체는 여전히 사상 최고치에 비교적 가까이 머물러 있습니다. 다시 말해, 상당한 조정은 이미 일어났으며, 단지 지수 내 비중이 큰 비교적 소수 종목의 강세에 가려져 있었을 뿐입니다.\n흥미롭게도 87년 대폭락은 연준의 긴축 이후 염두에 둘 만한 역사적 유사 사례 중 하나입니다. 이 비교를 또 다른 폭락에 대한 예측으로 해석해서는 안 되지만, 통화정책 측면의 유사성은 분명합니다. 시장금리가 이미 가파르게 상승하던 와중에 연준은 1987년 9월 4일 재할인율을 5.5%에서 6.0%로 인상했습니다.\n계절적 바람은 분명 시장에 순풍으로 작용하고 있습니다. 문제는 긴축적인 금융 여건, 저조한 상승 참여, 유가 상승이 그 순풍을 압도할 만큼 강한 역풍이 되느냐는 것입니다.\n10년 만기 미국 국채 수익률은 불과 7개월 만에 125베이시스포인트 급등했습니다. 우리는 10년 만기 미국 국채 수익률이 7개월 동안 125베이시스포인트 넘게 상승했던 과거 사례를 살펴봤고, 13건을 찾았습니다. 이 13건 중 3개월 후 플러스 수익률을 기록한 사례는 7건(54%)뿐이었습니다. http://minervini.com"
+      "Q4와 중간선거 이후의 계절성은 여전히 압도적으로 강세를 지지한다.\n역사적으로 4분기는 플러스 수익률의 일관성 측면에서 S&P 500이 연중 가장 강한 모습을 보인 분기였다. 대략 지난 80년 동안 Q4가 플러스 수익률을 기록한 비율은 약 80%였으며, 나머지 세 분기는 약 60%–64%였다.\n중간선거 주기는 또 하나의 강력한 계절적 순풍을 더한다. 역사적으로 주식은 중간선거를 둘러싼 불확실성이 해소되면서 특히 좋은 성과를 보였다. 분석의 시작 시점을 정확히 어디로 잡느냐에 따라 차이는 있지만, 최근의 역사적 연구에서 중간선거가 있는 해의 Q4에 S&P 500이 플러스 수익률을 기록한 비율은 대략 83%–85%로 나타났다.\n견조한 기업 이익 성장과 적어도 현재로서는 경기침체의 뚜렷한 증거가 없다는 배경을 고려하면, 역사적 경험은 강세론자들의 전망을 계속 우선적으로 신뢰할 만하다는 점을 시사한다.\n하지만 계절성은 경향이지 보장은 아니다. 연준의 긴축, 상승 종목의 저변 약화, 금리 상승, 높은 유가는 이에 맞서는 유의미한 요인이다. 최소한 이러한 여건은 변동성 발생 가능성을 높이며, 현재 시장 환경을 역사적 평균이 시사하는 것보다 훨씬 더 복잡하게 만든다.\n주요 지수의 표면 아래에서는 개별 종목들이 이미 조정을 겪고 있다. S&P 500 자체는 여전히 사상 최고치에 비교적 근접해 있지만, 현재 구성 종목의 35% 이상이 52주 최고가 대비 20% 이상 하락한 상태다. 다시 말해, 상당한 조정은 이미 발생했으며, 단지 지수 내 비중이 큰 비교적 소수 종목의 강세에 가려져 있었을 뿐이다.\n흥미롭게도 87년 대폭락은 연준의 긴축 이후 염두에 둘 만한 역사적 유사 사례 중 하나다. 이 비교를 또 다른 폭락에 대한 예측으로 해석해서는 안 되지만, 통화정책상의 유사성은 분명히 존재한다. 시장금리가 이미 가파르게 상승하고 있던 1987년 9월 4일, 연준은 재할인율을 5.5%에서 6.0%로 인상했다.\n계절적 흐름은 분명 시장에 순풍으로 작용하고 있다. 문제는 긴축적인 금융 여건, 저조한 상승 참여도, 유가 상승이 그 순풍을 압도할 만큼 강한 역풍이 되느냐는 것이다.\n10년 만기 미국 국채 금리는 불과 일곱 달 만에 125베이시스포인트 급등했다. 우리는 10년 만기 미국 국채 금리가 일곱 달 동안 125베이시스포인트 넘게 상승한 과거 사례를 살펴보았고, 13건을 확인했다. 13건 중 단 일곱 건(54%)만이 석 달 뒤 플러스 수익률을 기록했다. https://t.co/JXzFFTmMtn"
     ],
-    "content_hash": "085236f85a8a48c6",
+    "content_hash": "fc28c0db6392daa8",
     "status": "ok",
     "validation_version": 2,
-    "translated_at": "2026-10-20T00:34:03.245437+00:00",
-    "chunk": "posts-x.json",
-    "last_attempt": {
-      "paragraphs": [
-        "Q4 and post-midterm seasonality remain overwhelmingly bullish.\nHistorically, the fourth quarter has been the strongest quarter of the year for the S&P 500 in terms of consistency of positive returns. Over roughly the past 80 years, Q4 has produced a positive return about 80% of the time, compared with approximately 60%–64% for the other three quarters.\nThe midterm election cycle adds another powerful seasonal tailwind. Stocks have historically performed particularly well as the uncertainty surrounding midterm elections is removed. Depending on the precise starting period used, recent historical studies put the S&P 500's positive rate during Q4 of midterm years at roughly 83%–85%. \nGiven the backdrop of strong earnings growth and, at least for now, no clear evidence of recession, history argues that the bulls should continue to receive the benefit of the doubt.\nHowever, seasonality is a tendency—not a guarantee. Fed tightening, deteriorating breadth, rising interest rates and elevated oil prices represent meaningful counterweights. At a minimum, those conditions increase the probability of volatility and make the current environment considerably less straightforward than the historical averages suggest. \nIndividual stocks have already been correcting beneath the surface of the major indexes. More than 35% of S&P 500 stocks are currently down 20% or more from their 52-week highs, even as the index itself remains relatively close to record territory. In other words, a significant correction has already occurred—it has simply been masked by the strength of a relatively small number of heavily weighted stocks.\nInterestingly, the 87 Crash  is one of the historical analogs worth keeping in mind following a Fed tightening. The comparison should not be interpreted as a prediction of another crash, but the monetary-policy parallel is real: the Fed raised the discount rate from 5.5% to 6.0% on September 4, 1987, while market interest rates were already rising sharply. \nThe seasonal winds are clearly at the market's back. The question is whether tightening financial conditions, weak participation and rising oil become strong enough headwinds to overpower them.\nThe 10-year Treasury yield spiked 125 basis points in just seven months. We looked at prior cases when the 10-year Treasury yield jumped more than 125 basis points in seven months and found 13 prior cases. Only seven of the 13 cases (54%) had positive returns three months later. https://t.co/JXzFFTmMtn"
-      ],
-      "translated": [],
-      "content_hash": "fc28c0db6392daa8",
-      "status": "failed",
-      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T04:28:15.530556+00:00"
-    }
+    "translated_at": "2026-10-22T05:39:39.732666+00:00",
+    "chunk": "posts-x.json"
   },
   "2112145234440188055": {
     "paragraphs": [
@@ -13089,6 +13079,7 @@
       "2027~2028년은 공개 전망 범위의 중간값과 제품 전환 일정을 반영한 추정치",
       "따라서 숫자의 소수점보다 곡선의 방향과 성장 순서가 중요함.",
       "성장률 합성 모델",
+      "(https://x.com/Trader_Jesse_/article/2075954014014013696/media/2075952506279211008)",
       "성장률만 보면 CPO가 무조건 1위가 되지만, 실제 AI 밸류체인 내 영향력이나 투자 가능 시장규모를 과장하게 되기에 CPO를 독립 성장산업으로 계산하지 않았고, 2028년 광통신 재가속의 일부 옵션으로만 반영했음.",
       "이는 개별 리서치기관의 단일 표를 옮긴 것이 아니라 최신 전망을 동일 축으로 재구성한 투자 판단용 모델임.",
       "1. 2025년은 CoWoS와 액체냉각의 폭발",
@@ -13134,6 +13125,7 @@
       "800V DC의 경우 2026년 하반기부터 수주가 시작되고 2027년 말~2028년 초부터 실제 출하가 예상돼, 전력 인프라는 오히려 실적 곡선이 뒤쪽에 위치함.",
       "2026~2028년 누적 성장 잠재력 순위",
       "2025년 말 시장규모를 1로 두고 연도별 성장률을 복리 적용하면 다음과 같음.",
+      "(https://x.com/Trader_Jesse_/article/2075954014014013696/media/2075953429198098432)",
       "이 순위는 시장 성장률만 비교한 것이며 주가의 상승여력 순위는 아님.",
       "CoWoS는 높은 성장이 이미 상당 부분 알려져 있고 공급능력 정상화 가능성이 있음. 반면 광통신은 2027년 성장률 둔화와 CPO 지연 때문에 시장의 관심이 식을 경우, 2028년 성장 옵션 대비 가격이 싸질 가능성이 있음.",
       "전력은 성장률 순위는 낮지만 수주잔고/납기/그리드 병목을 고려하면 가장 긴 기간 동안 성장할 수 있는 산업임.",
@@ -13166,6 +13158,7 @@
       "2027~2028년은 공개 전망 범위의 중간값과 제품 전환 일정을 반영한 추정치",
       "따라서 숫자의 소수점보다 곡선의 방향과 성장 순서가 중요함.",
       "성장률 합성 모델",
+      "(https://x.com/Trader_Jesse_/article/2075954014014013696/media/2075952506279211008)",
       "성장률만 보면 CPO가 무조건 1위가 되지만, 실제 AI 밸류체인 내 영향력이나 투자 가능 시장규모를 과장하게 되기에 CPO를 독립 성장산업으로 계산하지 않았고, 2028년 광통신 재가속의 일부 옵션으로만 반영했음.",
       "이는 개별 리서치기관의 단일 표를 옮긴 것이 아니라 최신 전망을 동일 축으로 재구성한 투자 판단용 모델임.",
       "1. 2025년은 CoWoS와 액체냉각의 폭발",
@@ -13195,7 +13188,7 @@
       "4. 2028년은 광통신의 두 번째 파동 가능성",
       "2028년에는 광통신이 다시 가속될 가능성이 있음.",
       "기존 800G/1.6T 플러그형 광모듈 외에 다음 시장이 추가되기 때문임.",
-      "스케일아웃 CPO\n랙 간 광학 NVLink\n스케일어크로스 네트워크\nASIC용 광학 입출력\nFeynman 이후 스케일업 광학 기술",
+      "스케일아웃 CPO\n랙 간 광학 NVLink\n스케일어크로스 네트워크\nASIC용 광학 I/O\nFeynman 이후 스케일업 광학 기술",
       "다만 2028년 광통신 재가속은 아직 확정 실적이 아니라 옵션으로 봐야 함.",
       "SemiAnalysis는 Kyber NVL144가 PCB 미드플레인 문제로 2028년까지 지연될 수 있고, NVL576 CPO도 초기 물량이 제한될 수 있다고 주장했음. 엔비디아는 이에 대해 로드맵이 유지되고 있다고 답했지만 세부 일정은 공개하지 않았음.",
       "따라서 광통신의 베이스 시나리오는:",
@@ -13211,6 +13204,7 @@
       "800V DC의 경우 2026년 하반기부터 수주가 시작되고 2027년 말~2028년 초부터 실제 출하가 예상돼, 전력 인프라는 오히려 실적 곡선이 뒤쪽에 위치함.",
       "2026~2028년 누적 성장 잠재력 순위",
       "2025년 말 시장규모를 1로 두고 연도별 성장률을 복리 적용하면 다음과 같음.",
+      "(https://x.com/Trader_Jesse_/article/2075954014014013696/media/2075953429198098432)",
       "이 순위는 시장 성장률만 비교한 것이며 주가의 상승여력 순위는 아님.",
       "CoWoS는 높은 성장이 이미 상당 부분 알려져 있고 공급능력 정상화 가능성이 있음. 반면 광통신은 2027년 성장률 둔화와 CPO 지연 때문에 시장의 관심이 식을 경우, 2028년 성장 옵션 대비 가격이 싸질 가능성이 있음.",
       "전력은 성장률 순위는 낮지만 수주잔고/납기/그리드 병목을 고려하면 가장 긴 기간 동안 성장할 수 있는 산업임.",
@@ -13226,10 +13220,10 @@
       "2025년의 주인공은 GPU/CoWoS/액체냉각이었음.\n2026년은 HBM/광통신이 강함.\n2027년은 커스텀 ASIC/백엔드 네트워크가 부상할 가능성이 높음.\n2028년에는 광 I/O/CPO/800V DC가 새로운 성장파를 만들 수 있음.",
       "따라서 앞으로의 초과수익은 이미 성장률이 가장 높았던 산업보다, 성장률이 꺾이기 전에 다음 병목으로 이동하는 산업을 먼저 찾는 데서 나올 가능성이 높음."
     ],
-    "content_hash": "a64d9c0ffe189fb3",
+    "content_hash": "b5f645d854930ed5",
     "status": "ok",
     "validation_version": 2,
-    "translated_at": "2026-10-20T00:35:51.016889+00:00",
+    "translated_at": "2026-10-22T05:44:08.665330+00:00",
     "chunk": "posts-x.json"
   },
   "reply:2111879987611521450:2111897641818996995": {
@@ -13515,8 +13509,8 @@
     "translated": [],
     "content_hash": "4f76bb0aaa41cee1",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213735+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:02:57.836467+00:00"
   },
   "reply:2111680050311688665:2111686077836894509": {
     "paragraphs": [
@@ -13545,31 +13539,40 @@
     "paragraphs": [
       "Ready for the massive expansion!"
     ],
-    "translated": [],
+    "translated": [
+      "대규모 확장에 대한 준비 완료!"
+    ],
     "content_hash": "dbf4dd0203632afe",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213797+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.841162+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112286960752714130:2112286974921097490": {
     "paragraphs": [
       "친구에게 여기서 만약 상승으로 돌아뛴다면, 작은 프레임이든 뭐든에서 어떤 바닥셋업을 만들어줄 것이고, 그것이 우리가 아는 어떤 상승구조 안에서의 continuation base가 될 것이라고 말 했다.\n더 정확히 말하면 LTF 주요가격까지 반등이 나오고 위에서 타이트한 모습이 나온다는 말 \n7/10"
     ],
-    "translated": [],
+    "translated": [
+      "친구에게 여기서 만약 상승으로 돌아뛴다면, 작은 프레임이든 뭐든에서 어떤 바닥셋업을 만들어줄 것이고, 그것이 우리가 아는 어떤 상승구조 안에서의 continuation base가 될 것이라고 말 했다.\n더 정확히 말하면 LTF 주요가격까지 반등이 나오고 위에서 타이트한 모습이 나온다는 말 \n7/10"
+    ],
     "content_hash": "6ad61e6264ccf172",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213829+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.842557+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111879987611521450:2111905390359421136": {
     "paragraphs": [
       "Always dropping elite alpha man! Your insights are much appreciated🤝"
     ],
-    "translated": [],
+    "translated": [
+      "항상 엘리트 알파 정보를 전해주시는군요, 친구여! 당신의 인사이트에 깊이 감사드립니다🤝"
+    ],
     "content_hash": "8de2354c1186129a",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213744+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.836900+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112016108161282109:2112015623391969565": {
     "paragraphs": [
@@ -13579,18 +13582,21 @@
     "translated": [],
     "content_hash": "5ee96f2887e272d3",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213761+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:02:57.837790+00:00"
   },
   "reply:2108954220841816471:2108956474504331336": {
     "paragraphs": [
       "What type of expansion? Compare orange arrows..."
     ],
-    "translated": [],
+    "translated": [
+      "어떤 유형의 확장인가요? 주황색 화살표를 비교해 보세요..."
+    ],
     "content_hash": "83585c7a2d3c445b",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213790+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.840977+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112178425725136936:2112179259477512526": {
     "paragraphs": [
@@ -13609,79 +13615,101 @@
     "translated": [],
     "content_hash": "f455987226791915",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213836+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:02:57.842848+00:00"
   },
   "reply:2112178425725136936:2112180113513329080": {
     "paragraphs": [
       "Hopefully, seasonal tailwinds will prevail in the fourth quarter."
     ],
-    "translated": [],
+    "translated": [
+      "바라건대, 4분기에는 계절적 순풍이 우세를 점하기를 바랍니다."
+    ],
     "content_hash": "a054c141e2cf39dc",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213783+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.840723+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112178425725136936:2112179953030553944": {
     "paragraphs": [
       "After the losing streak semis just had, I want to see leading stocks reclaim their 50-day lines before I lean on the seasonal tailwind."
     ],
-    "translated": [],
+    "translated": [
+      "반도체 주식들이 방금 겪은 연속 하락세 이후, 저는 계절적 순풍에 기대기 전에 주도주들이 50일선을 회복하는 것을 보고 싶습니다."
+    ],
     "content_hash": "4acd4e91a827a56d",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213776+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.840297+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112143385482113214:2112143554537492943": {
     "paragraphs": [
       "Hello are you available for commission?follow me and DM me I’m interested"
     ],
-    "translated": [],
+    "translated": [
+      "안녕하세요, 커미션 받고 계신가요? 관심이 있으니 저를 팔로우하시고 DM 주세요"
+    ],
     "content_hash": "4e9549ee3df6b2bc",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213811+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.841770+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111879987611521450:2111880393666515167": {
     "paragraphs": [
       "Your point that the first rally after ugly days often reveals little about a real trend change really resonates, especially the reminder that a bounce can still be building a lower high. You and \n@kenmartinboston\n deliver consistently accurate, objective, and rational analysis,"
     ],
-    "translated": [],
+    "translated": [
+      "험난한 날들 이후의 첫 반등이 실제 추세 전환에 대해 별다른 것을 보여주지 않는 경우가 많다는 당신의 지적은 정말 큰 공감을 부르며, 특히 반등이 여전히 더 낮은 고점을 형성하는 과정일 수 있다는 상기가 그렇습니다. 당신과 @kenmartinboston 님은 지속적으로 정확하고 객관적이며 이성적인 분석을 전달해 주십니다,"
+    ],
     "content_hash": "4dfd56d38a1f7ff1",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213753+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.837574+00:00",
+    "chunk": "posts-x.json"
   },
   "quote:2112299628695888087:quote:2108954220841816471": {
     "paragraphs": [
       "$BTC / M1 [1M] - the 7-year resistance has now flipped into a 3-year support.",
       "All set for a 2017-type expansive move 🧨"
     ],
-    "translated": [],
+    "translated": [
+      "$BTC / M1 [1M] - 7년간의 저항선이 이제 3년간의 지지선으로 전환되었습니다.",
+      "2017년 스타일의 대규모 확장 움직임을 위한 모든 준비가 완료되었습니다 🧨"
+    ],
     "content_hash": "f4a6a24e169310f8",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213851+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.845083+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112286960752714130:2112286968474472833": {
     "paragraphs": [
       "50EMA 지지가 중요한게 아니다. 이 흐름을 이해하는 것이 중요하다. 채널은 바닥이 될 수가 없다. 투매도, 손바뀜도 없는 것이 채널이기 때문이다. 일정한 매수세와 매도세가 이어지는 것은 바닥이 아니다. Continuation이지.\n4/10"
     ],
-    "translated": [],
+    "translated": [
+      "50EMA 지지가 중요한게 아니다. 이 흐름을 이해하는 것이 중요하다. 채널은 바닥이 될 수가 없다. 투매도, 손바뀜도 없는 것이 채널이기 때문이다. 일정한 매수세와 매도세가 이어지는 것은 바닥이 아니다. Continuation이지.\n4/10"
+    ],
     "content_hash": "d5a2b93a1aa8e775",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213817+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.842014+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112299628695888087:2112301627436917204": {
     "paragraphs": [
       "중간 씨게 고꾸라지는 구간도 잇게찌만 2029년 maybe"
     ],
-    "translated": [],
+    "translated": [
+      "중간에 세게 고꾸라지는 구간도 있겠지만 2029년 아마도."
+    ],
     "content_hash": "92046d3078a22db7",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:36:21.466587+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.845297+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112119031595667492:2111871993532580058": {
     "paragraphs": [
@@ -13694,8 +13722,8 @@
     "translated": [],
     "content_hash": "b477c068ed03f5a6",
     "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213843+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:02:57.844210+00:00"
   },
   "reply:2112282151098216596:2112282153191084265": {
     "paragraphs": [
@@ -13703,31 +13731,42 @@
       "그 구간을 정석적으로 넘는 순간이 우리가 흔히 아는 돌파 구간.",
       "이 \"돌파\" 역시 위치와 맥락이 중요한데..."
     ],
-    "translated": [],
+    "translated": [
+      "그 갈림길에서 어떤 방향으로 나아갈지는 작은 추세들과 큰 방향의 셋업으로 anticipation buy가 가능하고",
+      "그 구간을 정석적으로 넘는 순간이 우리가 흔히 아는 돌파 구간.",
+      "이 \"돌파\" 역시 위치와 맥락이 중요한데..."
+    ],
     "content_hash": "cbc241096c074ef6",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213768+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.837996+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108954220841816471:2109023028126621706": {
     "paragraphs": [
       "Here we go again… October 2025 vs October 2026"
     ],
-    "translated": [],
+    "translated": [
+      "또 다시 시작입니다… 2025년 10월 vs 2026년 10월"
+    ],
     "content_hash": "46f57a1be35ff5b9",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213803+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.841439+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112286960752714130:2112286973163675824": {
     "paragraphs": [
       "걸어볼 수 있는 자리에 도착한 것이다. 여기서 이 작은 하락추세가 더욱 더 거세지며 큰 상승추세를 잡아먹을지도 모르지. 확률은 그래도 내 편이다. 이 경우 모든 타임프레임이 나를 향해 웃어주고 있어서. 이것이 anticipation buy의 본질이다.\n6/10"
     ],
-    "translated": [],
+    "translated": [
+      "걸어볼 수 있는 자리에 도착한 것이다. 여기서 이 작은 하락추세가 더욱 더 거세지며 큰 상승추세를 잡아먹을지도 모르지. 확률은 그래도 내 편이다. 이 경우 모든 타임프레임이 나를 향해 웃어주고 있어서. 이것이 anticipation buy의 본질이다.\n6/10"
+    ],
     "content_hash": "f4d7666cedb4d21a",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213823+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.842272+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112299628695888087:2112301974557536340": {
     "paragraphs": [
@@ -13746,22 +13785,31 @@
       "6. 그 후 이틀간 (10/7일, 8일) 제 anticipation buy 이후 원했던 움직임이 나와주며, 포지션을 완성했습니다.",
       "(이어서)"
     ],
-    "translated": [],
+    "translated": [
+      "강력했던 하락추세가 소강상태에 접어들었고, 상승추세로 돌아뛸 수 있다는 뜻입니다. 6일 꼬리로 지지가 나오는 움직임에 저 꼬리를 스탑으로 (LoD) 진입했습니다.",
+      "6. 그 후 이틀간 (10/7일, 8일) 제 anticipation buy 이후 원했던 움직임이 나와주며, 포지션을 완성했습니다.",
+      "(이어서)"
+    ],
     "content_hash": "05ad6be665c63bea",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213724+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.836226+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110426389388444039:2112234600378544449": {
     "paragraphs": [
       "4. 작은 추세는 7월 발현된 이후, 되돌림을 거쳐 9월 중순 상단을 찍고 되돌림이 주요가격까지 내려온 상황. EMA로 치면 100EMA와 50EMA 사이에서 6일 지지가 나왔습니다.",
       "5.그 되돌림을 하나의 정말 작은 추세로 본다면, 곡이 완만해진 상황이었습니다. 이게 무슨 뜻이냐- \n(이어서)"
     ],
-    "translated": [],
+    "translated": [
+      "4. 작은 추세는 7월 발현된 이후, 되돌림을 거쳐 9월 중순 상단을 찍고 되돌림이 주요가격까지 내려온 상황. EMA로 치면 100EMA와 50EMA 사이에서 6일 지지가 나왔습니다.",
+      "5.그 되돌림을 하나의 정말 작은 추세로 본다면, 곡이 완만해진 상황이었습니다. 이게 무슨 뜻이냐- \n(이어서)"
+    ],
     "content_hash": "ba993dc1d1da27d3",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T04:32:16.213614+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:02:57.835927+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2110426389388444039:2112123754977677786": {
     "paragraphs": [
@@ -14167,11 +14215,23 @@
       "🔗Github https://t.co/KnFPf6T039",
       "#AI (https://x.com/hashtag/AI?src=hashtag_click)  #AICaffeine (https://x.com/hashtag/AICaffeine?src=hashtag_click)  #Github (https://x.com/hashtag/Github?src=hashtag_click)"
     ],
-    "translated": [],
+    "translated": [
+      "☕️ AI가 코드 한 줄 고치기 전에 파일 수십 개부터 열어봅니다. \n그 사이 사용량은 벌써 줄어들고요. \nXERJ는 이 탐색 비용을 줄이려는 도구입니다. 🔎",
+      "GitHub 8.7K Star. \n로컬 폴더를 검색 인덱스로 만들어 Agent가 관련 코드 조각을 바로 찾게 해줍니다. \n결과에 파일 경로와 줄 번호가 붙어, 같은 검색을 반복하거나 파일 전체를 읽는 일을 줄일 수 있어요.",
+      "개발할 때는 비슷한 문제를 해결한 오픈소스 저장소도 함께 인덱싱해두는 방식이 유용해 보입니다. \nAI가 코드를 쓰기 전에 실제 구현을 찾아 참고하게 하는 거죠. 🛠️",
+      "코드 외에 PDF, Office 문서, 로그, CSV, SQLite도 처리합니다.\n전문·벡터·하이브리드 검색을 지원하고, MCP로 세션 간 기억을 제공할 수도 있습니다.",
+      "프로젝트 측의 소규모 비교 테스트에서는:",
+      "→ grep 방식과 XERJ 모두 16/16회 작업 완료\n→ 출력 Token: 26,477 → 9,982\n→ 모델 호출 비용: $3.27 → $1.58",
+      "특정 조건에서 나온 결과입니다. \n낯선 코드나 비공개 코드처럼 모델이 미리 알기 어려운 환경에서 더 유용할 수 있으며, 모든 프로젝트에서 같은 비용 절감을 보장하지는 않습니다.",
+      "단일 실행 파일로 배포되며 Windows, macOS, Linux를 지원합니다. \nApache-2.0 라이선스이고 로컬에 설치해 사용할 수 있습니다.",
+      "🔗깃허브 https://t.co/KnFPf6T039",
+      "#AI (https://x.com/hashtag/AI?src=hashtag_click)  #AICaffeine (https://x.com/hashtag/AICaffeine?src=hashtag_click)  #Github (https://x.com/hashtag/Github?src=hashtag_click)"
+    ],
     "content_hash": "91cc41c8a00ee63e",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T02:51:45.434522+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:41:53.748214+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016944535016722454": {
     "paragraphs": [
@@ -14192,5 +14252,177 @@
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
     "failed_at": "2026-10-22T02:59:51.306127+00:00"
+  },
+  "2112861554693574817": {
+    "paragraphs": [
+      "I map my stop loss directly to the technical level that invalidates my entry, never to an arbitrary dollar amount.",
+      "Setting a tight stop only works if it sits just behind a logical market structure point. If the market choppily tests that level and breaks it, my thesis is dead and I get out without second-guessing.",
+      "Invalidation dictates your exit."
+    ],
+    "translated": [
+      "나는 손절 기준을 임의의 달러 금액이 아니라, 내 진입 근거가 무효화되는 기술적 가격 수준에 직접 맞춘다.",
+      "손절선을 좁게 설정하는 것은 시장 구조상 타당한 지점 바로 너머에 둘 때만 효과가 있다. 시장이 등락을 거듭하며 그 수준을 시험하다가 돌파하면 내 매매 가설은 무효가 되므로, 재고하지 않고 포지션을 청산한다.",
+      "매매 근거가 무효화되는 시점이 청산 시점을 결정한다."
+    ],
+    "content_hash": "e2c88c6a08090ad8",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:46:23.481270+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112367388503257439": {
+    "paragraphs": [
+      "코스피는 지속적으로 Inversion Fair Value Gap 부근 수요를 확인",
+      "Fair Value Gap이란?\n가격이 한쪽 방향으로 너무 급격하게 움직여, 거래가 제대로 이루어지지 않고 텅 비어버린 가격 구간(시장 불균형)을 뜻함.",
+      "Inversion Fair Value Gap이란?\n기존에 형성되었던 FVG 구간을 가격이 강하게 돌파하면서, 기존의 지지/저항 역할이 반대로 바뀌는 현상."
+    ],
+    "translated": [
+      "코스피는 지속적으로 반전 공정가치 갭 부근 수요를 확인",
+      "공정가치 갭이란?\n가격이 한쪽 방향으로 너무 급격하게 움직여, 거래가 제대로 이루어지지 않고 텅 비어버린 가격 구간(시장 불균형)을 뜻함.",
+      "반전 공정가치 갭이란?\n기존에 형성되었던 공정가치 갭(FVG) 구간을 가격이 강하게 돌파하면서, 기존의 지지/저항 역할이 반대로 바뀌는 현상."
+    ],
+    "content_hash": "f6eec33dfba4caeb",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:50:53.927517+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112869703748288756": {
+    "paragraphs": [
+      "거래량을 저렇게 해석하면 파라볼릭 상승과 그 클라이막스는 강력한 상승세 한복판으로 해석하는 논리와 오류가 같아집니다.",
+      "미국 지수 기준 3월 말부터 6월초까지 이어진 락아웃 랠리에서 언제 거래량이 붙었는지 확인해보세요.",
+      "말 그대로 락 아옷 랠리였습니다. 매도세 부족의 랠리.",
+      "낭설입니다.",
+      "급격한 하락 이후 거래량 부족의 상승 랠리는 매도세가 말라붙은 이후 나오는거로 해석 가능합니다.  (락아웃 랠리는 대부분 이 형태를 띕니다)",
+      "거래량 실린 날 하락마감은 투매 혹은 하락세를 씻어낸 날중 하나로도 해석 가능합니다.",
+      "1/2 x.com/zanjacquref/st…"
+    ],
+    "translated": [],
+    "content_hash": "ea5b211ded388cba",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T05:48:37.121696+00:00"
+  },
+  "2112930954268615039": {
+    "paragraphs": [
+      "와이코프가 설명한 Composite Man",
+      "시장을 움직이는 대형 세력들의 행동을 \n마치 하나의 거대한 인물이 의도적으로 움직이는 것처럼 가정한 개념",
+      "쉽게 말하면 우리가 흔히 이야기하는 \n세력 또는 큰손",
+      "You are a composite man"
+    ],
+    "translated": [
+      "와이코프가 설명한 Composite Man",
+      "시장을 움직이는 대형 세력들의 행동을 \n마치 하나의 거대한 인물이 의도적으로 움직이는 것처럼 가정한 개념",
+      "쉽게 말하면 우리가 흔히 이야기하는 \n세력 또는 큰손",
+      "당신은 여러 요소가 합쳐진 사람입니다."
+    ],
+    "content_hash": "a695fe0f395436b0",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:53:07.514422+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112872526447779963": {
+    "paragraphs": [
+      "𝗥𝗶𝘀𝗸 𝘀𝗺𝗮𝗹𝗹 𝘁𝗶𝗹 𝗶𝘁'𝘀 𝘄𝗼𝗿𝗸𝗶𝗻𝗴.",
+      "(List is all defense today. Trade smaller, get picky.)",
+      "\"You do it from a position of strength. You do it when you had a good period, not when things are going bad. When things are going bad, that's when you reduce your size. I usually risk around 0.5% on most of my trades. I rarely risk more than 1%.\"",
+      "(clip: Mar 5, 2020)"
+    ],
+    "translated": [
+      "잘 풀리기 전까지는 위험을 작게 감수하세요.",
+      "(오늘 목록은 전부 방어 위주입니다. 거래 규모를 줄이고, 까다롭게 고르세요.)",
+      "\"유리한 위치에 있을 때 그렇게 하는 겁니다. 성과가 좋았던 시기에 하는 것이지, 상황이 나쁠 때 하는 게 아닙니다. 상황이 나쁠 때는 포지션 규모를 줄여야 합니다. 저는 대부분의 거래에서 보통 0.5% 정도의 위험을 감수합니다. 1%를 넘는 위험은 거의 감수하지 않습니다.\"",
+      "(영상: 2020년 3월 5일)"
+    ],
+    "content_hash": "7472dbbd9d5fdf22",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:55:23.655687+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112746369240739887": {
+    "paragraphs": [
+      "My watchlist for tomorrow:\nI don't plan on trading anything, but will be watching.",
+      "$IOVA (https://x.com/search?q=%24IOVA&src=cashtag_click) \n - Second HTF in the last 40 bars, would love an inside day (biotech).",
+      "$OSCR (https://x.com/search?q=%24OSCR&src=cashtag_click) \n - Close to breaking out, held up beautifully over the past week with markets in freefall.",
+      "$PLTR (https://x.com/search?q=%24PLTR&src=cashtag_click) \n - Double inside day at the 20ma, super tight and showed RS over the last week."
+    ],
+    "translated": [
+      "내일 관심 종목:\n매매할 계획은 없지만, 지켜볼 예정입니다.",
+      "$IOVA (https://x.com/search?q=%24IOVA&src=cashtag_click)\n - 최근 40개 봉에서 두 번째 HTF(고점 깃발형) 패턴이 나왔으며, 인사이드 데이가 나오면 좋겠습니다(바이오테크).",
+      "$OSCR (https://x.com/search?q=%24OSCR&src=cashtag_click)\n - 돌파를 앞두고 있으며, 지난주 시장이 급락하는 동안에도 아주 잘 버텼습니다.",
+      "$PLTR (https://x.com/search?q=%24PLTR&src=cashtag_click)\n - 20일 이동평균선에서 2일 연속 인사이드 데이가 나왔고, 가격 변동폭이 매우 좁으며 지난주 상대 강도를 보였습니다."
+    ],
+    "content_hash": "62bc7d80e5eb01b1",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:57:44.340096+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112839269203243034": {
+    "paragraphs": [
+      "채권쟁이들이 먼저 빤스런 각 재는 거 실화냐? \nAI 대장주들 부도 위험 신호 터짐ㅋㅋ",
+      "주식판에선 매일 장밋빛 AI 찬양가 부르면서 신고가 랠리 펼칠 때, 진짜 돈 냄새 기가 막히게 맡는 채권 시장에서는 조용히 비상벨 울리는 중임. \n신용부도스왑(CDS) 스프레드가 저세상 각도로 치솟고 있는데 수치 꼬라지 보면 기가 참.",
+      "• 오라클 \n$ORCL (https://x.com/search?q=%24ORCL&src=cashtag_click) \n \nCDS 스프레드 320bps 돌파하면서 부도 확률 23% 찍음. 차트 보면 혼자 나홀로 수직 로켓 쏘는 중인데, 무리하게 AI 데이터센터 캐펙스 퍼붓고 차입금 땡기더니 채권 시장에서 제일 먼저 사형선고 때리는 분위기임 ㅋㅋㅋ",
+      "• 브로드컴 \n$AVGO (https://x.com/search?q=%24AVGO&src=cashtag_click)",
+      "CDS 스프레드 150bps 부근까지 기어올라가면서 부도 확률 12% 기록. 커스텀 ASIC이랑 네트워킹으로 돈 잘 버는 줄 알았는데 여기도 은근슬쩍 리스크 반영되는 중",
+      "• 엔비디아 \n$NVDA (https://x.com/search?q=%24NVDA&src=cashtag_click) \n \n현금 쓸어 담는다는 황회장네도 예외는 아님. \n스프레드 100bps 넘어서며 부도 확률 약 8% 기록. 물론 셋 중엔 제일 선방이지만, 바닥에서 기어가던 게 스멀스멀 대가리 쳐들고 있다는 거 자체가 찝찝한 포인트임.",
+      "주식 시장은 아직도 빅테크 실적 기대감에 취해있는데 채권 시장 형님들은",
+      "\"야 AI 인프라 투자 회수 진짜 가능한 거 맞냐? 빚내서 엔비디아 칩 사고 데이터센터 짓다가 돈 못 갚으면 어쩔 건데?\" 하면서 보험료(CDS) 미친 듯이 올리는 중 ㅋ",
+      "채권이 주식보다 항상 선행해서 위기 감지했던 거 생각하면 마냥 웃어넘길 타이밍은 아닌 듯함",
+      "Not financial advice"
+    ],
+    "translated": [
+      "채권쟁이들이 먼저 빤스런 각 재는 거 실화냐? \nAI 대장주들 부도 위험 신호 터짐ㅋㅋ",
+      "주식판에선 매일 장밋빛 AI 찬양가 부르면서 신고가 랠리 펼칠 때, 진짜 돈 냄새 기가 막히게 맡는 채권 시장에서는 조용히 비상벨 울리는 중임. \n신용부도스왑(CDS) 스프레드가 저세상 각도로 치솟고 있는데 수치 꼬라지 보면 기가 참.",
+      "• 오라클 \n$ORCL (https://x.com/search?q=%24ORCL&src=cashtag_click) \n \nCDS 스프레드 320bps 돌파하면서 부도 확률 23% 찍음. 차트 보면 혼자 나홀로 수직 로켓 쏘는 중인데, 무리하게 AI 데이터센터 캐펙스 퍼붓고 차입금 땡기더니 채권 시장에서 제일 먼저 사형선고 때리는 분위기임 ㅋㅋㅋ",
+      "• 브로드컴 \n$AVGO (https://x.com/search?q=%24AVGO&src=cashtag_click)",
+      "CDS 스프레드 150bps 부근까지 기어올라가면서 부도 확률 12% 기록. 커스텀 ASIC이랑 네트워킹으로 돈 잘 버는 줄 알았는데 여기도 은근슬쩍 리스크 반영되는 중",
+      "• 엔비디아 \n$NVDA (https://x.com/search?q=%24NVDA&src=cashtag_click) \n \n현금 쓸어 담는다는 황회장네도 예외는 아님. \n스프레드 100bps 넘어서며 부도 확률 약 8% 기록. 물론 셋 중엔 제일 선방이지만, 바닥에서 기어가던 게 스멀스멀 대가리 쳐들고 있다는 거 자체가 찝찝한 포인트임.",
+      "주식 시장은 아직도 빅테크 실적 기대감에 취해있는데 채권 시장 형님들은",
+      "\"야 AI 인프라 투자 회수 진짜 가능한 거 맞냐? 빚내서 엔비디아 칩 사고 데이터센터 짓다가 돈 못 갚으면 어쩔 건데?\" 하면서 보험료(CDS) 미친 듯이 올리는 중 ㅋ",
+      "채권이 주식보다 항상 선행해서 위기 감지했던 거 생각하면 마냥 웃어넘길 타이밍은 아닌 듯함",
+      "투자 조언이 아닙니다."
+    ],
+    "content_hash": "77f0b4ec0aee240b",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T05:59:56.483680+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2112586894290923618": {
+    "paragraphs": [
+      "𝗘𝗮𝗿𝗻𝗶𝗻𝗴𝘀 𝘀𝗲𝗮𝘀𝗼𝗻 𝗶𝘀 𝘄𝗵𝗲𝗿𝗲 𝗯𝗶𝗴 𝗺𝗼𝘃𝗲𝘀 𝘀𝘁𝗮𝗿𝘁.",
+      "(TSLA NFLX META IBM this week. Months-long bases plus a good print.)",
+      "\"Stocks going sideways for months. The big moves come when they break out of big bases.\"",
+      "(clip: Oct 3, 2024)",
+      "𝗛𝗼𝗹𝗱 𝘁𝗵𝗿𝗼𝘂𝗴𝗵 𝗲𝗮𝗿𝗻𝗶𝗻𝗴𝘀 𝗼𝗿 𝘁𝗿𝗮𝗱𝗲 𝘁𝗵𝗲 𝗿𝗲𝗮𝗰𝘁𝗶𝗼𝗻?"
+    ],
+    "translated": [
+      "실적 시즌은 큰 움직임이 시작되는 때입니다.",
+      "(이번 주 TSLA, NFLX, META, IBM. 수개월간의 베이스 형성 및 호실적 발표.)",
+      "\"수개월 동안 횡보하는 주식들. 큰 움직임은 주가가 거대한 베이스를 돌파할 때 나타납니다.\"",
+      "(클립: Oct 3, 2024)",
+      "실적 발표 기간 동안 계속 보유할 것인가, 아니면 시장 반응을 보고 매매할 것인가?"
+    ],
+    "content_hash": "bf8d96ba449085f1",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:01:30.387055+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2016891443181224110": {
+    "paragraphs": [
+      "For those fortunate enough to own \n$SLV (https://x.com/search?q=%24SLV&src=cashtag_click) \n, it’s time to start selling into strength. Could it go higher? Maybe. But it’s clearly gone parabolic and is entering a climax run. That’s your best opportunity to sell into strength and avoid the sharp volatility that always follows."
+    ],
+    "translated": [
+      "$SLV (https://x.com/search?q=%24SLV&src=cashtag_click) 를 소유할 만큼 운이 좋았던 분들에게는, 상승세에 맞춰 매도를 시작할 때입니다. 더 올라갈 수 있을까요? 아마도 그럴 수 있습니다. 하지만 명백히 포물선 형태로 급상승했으며 절정의 상승 구간에 진입하고 있습니다. 이때가 상승세 속에서 매도하여 항상 뒤따르는 급격한 변동성을 피할 수 있는 최고의 기회입니다."
+    ],
+    "content_hash": "d63aea5c887f1f8b",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:01:54.380242+00:00",
+    "chunk": "posts-x.json"
   }
 }
