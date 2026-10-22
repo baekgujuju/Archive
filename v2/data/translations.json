@@ -12674,7 +12674,17 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-20T00:34:42.491135+00:00",
-    "chunk": "posts-x.json"
+    "chunk": "posts-x.json",
+    "last_attempt": {
+      "paragraphs": [
+        "Impressive how stron \n$HTFL (https://x.com/search?q=%24HTFL&src=cashtag_click) \n is holding up."
+      ],
+      "translated": [],
+      "content_hash": "b49c1937fe074464",
+      "status": "failed",
+      "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+      "failed_at": "2026-10-22T02:26:51.087291+00:00"
+    }
   },
   "2112286960752714130": {
     "paragraphs": [
@@ -12708,13 +12718,13 @@
       "이 TTS 모델을 무료로 공개해서 (고사양 컴퓨터만 있다면...) 누구나 다운로드해 로컬에서도 실행할 수 있습니다!",
       "여러분은 영상 속 4가지 목소리 어떻게 들리시나요?",
       "소리 꼭 켜고 들어보세요! 🔊",
-      "영상/음성 원본 미보존 · 영상/음성 링크"
+      "영상/음성 원본 미보존  · 영상/음성 링크 (https://video.twimg.com/amplify_video/2111867116374937601/pl/4G8yisssOcpEPD-h.m3u8?tag=29&variant_version=1)"
     ],
     "translated": [],
-    "content_hash": "c9e077821043585a",
+    "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T00:45:42.274343+00:00"
+    "failed_at": "2026-10-22T02:30:56.171762+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13934,5 +13944,214 @@
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
     "failed_at": "2026-10-22T02:14:07.525586+00:00"
+  },
+  "reply:2016891443181224110:2016935771329176026": {
+    "paragraphs": [
+      "Mark is a smart man\nSuggest you people on the silver and gold train listen and learn what futures markets do"
+    ],
+    "translated": [],
+    "content_hash": "8869e9d0f3f7cf20",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753635+00:00"
+  },
+  "reply:2112746369240739887:2112765643049041957": {
+    "paragraphs": [
+      "Looks like the semis is about to make another leg higher. (thanks SPCX and SMCI) But Overnight/premarket is always kind of fake news. Let's see what Wednesday brings. I have high hopes thou."
+    ],
+    "translated": [],
+    "content_hash": "e746c99623780419",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753576+00:00"
+  },
+  "reply:2112348661577626067:2112348676542935281": {
+    "paragraphs": [
+      "- 현재 추세가 HTF와 연계가 되어있는 점도 그러하다. HTF의 추세가 발현될 가능성이 높은 시간대라는 말.",
+      "달리 말하면, 여기서 신규진입을 노릴때는 1시간 4시간봉을 끼고 보면서 확인하는 것이 좋다는 말이다.",
+      "6/7"
+    ],
+    "translated": [],
+    "content_hash": "22683e273bb76e21",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753571+00:00"
+  },
+  "reply:2016891443181224110:2016999879521030475": {
+    "paragraphs": [
+      "Absolutely. Taking profits is such an important part of the whole investment process."
+    ],
+    "translated": [],
+    "content_hash": "6dec3a9611b9acdb",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753612+00:00"
+  },
+  "reply:2112777626712444966:2112777744136458376": {
+    "paragraphs": [
+      "둘러보기:",
+      "Lucian Icons (https://t.co/hpxQfYa2g6)  https://t.co/hpxQfYa2g6"
+    ],
+    "translated": [],
+    "content_hash": "2f4473d8072f8507",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753583+00:00"
+  },
+  "reply:2112797252431606163:2112454560765870149": {
+    "paragraphs": [
+      "20 new tokens on Tokenomist",
+      "Unlocks, vesting and emissions are all tracked!",
+      "tokenomist.ai ​ (https://pro.tokenomist.ai/20tokensOctober2026?twclid=24lp9eov7su0f55hyfgfo1uniu)  https://pro.tokenomist.ai/20tokensOctober2026?twclid=24lp9eov7su0f55hyfgfo1uniu"
+    ],
+    "translated": [],
+    "content_hash": "48ff0a2d81b4bff2",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753545+00:00"
+  },
+  "reply:2112348661577626067:2112348668384919967": {
+    "paragraphs": [
+      "1시간봉. 비슷한 이야기다. 여기서는 돌파가 실패한 것으로 떠있다. continuation을 생각해야된다는 소리. 베이스의 완성도가 정리가 필요해졌다. \n1시간봉과 4시간봉에서 지금 자리 부근에서 타이트한 움직임이 나와주며 베이스 안 레인지를 계속해서 좁혀나가는 것을 기대해볼 수 있다.\n3/7"
+    ],
+    "translated": [],
+    "content_hash": "2aead62150294815",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753560+00:00"
+  },
+  "reply:2112777626712444966:2112777809777308095": {
+    "paragraphs": [
+      "오픈소스, 깃허브 링크:",
+      "GitHub - Seokwoooo/lucian-icons (https://t.co/Oa2KA4AImM)  https://t.co/Oa2KA4AImM"
+    ],
+    "translated": [],
+    "content_hash": "d1cfe1c5cd9aecad",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753589+00:00"
+  },
+  "reply:2112370971802001870:2111179374615560206": {
+    "paragraphs": [
+      "Starlink로 이동 중에도 초고속 인터넷을 이용하세요. 와이파이 공유기가 내장된 Starlink Mini는 여행, 캠핑, 보트 타기, 원격 근무 등 다양한 활동에 적합합니다.",
+      "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
+      "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=283i9pn5kppgrf7bq63kc7gqa7)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=283i9pn5kppgrf7bq63kc7gqa7"
+    ],
+    "translated": [],
+    "content_hash": "27ada2d8852023ad",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753595+00:00"
+  },
+  "reply:2112348661577626067:2112348670809313686": {
+    "paragraphs": [
+      "원래 한시간봉 아래의 타임프레임도 연계를 해야하지만, 그냥 넘어가자.. \n아무튼 다시 일봉과 연계해볼까\n주요가격 부근까지 4일차 상승마감, 파라볼릭 상승세, 상승의 힘이 어느정도 꺾인 상태. 4시간과 1시간봉에서는 타이트한 continuation 움직임을 예상해볼 수 있다. (혹은 바래볼 수 있다)\n 4/7"
+    ],
+    "translated": [],
+    "content_hash": "d7a7ec0b4fcd52e6",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753565+00:00"
+  },
+  "reply:2016891443181224110:2016927449083174939": {
+    "paragraphs": [
+      "Translation whoever owns \n$SLV (https://x.com/search?q=%24SLV&src=cashtag_click) \n.  I already shorted and now I need the sheep to listen to me and sell the stock to drive down prices for my short.  Ignore th huge spread between Comex and Shanghai"
+    ],
+    "translated": [],
+    "content_hash": "b7c27868dd46e399",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753623+00:00"
+  },
+  "reply:2112797252431606163:2095223825059262507": {
+    "paragraphs": [
+      "Launch products now and grow your business with X Ads. \n@1x_tech (https://x.com/1x_tech) \n’s NEO robot campaign shows how X can turn a product announcement into action. As \n@Kenny___Rose (https://x.com/Kenny___Rose) \n put it, X was the perfect launch platform."
+    ],
+    "translated": [],
+    "content_hash": "0963975b40083c76",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753522+00:00"
+  },
+  "reply:2016891443181224110:2016901767590715397": {
+    "paragraphs": [
+      "You’re a fucking moron, just shut your fatass up. You’ve been saying this for 10 months. Do you intentionally try to fuck over your low IQ followers?"
+    ],
+    "translated": [],
+    "content_hash": "652ecb42bd823514",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753600+00:00"
+  },
+  "reply:2016891443181224110:2016904402347462916": {
+    "paragraphs": [
+      "First of all, GFYS! Second, I'm not fat. Third, I haven't been saying this for the past 10-months. Now FO!"
+    ],
+    "translated": [],
+    "content_hash": "a8d025908e156587",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753606+00:00"
+  },
+  "reply:2112240353181130917:2112240916014719035": {
+    "paragraphs": [
+      "이건 다 책에서 가르쳐주는 것들. 시장 앞에서 배우는 것들.",
+      "추세를 추종한다며. Momentum following 한다며. \nChasing을 할거면 제대로 해야. 추세가 뭔지도 모르면서 어떻게 잡아 세우게."
+    ],
+    "translated": [],
+    "content_hash": "72e7c778561244d8",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753553+00:00"
+  },
+  "reply:2112797252431606163:2112803392636793155": {
+    "paragraphs": [
+      "That is 주식 😬"
+    ],
+    "translated": [],
+    "content_hash": "148ea8baab08eb26",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753537+00:00"
+  },
+  "reply:2016891443181224110:2016920737014018467": {
+    "paragraphs": [
+      "Exhausted charts don’t correct slowly"
+    ],
+    "translated": [],
+    "content_hash": "ecb02a3c6de71167",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753641+00:00"
+  },
+  "reply:2016891443181224110:2016893334006992904": {
+    "paragraphs": [
+      "Why because it's up...you could miss a run up if your selling into this because your focusing on price only."
+    ],
+    "translated": [],
+    "content_hash": "37608189b042397f",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753628+00:00"
+  },
+  "reply:2112797252431606163:2112797671522172942": {
+    "paragraphs": [
+      "미장 soxx도그럴까요??"
+    ],
+    "translated": [],
+    "content_hash": "7d01d2f3acce6305",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.752890+00:00"
+  },
+  "reply:2016891443181224110:2034633173234012448": {
+    "paragraphs": [
+      "The difference between you and the pathetic pico-top buyers here in the comments tells everything.\nAged very well."
+    ],
+    "translated": [],
+    "content_hash": "1aa1813583ab1c15",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:34:56.753617+00:00"
   }
 }
