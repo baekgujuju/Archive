@@ -5069,5 +5069,205 @@
     "category_ko": "암호화폐 차트",
     "owner_hint": "TradingView / tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1d45ebbf23b968b97e56d72001101632d0ccaffbf631faced36bc05355c971d8": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "FIL/USDT 1시간봉 돌파 차트",
+    "description_ko": "바이낸스 FIL/USDT의 1시간봉 차트. 수렴 추세선과 수평 저항 구간을 돌파한 급등, 이동평균선, 거래량 및 매매 계획 영역이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul · TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2607ef7977526e1b6b83bdf63991e9ab92acb1d641b31a74fd583c2be4104486": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "NBIS 저항 돌파 및 상승 차트",
+    "description_ko": "NBIS가 조정 이후 반등하여 약 165달러의 수평 저항선을 돌파하고 194.88달러 부근까지 상승한 차트. 돌파 봉이 주황색 원으로 강조되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:faa918825cb274e91e86fcb68544e91e64e3c45951b0a5d64a75764a48ac480d": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VanEck Semiconductor ETF(SMH) 일봉 차트",
+    "description_ko": "SMH가 약 425달러의 이전 저항을 돌파한 뒤 545.88달러 부근까지 상승한 일봉 차트. 여러 이동평균선과 거래량, 상대강도 및 변동성 지표가 표시되어 있다.",
+    "category_ko": "ETF 기술적 분석",
+    "owner_hint": "tmmrwseoul · TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:68b0b9ba72bebb131924b8ea623df9606e0aae1180b46f7944db7b35b05426f9": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "인텔(INTC) 일봉 돌파 매수와 어닝갭",
+    "description_ko": "인텔의 장기 일봉 차트. 약 55달러 저항 돌파 지점에 매수 화살표가 있고, 이후 어닝갭과 112달러 부근까지의 가파른 상승이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul · TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cc318753d3210cd65b0865159838bc7aa0f5ea1014a4f70e9db5e009bb443cb2": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "인텔(INTC) 돌파 이후 조정과 어닝갭 확대 차트",
+    "description_ko": "인텔의 일봉을 확대한 화면. 약 55달러 돌파 매수 지점, 65~69달러 부근의 짧은 조정 구간, 이후 어닝갭과 상승 흐름이 강조되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul · TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:44f73e97ce0372a27fb6c020ff1952489a73946358b0825caf1cce17ef2a6576": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Satellogic(SATL) 일봉 삼각 수렴과 매매 계획",
+    "description_ko": "SATL이 급등 후 조정하고 약 7달러 부근에서 삼각 수렴을 형성하는 일봉 차트. 약 10.06달러 목표 영역과 6.43달러 부근 손절 영역이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul · TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a8973b54c187738be983063876585e31a3dd483d72046d08b6ebaebfe2dd8300": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Satellogic(SATL) 3 BAR TIGHT 패턴",
+    "description_ko": "SATL의 최근 일봉 확대 화면. 국지적 돌파 기준봉 이후 세 봉의 밀집과 삼각 수렴을 표시하고, 타이트한 손절 위치와 약 10달러 목표가, 손익비 1:4를 주석으로 제시한다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul · TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6b9c72af62cb61c114aa5d42bde3d69c4157a273050a444ac5671b5ede610e10": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "CoinShares Bitcoin Mining ETF (WGMI) 일봉 차트",
+    "description_ko": "TradingView의 WGMI 일봉 차트. 캔들, 여러 이동평균선과 거래량이 표시되며, 최근 가격이 급등해 59.86달러 부근에 도달한 모습이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:520f131131471bcf0f011ba1ece6acd6d09fb01b88fe4a33678be33334a9e80c": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Applied Digital Corporation (APLD) 일봉 차트",
+    "description_ko": "TradingView의 APLD 일봉 차트. 이동평균선, 거래량 및 수평 지지·저항선이 표시되어 있으며, 최근 반등한 가격은 35.63달러 부근이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:eab435e8142d84c50793185b91757262f4527711fd6d1438f163d63f21079bd7": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group N.V. (NBIS) 주봉 차트",
+    "description_ko": "TradingView의 NBIS 주봉 차트. 장기 가격 흐름에 이동평균선, 상승 추세선과 수평 가격대가 그려져 있으며, 최근 큰 양봉이 194.24달러 부근까지 상승했다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a83e3606c9157ca2ac065183878b4fc7f81bbb04e0e2b1382fe38285a5f2177d": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Nebius Group N.V. (NBIS) 일봉 차트",
+    "description_ko": "TradingView의 NBIS 일봉 차트. 지지 구간 반등과 이전 고점 돌파 부근이 주황색 원으로 강조되어 있으며, 최근 가격은 194.59달러 부근이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a49e2473c55e4ed164399ddc27a96c1724c4c93583bb194f722fce29ec35e400": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Cipher Digital Inc. (CIFR) 일봉 차트",
+    "description_ko": "TradingView의 CIFR 일봉 차트. 추세선, 이동평균선과 녹색 저항 구간이 표시되어 있으며, 최근 급등 후 21.50달러 부근에서 음봉이 형성된 모습이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1cf7abde697a4540f1b56e9123e342a7dbf1b67ffb0d18ae08d83fb5a1c97ccd": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hut 8 Corp. (HUT) 일봉 차트",
+    "description_ko": "TradingView의 HUT 일봉 차트. 수렴 추세선과 수평 가격대를 돌파한 뒤 상승했으며, 마지막 캔들은 거래량 증가와 함께 108.09달러 부근까지 크게 갭 상승한 모습이다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fee191022ac2416f6c76e4446a244a0147e54c1e5aa53cd019ec051cfe0be440": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Planet Labs(PL) 일봉 차트 — 저항 구간 아래 횡보",
+    "description_ko": "TradingView의 Planet Labs 일봉 차트. 주가는 24.81달러이며, 약 27~28.5달러의 붉은 저항 영역과 22달러대의 녹색 지지 영역이 표시되어 있다. 이동평균선, 거래량, 흰색 곡선이 함께 그려져 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b0d30cb96ff22bd019a371397715fa98b812db117d8ca0189bef3a2e9a359df2": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Satellogic(SATL) 일봉 차트 — 실적 발표일 갭 진입 표시",
+    "description_ko": "TradingView의 Satellogic 일봉 차트. 하락 추세선과 상승 지지선 사이에서 주가가 움직이며, 마지막 양봉의 종가는 3.28달러다. 화살표와 '실적 발표 나온 날 갭에 진입'이라는 주석이 표시되어 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:608773ac8cd6cae5151780ce945d9e3d7bf5e3125df44fc6c8e6aade9e21d032": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "BlackSky(BKSY) 일봉 차트 — 국지적 돌파 진입 표시",
+    "description_ko": "TradingView의 BlackSky 일봉 차트. 장기 하락 저항선과 상승 지지선이 삼각형을 이루며, 마지막 양봉의 종가는 26.40달러다. 최근 횡보 구간의 상단 돌파를 가리키는 화살표와 '좋은 실적반응 이후, 지엽적 돌파에 진입'이라는 주석이 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f07bee140b8ea038036575755dcf9a2f71a3c11db6dd2994effeecf7528f5ac5": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Planet Labs(PL) 일봉 차트 — 거래량 증가와 갭 상승",
+    "description_ko": "TradingView의 Planet Labs 일봉 차트. 24~28달러대의 횡보 구간 이후 거래량이 크게 늘며 33달러대로 갭 상승한 모습이다. 마지막 표시 가격은 33.82달러이며, 기존 저항선과 녹색 지지 영역이 표시되어 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9cf91c8e5767ff4e726aafa7f05f5fb78bfbb578b1f8dba8fccef957e1a00d3f": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Satellogic(SATL) 일봉 차트 — 돌파 후 급등",
+    "description_ko": "TradingView의 Satellogic 일봉 차트. 삼각 수렴 구간을 벗어난 뒤 큰 양봉과 거래량 증가가 나타나며, 마지막 종가는 4.96달러로 표시된다. 실적 발표일 갭 진입 위치를 가리키는 화살표와 여러 수평 가격선이 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6e7c8dce1cbbffcd7ec2b8d41667591eac174181c1fe74762a115bfa2e444e84": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "BlackSky(BKSY) 일봉 차트 — 하락 추세선 돌파",
+    "description_ko": "TradingView의 BlackSky 일봉 차트. 최근 상승으로 하락 추세선 위에 도달했으며 마지막 종가는 27.74달러다. 앞선 진입 구간에 주황색 원이 있고, '좋은 실적반응 이후, 지엽적 돌파에 진입'이라는 주석이 표시되어 있다.",
+    "category_ko": "주식 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:381d7ef7876adfec09c2810538a11fce29e7b8030a857c047671713e9b205dde": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "QQQ 캔들 차트 — 반복 반등과 상단 저항 구간",
+    "description_ko": "QQQ 가격 차트에 이동평균선, 상승 추세선, 수평 지지·저항 영역이 표시되어 있다. 여러 반등 구간에 '6% 이상의 반등'과 '4%'라는 주석이 있으며, 마지막 표시 가격은 629.43달러다.",
+    "category_ko": "ETF 차트",
+    "owner_hint": "TradingView",
+    "provider": "codex"
   }
 }

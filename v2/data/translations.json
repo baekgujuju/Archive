@@ -15745,5 +15745,18 @@
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
     "failed_at": "2026-10-22T06:39:26.097909+00:00"
+  },
+  "reply:2112967172876046449:2112969425347633404": {
+    "paragraphs": [
+      "Great update. R-multiple + MA trailing is a smart way to remove emotion, and \n@shiny_4125 (https://x.com/shiny_4125) \n would value this."
+    ],
+    "translated": [
+      "훌륭한 업데이트네요. R-배수 + MA 추적 방식은 감정을 배제하는 현명한 방법이며, @shiny_4125 (https://x.com/shiny_4125) 님도 이를 높이 평가할 것입니다."
+    ],
+    "content_hash": "c531d461b020587b",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:48:40.345822+00:00",
+    "chunk": "posts-x.json"
   }
 }
