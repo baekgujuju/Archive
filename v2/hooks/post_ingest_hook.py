@@ -775,6 +775,17 @@ def _recover_abandoned_backups_locked(candidates):
         shutil.rmtree(d, ignore_errors=True)
 
 
+def publish_pending(pending):
+    """No new build/commit: retry already validated pending commits last."""
+    if not PUBLISH_ENABLED or not pending:
+        return 0
+    if do_push():
+        log("미푸시 커밋 게시 완료")
+        return 0
+    log("푸시 재시도 실패 — 미푸시 커밋 보존, 다음 실행에서 재시도")
+    return 1
+
+
 def main():
     HOOKS_DIR.mkdir(parents=True, exist_ok=True)
     lock_fh = open(LOCK_FILE, "w")
@@ -824,12 +835,7 @@ def main():
                     log(f"미푸시 커밋 검증 실패 — 푸시 중단: {reason}")
                     flag_needs_review(commit, reason)
                     return 1
-            log(f"미푸시 커밋 {pending}개 — 푸시 재시도")
-            if do_push():
-                log("미푸시 커밋 게시 완료")
-            else:
-                log("푸시 재시도 실패")
-                return 1
+            log(f"미푸시 커밋 {pending}개 — 새 자료 처리 후 게시 재시도")
         if dirty and not pending:
             # Dirty 파일이 있지만 커밋되지 않음 → 커밋 시도
             log(f"Dirty 파일 감지 (소스 해시 무관): {dirty}")
@@ -848,14 +854,14 @@ def main():
                 # 재시도 마커 정리 (성공적으로 처리됨)
                 RETRY_TRANSLATION.unlink(missing_ok=True)
                 RETRY_COMMIT.unlink(missing_ok=True)
-                return 0
+                return publish_pending(pending)
             if r.returncode not in (0, 1):
                 log(f"--check 비정상 종료 ({r.returncode})")
                 return 1
             needs_build, enrich_only = decide_pipeline(
                 False, r.returncode, dirty, RETRY_ENRICH.exists())
         if not needs_build and not enrich_only:
-            return 0
+            return publish_pending(pending)
         log("빌드 필요 — 시작" if needs_build else "소스 변경 없음 — 빌드 없이 enrich만 실행")
 
         # 2a~2c-2는 빌드 파이프라인 — enrich-only 모드면 건너뜀
@@ -996,7 +1002,9 @@ def main():
             return 1
         if not files:
             log("커밋할 변경 없음")
-            # 번역 재시도 마커가 있으면 실패로 반환 (다음에 재시도)
+            # No new commit still must retry an earlier failed publication.
+            if publish_pending(pending):
+                return 1
             return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()) else 0
 
         log(f"변경 파일: {files}")
