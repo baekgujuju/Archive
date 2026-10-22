@@ -5269,5 +5269,205 @@
     "category_ko": "ETF 차트",
     "owner_hint": "TradingView",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7040f2a29a140dfb83408dd52cf002659e6c9ca5d3a9152d6a93c453a5bdc5bc": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "QQQ 일봉: 상단 저항과 50EMA 지지",
+    "description_ko": "TradingView의 QQQ 일봉 차트. 약 747달러의 상단 저항, 718~738달러 부근 저항 영역과 상승 추세선이 표시되어 있다. 50EMA 지지 및 저점 상승 구조를 설명한다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:915db46f401317105ab4d60e6426249db7680c113bd8f694a7b19ee6b09c961d": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "RIVN 주봉: 삼각수렴과 타이트한 가격 움직임",
+    "description_ko": "TradingView의 리비안 주봉 차트. 장기 삼각수렴 이후 상방 과열과 되돌림을 표시하고, 최근 지지 영역에서 구조를 유지하는 좁은 가격 움직임을 역헤드앤숄더 가능성과 함께 설명한다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8a865a0646ed9e97fec7afe1c97e8b6ef3de923f6ac5d7d0f4650534d73ab369": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "RIVN 일봉: 거래량 프로파일과 주요 지지·저항",
+    "description_ko": "TradingView의 리비안 일봉 차트. 가격대별 거래량 분포, 이동평균선과 수렴 추세선이 겹쳐 있으며, 약 16.60달러의 가격과 상단 공급 영역 및 하단 지지 영역이 표시되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:303e065a3c9c1b0a11460f2180598e9d4e900c5e6de0b581fccba58f7857456b": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "RIVN 일봉: 이동평균선 밀집 구간과 POC 회복",
+    "description_ko": "TradingView의 리비안 일봉 차트. 6월 26일 가격이 밀집한 이동평균선과 POC 위로 상승한 구간을 강조한다. 저점 상승 구조와 약 16.54달러의 주요 수평 가격대, 상단 하락 추세선이 표시되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e22f4d15de5b61815828498dc319d4f486a1f725b647327f12f42b747f3821d0": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "RIVN 1시간봉: 단기 돌파 진입 구간",
+    "description_ko": "TradingView의 리비안 1시간봉 차트. 저점 반등 이후 좁은 횡보 구간과 상승 추세선을 형성하고 약 15.8달러 수평선을 돌파하는 모습을 표시한다. 차트 주석에는 하위 시간대의 움직임을 돌파로 판단한 진입이 설명되어 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3dc766f28628bc80196b2267cf2a1c86e4423323a433bf59a6f91c193ff4194a": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "RIVN 일봉: 저항 영역 도달과 청산 설명",
+    "description_ko": "TradingView의 리비안 일봉 차트. 장기 하락 추세선 돌파 이후 약 20.14달러까지 상승한 모습과 19~21달러 부근 저항 영역을 강조한다. 저항가격에서 강세를 활용해 청산한다는 매도 관점이 적혀 있다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f0c53c48b6a125341272cc1e7ba7921c0badf9cef0a8c5f60a8dc7a5aa4103fc": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "WGMI 일봉: 고점 이후 하락과 지지선 테스트",
+    "description_ko": "TradingView의 CoinShares Bitcoin Mining ETF 일봉 차트. 70달러대 고점 이후 이동평균선 아래로 하락한 흐름과 약 47.57달러의 가격을 보여준다. 46.12달러 지지선, 50~58달러 부근 저항 영역과 36~39달러 부근 하단 지지 영역이 표시되어 있다.",
+    "category_ko": "금융·ETF 차트",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b5c552fdf788c721dbe3ba1f9343875a55e7e1940cf733a1b02240ca148c79f8": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hut 8 Corp. (HUT) 주봉 차트",
+    "description_ko": "트레이딩뷰의 HUT 주봉 차트. 급등 후 조정 중이며, 20EMA 위에서 상위 시간대 구조가 유지된다는 주석과 주요 지지·저항선이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8f6edcc8c0df57b055e227a57436b2608a4afeba569a0a0c4053ecf832ac4d3d": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hut 8 Corp. (HUT) 일봉 하락 추세와 지지 확인",
+    "description_ko": "HUT 일봉에 포물선 형태의 하락 추세가 표시되어 있다. 약 83달러 부근의 주요 지지선에서 긴 아래꼬리를 형성하고 양봉으로 마감한 모습과 변동성 지표가 강조되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:127d8b93c160ddae8dd7116ca2e4814acaa38998add6570067a543b47d40e21b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hut 8 Corp. (HUT) 일봉 매매 시나리오",
+    "description_ko": "HUT 일봉의 지지·저항 구간과 매수 포지션의 손익 구간을 표시한 차트. 진입 기준 약 88.03달러, 목표 약 109.20달러, 손절 기준 약 83.84달러가 보인다.",
+    "category_ko": "주식 매매 시나리오",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:474dd5b90e755a05624f7376246cfc4a4a587643c6620a3a876de213a929ab06": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hut 8 Corp. (HUT) 일봉 반등과 저항 돌파",
+    "description_ko": "HUT가 약 83달러 지지 구간에서 반등한 뒤 104~110달러 부근의 가격대와 이동평균선을 넘어 119.49달러까지 상승한 일봉 차트.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a54c8dbeb12e740085154f20d609d55284ded4e036b45418a76d663721015d34": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AppLovin (APP) 일봉 지지 구간 매수 시나리오",
+    "description_ko": "APP 일봉에서 주요 가격대와 400일 단순이동평균선 부근의 긴 아래꼬리를 근거로 종가 매수 시나리오를 표시했다. 당일 저가를 손절 기준으로, 주요 저항 가격을 익절 목표로 제시한다.",
+    "category_ko": "주식 매매 시나리오",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5d97e24e4dfab941ab4b812d034af1efce06129d2a5905c7fe68e3444307e207": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "AppLovin (APP) 주봉 상위 시간대 구조 분석",
+    "description_ko": "APP 주봉의 주요 지지·저항 구간과 매매 손익 구간을 표시한 차트. 상위 시간대 구조가 유지된다는 주석과 주요 저항 가격에서 익절한다는 설명이 보인다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bb7b94e72a17dcc46afec2b6e19ebd0dd0f088b2de0f755508bbfeb4265a0c67": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "QQQ 1시간봉: 급락과 투매 구간",
+    "description_ko": "TradingView의 QQQ 1시간봉 차트. 급락 과정에서 거래량이 증가하고 이후 반등하는 모습이며, 6월 9일 투매 확인이라는 주석과 지지·저항 영역이 표시되어 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8c3cb13468276b8b4b5b108406ab997172cbf8d4b39a5da09cdd9f0a2b694df3": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "QQQ 일봉: 하락 흐름과 상대강도 비교",
+    "description_ko": "QQQ 일봉에 이동평균선, 거래량, 주요 가격대가 표시되어 있다. 6월 5·8·9일 지수 움직임과 VELO를 비교해 며칠간의 상대강도를 파악한다는 주석이 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0693b6ce211ab7762f97208e1954f2b2af4d56512d590816100a1b96301f9532": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VELO 주봉: 상위 시간대 가격 구조",
+    "description_ko": "Velo3D의 주봉 차트. 하락 추세선과 상승 추세선, 약 16~18달러의 강조 영역, 상단 저항선이 표시되어 있으며 '좋은 HTF 구조'라는 주석이 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:33402705815b6d97ea8d803c0343d5f3804d83c319a306d59bf381fc4e50cf69": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VELO 일봉: 주요 가격대 반등과 상대강도",
+    "description_ko": "VELO 일봉에 상승·하락 추세선과 주요 수평 가격대가 표시되어 있다. 주요 가격에서 긴 아래꼬리를 남기고 양전한 움직임을 하락세 종료 가능성과 지수 대비 상대강도로 해석하는 주석이 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:16e50ec56fa6a9a304834cbd86b4a07efcc5d88886e0cdc7dba1de91062cdf13": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VELO 일봉: 목표가와 손절가 설정",
+    "description_ko": "VELO 반등 구간에 매매 손익 영역이 표시되어 있다. 약 26달러의 주요 저항을 목표가로, 주요 지지 가격 아래를 손절 영역으로 제시하며 6월 5일 저가도 언급한다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ea6c7a21cd7cc11732505ad89951d423e4f80e5b0df6d951f3bf75e3a7b24fbc": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VELO 일봉: 급등 이후 매도 시점 사례",
+    "description_ko": "VELO가 큰 거래량을 동반해 약 30.61달러까지 급등한 차트. 목표가 도달 후에도 장중 강세가 이어져 6월 11일 종가까지 보유한 뒤 매도하는 것이 이상적이었다는 주석이 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e836af68379a555b9fa9751baf28b5bf79a4945a9b36a98cd274d4921020a704": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SATL 일봉: 급락 후 바닥 형성과 돌파",
+    "description_ko": "Satellogic의 일봉 차트. 급락 이후 반등해 작은 바닥 구간을 형성하고 돌파하는 모습에 주석이 달려 있다. 50EMA 위·100EMA 부근의 돌파와 상단 약 3.24달러 가격대가 강조되어 있다.",
+    "category_ko": "금융 차트",
+    "owner_hint": "tmmrwseoul / TradingView",
+    "provider": "codex"
   }
 }
