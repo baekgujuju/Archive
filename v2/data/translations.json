@@ -9028,7 +9028,7 @@
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
       "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T01:48:04.616347+00:00"
+      "failed_at": "2026-10-22T02:55:46.039210+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -13314,7 +13314,7 @@
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T01:48:04.617336+00:00"
+    "failed_at": "2026-10-22T02:55:46.041152+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13420,7 +13420,7 @@
       "content_hash": "e1d43b14dd8a34ab",
       "status": "failed",
       "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T01:48:04.617347+00:00"
+      "failed_at": "2026-10-22T02:55:46.041161+00:00"
     }
   },
   "reply:2111879987611521450:2111883184216404254": {
@@ -13475,7 +13475,7 @@
       "content_hash": "2d9c3e65301588f4",
       "status": "failed",
       "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-      "failed_at": "2026-10-22T01:48:04.616962+00:00"
+      "failed_at": "2026-10-22T02:55:46.040820+00:00"
     }
   },
   "reply:2111820320956952991:2111864672689479773": {
@@ -13539,7 +13539,7 @@
     "content_hash": "98911601b2fe57d4",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T01:48:04.620189+00:00"
+    "failed_at": "2026-10-22T02:55:46.044617+00:00"
   },
   "reply:2108954220841816471:2109163730521207277": {
     "paragraphs": [
@@ -13600,7 +13600,7 @@
     "content_hash": "d74d2060f9e11208",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T01:48:04.620210+00:00"
+    "failed_at": "2026-10-22T02:55:46.044632+00:00"
   },
   "reply:2112286960752714130:2112286980574982434": {
     "paragraphs": [
@@ -13778,7 +13778,7 @@
     "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T01:48:04.616296+00:00"
+    "failed_at": "2026-10-22T02:55:46.039145+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13804,7 +13804,7 @@
     "content_hash": "8d47765bd4bcc6ee",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T01:39:58.871984+00:00"
+    "failed_at": "2026-10-22T02:47:40.332491+00:00"
   },
   "quote:2111829688427639079:quote:2111686757024739648": {
     "paragraphs": [
@@ -13821,7 +13821,7 @@
     "content_hash": "6016f67d7b396825",
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T01:48:04.616945+00:00"
+    "failed_at": "2026-10-22T02:55:46.040805+00:00"
   },
   "reply:2112861554693574817:2112868875092316280": {
     "paragraphs": [
@@ -14153,5 +14153,44 @@
     "status": "failed",
     "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
     "failed_at": "2026-10-22T02:34:56.753617+00:00"
+  },
+  "2112082731652030821": {
+    "paragraphs": [
+      "☕️ AI가 코드 한 줄 고치기 전에 파일 수십 개부터 열어봅니다. \n그 사이 사용량은 벌써 줄어들고요. \nXERJ는 이 탐색 비용을 줄이려는 도구입니다. 🔎",
+      "GitHub 8.7K Star. \n로컬 폴더를 검색 인덱스로 만들어 Agent가 관련 코드 조각을 바로 찾게 해줍니다. \n결과에 파일 경로와 줄 번호가 붙어, 같은 검색을 반복하거나 파일 전체를 읽는 일을 줄일 수 있어요.",
+      "개발할 때는 비슷한 문제를 해결한 오픈소스 저장소도 함께 인덱싱해두는 방식이 유용해 보입니다. \nAI가 코드를 쓰기 전에 실제 구현을 찾아 참고하게 하는 거죠. 🛠️",
+      "코드 외에 PDF, Office 문서, 로그, CSV, SQLite도 처리합니다.\n전문·벡터·하이브리드 검색을 지원하고, MCP로 세션 간 기억을 제공할 수도 있습니다.",
+      "프로젝트 측의 소규모 비교 테스트에서는:",
+      "→ grep 방식과 XERJ 모두 16/16회 작업 완료\n→ 출력 Token: 26,477 → 9,982\n→ 모델 호출 비용: $3.27 → $1.58",
+      "특정 조건에서 나온 결과입니다. \n낯선 코드나 비공개 코드처럼 모델이 미리 알기 어려운 환경에서 더 유용할 수 있으며, 모든 프로젝트에서 같은 비용 절감을 보장하지는 않습니다.",
+      "단일 실행 파일로 배포되며 Windows, macOS, Linux를 지원합니다. \nApache-2.0 라이선스이고 로컬에 설치해 사용할 수 있습니다.",
+      "🔗Github https://t.co/KnFPf6T039",
+      "#AI (https://x.com/hashtag/AI?src=hashtag_click)  #AICaffeine (https://x.com/hashtag/AICaffeine?src=hashtag_click)  #Github (https://x.com/hashtag/Github?src=hashtag_click)"
+    ],
+    "translated": [],
+    "content_hash": "91cc41c8a00ee63e",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:51:45.434522+00:00"
+  },
+  "reply:2016891443181224110:2016944535016722454": {
+    "paragraphs": [
+      "The way you frame it is exactly why you’re such a great teacher. “Selling into strength” accepts that price may keep rising. Defining success as selling despite price rising further avoids emotional pain and bad learning. It also makes your advice much more authentic."
+    ],
+    "translated": [],
+    "content_hash": "e00255cd0d52b952",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:59:51.308946+00:00"
+  },
+  "reply:2016891443181224110:2016894951536414904": {
+    "paragraphs": [
+      "Appreciate .. you have guts to give a contrarian view at this crucial level. 👍"
+    ],
+    "translated": [],
+    "content_hash": "7b9eb9df4e9d8b35",
+    "status": "failed",
+    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
+    "failed_at": "2026-10-22T02:59:51.306127+00:00"
   }
 }
