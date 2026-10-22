@@ -241,5 +241,16 @@
     ],
     "fingerprint": "41770cc3323e19b90869f2f67e76e2285964d93ae8b3e480c3826df2e5d6985e",
     "stale": true
+  },
+  "2080370789790937413": {
+    "title": "Meta Llama 3",
+    "summary_ko": "Meta가 공개한 최첨단 오픈소스 대규모 언어 모델(LLM) Meta Llama 3 발표 및 모델 안내.",
+    "category": "인공지능 / 오픈소스 LLM",
+    "repo_url": "https://github.com/meta-llama/llama3",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:meta llama"
+    ],
+    "fingerprint": "0af5c628961f2c105dec75c7fcd048e089809ad3b3e7f734b7606320984ff294"
   }
 }

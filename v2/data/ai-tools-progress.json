@@ -1,13 +1,29 @@
 {
   "total": 702,
-  "remaining": 120,
+  "remaining": 104,
   "stats": {
-    "verified": 0,
-    "pending": 0,
-    "pending_github_look": 0,
+    "verified": 1,
+    "pending": 12,
+    "pending_github_look": 3,
     "cached": 582,
     "temporary_failures": 0,
     "errors": 0
   },
-  "pending_details": {}
+  "pending_details": {
+    "2080370789790937413:embedded-6dc5c9ebc202becb9b48aa3d93981844bd6a6c7ead3ccd8d9e4c7e4dcf344a78.jpg": "successfully inspected: no GitHub project",
+    "2080370789790937413:embedded-1037dd5d16e647fcfc42460720d90dbf6bb34b679ecd2f65407a76a9f7215404.jpg": "successfully inspected: no GitHub project",
+    "2080370789790937413:embedded-663524c57f6846bb19dcaf0a44d1ebeceec154bf506575c88bbff92b40409607.jpg": "successfully inspected: no GitHub project",
+    "2042091141328466156:2031da7b5558dbb2.png": "GitHub screenshot requires verified repository match",
+    "2080370789790937413:embedded-f71085f6dad2656192f70df809cf3321d46bbc25e7334c6d050448bb7b546cf4.jpg": "successfully inspected: no GitHub project",
+    "2049850256888824200:embedded-e2374893c9025cc3a5ef5d795e1886a84e59034b2e7e2fcc4d59f44b30dad410.jpg": "successfully inspected: no GitHub project",
+    "2049850256888824200:embedded-8b1ac425da981dde60ad7d25039e2d39ead84c7c92578c80df2a542ecf4467ae.jpg": "successfully inspected: no GitHub project",
+    "2049850256888824200:embedded-eac914af9c997704809edacad46f38864e9cbe10998e63e671de45fe4fc45aab.jpg": "successfully inspected: no GitHub project",
+    "2089574903523749987:eb78cb1742206670.jpg": "GitHub screenshot requires verified repository match",
+    "2049850256888824200:embedded-e5aa22978eff8b443eec60850e17defc0a2e050297eed5f2f3c8b22d45aae3af.jpg": "successfully inspected: no GitHub project",
+    "2049850256888824200:embedded-59203b4a2b02aa4869d09839b3a592e9e3481fd4bec71a35dd1370f70f6e9a8a.jpg": "successfully inspected: no GitHub project",
+    "2049850256888824200:embedded-9fab1c1414c8c89738b5a01dd0ddcf2d3e6d0f6962008fe5fcff945aff111efd.jpg": "successfully inspected: no GitHub project",
+    "2049850256888824200:embedded-a75af85f8851ab764dc4dc056e4501edc11b0d0c924963fda52f61b629f0d249.jpg": "successfully inspected: no GitHub project",
+    "2089574903523749987:bd6d980071ac7d72.jpg": "GitHub screenshot requires verified repository match",
+    "2049850256888824200:embedded-1b64087e0c66bf09aac3f3f6fd127527d2f6d6fe3fc5389d9444e9dcfc492b89.jpg": "successfully inspected: no GitHub project"
+  }
 }

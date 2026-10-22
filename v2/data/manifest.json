@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-22T07:03:29.930045+00:00",
+  "version": "2026-10-22T07:12:42.968337+00:00",
   "content_updated_at": "2026-10-22T06:23:06.071441+00:00",
   "build": "v2",
   "source_hash": "e7b054afdc5f13a3083ef57bf26abcaf6ea77763fa40fc1c65201f6aab3dd00a",
@@ -24,7 +24,7 @@
   "app_version": "2.5.8",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "5d9cea92236377e8db7aeb286288f488eaffb1f1603202f9e08137624504776c",
+    "sha256": "30b72ffcad3d1be41a04e9f8f96292ab6ac25c6014a4f342efcabe332b218b1d",
     "count": 724
   },
   "shared_state": {
@@ -34,7 +34,7 @@
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "f9761e062cd8959184860fd83b43f8a3af382d8df7f887fe2596feaa5e4cc6f8",
-    "count": 22
+    "sha256": "c44a4707d03879d459f9c43403258fc34ed6bf0a53abe1a612aaa56dae0a6c8a",
+    "count": 23
   }
 }

@@ -3353,5 +3353,80 @@
     "fingerprint": "249c77ba3cc59f750e97ff5a4b2bb6277f85608087a106365bf0cf08d85ae8c8",
     "entry": null,
     "version": 3
+  },
+  "2080370789790937413:embedded-eaae88cb2475aaed7db6d52eee193531b64a83ebd8c3285112d5ae5a752908e8.jpg": {
+    "fingerprint": "0af5c628961f2c105dec75c7fcd048e089809ad3b3e7f734b7606320984ff294",
+    "entry": {
+      "title": "Meta Llama 3",
+      "summary_ko": "Meta가 공개한 최첨단 오픈소스 대규모 언어 모델(LLM) Meta Llama 3 발표 및 모델 안내.",
+      "category": "인공지능 / 오픈소스 LLM",
+      "repo_url": "https://github.com/meta-llama/llama3",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:meta llama"
+      ],
+      "fingerprint": "0af5c628961f2c105dec75c7fcd048e089809ad3b3e7f734b7606320984ff294"
+    },
+    "version": 3
+  },
+  "2080370789790937413:embedded-6dc5c9ebc202becb9b48aa3d93981844bd6a6c7ead3ccd8d9e4c7e4dcf344a78.jpg": {
+    "fingerprint": "acc1c8d0593233eff99866b762d72599cbe7988b24f495f157075443117311d5",
+    "entry": null,
+    "version": 3
+  },
+  "2080370789790937413:embedded-1037dd5d16e647fcfc42460720d90dbf6bb34b679ecd2f65407a76a9f7215404.jpg": {
+    "fingerprint": "7e190d747c67b42f7c15e77b2bb5a3ace8fb9e5c6c0d68abff27a9f550833270",
+    "entry": null,
+    "version": 3
+  },
+  "2080370789790937413:embedded-663524c57f6846bb19dcaf0a44d1ebeceec154bf506575c88bbff92b40409607.jpg": {
+    "fingerprint": "c62624879ac8578803d066c83819341c52114fe3415a6ca9e627e21eda4a31eb",
+    "entry": null,
+    "version": 3
+  },
+  "2080370789790937413:embedded-f71085f6dad2656192f70df809cf3321d46bbc25e7334c6d050448bb7b546cf4.jpg": {
+    "fingerprint": "0805d4f884aa8ddf9d3ee652724028a0539d483ed1d1e433ca4757896b547d0f",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-e2374893c9025cc3a5ef5d795e1886a84e59034b2e7e2fcc4d59f44b30dad410.jpg": {
+    "fingerprint": "9723049bedadfb9a5ef7943126dd828805297b34f7bf99933d481630784a60fd",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-8b1ac425da981dde60ad7d25039e2d39ead84c7c92578c80df2a542ecf4467ae.jpg": {
+    "fingerprint": "945c17ec3ef432169441dcaab6ddc0a6b03e7a0a6d80c607189c6a5833d58b7c",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-eac914af9c997704809edacad46f38864e9cbe10998e63e671de45fe4fc45aab.jpg": {
+    "fingerprint": "27a51d019a2ecd231bb0b8fc24e378378e6eeec355ddda2857f8aa3a273a81d3",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-e5aa22978eff8b443eec60850e17defc0a2e050297eed5f2f3c8b22d45aae3af.jpg": {
+    "fingerprint": "22984abd73df237e1c004663a31ac6c8764b1f460764de8e72f7199b07741a13",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-59203b4a2b02aa4869d09839b3a592e9e3481fd4bec71a35dd1370f70f6e9a8a.jpg": {
+    "fingerprint": "9896ed97edfaa0a344f2dcec9fc09f988abc536c7c597e8e09696fc915aaf2d5",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-9fab1c1414c8c89738b5a01dd0ddcf2d3e6d0f6962008fe5fcff945aff111efd.jpg": {
+    "fingerprint": "c3ad6f02999b4a39697e7c56477bebbf0278d8b2d16024c90c52470d65418370",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-a75af85f8851ab764dc4dc056e4501edc11b0d0c924963fda52f61b629f0d249.jpg": {
+    "fingerprint": "1f31c1e0895370eb69fcd24eaefecc81a95405efc620ceed1eb1cab6469e4ef2",
+    "entry": null,
+    "version": 3
+  },
+  "2049850256888824200:embedded-1b64087e0c66bf09aac3f3f6fd127527d2f6d6fe3fc5389d9444e9dcfc492b89.jpg": {
+    "fingerprint": "32decda593c5cbe2e68e223350dcbe0846b0e09fd0c132b2a4f160140d2ee700",
+    "entry": null,
+    "version": 3
   }
 }
