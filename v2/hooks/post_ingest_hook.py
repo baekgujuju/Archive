@@ -371,6 +371,35 @@ def flag_needs_review(commit, reason):
     log(f"검수 대상 기록: {commit[:12]} — {reason}")
 
 
+def validate_candidate_media(commit):
+    from media_integrity import media_urls, validate_owned_media
+    manifest_data, missing = _git_show_bytes(commit, "v2/data/manifest.json")
+    if missing:
+        raise ValueError("candidate manifest missing")
+    manifest = json.loads(manifest_data)
+    records = []
+    for entry in manifest["chunks"].values():
+        path = _manifest_relpath(entry["file"])
+        if path is None:
+            raise ValueError("unsafe chunk path")
+        raw, missing = _git_show_bytes(commit, path)
+        if missing:
+            raise ValueError("candidate chunk missing: " + path)
+        records.extend(json.loads(raw)["posts"])
+    mapping_data, missing = _git_show_bytes(commit, "v2/data/media-map.json")
+    if not missing:
+        mapping = json.loads(mapping_data)
+        mapping = mapping.get("map", mapping)
+        if not isinstance(mapping, dict):
+            raise ValueError("invalid candidate media map")
+        mapped = [mapping[url] for url in media_urls(records) if url in mapping]
+        records.append({"media": mapped})
+    def reader(path):
+        raw, missing = _git_show_bytes(commit, path)
+        return None if missing else raw
+    return validate_owned_media(records, reader)
+
+
 def do_push():
     try:
         checked_out = current_branch()
@@ -411,6 +440,15 @@ def do_push():
     if not ok:
         log(f"게시 차단: HEAD 아티팩트 검증 실패 — {reason}")
         flag_needs_review(sha, reason)
+        return False
+    # Validate referenced media against exactly the SHA being pushed. A local
+    # file or staged-only asset is insufficient. Retriable: a later repair
+    # commit can fix media without rewriting earlier commits or review gates.
+    try:
+        validate_candidate_media(sha)
+    except (RuntimeError, ValueError, ImportError) as exc:
+        log(f"게시 차단: 미디어 참조 무결성 실패 — {exc}")
+        RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
         return False
     log(f"게시: origin/{branch} 로 push ({sha[:12]})")
     r = git(["push", "origin", f"{sha}:refs/heads/{branch}"], timeout=300)

@@ -1,0 +1,23 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),path=require('path');
+const {parseHTML,DOMParser}=require('linkedom');
+const root=__dirname;
+const {document,NodeFilter}=parseHTML('<html><body></body></html>');
+Object.defineProperty(document,'baseURI',{value:'https://baekgujuju.github.io/Archive/v2/'});
+let source=fs.readFileSync(path.join(root,'app.js'),'utf8');
+const needle='return { init: init, refreshSavedState: refreshSavedState, sanitizeHtml: cleanHtml, replyBody: replyBody };';
+assert(source.includes(needle));
+source=source.replace(needle,'return {articleHtml:articleHtml,replyBody:replyBody};'); // test-only access to the actual private functions
+const ctx={document,DOMParser,NodeFilter,URL,window:{ArchiveRender:{publishedLabel:()=>''}},localStorage:{getItem:()=>null},console};
+vm.runInNewContext(source,ctx);
+const record=JSON.parse(fs.readFileSync(path.join(root,'pipeline-fixture-record.json'),'utf8'));
+let html=ctx.ArchiveApp.articleHtml(record);
+const result=new DOMParser().parseFromString('<html><body>'+html+'</body></html>','text/html');
+for(const url of ['https://github.com/a/b/releases/tag/v1.1.5','https://example.org/reply/full','https://example.org/quote/full'])assert(result.querySelector(`a[href="${url}"]`),url);
+assert(result.querySelector('figure.video-thumbnail img[alt="동영상 썸네일"]'));
+assert(result.querySelector('figure.video-thumbnail figcaption a').getAttribute('href')===record.sourceUrl);
+record.media[0].sourceUrl='javascript:alert(1)';
+record.fullText='<script>alert(1)</script> https://example.org/safe';
+html=ctx.ArchiveApp.articleHtml(record);
+assert(!html.includes('href="javascript:'));
+assert(!html.includes('<script>'));
+console.log('PASS actual reader render: main/reply/quote href, video thumbnail + original link, unsafe targets escaped');

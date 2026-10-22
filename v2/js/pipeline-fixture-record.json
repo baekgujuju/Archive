@@ -1,0 +1,90 @@
+{
+  "tweetId": "100",
+  "sourceUrl": "https://x.com/Author/status/100",
+  "capturedAt": "2026-10-22T01:03:20.835521+00:00",
+  "createdAt": "2026-10-21T00:00:00Z",
+  "fullText": "start\nhttps://github.com/a/b/releases/tag/v1.1.5 \n\nEND",
+  "author": {
+    "handle": "@Author",
+    "name": "Author"
+  },
+  "media": [
+    {
+      "type": "photo",
+      "url": "https://example.org/poster.png",
+      "alt": "동영상 썸네일",
+      "kind": "video_thumbnail",
+      "sourceUrl": "https://x.com/Author/status/100"
+    }
+  ],
+  "links": [
+    {
+      "url": "https://github.com/a/b/releases/tag/v1.1.5",
+      "text": "https://github.com/a/b/…",
+      "kind": "body"
+    },
+    {
+      "url": "https://x.com/Author/status/100",
+      "text": "동영상 원문 보기",
+      "kind": "media_source"
+    }
+  ],
+  "stats": {},
+  "category": "",
+  "quoted": {
+    "tweetId": "102",
+    "sourceUrl": "https://x.com/Other/status/102",
+    "capturedAt": "2026-10-22T01:03:20.835521+00:00",
+    "createdAt": "2026-10-21T00:00:00Z",
+    "fullText": "https://example.org/quote/full",
+    "author": {
+      "handle": "@Other",
+      "name": "Other"
+    },
+    "media": [],
+    "links": [
+      {
+        "url": "https://example.org/quote/full",
+        "text": "https://example.org/quote/…",
+        "kind": "body"
+      }
+    ],
+    "stats": {},
+    "category": ""
+  },
+  "replies": [
+    {
+      "tweetId": "101",
+      "sourceUrl": "https://x.com/Other/status/101",
+      "capturedAt": "2026-10-22T01:03:20.835521+00:00",
+      "createdAt": "2026-10-21T00:00:00Z",
+      "fullText": "댓글 자료 (https://example.org/reply/full)",
+      "author": {
+        "handle": "@Other",
+        "name": "Other"
+      },
+      "media": [],
+      "links": [
+        {
+          "url": "https://example.org/reply/full",
+          "text": "댓글 자료",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "category": "",
+      "isThread": false
+    }
+  ],
+  "quoteStatus": "extracted",
+  "captureType": "text",
+  "capture": {
+    "version": "1",
+    "requested_url": "https://x.com/Author/status/100",
+    "observed_main_url": "https://x.com/Author/status/100",
+    "author_handle": "Author",
+    "body_status": "text",
+    "quote_status": "extracted",
+    "capture_type": "text"
+  }
+}

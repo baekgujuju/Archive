@@ -31,7 +31,7 @@ from urllib.parse import urlparse
 # 수집기가 절대 쓰지 않는다 (기존 값 보존 + 수신 값 무시).
 COLLECTOR_FIELDS = {
     "sourceUrl", "capturedAt", "createdAt", "fullText",
-    "author", "media", "stats", "quoted", "replies",
+    "author", "media", "stats", "quoted", "replies", "links",
 }
 # 수집기가 건드리지 않는 필드 (분류·번역·분석·검수).
 PROTECTED_FIELDS = {

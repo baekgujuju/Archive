@@ -80,7 +80,7 @@ class MirrorPublicationTests(unittest.TestCase):
             if args[:2] == ['rev-parse', 'HEAD']:
                 return subprocess.CompletedProcess(args, 0, 'a' * 40 + '\n', '')
             return subprocess.CompletedProcess(args, 0, '', '')
-        with patch.object(hook,'PUBLISH_BRANCH','main'), patch.object(hook,'current_branch',return_value='main'), patch.object(hook,'validate_commit_artifacts',return_value=(True,'')), patch.object(hook,'git',side_effect=_git) as git:
+        with patch.object(hook,'PUBLISH_BRANCH','main'), patch.object(hook,'current_branch',return_value='main'), patch.object(hook,'validate_commit_artifacts',return_value=(True,'')), patch.object(hook,'validate_candidate_media',return_value=(True,[])), patch.object(hook,'git',side_effect=_git) as git:
             self.assertTrue(hook.do_push())
             self.assertEqual(git.call_args.args[0],['push','origin','a' * 40 + ':refs/heads/main'])
     def test_monitor_retries_media_with_unchanged_sources(self):

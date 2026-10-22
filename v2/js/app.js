@@ -57,11 +57,14 @@ var ArchiveApp = (function () {
   function title(a) { return String(a.title || bodyText(a).split('\n')[0].slice(0, 90) || a.author || '글'); }
   function author(a) { return String(a.author && typeof a.author === 'object' ? a.author.name || a.author.handle || '' : a.author || ''); }
   function metadata(a) { var date=window.ArchiveRender&&window.ArchiveRender.publishedLabel(a.published_at||a.createdAt);return [author(a), a.handle,date?'작성 '+date:'',a.source_domain,a.date_saved?'저장 '+a.date_saved:''].filter(Boolean).join(' · '); }
-  function images(media) {
+  function images(media, sourceUrl) {
     return (Array.isArray(media) ? media : []).map(function (pair) {
       var raw = Array.isArray(pair) ? pair[1] || pair[0] : typeof pair === 'string' ? pair : pair && (pair.full || pair.url || pair.src || pair.thumb);
       var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];var url = safeUrl(mapped?new URL(mapped,document.baseURI).href:raw);
-      return url ? '<img tabindex="0" title="이미지 확대" src="' + esc(url) + '" alt="게시물 이미지" loading="lazy">' : '';
+      var video = pair && !Array.isArray(pair) && pair.kind === 'video_thumbnail';
+      var origin = video && safeUrl(pair.sourceUrl || sourceUrl);
+      var image = url ? '<img tabindex="0" title="이미지 확대" src="' + esc(url) + '" alt="'+(video?'동영상 썸네일':'게시물 이미지')+'" loading="lazy">' : '';
+      return video ? '<figure class="video-thumbnail">'+image+(origin?'<figcaption><a href="'+esc(origin)+'" target="_self" rel="noopener noreferrer">동영상 원문 보기 ↗</a></figcaption>':'<figcaption>영상 원문 주소 미확인</figcaption>')+'</figure>' : image;
     }).join('');
   }
   function articleBodyHtml(a){
@@ -115,7 +118,7 @@ var ArchiveApp = (function () {
     depth=depth||0; ancestors=ancestors||new Set();
     if(!q||typeof q!=='object'||Array.isArray(q)||depth>8||ancestors.has(q))return '';
     var seen=new Set(ancestors);seen.add(q);
-    return '<details class="quoted" open><summary>인용 게시글</summary><blockquote><p>'+esc(author(q))+'</p>'+replyBody(q)+images(q.media||q.mediaImages)+renderQuoted(q.quoted,depth+1,seen)+'</blockquote></details>';
+    return '<details class="quoted" open><summary>인용 게시글</summary><blockquote><p>'+esc(author(q))+'</p>'+replyBody(q)+images(q.media||q.mediaImages,q.sourceUrl)+renderQuoted(q.quoted,depth+1,seen)+'</blockquote></details>';
   }
   function renderReplies(a){
     // 답글 HTML (v1 패턴)
@@ -130,7 +133,7 @@ var ArchiveApp = (function () {
         var deleted = load('archive-deleted-replies', []);
         return '<div class="reply" data-reply-id="' + esc(rid) + '"' + (deleted.indexOf(rid) >= 0 ? ' hidden' : '') + '><div class="reply-head"><span class="reply-author">' + esc(rname) +
           '</span><span class="reply-time">' + esc(r.createdAt || '') + '</span>' + badge + '</div>' +
-          replyBody(r) + images(r.mediaImages || r.media) + renderQuoted(r.quoted) + (rid ? '<button type="button" data-hide-reply="' + esc(rid) + '">댓글 숨기기</button><button type="button" data-delete-reply="' + esc(rid) + '">댓글 삭제</button>' : '') + '</div>';
+          replyBody(r) + images(r.media || r.mediaImages,r.sourceUrl) + renderQuoted(r.quoted) + (rid ? '<button type="button" data-hide-reply="' + esc(rid) + '">댓글 숨기기</button><button type="button" data-delete-reply="' + esc(rid) + '">댓글 삭제</button>' : '') + '</div>';
       }).join('');
       repliesHtml = '<details class="replies"><summary>💬 댓글 ' + replies.length + '개</summary><div class="reply-list">' + items + '</div></details>';
     }
@@ -160,7 +163,7 @@ var ArchiveApp = (function () {
     var repliesHtml=renderReplies(a);
     var urlHtml=renderUrlContents(a);
     return '<h1>' + esc(title(a)) + '</h1>'+toolInfo(a)+'<p class="meta">' + esc(metadata(a)) + '</p><div class="aa-body" data-highlight-post="'+esc(String(a.id??a.tweetId??a.sourceUrl??''))+'">' +
-      translatedBody(a) + '</div>' + images(a.mediaImages) +
+      translatedBody(a) + '</div>' + images(a.media && a.media.some(function(m){return m&&m.kind==='video_thumbnail';})?a.media:a.mediaImages,a.sourceUrl) +
       renderQuoted(q) +
       repliesHtml + urlHtml +
       '<p>' + esc((a.topics || []).join(' · ')) + '</p>' + (url ? '<a href="' + esc(url) + '" target="_self" rel="noopener noreferrer">원문 보기 ↗</a>' : '');
