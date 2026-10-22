@@ -12457,7 +12457,7 @@
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-22T05:37:07.396649+00:00"
+    "failed_at": "2026-10-22T06:38:48.163774+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -14319,21 +14319,27 @@
     "paragraphs": [
       "The way you frame it is exactly why you’re such a great teacher. “Selling into strength” accepts that price may keep rising. Defining success as selling despite price rising further avoids emotional pain and bad learning. It also makes your advice much more authentic."
     ],
-    "translated": [],
+    "translated": [
+      "그렇게 설명하시는 방식이야말로 선생님이 훌륭한 스승인 이유입니다. “강세를 보일 때 매도하기”는 가격이 계속 오를 수 있다는 사실을 받아들이는 것입니다. 가격이 더 오르더라도 매도한 것을 성공으로 정의하면 감정적인 고통과 잘못된 학습을 피할 수 있습니다. 또 조언의 진정성도 훨씬 높아집니다."
+    ],
     "content_hash": "e00255cd0d52b952",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T02:59:51.308946+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.093316+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2016891443181224110:2016894951536414904": {
     "paragraphs": [
       "Appreciate .. you have guts to give a contrarian view at this crucial level. 👍"
     ],
-    "translated": [],
+    "translated": [
+      "감사합니다 .. 이 중요한 지점에서 대세에 반하는 견해를 내놓으시다니 배짱이 있으시네요. 👍"
+    ],
     "content_hash": "7b9eb9df4e9d8b35",
-    "status": "failed",
-    "error": "Command '['/home/hatch/workspace/.npm-global/bin/codex', 'exec', '--ephemeral', '--sandbox', 'read-only', '--skip-git-repo-check', '-C', '/home/hatch/workspace/article-archive/repo-full/v2/translation",
-    "failed_at": "2026-10-22T02:59:51.306127+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.092488+00:00",
+    "chunk": "posts-x.json"
   },
   "2112861554693574817": {
     "paragraphs": [
@@ -15496,5 +15502,248 @@
     "validation_version": 2,
     "translated_at": "2026-10-22T06:28:32.224776+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2112908192153845982:2112908220154962223": {
+    "paragraphs": [
+      "클로드 연결은 네 Grok Bot으로 보냈어. 거기서 바로 이어서 처리해."
+    ],
+    "translated": [
+      "클로드 연결은 네 Grok Bot으로 보냈어. 거기서 바로 이어서 처리해."
+    ],
+    "content_hash": "06f9fd292f49488f",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098954+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112794003435622616": {
+    "paragraphs": [
+      "사내에서 Claude 엔지니어가 와서 Tips알려준적이 있는데요. 보통 autocompact가 500K가 보통. 하네스같은거 잘 적용된 사람은 300K추천이라고 하더군요."
+    ],
+    "translated": [
+      "사내에서 Claude 엔지니어가 와서 팁을 알려준 적이 있는데요. 보통 autocompact가 500K가 보통. 하네스 같은 거 잘 적용된 사람은 300K 추천이라고 하더군요."
+    ],
+    "content_hash": "880dc166ad5cf297",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.097662+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112801630550909427": {
+    "paragraphs": [
+      "600k 하면 좋긴하겠는데 토큰 쭉쭉 달아서 5시간 한도에 부딪히더라고요..\n(max 5x 요금제라 그런지)\n그래서 가급적 250k 수준으로 완료되게 모듈을 작게 작게 치는 노력(?)을 하는 중입니다 😅"
+    ],
+    "translated": [
+      "600k 하면 좋긴하겠는데 토큰 쭉쭉 달아서 5시간 한도에 부딪히더라고요..\n(max 5x 요금제라 그런지)\n그래서 가급적 250k 수준으로 완료되게 모듈을 작게 작게 치는 노력(?)을 하는 중입니다 😅"
+    ],
+    "content_hash": "e3f5f6a295ff8039",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098388+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110180342103732506:2110180347711541324": {
+    "paragraphs": [
+      "3. Money and Empire\n찰스 킨들버거의 삶과 생각의 변화를 ‘Key-currency’를 중심으로 추적합니다. 달러의 위상, 기축통화 등에 관심이 많으신 분들에게 추천합니다."
+    ],
+    "translated": [
+      "3. 화폐와 제국\n찰스 킨들버거의 삶과 생각의 변화를 ‘기축통화’를 중심으로 추적합니다. 달러의 위상, 기축통화 등에 관심이 많으신 분들에게 추천합니다."
+    ],
+    "content_hash": "59836a2f052462b2",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.094438+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112786794223964429": {
+    "paragraphs": [
+      "/autocompact 250k 로 했습니다!"
+    ],
+    "translated": [
+      "/autocompact 250k 로 했습니다!"
+    ],
+    "content_hash": "f66e99c89d9403e6",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.097844+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112800488567824586": {
+    "paragraphs": [
+      "AUTOCOMPACT를 쓰십쇼"
+    ],
+    "translated": [
+      "AUTOCOMPACT를 쓰십쇼"
+    ],
+    "content_hash": "083baf83c5184d0d",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098183+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110180342103732506:2110180349791834593": {
+    "paragraphs": [
+      "4. Payment vs. Funding: The Law of Reflux for Today\n페리 교수의 아티클로 은행의 지불과 펀딩을 고찰합니다.\n은행의 지불과 펀딩을 이처럼 명료하게 파악한 글은 거의 없을 듯 합니다.",
+      "drive.google.com\nPayment vs Funding.pdf (https://t.co/ZZUROifCbW)  https://t.co/ZZUROifCbW"
+    ],
+    "translated": [
+      "4. 지급과 자금조달: 오늘날의 환류 법칙\n페리 교수의 아티클로 은행의 지불과 펀딩을 고찰합니다.\n은행의 지불과 펀딩을 이처럼 명료하게 파악한 글은 거의 없을 듯 합니다.",
+      "drive.google.com\n지급과 자금조달.pdf (https://t.co/ZZUROifCbW)  https://t.co/ZZUROifCbW"
+    ],
+    "content_hash": "f1f181e2dc436836",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.095454+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112785367158116627": {
+    "paragraphs": [
+      "/autocompact 400k 로 하셔야해요."
+    ],
+    "translated": [
+      "/autocompact 400k 로 하셔야해요."
+    ],
+    "content_hash": "3b138d5afa895bc8",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.097763+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110180342103732506:2110180351914201146": {
+    "paragraphs": [
+      "5. A Macro View of Shadow Banking\n그 유명한 졸탄 포자는 페리 교수를 지적인 아버지라고 부릅니다. 졸탄 포자는 페리 교수와도 특히 그림자 금융에 대해 여러 협업을 했었습니다. 졸탄 포자의 그림자 금융에 관한 최고 글입니다.",
+      "지금은 상황이 변해 ABCP 같은 것은 거의 존재감이 없습니다. 그 자리를 private credit 등이 꿰차고 들어섰습니다. 이 아티클을 정독하고 현재와 비교를 한다면 좋은 인사이트를 얻게 될 것이라고 생각합니다.",
+      "drive.google.com\nA Macro View of Shadow Banking.pdf (https://t.co/0jKrLiGl3Z)  https://t.co/0jKrLiGl3Z"
+    ],
+    "translated": [
+      "5. 그림자 금융에 대한 거시적 관점\n그 유명한 졸탄 포자는 페리 교수를 지적인 아버지라고 부릅니다. 졸탄 포자는 페리 교수와도 특히 그림자 금융에 대해 여러 협업을 했었습니다. 졸탄 포자의 그림자 금융에 관한 최고 글입니다.",
+      "지금은 상황이 변해 ABCP 같은 것은 거의 존재감이 없습니다. 그 자리를 사모대출 등이 꿰차고 들어섰습니다. 이 아티클을 정독하고 현재와 비교를 한다면 좋은 인사이트를 얻게 될 것이라고 생각합니다.",
+      "drive.google.com\n그림자 금융에 대한 거시적 관점.pdf (https://t.co/0jKrLiGl3Z)  https://t.co/0jKrLiGl3Z"
+    ],
+    "content_hash": "2614ee6e5cd41a33",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.097194+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110180342103732506:2110180340119798215": {
+    "paragraphs": [
+      "페리 교수를 기리며",
+      "제 프로필 사진 위에 있는 배경은 모두 페리 교수의 저작입니다. 페리 교수에게서 배운 것이 너무 많아 뉴욕에 갈 기회가 있으면 감사의 인사를 전하려고 했는데 너무 안타깝네요",
+      "그는 Money View라는 독특한 렌즈로 금융 현실을 들여다 본 위대한 학자였습니다.",
+      "그의 중요한 작업 몇가지를 소개합니다."
+    ],
+    "translated": [
+      "페리 교수를 기리며",
+      "제 프로필 사진 위에 있는 배경은 모두 페리 교수의 저작입니다. 페리 교수에게서 배운 것이 너무 많아 뉴욕에 갈 기회가 있으면 감사의 인사를 전하려고 했는데 너무 안타깝네요",
+      "그는 Money View라는 독특한 렌즈로 금융 현실을 들여다 본 위대한 학자였습니다.",
+      "그의 중요한 작업 몇가지를 소개합니다."
+    ],
+    "content_hash": "7966992564288778",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.093565+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112895461350883767": {
+    "paragraphs": [
+      "Yes! Got it! 🫡"
+    ],
+    "translated": [
+      "네! 알겠습니다! 🫡"
+    ],
+    "content_hash": "565bda834e1d4597",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098096+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112767170648424955": {
+    "paragraphs": [
+      "/autocompact 40k 한 번 쳐보세요 👀"
+    ],
+    "translated": [
+      "/autocompact 40k 한 번 쳐보세요 👀"
+    ],
+    "content_hash": "d2a13454be5549ef",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.097303+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112778623640088757": {
+    "paragraphs": [
+      "아껴야 잘살죠(?) ㅎㅎ\nSETI 님이 댓글로 알려주셔서 /autocompact 지정해봤습니다!"
+    ],
+    "translated": [
+      "아껴야 잘살죠(?) ㅎㅎ\nSETI 님이 댓글로 알려주셔서 /autocompact 지정해봤습니다!"
+    ],
+    "content_hash": "68da6087b880763d",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098839+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112859392668504444": {
+    "paragraphs": [
+      "Sure, bro."
+    ],
+    "translated": [
+      "물론이지, 형제."
+    ],
+    "content_hash": "06c34e2585f6228b",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098537+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112908192153845982:2112963981916995709": {
+    "paragraphs": [
+      "@bot (https://x.com/bot) \n can you do it as well"
+    ],
+    "translated": [
+      "@bot (https://x.com/bot)\n너도 할 수 있어?"
+    ],
+    "content_hash": "c8e28af2ac0a1f67",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.099157+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2110180342103732506:2110180344796434461": {
+    "paragraphs": [
+      "2. The New Lombard Street\n연준 태생부터 금융위기까지를 관통하는 연준에 대한 이야기입니다. 중앙은행은 위기에 최종대부자의 역할을 하는데 금융위기에서는 최종딜러의 모습을 보여주었습니다. \n페리 교수는 이 책의 부제에서도 알 수 있듯이 연준이 어떻게 최종 딜러가 됐는가를 간결하게 보여 줍니다."
+    ],
+    "translated": [
+      "2. 새로운 롬바드 스트리트\n연준 태생부터 금융위기까지를 관통하는 연준에 대한 이야기입니다. 중앙은행은 위기에 최종대부자의 역할을 하는데 금융위기에서는 최종딜러의 모습을 보여주었습니다.\n페리 교수는 이 책의 부제에서도 알 수 있듯이 연준이 어떻게 최종 딜러가 됐는가를 간결하게 보여 줍니다."
+    ],
+    "content_hash": "43b51af9de491f3e",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.094096+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112895502933192902": {
+    "paragraphs": [
+      "Thank you!"
+    ],
+    "translated": [
+      "감사합니다!"
+    ],
+    "content_hash": "3afdda2c098fc834",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T06:39:26.098674+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2112766731664183531:2112884869089173506": {
+    "paragraphs": [
+      "/autocompact"
+    ],
+    "translated": [],
+    "content_hash": "c37e7a00f8d2175d",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-22T06:39:26.097909+00:00"
   }
 }

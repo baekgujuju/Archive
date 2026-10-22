@@ -4869,5 +4869,205 @@
     "category_ko": "금융·기술적 분석",
     "owner_hint": "TradingView 사용자 tmmrwseoul",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:350963be93c46230d33f69d43ca2bef007ed4f8dc9d416360c002c2d4d4ef34b": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 일봉 차트: 저항 돌파와 되돌림",
+    "description_ko": "TradingView의 티에스이 일봉 차트. 5월 8일 지엽적인 돌파, 5월 11~12일 되돌림과 지지·저항 전환, 5월 13일 돌파를 표시했다. 상승 추세선과 녹색 저항 구간, 거래량이 보인다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9b70248a9d78963e16c3f7c2c1a02cdd0e03903481ceddff39202421e7ad004c": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 4시간봉 차트: 돌파 후 추세 가속",
+    "description_ko": "티에스이 4시간봉에서 상단 저항 구간 돌파와 되돌림을 표시했다. 상승 방향으로 변동폭이 커지는 모습과 추세·되돌림·가속의 흐름을 설명한다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:72697d1780317ea803412f9d774f45d7a338cebc377fae8467c46c7ada175c9f": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 1시간봉 차트: 공통 저항대 돌파",
+    "description_ko": "티에스이 1시간봉 차트에서 공통된 상방 저항대와 돌파 지점을 표시했다. 돌파 전 가격 움직임이 좁아지는 구간을 주황색 원으로 강조했다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d622129b6162217b56ea39462f953436fbf3c1032229af3c3d56244c732ad45c": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 15분봉 차트: 돌파와 타이트한 되돌림",
+    "description_ko": "티에스이 15분봉에서 오후 저항 돌파와 이후 좁은 폭의 되돌림을 표시했다. 이동평균선과 지지·저항 영역을 바탕으로 후속 셋업 형성을 설명한다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c8067432d79db9fb5b9ff32283b8750208dea7c8d053cba1037cf97cb842ab49": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 5분봉 차트: 20EMA 지지와 더블바텀",
+    "description_ko": "티에스이 5분봉의 강한 상승 돌파 이후 조정을 보여준다. 주황색 선으로 두 차례 저점과 반등 경로를 그려 20EMA 지지 및 더블바텀 해석을 표시했다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c43b1f15f8da59899226d90e48b96e822f5962008434d440730a74b7c5920fb6": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 15분봉 차트: 넥라인과 지지·저항 전환",
+    "description_ko": "장 마감 후 티에스이 15분봉 차트. 추세 시작, 지지·저항 전환과 강세 중 되돌림, 넥라인 돌파를 표시했다. 돌파 후 상승했던 가격이 190,100원까지 내려온 모습이다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6009258638a113fbbaafd7673e0b2899f5dcb386d55285a78f6acd61aeaea96b": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "티에스이 5분봉 차트: 넥라인 돌파 후 조정",
+    "description_ko": "장 마감 후 티에스이 5분봉에서 추세 시작과 강세 중 되돌림, 넥라인 돌파를 표시했다. 돌파 전 조정과 돌파 지점을 원으로 강조했으며, 이후 가격은 190,100원으로 하락했다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f28950ec5317311024aa6af9d7facea99bd48814083b4c4dc61584a95fa3be83": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "삼각 수렴 상단을 돌파하는 암호화폐 차트",
+    "description_ko": "하락 저항선과 상승 지지선 사이에서 수렴하던 가격이 오른쪽 끝에서 큰 양봉과 거래량 증가를 동반해 상승하는 모습이다. 수평 지지·저항선과 이동평균선이 표시되어 있다.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:cb45356822c151a4c77a3d88086faeb32606ec9ef11dd1fd1dc14cc84077e9c0": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 일봉 박스권 돌파 차트",
+    "description_ko": "바이낸스 FIL/USDT 일봉 차트로, 장기간 형성된 녹색 박스권 위로 가격이 급등한 뒤 약 1.095에서 거래되는 모습이다. 돌파 구간의 거래량 증가와 단기 조정 구간이 표시되어 있다.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b19e9947d6b3c126e7adf6e87b7e0ccc0345b57473fda3bed496777e18db9abf": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 4시간봉 BASE 0·BASE 1",
+    "description_ko": "FIL/USDT 4시간봉에서 급등 전 횡보 구간을 BASE 0, 급등 후 수렴 구간을 BASE 1로 표시했다. 약 1.09 부근의 가격대와 삼각형 추세선, 여러 지지 영역이 강조되어 있다.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0c0c68c957552adebf621dfe43c266a208d3138ca7656d306c216f04016dc8f8": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 1시간봉 수렴 및 매매 구간",
+    "description_ko": "FIL/USDT 1시간봉에 하락 저항선과 상승 지지선, 약 1.09의 좁은 지지 구간이 표시되어 있다. 오른쪽에는 약 1.115를 기준으로 위쪽 녹색 영역과 아래쪽 붉은 영역이 배치되어 있다.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:870220d558fb70bed1e2b7b3d8d3a2b3573a78ec01e6d930674bc3cd6aba1483": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 15분봉 저항선 접근",
+    "description_ko": "FIL/USDT 15분봉에서 약 1.09~1.11 범위의 횡보가 나타난다. 오른쪽 끝의 최근 캔들 세 개가 주황색 원으로 강조되어 있으며, 가격은 약 1.107로 상단 저항선에 접근해 있다.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:22f59a26855dfe7fd5f458495834b5a0afabb3cd49fac9b68a119cfea9b6b73b": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 10분봉 저항 돌파",
+    "description_ko": "FIL/USDT 10분봉의 마지막 큰 양봉이 약 1.109의 수평 저항선을 넘어 1.116 부근까지 상승한 모습이다. 상단에는 약 1.13~1.145의 붉은 영역이 표시되어 있다.",
+    "category_ko": "금융·암호화폐 차트",
+    "owner_hint": "TradingView 사용자 tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:50b7c99b5bd11c17d529a8bff1d4866f41b479e23e53907463129170bc6a4f59": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 1시간 차트 — 저항선 돌파 시도",
+    "description_ko": "바이낸스 FIL/USDT 1시간봉이다. 가격은 약 1.117 USDT이며, 하락 추세선과 상승 추세선, 수평 지지·저항선 및 거래량이 표시되어 있다. 마지막 양봉이 단기 박스 상단을 넘어서는 모습이다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:189ea2f684646231ead6a31075b1edf521df7db502a82ca9c21827d18845eda2": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 1시간 차트 — 롱 포지션 구간 표시",
+    "description_ko": "가격 약 1.116 USDT의 FIL/USDT 차트다. 삼각 수렴 추세선과 지지 구간 위에 녹색 목표 영역 및 붉은 손절 영역으로 구성된 롱 포지션 도구가 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:51bdaa315c990e6531942a6ac7ed43733520afb23a766a4101afb26ed3f99ea7": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 10분 차트 — 거래량 동반 급락",
+    "description_ko": "FIL/USDT 10분봉에서 마지막 큰 음봉이 약 1.091 USDT까지 하락했다. 저가는 약 1.084이며, 아래꼬리와 함께 큰 매도 거래량이 나타난다. 여러 이동평균선과 수평 가격 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ff3ba3d803f796afce994414e63d3325da61353f6c9a75937f35f61677aac10a": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 1시간 차트 — 상단 돌파 후 되밀림",
+    "description_ko": "FIL/USDT 1시간봉에서 직전 캔들이 약 1.122까지 상승한 뒤 긴 위꼬리를 남기고 하락했다. 현재 가격은 약 1.095 USDT이며, 하단 지지 박스와 수렴 추세선이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:352cd4efc18ee0cf06bf35709b118254787e3f9edb0e2428fb3d44bd6350902a": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 15분 차트 — 급락 후 반등",
+    "description_ko": "FIL/USDT 15분봉이다. 가격이 약 1.074까지 급락한 뒤 빠르게 반등했으며, 마지막 표시 가격은 약 1.108 USDT다. 1.086과 1.092 부근의 주황색 수평선 및 상단 저항선이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:da3480a98385876f9594a061c6ce7e52e016dde6c30f96c287cdbc401fa913fb": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 1시간 차트 — 지지 구간 회복",
+    "description_ko": "FIL/USDT 1시간봉에서 최근 하락 이후 큰 양봉이 형성되며 약 1.108 USDT까지 회복했다. 주황색 지지 박스, 장기 상승 추세선과 하락 추세선, 이동평균선 및 거래량이 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d1ec8974081a1ebab236a55ea64cad665cda3a0368af5fa5c688267a8d7526bd": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TradingView FIL/USDT 1시간 차트 — 대형 양봉 돌파",
+    "description_ko": "FIL/USDT 1시간봉에서 대형 양봉이 기존 횡보 구간과 여러 저항대를 넘어 약 1.257 USDT까지 상승했다. 캔들 상승률은 약 13.45%이며, 급증한 거래량과 우측 시장 통계 지표가 표시되어 있다.",
+    "category_ko": "암호화폐 차트",
+    "owner_hint": "TradingView / tmmrwseoul",
+    "provider": "codex"
   }
 }
