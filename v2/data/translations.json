@@ -13461,11 +13461,14 @@
     "paragraphs": [
       "🐢\nERL♻️IRL\nTP - OB\n🙂‍↕️🙂‍↕️🙂‍↕️  x.com/yourwhitepeach…"
     ],
-    "translated": [],
+    "translated": [
+      "🐢\nERL♻️IRL\n익절 - 오더 블록\n🙂‍↕️🙂‍↕️🙂‍↕️  x.com/yourwhitepeach…"
+    ],
     "content_hash": "4f76bb0aaa41cee1",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-22T07:07:10.820835+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T08:09:26.960360+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111680050311688665:2111686077836894509": {
     "paragraphs": [
@@ -13537,11 +13540,15 @@
       "파두",
       "아주 매력적인 구간에서 호실적과 함께 Green Shoot Candle (연속된 매도 이후 과매도 구간에서의 첫 양봉 캔들) 등장"
     ],
-    "translated": [],
+    "translated": [
+      "파두",
+      "아주 매력적인 구간에서 호실적과 함께 회복 조짐 캔들 (연속된 매도 이후 과매도 구간에서의 첫 양봉 캔들) 등장"
+    ],
     "content_hash": "5ee96f2887e272d3",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-22T07:07:10.821160+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T08:09:26.960762+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2108954220841816471:2108956474504331336": {
     "paragraphs": [
@@ -13573,11 +13580,14 @@
     "paragraphs": [
       "위에 올린 상위 구조인 4시간봉을 보도록 하자. 4시간봉에서는 아무 일도 일어나지 않은 것 같은 범상한 continuation base setup이 나타났다. 일봉에서는 베이스조차 없이 그저 주요가격 앞에서 나온 하루치 되돌림이다. (돌파->되돌림->가속)\n9/10"
     ],
-    "translated": [],
+    "translated": [
+      "위에 올린 상위 구조인 4시간봉을 보도록 하자. 4시간봉에서는 아무 일도 일어나지 않은 것 같은 범상한 추세 지속형 베이스 패턴이 나타났다. 일봉에서는 베이스조차 없이 그저 주요가격 앞에서 나온 하루치 되돌림이다. (돌파->되돌림->가속)\n9/10"
+    ],
     "content_hash": "f455987226791915",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-22T07:07:10.821474+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T08:09:26.961326+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112178425725136936:2112180113513329080": {
     "paragraphs": [
@@ -13680,11 +13690,18 @@
       "Early benchmarks:",
       "orcarouter/OrcaCyber-Nano-1.0 · Hugging Face (https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu)  https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu"
     ],
-    "translated": [],
+    "translated": [
+      "🚨 긴급 공개: OrcaCyber Nano 1.0의 가중치가 이제 공개되었습니다.",
+      "OrcaCyber 모델 시리즈의 일부입니다: Nano, Zero, Ultra.",
+      "초기 평가에 따르면 Nano는 16GB 미만급에서 가장 뛰어난 성능을 갖춘 로컬 모델입니다. 매개변수 27B. 컨텍스트 262K. 시각 인식 지원. 완전한 오프라인 실행.",
+      "초기 벤치마크:",
+      "orcarouter/OrcaCyber-Nano-1.0 · 허깅 페이스 (https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu)  https://t.co/uo7qImWzT4?twclid=2bpm872afexjoiy1ffpybhksbu"
+    ],
     "content_hash": "b477c068ed03f5a6",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-22T07:07:10.828706+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-22T08:09:26.963555+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112282151098216596:2112282153191084265": {
     "paragraphs": [
