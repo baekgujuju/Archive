@@ -3553,5 +3553,105 @@
     "fingerprint": "b3dc8574bdc800188a7336a0e8cb6a953e1a71dda23f29306f11cbb66377c19d",
     "entry": null,
     "version": 3
+  },
+  "2111833778587103493:embedded-7b0ab6a9fae82d0ac5bb34b2357afafdf4bf08707e1cab1d621c6d27f56b5ada.png": {
+    "fingerprint": "846dc54b4d3027938ecbbf8b47dfaf375b0936b108ede710e2853d079120577a",
+    "entry": null,
+    "version": 3
+  },
+  "2111833778587103493:embedded-bf1111864636850cad756936ad96f6a1b60067ccf845ccc51f3d839773aee86f.png": {
+    "fingerprint": "2c4cbf69a343b4d41078798ca3ec71d448a69eeee5a194c97e1be553e32fedbd",
+    "entry": null,
+    "version": 3
+  },
+  "2111833778587103493:embedded-7e268cf065eebf39c78f7677ac6c15b2b2918051b5bdbac047271de28fe272b4.png": {
+    "fingerprint": "3ef66de35a1e96967237785fd118a873a46f9f698817f0bb4d91124f1adc10ea",
+    "entry": null,
+    "version": 3
+  },
+  "2111833778587103493:embedded-29dca0dfc8c8db0e9c0aea7750cdbb04e27f4351f6bce1ce96a9ac095c39af6f.png": {
+    "fingerprint": "3afdbea7b5fa3b836cb1d11810f52dabd1df20c8f46b8f61a332c157b08ca1f9",
+    "entry": null,
+    "version": 3
+  },
+  "2112263964759412841:embedded-b67999b7517cc2db4cb5417a83f7c95676717e6113c057c8dca69ebf841f9302.jpg": {
+    "fingerprint": "7b1ede6fbba3c87c33af8cd3e27bef5e477583fba848e7efa4b94d922b6e112e",
+    "entry": null,
+    "version": 3
+  },
+  "2111757031120191828:embedded-6da33dac659f5b228dc3816624c9a053f511658d0185ff310dac004463a15972.jpg": {
+    "fingerprint": "3e61e76d4a75dc6786130080b29912e08f64c7fea6db74266f7088a8293cadfe",
+    "entry": null,
+    "version": 3
+  },
+  "2111757031120191828:embedded-32c61fdd8bd10828748c561150786ec5d5a266eb81afcde07a4b779cad31a457.jpg": {
+    "fingerprint": "3ed873340db4275e3002b848dbbc076922669f6769a9abddd3d2b44847e2e80f",
+    "entry": null,
+    "version": 3
+  },
+  "2108954220841816471:embedded-741c58bdf07b2d5403c713d24cb4ebaf148937beadb8ff2d73d61338a284b623.png": {
+    "fingerprint": "25a8422f7fa9e32df07b35530443014c2ee6f6005b064364a5367d6c3fc323d8",
+    "entry": null,
+    "version": 3
+  },
+  "2112145234440188055:embedded-0a2fb50d93713f76ed606e73179f4e867bf32e86ae69120f516e94c87d2f9a6f.jpg": {
+    "fingerprint": "4bea0aee5d52848bfd78410fc310937239028086724875d429830313535d151b",
+    "entry": null,
+    "version": 3
+  },
+  "2112226180774662405:embedded-d6024cc93d577309bad085f720a69c331fdfe0f888f876a2853e46a59ccfc23f.png": {
+    "fingerprint": "179d09597ffeb9531f764c61e8990787b1f7930b70e736040fd8616a30466c9b",
+    "entry": null,
+    "version": 3
+  },
+  "2112178425725136936:embedded-3f803ff891de2424f22ecf0c8cc6fd6f9d00cab0d5a669a131d47e68ae04b1a5.jpg": {
+    "fingerprint": "cdf9d0e0bb3697f7f562321bb32961dbdefb0ef4f5e62ff125ea034f1c4b6777",
+    "entry": null,
+    "version": 3
+  },
+  "2112178425725136936:embedded-f4b023d161f93156bfb3f53d8f67c4256234d08c998d7fdb04cda4840c221c3b.jpg": {
+    "fingerprint": "8c4c7f0a8395392f26c1635f4f865b3ed02bc8d56dcbd9e023506f4fead6c552",
+    "entry": null,
+    "version": 3
+  },
+  "2112042427595051095:embedded-50197ff9f7c961493868b1b1fbfe0b104ec8644ae2cbb04198f51473cf8b04f6.jpg": {
+    "fingerprint": "d7ae76021124a20c1e0faec1d708b9e0dfd8ab174a2eccff4f94bdc051022f11",
+    "entry": {
+      "title": "fire-your-seo-agency",
+      "summary_ko": "SEO 및 AI 검색 노출 최적화 업무를 AI 에이전트로 자동화하는 Claude Code 스킬 프로젝트 소개 화면이다. 사이트 진단, 문제 수정, 성과 측정을 제공한다고 설명한다.",
+      "category": "AI 에이전트·SEO 자동화",
+      "repo_url": "https://github.com/leopard627/fire-your-seo-agency",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:fire your seo"
+      ],
+      "fingerprint": "d7ae76021124a20c1e0faec1d708b9e0dfd8ab174a2eccff4f94bdc051022f11"
+    },
+    "version": 3
+  },
+  "2112282151098216596:embedded-eae79bd1be9a08905541b5e3fd3c6ef846a5bf4243ed6a3dd8256fe8a2d2a8a3.jpg": {
+    "fingerprint": "5840752b4050ec91c2c8f618df9925ce6a8b211ce1372f2445473727da52042c",
+    "entry": null,
+    "version": 3
+  },
+  "2112016108161282109:embedded-18f6f01a80053e835d7dc51bddba3c907c6d6b9e83996894f65aba0e7dd719e3.jpg": {
+    "fingerprint": "eb975e0c16e2208a1c0d28b842d89763c9a4055a30996c718faf16c99e31e74e",
+    "entry": null,
+    "version": 3
+  },
+  "2111879987611521450:embedded-b6cb14be907f80d7641e5883ffa7a8c05366137b0359c356e981eb73ba8f90d5.jpg": {
+    "fingerprint": "89959eef83e54e09cfe16b4acdea263fd94fee672655974f9218094a6416ad9e",
+    "entry": null,
+    "version": 3
+  },
+  "2111849123205017689:embedded-094f7c354ad782d6fa32c7299f026372293272468de827876fe0e90fa6e93e78.jpg": {
+    "fingerprint": "4b689162b52021db4b657f8ccf91960cf0d5c038ad4f20ed0f8ed9ce89adc266",
+    "entry": null,
+    "version": 3
+  },
+  "2112311659666808994:embedded-281955df8f9d9bdcd435c26b75125f540f1fbfdedee42d9c7597a55d73fc23a6.png": {
+    "fingerprint": "b012fae97141209f018bd7cb1d75d01291a5b41dd4e979234801945123187bf7",
+    "entry": null,
+    "version": 3
   }
 }

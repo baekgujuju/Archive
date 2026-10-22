@@ -252,5 +252,16 @@
       "screenshot:phrase:meta llama"
     ],
     "fingerprint": "0af5c628961f2c105dec75c7fcd048e089809ad3b3e7f734b7606320984ff294"
+  },
+  "2112042427595051095": {
+    "title": "fire-your-seo-agency",
+    "summary_ko": "SEO 및 AI 검색 노출 최적화 업무를 AI 에이전트로 자동화하는 Claude Code 스킬 프로젝트 소개 화면이다. 사이트 진단, 문제 수정, 성과 측정을 제공한다고 설명한다.",
+    "category": "AI 에이전트·SEO 자동화",
+    "repo_url": "https://github.com/leopard627/fire-your-seo-agency",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:fire your seo"
+    ],
+    "fingerprint": "d7ae76021124a20c1e0faec1d708b9e0dfd8ab174a2eccff4f94bdc051022f11"
   }
 }

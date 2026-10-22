@@ -5904,5 +5904,147 @@
     "category_ko": "개발 도구·AI 코드 검색",
     "owner_hint": "xerj.org / @xerj_org",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7b0ab6a9fae82d0ac5bb34b2357afafdf4bf08707e1cab1d621c6d27f56b5ada": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Monero/USDT 일봉 확대 차트",
+    "description_ko": "TradingView의 MEXC 모네로 일봉 차트. 최근 가격 약 589 USDT와 이동평균선, 거래량, 지지·저항 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bf1111864636850cad756936ad96f6a1b60067ccf845ccc51f3d839773aee86f": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Monero/USDT 일봉 장기 추세 차트",
+    "description_ko": "모네로의 2025~2026년 가격 흐름을 보여주는 TradingView 일봉 차트. 과거 급등과 조정, 최근 반등 및 주요 가격대가 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7e268cf065eebf39c78f7677ac6c15b2b2918051b5bdbac047271de28fe272b4": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Monero/USDT 주봉 차트",
+    "description_ko": "2020년 이후 모네로의 장기 흐름을 보여주는 TradingView 주봉 차트. 이동평균선과 거래량, 주요 지지·저항선 및 가격 구간이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:29dca0dfc8c8db0e9c0aea7750cdbb04e27f4351f6bce1ce96a9ac095c39af6f": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Monero/USDT 월봉 차트",
+    "description_ko": "모네로의 장기 가격 구조를 보여주는 TradingView 월봉 차트. 최근 가격 약 589 USDT와 과거 고점, 주요 수평 가격선 및 이동평균선이 표시되어 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "tmmrwseoul",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b67999b7517cc2db4cb5417a83f7c95676717e6113c057c8dca69ebf841f9302": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Heartflow(HTFL) 일봉 주가 분석",
+    "description_ko": "Deepvue의 Heartflow 주가 차트. 실적 발표 이후 급등과 48~52달러 부근의 횡보, 이동평균선, 상대강도 및 거래량 지표와 실적 관련 주석이 표시되어 있다.",
+    "category_ko": "주식 기술적 분석",
+    "owner_hint": "Deepvue",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:6da33dac659f5b228dc3816624c9a053f511658d0185ff310dac004463a15972": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SAND · 1H — 2026.10.18 18:49 KST",
+    "description_ko": "SAND의 1시간봉 차트로, EMA와 전일 고가·저가, 오더블록을 표시한다. 오른쪽에는 거래소별 CVD, 코인베이스 프리미엄, 미결제약정과 청산 지표가 있다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "WHITEPEACH",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:32c61fdd8bd10828748c561150786ec5d5a266eb81afcde07a4b779cad31a457": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SAND · 1H — 2026.10.18 15:53 KST",
+    "description_ko": "SAND의 1시간봉에서 가격이 오더블록 부근에서 반등해 전일 고가에 접근하는 모습이다. EMA와 거래소별 수급, 미결제약정 및 청산 지표를 함께 보여준다.",
+    "category_ko": "암호화폐 기술적 분석",
+    "owner_hint": "WHITEPEACH",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0a2fb50d93713f76ed606e73179f4e867bf32e86ae69120f516e94c87d2f9a6f": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "PDD 주가 차트와 트레이딩 화면",
+    "description_ko": "어두운 테마의 트레이딩 프로그램에 PDD의 장기·단기 주가 차트, 거래량, 종목 목록이 배치되어 있다. 화면 하단에는 영어 영상 자막이 보인다.",
+    "category_ko": "주식 트레이딩",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3f803ff891de2424f22ecf0c8cc6fd6f9d00cab0d5a669a131d47e68ae04b1a5": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "S&P 500 performance in years where first Fed rate hike occurred in Q3",
+    "description_ko": "연준의 첫 금리 인상이 3분기에 발생한 연도들의 S&P 500 흐름을 3분기 말 전후로 비교한다. 역사적 경로와 평균, 2026년 경로 및 기간별 수익률 표를 포함하며 1987년 급락을 표시한다.",
+    "category_ko": "주식시장 역사적 통계",
+    "owner_hint": "NDR (Ned Davis Research)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:f4b023d161f93156bfb3f53d8f67c4256234d08c998d7fdb04cda4840c221c3b": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "S&P 500 performance after 10-year Treasury spikes more than 125 bps in 7 months",
+    "description_ko": "미국 10년물 국채금리가 7개월 동안 125bp 넘게 상승한 사건 전후의 S&P 500 평균 흐름을 보여준다. 발생 날짜별 전후 3개월·6개월 수익률과 평균·중앙값 표가 포함되어 있다.",
+    "category_ko": "금리와 주식시장 통계",
+    "owner_hint": "NDR (Ned Davis Research)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:50197ff9f7c961493868b1b1fbfe0b104ec8644ae2cbb04198f51473cf8b04f6": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/leopard627/fire-your-seo-agency"
+    ],
+    "title": "fire-your-seo-agency",
+    "description_ko": "SEO 및 AI 검색 노출 최적화 업무를 AI 에이전트로 자동화하는 Claude Code 스킬 프로젝트 소개 화면이다. 사이트 진단, 문제 수정, 성과 측정을 제공한다고 설명한다.",
+    "category_ko": "AI 에이전트·SEO 자동화",
+    "owner_hint": "leopard627",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:eae79bd1be9a08905541b5e3fd3c6ef846a5bf4243ed6a3dd8256fe8a2d2a8a3": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "하락 추세 이후 횡보와 상승 전환 도식",
+    "description_ko": "하락 이후 상위 시간대 지지 영역에서 횡보하다가 저항을 돌파하고 상승 추세로 전환하는 과정을 그린 그림이다. 지지·저항 전환, 장기 횡보, 모멘텀 회복 구간을 강조한다.",
+    "category_ko": "주식·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:18f6f01a80053e835d7dc51bddba3c907c6d6b9e83996894f65aba0e7dd719e3": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "파두 주봉 차트",
+    "description_ko": "TradingView의 파두 주봉 차트로, 이동평균선과 거래량, 지지·저항 영역이 표시되어 있다. 노란 선으로 최근 가격 파동을 강조하고 점선 화살표로 상승 시나리오를 제시한다.",
+    "category_ko": "주식·차트 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b6cb14be907f80d7641e5883ffa7a8c05366137b0359c356e981eb73ba8f90d5": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "바닥 예측보다 50 EMA 회복에 집중",
+    "description_ko": "급락 직후 최저점을 잡으려는 접근과 바닥 다지기 이후 50일 지수이동평균선을 회복하는 구간에 집중하는 접근을 비교한 도식이다. TradingView 화면에 Tenable Holdings 종목명이 표시되어 있다.",
+    "category_ko": "주식·기술적 분석 교육",
+    "owner_hint": "AlbertRay",
+    "provider": "codex"
   }
 }
