@@ -4,9 +4,9 @@
   "stats": {
     "verified": 0,
     "pending": 0,
-    "pending_github_look": 29,
+    "pending_github_look": 27,
     "cached": 671,
-    "temporary_failures": 2,
+    "temporary_failures": 4,
     "errors": 0
   },
   "pending_details": {
@@ -29,7 +29,7 @@
     "2108218393568719269:38a4dc8f85067a37.jpg": "GitHub screenshot requires verified repository match",
     "2107886190087266427:c089b9f9d0143ddf.jpg": "GitHub screenshot requires verified repository match",
     "2107836535995568551:c57a5ab436a808fa.jpg": "GitHub screenshot requires verified repository match",
-    "2089327477214593238:8552a9e4d437d224.jpg": "GitHub screenshot requires verified repository match",
+    "2089327477214593238:8552a9e4d437d224.jpg": "temporary analysis or repository API failure",
     "2108245653843509415:86475eac4c71ca84.jpg": "GitHub screenshot requires verified repository match",
     "2107674791243325659:753e659bcbbcec09.jpg": "GitHub screenshot requires verified repository match",
     "2107859139938660811:082932b84c760a20.jpg": "GitHub screenshot requires verified repository match",
@@ -39,7 +39,7 @@
     "2089327156274790890:8552a9e4d437d224.jpg": "GitHub screenshot requires verified repository match",
     "2056043954421039302:3c0e0b8d4dabf490.jpg": "GitHub screenshot requires verified repository match",
     "2043699713883701640:a5e204ad569f28c5.jpg": "GitHub screenshot requires verified repository match",
-    "2044745496141734314:0dd86f479501e82e.png": "GitHub screenshot requires verified repository match",
+    "2044745496141734314:0dd86f479501e82e.png": "temporary analysis or repository API failure",
     "2077936537170542655:e1700757bc8a6994.jpg": "GitHub screenshot requires verified repository match"
   }
 }
