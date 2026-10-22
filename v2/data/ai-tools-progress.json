@@ -1,11 +1,11 @@
 {
   "total": 702,
-  "remaining": 45,
+  "remaining": 32,
   "stats": {
     "verified": 0,
-    "pending": 5,
-    "pending_github_look": 9,
-    "cached": 641,
+    "pending": 11,
+    "pending_github_look": 11,
+    "cached": 646,
     "temporary_failures": 2,
     "errors": 0
   },
@@ -20,11 +20,19 @@
     "2112032083493499049:embedded-80e68b8820bbfb4c1c83dab117f997e7b54134158b93c5f35ca0f3d7e3e46cbd.jpg": "GitHub screenshot requires verified repository match",
     "2112082731652030821:embedded-23e3adea78a6f6d33bf6dafb2c8242624893fe27f4402963a5ae495cef0020b5.jpg": "temporary analysis or repository API failure",
     "2089574903523749987:eb78cb1742206670.jpg": "GitHub screenshot requires verified repository match",
-    "2112311659666808994:embedded-7382ecbf3eba1eff44d0549c4e6978109991c452fd6837c23b55b9cbc0907c83.jpg": "successfully inspected: no GitHub project",
-    "2112311659666808994:embedded-c46f711e715cc00f6ab52acf76d2a40915388a9aa44de69b836b17b9f15163c5.png": "successfully inspected: no GitHub project",
-    "2111820320956952991:embedded-31a6b1c6a1c3053795d757fb5952ab7f86869a73c26733f69230eb231e66edbb.jpg": "successfully inspected: no GitHub project",
-    "2111851509533352153:embedded-c1ff6a1cff7e55d0b669cd88c238552c2e0675ccf470b8e2765b1b9637021aa7.jpg": "successfully inspected: no GitHub project",
+    "2111851509533352153:embedded-6da33dac659f5b228dc3816624c9a053f511658d0185ff310dac004463a15972.jpg": "successfully inspected: no GitHub project",
+    "2112225009917624565:embedded-9765c8eb7bb74dfe8893117f24cabf5cca6266e5cddc40a61c2748beb31ffe61.jpg": "successfully inspected: no GitHub project",
+    "2111680050311688665:embedded-3a127fe40fe9caf0beae9704a5e83d9b2f59468642800097275301c588448224.jpg": "successfully inspected: no GitHub project",
+    "2111802461149364647:embedded-411771dc774be11e76fa55534d7d11d306fc2e9c23ea725d705828aac933760a.jpg": "successfully inspected: no GitHub project",
     "2089574903523749987:bd6d980071ac7d72.jpg": "GitHub screenshot requires verified repository match",
-    "2111851509533352153:embedded-a727242fcc1ed06764c25bf8bc34e5eaeae9583996079cffa292359bdd43dc96.jpg": "successfully inspected: no GitHub project"
+    "2111802461149364647:embedded-0397bdb4114e66f4c89d2660837b518acef52e0489efc581c9fada906d9415f8.png": "GitHub screenshot requires verified repository match",
+    "2111802461149364647:embedded-ddb550b16273793080f004effcd7971ee985aa43b4e9bae79b6e5fa86ef3bf00.png": "successfully inspected: no GitHub project",
+    "2111802461149364647:embedded-1a8f14963a38411e2e86ed07f7f1cac16aa636c9cc8a07bbb6881c115927cc48.jpg": "successfully inspected: no GitHub project",
+    "2111802461149364647:embedded-ae99abcba296aabf3352e4cef128336104641dec5b4d2035d61f950ce9118557.png": "successfully inspected: no GitHub project",
+    "2089327477214593238:8552a9e4d437d224.jpg": "GitHub screenshot requires verified repository match",
+    "2111802461149364647:embedded-85073fb6c6441ad0ef6775126790a2bceb77d5b13524a1cf0bf76bf3f17aae11.png": "successfully inspected: no GitHub project",
+    "2111802461149364647:embedded-bc87831678d88a888ab3f070a2516a1b06012f7d0ec5732e5aff5b74f3a6058c.png": "successfully inspected: no GitHub project",
+    "2111802461149364647:embedded-94334e924f9b08f736b99450680ef838a3a8ea94efb97ad76d7fada8049bdc0f.png": "successfully inspected: no GitHub project",
+    "2111802461149364647:embedded-71662d993b5ff7bfd9293eee0cf5fdb9f170c35c442365efded18cee366cea65.png": "successfully inspected: no GitHub project"
   }
 }

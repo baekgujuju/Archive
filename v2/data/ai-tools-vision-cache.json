@@ -6096,5 +6096,165 @@
     "category_ko": "암호화폐 거래 수익 인증",
     "owner_hint": "Hyperliquid",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:9765c8eb7bb74dfe8893117f24cabf5cca6266e5cddc40a61c2748beb31ffe61": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SOXL 주식 차트와 Qullamaggie 안내",
+    "description_ko": "어두운 트레이딩 프로그램에 SOXL 등 두 개의 주가 차트와 거래량, 종목 목록이 표시되어 있다. 하단에는 qullamaggie.com을 먼저 읽으라는 문구가 있다.",
+    "category_ko": "주식·트레이딩",
+    "owner_hint": "Qullamaggie",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:411771dc774be11e76fa55534d7d11d306fc2e9c23ea725d705828aac933760a": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "2026년 10월 기준 모든 Claude Code 꿀팁 총정리",
+    "description_ko": "Claude Code 활용 팁 12개를 소개하는 표지 이미지다. 복사 가능한 프롬프트와 v2.1.302 기준이라는 표시가 있으며, 오른쪽 터미널 예시에 컨텍스트 관리, 검증, 코드 리뷰, 계획 등의 명령이 나열되어 있다.",
+    "category_ko": "AI 개발 도구 활용",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0397bdb4114e66f4c89d2660837b518acef52e0489efc581c9fada906d9415f8": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [],
+    "title": "클로드코드 꿀팁 12가지, 한눈에",
+    "description_ko": "Claude Code 활용법 12가지를 정리한 목차다. 작업별 effort 설정, 컨텍스트 관리, 지침 정리, 세션 분석, claude-mem 프로젝트, 상태 표시줄, 실행과 검증, 코드 리뷰, 계획, Hooks, 병렬 세션, 자동 반복을 소개한다.",
+    "category_ko": "AI 개발 도구 활용",
+    "owner_hint": "루샨",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ddb550b16273793080f004effcd7971ee985aa43b4e9bae79b6e5fa86ef3bf00": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "일마다 effort를 나눠 맡기기",
+    "description_ko": "메인 모델 설정을 유지하면서 서브에이전트의 작업 난도에 따라 low·medium·high effort를 지정하는 방법을 설명한다. 메인에는 결론과 근거 파일 경로만 전달하며, 작업 시간 비교 사례도 제시한다.",
+    "category_ko": "Claude Code 활용 팁 · 작업 위임",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1a8f14963a38411e2e86ed07f7f1cac16aa636c9cc8a07bbb6881c115927cc48": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "컨텍스트, 끝까지 채우지 마세요",
+    "description_ko": "컨텍스트가 가득 차기 전에 대화를 요약하는 방법을 안내한다. 1M 환경의 자동 압축 기준 예시와 /context, /autocompact, /compact, /clear 명령의 용도를 소개한다.",
+    "category_ko": "Claude Code 활용 팁 · 컨텍스트 관리",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ae99abcba296aabf3352e4cef128336104641dec5b4d2035d61f950ce9118557": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "캐시가 만료되면 생기는 일",
+    "description_ko": "캐시 만료 후 대화 앞부분을 다시 처리하면서 사용량이 증가하는 상황을 설명한다. 구독·API·서브에이전트별 캐시 유지 시간과 유휴 상태 자동 압축 기능에 관한 주장을 제시한다.",
+    "category_ko": "Claude Code 활용 팁 · 캐시와 사용량",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:85073fb6c6441ad0ef6775126790a2bceb77d5b13524a1cf0bf76bf3f17aae11": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "상황별로 이렇게 하세요",
+    "description_ko": "장시간 작업, 다른 작업으로 전환, 자리 비움, 긴 휴식 후 재개 등 상황별 컨텍스트 관리 방법을 표로 정리한다. 요약, 새 세션, 인수인계 메모, 서브에이전트 활용을 제안한다.",
+    "category_ko": "Claude Code 활용 팁 · 세션 관리",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bc87831678d88a888ab3f070a2516a1b06012f7d0ec5732e5aff5b74f3a6058c": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "/doctor prompt-audit — 오래된 지침 대청소",
+    "description_ko": "현재 모델을 기준으로 지침의 과도한 강조, 오래된 규칙, 중복과 충돌을 점검하는 기능을 소개한다. 점검 대상 파일과 제외 대상, 보고서와 수정 제안, 변경 내용을 검토하는 절차를 설명한다.",
+    "category_ko": "Claude Code 활용 팁 · 프롬프트 지침 점검",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:94334e924f9b08f736b99450680ef838a3a8ea94efb97ad76d7fada8049bdc0f": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "같은 실수, 환경을 고치면 끝납니다",
+    "description_ko": "반복해서 실수한 세션을 분석해 원인을 지침과 검증 환경에 반영하는 과정을 설명한다. 세션 ID 확보, 원인 분류, 최소 수정, 이전 요청 재검증 순서와 분석용 프롬프트 예시를 제공한다.",
+    "category_ko": "Claude Code 활용 팁 · 작업 환경 개선",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:71662d993b5ff7bfd9293eee0cf5fdb9f170c35c442365efded18cee366cea65": {
+    "index": 6,
+    "is_github": false,
+    "github_urls": [],
+    "title": "실수 종류별로 고칠 곳이 다릅니다",
+    "description_ko": "프로젝트 공통 규칙은 CLAUDE.md, 특정 경로 규칙은 .claude/rules/, 반복 절차는 스킬에 배치하는 기준을 정리한다. 강제할 규칙에는 훅과 권한 설정을, 재발하는 버그에는 회귀 테스트를 제안한다.",
+    "category_ko": "Claude Code 활용 팁 · 규칙과 검증 설계",
+    "owner_hint": "루산",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c20fd9e65c998f633edd9adc8c22ad79ac488ba18016d2dcf8b18b498d9bf500": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [],
+    "title": "기본 메모리 vs claude-mem",
+    "description_ko": "Claude Code 내장 Auto Memory와 별도 플러그인 claude-mem의 기록 방식, 설치, 활용 대상과 주의점을 비교한다. claude-mem에 GitHub 별 10만 이상이라는 표기가 있다.",
+    "category_ko": "개발 도구·메모리 플러그인",
+    "owner_hint": "루샨",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:947f0b836dd50de24cb94e13f5ab287e4082a88b7a74a45508350390d274d3c5": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "statusline 디자인 5종",
+    "description_ko": "미니멀, 파스텔 블록, Nord 파워라인, 사용량 도트바, 선명한 게이지 등 Claude Code 상태 표시줄 디자인 다섯 가지를 보여준다.",
+    "category_ko": "개발 도구·상태 표시줄",
+    "owner_hint": "루샨",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7a6114a3742e769bb4982d23d65b82339656d124882906e861d105378fa43134": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "statusline에 들어오는 정보",
+    "description_ko": "상태 표시줄에 전달되는 모델, 추론 강도, 컨텍스트 사용률, 작업 폴더, 사용 한도와 캐시 정보를 설명한다. 사용률과 남은 비율을 구분하고 스크립트를 가볍게 유지하라고 안내한다.",
+    "category_ko": "개발 도구·상태 표시줄",
+    "owner_hint": "루샨",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5fc86e7de9e257ccd8e31c4356cf9cb8d02b061eb9a7e12c5b89828fdd2e7e0d": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "말로 완료 vs 실행으로 완료",
+    "description_ko": "구현 완료 선언에 그치지 않고 테스트와 빌드, 앱 실행, 직접 조작, 목표 확인을 거쳐 명령·종료 코드·스크린샷으로 검증 근거를 남기는 작업 흐름을 소개한다.",
+    "category_ko": "개발 워크플로·실행 검증",
+    "owner_hint": "루샨",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a1b0fa22a1697be79dc15ec988442f08670920a9d442befcf71caf9ac3f1c03b": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "작성하는 AI와 검수하는 AI",
+    "description_ko": "작성 세션과 분리된 새 컨텍스트에서 변경 코드를 검수하는 방식을 설명한다. 정리, 실행 검증, 코드 리뷰, 보안 리뷰의 권장 순서와 팀 자체 보고 성과 수치를 제시한다.",
+    "category_ko": "AI 개발·코드 검수",
+    "owner_hint": "루샨",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5e5f77fb69899f4bb6a3393a48f4960df6ec15f09a557c2dc70341fc8c06acd6": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코딩 전에 정할 6가지",
+    "description_ko": "코딩 전에 읽을 자료, 현재 맥락, 작업 범위, 제외 범위, 작업 방법, 완료 기준을 정하도록 안내한다. 탐색부터 계획·승인·구현·검증까지의 흐름과 Plan Mode 사용법을 소개한다.",
+    "category_ko": "개발 워크플로·작업 계획",
+    "owner_hint": "루샨",
+    "provider": "codex"
   }
 }
