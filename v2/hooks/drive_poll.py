@@ -41,12 +41,14 @@ P3: drive state 손상 시 격리 후 fail-closed (복구 마커로 구분,
 import fcntl
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
 import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
 
 V2_ROOT = Path(__file__).resolve().parent.parent
 HOOKS_DIR = V2_ROOT / "hooks"
@@ -81,6 +83,7 @@ STDERR_EXCERPT_LIMIT = 500
 
 sys.path.insert(0, str(V2_ROOT))
 sys.path.insert(0, str(HOOKS_DIR))
+from preservation_audit import audit_capture  # noqa: E402
 from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
 from state_guard import (  # noqa: E402
     StateBlockedError,
@@ -101,6 +104,14 @@ from merge_policy import (  # noqa: E402
 
 def log(msg):
     print(f"[drive_poll {datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
+
+
+def _fsync_directory(path):
+    fd = os.open(str(path), os.O_RDONLY)
+    try:
+        os.fsync(fd)
+    finally:
+        os.close(fd)
 
 
 def run(cmd, **kw):
@@ -547,6 +558,51 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
     # 3) 검증 (공통 계약 재검사).
     _validate_parsed_records(parsed, content_sha256=content_sha256,
                              downloaded_path=downloaded_path)
+    # Independently compare submitted HTML with parsed semantic records before
+    # materialization changes data URI URLs. This verifies conversion only,
+    # never completeness of the remote website or its virtualized replies.
+    try:
+        conversion_audit = audit_capture(path.read_bytes().decode("utf-8"), parsed)
+        if conversion_audit["source_sha256"] != content_sha256:
+            raise ValueError("capture bytes changed during validation")
+    except (OSError, UnicodeError, ValueError, TypeError) as exc:
+        raise FileFailure("validation", "preservation_uncheckable",
+                          stderr=type(exc).__name__, content_sha256=content_sha256,
+                          downloaded_path=downloaded_path) from exc
+    if conversion_audit["blocked"]:
+        raise FileFailure("validation", "preservation_loss",
+                          content_sha256=content_sha256,
+                          downloaded_path=downloaded_path,
+                          review_items=[conversion_audit])
+    # Archive source and audit BEFORE changing canonical records. Failed
+    # evidence storage must not leave a successfully merged, unarchived file.
+    archive_path = local_inbox / archive_filename(name, fid, content_sha256)
+    # Keep the existing original-HTML directory's membership unchanged.
+    # Evidence is private beside that configured directory, not in the repo.
+    audit_path = (local_inbox.parent / (local_inbox.name + ".preservation")
+                  / (archive_path.name + ".preservation-v1.json"))
+    try:
+        shutil.copy2(path, archive_path)
+        if hashlib.sha256(archive_path.read_bytes()).hexdigest() != content_sha256:
+            raise OSError("Archived capture hash mismatch")
+        with archive_path.open("rb+") as archived:
+            os.fsync(archived.fileno())
+        _fsync_directory(archive_path.parent)
+        # atomic_json fsyncs the audit file + its directory. Also commit that
+        # directory's creation in its parent before canonical merge.
+        atomic_json(audit_path, conversion_audit)
+        _fsync_directory(audit_path.parent.parent)
+        if conversion_audit["capture_completeness"] == "partial":
+            if not append_review_entry(
+                    NEEDS_REVIEW, "", "capture partial: " + content_sha256,
+                    extra={"fileId": fid, "content_sha256": content_sha256,
+                           "audit_path": str(audit_path),
+                           "issue_codes": [i["code"] for i in conversion_audit["issues"]]}):
+                raise OSError("Capture review evidence was not saved")
+    except OSError as exc:
+        raise FileFailure("archive", "archive_failed", stderr=type(exc).__name__,
+                          content_sha256=content_sha256,
+                          downloaded_path=downloaded_path) from exc
     # 4) 정본 병합 (공유 파이프라인 락 하에서만).
     # 락 타임아웃 시 이 파일만 실패로 세고 다음 파일로 간다
     # (폴 전체 중단 금지).
@@ -595,13 +651,8 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
                           content_sha256=content_sha256,
                           downloaded_path=downloaded_path,
                           lock_contention=True) from e
-    # 5) 원본 보관 (영속 보관 경로 — fileId + 콘텐츠 해시).
-    try:
-        shutil.copy2(path, local_inbox / archive_filename(name, fid, content_sha256))
-    except OSError as e:
-        raise FileFailure("archive", "archive_failed", stderr=str(e),
-                          content_sha256=content_sha256,
-                          downloaded_path=downloaded_path) from e
+    log("Capture conversion preserved; completeness="
+        + conversion_audit["capture_completeness"] + "; file=" + str(fid))
     # 6) 성공 기록 (검증된 fileId → tweetId·지문·콘텐츠 해시·버전).
     # 실패 기록 해소(resolved)를 상태 저장보다 먼저 수행한다 —
     # 실패 기록 저장이 실패하면 상태도 저장하지 않고 재시도한다.
@@ -625,6 +676,14 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
         "content_sha256": content_sha256,
         "parser_version": "ingest_post_html",
         "validator_version": VALIDATOR_VERSION,
+        "conversion_audit": {
+            "version": conversion_audit["version"],
+            "scope": conversion_audit["scope"],
+            "source_sha256": conversion_audit["source_sha256"],
+            "conversion_status": conversion_audit["conversion_status"],
+            "capture_completeness": conversion_audit["capture_completeness"],
+            "issue_codes": [i["code"] for i in conversion_audit["issues"]],
+        },
     }
     state["processed"] = processed
     atomic_json(state_path, state)
@@ -686,6 +745,8 @@ def delete_verified_inbox_file(f, record, *, inbox_id, max_bytes):
     if (not fid or not f.get("modifiedTime") or not isinstance(record, dict)
             or record.get("verification") != "verified"):
         return skip("명시적 검증 기록 없음")
+    if record.get("conversion_audit", {}).get("capture_completeness") == "partial":
+        return skip("부분 수집 검수 대기 — Drive 원본 보존")
     tids = record.get("tweetIds")
     if (record.get("legacyBaseline") or not record.get("content_sha256")
             or not record.get("validator_version")
