@@ -131,6 +131,91 @@ class WorkerControl:
             return state
 
     def publication_health(self, now=None, grace=600, acknowledge_oldest=''):
+        """Keep Git gates and add content-version evidence for new receipts."""
+        receipt_ack = acknowledge_oldest.startswith('receipt:')
+        phase_ack = acknowledge_oldest.startswith('phase:')
+        review_ack = acknowledge_oldest.startswith('review:')
+        input_ack = acknowledge_oldest.startswith('input:')
+        git_result = self._git_publication_health(
+            now=now, grace=grace,
+            acknowledge_oldest='' if receipt_ack or phase_ack or review_ack or input_ack else acknowledge_oldest)
+        if (self.root / '.pipeline-progress-worker.json').exists():
+            progress = self._phase_publication_health(
+                now=now, acknowledge_oldest=acknowledge_oldest if phase_ack else '')
+            if phase_ack or (progress.get('alert') and not receipt_ack and not review_ack and not input_ack):
+                return progress
+        elif phase_ack:
+            raise ControlError('Publication phase no longer available; acknowledgement not saved')
+        if not (self.root / '.drive_poll_state.json').exists():
+            if receipt_ack or review_ack or input_ack:
+                raise ControlError('Publication receipt no longer available; acknowledgement not saved')
+            return git_result
+        from publication_evidence import EvidenceError
+        from publication_tracker import check_receipts
+        from review_notifications import check_reviews
+        try:
+            reviews = check_reviews(self.root, now=time.time() if now is None else now,
+                                    acknowledge_oldest=acknowledge_oldest if review_ack else '')
+            if review_ack or (reviews.get('alert') and not receipt_ack and not input_ack):
+                return reviews
+            source_observer = None
+            if (self.root.parent / 'build_data.py').is_file():
+                from input_publication import operating_inputs
+                def source_observer():
+                    try:
+                        return operating_inputs(self.root.parent)
+                    except Exception as exc:
+                        raise EvidenceError('input_observation_unavailable') from exc
+            receipts = check_receipts(
+                self.root, Path.home() / 'workspace' / 'x-bookmarks' / 'posts.json',
+                now=now, grace=grace,
+                acknowledge_oldest=acknowledge_oldest if receipt_ack or input_ack else '',
+                input_source=source_observer)
+        except EvidenceError as exc:
+            if str(exc) in ('tracker_busy', 'local_snapshot_changed') and not receipt_ack and not input_ack and not review_ack:
+                return dict(git_result, receipt_observation='deferred_local_change')
+            raise ControlError('Publication receipt observation failed; no acknowledgement saved') from exc
+        except OSError as exc:
+            raise ControlError('Publication receipt storage failed; no acknowledgement saved') from exc
+        if receipts.get('alert') or receipt_ack or input_ack:
+            return receipts
+        return dict(git_result,
+                    status=git_result['status'] if git_result.get('pending', 0) else receipts['status'],
+                    receipt_counts=receipts.get('counts', {}),
+                    tracked_receipts=receipts.get('tracked_receipts', 0),
+                    receipt_observation=receipts['status'])
+
+    def _phase_publication_health(self, now=None, acknowledge_oldest=''):
+        from pipeline_progress import progress_health
+        from publication_evidence import EvidenceError, digest
+        try:
+            result = progress_health(self.root, now=now)
+            marker = self.root / '.worker-phase-alert.json'
+            if not result.get('alert'):
+                if acknowledge_oldest:
+                    raise ControlError('Publication phase changed; acknowledgement not saved')
+                marker.unlink(missing_ok=True)
+                return result
+            key = 'phase:' + digest([result['token'], result['status']])
+            result = {k: v for k, v in result.items() if k != 'token'}
+            result['oldest'] = key
+            try:
+                old = json.loads(marker.read_text(encoding='utf-8'))
+            except FileNotFoundError:
+                old = {}
+            if not isinstance(old, dict):
+                raise ControlError('Invalid phase acknowledgement state')
+            result['alert'] = old.get('oldest') != key
+            if acknowledge_oldest:
+                if acknowledge_oldest != key:
+                    raise ControlError('Publication phase changed; acknowledgement not saved')
+                atomic_private(marker, json.dumps({'oldest': key, 'alerted_at': time.time() if now is None else now}))
+                result['alert'] = False
+            return result
+        except (EvidenceError, OSError, ValueError) as exc:
+            raise ControlError('Publication phase observation failed; no acknowledgement saved') from exc
+
+    def _git_publication_health(self, now=None, grace=600, acknowledge_oldest=''):
         """Local Git evidence, no network or environment values. Alert once/incident."""
         now = time.time() if now is None else now
         repo = self.root.parent.parent

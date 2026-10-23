@@ -44,19 +44,35 @@ class MirrorPublicationTests(unittest.TestCase):
                 json.dumps({"source_hash": "x", "chunks": chunks}))
             (root/'data/translations.json').write_text('{}')
             calls=[]
+            dirty=set()
             def run(cmd, **kwargs):
                 calls.append([str(v) for v in cmd])
+                if any(str(v).endswith('build_data.py') for v in cmd) and '--check' not in cmd:
+                    dirty.update(['data/posts-x.json','data/media-map.json','media/full/test.png'])
+                if any(str(v).endswith('translate_posts.py') for v in cmd):
+                    # A real optional change makes the second release necessary.
+                    dirty.update(['data/translations.json','data/manifest.json'])
                 if any(str(v).endswith('media-mirror.py') for v in cmd):
                     if isinstance(mirror_error, Exception): raise mirror_error
                     return subprocess.CompletedProcess(cmd, mirror_error, '', 'failed' if mirror_error else '')
                 return subprocess.CompletedProcess(cmd, 1 if '--check' in cmd else 0, '', '')
+            def git_command(args, **kwargs):
+                if 'commit' in args:
+                    dirty.clear()
+                return subprocess.CompletedProcess(args,0,'','')
+            def push():
+                calls.append(['__publish__'])
+                return True
             paths={'V2_ROOT':root,'DATA_DIR':root/'data','HOOKS_DIR':root/'hooks','LOCK_FILE':root/'hooks/.lock','TRANSLATIONS':root/'data/translations.json','MANIFEST':root/'data/manifest.json','RETRY_TRANSLATION':root/'hooks/.retry_translation','RETRY_COMMIT':root/'hooks/.retry_commit','RETRY_MEDIA':root/'hooks/.retry_media','RETRY_ENRICH':root/'hooks/.retry-enrich','PUBLISH_ENABLED':True}
-            with patch.multiple(hook, **paths), patch.object(hook,'run',side_effect=run), patch.object(hook,'unpushed_commit_list',return_value=[]), patch.object(hook,'changed_files',side_effect=[[],['data/posts-x.json','data/media-map.json','media/full/test.png'],[],['data/media-map.json','media/full/test.png']]), patch.object(hook,'git',side_effect=lambda args,**kw: subprocess.CompletedProcess(args,0,'','')) as git, patch.object(hook,'do_push',return_value=True) as publish:
+            with patch.multiple(hook, **paths), patch.object(hook,'run',side_effect=run), patch.object(hook,'unpushed_commit_list',return_value=[]), patch.object(hook,'changed_files',side_effect=lambda:sorted(dirty)), patch.object(hook,'git',side_effect=git_command) as git, patch.object(hook,'do_push',side_effect=push) as publish:
                 self.assertEqual(hook.main(),1 if mirror_error else 0)
                 self.assertEqual((root/'hooks/.retry_media').exists(),bool(mirror_error))
                 self.assertTrue(any(any(v.endswith('media-mirror.py') for v in cmd) for cmd in calls))
                 self.assertTrue(any(any(v.endswith('translate_posts.py') for v in cmd) for cmd in calls))
-                publish.assert_called_once()
+                self.assertEqual(publish.call_count,2)
+                first_publish=next(i for i,cmd in enumerate(calls) if cmd==['__publish__'])
+                first_translation=next(i for i,cmd in enumerate(calls) if any(v.endswith('translate_posts.py') for v in cmd))
+                self.assertLess(first_publish,first_translation)
                 self.assertTrue(any(c.args[0][:2]==['add','--'] for c in git.call_args_list))
                 self.assertTrue(any('commit' in c.args[0] for c in git.call_args_list))
                 for call in git.call_args_list:
@@ -65,9 +81,14 @@ class MirrorPublicationTests(unittest.TestCase):
                 if mirror_error:
                     # Recover on a second worker run even when source data has not changed.
                     mirror_error=0
+                    second_start=len(calls)
                     self.assertEqual(hook.main(),0)
                     self.assertFalse((root/'hooks/.retry_media').exists())
-                    self.assertEqual(publish.call_count,2)
+                    self.assertEqual(publish.call_count,4)
+                    second_calls=calls[second_start:]
+                    second_publish=next(i for i,cmd in enumerate(second_calls) if cmd==['__publish__'])
+                    second_translation=next(i for i,cmd in enumerate(second_calls) if any(v.endswith('translate_posts.py') for v in cmd))
+                    self.assertLess(second_publish,second_translation)
                     self.assertEqual(sum('--check' in cmd for cmd in calls),1)
     def test_review_branch_cannot_publish_to_main(self):
         with patch.object(hook,'PUBLISH_BRANCH','main'), patch.object(hook,'current_branch',return_value='review/v2-ux'), patch.object(hook,'git') as git:

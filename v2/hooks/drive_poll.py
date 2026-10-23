@@ -630,6 +630,16 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
                 existing, parsed, file_id=fid,
                 fingerprint=failure_key(fid, fp),
                 overwrite_tweet_ids=_overwrite_tweet_ids(processed, fid))
+            # Publication receipts bind the actual conservative merge output.
+            # A rejected incoming conflict must never become a success target.
+            from publication_evidence import capture_targets, EvidenceError as PublicationEvidenceError
+            try:
+                publication_targets = capture_targets(
+                    result.merged, [str(item['tweetId']) for item in parsed])
+            except PublicationEvidenceError as exc:
+                raise FileFailure('validation', 'publication_target_invalid',
+                                  content_sha256=content_sha256,
+                                  downloaded_path=downloaded_path) from exc
             if result.proposals:
                 prop_data = load_proposals()
                 seen_fp = {
@@ -676,6 +686,8 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
         "content_sha256": content_sha256,
         "parser_version": "ingest_post_html",
         "validator_version": VALIDATOR_VERSION,
+        "publication_targets": publication_targets,
+        "publication_review_required": bool(result.proposals),
         "conversion_audit": {
             "version": conversion_audit["version"],
             "scope": conversion_audit["scope"],

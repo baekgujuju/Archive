@@ -32,6 +32,7 @@ from pathlib import Path
 from collections import namedtuple
 
 from proc_group import run_grouped, terminate_current
+from pipeline_progress import start_phase, finish_phase
 
 # run_step 결과: (kind, rc). kind ∈ {"ok", "failed", "timeout", "exception"}.
 # rc는 자식 프로세스의 실제 종료 코드 (drive_poll의 3은 파일 실패
@@ -81,6 +82,9 @@ def run_step(name, script, timeout):
     영속화 완료"이므로, 호출자가 rc를 보고 판단한다.
     """
     log(f"=== {name} 시작 (타임아웃 {timeout}초) ===")
+    event = start_phase(HOOKS_DIR, 'scheduler',
+                        name if name in ('drive_poll', 'monitor', 'publish_settings') else 'command', timeout)
+    phase_rc = None
     try:
         env = os.environ.copy()
         # 발행 환경변수 기본값 보장
@@ -89,6 +93,7 @@ def run_step(name, script, timeout):
         r = run_grouped(
             [sys.executable, str(script)],
             capture_output=True, text=True, timeout=timeout, env=env, grace=75)
+        phase_rc = r.returncode
         if r.stdout:
             for line in r.stdout.strip().split("\n"):
                 log(f"  [{name}] {line}")
@@ -105,6 +110,8 @@ def run_step(name, script, timeout):
     except Exception as e:
         log(f"✗ {name} 예외: {e}")
         return StepResult("exception", None)
+    finally:
+        finish_phase(HOOKS_DIR, event, rc=phase_rc)
 
 
 def main():

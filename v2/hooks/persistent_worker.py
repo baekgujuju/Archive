@@ -116,6 +116,12 @@ def run_poll():
     env = os.environ.copy()
     env["V2_PUBLISH"] = "1"
     env["V2_PUBLISH_BRANCH"] = "main"
+    from pipeline_progress import start_phase, finish_phase
+    import uuid
+    cycle = uuid.uuid4().hex
+    env['ARCHIVE_POLL_ID'] = cycle
+    event = start_phase(HOOKS_DIR, 'worker', 'poll', TIMEOUT_TOTAL, cycle=cycle)
+    phase_rc = None
 
     log(f"폴 시작 (타임아웃 {TIMEOUT_TOTAL}초)")
     try:
@@ -124,6 +130,7 @@ def run_poll():
             [sys.executable, str(HOOKS_DIR / "scheduler_runner.py")],
             capture_output=True, text=True, timeout=TIMEOUT_TOTAL, env=env,
             grace=105)
+        phase_rc = r.returncode
         # scheduler_runner의 출력을 워커 로그에 기록
         if r.stdout:
             for line in r.stdout.strip().split("\n")[-10:]:  # 마지막 10줄만
@@ -138,6 +145,8 @@ def run_poll():
         log(f"폴 타임아웃 ({TIMEOUT_TOTAL}초 초과)")
     except Exception as e:
         log(f"폴 예외: {e}")
+    finally:
+        finish_phase(HOOKS_DIR, event, rc=phase_rc)
 
 
 def main():
