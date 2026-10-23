@@ -552,12 +552,22 @@ def _validate_translation_entry(entry):
     """
     if not isinstance(entry, dict):
         return False
-    # translated는 str, paragraphs는 list여야 한다 (둘 다 없어도 되는
-    # 플레이스홀더는 허용하지 않는다 — 번역 캐시의 최소 규약).
-    if not isinstance(entry.get("translated"), str):
+    # Preservation accepts both the historical string cache and the current
+    # paragraph-array cache produced by translate_posts. This is a storage
+    # shape check, not certification that a translation is current or complete.
+    paragraphs = entry.get("paragraphs")
+    translated = entry.get("translated")
+    if not isinstance(paragraphs, list) or any(not isinstance(p, str) for p in paragraphs):
         return False
-    if not isinstance(entry.get("paragraphs"), list):
+    if "status" in entry and not isinstance(entry["status"], str):
         return False
+    if isinstance(translated, str):
+        return True
+    if not isinstance(translated, list) or any(not isinstance(p, str) for p in translated):
+        return False
+    # Keep failed, skipped and misaligned legacy arrays unchanged. The reader
+    # and translation producer enforce alignment/freshness independently;
+    # storage recovery must not discard evidence or relabel it as valid.
     return True
 
 
