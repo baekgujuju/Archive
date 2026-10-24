@@ -11,12 +11,17 @@ from materialize_media import materialize_records, EmbeddedMediaError
 def process_web(raw,path,fid,name,fp,*,local_inbox,state,state_path,processed,services):
     s=services;sha=hashlib.sha256(path.read_bytes()).hexdigest()
     def fail(stage,code,exc=None):
-        raise s.FileFailure(stage,code,content_sha256=sha,downloaded_path=path,stderr=type(exc).__name__ if exc else '')
+        diagnostic=type(exc).__name__ if exc else ''
+        if isinstance(exc,OSError):diagnostic+=' errno='+str(exc.errno)
+        raise s.FileFailure(stage,code,content_sha256=sha,downloaded_path=path,stderr=diagnostic)
     try:
         record,audit=parse_web(raw)
         if audit['source_sha256']!=sha:raise WebCaptureError('web_capture_bytes_changed')
     except (ValueError,TypeError,RecursionError) as exc:fail('validation',str(exc) if isinstance(exc,WebCaptureError) else 'web_capture_invalid',exc)
-    archived=local_inbox/s.archive_filename(name,fid,sha)
+    # Filesystem limits apply to UTF-8 bytes, including audit/temp suffixes.
+    # Keep storage names independent of unbounded, user-supplied titles/IDs.
+    file_key=hashlib.sha256(str(fid).encode('utf-8')).hexdigest()
+    archived=local_inbox/('web-'+file_key+'-'+sha+'.html')
     audit_path=local_inbox.parent/(local_inbox.name+'.preservation')/(archived.name+'.web-preservation-v1.json')
     try:
         shutil.copy2(path,archived)
