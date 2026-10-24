@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": "2026-10-20T00:04:22.105Z-stvlbej3",
-  "updatedAt": "2026-10-20T00:04:22.105Z",
+  "revision": "2026-10-24T14:29:31.248Z-4eah5z4c",
+  "updatedAt": "2026-10-24T14:29:31.248Z",
   "pinned": [
     "article-20261011-1048"
   ],
@@ -11,7 +11,8 @@
   ],
   "deletedReplies": [],
   "deletedRemovedReplies": [
-    "2110765087745053120"
+    "2110765087745053120",
+    "2113624779790160072"
   ],
   "bookmarks": {
     "article-20261011-1048": "#e74c3c"
