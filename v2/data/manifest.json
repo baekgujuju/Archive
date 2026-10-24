@@ -24,7 +24,7 @@
   "app_version": "2.6.0",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "cfccf1ef76961d4cb3f89baf9d096a718d4dd1707f5c7f77f972c59a328d4f17",
+    "sha256": "aa5c048abafe72c584810a06a2c3468216c0873398d05e2b06e00bad58b6ffe6",
     "count": 731
   },
   "shared_state": {
