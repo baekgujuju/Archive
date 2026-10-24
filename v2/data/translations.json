@@ -9028,7 +9028,7 @@
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
       "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-10-24T05:32:23.052098+00:00"
+      "failed_at": "2026-10-24T06:38:24.928634+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -13287,7 +13287,7 @@
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-24T05:32:23.054619+00:00"
+    "failed_at": "2026-10-24T06:38:24.931251+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13808,7 +13808,7 @@
     "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-24T05:32:23.050934+00:00"
+    "failed_at": "2026-10-24T06:38:24.927397+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -14137,11 +14137,15 @@
       "오픈소스, 깃허브 링크:",
       "GitHub - Seokwoooo/lucian-icons (https://t.co/Oa2KA4AImM)  https://t.co/Oa2KA4AImM"
     ],
-    "translated": [],
+    "translated": [
+      "오픈소스, 깃허브 링크:",
+      "깃허브 - Seokwoooo/lucian-icons (https://t.co/Oa2KA4AImM)  https://t.co/Oa2KA4AImM"
+    ],
     "content_hash": "d1cfe1c5cd9aecad",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-24T05:32:23.054794+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T06:38:24.931555+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2112370971802001870:2111179374615560206": {
     "paragraphs": [
@@ -15912,6 +15916,25 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-24T06:30:11.454456+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2113235669325652375": {
+    "paragraphs": [
+      "𝗧𝗮𝗸𝗲 𝘀𝗼𝗺𝗲 𝗼𝗳𝗳 𝗶𝗻𝘁𝗼 𝘀𝘁𝗿𝗲𝗻𝗴𝘁𝗵.",
+      "(clip: Oct 5, 2024)",
+      "(META and TSLA both beat after hours. The list was all exit plans yesterday.)",
+      "\"I do size down a little bit, like 5%, 10%, if I get a big move. It's very stressful if you have a portfolio, you're on margin, you get a pullback day and you haven't sized down anything. It's always about being in a position of strength mentally.\""
+    ],
+    "translated": [
+      "강세를 보일 때 일부를 매도하세요.",
+      "(영상: 2024년 10월 5일)",
+      "(META와 TSLA 모두 시간 외 거래에서 예상치를 웃도는 실적을 발표했습니다. 어제 목록은 전부 매도 계획이었습니다.)",
+      "\"크게 상승하면 저는 포지션을 5%, 10% 정도 조금 줄입니다. 포트폴리오를 보유하고 증거금 대출까지 쓰고 있는데 포지션을 전혀 줄이지 않은 상태에서 조정받는 날을 맞으면 스트레스가 매우 큽니다. 언제나 중요한 건 심리적으로 여유 있는 위치에 있는 것입니다.\""
+    ],
+    "content_hash": "d45ef1b8f432e628",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T06:38:03.053647+00:00",
     "chunk": "posts-x.json"
   }
 }

@@ -263,5 +263,16 @@
       "screenshot:phrase:fire your seo"
     ],
     "fingerprint": "d7ae76021124a20c1e0faec1d708b9e0dfd8ab174a2eccff4f94bdc051022f11"
+  },
+  "2113244036635214036": {
+    "title": "html-plan",
+    "summary_ko": "계획을 하나의 대화형 HTML 파일로 만드는 개발 도구의 README 형태 소개. 계획을 계층적으로 펼치고 선택지와 주석을 작성한 뒤 응답을 모아 Claude에 전달하는 흐름을 설명한다.",
+    "category": "개발 도구·계획 검토·오픈소스",
+    "repo_url": "https://github.com/plannotator/effective-html",
+    "status": "verified",
+    "evidence": [
+      "search:phrase:html plan"
+    ],
+    "fingerprint": "8b7b3b6e2099e10d24656329431869dd852bfd4f9b001643c1690107ab183932"
   }
 }
