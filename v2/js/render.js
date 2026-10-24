@@ -47,6 +47,7 @@ function escapeHtml(value) {
 }
 
 function publishedLabel(value) {
+  if(typeof window!=='undefined'&&window.ArchiveMetadata){const d=window.ArchiveMetadata.date(value);return d.status==='recorded'||d.status==='edited'?d.label:'';}
   const raw=String(value||'').replace(/^Last edited\s*(?:Opens edit history)?\s*/i,'').trim();
   if (/^\d{4}-\d{2}-\d{2}(?:T|\s|$)/.test(raw)) return raw.slice(0,10);
   if (/\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2},?\s+\d{4}\b/i.test(raw) || /^\d{4}[./]\s*\d{1,2}[./]\s*\d{1,2}/.test(raw)) return raw;
@@ -356,6 +357,7 @@ function normalizeArticle(article) {
       if (pairs.length) a.mediaImages = pairs;
     }
   }
+  if (typeof window !== 'undefined' && window.ArchiveMetadata) a.topics = window.ArchiveMetadata.topics(a.topics);
   return a;
 }
 
@@ -505,7 +507,8 @@ function articleCard(article, options = {}) {
   const topics = Array.isArray(a.topics) ? a.topics : [];
   const handle = isX ? `<span class="handle">${escapeHtml(a.handle || '')}</span>` : '';
   const published = publishedLabel(a.published_at || a.createdAt);
-  const meta = isX ? `작성 ${published || '날짜 미확인'}` : [a.source_domain, published ? `작성 ${published}` : '', a.date_saved ? `저장 ${a.date_saved}` : ''].filter(Boolean).join(' · ') || '작성 날짜 미확인';
+  const dateKind=typeof window!=='undefined'&&window.ArchiveMetadata&&window.ArchiveMetadata.date(a.published_at||a.createdAt).status==='edited'?'수정':'게시';
+  const meta = isX ? `${dateKind} ${published || '날짜 미확인'}` : [a.source_domain, published ? `${dateKind} ${published}` : '', a.date_saved ? `저장 ${a.date_saved}` : ''].filter(Boolean).join(' · ') || '작성 날짜 미확인';
 
   // 이미지 (썸네일 → 라이트박스 링크)
   const imgs = [];

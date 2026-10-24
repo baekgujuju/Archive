@@ -56,7 +56,7 @@ var ArchiveApp = (function () {
   }
   function title(a) { return String(a.title || bodyText(a).split('\n')[0].slice(0, 90) || a.author || '글'); }
   function author(a) { return String(a.author && typeof a.author === 'object' ? a.author.name || a.author.handle || '' : a.author || ''); }
-  function metadata(a) { var date=window.ArchiveRender&&window.ArchiveRender.publishedLabel(a.published_at||a.createdAt);return [author(a), a.handle,date?'작성 '+date:'',a.source_domain,a.date_saved?'저장 '+a.date_saved:''].filter(Boolean).join(' · '); }
+  function metadata(a) { var date=ArchiveMetadata.describe(a).published;return [author(a),a.handle,(date.status==='recorded'||date.status==='edited')?(date.status==='edited'?'수정 ':'게시 ')+date.label:'게시 날짜 미확인',a.source_domain,a.date_saved?'기존 저장 '+a.date_saved:''].filter(Boolean).join(' · '); }
   function images(media, sourceUrl) {
     return (Array.isArray(media) ? media : []).map(function (pair) {
       var raw = Array.isArray(pair) ? pair[1] || pair[0] : typeof pair === 'string' ? pair : pair && (pair.full || pair.url || pair.src || pair.thumb);
@@ -166,23 +166,152 @@ var ArchiveApp = (function () {
       translatedBody(a) + '</div>' + images(a.media && a.media.some(function(m){return m&&m.kind==='video_thumbnail';})?a.media:a.mediaImages,a.sourceUrl) +
       renderQuoted(q) +
       repliesHtml + urlHtml +
-      '<p>' + esc((a.topics || []).join(' · ')) + '</p>' + (url ? '<a href="' + esc(url) + '" target="_self" rel="noopener noreferrer">원문 보기 ↗</a>' : '');
+      recordInformation(a) + '<p>' + esc((a.topics || []).join(' · ')) + '</p>' + (url ? '<a href="' + esc(url) + '" target="_self" rel="noopener noreferrer">원문 보기 ↗</a>' : '');
   }
+  // Index the reader's sanitized output, including only translations it displays.
+  function duplicateCandidates(r) {
+    return (r.sameSource || []).filter(function (other) { return hidden.indexOf(other.id) < 0; });
+  }
+  function recordInformation(a) {
+    var info = ArchiveMetadata.describe(a), r = records.find(function (item) { return item.article === a; });
+    var rows = [[info.published.status === 'edited' ? '수정 시각(원문)' : '게시 시각', info.published], ['수집 시각', info.captured], ['아카이브 등록 시각', info.archived]];
+    if (info.legacySaved.status !== 'missing') rows.push(['기존 저장일', info.legacySaved]);
+    var html = rows.map(function (row) { return '<dt>' + esc(row[0]) + '</dt><dd>' + esc(row[1].label) + (row[1].status === 'unverified' ? ' <small>' + esc(row[1].raw.slice(0, 160)) + '</small>' : '') + '</dd>'; }).join('');
+    html += '<dt>작성자 식별</dt><dd>' + esc(info.author.handle ? '@' + info.author.handle : info.author.label) + '</dd>';
+    if (info.source.key) html += '<dt>원문 식별</dt><dd>' + esc(info.source.key) + '</dd>';
+    var warnings = [info.source.warning, info.author.warning].filter(Boolean);
+    var others = r ? duplicateCandidates(r) : [];
+    return '<details class="aa-record-info"><summary>자료 정보' + (others.length ? ' · 같은 원문 ' + (others.length + 1) + '건' : '') + '</summary><dl>' + html + '</dl>' +
+      (warnings.length ? '<p class="aa-record-warning">' + esc(warnings.join(' · ')) + '</p>' : '') +
+      (others.length ? '<p>같은 원문의 다른 저장본입니다. 자료와 메모·북마크는 각각 유지합니다.</p>' + others.map(function (other) { return '<button type="button" data-read-id="' + esc(other.id) + '">' + esc(title(other.article)) + '</button>'; }).join('') : '') + '</details>';
+  }
+  function prepareRecordMetadata() {
+    var labels = ArchiveMetadata.authorLabels(records.map(function (r) { return r.article; }));
+    records.forEach(function (r) {
+      var info = ArchiveMetadata.describe(r.article);
+      r.metadataReview = !!(info.source.warning || info.author.warning || [info.published,info.captured,info.archived,info.legacySaved].some(function(d){return d.status==='unverified';}));
+      r.authorKey = info.author.key || 'unverified:' + r.id;
+      r.author = labels.get(info.author.key) || info.author.label;
+      r.card.dataset.author = r.author;
+      var byline = r.card.querySelector('.byline .author'); if (byline) byline.textContent = r.author;
+      r.sameSource = [];
+    });
+    ArchiveMetadata.duplicateGroups(records.map(function (r) { return r.article; })).forEach(function (group) {
+      group.indices.forEach(function (index) { records[index].sameSource = group.indices.filter(function (other) { return other !== index; }).map(function (other) { return records[other]; }); });
+    });
+  }
+  function duplicateBadge(r) {
+    var previous = r.card.querySelector('.aa-duplicate-source'); if (previous) previous.remove();
+    var others = duplicateCandidates(r); if (!others.length) return;
+    var button = document.createElement('button'); button.type = 'button'; button.className = 'aa-duplicate-source'; button.dataset.duplicates = r.id;
+    button.textContent = '같은 원문 ' + (others.length + 1) + '건 · 별도 보관';
+    (r.card.querySelector('summary.card-toggle') || r.card).appendChild(button);
+  }
+  function refreshRecordInformation() {
+    if (!current || !readDialog || !readDialog.open) return;
+    var previous = readDialog.querySelector('.aa-record-info');
+    if (!previous) return;
+    var wasOpen = previous.open;
+    previous.outerHTML = recordInformation(current.article);
+    readDialog.querySelector('.aa-record-info').open = wasOpen;
+  }
+
+  function searchSegments(r) {
+    var signature = JSON.stringify([load('archive-removed-replies', []), load('archive-deleted-replies', [])]);
+    // Bootstrap data refresh recreates records. Any future in-place article/translation update must clear searchCache.
+    if (r.searchCache && r.searchCache.signature === signature) return r.searchCache.segments;
+    var doc = new DOMParser().parseFromString(articleHtml(r.article), 'text/html'), segments = [];
+    var replies = Array.from(doc.querySelectorAll('.reply')), quotes = Array.from(doc.querySelectorAll('.quoted'));
+    function visible(node) { return node && !node.closest('[hidden]'); }
+    function content(node, omit) {
+      var clone = node.cloneNode(true);
+      clone.querySelectorAll(omit || 'button,summary,.translation-label').forEach(function (el) { el.remove(); });
+      function walk(el) {
+        if (el.nodeType === 3) return el.nodeValue;
+        var value = Array.from(el.childNodes).map(walk).join('');
+        return /^(P|DIV|SECTION|LI|BLOCKQUOTE|H[1-6]|BR)$/.test(el.tagName || '') ? '\n' + value + '\n' : value;
+      }
+      return walk(clone).replace(/\s+/g, ' ').trim();
+    }
+    function add(node, label, kind, index, omit) {
+      if (!visible(node)) return;
+      var value = content(node, omit);
+      if (value) segments.push({ text: value, label: label, kind: kind, index: index || 0 });
+    }
+    add(doc.querySelector('h1'), '제목', 'body');
+    add(doc.querySelector('p.meta'), '작성자·날짜', 'body');
+    add(doc.querySelector('.aa-body'), '본문', 'body', 0, '.translation-ko,.translation-label,button,summary');
+    Array.from(doc.querySelectorAll('.aa-body .translation-ko')).forEach(function (node, i) { add(node, '본문 번역', 'translation', i); });
+    replies.forEach(function (node, i) {
+      add(node, '댓글 ' + (i + 1), 'reply', i, '.quoted,.translation-ko,button,summary');
+      Array.from(node.querySelectorAll('.translation-ko')).filter(function (el) { return !el.closest('.quoted'); }).forEach(function (el) { add(el, '댓글 ' + (i + 1) + ' 번역', 'reply', i); });
+    });
+    quotes.forEach(function (node, i) {
+      add(node, node.closest('.reply') ? '댓글의 인용문' : '인용문', 'quote', i, '.quoted,.translation-ko,button,summary');
+      Array.from(node.querySelectorAll('.translation-ko')).filter(function (el) { return el.closest('.quoted') === node; }).forEach(function (el) { add(el, '인용문 번역', 'quote', i); });
+    });
+    Array.from(doc.querySelectorAll('.url-inline-item')).forEach(function (node, i) { add(node, '링크 내용', 'link', i); });
+    Array.from(doc.querySelectorAll('a[href]')).forEach(function (node) {
+      if (!visible(node)) return;
+      var reply = node.closest('.reply'), quote = node.closest('.quoted');
+      var kind = quote ? 'quote' : reply ? 'reply' : node.closest('.url-inline-item') ? 'link' : 'body';
+      var index = quote ? quotes.indexOf(quote) : reply ? replies.indexOf(reply) : 0;
+      segments.push({ text: node.getAttribute('href'), label: quote ? '인용문 링크' : reply ? '댓글 링크' : '본문·원문 링크', kind: kind, index: index });
+    });
+    segments.push({ text: [r.article.summary, r.article.toolDescription, r.article.toolCategory, r.topics.join(' ')].filter(Boolean).join(' '), label: '주제·요약', kind: 'body', index: 0 });
+    r.searchCache = { signature: signature, segments: segments };
+    return segments;
+  }
+  function searchRecord(r, words) {
+    var segments = searchSegments(r).slice(), memo = memoValue(r.card.querySelector('[data-memo-id]')?.dataset.memoId || r.id);
+    if (memo) segments.push({ text: memo, label: '메모', kind: 'memo', index: 0 });
+    return ArchiveSearch.match(segments, words, mode);
+  }
+  function searchResult(r, result, words) {
+    var previous = r.card.querySelector('.aa-search-hit');
+    if (previous) previous.remove();
+    r.searchMatch = null;
+    if (!words.length || !result.matched || !result.hits.length) return;
+    var hit = result.hits[0], panel = document.createElement('button');
+    r.searchMatch = hit.segment;
+    panel.type = 'button'; panel.className = 'aa-search-hit'; panel.dataset.searchResult = r.id;
+    var label = document.createElement('strong'), excerpt = document.createElement('span');
+    label.textContent = result.hits.slice(0, 3).map(function (item) { return item.segment.label; }).filter(function (v, i, all) { return all.indexOf(v) === i; }).join(' · ');
+    excerpt.textContent = ArchiveSearch.excerpt(hit.segment.text, hit.words);
+    panel.append(label, excerpt); (r.card.querySelector('summary.card-toggle') || r.card).appendChild(panel);
+  }
+  function revealSearchMatch(r) {
+    var hit = r.searchMatch;
+    if (!hit) return;
+    if (hit.kind === 'memo') {
+      memoId = r.card.querySelector('[data-memo-id]')?.dataset.memoId || r.id;
+      memoDialog.querySelector('textarea').value = memoValue(memoId); show(memoDialog); return;
+    }
+    var selectors = { reply: '.reply', quote: '.quoted', translation: '.aa-body .translation-ko', link: '.url-inline-item', body: '.aa-body' };
+    var target = readDialog.querySelectorAll(selectors[hit.kind] || '.aa-body')[hit.index || 0];
+    if (!target || target.closest('[hidden]')) return;
+    for (var node = target; node && node !== readDialog; node = node.parentElement) if (node.tagName === 'DETAILS') node.open = true;
+    window.requestAnimationFrame(function () { if (readDialog.open && target.isConnected) target.scrollIntoView({ block: 'center' }); });
+  }
+
   function button(text, group, value) { return '<button type="button" data-filter="' + group + '" data-value="' + esc(value) + '" aria-pressed="false">' + esc(text) + '</button>'; }
   function toggle(array, value) { var i = array.indexOf(value); if (i < 0) array.push(value); else array.splice(i, 1); }
   function status(message) { var el = controls.querySelector('[data-results-status]'); if (el) el.textContent = message; }
   function update() {
     var modeButton=controls.querySelector('[data-action="mode"]');modeButton.textContent=mode;modeButton.setAttribute('aria-label','검색 조건 '+mode+', 클릭하여 변경');modeButton.setAttribute('aria-pressed',String(mode==='AND'));
-    var words = controls.querySelector('input').value.toLowerCase().split(',').map(function (s) { return s.trim(); }).filter(Boolean), count = 0, pinCount = 0;
-    var defaultView=!words.length&&!selection.hidden&&!selection.type.length&&!selection.topic.length&&!selection.author.length&&!selection.bookmark.length;
+    var words = ArchiveSearch.terms(controls.querySelector('input').value), count = 0, pinCount = 0;
+    var defaultView=!words.length&&!selection.review&&!selection.hidden&&!selection.type.length&&!selection.topic.length&&!selection.author.length&&!selection.bookmark.length;
     if(aiList)aiList.hidden=!(defaultView||selection.type[0]==='ai');
     records.forEach(function (r) {
       var isHidden = hidden.indexOf(r.id) >= 0, color = bookmarks[r.id], isPinned = pins.indexOf(r.id) >= 0;
-      var match = !words.length || (mode === 'AND' ? words.every(function (w) { return r.search.indexOf(w) >= 0; }) : words.some(function (w) { return r.search.indexOf(w) >= 0; }));
-      var visible = match && (selection.hidden ? isHidden : !isHidden) && (!selection.type.length || selection.type.indexOf(r.type) >= 0 || (selection.type[0]==='ai'&&r.topics.indexOf('AI툴')>=0)) &&
-        (!selection.topic.length || selection.topic.some(function (t) { return r.topics.indexOf(t) >= 0; })) && (!selection.author.length || selection.author.indexOf(r.author) >= 0) &&
+      var result = words.length ? searchRecord(r, words) : { matched: true, hits: [] };
+      var match = result.matched;
+      searchResult(r, result, words);
+      duplicateBadge(r);
+      var visible = match && (!selection.review || r.metadataReview) && (selection.hidden ? isHidden : !isHidden) && (!selection.type.length || selection.type.indexOf(r.type) >= 0 || (selection.type[0]==='ai'&&r.topics.indexOf('AI툴')>=0)) &&
+        (!selection.topic.length || selection.topic.some(function (t) { return r.topics.indexOf(t) >= 0; })) && (!selection.author.length || selection.author.indexOf(r.authorKey) >= 0) &&
         (!selection.subject.length || selection.subject[0]===r.article.subject) && (!selection.category.length || selection.category[0]===r.article.category) && (!selection.bookmark.length || (color && (selection.bookmark.indexOf('all') >= 0 || selection.bookmark.indexOf(color) >= 0)));
-      if(!selection.type.length&&r.type==='ib')visible=false;
+      if(!selection.type.length&&r.type==='ib'&&!selection.review)visible=false;
       if(defaultView&&r.topics.indexOf('AI툴')>=0&&!isPinned)visible=false;
       r.card.hidden = !visible;
       r.card.style.borderLeftColor = color || '';
@@ -208,7 +337,8 @@ var ArchiveApp = (function () {
     // 작성자 선택 표시기 업데이트
     var ind = controls.querySelector('[data-author-indicator]');
     if (ind) ind.textContent = selection.author.length ? '(' + selection.author.length + '명 선택)' : '';
-    status(count ? count + '개 글 표시' : '조건에 맞는 글이 없습니다.');
+    var reviewButton=controls.querySelector('[data-action=metadata-review]');if(reviewButton){reviewButton.setAttribute('aria-pressed',String(selection.review));reviewButton.textContent=selection.review?'자료 정보 확인 중 · 해제':'자료 정보 확인 '+records.filter(function(r){return r.metadataReview;}).length+'건';}
+    status((selection.review?'자료 정보 확인 대상 · ':'')+(count ? count + '개 글 표시' : '조건에 맞는 글이 없습니다.'));
     if(aiList)aiList.querySelectorAll('[data-read-id]').forEach(function(b){var record=records.find(function(r){return r.id===b.dataset.readId;});b.closest('li').hidden=hidden.indexOf(b.dataset.readId)>=0||(selection.type[0]==='ai'&&record&&record.card.hidden);});
   }
   function dialog(id, label, html) {
@@ -223,7 +353,7 @@ var ArchiveApp = (function () {
   function close(d) { if (typeof d.close === 'function') d.close(); else { d.removeAttribute('open'); document.body.classList.remove('aa-modal-open'); if (opener) opener.focus(); } }
   var readerHistory=[];
   function openRead(r,back) {if(current&&readDialog.open&&!back&&current!==r)readerHistory.push(current);if(!readDialog.open)readerHistory=[];current=r;readDialog.querySelector('[data-share=text]').textContent='텍스트 복사';var related=(r.related||[]).filter(function(other){return hidden.indexOf(other.id)<0;});readDialog.querySelector('.aa-content').innerHTML=articleHtml(r.article)+(related.length?'<section class="reader-related"><h2>연관 게시글</h2>'+related.map(function(other){return '<button type="button" data-related-id="'+esc(other.id)+'">'+'– '+esc(title(other.article))+'<small> · '+esc(other.author)+'</small></button>';}).join('')+'</section>':'');readDialog.querySelector('[data-reader-title]').textContent=title(r.article);readDialog.querySelector('[data-reader-back]').hidden=!readerHistory.length;if(!readDialog.open)show(readDialog);formatContent(readDialog.querySelector('.aa-content'));if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();readDialog.querySelector('.aa-content').scrollTop=0; }
-  function resetFilters(){Object.keys(selection).forEach(function(k){selection[k]=k==='hidden'?false:[];});mode='OR';controls.querySelector('input').value='';controls.querySelector('[data-action="mode"]').textContent='OR';update();}
+  function resetFilters(){Object.keys(selection).forEach(function(k){selection[k]=(k==='hidden'||k==='review')?false:[];});mode='OR';controls.querySelector('input').value='';controls.querySelector('[data-action="mode"]').textContent='OR';update();}
 
   function download(blob, name) { var url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); window.setTimeout(function () { URL.revokeObjectURL(url); }, 60000); }
   function shareFile(blob, name, heading) {
@@ -276,7 +406,7 @@ var ArchiveApp = (function () {
     list = document.getElementById('articles'); if (!list) return;
     document.body.classList.remove('aa-modal-open');
     [controls, pinned, readDialog, memoDialog, bookmarkDialog, renameDialog, confirmDialog, exportDialog, exportDoneDialog, imageDialog, aiList].forEach(function (el) { if (el) el.remove(); });
-    selection = { type: [], topic: [], author: [], bookmark: [], subject: [], category: [], hidden: false }; mode = 'OR'; current = null;
+    selection = { type: [], topic: [], author: [], bookmark: [], subject: [], category: [], hidden: false, review: false }; mode = 'OR'; current = null;
     pins = load('archive-pinned', []); hidden = load('archive-deleted-posts', []);
     pins = Array.isArray(pins) ? pins.map(String) : []; hidden = Array.isArray(hidden) ? hidden.map(String) : [];
     var saved = load('archive-bookmarks', {}); bookmarks = Object.create(null);
@@ -288,6 +418,7 @@ var ArchiveApp = (function () {
       return { card: card, id: card.dataset.pinId || card.dataset.idx, article: a, author: card.dataset.author || author(a), type: card.dataset.type || a.type, topics: topics,
         search: [title(a), bodyText(a), a.summary, a.toolDescription, a.toolCategory, author(a), a.handle, topics.join(' ')].join(' ').toLowerCase() };
     });
+    prepareRecordMetadata();
     if (!localStorage.getItem('archive-ib-pins-migrated')) {
       records.forEach(function (r) { if (r.type === 'ib' && localStorage.getItem(r.id) === '1' && pins.indexOf(r.id) < 0) pins.push(r.id); });
       if (persist('archive-pinned', pins)) persist('archive-ib-pins-migrated', '1');
@@ -305,6 +436,7 @@ var ArchiveApp = (function () {
       var b = e.target.closest('button'); if (!b) return;
       if(b.dataset.filter==='bookmark'){if(suppressBookmarkClick){suppressBookmarkClick=false;return;}clearTimeout(bookmarkClickTimer);if(e.detail<2)bookmarkClickTimer=setTimeout(function(){selection.bookmark=b.dataset.value&&selection.bookmark[0]!==b.dataset.value?[b.dataset.value]:[];update();},250);return;}if (b.dataset.filter) {var field=b.dataset.filter;selection[field]=b.dataset.value&&selection[field][0]!==b.dataset.value?[b.dataset.value]:[];if(field==='type'){selection.topic=[];selection.author=[];selection.subject=[];selection.category=[];}}
       if(b.dataset.action==='filter-close'){var filters=b.closest('details.filters');filters.open=false;filters.querySelector('summary').focus({preventScroll:true});return;}
+      if(b.dataset.action==='metadata-review')selection.review=!selection.review;
       if(b.dataset.action==='reset') resetFilters();
       if (b.dataset.action === 'mode') { mode = mode === 'OR' ? 'AND' : 'OR'; b.textContent = mode; b.setAttribute('aria-label', '검색 조건 ' + mode + ', 클릭하여 변경'); }
       if (b.dataset.action === 'hidden') selection.hidden = !selection.hidden;
@@ -392,6 +524,8 @@ var ArchiveApp = (function () {
     }
   }
   async function cardClick(e) {
+    var duplicateButton=e.target.closest('[data-duplicates]');if(duplicateButton){e.preventDefault();var duplicate=records.find(function(r){return r.id===duplicateButton.dataset.duplicates;});if(duplicate){openRead(duplicate);var info=readDialog.querySelector('.aa-record-info');if(info){info.open=true;info.scrollIntoView({block:'center'});}}return;}
+    var searchButton=e.target.closest('[data-search-result]');if(searchButton){e.preventDefault();var found=records.find(function(r){return r.id===searchButton.dataset.searchResult;});if(found){if(found.searchMatch?.kind!=='memo')openRead(found);revealSearchMatch(found);}return;}
     var toolButton=e.target.closest('[data-read-id]');if(toolButton){var tool=records.find(function(r){return r.id===toolButton.dataset.readId;});if(tool)openRead(tool);return;}
     var relatedButton=e.target.closest('[data-related-id]');if(relatedButton){e.preventDefault();var next=records.find(function(r){return r.id===relatedButton.dataset.relatedId;});if(next){ArchiveImages.close();openRead(next);}return;}
     var deleteReply=e.target.closest('[data-delete-reply]');if(deleteReply){e.preventDefault();if(!await askConfirm('이 아카이브에서 댓글을 삭제하시겠습니까? 원본 서비스의 댓글은 삭제되지 않습니다.'))return;var rid=deleteReply.dataset.deleteReply,removed=load('archive-removed-replies',[]);if(removed.indexOf(rid)<0&&persist('archive-removed-replies',removed.concat(rid)))refreshSavedState();return;}
@@ -400,7 +534,7 @@ var ArchiveApp = (function () {
       e.preventDefault(); e.stopPropagation();
       var rid = replyButton.dataset.hideReply || replyButton.dataset.replyId;
       var removed = load('archive-deleted-replies', []);
-      if (rid && removed.indexOf(rid) < 0 && persist('archive-deleted-replies', removed.concat(rid))) document.querySelectorAll('[data-reply-id]').forEach(function (r) { if (r.dataset.replyId === rid) r.hidden = true; });
+      if (rid && removed.indexOf(rid) < 0 && persist('archive-deleted-replies', removed.concat(rid))) {document.querySelectorAll('[data-reply-id]').forEach(function (r) { if (r.dataset.replyId === rid) r.hidden = true; });update();}
       return;
     }
     var card = e.target.closest('.article'); if (!card) return; var r = records.filter(function (item) { return item.card === card; })[0]; if (!r) return;
@@ -435,9 +569,10 @@ var ArchiveApp = (function () {
     if (!Array.isArray(hidden)) hidden = [];
     if (!bookmarks || typeof bookmarks !== 'object' || Array.isArray(bookmarks)) bookmarks = {};
     if (controls) update();
+    refreshRecordInformation();
   }
   // replyBody: 테스트용 노출 (text 폴백 검증 — render 테스트에서 사용).
-  return { init: init, refreshSavedState: refreshSavedState, sanitizeHtml: cleanHtml, replyBody: replyBody };
+  return { init: init, refreshSavedState: refreshSavedState, sanitizeHtml: cleanHtml, replyBody: replyBody, searchSegments: searchSegments, articleHtml: articleHtml };
 }());
 
 
