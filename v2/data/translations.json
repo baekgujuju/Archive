@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-24T03:04:03.281578+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-24T04:06:25.374413+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -14409,8 +14409,8 @@
     "translated": [],
     "content_hash": "ea5b211ded388cba",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-24T03:04:12.700890+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-24T04:06:48.081690+00:00"
   },
   "2112930954268615039": {
     "paragraphs": [
