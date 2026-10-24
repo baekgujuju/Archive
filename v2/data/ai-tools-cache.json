@@ -3873,5 +3873,30 @@
     "fingerprint": "014b37065ec1407971130b9e00e68d2fd96b8859ce66f442c8d0dfde88343de3",
     "entry": null,
     "version": 3
+  },
+  "web-ce2a1fcaaa0faa18fc3c3f2de15c7d81782aa27f9389253fb15b2dd0a9d64613:9e8c907faae25b4a.png": {
+    "fingerprint": "3b976a7331f43f093c5cc9370986369afdfaa57745af53f92727a98fe655c1bd",
+    "entry": null,
+    "version": 3
+  },
+  "web-ce2a1fcaaa0faa18fc3c3f2de15c7d81782aa27f9389253fb15b2dd0a9d64613:084272e4d456172d.png": {
+    "fingerprint": "99c098819336c66ecc37b3f3ba5147e262ec111592f3209e1e85f27216df1f6c",
+    "entry": null,
+    "version": 3
+  },
+  "web-ce2a1fcaaa0faa18fc3c3f2de15c7d81782aa27f9389253fb15b2dd0a9d64613:e22b6f55f0516102.png": {
+    "fingerprint": "5f3ccfa8f4b45c7657a5f68ecab3ac066405932a2bb09c6ecd1360b61ebce6df",
+    "entry": null,
+    "version": 3
+  },
+  "web-ce2a1fcaaa0faa18fc3c3f2de15c7d81782aa27f9389253fb15b2dd0a9d64613:dd3f9d6ccf981294.png": {
+    "fingerprint": "cef0548bf9c126056c423965c75c2169fb5b4d28773b49b0f86b7c617218ab47",
+    "entry": null,
+    "version": 3
+  },
+  "web-ce2a1fcaaa0faa18fc3c3f2de15c7d81782aa27f9389253fb15b2dd0a9d64613:e1569f5e2d4ef185.png": {
+    "fingerprint": "403d4822430bcaab3bdc62f77d20cf1f4ab08cebfc9a300f172d6e37c53ceca4",
+    "entry": null,
+    "version": 3
   }
 }

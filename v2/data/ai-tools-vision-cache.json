@@ -6486,5 +6486,55 @@
     "category_ko": "경제·금융 전망 차트",
     "owner_hint": "KB증권, Bloomberg",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:74048f4789102600f98eff9adb01758fbd7860b643c3feda31cc2b0dc5198a6d": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SK하이닉스·삼성전자 12개월 선행 PER 추이",
+    "description_ko": "SK하이닉스와 삼성전자의 12개월 선행 주가수익비율을 비교한 그래프다. 두 회사 모두 등락 후 하락하며 마지막 표시값은 각각 3.6배와 3.9배다.",
+    "category_ko": "금융·반도체 주식",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:acc3006a2f103101c04479b7a9ce36725c5f79b1e6280b6b017dbfaa92dfd5ea": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Quick! Buy Toilet Paper",
+    "description_ko": "화장지 구매 수요의 작은 변화가 소매업체, 제조업체, 공급업체로 전달되면서 큰 주문 변동으로 증폭되는 채찍효과를 설명한 그림이다.",
+    "category_ko": "경제·공급망",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:5638ae25dc1d8bb10770192f2b50788e3f10fa8f53e840c9a2fecff3ceb2e0fe": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "커머디티 DRAM과 HBM 공급망의 주문 증폭",
+    "description_ko": "소비자의 기기 구매와 AI 서비스 이용이 각각 DRAM 및 HBM 주문으로 이어지는 과정을 나타낸다. 단계마다 실수요와 선주문이 중첩되어 메모리 생산업체에 실수요 14개와 가수요 30개가 전달되는 예시다.",
+    "category_ko": "반도체·공급망",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:380032e907d9c8487fc9d68f9b26e781736a317615e63b8b5f18f100361811c7": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "씨젠·깨끗한나라 주가 추이",
+    "description_ko": "2020년부터 2026년 무렵까지 씨젠과 깨끗한나라의 주가를 천 원 단위로 표시한 그래프다. 두 종목 모두 2020~2021년 급등한 뒤 장기간 하락하는 흐름을 보인다.",
+    "category_ko": "금융·주식",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:82a7cdc0ab6903a6b22d81c4a34de728081cbf62968a4ffef7f92facfe745e37": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "SK하이닉스와 HMM의 시기별 주가 흐름 비교",
+    "description_ko": "SK하이닉스의 2024년 하반기 이후 흐름과 HMM의 2019년 하반기~2022년 상반기 흐름을 서로 다른 시간축으로 겹쳐 비교한 그래프다. 상승과 고점 형성 이후 조정 구간의 유사성을 시각적으로 보여준다.",
+    "category_ko": "금융·주식 비교",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }
