@@ -337,7 +337,7 @@ var ArchiveApp = (function () {
     // 작성자 선택 표시기 업데이트
     var ind = controls.querySelector('[data-author-indicator]');
     if (ind) ind.textContent = selection.author.length ? '(' + selection.author.length + '명 선택)' : '';
-    var reviewButton=controls.querySelector('[data-action=metadata-review]');if(reviewButton){reviewButton.setAttribute('aria-pressed',String(selection.review));reviewButton.textContent=selection.review?'자료 정보 확인 중 · 해제':'자료 정보 확인 '+records.filter(function(r){return r.metadataReview;}).length+'건';}
+    var reviewButton=controls.querySelector('[data-action=metadata-review]');if(reviewButton){reviewButton.setAttribute('aria-pressed',String(selection.review));reviewButton.textContent=selection.review?'미분류자료 해제':'미분류자료 보기';}
     status((selection.review?'자료 정보 확인 대상 · ':'')+(count ? count + '개 글 표시' : '조건에 맞는 글이 없습니다.'));
     if(aiList)aiList.querySelectorAll('[data-read-id]').forEach(function(b){var record=records.find(function(r){return r.id===b.dataset.readId;});b.closest('li').hidden=hidden.indexOf(b.dataset.readId)>=0||(selection.type[0]==='ai'&&record&&record.card.hidden);});
   }
