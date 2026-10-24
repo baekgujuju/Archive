@@ -59,6 +59,7 @@ CONFIG_PATH = XBM / "drive_archive_config.json"
 TOOLS_DIR = XBM / "tools"
 INGEST_SCRIPT = TOOLS_DIR / "ingest_post_html.py"
 POSTS_JSON = XBM / "posts.json"
+WEB_INDEX_JSON = HOME / "workspace" / "article-archive" / "index.json"
 # 인제스트 락 (5m 폴 자체 중복 실행 방지)
 # 12h 러너는 flock을 사용하지 않음이 확인됨 → 격리된 상태로 충돌 회피
 SHARED_LOCK = HOOKS_DIR / ".drive_poll.lock"
@@ -507,6 +508,20 @@ def _process_file_inner(f, fid, name, fp, *, work, local_inbox, state, state_pat
         raise FileFailure("download", "fingerprint_drift",
                           content_sha256=content_sha256,
                           downloaded_path=downloaded_path)
+    # Only an explicit, non-X web capture can enter the independent web route.
+    # X (including legacy X missing metadata) keeps the existing fail-closed gate.
+    from web_capture import envelope, WebCaptureError
+    try:
+        web_raw = path.read_bytes().decode('utf-8')
+        web_envelope = envelope(web_raw)
+    except (UnicodeError, ValueError, RecursionError) as exc:
+        raise FileFailure('validation', 'web_envelope_invalid',
+                          content_sha256=content_sha256, downloaded_path=path) from exc
+    if web_envelope is not None:
+        from web_pipeline import process_web
+        return process_web(web_raw, path, fid, name, fp, local_inbox=local_inbox,
+                           state=state, state_path=state_path, processed=processed,
+                           services=sys.modules[__name__])
     if not INGEST_SCRIPT.exists():
         raise RuntimeError("ingest 스크립트 없음")
 # 2) 파싱 (ingester subprocess).

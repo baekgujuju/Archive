@@ -41,7 +41,7 @@ WEB_INDEX_JSON = ARCHIVE_DIR / "index.json"
 IB_LIBRARY_JSON = V2_ROOT / "ib-library.json"
 
 # 빌더 버전 (로직 변경 시 증분 → --check가 재빌드 감지)
-BUILDER_VERSION = "1.2.0"
+BUILDER_VERSION = "1.2.1"
 
 # 빌드 시 data/ 교체에서 보존해야 할 파일 (스테이징에 복사).
 # ai-tools 4종이 빠지면 매 빌드마다 enrich 상태가 소실됨 (2026-10-17 사고).
@@ -291,23 +291,8 @@ def load_web_articles():
     for a in articles:
         if not isinstance(a, dict):
             continue
-        # v2 스키마로 정규화 (원본 ID 보존)
-        normalized.append({
-            'id': a.get('id'),  # 원본 ID 보존 (예: article-20261011-1048)
-            'tweetId': a.get('id'),  # 호환용
-            'type': 'web',
-            'title': a.get('title', ''),
-            'author': a.get('author', ''),
-            'source_url': a.get('source_url', ''),  # render.js는 웹글에 source_url 사용
-            'sourceUrl': a.get('source_url', ''),  # 호환용
-            'source_domain': a.get('source_domain', ''),
-            'date_saved': a.get('date_saved', ''),
-            'topics': a.get('topics', []) if isinstance(a.get('topics'), list) else [],
-            'summary': a.get('summary', ''),
-            'fullText': a.get('fullText', ''),
-            'fullHtml': a.get('fullHtml', ''),
-            'category': 'web',
-        })
+        from hooks.web_capture import normalize_web
+        normalized.append(normalize_web(a))
     return normalized, web_hash
 
 

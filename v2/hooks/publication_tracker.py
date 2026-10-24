@@ -114,6 +114,18 @@ def check_receipts(root, canonical_path, *, now=None, grace=600,
             if input_source is None:
                 raise
             canonical = []
+        def local_records():
+            records = _read(canonical_path) if Path(canonical_path).exists() else []
+            if any(isinstance(r, dict) and r.get('parser_version') == 'web_capture-1'
+                   for r in processed.values()):
+                from web_capture import normalize_web
+                web_path = Path(canonical_path).parent.parent / 'article-archive' / 'index.json'
+                web = _read(web_path)
+                if not isinstance(web, dict) or not isinstance(web.get('articles'), list):
+                    raise EvidenceError('invalid_web_canonical')
+                records = records + [normalize_web(a) for a in web['articles']]
+            return records
+        canonical = local_records()
         observation_error = False
         directory, cached = _cache(root)
         try:
@@ -127,7 +139,7 @@ def check_receipts(root, canonical_path, *, now=None, grace=600,
         # snapshot, not the stale one above, establishes the desired versions.
         intake2 = _read(root / '.drive_poll_state.json')
         try:
-            canonical2 = _read(canonical_path)
+            canonical2 = local_records()
         except FileNotFoundError:
             if input_source is None:
                 raise
