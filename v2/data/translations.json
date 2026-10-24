@@ -12692,8 +12692,8 @@
     "translated": [],
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-24T03:18:11.321977+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-24T04:21:38.453141+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
