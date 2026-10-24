@@ -6426,5 +6426,65 @@
     "category_ko": "소프트웨어 기능 설계 및 변경 검토",
     "owner_hint": "PostBox",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:1fd37a686aeb8c726567d8af8406be10bf8841247c77787b70187c99dba9249b": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피의 2003년·2020년 저점과 반등 비교",
+    "description_ko": "코스피 지수와 파란 점선 추세선을 비교한 두 차트다. 2003년 3월과 2020년 급락 구간의 저점 및 반등을 노란 화살표로 강조했다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0a9498829cf7c2c329a713d9d0071c1e3cb40a53976d9b3e75f8a92c4cf46138": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "코스피의 과거 이중 저점 형성 사례",
+    "description_ko": "1996~1997년, 1998~2000년, 2003~2005년, 2010~2012년, 2017~2020년, 2022~2024년 코스피 차트다. 노란 선과 날짜 표기로 두 저점 사이의 기간을 비교한다.",
+    "category_ko": "금융·주식 차트",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d24bdd7c283e1585f5b0e8c44416fb239d1376b3d0c52b4a9990a329ece64af7": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "10월 코스피 종가·등락률과 주요 변동 원인",
+    "description_ko": "10월 8일부터 21일까지 코스피 종가, 등락률, 주요 상승·하락 이유를 정리한 표다. 10월 15일 종가 5,554와 하락률 7.57%를 강조하며 미국 CPI, 반도체 경쟁, AI 투자 우려 등을 기재했다.",
+    "category_ko": "금융·증시 동향",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:99210d8a7d8ec431750de3d7c17a9203ab0df6abc68b97cea5035ee563aff7f2": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "ISM 가격지수와 미국 주거비 제외 CPI 비교",
+    "description_ko": "제조업·서비스업 ISM 가격지수의 3개월 이동평균을 4개월 선행시킨 빨간 선과 미국 주거비 제외 CPI의 전년 대비 상승률을 나타낸 검은 선을 비교한 차트다.",
+    "category_ko": "경제·물가 지표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:03adabcfd4dd0a4dd858b4a97a1a4f7d052f92aa42d1bc9f811322479025ad69": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "미국 10년물·1년물 국채 금리 추이",
+    "description_ko": "2026년 미국 장기 국채 금리와 단기 국채 금리의 움직임을 나란히 제시했다. 10년물은 5.31에서 5.08로, 1년물은 4.54에서 4.44로 내려온 구간에 수치를 표시했다.",
+    "category_ko": "금융·채권 금리",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:83aae41020b042cd8f417e7a706f4dc5db81103030552e4a9b3850e54f0a3a40": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "2026~2027년 분기별 전망 비교",
+    "description_ko": "Bloomberg 종합과 KB증권 전망을 비교한 선 그래프. 세로축은 비율(%)이며, Bloomberg 종합은 2026년 2분기 3.9%에서 2027년 4분기 2.1%로 낮아지는 흐름을 보인다. KB증권 전망은 주황색 점선으로 표시되어 있으며, 노란색 화살표가 하락 추세를 강조한다.",
+    "category_ko": "경제·금융 전망 차트",
+    "owner_hint": "KB증권, Bloomberg",
+    "provider": "codex"
   }
 }
