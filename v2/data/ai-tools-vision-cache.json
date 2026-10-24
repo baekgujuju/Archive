@@ -6326,5 +6326,105 @@
     "category_ko": "AI 코딩 도구 활용 가이드",
     "owner_hint": "루샨",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2f3fcaba71a35a4e4bcaf85383396dab2f88880fa795accca42c1a69ee5bf201": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "하모닉 패턴과 RSI 다이버전스 복합 차트",
+    "description_ko": "BAT, CRAB, SHARK, BUTTERFLY 하모닉 패턴에 엘리엇 파동, 헤드앤숄더, RSI 일반·히든 다이버전스를 겹쳐 표시한 기술적 분석 도식.",
+    "category_ko": "금융·기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d77758d68209b6473024be4901d7ec527d9761c6271abc1405343a8df9abde3e": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "프레젠테이션 개선 전후: 핵심만 크게",
+    "description_ko": "정보가 많은 기존 슬라이드를 핵심 단어와 수치를 크게 강조하는 방식으로 바꾼 비교 이미지. 정확도와 고객 문의 증가율 3배를 중심으로 시각적 위계를 보여준다.",
+    "category_ko": "디자인·프레젠테이션",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8286be407d869292639431a736539c710589572c6d144c9089db563b0813df1a": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Qullamaggie 주식 차트 화면",
+    "description_ko": "검은 배경의 트레이딩 프로그램에 두 개의 주가 차트와 이동평균선, 거래량이 표시되어 있다. 하단에는 qullamaggie.com 안내 문구가 보인다.",
+    "category_ko": "금융·주식 트레이딩",
+    "owner_hint": "Qullamaggie",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:22ae440dd33475769ed613d88d129f0de384aaad5d3b3e308230f37f7def93ac": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "액션가면의 산업·섹터와 선행 수급 분석",
+    "description_ko": "산업별 연관성과 주도주를 정리하고, 뉴스와 주가 움직임의 시차 및 선행 수급을 관찰하는 투자 방법론을 설명하는 한국어 게시물 모음.",
+    "category_ko": "금융·투자 의견",
+    "owner_hint": "액션가면 (@Theactionmask)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:774e9fe123e0584dd5f960530ee91402015b6993250f6dfe219b1ea063d4c15d": {
+    "index": 4,
+    "is_github": true,
+    "github_urls": [],
+    "title": "SoMark | OXR",
+    "description_ko": "PDF와 문서 이미지를 레이아웃 좌표가 포함된 Markdown 또는 JSON으로 변환하는 오픈소스 문서 파싱 모델 소개. 재귀적 자기 개선 학습, 1.3B 매개변수, 벤치마크 성능을 설명하며 GitHub 링크 배지가 보인다.",
+    "category_ko": "AI·문서 파싱·오픈소스",
+    "owner_hint": "SoMark",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c0c797d7b407c5026074cf3bd31a5120992b5525b94d8e6c3a6978ed8eccdb11": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Scheduling Sent Messages in PostBox",
+    "description_ko": "PostBox의 메시지 예약 발송 기능을 검토하는 대화형 계획 화면. 작성창의 예약 시간 선택, 예약 목록 수정, 발송 실패 보관과 알림, 공용 테이블 및 미결정 질문을 정리한다.",
+    "category_ko": "소프트웨어·기능 설계",
+    "owner_hint": "PostBox",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c33c2f4fec3fb579dc1caba1de6520a7d0f76dd4ab0e430ba24026a6672b029b": {
+    "index": 6,
+    "is_github": true,
+    "github_urls": [],
+    "title": "html-plan",
+    "description_ko": "계획을 하나의 대화형 HTML 파일로 만드는 개발 도구의 README 형태 소개. 계획을 계층적으로 펼치고 선택지와 주석을 작성한 뒤 응답을 모아 Claude에 전달하는 흐름을 설명한다.",
+    "category_ko": "개발 도구·계획 검토·오픈소스",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:856c54ec39ed2c5d341b89ae285ca099733fe1f515e13e0a3c5e4267b134fadc": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Scheduling Sent Messages in PostBox",
+    "description_ko": "PostBox의 예약 메시지 전송 기능 제안 화면. 목차, 변경 파일 수, 예약·전송 중·완료·실패·취소 상태 전이도와 예약 메시지 예시를 보여준다.",
+    "category_ko": "소프트웨어 기능 설계 및 변경 검토",
+    "owner_hint": "PostBox",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4c587e70ea671b6cdf1f02f4dc7d9cff511a487867dfd774898a62680a8771ea": {
+    "index": 1,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Hero Work Links",
+    "description_ko": "개인 웹사이트 첫 화면에 프로젝트 링크를 배치하는 변경 검토 화면. GitHub 링크가 포함된 미리보기, 배치 선택지, index.astro 코드 변경 내용을 보여준다.",
+    "category_ko": "웹사이트 UI 및 코드 변경 검토",
+    "owner_hint": "lucasflatwhite.com / 루카스 플랫화이트",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3aa0c4b53c1d0135cd40a1b5e147092b6a4aa684c35d2f046286b6e7fd649192": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Scheduling Sent Messages in PostBox",
+    "description_ko": "PostBox 예약 메시지 기능 제안의 접힌 개요 화면. 예약 시간 선택, 예약 목록 관리, 전송 실패 처리와 알림, 공용 테이블 및 변경 제외 범위를 정리한다.",
+    "category_ko": "소프트웨어 기능 설계 및 변경 검토",
+    "owner_hint": "PostBox",
+    "provider": "codex"
   }
 }

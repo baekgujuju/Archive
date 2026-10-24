@@ -12693,7 +12693,7 @@
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-24T05:24:26.710312+00:00"
+    "failed_at": "2026-10-24T06:29:32.135430+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -15834,6 +15834,84 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-22T06:48:40.345822+00:00",
+    "chunk": "posts-x.json"
+  },
+  "2113244036635214036": {
+    "paragraphs": [
+      "html-plan 오 이거 좋네요. Claude Code 커뮤니티 플러그인/스킬.",
+      "Claude Code 팀 Thariq가 만들었구요.\nhttps://t.co/Mps20MaNha",
+      "구현 계획을 긴 마크다운 대신 한 장의 인터랙티브 HTML 페이지로 만들어 줘요.",
+      "휙 읽고 결정할 수 있게 설계되어 있어요. UI 목업, 상태, 콜스택, 스키마, 코드 등.. 여러 정보를 시각적으로 보여주는게 좋다요.",
+      "레벨 별로 펼쳐서 볼 수도 있는데, 여러 선택과 코멘트 이후에 답변 만들어서 클로드에 붙여넣으면 더 정확한 구현 ㄱㄱ",
+      "클로드에게 이걸 던져주세요.",
+      "claude plugin marketplace add anthropics/claude-plugins-community",
+      "claude plugin install html-plan@claude-community",
+      "I've been working on a skill that makes better HTML plans in Claude Code.",
+      "It uses simple language, shows code snippets, surfaces questions & makes mockups. Linting reduces the normal failure cases that Claude runs into.",
+      "Would love your feedback before shipping more broadly!"
+    ],
+    "translated": [],
+    "content_hash": "9cb9dabee2e1a3c3",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-24T06:29:59.896633+00:00"
+  },
+  "quote:2113167922357248236:quote:2112938583019655593": {
+    "paragraphs": [
+      "Turn documents into Agent-Friendly data!",
+      "OXR is a 1.3B open-source document parsing model that turns PDFs and document images into structured Markdown or JSON.",
+      "Instead of extracting text alone, it recognizes 13 different document elements including tables, formulas, figures,  x.com/somarkai/statu…"
+    ],
+    "translated": [
+      "문서를 에이전트 친화적인 데이터로 바꾸세요!",
+      "OXR은 PDF와 문서 이미지를 구조화된 Markdown 또는 JSON으로 변환하는 1.3B 오픈 소스 문서 파싱 모델입니다.",
+      "텍스트만 추출하는 대신 표, 수식, 그림 등을 포함한 13가지 문서 요소를 인식합니다.  x.com/somarkai/statu…"
+    ],
+    "content_hash": "cd88e8d829c703a1",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T06:30:11.456471+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113244036635214036:2113248558103380451": {
+    "paragraphs": [
+      "html-plan 한 장으로 펴 보는 맛이 있네요 ㅎㅎ"
+    ],
+    "translated": [
+      "html-plan 한 장으로 펴 보는 맛이 있네요 ㅎㅎ"
+    ],
+    "content_hash": "6e958650fb46367e",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T06:30:11.454628+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:1911643491861438597:1911646093043286077": {
+    "paragraphs": [
+      "ps. 아이고 맨 윗 쓰레드 그림. BUTTERFLY 가 아니고 GARTLEY 인데 잘못씀."
+    ],
+    "translated": [
+      "추신. 아이고 맨 위 스레드 그림. 버터플라이가 아니고 가틀리인데 잘못 씀."
+    ],
+    "content_hash": "eb9c1278d8093627",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T06:30:11.456742+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113244036635214036:2113244290470351353": {
+    "paragraphs": [
+      "요렇게 구조화되어서 나옵니다요",
+      "Scheduled Send Plan (https://t.co/5KjONsHqto)  https://t.co/5KjONsHqto"
+    ],
+    "translated": [
+      "요렇게 구조화되어서 나옵니다요",
+      "예약 전송 계획 (https://t.co/5KjONsHqto)  https://t.co/5KjONsHqto"
+    ],
+    "content_hash": "d6c34e8b8a9ea9e1",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T06:30:11.454456+00:00",
     "chunk": "posts-x.json"
   }
 }
