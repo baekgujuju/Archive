@@ -15854,11 +15854,24 @@
       "It uses simple language, shows code snippets, surfaces questions & makes mockups. Linting reduces the normal failure cases that Claude runs into.",
       "Would love your feedback before shipping more broadly!"
     ],
-    "translated": [],
+    "translated": [
+      "html-plan 오 이거 좋네요. Claude Code 커뮤니티 플러그인/스킬.",
+      "Claude Code 팀 Thariq가 만들었구요.\nhttps://t.co/Mps20MaNha",
+      "구현 계획을 긴 마크다운 대신 한 장의 인터랙티브 HTML 페이지로 만들어 줘요.",
+      "휙 읽고 결정할 수 있게 설계되어 있어요. UI 목업, 상태, 콜스택, 스키마, 코드 등.. 여러 정보를 시각적으로 보여주는게 좋다요.",
+      "레벨 별로 펼쳐서 볼 수도 있는데, 여러 선택과 코멘트 이후에 답변 만들어서 클로드에 붙여넣으면 더 정확한 구현 ㄱㄱ",
+      "클로드에게 이걸 던져주세요.",
+      "claude 플러그인 마켓플레이스 추가 anthropics/claude-plugins-community",
+      "claude 플러그인 설치 html-plan@claude-community",
+      "Claude Code에서 더 나은 HTML 계획서를 만드는 스킬을 개발하고 있습니다.",
+      "이 스킬은 쉬운 언어를 사용하고, 코드 예시를 보여주고, 확인이 필요한 질문을 드러내며, 목업을 만듭니다. 린트 검사는 Claude가 흔히 겪는 실패 사례를 줄여줍니다.",
+      "더 널리 공개하기 전에 여러분의 피드백을 받고 싶습니다!"
+    ],
     "content_hash": "9cb9dabee2e1a3c3",
-    "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-24T07:37:03.630713+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-24T08:44:50.296064+00:00",
+    "chunk": "posts-x.json"
   },
   "quote:2113167922357248236:quote:2112938583019655593": {
     "paragraphs": [
