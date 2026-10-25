@@ -15,8 +15,22 @@ from pipeline_lock import PipelineLockTimeout, pipeline_lock  # noqa: E402
 
 V2 = Path(__file__).resolve().parent.parent
 ARRAYS = ('pinned', 'deletedPosts', 'deletedReplies', 'deletedRemovedReplies')
-MAPS = ('bookmarks', 'names', 'memos', 'highlights')
+MAPS = ('bookmarks', 'names', 'memos', 'highlights', 'topicOverrides')
 FORBIDDEN = {'__proto__', 'prototype', 'constructor'}
+
+
+def validate_topics(encoded):
+    import unicodedata
+    if len(encoded) > 8000:
+        raise ValueError('Invalid topic override')
+    topics = json.loads(encoded)
+    if (not isinstance(topics, list) or len(topics) > 20
+        or any(not isinstance(t, str) or not t.strip()
+               or len(t.encode('utf-16-le')) // 2 > 50
+               or any(ord(c) < 32 or ord(c) == 127 for c in t)
+               for t in topics)):
+        raise ValueError('Invalid topic override')
+    return topics
 
 
 def validate(raw):
@@ -38,6 +52,9 @@ def validate(raw):
         value = raw.get(key, {})
         if not isinstance(value, dict) or len(value) > 20000 or any(k in FORBIDDEN or len(k) > 1000 or not isinstance(v, str) or len(v) > 200000 for k, v in value.items()):
             raise ValueError('Invalid map: ' + key)
+        if key == 'topicOverrides':
+            for encoded in value.values():
+                validate_topics(encoded)
         if key == 'highlights':
             for encoded in value.values():
                 anchors = json.loads(encoded)
@@ -101,7 +118,9 @@ def publish(v2=V2):
             downloaded.write_text(content, encoding='utf-8')
             if downloaded.stat().st_size > 2000000:
                 raise ValueError('Export exceeds size limit')
-            state = validate(json.loads(downloaded.read_text(encoding='utf-8')))
+            payload = json.loads(downloaded.read_text(encoding='utf-8'))
+            has_topic_support = 'topicOverrides' in payload
+            state = validate(payload)
         target = v2 / 'data' / 'shared-state.json'
         manifest_path = v2 / 'data' / 'manifest.json'
         paths = [str(p.relative_to(repo)) for p in (target, manifest_path)]
@@ -114,6 +133,8 @@ def publish(v2=V2):
             with pipeline_lock():
                 if target.exists():
                     previous = validate(json.loads(target.read_text(encoding='utf-8')))
+                    if not has_topic_support:
+                        state['topicOverrides'] = previous['topicOverrides']
                     if datetime.fromisoformat(previous['updatedAt'].replace('Z', '+00:00')) > datetime.fromisoformat(state['updatedAt'].replace('Z', '+00:00')):
                         raise ValueError('Older export rejected')
                 # Never overwrite a pending article build or manual change.

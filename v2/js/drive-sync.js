@@ -1,8 +1,46 @@
+if(typeof ArchiveTopics==='undefined'){
+/* Owner topic overrides are preferences; source articles are never rewritten. */
+(function(root,factory){var api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else{root.ArchiveTopics=api;if(typeof globalThis==='object')globalThis.ArchiveTopics=api;}}(typeof window==='object'?window:this,function(){
+  'use strict';
+  var KEY='archive-topic-overrides', forbidden=['__proto__','constructor','prototype'];
+  function list(value){
+    if(!Array.isArray(value)||value.length>20)throw Error('주제는 최대 20개까지 지정할 수 있습니다.');
+    var result=[];
+    value.forEach(function(s){
+      if(typeof s!=='string')throw Error('주제 형식이 올바르지 않습니다.');
+      s=s.normalize('NFC').replace(/\s+/g,' ').trim();
+      if(!s||s.length>50||/[\u0000-\u001f\u007f]/.test(s))throw Error('주제는 1~50자로 입력해 주세요.');
+      if(result.indexOf(s)<0)result.push(s);
+    });
+    return result.sort(function(a,b){return a<b?-1:a>b?1:0;});
+  }
+  function validMap(value){
+    return value!==null&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).length<=20000&&Object.keys(value).every(function(id){
+      if(!id||id.length>1000||forbidden.indexOf(id)>=0||typeof value[id]!=='string'||value[id].length>8000)return false;
+      try{list(JSON.parse(value[id]));return true;}catch(e){return false;}
+    });
+  }
+  function read(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');return validMap(d)?d:{};}catch(e){return {};}}
+  function effective(id,original,map){map=map||read();if(Object.prototype.hasOwnProperty.call(map,id)){try{return list(JSON.parse(map[id]));}catch(e){}}
+    return Array.isArray(original)?original.slice():[];
+  }
+  function unclassified(topics){return !topics.length||topics.every(function(t){return /^(기타|미분류)$/.test(String(t).trim());});}
+  function changed(id,topics,restore){
+    if(!id||id.length>1000||forbidden.indexOf(id)>=0)throw Error('자료 식별자를 확인할 수 없습니다.');
+    var map=Object.assign(Object.create(null),read());
+    if(restore)delete map[id];else map[id]=JSON.stringify(list(topics));
+    if(!validMap(map))throw Error('주제 설정이 너무 많습니다.');
+    return map;
+  }
+  return {key:KEY,list:list,validMap:validMap,read:read,effective:effective,unclassified:unclassified,changed:changed};
+}));
+
+}
 /* Public baseline reads without login; owner export uses short-lived Drive authorization. */
 var DriveSync = (function () {
   'use strict';
   var CLIENT_ID = '43687402502-rlid8pjoakcigrn6tpcs58elo357vtfr.apps.googleusercontent.com';
-  var KEYS = {highlights:'archive-highlights',pinned:'archive-pinned',bookmarks:'archive-bookmarks',names:'archive-bookmark-names',deletedRemovedReplies:'archive-removed-replies',deletedReplies:'archive-deleted-replies',deletedPosts:'archive-deleted-posts'};
+  var KEYS = {topicOverrides:'archive-topic-overrides',highlights:'archive-highlights',pinned:'archive-pinned',bookmarks:'archive-bookmarks',names:'archive-bookmark-names',deletedRemovedReplies:'archive-removed-replies',deletedReplies:'archive-deleted-replies',deletedPosts:'archive-deleted-posts'};
   var MEMO = 'archive_memo_', BASE = 'archive-sync-base', BACKUP = 'archive-sync-conflicts';
   var WRITE_PIN_HASH = '2ffb3371badee194e734205ebe9e870bb9e1857feb1e8d1984ba72231894faa6';
   var writePermit = {}, passwordBusy = false, authPromise=null, authResolve=null, authReject=null, authTimer=null;
@@ -20,7 +58,7 @@ var DriveSync = (function () {
     return out;
   }
   function collect() {
-    var out = {}; Object.keys(KEYS).forEach(function (k) { out[k] = get(KEYS[k], /^(pinned|deleted)/.test(k) ? [] : {}); });
+    var out = {}; Object.keys(KEYS).forEach(function (k) { out[k] = get(KEYS[k], /^(pinned|deleted)/.test(k) ? [] : {}); if(k==='topicOverrides'&&!ArchiveTopics.validMap(out[k]))out[k]={}; });
     out.memos = memoState(); return out;
   }
   function hash(d) { return JSON.stringify(d || collect()); }
@@ -48,7 +86,7 @@ var DriveSync = (function () {
 
   function dictionary(d) { return d !== null && typeof d === 'object' && !Array.isArray(d); }
   function valid(d) {
-    if (!dictionary(d)) return false;
+    if (!dictionary(d) || (d.topicOverrides !== undefined && !ArchiveTopics.validMap(d.topicOverrides))) return false;
     return ['pinned','deletedReplies','deletedPosts','deletedRemovedReplies'].every(function (k) { return d[k] === undefined || (Array.isArray(d[k]) && d[k].every(function (x) { return typeof x === 'string'; })); }) &&
       ['highlights','bookmarks','names','bookmarkNames','memos'].every(function (k) { return d[k] === undefined || (dictionary(d[k]) && Object.keys(d[k]).every(function (id) { return !['__proto__','constructor','prototype'].includes(id) && typeof d[k][id] === 'string'; })); });
   }
@@ -59,6 +97,8 @@ var DriveSync = (function () {
   // Three-way merge preserves deletions once a synchronized baseline exists.
   // Simultaneous conflicting edits keep the local value and preserve remote data in a backup.
   function merge(local, remote, baseline) {
+    // Older clients omit this optional field; omission is not an owner deletion.
+    if (!Object.prototype.hasOwnProperty.call(remote, 'topicOverrides')) remote=Object.assign({},remote,{topicOverrides:(baseline&&baseline.topicOverrides)||local.topicOverrides||{}});
     local = normalize(local); remote = normalize(remote); var out = {}, conflicts = [];
     Object.keys(local).forEach(function (field) {
       var arrays = Array.isArray(local[field]), l = arrays ? Object.fromEntries(local[field].map(function (id) { return [id, true]; })) : local[field];
