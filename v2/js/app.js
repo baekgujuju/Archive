@@ -535,6 +535,36 @@ var ArchiveApp = (function () {
 
     readDialog = dialog('archive-read-dialog', '글 읽기', '<header class="aa-reader-header"><button type="button" data-reader-back hidden>← 이전 글</button><strong data-reader-title></strong><button type="button" data-close>닫기 ×</button><div class="aa-toolbar"><button type="button" data-share="text">텍스트 복사</button><details class="html-actions"><summary>공유</summary><div><button type="button" data-share="image">이미지로 공유</button><button type="button" data-share="html">HTML 공유</button><button type="button" data-share="html-download">HTML 다운로드</button></div></details><button type="button" data-share="print">인쇄</button></div></header><article class="aa-content"></article>');
     readDialog.addEventListener('keydown',function(e){if(e.target.tagName==='IMG'&&(e.key==='Enter'||e.key===' ')){e.preventDefault();ArchiveImages.open(e.target,readDialog.querySelector('.aa-content'));}});
+    // Keep vertical reading, text selection, media and horizontal scrollers native.
+    var readerSwipe=null;
+    function clearReaderSwipe(){readerSwipe=null;}
+    readDialog.addEventListener('touchstart',function(e){
+      clearReaderSwipe();
+      if(!window.matchMedia('(max-width: 767px)').matches||e.touches.length!==1||!readDialog.open)return;
+      var target=e.target.nodeType===1?e.target:e.target.parentElement;
+      if(!target||target.closest('a,button,input,textarea,select,summary,[contenteditable],img,video,audio,canvas,table,.archive-highlight-toolbar'))return;
+      if(String(window.getSelection()||'').trim())return;
+      for(var node=target;node&&node!==readDialog;node=node.parentElement){
+        if(node.scrollWidth>node.clientWidth+2&&/auto|scroll/.test(getComputedStyle(node).overflowX))return;
+      }
+      var t=e.touches[0];readerSwipe={id:t.identifier,x:t.clientX,y:t.clientY,time:Date.now(),scrollX:window.scrollX,scrollY:window.scrollY};
+    },{passive:true});
+    readDialog.addEventListener('touchmove',function(e){
+      if(!readerSwipe)return;
+      if(e.touches.length!==1){clearReaderSwipe();return;}
+      var t=e.touches[0],dx=t.clientX-readerSwipe.x,dy=t.clientY-readerSwipe.y;
+      if(t.identifier!==readerSwipe.id||Math.abs(dy)>24&&Math.abs(dy)>Math.abs(dx)||dx< -24)clearReaderSwipe();
+    },{passive:true});
+    readDialog.addEventListener('touchend',function(e){
+      var start=readerSwipe;clearReaderSwipe();
+      if(!start||e.touches.length||e.changedTouches.length!==1||!readDialog.open||String(window.getSelection()||'').trim())return;
+      var t=e.changedTouches[0],dx=t.clientX-start.x,dy=Math.abs(t.clientY-start.y);
+      if(t.identifier!==start.id||dx<90||dx<dy*2.5||dy>60||Date.now()-start.time>900)return;
+      close(readDialog);
+      window.requestAnimationFrame(function(){window.scrollTo(start.scrollX,start.scrollY);});
+    },{passive:true});
+    readDialog.addEventListener('touchcancel',clearReaderSwipe,{passive:true});
+    readDialog.addEventListener('close',clearReaderSwipe);
     var swipeY;readDialog.querySelector('header').addEventListener('touchstart',function(e){swipeY=e.touches[0].clientY;},{passive:true});readDialog.querySelector('header').addEventListener('touchend',function(e){if(e.changedTouches[0].clientY-swipeY>80)close(readDialog);},{passive:true});
     readDialog.addEventListener('click', function (e) {
       if(e.target.closest('[data-topic-edit]')&&current){openTopicEditor(current);return;}
