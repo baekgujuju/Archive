@@ -122,12 +122,20 @@ def clear_completed(path, expected):
         if 'legacy_raw' in current:
             _mark(path, 'legacy_unknown', current.get('last_error', ''))
             return
+        refs = list(current.get('queue_refs') or [])
+        if current.get('queue_ref'):
+            refs.append(current['queue_ref'])
+        refs = set(filter(None, refs))
+        if not refs:
+            # Do not invent a current-input snapshot as evidence for an old queue.
+            current['manual_review'] = True
+            current['preservation_reason'] = 'missing_queue_reference'
+            atomic_json_write(path, current)
+            return
         files = {p.name: json.loads(p.read_text(encoding='utf-8'))
                  for p in (path.parent.parent / 'data').glob('posts-*.json')}
         present = source_items(files)
-        for ref in current.get('queue_refs', [current.get('queue_ref')]):
-            if not ref:
-                continue
+        for ref in refs:
             content = json.loads(Path(ref).read_text(encoding='utf-8'))
             if Path(ref).stem != digest(content):
                 raise OSError('retry queue fingerprint mismatch')

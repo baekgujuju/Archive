@@ -113,14 +113,17 @@ class DriveExecution(unittest.TestCase):
         # 지문(modifiedTime '0')이 현재 파일('1')과 달라 재처리되며,
         # 동일 파일 재인제스트로 인정되어 새 파싱이 덮어쓴다.
         (self.root/'.drive_poll_state.json').write_text(json.dumps({'processed': {'good': {'modifiedTime': '0', 'size': '10', 'verification': 'verified', 'tweetIds': ['111']}}}))
-        self.files=[{'id':x,'name':x+'.html','modifiedTime':'1','size':'10'} for x in ['good','bad']];self.failed=True;self.downloads=[]
+        self.files=[{'id':x,'name':x+'.html','modifiedTime':'1','size':str(len(self.capture(x).encode()))} for x in ['good','bad']];self.failed=True;self.downloads=[]
         d.list_drive_files=lambda folder:self.files;d.run=self.worker
     def tearDown(self):self.temp.cleanup()
+    def capture(self, name):
+        tid=self._FIXTURE_RECORDS[name]['tweetId']
+        return '<article class="tweet" data-tweet-id="'+tid+'"><div class="tweet-text">updated body</div></article>'
     def worker(self,cmd,**kwargs):
         if cmd[0]=='hatch_gws_cli':
             fid=json.loads(cmd[cmd.index('--params')+1])['fileId'];self.downloads.append(fid)
             # 다운로드 바이트 수는 선언 크기와 일치해야 한다 (drift 검사).
-            size=int(next(x['size'] for x in self.files if x['id']==fid));Path(cmd[-1]).write_text('x'*size);return result()
+            size=int(next(x['size'] for x in self.files if x['id']==fid));Path(cmd[-1]).write_text(self.capture(fid));return result()
         inputs=Path(cmd[2]);name=next(inputs.iterdir()).stem
         if name=='bad' and self.failed:return result(1)
         outputs=Path(cmd[-1]);(outputs/'posts.json').write_text(json.dumps([dict(self._FIXTURE_RECORDS[name])]));return result()

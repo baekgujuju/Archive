@@ -26,7 +26,7 @@ class Tests(unittest.TestCase):
     if args[:3]==['git','diff','--cached']:return ''
     if args[:3]==['git','status','--porcelain']:return ' M' if dirty.pop(0) else ''
     if args[:4]==['hatch_gws_cli','drive','files','list']:return json.dumps({'files':[{'id':'owner','size':100}]})
-    if args[:4]==['hatch_gws_cli','drive','files','get']:Path(args[-1]).write_text(json.dumps(state));dirty.append(True);return ''
+    if args[:4]==['hatch_gws_cli','drive','files','get']:dirty.append(True);return json.dumps(state)
     if args[:2]==['git','push'] and fail[0]:fail[0]=False;raise RuntimeError('push failed')
     return ''
    fake=types.SimpleNamespace(LOCK_EX=2,flock=lambda *args:None)

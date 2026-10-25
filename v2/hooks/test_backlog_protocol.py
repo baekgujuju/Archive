@@ -113,6 +113,43 @@ class BacklogProtocol(unittest.TestCase):
             retry.clear_completed(path, old)
             self.assertEqual(retry.read(path), new)
 
+    def test_missing_queue_references_are_preserved_without_unlink(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'hooks' / '.retry_media'
+            for refs in (None, [], [None, '']):
+                with self.subTest(queue_refs=refs):
+                    rec = retry.mark(path, 'mirror_failed')
+                    rec['queue_ref'] = None
+                    rec.pop('queue_refs', None)
+                    if refs is not None:
+                        rec['queue_refs'] = refs
+                    path.write_text(json.dumps(rec))
+                    with patch.object(Path, 'unlink') as unlink:
+                        retry.clear_completed(path, rec)
+                    unlink.assert_not_called()
+                    saved = retry.read(path)
+                    self.assertEqual(saved, dict(rec, manual_review=True,
+                                                preservation_reason='missing_queue_reference'))
+                    self.assertTrue(path.exists())
+
+    def test_single_or_multiple_queue_reference_still_allows_completion(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'hooks' / '.retry_media'
+            for mode in ('single_only', 'single_with_empty_list', 'multiple_only'):
+                with self.subTest(mode=mode):
+                    rec = retry.mark(path, 'mirror_failed')
+                    if mode == 'single_only':
+                        rec.pop('queue_refs')
+                    elif mode == 'single_with_empty_list':
+                        rec['queue_refs'] = []
+                    else:
+                        rec['queue_ref'] = None
+                    path.write_text(json.dumps(rec))
+                    retry.clear_completed(path, rec)
+                    self.assertFalse(path.exists())
+
     def test_source_change_during_hook_returns_incomplete(self):
         fixture = fixtures.HookExecution(); fixture.setUp(); self.addCleanup(fixture.tearDown)
         values = iter([{'fixture': 'old'}, {'fixture': 'new'}])
