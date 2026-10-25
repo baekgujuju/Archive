@@ -299,3 +299,5 @@ mark[data-archive-highlight]{background:#ffe680;color:inherit;border-radius:2px;
 #archive-topic-dialog .archive-topic-options input[type=checkbox]{box-sizing:border-box;flex:0 0 22px;width:22px;height:22px;min-width:22px;min-height:22px;max-width:22px;padding:0;margin:0;vertical-align:middle;accent-color:var(--accent)}
 #archive-topic-dialog .archive-topic-options label span{min-width:0;line-height:1.5;overflow-wrap:anywhere}
 @media(max-width:340px){#archive-topic-dialog .archive-topic-options{grid-template-columns:minmax(0,1fr)}}
+
+.aa-content .aa-inline-media{margin:16px 0}

@@ -86,7 +86,73 @@ var ArchiveApp = (function () {
     while((m=re.exec(text))){var raw=m[0].replace(/[.,;!?)]*$/,'');out+=esc(text.slice(last,m.index));var url=safeUrl(/^https?:/i.test(raw)?raw:'https://'+raw);out+=url&&!/[…⋯]/.test(raw)?'<a href="'+esc(url)+'" target="_self">'+esc(raw)+'</a>':esc(raw);out+=esc(m[0].slice(raw.length));last=m.index+m[0].length;}return out+esc(text.slice(last));
   }
   function linkProse(container){var walker=document.createTreeWalker(container,NodeFilter.SHOW_TEXT),nodes=[],n;while((n=walker.nextNode()))if(!n.parentElement.closest('a,code,pre,script,style')&&/(https?:\/\/|\b[a-z0-9-]+\.(com|org|net|io)\/)/i.test(n.nodeValue))nodes.push(n);nodes.forEach(function(node){var span=document.createElement('span');span.innerHTML=linkText(node.nodeValue);node.replaceWith(span);});}
-  function formatContent(container){container.querySelectorAll('img').forEach(function(img){var raw=img.getAttribute('src'),mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)img.src=new URL(mapped,document.baseURI).href;});linkProse(container);container.querySelectorAll('.stage,.stage-title').forEach(function(el){var num=el.querySelector('.stage-num');if(num&&!/\.\s*$/.test(num.textContent))num.textContent=num.textContent.trim()+'. ';});container.querySelectorAll('a[href]').forEach(function(a){a.target='_self';a.title=a.href;});}
+  // Article media links: verified mediaId -> preserved file map (window.ArchiveArticleMediaMap,
+  // data/article-media-map.json, generated from operating original HTMLs — see extract_mapping.py).
+  // The body keeps its original link text in a hidden span so textContent and highlight
+  // offsets are unchanged; the visible figure adds no text nodes.
+  var ARTICLE_MEDIA_HREF = /^https:\/\/x\.com\/[^/]+\/article\/(\d+)\/media\/(\d+)$/;
+  function articleMediaMapFor(a){
+    var map = window.ArchiveArticleMediaMap;
+    if(!map) return null;
+    var id = String(a.id ?? a.tweetId ?? '');
+    return (id && map[id]) || null;
+  }
+  function galleryMediaFor(a,placed){
+    var media = a.media && a.media.some(function(m){return m&&m.kind==='video_thumbnail';}) ? a.media : a.mediaImages;
+    placed = placed || new Set();
+    if(!placed.size) return media;
+    return (Array.isArray(media) ? media : []).filter(function(pair){
+      if(pair && !Array.isArray(pair) && pair.kind === 'video_thumbnail') return true;
+      var raw = Array.isArray(pair) ? pair[1] || pair[0] : typeof pair === 'string' ? pair : pair && (pair.full || pair.url || pair.src || pair.thumb);
+      if(!raw) return true;
+      var mapped = window.ArchiveMediaMap && window.ArchiveMediaMap[raw];
+      var resolved = mapped ? new URL(mapped, document.baseURI).href : raw;
+      return !placed.has(raw) && !placed.has(resolved);
+    });
+  }
+  function hideMediaParens(anchor){
+    var before=anchor.previousSibling,after=anchor.nextSibling;
+    if(!before||!after||before.nodeType!==3||after.nodeType!==3)return;
+    var left=before.nodeValue.match(/(?:^|\n)([ \t]*\([ \t]*)$/),right=after.nodeValue.match(/^([ \t]*\)[ \t]*)(?=\n|$)/);
+    if(!left||!right)return;
+    var open=before.splitText(before.nodeValue.length-left[1].length);after.splitText(right[1].length);
+    [open,after].forEach(function(text){var keep=anchor.ownerDocument.createElement('span');keep.hidden=true;keep.textContent=text.nodeValue;text.replaceWith(keep);});
+  }
+  function restoreInlineArticleMedia(container, a){
+    var map = articleMediaMapFor(a);
+    if(!map || !container) return new Set();
+    var placed=new Set();
+    var id = String(a.id ?? a.tweetId ?? '');
+    var doc = container.ownerDocument || document;
+    Array.prototype.slice.call(container.querySelectorAll('a[href]')).forEach(function(anchor){
+      if(anchor.closest('.aa-inline-media,[hidden],pre,code'))return;
+      var href = anchor.getAttribute('href') || '';
+      var m = ARTICLE_MEDIA_HREF.exec(href);
+      if(!m || m[1] !== id) return;
+      var embedded = map[m[2]];
+      if(!embedded || anchor.closest('.translation-ko') || anchor.querySelector('img')) return;
+      var mapped = window.ArchiveMediaMap && window.ArchiveMediaMap[embedded];
+      var src = mapped ? new URL(mapped, document.baseURI).href : embedded;
+      hideMediaParens(anchor);
+      var keep = doc.createElement('span');
+      keep.hidden = true; keep.setAttribute('aria-hidden', 'true');
+      keep.textContent = anchor.textContent;
+      var figure = doc.createElement('figure');
+      figure.className = 'aa-inline-media';
+      var link = doc.createElement('a');
+      link.href = href; link.target = '_self'; link.rel = 'noopener noreferrer'; link.title = href;
+      var img = doc.createElement('img');
+      img.src = src; img.alt = ''; img.loading = 'lazy'; img.tabIndex = 0; img.title = '이미지 확대';
+      link.appendChild(img); figure.appendChild(link);
+      var frag = doc.createDocumentFragment();
+      frag.appendChild(keep); frag.appendChild(figure);
+      anchor.parentNode.replaceChild(frag, anchor);
+      placed.add(embedded);placed.add(src);
+    });
+    return placed;
+  }
+
+  function formatContent(container, article){container.querySelectorAll('img').forEach(function(img){var raw=img.getAttribute('src'),mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)img.src=new URL(mapped,document.baseURI).href;});linkProse(container);container.querySelectorAll('.stage,.stage-title').forEach(function(el){var num=el.querySelector('.stage-num');if(num&&!/\.\s*$/.test(num.textContent))num.textContent=num.textContent.trim()+'. ';});container.querySelectorAll('a[href]').forEach(function(a){a.target='_self';a.title=a.href;});if(article)restoreInlineArticleMedia(container,article);}
   function canonicalSource(a){var u=safeUrl(a.sourceUrl||a.source_url);if(a.fullHtml&&u){var parsed=new URL(u);if(parsed.pathname==='/'||parsed.pathname===''){var doc=new DOMParser().parseFromString(a.fullHtml,'text/html');var link=Array.from(doc.querySelectorAll('a[href]')).find(function(el){try{var v=new URL(el.href);return v.hostname.replace(/^www\./,'')===parsed.hostname.replace(/^www\./,'')&&v.pathname.length>1;}catch(e){return false;}});if(link)u=safeUrl(link.href);}}return u;}
   function bodyText(a) {
     if (a.fullText) return String(a.fullText);
@@ -199,10 +265,12 @@ var ArchiveApp = (function () {
   }
   function articleHtml(a) {
     var url = canonicalSource(a), q = a.quoted;
+    var body=document.createElement('div');body.innerHTML=translatedBody(a);linkProse(body);
+    var placed=restoreInlineArticleMedia(body,a);
     var repliesHtml=renderReplies(a);
     var urlHtml=renderUrlContents(a);
     return '<h1>' + esc(title(a)) + '</h1>'+toolInfo(a)+'<p class="meta">' + esc(metadata(a)) + '</p><div class="aa-body" data-highlight-post="'+esc(String(a.id??a.tweetId??a.sourceUrl??''))+'">' +
-      translatedBody(a) + '</div>' + images(a.media && a.media.some(function(m){return m&&m.kind==='video_thumbnail';})?a.media:a.mediaImages,a.sourceUrl) +
+      body.innerHTML + '</div>' + images(galleryMediaFor(a,placed),a.sourceUrl) +
       renderQuoted(q) +
       repliesHtml + urlHtml +
       recordInformation(a) + '<p>' + esc((a.topics || []).join(' · ')) + '</p>' + (url ? '<a href="' + esc(url) + '" target="_self" rel="noopener noreferrer">원문 보기 ↗</a>' : '');
@@ -418,7 +486,7 @@ var ArchiveApp = (function () {
   function show(d) { opener = document.activeElement; d._opener = opener; if (typeof d.showModal === 'function') d.showModal(); else { d.setAttribute('open', ''); d.setAttribute('aria-modal', 'true'); } document.body.classList.add('aa-modal-open'); var f = d.querySelector('textarea,input,button'); if (f) f.focus(); }
   function close(d) { if (typeof d.close === 'function') d.close(); else { d.removeAttribute('open'); document.body.classList.remove('aa-modal-open'); if (opener) opener.focus(); } }
   var readerHistory=[];
-  function openRead(r,back) {if(current&&readDialog.open&&!back&&current!==r)readerHistory.push(current);if(!readDialog.open)readerHistory=[];current=r;readDialog.querySelector('[data-topic-edit]').hidden=r.type==='ib';readDialog.querySelector('[data-share=text]').textContent='텍스트 복사';var related=(r.related||[]).filter(function(other){return hidden.indexOf(other.id)<0;});readDialog.querySelector('.aa-content').innerHTML=articleHtml(r.article)+(related.length?'<section class="reader-related"><h2>연관 게시글</h2>'+related.map(function(other){return '<button type="button" data-related-id="'+esc(other.id)+'">'+'– '+esc(title(other.article))+'<small> · '+esc(other.author)+'</small></button>';}).join('')+'</section>':'');readDialog.querySelector('[data-reader-title]').textContent=title(r.article);readDialog.querySelector('[data-reader-back]').hidden=!readerHistory.length;if(!readDialog.open)show(readDialog);formatContent(readDialog.querySelector('.aa-content'));if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();readDialog.querySelector('.aa-content').scrollTop=0; }
+  function openRead(r,back) {if(current&&readDialog.open&&!back&&current!==r)readerHistory.push(current);if(!readDialog.open)readerHistory=[];current=r;readDialog.querySelector('[data-topic-edit]').hidden=r.type==='ib';readDialog.querySelector('[data-share=text]').textContent='텍스트 복사';var related=(r.related||[]).filter(function(other){return hidden.indexOf(other.id)<0;});readDialog.querySelector('.aa-content').innerHTML=articleHtml(r.article)+(related.length?'<section class="reader-related"><h2>연관 게시글</h2>'+related.map(function(other){return '<button type="button" data-related-id="'+esc(other.id)+'">'+'– '+esc(title(other.article))+'<small> · '+esc(other.author)+'</small></button>';}).join('')+'</section>':'');readDialog.querySelector('[data-reader-title]').textContent=title(r.article);readDialog.querySelector('[data-reader-back]').hidden=!readerHistory.length;if(!readDialog.open)show(readDialog);formatContent(readDialog.querySelector('.aa-content'),r.article);if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();readDialog.querySelector('.aa-content').scrollTop=0; }
   function resetFilters(){Object.keys(selection).forEach(function(k){selection[k]=(k==='hidden'||k==='review'||k==='memo')?false:[];});mode='OR';controls.querySelector('input').value='';controls.querySelector('[data-action="mode"]').textContent='OR';update();}
 
   function download(blob, name) { var url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); window.setTimeout(function () { URL.revokeObjectURL(url); }, 60000); }
@@ -456,13 +524,13 @@ var ArchiveApp = (function () {
   }
   async function finishImageShare(a,blobs){
     var files=blobs.map(function(b,i){return new File([b],'archive-'+(i+1)+'.png',{type:'image/png'});});
-    var doc=new DOMParser().parseFromString(articleHtml(a),'text/html'),urls=Array.from(new Set(Array.from(doc.querySelectorAll('img')).map(function(i){return i.src;}))),failed=[];
+    var doc=new DOMParser().parseFromString(articleHtml(a),'text/html');restoreInlineArticleMedia(doc.body,a);var urls=Array.from(new Set(Array.from(doc.querySelectorAll('img')).map(function(i){return i.src;}))),failed=[];
     await Promise.all(urls.map(async function(url,i){try{var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[url];var response=await fetch(mapped?new URL(mapped,document.baseURI).href:url);if(!response.ok)throw new Error('image');var blob=await response.blob();if(!blob.type.startsWith('image/'))throw new Error('image');files.push(new File([blob],'attachment-'+(i+1)+'.'+(blob.type.split('/')[1]||'png'),{type:blob.type}));}catch(e){failed.push(url);}}));
     if(failed.length){window.alert('첨부 이미지 '+failed.length+'개를 가져오지 못했습니다. 이미지가 빠진 채로 공유하지 않습니다. 원문 또는 HTML 다운로드를 이용해 주세요.');return;}
     if(navigator.share&&navigator.canShare&&navigator.canShare({files:files})){try{await navigator.share({files:files});}catch(e){if(e.name!=='AbortError')files.forEach(function(f){download(f,f.name);});}}else files.forEach(function(f){download(f,f.name);});
   }
   async function shareHtml(a,downloadOnly){
-    var container=document.createElement('article');container.innerHTML=articleHtml(a);formatContent(container);
+    var container=document.createElement('article');container.innerHTML=articleHtml(a);formatContent(container,a);
     try{await Promise.all(Array.from(container.querySelectorAll('img')).map(async function(img){var response=await fetch(img.src);if(!response.ok)throw new Error('image');var blob=await response.blob();if(!blob.type.startsWith('image/'))throw new Error('image');img.src=await new Promise(function(resolve,reject){var reader=new FileReader();reader.onload=function(){resolve(reader.result);};reader.onerror=reject;reader.readAsDataURL(blob);});}));}catch(e){window.alert('첨부 이미지를 포함한 HTML을 만들지 못했습니다. 이미지가 빠진 파일은 공유하지 않습니다.');return;}
     var css='body{max-width:850px;margin:24px auto;padding:16px;font:15px/1.75 system-ui,sans-serif;background:#fffdf8;color:#222b3b;overflow-wrap:anywhere}h1{font-size:24px;line-height:1.4;margin:0 0 18px}h2{font-size:20px;margin:28px 0 14px}h3{font-size:17px;margin:24px 0 12px}p{margin:0 0 16px}img{display:block;max-width:100%;height:auto;margin:16px auto}.aa-text,.translation-original,.translation-ko{white-space:pre-wrap}.stage-card{margin:28px 0;padding-top:18px;border-top:1px solid #ddd6ca}.stage{display:flex;gap:6px;flex-wrap:wrap}.phase-tag{display:block;flex-basis:100%;font-size:12px;font-weight:400}.flow-step{display:flex;gap:12px;padding:10px 0}.flow-dot{flex:none;min-width:24px}.flow-body b,.flow-body small{display:block}.flow-body small{font-size:12px}.org-label{display:block;font-size:11px;color:#716e65}.original,.translation-ko{padding:12px 16px;margin:16px 0;background:#eee9df}a{color:#675a47;text-decoration:underline}table{display:block;overflow:auto;border-collapse:collapse}td,th{padding:8px;border:1px solid #ddd6ca}[hidden],button{display:none!important}@page{margin:15mm}@media print{body,.original,.translation-ko{background:white!important}h1{font-size:18pt}h2{font-size:14pt}h3{font-size:12pt}}';
     var htmlBlob=new Blob(['<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title(a))+'</title><style>'+css+'</style></head><body>'+container.innerHTML+'</body></html>'],{type:'text/html'});if(downloadOnly)download(htmlBlob,'archive.html');else shareFile(htmlBlob,'archive.html',title(a));
