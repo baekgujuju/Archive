@@ -619,49 +619,12 @@ var ArchiveApp = (function () {
     if(previous){selection=previous.selection;mode=previous.mode;controls.querySelector('input').value=previous.query;controls.querySelector('[data-action="mode"]').textContent=mode;}
     update();if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();if(previous)window.scrollTo(0,previous.scroll);
   }
-  function setupPrintDocument(){
-    var doc=document;
-      var printButton=doc.getElementById('print'),retry=doc.getElementById('retry'),status=doc.getElementById('status');
-      printButton.onclick=function(){
-        // A fresh explicit click retains native print activation after image loading.
-        try{window.focus();window.print();status.textContent='인쇄창이 열리지 않으면 Safari 공유 메뉴의 인쇄를 이용해 주세요.';}
-        catch(e){status.textContent='인쇄창을 열지 못했습니다. Safari 공유 메뉴의 인쇄를 이용해 주세요.';}
-      };
-      async function prepare(){
-        printButton.disabled=true;printButton.textContent='인쇄 준비 중…';retry.hidden=true;status.textContent='이미지를 확인하고 있습니다.';
-        var images=Array.from(doc.querySelectorAll('article img'));
-        var loaded=await Promise.all(images.map(function(img){return new Promise(function(resolve){
-          var timer;function done(ok){clearTimeout(timer);img.removeEventListener('load',success);img.removeEventListener('error',failure);resolve(ok);}
-          function success(){done(img.naturalWidth>0);}function failure(){done(false);}
-          img.addEventListener('load',success,{once:true});img.addEventListener('error',failure,{once:true});timer=setTimeout(failure,15000);
-          if(img.complete)done(img.naturalWidth>0);
-        });}));
-        if(window.closed)return;
-        var failures=loaded.filter(function(ok){return!ok;}).length;
-        if(failures){printButton.textContent='인쇄 준비 실패';status.textContent='이미지 '+failures+'개를 불러오지 못했습니다. 이미지가 빠진 채로 인쇄하지 않습니다.';retry.hidden=false;return;}
-        printButton.disabled=false;printButton.textContent='인쇄';status.textContent='준비되었습니다. 인쇄 버튼을 눌러 주세요.';
-      }
-      retry.onclick=function(){doc.querySelectorAll('article img').forEach(function(img){if(img.complete&&!img.naturalWidth){var src=img.src;img.removeAttribute('src');img.src=src;}});prepare();};
-      prepare();
-  }
-  function openPrintPreview(a){
-    // Open synchronously from the click; never wait for images before opening UI.
-    var preview=window.open('about:blank','_blank');
-    if(!preview){window.alert('인쇄 화면을 열지 못했습니다. 팝업을 허용한 뒤 다시 눌러 주세요.');return;}
-    try{
-      var content=document.createElement('article');content.innerHTML=articleHtml(a);formatContent(content);
-      content.querySelectorAll('img').forEach(function(img){img.src=img.src;img.loading='eager';});
-      content.querySelectorAll('a[href]').forEach(function(link){link.href=link.href;});
-      var doc=preview.document;doc.open();doc.write('<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title(a))+'</title><style>body{max-width:850px;margin:0 auto;padding:20px;font:16px/1.7 system-ui;color:#26313d;overflow-wrap:anywhere}img{max-width:100%;height:auto}table{max-width:100%;border-collapse:collapse}td,th{border:1px solid #ccc;padding:6px}.aa-text,.translation-original,.translation-ko,.reply-text,.quoted-text{white-space:pre-wrap}.translation-ko,blockquote{border-left:3px solid #ddd;padding-left:12px}header{padding:12px;background:#f6f2e9;margin-bottom:24px}button{font:inherit;padding:10px 16px}article button,[hidden]{display:none!important}@page{margin:15mm}@media print{header{display:none!important}body{padding:0;max-width:none}img{break-inside:avoid}table{font-size:10pt}}</style></head><body><header><button id="print" disabled>인쇄 준비 중…</button> <button id="retry" hidden>다시 준비</button><p id="status" role="status">이미지를 확인하고 있습니다.</p><p>인쇄창이 열리지 않으면 Safari에서 열어 공유 메뉴의 인쇄를 이용해 주세요.</p></header><article>'+content.innerHTML+'</article><script>('+setupPrintDocument.toString()+')();<'+ '/script></body></html>');preview.opener=null;doc.close();
-
-    }catch(e){if(!preview.closed)preview.close();window.alert('인쇄 화면 준비에 실패했습니다. 다시 시도해 주세요.');}
-  }
   async function runArticleAction(action,r,button,inline){
     var a=r.article,menu=button.closest('.html-actions');if(menu)menu.open=false;
     if(action==='text'){var text=title(a)+'\n\n'+bodyText(a)+'\n\n'+(canonicalSource(a)||'');navigator.clipboard.writeText(text).then(function(){button.textContent='복사 완료';setTimeout(function(){if(button.isConnected)button.textContent='텍스트 복사';},2000);}).catch(function(){download(new Blob([text],{type:'text/plain;charset=utf-8'}),'archive.txt');});}
     if(action==='image')shareImage(a);
     if(action==='html'||action==='html-download')shareHtml(a,action==='html-download');
-    if(action==='print')openPrintPreview(a);
+    if(action==='print')shareHtml(a,false);
   }
   async function cardClick(e) {
     var duplicateButton=e.target.closest('[data-duplicates]');if(duplicateButton){e.preventDefault();var duplicate=records.find(function(r){return r.id===duplicateButton.dataset.duplicates;});if(duplicate){openRead(duplicate);var info=readDialog.querySelector('.aa-record-info');if(info){info.open=true;info.scrollIntoView({block:'center'});}}return;}
