@@ -245,9 +245,8 @@ var ArchiveApp = (function () {
   function openTopicEditor(r) {
     if(r.type==='ib')return;
     topicRecord=r;
-    topicDialog.querySelector('[data-topic-title]').textContent=title(r.article);
     var choices=Array.from(new Set(records.filter(function(x){return x.type!=='ib';}).flatMap(function(x){return x.topics.concat(x.originalTopics);}))).sort();
-    topicDialog.querySelector('[data-topic-options]').innerHTML=choices.map(function(t){return '<label><input type="checkbox" value="'+esc(t)+'"'+(r.topics.indexOf(t)>=0?' checked':'')+'>'+esc(t)+'</label>';}).join('');
+    topicDialog.querySelector('[data-topic-options]').innerHTML=choices.map(function(t){return '<label><input type="checkbox" value="'+esc(t)+'"'+(r.topics.indexOf(t)>=0?' checked':'')+'><span>'+esc(t)+'</span></label>';}).join('');
     topicDialog.querySelector('[data-topic-new]').value='';topicDialog.querySelector('[data-topic-error]').textContent='';show(topicDialog);
   }
 
@@ -577,7 +576,7 @@ var ArchiveApp = (function () {
     var readerTopic=document.createElement('button');readerTopic.type='button';readerTopic.dataset.topicEdit='';readerTopic.textContent='주제 변경';readDialog.querySelector('.aa-toolbar').appendChild(readerTopic);
     var readerMemo=document.createElement('button');readerMemo.type='button';readerMemo.dataset.readerMemo='';readerMemo.textContent='메모';readDialog.querySelector('.aa-toolbar').prepend(readerMemo);
     records.forEach(function(r){r.card.querySelectorAll('.aa-inline-toolbar').forEach(function(el){el.remove();});var toolbar=readDialog.querySelector('.aa-toolbar').cloneNode(true);toolbar.classList.add('aa-inline-toolbar');toolbar.querySelector('[data-topic-edit]').hidden=r.type==='ib';toolbar.setAttribute('aria-label','게시글 도구');r.card.querySelector('summary.card-toggle').after(toolbar);});
-    topicDialog=dialog('archive-topic-dialog','주제 변경','<h2>주제 변경</h2><p data-topic-title></p><p>이 글에 지정할 주제를 선택하세요. 여러 개를 선택할 수 있습니다.</p><div class="archive-topic-options" data-topic-options></div><label for="archive-topic-new">새 주제 추가 (쉼표로 구분)</label><input type="text" id="archive-topic-new" data-topic-new maxlength="1000" autocomplete="off"><p class="aa-topic-note">저장하면 이 기기에 즉시 적용됩니다. 다른 기기에도 반영하려면 내보내기를 해주세요.</p><p data-topic-error role="status"></p><div class="aa-chips"><button type="button" data-topic-save>저장</button><button type="button" data-topic-restore>원래 주제로 복원</button><button type="button" data-close>취소</button></div>');
+    topicDialog=dialog('archive-topic-dialog','주제 변경','<h2>주제 변경</h2><p>이 글에 지정할 주제를 선택하세요. 여러 개를 선택할 수 있습니다.</p><div class="archive-topic-options" data-topic-options></div><label for="archive-topic-new">새 주제 추가 (쉼표로 구분)</label><input type="text" id="archive-topic-new" data-topic-new maxlength="1000" autocomplete="off"><p class="aa-topic-note">저장하면 이 기기에 즉시 적용됩니다. 다른 기기에도 반영하려면 내보내기를 해주세요.</p><p data-topic-error role="status"></p><div class="aa-chips"><button type="button" data-topic-save>저장</button><button type="button" data-topic-restore>원래 주제로 복원</button><button type="button" data-close>취소</button></div>');
     topicDialog.classList.add('archive-topic-dialog');
     topicDialog.addEventListener('click',function(e){
       var save=e.target.closest('[data-topic-save]'),restore=e.target.closest('[data-topic-restore]');if((!save&&!restore)||!topicRecord)return;
