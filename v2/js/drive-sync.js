@@ -221,7 +221,8 @@ var DriveSync = (function () {
     if (passwordBusy) throw new Error('비밀번호 확인 중입니다.');
     passwordBusy = true;
     try {
-      if (!connected) throw new Error('먼저 Drive를 연결해 주세요.');
+      // Recheck expiry and open OAuth from this export click before any async work.
+      await connect();
       if (!window.crypto || !window.crypto.subtle) throw new Error('HTTPS에서 다시 열어 주세요.');
       var bytes = await window.crypto.subtle.digest('SHA-256', new TextEncoder().encode(String(password)));
       var digest = Array.from(new Uint8Array(bytes)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
