@@ -1,7 +1,7 @@
 """Exercise the real hook main(), with real temporary git repos and failing workers.
 Windows tests stub Linux flock only; production workers still use real flock.
 """
-import importlib.util,json,subprocess,sys,tempfile,types,unittest
+import importlib.util,json,subprocess,sys,tempfile,types,unittest,hashlib
 from contextlib import contextmanager
 from pathlib import Path
 from unittest.mock import patch
@@ -17,14 +17,28 @@ def result(code=0):return subprocess.CompletedProcess([],code,'','injected failu
 def _noop_lock(*args, **kwargs):
     yield
 
+def write_fixture_manifest(data):
+    """Use real chunk bytes/counts so publication validation stays enabled."""
+    chunks = {}
+    for name in ('posts-x', 'posts-web', 'posts-ib'):
+        path = data / (name + '.json')
+        if not path.exists():
+            path.write_text('{"posts":[]}', encoding='utf-8')
+        raw = path.read_bytes()
+        chunks[name] = {'file': 'data/' + path.name,
+                        'sha256': hashlib.sha256(raw).hexdigest(),
+                        'count': len(json.loads(raw)['posts'])}
+    (data / 'manifest.json').write_text(json.dumps({'chunks': chunks}), encoding='utf-8')
+
 class HookExecution(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory(dir=HERE);self.root=Path(self.temp.name);self.v2=self.root/'v2';self.data=self.v2/'data';self.hooks=self.v2/'hooks'
         self.data.mkdir(parents=True);self.hooks.mkdir();(self.v2/'media').mkdir();(self.v2/'media/.gitkeep').write_text('');(self.v2/'ib-library.json').write_text('{"posts":[]}')
         (self.data/'manifest.json').write_text('{"chunks":{}}');(self.data/'translations.json').write_text('{}');(self.data/'posts-x.json').write_text('{"posts":[]}')
-        self.git('init');self.git('config','user.name','Test');self.git('config','user.email','test@example.com');self.git('add','.');self.git('commit','-m','baseline')
+        write_fixture_manifest(self.data)
+        self.git('init','-b','main');self.git('config','user.name','Test');self.git('config','user.email','test@example.com');self.git('add','.');self.git('commit','-m','baseline')
         self.h=load('post_ingest_hook');h=self.h
-        for name,value in {'V2_ROOT':self.v2,'DATA_DIR':self.data,'HOOKS_DIR':self.hooks,'LOCK_FILE':self.hooks/'.lock','TRANSLATIONS':self.data/'translations.json','MANIFEST':self.data/'manifest.json','RETRY_TRANSLATION':self.hooks/'.retry_translation','RETRY_COMMIT':self.hooks/'.retry_commit','PUBLISH_ENABLED':False,'PUBLISH_BRANCH':'main'}.items():setattr(h,name,value)
+        for name,value in {'V2_ROOT':self.v2,'DATA_DIR':self.data,'HOOKS_DIR':self.hooks,'LOCK_FILE':self.hooks/'.lock','TRANSLATIONS':self.data/'translations.json','MANIFEST':self.data/'manifest.json','RETRY_TRANSLATION':self.hooks/'.retry_translation','RETRY_COMMIT':self.hooks/'.retry_commit','RETRY_MEDIA':self.hooks/'.retry_media','RETRY_ENRICH':self.hooks/'.retry-enrich','PUBLISH_ENABLED':False,'PUBLISH_BRANCH':'main'}.items():setattr(h,name,value)
         self.fail={};self.calls=[];self.built=False;self.publish_count=0
         h.log=lambda message:None
         self.original_run=h.run;h.run=self.worker
@@ -44,11 +58,12 @@ class HookExecution(unittest.TestCase):
             return subprocess.run(cmd,capture_output=True,text=True)
         script=Path(cmd[1]).name
         if '--check' in cmd:return result(0 if self.built else 1)
+        if script=='article_media_map.py':return result()
         kind={'build_data.py':'build','translate_posts.py':'translation','ib_adapter.py':'adapter'}[script]
         if self.fail.get(kind,0):self.fail[kind]-=1;return result(1)
         if kind=='build':
-            self.built=True;(self.data/'posts-x.json').write_text('{"posts":[{"id":"test"}]}')
-        if kind=='translation':(self.data/'translations.json').write_text('{"test":{"status":"ok"}}')
+            self.built=True;(self.data/'posts-x.json').write_text('{"posts":[{"id":"test"}]}');write_fixture_manifest(self.data)
+        if kind=='translation':(self.data/'translations.json').write_text('{"test":{"status":"ok","paragraphs":["original"],"translated":["translation"]}}')
         return result()
     def test_translation_failure_then_real_main_retries(self):
         self.fail['translation']=1;self.assertEqual(self.h.main(),1);self.assertTrue(self.h.RETRY_TRANSLATION.exists());self.assertEqual(self.h.main(),0);self.assertFalse(self.h.RETRY_TRANSLATION.exists())
@@ -58,7 +73,12 @@ class HookExecution(unittest.TestCase):
     def test_commit_failure_retries_when_source_unchanged(self):
         self.fail['commit']=1;self.assertEqual(self.h.main(),1);self.assertTrue(self.h.RETRY_COMMIT.exists());self.assertEqual(self.h.main(),0);self.assertFalse(self.h.RETRY_COMMIT.exists());self.assertEqual(self.git('status','--porcelain','--','v2/data'),'')
     def test_push_failure_then_unchanged_source_retries(self):
-        self.git('update-ref','refs/remotes/origin/main','HEAD');self.h.PUBLISH_ENABLED=True;self.fail['push']=1;self.assertEqual(self.h.main(),1);self.assertEqual(self.h.main(),0);self.assertEqual(self.publish_count,2)
+        self.git('update-ref','refs/remotes/origin/main','HEAD');self.h.PUBLISH_ENABLED=True;self.fail['push']=1;self.assertEqual(self.h.main(),1);self.assertEqual(self.h.main(),0);self.assertEqual(self.publish_count,3)
+        # Original-first publication retries the failed original, then publishes
+        # the translated generation. Check the actual fixed commit targets.
+        pushes = [cmd[-1] for cmd in self.calls if cmd[0]=='git' and 'push' in cmd]
+        self.assertEqual(pushes[0], pushes[1])
+        self.assertNotEqual(pushes[1], pushes[2])
     def test_unrelated_staged_work_is_preserved(self):
         (self.root/'unrelated.txt').write_text('keep staged');self.git('add','unrelated.txt');self.assertEqual(self.h.main(),0);self.assertIn('unrelated.txt',self.git('diff','--cached','--name-only'));self.assertNotIn('unrelated.txt',self.git('show','--name-only','--format=','HEAD'))
     def test_manifest_translation_hash_matches_after_worker(self):
@@ -103,14 +123,27 @@ class DriveExecution(unittest.TestCase):
         # 지문(modifiedTime '0')이 현재 파일('1')과 달라 재처리되며,
         # 동일 파일 재인제스트로 인정되어 새 파싱이 덮어쓴다.
         (self.root/'.drive_poll_state.json').write_text(json.dumps({'processed': {'good': {'modifiedTime': '0', 'size': '10', 'verification': 'verified', 'tweetIds': ['111']}}}))
-        self.files=[{'id':x,'name':x+'.html','modifiedTime':'1','size':'10'} for x in ['good','bad']];self.failed=True;self.downloads=[]
+        # Captured HTML and parsed records must agree under the real audit.
+        self.captures = {}
+        for key, record in self._FIXTURE_RECORDS.items():
+            manifest = {'schema_version': 1, 'comments': {'saved': 0, 'expected': 0},
+                        'images': [], 'warnings': []}
+            html = ('<article class="tweet" data-tweet-id="' + record['tweetId']
+                    + '" data-author-handle="testuser"><div class="tweet-text">'
+                    + record['fullText'] + '</div></article>'
+                    + '<script id="archive-capture-manifest" type="application/json">'
+                    + json.dumps(manifest) + '</script>')
+            self.captures[key] = html.encode('utf-8')
+        self.files=[{'id':x,'name':x+'.html','modifiedTime':'1',
+                     'size':str(len(self.captures[x]))} for x in ['good','bad']]
+        self.failed=True;self.downloads=[]
         d.list_drive_files=lambda folder:self.files;d.run=self.worker
     def tearDown(self):self.temp.cleanup()
     def worker(self,cmd,**kwargs):
         if cmd[0]=='hatch_gws_cli':
             fid=json.loads(cmd[cmd.index('--params')+1])['fileId'];self.downloads.append(fid)
             # 다운로드 바이트 수는 선언 크기와 일치해야 한다 (drift 검사).
-            size=int(next(x['size'] for x in self.files if x['id']==fid));Path(cmd[-1]).write_text('x'*size);return result()
+            Path(cmd[-1]).write_bytes(self.captures[fid]);return result()
         inputs=Path(cmd[2]);name=next(inputs.iterdir()).stem
         if name=='bad' and self.failed:return result(1)
         outputs=Path(cmd[-1]);(outputs/'posts.json').write_text(json.dumps([dict(self._FIXTURE_RECORDS[name])]));return result()
@@ -127,6 +160,22 @@ class DriveExecution(unittest.TestCase):
         posts=json.loads(self.d.POSTS_JSON.read_text());self.assertEqual(len(posts),2);self.assertEqual(posts[0]['category'],'투자');self.assertEqual(posts[0]['fullText'],'updated body')
     def test_modified_capture_replaces_same_post_without_duplicate(self):
         self.files=self.files[:1];self.assertEqual(self.d.main(),0);self.files[0]['modifiedTime']='2';self.assertEqual(self.d.main(),0);self.assertEqual(len(json.loads(self.d.POSTS_JSON.read_text())),1);self.assertEqual(self.downloads,['good','good'])
+    def test_real_capture_fixtures_pass_preservation_audit(self):
+        for key, raw in self.captures.items():
+            report = self.d.audit_capture(raw.decode('utf-8'), [self._FIXTURE_RECORDS[key]])
+            self.assertFalse(report['blocked'], report)
+            self.assertEqual(report['issues'], [])
+
+    def test_junk_capture_is_still_quarantined(self):
+        self.files = self.files[:1]
+        self.captures['good'] = b'x' * 10
+        self.files[0]['size'] = '10'
+        self.assertEqual(self.d.main(), 3)
+        failures = json.loads(self.d.FAILURES_FILE.read_text())['records'].values()
+        self.assertTrue(any(r['error_code'] == 'preservation_loss' and r['status'] == 'quarantined'
+                            for r in failures))
+        self.assertEqual(json.loads(self.d.POSTS_JSON.read_text())[0]['fullText'], 'old')
+
     def test_unsupported_material_stays_pending_without_download(self):
         self.files=[{'id':'pdf','name':'document.pdf','modifiedTime':'1','size':'10'}];self.assertEqual(self.d.main(),0);state=json.loads((self.root/'.drive_poll_state.json').read_text());self.assertNotIn('pdf',state['processed']);self.assertEqual(self.downloads,[])
 
@@ -138,7 +187,7 @@ class MonitorExecution(unittest.TestCase):
             def worker(cmd,**kwargs):
                 if cmd[0]=='git':return subprocess.CompletedProcess(cmd,0,'0' if 'rev-list' in cmd else '','')
                 return result(codes.pop(0))
-            with patch.object(m.subprocess,'run',worker),patch.object(sys,'argv',['monitor.py']):
+            with patch.object(m.subprocess,'run',worker),patch.object(m,'run_grouped',worker),patch.object(sys,'argv',['monitor.py']):
                 self.assertEqual(m.main(),1);self.assertFalse(m.STATE_FILE.exists());self.assertEqual(m.main(),0);self.assertEqual(json.loads(m.STATE_FILE.read_text())['hashes'],{'fixture':'changed'})
 
 if __name__=='__main__':unittest.main(verbosity=2)
