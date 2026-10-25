@@ -34,7 +34,7 @@ from collections import namedtuple
 from proc_group import run_grouped, terminate_current
 from pipeline_progress import start_phase, finish_phase
 
-# run_step 결과: (kind, rc). kind ∈ {"ok", "failed", "timeout", "exception"}.
+# run_step 결과: (kind, rc). kind ∈ {"ok", "backlog_wait", "failed", "timeout", "exception"}.
 # rc는 자식 프로세스의 실제 종료 코드 (drive_poll의 3은 파일 실패
 # 존재 + 실패 기록 영속화 완료 — 폴 자체 실패가 아니다).
 StepResult = namedtuple("StepResult", ["kind", "rc"])
@@ -85,11 +85,19 @@ def run_step(name, script, timeout):
     event = start_phase(HOOKS_DIR, 'scheduler',
                         name if name in ('drive_poll', 'monitor', 'publish_settings') else 'command', timeout)
     phase_rc = None
+    backlog_wait = False
     try:
         env = os.environ.copy()
         # 발행 환경변수 기본값 보장
         env.setdefault("V2_PUBLISH", "1")
         env.setdefault("V2_PUBLISH_BRANCH", "main")
+        if name == 'monitor':
+            import uuid
+            from retry_state import digest, valid_result
+            from monitor import current_hashes
+            fingerprint = digest(current_hashes())
+            run_id = uuid.uuid4().hex
+            env['V2_HOOK_RUN_ID'] = run_id
         r = run_grouped(
             [sys.executable, str(script)],
             capture_output=True, text=True, timeout=timeout, env=env, grace=75)
@@ -97,6 +105,13 @@ def run_step(name, script, timeout):
         if r.stdout:
             for line in r.stdout.strip().split("\n"):
                 log(f"  [{name}] {line}")
+        if name == 'monitor' and r.returncode == 10:
+            if valid_result(HOOKS_DIR / ('.hook-result-' + run_id + '.json'), run_id, fingerprint, publish_enabled=env['V2_PUBLISH'] == '1'):
+                backlog_wait = True
+                log('✓ monitor backlog_wait: 게시 성공 / 백로그 대기')
+                return StepResult('backlog_wait', 10)
+            log('✗ monitor exit 10 실행 증거/큐 보존 검증 실패')
+            return StepResult('failed', 10)
         if r.returncode != 0:
             log(f"✗ {name} 실패 (rc={r.returncode})")
             if r.stderr:
@@ -111,7 +126,7 @@ def run_step(name, script, timeout):
         log(f"✗ {name} 예외: {e}")
         return StepResult("exception", None)
     finally:
-        finish_phase(HOOKS_DIR, event, rc=phase_rc)
+        finish_phase(HOOKS_DIR, event, rc=phase_rc, status="backlog_wait" if backlog_wait else None)
 
 
 def main():
@@ -133,7 +148,7 @@ def main():
     except (OSError, IOError):
         log("이전 실행이 진행 중 — 스킵")
         lock_fh.close()
-        return 0  # 스킵은 성공으로 간주
+        return 2  # 락 경합으로 실행 미완료
 
     try:
         # 1. Drive 인제스트
@@ -154,7 +169,7 @@ def main():
 
         # 2. 변경 감지 및 후크 (실패해도 설정 발행은 독립 시도)
         monitor_result = run_step("monitor", HOOKS_DIR / "monitor.py", TIMEOUT_MONITOR)
-        monitor_ok = monitor_result.kind == "ok"
+        monitor_ok = monitor_result.kind in ("ok", "backlog_wait")
         if not monitor_ok:
             log("monitor 실패 — 설정 발행은 독립 시도")
 

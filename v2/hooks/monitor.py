@@ -17,7 +17,7 @@ v2 5분 경량 모니터 (결정적, 모델 호출 없음)
     python3 v2/hooks/monitor.py
     python3 v2/hooks/monitor.py --force   # 워터마크 무시하고 후크 실행
 
-종료 코드: 0=정상(변경없음 포함), 1=후크 실패, 2=락/환경 오류
+종료 코드: 0=정상(변경없음 포함), 10=영속 백로그 대기, 1=필수 실패, 2=실행 미완료
 워터마크: v2/hooks/.monitor_state.json (소스 해시 기록)
 """
 import argparse
@@ -27,6 +27,8 @@ import json
 import os
 import subprocess
 import sys
+import uuid
+from retry_state import due, digest, valid_result, preserve
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -117,7 +119,7 @@ def load_state():
     return data
 
 
-def save_state(hashes):
+def save_state(hashes, publication=None):
     """워터마크 원자적 저장 (P3).
 
     같은 디렉터리의 고유 임시 파일에 flush → fsync → os.replace 후
@@ -127,6 +129,7 @@ def save_state(hashes):
     """
     atomic_json_write(STATE_FILE, {
         "hashes": hashes,
+        "publication": publication,
         "checked_at": datetime.now(timezone.utc).isoformat(),
     })
     marker = recovery_marker_path(STATE_FILE)
@@ -153,18 +156,15 @@ def main():
     try:
         current = current_hashes()
         try:
-            prev = load_state().get("hashes", {})
+            state = load_state()
+            prev = state.get("hashes", {})
         except StateReadError as e:
             print(f"[monitor] 워터마크 읽기 실패 (손상 아님) — 환경 오류: {e}")
             return 2
 
         # 재시도 마커 확인 (소스 변경 없어도 후크 실행)
-        retry_marker = (
-            (HOOKS_DIR / ".retry_translation").exists() or
-            (HOOKS_DIR / ".retry_commit").exists() or
-            (HOOKS_DIR / ".retry_media").exists() or
-            (HOOKS_DIR / ".retry-enrich").exists()
-        )
+        retry_marker = any(due(HOOKS_DIR / name) for name in (
+            '.retry_translation', '.retry_commit', '.retry_media', '.retry-enrich', '.retry_media_required'))
         if retry_marker:
             print("[monitor] 재시도 마커 감지 — 후크 실행")
 
@@ -172,12 +172,34 @@ def main():
         dirty=subprocess.run(['git','-C',str(V2_ROOT),'status','--porcelain','--','data/','media/','ib-library.json'],capture_output=True,text=True)
         branch=os.environ.get('V2_PUBLISH_BRANCH','main')
         pending=subprocess.run(['git','-C',str(V2_ROOT),'rev-list','--count',f'origin/{branch}..HEAD'],capture_output=True,text=True)
+        if dirty.returncode != 0 or (os.environ.get('V2_PUBLISH') == '1' and pending.returncode != 0):
+            print('[monitor] Git 상태 확인 실패 — 워터마크 유지')
+            return 2
         pending_work=bool(dirty.returncode==0 and dirty.stdout.strip()) or bool(os.environ.get('V2_PUBLISH')=='1' and pending.returncode==0 and pending.stdout.strip()!='0')
         changed = args.force or retry_marker or pending_work or any(current[k] != prev.get(k) for k in current)
         if not changed:
             try:
-                save_state(current)
-            except OSError as e:
+                backlog = preserve(HOOKS_DIR, V2_ROOT / 'data')
+                if backlog:
+                    publication = state.get('publication') or {}
+                    sha = publication.get('published_sha')
+                    if os.environ.get('V2_PUBLISH') == '1' and not sha:
+                        head = subprocess.run(['git', '-C', str(V2_ROOT), 'rev-parse', 'HEAD'], capture_output=True, text=True)
+                        if head.returncode != 0 or not head.stdout.strip():
+                            return 2
+                        sha = head.stdout.strip()
+                    run_id = os.environ.get('V2_HOOK_RUN_ID') or uuid.uuid4().hex
+                    atomic_json_write(HOOKS_DIR / ('.hook-result-' + run_id + '.json'), dict(
+                        run_id=run_id, input_fingerprint=digest(current), input_hashes=current,
+                        publication_status='unchanged' if os.environ.get('V2_PUBLISH') == '1' else 'disabled',
+                        published_sha=sha, required_status='complete', backlog=backlog,
+                        backlog_preserved=True, exit_code=10))
+                    if valid_result(HOOKS_DIR / ('.hook-result-' + run_id + '.json'), run_id, digest(current), publish_enabled=os.environ.get('V2_PUBLISH') == '1') is None:
+                        return 1
+                    print('[monitor] backlog_wait: 게시 성공 / 백로그 대기 (재시도 기한 전)')
+                    return 10
+                save_state(current, publication=state.get('publication'))
+            except (OSError, ValueError) as e:
                 print(f"[monitor] 워터마크 저장 실패 — 이전 state 유지: {e}")
                 return 1
             return 0
@@ -191,28 +213,49 @@ def main():
         # + 번역 1800 = 3300)보다 커야 한다. 예전 1800초는 번역이 정상
         # 동작 중인데도 후크를 죽여 고아 translator를 만들었다.
         # run_grouped는 타임아웃 시 후크 프로세스 그룹 전체를 종료한다.
+        run_id = os.environ.get('V2_HOOK_RUN_ID') or uuid.uuid4().hex
+        env = dict(os.environ, V2_HOOK_RUN_ID=run_id)
         try:
             r = run_grouped(
                 [sys.executable, str(HOOKS_DIR / "post_ingest_hook.py")],
-                capture_output=True, text=True, timeout=3600, grace=45,
+                capture_output=True, text=True, timeout=3600, grace=45, env=env,
             )
         except subprocess.TimeoutExpired:
             print("[monitor] 후크 타임아웃 (3600초) — 그룹 종료, 워터마크 유지, 다음 실행에서 재시도")
             return 1
         print(r.stdout[-3000:])
-        if r.returncode != 0:
+        if r.returncode == 10:
+            evidence = valid_result(HOOKS_DIR / ('.hook-result-' + run_id + '.json'),
+                                    run_id, digest(current), publish_enabled=os.environ.get('V2_PUBLISH') == '1')
+            if evidence is None:
+                print('[monitor] exit 10 실행 증거/큐 보존 검증 실패 — 워터마크 유지')
+                return 1
+        elif r.returncode != 0:
             print(f"[monitor] 후크 실패 (exit {r.returncode}) — 워터마크 유지, 다음 실행에서 재시도")
             print(r.stderr[-1000:] if r.stderr else "")
             return r.returncode
 
-        # 후크 성공 → 워터마크 저장
+        # A real hook always emits a receipt, including rc=0. Never approve a
+        # different input generation (or an absent receipt) as processed.
+        if r.returncode == 0:
+            try:
+                evidence = json.loads((HOOKS_DIR / ('.hook-result-' + run_id + '.json')).read_text())
+                if not (evidence['run_id'] == run_id and evidence['input_fingerprint'] == digest(current)
+                        and evidence['required_status'] == 'complete' and evidence['backlog_preserved'] is True
+                        and evidence['exit_code'] == 0 and not evidence['backlog']):
+                    return 1
+            except (OSError, ValueError, KeyError, TypeError):
+                return 1
+        # 후크가 승인한 실행 시작 지문을 저장한다. 실행 후 최신값은 읽지 않는다.
         try:
-            save_state(current)
+            save_state(current, publication=evidence)
         except OSError as e:
             print(f"[monitor] 워터마크 저장 실패 — 이전 state 유지, 다음 실행에서 재시도: {e}")
             return 1
         print("[monitor] 후크 성공 — 워터마크 저장")
-        return 0
+        if r.returncode == 10:
+            print('[monitor] backlog_wait: 게시 성공 / 백로그 대기')
+        return r.returncode
     finally:
         try:
             fcntl.flock(lock_fh, fcntl.LOCK_UN)

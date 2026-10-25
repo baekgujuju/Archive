@@ -1,5 +1,10 @@
 """Run the candidate's real main/helper bodies with synthetic subprocesses."""
 import ast
+import os
+import re
+import uuid
+from retry_state import mark, read as read_retry, due, clear_completed, preserve, digest
+from state_guard import atomic_json_write
 from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
@@ -28,12 +33,14 @@ class OriginalReleaseTests(unittest.TestCase):
             def run(cmd, **kw):
                 name = Path(cmd[1]).name
                 calls.append(name + (' --check' if '--check' in cmd else ''))
+                if name == 'enrich_tools.py':
+                    clear_completed(hooks/'.retry-enrich', read_retry(hooks/'.retry-enrich'))
                 rc = 1 if '--check' in cmd else translation_rc if name == 'translate_posts.py' else 0
-                return SimpleNamespace(returncode=rc)
+                return SimpleNamespace(returncode=rc, stdout='', stderr='')
             def release(pending):
                 calls.append('release')
                 return original_rc if calls.count('release') == 1 else 0
-            values = dict(HOOKS_DIR=hooks, V2_ROOT=root, LOCK_FILE=hooks/'lock',
+            values = dict(git=lambda *a: SimpleNamespace(returncode=0, stdout='a'*40), re=re, os=os, uuid=uuid, mark=mark, read_retry=read_retry, due=due, clear_completed=clear_completed, preserve=preserve, digest=digest, atomic_json_write=atomic_json_write, input_hashes=lambda: {'source':'same'}, DATA_DIR=root/'data', HOOKS_DIR=hooks, V2_ROOT=root, LOCK_FILE=hooks/'lock',
                 TRANSLATIONS=root/'data/translations.json', MANIFEST=root/'data/manifest.json',
                 RETRY_TRANSLATION=hooks/'.retry_translation', RETRY_COMMIT=hooks/'.retry_commit',
                 RETRY_MEDIA=hooks/'.retry_media', RETRY_ENRICH=hooks/'.retry-enrich',
@@ -43,7 +50,7 @@ class OriginalReleaseTests(unittest.TestCase):
                 current_branch=lambda: 'main', unpushed_commit_list=lambda: [],
                 changed_files=lambda: [], run=run, sys=SimpleNamespace(executable='python'),
                 publish_current_outputs=release, datetime=datetime, timezone=timezone)
-            exec(functions({'main', 'decide_pipeline'}), values)
+            exec(functions({'main', '_pipeline', 'decide_pipeline'}), values)
             result = values['main']()
             return result, calls, (hooks/'.retry_translation').exists()
 
@@ -65,7 +72,7 @@ class OriginalReleaseTests(unittest.TestCase):
 
     def test_optional_failure_keeps_retry_after_original_release(self):
         rc, calls, pending = self.scenario(translation_rc=1)
-        self.assertEqual(rc, 1)
+        self.assertEqual(rc, 10)
         self.assertEqual(calls.count('release'), 2)
         self.assertTrue(pending)
 

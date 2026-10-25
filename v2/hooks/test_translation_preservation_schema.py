@@ -1,5 +1,8 @@
 """Execute the actual hook validator/merge with producer-shaped fixtures."""
 import ast
+import sys
+from retry_state import mark, read as read_retry, due, clear_completed, preserve, digest
+from state_guard import atomic_json_write
 import json
 from pathlib import Path
 import tempfile
@@ -95,7 +98,7 @@ class PreservationSchemaTests(unittest.TestCase):
             self.assertEqual(json.loads(cache.read_text()), fixture)
             calls.append("release")
             return 0
-        values = dict(self.values, HOOKS_DIR=hooks, V2_ROOT=root,
+        values = dict(self.values, git=lambda *a: SimpleNamespace(returncode=0, stdout='a'*40), mark=mark, read_retry=read_retry, due=due, clear_completed=clear_completed, preserve=preserve, digest=digest, atomic_json_write=atomic_json_write, input_hashes=lambda: {'source':'same'}, DATA_DIR=data, HOOKS_DIR=hooks, V2_ROOT=root,
                       LOCK_FILE=hooks / "lock", TRANSLATIONS=cache,
                       MANIFEST=data / "manifest.json", run=run,
                       sys=SimpleNamespace(executable="python"), tempfile=tempfile,
@@ -111,7 +114,7 @@ class PreservationSchemaTests(unittest.TestCase):
             values[key] = hooks / key
         tree = ast.parse(SOURCE.read_text(encoding="utf-8"))
         tree.body = [node for node in tree.body if isinstance(node, ast.FunctionDef)
-                     and node.name in {"main", "decide_pipeline", "_validate_translation_entry", "merge_translation_backup"}]
+                     and node.name in {"main", "_pipeline", "decide_pipeline", "_validate_translation_entry", "merge_translation_backup"}]
         exec(compile(tree, str(SOURCE), "exec"), values)
         self.assertEqual(values["main"](), 0)
         self.assertEqual(calls.count("release"), 2)

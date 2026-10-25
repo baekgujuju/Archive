@@ -38,7 +38,7 @@ def _read(path):
     value = decode(path.read_bytes())
     if not isinstance(value, dict) or value.get('version') != 1:
         raise EvidenceError('invalid_progress_record')
-    if value.get('actor') not in ACTORS or value.get('phase') not in PHASES or value.get('status') not in ('active', 'ok', 'failed'):
+    if value.get('actor') not in ACTORS or value.get('phase') not in PHASES or value.get('status') not in ('active', 'ok', 'failed', 'backlog_wait'):
         raise EvidenceError('invalid_progress_record')
     if any(not isinstance(value.get(k), str) or not re.fullmatch('[0-9a-f]{32}', value[k])
            for k in ('cycle', 'token')):
@@ -76,7 +76,7 @@ def start_phase(root, actor, phase, budget, *, cycle=None, now=None, writer=_wri
     return event
 
 
-def finish_phase(root, event, *, rc=None, now=None, writer=_write):
+def finish_phase(root, event, *, rc=None, now=None, writer=_write, status=None):
     path = _path(root, event['actor'])
     current = _read(path)
     if current.get('token') != event['token']:
@@ -86,7 +86,10 @@ def finish_phase(root, event, *, rc=None, now=None, writer=_write):
         raise EvidenceError('invalid_progress_time')
     if rc is not None and type(rc) is not int:
         raise EvidenceError('invalid_progress_result')
-    updated = dict(current, status='ok' if rc == 0 else 'failed', completed_at=now, rc=rc)
+    if status is not None and not (status == 'backlog_wait' and rc == 10
+                                   and event['actor'] == 'scheduler' and event['phase'] == 'monitor'):
+        raise EvidenceError('invalid_progress_status')
+    updated = dict(current, status=status or ('ok' if rc == 0 else 'failed'), completed_at=now, rc=rc)
     if event['actor'] == 'worker':
         if rc == 0:
             updated.pop('failure_since', None); updated.pop('failure_count', None)

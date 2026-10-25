@@ -1675,8 +1675,14 @@ def test_monitor_main_corrupt_state_runs_hook_and_saves(tmp_path, monkeypatch):
         stdout = "hook ok"
         stderr = ""
 
-    monkeypatch.setattr(monitor_mod, "run_grouped",
-                        lambda *a, **k: FakeCompleted())
+    def hook_success(*a, **k):
+        from retry_state import digest
+        run_id = k['env']['V2_HOOK_RUN_ID']
+        state_guard.atomic_json_write(hooks / ('.hook-result-' + run_id + '.json'), dict(
+            run_id=run_id, input_fingerprint=digest(monitor_mod.current_hashes()),
+            required_status='complete', backlog_preserved=True, exit_code=0, backlog=[]))
+        return FakeCompleted()
+    monkeypatch.setattr(monitor_mod, "run_grouped", hook_success)
     monkeypatch.setattr(monitor_mod.subprocess, "run",
                         lambda *a, **k: subprocess.CompletedProcess(a, 0, "", ""))
     rc = monitor_mod.main()

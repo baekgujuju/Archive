@@ -34,11 +34,11 @@ class PublishGuardTests(unittest.TestCase):
             self.assertEqual(commit,'a'*40)
             return blobs.get(path,b''),path not in blobs
         with tempfile.TemporaryDirectory(dir=ROOT) as tmp:
-            marker=Path(tmp)/'retry'
+            marker=Path(tmp)/'.retry_media_required'
             env={'current_branch':lambda:'main','PUBLISH_BRANCH':'main','ref_exists':lambda ref:True,
                  'git':git,'_git_show_bytes':show,'_manifest_relpath':lambda p:'v2/'+p,
                  'validate_commit_artifacts':lambda sha:(True,''),'flag_needs_review':lambda *a:self.fail('media failure must remain retryable'),
-                 'RETRY_MEDIA':marker,'datetime':datetime,'timezone':timezone,'json':json,'log':lambda s:None}
+                 'HOOKS_DIR':Path(tmp),'RETRY_MEDIA':marker,'datetime':datetime,'timezone':timezone,'json':json,'log':lambda s:None}
             exec(compile(selected,'actual-candidate-hook','exec'),env)
             ok=env['do_push']()
             self.assertEqual(ok,not(missing or corrupt))

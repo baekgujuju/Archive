@@ -189,10 +189,10 @@ class MonitorRetryTest(unittest.TestCase):
         with patch.dict(sys.modules, {"fcntl":fake}): module_spec.loader.exec_module(module)
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder); (root/".retry-enrich").write_text("pending")
-            with patch.object(module,"HOOKS_DIR",root), patch.object(module,"LOCK_FILE",root/"lock"), patch.object(module,"current_hashes",return_value={"posts":"same"}), patch.object(module,"load_state",return_value={"hashes":{"posts":"same"}}), patch.object(module,"save_state") as save, patch.object(sys,"argv",["monitor"]), patch.object(module.subprocess,"run",side_effect=[subprocess.CompletedProcess([],0,"",""),subprocess.CompletedProcess([],0,"0",""),subprocess.CompletedProcess([],1,"retry needed","")]) as run:
+            with patch.object(module,"HOOKS_DIR",root), patch.object(module,"LOCK_FILE",root/"lock"), patch.object(module,"current_hashes",return_value={"posts":"same"}), patch.object(module,"load_state",return_value={"hashes":{"posts":"same"}}), patch.object(module,"save_state") as save, patch.object(sys,"argv",["monitor"]), patch.object(module.subprocess,"run",side_effect=[subprocess.CompletedProcess([],0,"",""),subprocess.CompletedProcess([],0,"0","")]) as run, patch.object(module,"run_grouped",return_value=subprocess.CompletedProcess([],1,"retry needed","")) as grouped:
                 self.assertEqual(module.main(),1)
-                self.assertEqual(run.call_count,3)
-                self.assertIn("post_ingest_hook.py",str(run.call_args_list[-1]))
+                self.assertEqual(run.call_count,2)
+                self.assertIn("post_ingest_hook.py",str(grouped.call_args_list[-1]))
                 save.assert_not_called()
 
 if __name__ == "__main__":

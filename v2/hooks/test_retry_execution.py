@@ -22,12 +22,22 @@ class HookExecution(unittest.TestCase):
         self.temp=tempfile.TemporaryDirectory(dir=HERE);self.root=Path(self.temp.name);self.v2=self.root/'v2';self.data=self.v2/'data';self.hooks=self.v2/'hooks'
         self.data.mkdir(parents=True);self.hooks.mkdir();(self.v2/'media').mkdir();(self.v2/'media/.gitkeep').write_text('');(self.v2/'ib-library.json').write_text('{"posts":[]}')
         (self.data/'manifest.json').write_text('{"chunks":{}}');(self.data/'translations.json').write_text('{}');(self.data/'posts-x.json').write_text('{"posts":[]}')
-        self.git('init');self.git('config','user.name','Test');self.git('config','user.email','test@example.com');self.git('add','.');self.git('commit','-m','baseline')
+        self.refresh_manifest()
+        self.git('init','-b','main');self.git('config','user.name','Test');self.git('config','user.email','test@example.com');self.git('add','.');self.git('commit','-m','baseline')
         self.h=load('post_ingest_hook');h=self.h
-        for name,value in {'V2_ROOT':self.v2,'DATA_DIR':self.data,'HOOKS_DIR':self.hooks,'LOCK_FILE':self.hooks/'.lock','TRANSLATIONS':self.data/'translations.json','MANIFEST':self.data/'manifest.json','RETRY_TRANSLATION':self.hooks/'.retry_translation','RETRY_COMMIT':self.hooks/'.retry_commit','PUBLISH_ENABLED':False,'PUBLISH_BRANCH':'main'}.items():setattr(h,name,value)
+        for name,value in {'V2_ROOT':self.v2,'DATA_DIR':self.data,'HOOKS_DIR':self.hooks,'LOCK_FILE':self.hooks/'.lock','TRANSLATIONS':self.data/'translations.json','MANIFEST':self.data/'manifest.json','RETRY_TRANSLATION':self.hooks/'.retry_translation','RETRY_COMMIT':self.hooks/'.retry_commit','RETRY_MEDIA':self.hooks/'.retry_media','RETRY_ENRICH':self.hooks/'.retry-enrich','PUBLISH_ENABLED':False,'PUBLISH_BRANCH':'main'}.items():setattr(h,name,value)
         self.fail={};self.calls=[];self.built=False;self.publish_count=0
         h.log=lambda message:None
         self.original_run=h.run;h.run=self.worker
+        h.input_hashes=lambda: {"fixture":"source"}
+    def refresh_manifest(self):
+        import hashlib
+        chunks={}
+        for name in ('posts-x','posts-web','posts-ib'):
+            path=self.data/(name+'.json')
+            if not path.exists():path.write_text('{"posts":[]}')
+            chunks[name]={'file':'data/'+path.name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'count':len(json.loads(path.read_text())['posts'])}
+        (self.data/'manifest.json').write_text(json.dumps({'chunks':chunks}))
     def tearDown(self):self.temp.cleanup()
     def git(self,*args):
         r=subprocess.run(['git','-C',str(self.root),*args],capture_output=True,text=True)
@@ -47,18 +57,18 @@ class HookExecution(unittest.TestCase):
         kind={'build_data.py':'build','translate_posts.py':'translation','ib_adapter.py':'adapter'}[script]
         if self.fail.get(kind,0):self.fail[kind]-=1;return result(1)
         if kind=='build':
-            self.built=True;(self.data/'posts-x.json').write_text('{"posts":[{"id":"test"}]}')
+            self.built=True;(self.data/'posts-x.json').write_text('{"posts":[{"id":"test"}]}');self.refresh_manifest()
         if kind=='translation':(self.data/'translations.json').write_text('{"test":{"status":"ok"}}')
         return result()
     def test_translation_failure_then_real_main_retries(self):
-        self.fail['translation']=1;self.assertEqual(self.h.main(),1);self.assertTrue(self.h.RETRY_TRANSLATION.exists());self.assertEqual(self.h.main(),0);self.assertFalse(self.h.RETRY_TRANSLATION.exists())
+        self.fail['translation']=1;self.assertEqual(self.h.main(),10);self.assertTrue(self.h.RETRY_TRANSLATION.exists());rec=json.loads(self.h.RETRY_TRANSLATION.read_text());rec['next_retry_at']='2000-01-01T00:00:00+00:00';self.h.RETRY_TRANSLATION.write_text(json.dumps(rec));self.assertEqual(self.h.main(),0);self.assertFalse(self.h.RETRY_TRANSLATION.exists())
         self.assertEqual(sum('translate_posts.py' in str(c) for c in self.calls),2)
     def test_build_failure_preserves_previous_generation_and_retries(self):
         before=(self.data/'posts-x.json').read_bytes();self.fail['build']=1;self.assertEqual(self.h.main(),1);self.assertEqual((self.data/'posts-x.json').read_bytes(),before);self.assertEqual(self.h.main(),0)
     def test_commit_failure_retries_when_source_unchanged(self):
         self.fail['commit']=1;self.assertEqual(self.h.main(),1);self.assertTrue(self.h.RETRY_COMMIT.exists());self.assertEqual(self.h.main(),0);self.assertFalse(self.h.RETRY_COMMIT.exists());self.assertEqual(self.git('status','--porcelain','--','v2/data'),'')
     def test_push_failure_then_unchanged_source_retries(self):
-        self.git('update-ref','refs/remotes/origin/main','HEAD');self.h.PUBLISH_ENABLED=True;self.fail['push']=1;self.assertEqual(self.h.main(),1);self.assertEqual(self.h.main(),0);self.assertEqual(self.publish_count,2)
+        self.git('update-ref','refs/remotes/origin/main','HEAD');self.h.PUBLISH_ENABLED=True;self.fail['push']=1;self.assertEqual(self.h.main(),1);self.assertEqual(self.h.main(),10);self.assertEqual(self.publish_count,2)
     def test_unrelated_staged_work_is_preserved(self):
         (self.root/'unrelated.txt').write_text('keep staged');self.git('add','unrelated.txt');self.assertEqual(self.h.main(),0);self.assertIn('unrelated.txt',self.git('diff','--cached','--name-only'));self.assertNotIn('unrelated.txt',self.git('show','--name-only','--format=','HEAD'))
     def test_manifest_translation_hash_matches_after_worker(self):
@@ -137,8 +147,13 @@ class MonitorExecution(unittest.TestCase):
             root=Path(temporary);m.HOOKS_DIR=root;m.V2_ROOT=root;m.STATE_FILE=root/'state.json';m.LOCK_FILE=root/'.lock';m.current_hashes=lambda:{'fixture':'changed'};codes=[1,0]
             def worker(cmd,**kwargs):
                 if cmd[0]=='git':return subprocess.CompletedProcess(cmd,0,'0' if 'rev-list' in cmd else '','')
-                return result(codes.pop(0))
-            with patch.object(m.subprocess,'run',worker),patch.object(sys,'argv',['monitor.py']):
+                rc=codes.pop(0)
+                if rc == 0:
+                    from retry_state import digest
+                    run_id=kwargs['env']['V2_HOOK_RUN_ID']
+                    (root/('.hook-result-'+run_id+'.json')).write_text(json.dumps(dict(run_id=run_id, input_fingerprint=digest(m.current_hashes()), required_status='complete', backlog_preserved=True, exit_code=0, backlog=[])))
+                return result(rc)
+            with patch.object(m.subprocess,'run',worker),patch.object(m,'run_grouped',worker),patch.object(sys,'argv',['monitor.py']):
                 self.assertEqual(m.main(),1);self.assertFalse(m.STATE_FILE.exists());self.assertEqual(m.main(),0);self.assertEqual(json.loads(m.STATE_FILE.read_text())['hashes'],{'fixture':'changed'})
 
 if __name__=='__main__':unittest.main(verbosity=2)

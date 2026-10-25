@@ -12,7 +12,7 @@ v2 업로드-성공 후크: 빌드 → 번역 → 커밋 (게시는 기본 비�
   4. 번역 실패 시 재시도 마커 생성 (다음 실행에서 재시도)
   5. 게시(git push)는 기본 비활성. V2_PUBLISH=1 일 때만.
 
-종료 코드: 0=성공/변경없음, 1=실패(재시도 필요), 2=락 획득 실패
+종료 코드: 0=필수 처리 성공, 10=영속 백로그 대기, 1=필수 처리 실패, 2=실행 미완료
 """
 import fcntl
 import hashlib
@@ -30,6 +30,8 @@ from pathlib import Path, PurePosixPath
 
 from proc_group import run_grouped, terminate_current
 from pipeline_progress import start_phase, finish_phase
+from retry_state import (mark, read as read_retry, due, clear_completed, preserve, digest)
+from state_guard import atomic_json_write
 
 # pipeline_lock lives in v2/ (parent dir), not hooks/ — same bootstrap as drive_poll.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -75,6 +77,8 @@ def run(cmd, **kw):
     log("$ " + " ".join(str(c) for c in cmd))
     # P1-7: 자식은 별도 프로세스 그룹으로 실행하고, 타임아웃 시 그룹 전체를
     # 종료한다 (subprocess.run은 직접 자식만 죽여 손자를 고아로 남긴다).
+    from retry_state import attempt_id
+    kw.setdefault('env', dict(os.environ, V2_RETRY_ATTEMPT_ID=attempt_id()))
     budget = kw.pop("timeout", 600)
     known = {'build_data', 'ib_adapter', 'media-mirror', 'enrich_tools', 'translate_posts'}
     label = 'git' if Path(cmd[0]).name == 'git' else Path(cmd[1]).stem if len(cmd) > 1 else 'command'
@@ -412,6 +416,7 @@ def validate_candidate_media(commit):
 
 
 def do_push():
+    from retry_state import mark, read as read_retry, clear_completed
     try:
         checked_out = current_branch()
     except RuntimeError as e:
@@ -459,10 +464,14 @@ def do_push():
         validate_candidate_media(sha)
     except (RuntimeError, ValueError, ImportError) as exc:
         log(f"게시 차단: 미디어 참조 무결성 실패 — {exc}")
-        RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+        mark(HOOKS_DIR / ".retry_media_required", "media_integrity", str(exc))
         return False
     log(f"게시: origin/{branch} 로 push ({sha[:12]})")
     r = git(["push", "origin", f"{sha}:refs/heads/{branch}"], timeout=300)
+    if r.returncode == 0:
+        global PUBLISHED_SHA
+        PUBLISHED_SHA = sha
+        clear_completed(HOOKS_DIR / ".retry_media_required", read_retry(HOOKS_DIR / ".retry_media_required"))
     return r.returncode == 0
 
 
@@ -531,7 +540,7 @@ def update_manifest_translation_hash():
 def decide_pipeline(force_build, check_rc, dirty, enrich_marker):
     """Pure pipeline decision: (needs_build, enrich_only).
 
-    force_build: a translation/commit/media retry marker forces a rebuild.
+    force_build: explicit source rebuild request, never an optional retry marker.
     check_rc: build_data --check result (0=no change, 1=changed).
     dirty: working-tree changes exist. enrich_marker: .retry-enrich exists.
     Enrich-only = no rebuild needed but enrich backlog remains: skip the
@@ -836,7 +845,7 @@ def _recover_abandoned_backups_locked(candidates):
 
 def publish_pending(pending):
     """No new build/commit: retry already validated pending commits last."""
-    if not PUBLISH_ENABLED or not pending:
+    if not PUBLISH_ENABLED or (not pending and not (HOOKS_DIR / ".retry_media_required").exists()):
         return 0
     if do_push():
         log("미푸시 커밋 게시 완료")
@@ -850,6 +859,7 @@ def publish_current_outputs(pending=0):
 
     Optional retry markers do not redefine whether this release succeeded.
     """
+    from retry_state import mark, read as read_retry, clear_completed
     if not update_manifest_translation_hash():
         log("manifest 번역 해시 업데이트 실패 — 커밋 중단")
         return 1
@@ -871,7 +881,7 @@ def publish_current_outputs(pending=0):
     r = git(["add", "--"] + COMMIT_PATHS)
     if r.returncode != 0:
         log("git add 실패")
-        RETRY_COMMIT.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+        mark(RETRY_COMMIT, "commit_failed")
         return 1
 
     # 명시적 pathspec으로 커밋 — 무관한 스테이지 파일은 자동으로 제외됨
@@ -885,9 +895,9 @@ def publish_current_outputs(pending=0):
              "commit", "-m", msg, "--"] + COMMIT_PATHS)
     if r.returncode != 0:
         log("커밋 실패 — 재시도 마커 생성")
-        RETRY_COMMIT.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+        mark(RETRY_COMMIT, "commit_failed")
         return 1
-    RETRY_COMMIT.unlink(missing_ok=True)
+    clear_completed(RETRY_COMMIT, read_retry(RETRY_COMMIT))
     log("커밋 완료")
 
     # 4. 게시 게이트
@@ -901,236 +911,329 @@ def publish_current_outputs(pending=0):
     return 1
 
 
-def main():
-    HOOKS_DIR.mkdir(parents=True, exist_ok=True)
-    lock_fh = open(LOCK_FILE, "w")
+PUBLISHED_SHA = None
+
+
+def input_hashes():
+    from monitor import current_hashes
+    return current_hashes()
+
+
+def _pipeline(attempted):
+    optional_due = any(p in attempted for p in (RETRY_TRANSLATION, RETRY_MEDIA, RETRY_ENRICH))
+    # P2/P3: 이전 실행이 중단하며 남긴 번역 백업을 먼저 정리한다.
+    # (최근 + 유효한 백업만 자동 복구, 나머지는 운영자 검토 대기.)
+    # try/finally 안에서 호출해야 예상치 못한 예외 시에도 flock이
+    # 해제된다 (밖에서 호출하면 finally를 우회한다).
+    recover_abandoned_backups()
+
+    # 0. 미푸시 커밋/Dirty 처리 (소스 해시와 무관)
+    # P2-10: 미푸시 커밋 검증은 실제로 푸시할 때만 수행한다.
+    # 게시 비활성 시에는 푸시하지 않으므로 기준선 확인이
+    # 파이프라인을 막아서는 안 된다.
     try:
-        fcntl.flock(lock_fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except (OSError, IOError):
-        log("다른 후크 실행 중 — 종료")
-        return 2
-    log("락 획득")
-
-    force_build_markers = RETRY_TRANSLATION.exists() or RETRY_COMMIT.exists() or RETRY_MEDIA.exists()
-    has_retry_marker = force_build_markers or RETRY_ENRICH.exists()
-    if has_retry_marker:
-        log("재시도 마커 감지 — 소스 변경 여부와 무관하게 처리")
-
-    try:
-        # P2/P3: 이전 실행이 중단하며 남긴 번역 백업을 먼저 정리한다.
-        # (최근 + 유효한 백업만 자동 복구, 나머지는 운영자 검토 대기.)
-        # try/finally 안에서 호출해야 예상치 못한 예외 시에도 flock이
-        # 해제된다 (밖에서 호출하면 finally를 우회한다).
-        recover_abandoned_backups()
-
-        # 0. 미푸시 커밋/Dirty 처리 (소스 해시와 무관)
-        # P2-10: 미푸시 커밋 검증은 실제로 푸시할 때만 수행한다.
-        # 게시 비활성 시에는 푸시하지 않으므로 기준선 확인이
-        # 파이프라인을 막아서는 안 된다.
-        try:
-            pending_list = unpushed_commit_list() if PUBLISH_ENABLED else []
-            pending = len(pending_list)
-            dirty = changed_files()
-        except RuntimeError as e:
-            # P2-10: Git 실패를 "변경 없음/미푸시 0개"로 취급하면
-            # 성공처럼 끝나버린다 — 중단하고 다음 폴에서 재시도.
-            log(f"Git 상태 확인 실패 — 중단: {e}")
-            return 1
-        if pending > 0:
-            # P2-10: 미푸시 커밋을 검증 없이 푸시하지 않는다. 이미 커밋된
-            # 아티팩트는 재시도로 고쳐지지 않으므로, 검증 실패 시 푸시를
-            # 막고 검수 대상으로 기록한다. Git 인프라 실패는 재시도 대상이다.
-            for commit in pending_list:
-                try:
-                    ok, reason = validate_commit_artifacts(commit)
-                except RuntimeError as e:
-                    log(f"미푸시 커밋 검증 중 Git 실패 — 중단: {e}")
-                    return 1
-                if not ok:
-                    log(f"미푸시 커밋 검증 실패 — 푸시 중단: {reason}")
-                    flag_needs_review(commit, reason)
-                    return 1
-            log(f"미푸시 커밋 {pending}개 — 새 자료 처리 후 게시 재시도")
-        if dirty and not pending:
-            # Dirty 파일이 있지만 커밋되지 않음 → 커밋 시도
-            log(f"Dirty 파일 감지 (소스 해시 무관): {dirty}")
-            # 아래 3단계로 진행하여 커밋함
-
-        # 1. 변경 감지 (번역/커밋/미디어 마커가 있으면 무조건 빌드.
-        #    enrich 마커만 있으면 소스 변경이 있을 때만 빌드하고,
-        #    없으면 빌드 없이 enrich만 실행 — enrich 미완료(rc=2) 때마다
-        #    전체 빌드가 data/를 교체하던 손실 루프 방지.)
-        needs_build = force_build_markers
-        enrich_only = False
-        if not needs_build:
-            r = run([sys.executable, str(V2_ROOT / "build_data.py"), "--check"])
-            if r.returncode == 0 and not dirty and not RETRY_ENRICH.exists():
-                log("변경 없음, Dirty 없음 — 종료 (모델 호출 없음)")
-                # 재시도 마커 정리 (성공적으로 처리됨)
-                RETRY_TRANSLATION.unlink(missing_ok=True)
-                RETRY_COMMIT.unlink(missing_ok=True)
-                return publish_pending(pending)
-            if r.returncode not in (0, 1):
-                log(f"--check 비정상 종료 ({r.returncode})")
+        pending_list = unpushed_commit_list() if PUBLISH_ENABLED else []
+        pending = len(pending_list)
+        dirty = changed_files()
+    except RuntimeError as e:
+        # P2-10: Git 실패를 "변경 없음/미푸시 0개"로 취급하면
+        # 성공처럼 끝나버린다 — 중단하고 다음 폴에서 재시도.
+        log(f"Git 상태 확인 실패 — 중단: {e}")
+        return 1
+    if pending > 0:
+        # P2-10: 미푸시 커밋을 검증 없이 푸시하지 않는다. 이미 커밋된
+        # 아티팩트는 재시도로 고쳐지지 않으므로, 검증 실패 시 푸시를
+        # 막고 검수 대상으로 기록한다. Git 인프라 실패는 재시도 대상이다.
+        for commit in pending_list:
+            try:
+                ok, reason = validate_commit_artifacts(commit)
+            except RuntimeError as e:
+                log(f"미푸시 커밋 검증 중 Git 실패 — 중단: {e}")
                 return 1
-            needs_build, enrich_only = decide_pipeline(
-                False, r.returncode, dirty, RETRY_ENRICH.exists())
-        if not needs_build and not enrich_only:
+            if not ok:
+                log(f"미푸시 커밋 검증 실패 — 푸시 중단: {reason}")
+                flag_needs_review(commit, reason)
+                return 1
+        log(f"미푸시 커밋 {pending}개 — 새 자료 처리 후 게시 재시도")
+    if dirty and not pending:
+        # Dirty 파일이 있지만 커밋되지 않음 → 커밋 시도
+        log(f"Dirty 파일 감지 (소스 해시 무관): {dirty}")
+        # 아래 3단계로 진행하여 커밋함
+
+    # 소스 변경만 전체 빌드를 수행한다. Dirty 출력은 재게시하고,
+    # 백로그는 기한이 된 종류만 기존 data/에서 재개한다.
+    needs_build = False
+    enrich_only = False
+    if not needs_build:
+        r = run([sys.executable, str(V2_ROOT / "build_data.py"), "--check"])
+        if r.returncode == 0 and not dirty and not optional_due:
+            log("변경 없음, Dirty 없음 — 종료 (모델 호출 없음)")
+            # 재시도 마커 정리 (성공적으로 처리됨)
             return publish_pending(pending)
-        log("빌드 필요 — 시작" if needs_build else "소스 변경 없음 — 빌드 없이 enrich만 실행")
+        if r.returncode not in (0, 1):
+            log(f"--check 비정상 종료 ({r.returncode})")
+            return 1
+        needs_build, enrich_only = decide_pipeline(
+            False, r.returncode, False, optional_due or bool(dirty))
+    if not needs_build and not enrich_only:
+        return publish_pending(pending)
+    if needs_build:
+        attempted.update({p: read_retry(p) for p in (RETRY_TRANSLATION, RETRY_MEDIA, RETRY_ENRICH) if p.exists()})
+    log("빌드 필요 — 시작" if needs_build else "소스 변경 없음 — 빌드 없이 enrich만 실행")
 
-        # 2a~2c-2는 빌드 파이프라인 — enrich-only 모드면 건너뜀
-        # (소스 변경 없음: 빌드할 게 없고, 빌드 자체가 data/ 교체라
-        # 불필요한 위험만 더함. enrich → 번역 → 커밋은 아래에서 계속.)
-        if not enrich_only:
-            # 2a. IB 정본 병합 (신규 IB 감지)
-            r = run([sys.executable, str(V2_ROOT / "ib_adapter.py")])
-            if r.returncode != 0:
-                log("IB 어댑터 실패 — 중단")
-                return 1
+    # 2a~2c-2는 빌드 파이프라인 — enrich-only 모드면 건너뜀
+    # (소스 변경 없음: 빌드할 게 없고, 빌드 자체가 data/ 교체라
+    # 불필요한 위험만 더함. enrich → 번역 → 커밋은 아래에서 계속.)
+    if not enrich_only:
+        # 2a. IB 정본 병합 (신규 IB 감지)
+        r = run([sys.executable, str(V2_ROOT / "ib_adapter.py")])
+        if r.returncode != 0:
+            log("IB 어댑터 실패 — 중단")
+            return 1
 
-            # 2b. translations.json 백업 (공유 락 하에서 읽어 일관된 스냅샷 확보)
-            # P2/P3: transaction.json을 함께 쓴다 — 방치 백업 복구가
-            # 나이(24h)가 아니라 트랜잭션 출처 + 소스 동일성으로
-            # 자동 복구 여부를 판단한다.
-            backup = None
-            if TRANSLATIONS.exists():
-                backup = Path(tempfile.mkdtemp(prefix="v2_trans_", dir=HOOKS_DIR)) / "translations.json"
-                try:
-                    with pipeline_lock():
-                        shutil.copy2(str(TRANSLATIONS), str(backup))
-                        txn = {
-                            "transaction_id": uuid.uuid4().hex,
-                            "created_at": datetime.now(timezone.utc).isoformat(),
-                            "source_hash": None,
-                            "translations_sha256": sha256_file(TRANSLATIONS),
-                        }
-                        try:
-                            m = json.loads(MANIFEST.read_text(encoding="utf-8"))
-                            if isinstance(m, dict) and isinstance(m.get("source_hash"), str):
-                                txn["source_hash"] = m["source_hash"]
-                        except (OSError, ValueError):
-                            pass
-                        (backup.parent / "transaction.json").write_text(
-                            json.dumps(txn, ensure_ascii=False, indent=2), encoding="utf-8")
-                except PipelineLockTimeout as e:
-                    log(f"번역 캐시 백업 건너뜀 (락 타임아웃): {e}")
-                    backup = None
-                else:
-                    log(f"번역 캐시 백업: {backup}")
-
-            # 2c. 전체 빌드
-            r = run([sys.executable, str(V2_ROOT / "build_data.py")])
-            if r.returncode != 0:
-                log("빌드 실패 — 중단")
-                return 1
-
-
-            # 2c-2. 미디어 미러 (best-effort)
-            # build_data 성공 후, git 발행 전
-            _mirror = V2_ROOT / "media-mirror.py"
-            if _mirror.exists():
-                log("미디어 미러 시작 (best-effort)...")
-                try:
-                    _mr = run([sys.executable, str(_mirror)], timeout=600)
-                    if _mr.returncode == 0:
-                        RETRY_MEDIA.unlink(missing_ok=True)
-                        log("미디어 미러 완료")
-                    else:
-                        RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-                        log(f"미디어 미러 실패 (rc={_mr.returncode}) — 다음 실행에서 재시도")
-                except Exception as _e:
-                    RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-                    log(f"미디어 미러 예외: {_e} — 다음 실행에서 재시도")
-            else:
-                log("media-mirror.py 없음")
-        else:
-            backup = None
-            log("enrich-only — IB/빌드/미디어미러 건너뜀")
-        # 2d. 번역 캐시 복원/병합 (공유 락 하에서, 원자적 저장)
-        # P2/P3 (Codex 차단 5): 백업은 병합이 성공적으로 끝나고 나서만
-        # 삭제한다. 락 타임아웃·손상 백업·현재 파일 손상·쓰기 실패 시에는
-        # 백업을 보존한다 — 다음 실행의 방치 백업 복구가 처리한다.
-        if backup and backup.exists():
-            merged_ok = False
+        # 2b. translations.json 백업 (공유 락 하에서 읽어 일관된 스냅샷 확보)
+        # P2/P3: transaction.json을 함께 쓴다 — 방치 백업 복구가
+        # 나이(24h)가 아니라 트랜잭션 출처 + 소스 동일성으로
+        # 자동 복구 여부를 판단한다.
+        backup = None
+        if TRANSLATIONS.exists():
+            backup = Path(tempfile.mkdtemp(prefix="v2_trans_", dir=HOOKS_DIR)) / "translations.json"
             try:
                 with pipeline_lock():
-                    restored, reason = merge_translation_backup(backup)
-                    if reason:
-                        # 손상된 백업을 현재 파일 위에 덮지 않는다 (예전 버그).
-                        # translate 로드 시 격리·복구 경로가 처리한다.
-                        log(f"번역 백업 손상/병합 중단 ({reason}) — 백업 보존 (다음 실행 복구 대기)")
-                    else:
-                        log(f"번역 캐시 병합 완료 (복원 {restored}개)")
-                        merged_ok = True
+                    shutil.copy2(str(TRANSLATIONS), str(backup))
+                    txn = {
+                        "transaction_id": uuid.uuid4().hex,
+                        "created_at": datetime.now(timezone.utc).isoformat(),
+                        "source_hash": None,
+                        "translations_sha256": sha256_file(TRANSLATIONS),
+                    }
+                    try:
+                        m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+                        if isinstance(m, dict) and isinstance(m.get("source_hash"), str):
+                            txn["source_hash"] = m["source_hash"]
+                    except (OSError, ValueError):
+                        pass
+                    (backup.parent / "transaction.json").write_text(
+                        json.dumps(txn, ensure_ascii=False, indent=2), encoding="utf-8")
             except PipelineLockTimeout as e:
-                log(f"번역 캐시 병합 건너뜀 (락 타임아웃) — 백업 보존: {e}")
-            except OSError as e:
-                log(f"번역 캐시 병합 중단 (쓰기 실패) — 백업 보존: {e}")
-            if merged_ok:
-                shutil.rmtree(backup.parent, ignore_errors=True)
+                log(f"번역 캐시 백업 건너뜀 (락 타임아웃): {e}")
+                backup = None
             else:
-                # Earlier publication must not race ahead of cache preservation.
-                log("번역 캐시 보존 미확정 — 원문 게시도 보류, 백업 유지")
-                return 1
+                log(f"번역 캐시 백업: {backup}")
 
-        # Required source/media gates and translation-cache restoration run
-        # first. Publish the original before any optional provider invocation.
-        if not enrich_only and PUBLISH_ENABLED:
-            # Durable optional queue before the first release: a process stop
-            # immediately after a successful push must still leave retry evidence.
-            if not RETRY_TRANSLATION.exists():
-                RETRY_TRANSLATION.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-            if publish_current_outputs(pending):
-                return 1
-            pending = 0
-            log("원문 게시 단계 완료 — 선택적 분류·번역은 별도 후속 단계")
-
-        # 2c-3. GitHub 스크린샷 AI툴 자동 분류 (best-effort, 캐시 기반)
-        # 미디어 미러 후, git 커밋 전. 실패해도 전체 흐름은 계속.
-        _enrich = V2_ROOT / "enrich_tools.py"
-        if _enrich.exists():
-            log("AI툴 스크린샷 분류 시작 (best-effort, 최신 우선 + 백로그 인터리브 + 180초 데드라인)...")
-            try:
-                # 최신 우선 + 백로그 예약분(신규 4:백로그 1) + 180초 데드라인.
-                # 데드라인은 연산 내부에서 강제되어 번역/커밋이 900초 타임아웃에
-                # 걸리지 않게 한다 (미완료분은 지문으로 다음 폴에 재개).
-                _er = run([sys.executable, str(_enrich), "--backfill",
-                           "--interleave-ratio", "4",
-                           "--time-budget", "180"], timeout=900)
-                if _er.returncode == 0:
-                    log("AI툴 분류 완료")
-                else:
-                    RETRY_ENRICH.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-                    log(f"AI툴 분류 실패 (rc={_er.returncode}) — 다음 실행에서 재시도")
-            except Exception as _e:
-                RETRY_ENRICH.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-                log(f"AI툴 분류 예외: {_e} — 다음 실행에서 재시도")
-        else:
-            log("enrich_tools.py 없음")
-        # 2e. 번역 (실패 시 재시도 마커)
-        r = run([sys.executable, str(V2_ROOT / "translate_posts.py")], timeout=1800)
+        # 2c. 전체 빌드
+        r = run([sys.executable, str(V2_ROOT / "build_data.py")])
         if r.returncode != 0:
-            log("번역 미완료 — 재시도 마커 생성")
-            RETRY_TRANSLATION.write_text(
-                datetime.now(timezone.utc).isoformat(), encoding="utf-8")
-        else:
-            RETRY_TRANSLATION.unlink(missing_ok=True)
-            log("번역 완료 — 재시도 마커 제거")
+            log("빌드 실패 — 중단")
+            return 1
 
-        # Optional output is a second release; original publication has its
-        # own durable receipt and cannot be undone by optional-work failure.
+
+        # 2c-2. 미디어 미러 (best-effort)
+        # build_data 성공 후, git 발행 전
+        _mirror = V2_ROOT / "media-mirror.py"
+        if _mirror.exists():
+            log("미디어 미러 시작 (best-effort)...")
+            try:
+                _mr = run([sys.executable, str(_mirror)], timeout=600)
+                if _mr.returncode == 0:
+                    clear_completed(RETRY_MEDIA, attempted.get(RETRY_MEDIA))
+                    log("미디어 미러 완료")
+                else:
+                    mark(RETRY_MEDIA, "mirror_failed", _mr.stderr[-1000:] or f"rc={_mr.returncode}")
+                    log(f"미디어 미러 실패 (rc={_mr.returncode}) — 다음 실행에서 재시도")
+            except Exception as _e:
+                mark(RETRY_MEDIA, "mirror_failed", str(_e))
+                log(f"미디어 미러 예외: {_e} — 다음 실행에서 재시도")
+        else:
+            log("media-mirror.py 없음")
+    else:
+        backup = None
+        log("enrich-only — IB/빌드/미디어미러 건너뜀")
+    if enrich_only and RETRY_MEDIA in attempted:
+        mirror = V2_ROOT / 'media-mirror.py'
+        if mirror.exists():
+            try:
+                mr = run([sys.executable, str(mirror)], timeout=600)
+                if mr.returncode == 0:
+                    clear_completed(RETRY_MEDIA, attempted[RETRY_MEDIA])
+                else:
+                    mark(RETRY_MEDIA, 'mirror_failed', mr.stderr[-1000:])
+            except Exception as exc:
+                mark(RETRY_MEDIA, 'mirror_failed', str(exc))
+        else:
+            mark(RETRY_MEDIA, 'script_missing', str(mirror))
+    # 2d. 번역 캐시 복원/병합 (공유 락 하에서, 원자적 저장)
+    # P2/P3 (Codex 차단 5): 백업은 병합이 성공적으로 끝나고 나서만
+    # 삭제한다. 락 타임아웃·손상 백업·현재 파일 손상·쓰기 실패 시에는
+    # 백업을 보존한다 — 다음 실행의 방치 백업 복구가 처리한다.
+    if backup and backup.exists():
+        merged_ok = False
+        try:
+            with pipeline_lock():
+                restored, reason = merge_translation_backup(backup)
+                if reason:
+                    # 손상된 백업을 현재 파일 위에 덮지 않는다 (예전 버그).
+                    # translate 로드 시 격리·복구 경로가 처리한다.
+                    log(f"번역 백업 손상/병합 중단 ({reason}) — 백업 보존 (다음 실행 복구 대기)")
+                else:
+                    log(f"번역 캐시 병합 완료 (복원 {restored}개)")
+                    merged_ok = True
+        except PipelineLockTimeout as e:
+            log(f"번역 캐시 병합 건너뜀 (락 타임아웃) — 백업 보존: {e}")
+        except OSError as e:
+            log(f"번역 캐시 병합 중단 (쓰기 실패) — 백업 보존: {e}")
+        if merged_ok:
+            shutil.rmtree(backup.parent, ignore_errors=True)
+        else:
+            # Earlier publication must not race ahead of cache preservation.
+            log("번역 캐시 보존 미확정 — 원문 게시도 보류, 백업 유지")
+            return 1
+
+    # Enqueue every optional stage before the first release, so an interrupted
+    # run cannot publish originals and forget enrichment/translation work.
+    if needs_build:
+        for marker, reason in ((RETRY_TRANSLATION, 'translation_pending'),
+                               (RETRY_ENRICH, 'enrich_pending')):
+            if marker == RETRY_ENRICH and not (V2_ROOT / 'enrich_tools.py').exists():
+                continue
+            if not marker.exists():
+                mark(marker, reason)
+            attempted[marker] = read_retry(marker)
+        preserve(HOOKS_DIR, DATA_DIR)
+        for marker in (RETRY_TRANSLATION, RETRY_ENRICH):
+            if marker in attempted:
+                attempted[marker] = read_retry(marker)
+
+    if needs_build and PUBLISH_ENABLED:
         if publish_current_outputs(pending):
             return 1
-        return 1 if (RETRY_TRANSLATION.exists() or RETRY_MEDIA.exists() or RETRY_ENRICH.exists()) else 0
+        pending = 0
+        log("원문 게시 단계 완료 — 선택적 분류·번역은 별도 후속 단계")
 
-    finally:
+    # 2c-3. GitHub 스크린샷 AI툴 자동 분류 (best-effort, 캐시 기반)
+    # 미디어 미러 후, git 커밋 전. 실패해도 전체 흐름은 계속.
+    _enrich = V2_ROOT / "enrich_tools.py"
+    if _enrich.exists() and (needs_build or RETRY_ENRICH in attempted):
+        log("AI툴 스크린샷 분류 시작 (best-effort, 최신 우선 + 백로그 인터리브 + 180초 데드라인)...")
         try:
-            fcntl.flock(lock_fh, fcntl.LOCK_UN)
+            # 최신 우선 + 백로그 예약분(신규 4:백로그 1) + 180초 데드라인.
+            # 데드라인은 연산 내부에서 강제되어 번역/커밋이 900초 타임아웃에
+            # 걸리지 않게 한다 (미완료분은 지문으로 다음 폴에 재개).
+            _er = run([sys.executable, str(_enrich), "--backfill",
+                       "--interleave-ratio", "4",
+                       "--time-budget", "180"], timeout=900)
+            if _er.returncode == 0:
+                log("AI툴 분류 완료")
+            else:
+                mark(RETRY_ENRICH, "enrich_unresolved", (_er.stdout + _er.stderr)[-2000:])
+                log(f"AI툴 분류 실패 (rc={_er.returncode}) — 다음 실행에서 재시도")
+        except Exception as _e:
+            mark(RETRY_ENRICH, "enrich_pending", str(_e))
+            log(f"AI툴 분류 예외: {_e} — 다음 실행에서 재시도")
+    elif RETRY_ENRICH in attempted:
+        mark(RETRY_ENRICH, "script_missing", str(_enrich))
+    else:
+        log("enrich_tools.py 없음")
+    # 2e. 번역 (실패 시 재시도 마커)
+    if needs_build or RETRY_TRANSLATION in attempted:
+        try:
+            r = run([sys.executable, str(V2_ROOT / "translate_posts.py")], timeout=1800)
+        except subprocess.TimeoutExpired as exc:
+            r = subprocess.CompletedProcess([], 1, '', str(exc))
+        if r.returncode != 0:
+            log("번역 미완료 — 재시도 마커 생성")
+            details = r.stdout + '\n' + r.stderr
+            counts = dict(re.findall(r'(본문|답글) 번역:[^\n]*남은 백로그 (\d+)개', details))
+            mark(RETRY_TRANSLATION, 'provider_rate_limit' if '429' in details else 'translation_incomplete',
+                 details[-2000:], count=sum(map(int, counts.values())) if counts else None)
+        else:
+            clear_completed(RETRY_TRANSLATION, attempted.get(RETRY_TRANSLATION))
+            log("번역 완료 — 재시도 마커 제거")
+    # Optional output is a second release; original publication has its
+    # own durable receipt and cannot be undone by optional-work failure.
+    preserve(HOOKS_DIR, DATA_DIR)
+    if publish_current_outputs(pending):
+        return 1
+    return 0
+
+
+def write_incomplete(run_id, reason):
+    atomic_json_write(HOOKS_DIR / ('.hook-result-' + run_id + '.json'), dict(
+        run_id=run_id, input_fingerprint=None, input_hashes={},
+        publication_status='disabled' if not PUBLISH_ENABLED else 'unattempted',
+        published_sha=None, required_status='incomplete', backlog=[],
+        backlog_preserved=False, exit_code=2, error=reason))
+
+
+def main():
+    import subprocess
+    global PUBLISHED_SHA
+    PUBLISHED_SHA = None
+    HOOKS_DIR.mkdir(parents=True, exist_ok=True)
+    run_id = os.environ.get('V2_HOOK_RUN_ID') or uuid.uuid4().hex
+    from retry_state import begin_attempt
+    begin_attempt(run_id)
+    with open(LOCK_FILE, 'w') as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError:
-            pass
-        lock_fh.close()
-        log("락 해제")
+            write_incomplete(run_id, 'lock_contention')
+            return 2
+        result_path = HOOKS_DIR / ('.hook-result-' + run_id + '.json')
+        try:
+            inputs = input_hashes()
+        except OSError as exc:
+            write_incomplete(run_id, str(exc))
+            return 2
+        fingerprint = digest(inputs)
+        rc = 1
+        backlog = []
+        preserved = False
+        error = None
+        try:
+            # Persist/adopt all queues before any build or publication.
+            preserve(HOOKS_DIR, DATA_DIR)
+            attempted = {p: read_retry(p) for p in (RETRY_TRANSLATION, RETRY_MEDIA, RETRY_ENRICH)
+                         if due(p)}
+            rc = _pipeline(attempted)
+        except (OSError, RuntimeError, ValueError, subprocess.SubprocessError) as exc:
+            error = str(exc)
+            log(f'실행 실패: {exc}')
+            rc = 1
+        try:
+            backlog = preserve(HOOKS_DIR, DATA_DIR)
+            preserved = True
+            if input_hashes() != inputs and rc == 0:
+                rc = 2
+                error = 'source_changed_during_run'
+            if rc == 0 and PUBLISH_ENABLED and not PUBLISHED_SHA:
+                head = git(['rev-parse', 'HEAD'])
+                if head.returncode != 0 or not head.stdout.strip():
+                    rc = 1
+                    error = 'published_head_unavailable'
+                else:
+                    PUBLISHED_SHA = head.stdout.strip()
+            if rc == 0 and backlog:
+                rc = 10
+            value = dict(run_id=run_id, input_fingerprint=fingerprint, input_hashes=inputs,
+                         publication_status=('disabled' if not PUBLISH_ENABLED else
+                                             'failed' if rc not in (0, 10) else
+                                             'published' if PUBLISHED_SHA else 'unchanged'),
+                         published_sha=PUBLISHED_SHA, original_publication_status='published' if PUBLISHED_SHA else None, required_status='complete' if rc in (0, 10) else 'incomplete' if rc == 2 else 'failed',
+                         backlog=backlog, backlog_preserved=preserved, exit_code=rc, error=error)
+            atomic_json_write(result_path, value)
+        except (OSError, ValueError, subprocess.SubprocessError) as exc:
+            log(f'큐/실행 결과 보존 실패: {exc}')
+            try:
+                atomic_json_write(result_path, dict(
+                    run_id=run_id, input_fingerprint=fingerprint, input_hashes=inputs,
+                    publication_status='failed' if PUBLISH_ENABLED else 'disabled',
+                    published_sha=PUBLISHED_SHA, required_status='failed', backlog=backlog,
+                    backlog_preserved=False, exit_code=1, error=str(exc)))
+            except OSError:
+                pass  # An unwritable evidence store can never authorize a watermark.
+            return 1
+        return rc
 
 
 if __name__ == "__main__":
