@@ -152,7 +152,7 @@ var ArchiveApp = (function () {
     return placed;
   }
 
-  function formatContent(container, article){container.querySelectorAll('img').forEach(function(img){var raw=img.getAttribute('src'),mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)img.src=new URL(mapped,document.baseURI).href;});linkProse(container);container.querySelectorAll('.stage,.stage-title').forEach(function(el){var num=el.querySelector('.stage-num');if(num&&!/\.\s*$/.test(num.textContent))num.textContent=num.textContent.trim()+'. ';});container.querySelectorAll('a[href]').forEach(function(a){a.target='_self';a.title=a.href;});if(article)restoreInlineArticleMedia(container,article);}
+  function formatContent(container, article){container.querySelectorAll('img').forEach(function(img){var raw=img.getAttribute('src'),mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[raw];if(mapped)img.src=new URL(mapped,document.baseURI).href;});linkProse(container);container.querySelectorAll('.stage,.stage-title').forEach(function(el){var num=el.querySelector('.stage-num');if(num&&!/\.\s*$/.test(num.textContent))num.textContent=num.textContent.trim()+'. ';});container.querySelectorAll('a[href]').forEach(function(a){a.target='_self';a.title=a.href;});}
   function canonicalSource(a){var u=safeUrl(a.sourceUrl||a.source_url);if(a.fullHtml&&u){var parsed=new URL(u);if(parsed.pathname==='/'||parsed.pathname===''){var doc=new DOMParser().parseFromString(a.fullHtml,'text/html');var link=Array.from(doc.querySelectorAll('a[href]')).find(function(el){try{var v=new URL(el.href);return v.hostname.replace(/^www\./,'')===parsed.hostname.replace(/^www\./,'')&&v.pathname.length>1;}catch(e){return false;}});if(link)u=safeUrl(link.href);}}return u;}
   function bodyText(a) {
     if (a.fullText) return String(a.fullText);
@@ -524,7 +524,7 @@ var ArchiveApp = (function () {
   }
   async function finishImageShare(a,blobs){
     var files=blobs.map(function(b,i){return new File([b],'archive-'+(i+1)+'.png',{type:'image/png'});});
-    var doc=new DOMParser().parseFromString(articleHtml(a),'text/html');restoreInlineArticleMedia(doc.body,a);var urls=Array.from(new Set(Array.from(doc.querySelectorAll('img')).map(function(i){return i.src;}))),failed=[];
+    var doc=new DOMParser().parseFromString(articleHtml(a),'text/html');var urls=Array.from(new Set(Array.from(doc.querySelectorAll('img')).map(function(i){return i.src;}))),failed=[];
     await Promise.all(urls.map(async function(url,i){try{var mapped=window.ArchiveMediaMap&&window.ArchiveMediaMap[url];var response=await fetch(mapped?new URL(mapped,document.baseURI).href:url);if(!response.ok)throw new Error('image');var blob=await response.blob();if(!blob.type.startsWith('image/'))throw new Error('image');files.push(new File([blob],'attachment-'+(i+1)+'.'+(blob.type.split('/')[1]||'png'),{type:blob.type}));}catch(e){failed.push(url);}}));
     if(failed.length){window.alert('첨부 이미지 '+failed.length+'개를 가져오지 못했습니다. 이미지가 빠진 채로 공유하지 않습니다. 원문 또는 HTML 다운로드를 이용해 주세요.');return;}
     if(navigator.share&&navigator.canShare&&navigator.canShare({files:files})){try{await navigator.share({files:files});}catch(e){if(e.name!=='AbortError')files.forEach(function(f){download(f,f.name);});}}else files.forEach(function(f){download(f,f.name);});
@@ -687,12 +687,39 @@ var ArchiveApp = (function () {
     if(previous){selection=previous.selection;mode=previous.mode;controls.querySelector('input').value=previous.query;controls.querySelector('[data-action="mode"]').textContent=mode;}
     update();if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();if(previous)window.scrollTo(0,previous.scroll);
   }
+  function mobilePrintUsesShare(){
+    return !!(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||(/Macintosh|MacIntel/i.test(navigator.userAgent+' '+navigator.platform)&&navigator.maxTouchPoints>1);
+  }
+  var desktopPrintCleanup=null;
+  async function printDesktopArticle(a,button){
+    if(desktopPrintCleanup)desktopPrintCleanup();
+    var area=document.createElement('article');area.id='archive-inline-print';area.className='aa-content';area.innerHTML=articleHtml(a);formatContent(area,a);
+    document.body.appendChild(area);document.body.classList.add('aa-inline-print');
+    var originalLabel=button.textContent;button.disabled=true;button.textContent='인쇄 준비 중…';
+    function cleanup(){area.remove();window.removeEventListener('afterprint',cleanup);if(desktopPrintCleanup===cleanup){document.body.classList.remove('aa-inline-print');desktopPrintCleanup=null;}}
+    desktopPrintCleanup=cleanup;window.addEventListener('afterprint',cleanup,{once:true});
+    try{
+      await Promise.all(Array.from(area.querySelectorAll('img')).map(function(img){
+        img.loading='eager';
+        return new Promise(function(resolve,reject){
+          var timer;function done(error){clearTimeout(timer);img.removeEventListener('load',loaded);img.removeEventListener('error',failed);if(error)reject(error);else resolve();}
+          function loaded(){done(img.naturalWidth?null:new Error('이미지를 불러오지 못했습니다'));}
+          function failed(){done(new Error('이미지를 불러오지 못했습니다'));}
+          img.addEventListener('load',loaded,{once:true});img.addEventListener('error',failed,{once:true});timer=setTimeout(function(){done(new Error('이미지 로딩 시간 초과'));},15000);
+          if(img.complete)loaded();
+        });
+      }));
+      if(desktopPrintCleanup!==cleanup||!area.isConnected)return;
+      window.print();
+    }catch(e){var active=desktopPrintCleanup===cleanup;cleanup();if(active)window.alert('인쇄 준비 실패: '+e.message+'. 다시 시도해 주세요.');}
+    finally{button.disabled=false;button.textContent=originalLabel;}
+  }
   async function runArticleAction(action,r,button,inline){
     var a=r.article,menu=button.closest('.html-actions');if(menu)menu.open=false;
     if(action==='text'){var text=title(a)+'\n\n'+bodyText(a)+'\n\n'+(canonicalSource(a)||'');navigator.clipboard.writeText(text).then(function(){button.textContent='복사 완료';setTimeout(function(){if(button.isConnected)button.textContent='텍스트 복사';},2000);}).catch(function(){download(new Blob([text],{type:'text/plain;charset=utf-8'}),'archive.txt');});}
     if(action==='image')shareImage(a);
     if(action==='html'||action==='html-download')shareHtml(a,action==='html-download');
-    if(action==='print')shareHtml(a,false);
+    if(action==='print'){if(mobilePrintUsesShare())shareHtml(a,false);else printDesktopArticle(a,button);}
   }
   async function cardClick(e) {
     var duplicateButton=e.target.closest('[data-duplicates]');if(duplicateButton){e.preventDefault();var duplicate=records.find(function(r){return r.id===duplicateButton.dataset.duplicates;});if(duplicate){openRead(duplicate);var info=readDialog.querySelector('.aa-record-info');if(info){info.open=true;info.scrollIntoView({block:'center'});}}return;}
