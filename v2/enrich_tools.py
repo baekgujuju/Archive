@@ -39,6 +39,8 @@ import urllib.error
 from pathlib import Path
 
 from pipeline_lock import pipeline_lock, quarantine_file
+sys.path.insert(0, str(Path(__file__).resolve().parent / "hooks"))
+from retry_state import begin_attempt, mark, read as read_retry, clear_completed, snapshot_queue
 
 V2_ROOT = Path(__file__).resolve().parent
 DATA_DIR = V2_ROOT / "data"
@@ -974,6 +976,9 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8,
     items = ordered[:max_items] if max_items else ordered
     log(f"신규 우선 정렬: 전체 {len(items)}건 중 최신순 + 백로그 예약분 인터리브(신규 {interleave_ratio}:백로그 1)")
     model_calls = [0]
+    begin_attempt(os.environ.get('V2_RETRY_ATTEMPT_ID') or secrets.token_hex(16))
+    retry_expected = read_retry(RETRY_MARKER)
+
     def persist():
         if dry_run:
             return
@@ -989,7 +994,7 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8,
         # merge and the progress/manifest writes. pipeline_lock is
         # reentrant, so the nested acquisitions inside _merge_save /
         # update_manifest are no-ops, not deadlocks.
-        nonlocal tools_data_initial, cache_initial, vision_initial
+        nonlocal tools_data_initial, cache_initial, vision_initial, retry_expected
         with pipeline_lock():
             baselines = {
                 TOOLS_JSON: tools_data_initial,
@@ -1019,9 +1024,12 @@ def run_backfill(max_items=None, dry_run=False, batch_size=8,
         unresolved = len(remaining)-processed or stats["temporary_failures"] or stats["errors"] or stats["pending_github_look"] or missing_pending
         if unresolved:
             RETRY_MARKER.parent.mkdir(parents=True, exist_ok=True)
-            RETRY_MARKER.write_text("Enrichment pending; resume by fingerprints", encoding="utf-8")
+            mark(RETRY_MARKER, "enrich_unresolved", json.dumps(pending_details, ensure_ascii=False),
+                 queue_ref=snapshot_queue(RETRY_MARKER.parent, DATA_DIR),
+                 count=max(len(remaining)-processed, stats["temporary_failures"] + stats["errors"] + stats["pending_github_look"] + missing_pending))
+            retry_expected = read_retry(RETRY_MARKER)
         else:
-            RETRY_MARKER.unlink(missing_ok=True)
+            clear_completed(RETRY_MARKER, retry_expected)
     processed = 0
     persist()
     deadline_hit = False
