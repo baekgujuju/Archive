@@ -43,7 +43,7 @@ class OriginalReleaseTests(unittest.TestCase):
                 current_branch=lambda: 'main', unpushed_commit_list=lambda: [],
                 changed_files=lambda: [], run=run, sys=SimpleNamespace(executable='python'),
                 publish_current_outputs=release, datetime=datetime, timezone=timezone)
-            exec(functions({'main', 'decide_pipeline'}), values)
+            exec(functions({'main', 'decide_pipeline', 'compile_article_media_map'}), values)
             result = values['main']()
             return result, calls, (hooks/'.retry_translation').exists()
 
