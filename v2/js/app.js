@@ -366,7 +366,7 @@ var ArchiveApp = (function () {
   function update() {
     var modeButton=controls.querySelector('[data-action="mode"]');modeButton.textContent=mode;modeButton.setAttribute('aria-label','검색 조건 '+mode+', 클릭하여 변경');modeButton.setAttribute('aria-pressed',String(mode==='AND'));
     var words = ArchiveSearch.terms(controls.querySelector('input').value), count = 0, pinCount = 0;
-    var defaultView=!words.length&&!selection.review&&!selection.hidden&&!selection.type.length&&!selection.topic.length&&!selection.author.length&&!selection.bookmark.length;
+    var defaultView=!words.length&&!selection.review&&!selection.memo&&!selection.hidden&&!selection.type.length&&!selection.topic.length&&!selection.author.length&&!selection.bookmark.length;
     if(aiList)aiList.hidden=!(defaultView||selection.type[0]==='ai');
     records.forEach(function (r) {
       var isHidden = hidden.indexOf(r.id) >= 0, color = bookmarks[r.id], isPinned = pins.indexOf(r.id) >= 0;
@@ -374,10 +374,10 @@ var ArchiveApp = (function () {
       var match = result.matched;
       searchResult(r, result, words);
       duplicateBadge(r);
-      var visible = match && (!selection.review || r.unclassified) && (selection.hidden ? isHidden : !isHidden) && (!selection.type.length || selection.type.indexOf(r.type) >= 0 || (selection.type[0]==='ai'&&r.topics.indexOf('AI툴')>=0)) &&
+      var visible = match && (!selection.memo || !!memoValue(r.card.querySelector('[data-memo-id]')?.dataset.memoId || r.id).trim()) && (!selection.review || r.unclassified) && (selection.hidden ? isHidden : !isHidden) && (!selection.type.length || selection.type.indexOf(r.type) >= 0 || (selection.type[0]==='ai'&&r.topics.indexOf('AI툴')>=0)) &&
         (!selection.topic.length || selection.topic.some(function (t) { return r.topics.indexOf(t) >= 0; })) && (!selection.author.length || selection.author.indexOf(r.authorKey) >= 0) &&
         (!selection.subject.length || selection.subject[0]===r.article.subject) && (!selection.category.length || selection.category[0]===r.article.category) && (!selection.bookmark.length || (color && (selection.bookmark.indexOf('all') >= 0 || selection.bookmark.indexOf(color) >= 0)));
-      if(!selection.type.length&&r.type==='ib'&&!selection.review)visible=false;
+      if(!selection.type.length&&r.type==='ib'&&!selection.review&&!selection.memo)visible=false;
       if(defaultView&&r.topics.indexOf('AI툴')>=0&&!isPinned)visible=false;
       r.card.hidden = !visible;
       r.card.style.borderLeftColor = color || '';
@@ -385,7 +385,7 @@ var ArchiveApp = (function () {
       r.card.style.borderTopWidth = color ? '3px' : ''; 
       r.card.classList.toggle('aa-bookmarked', !!color);
       var mb = r.card.querySelector('[data-memo-id]'), pb = r.card.querySelector('.pin-btn'), bb = r.card.querySelector('.bookmark-btn'), db = r.card.querySelector('.delete-btn');
-      if (mb) { var hasMemo = !!memoValue(mb.dataset.memoId); mb.classList.remove('memo-hidden'); mb.classList.toggle('aa-active', hasMemo); mb.setAttribute('aria-label', hasMemo ? '메모 편집 (메모 있음)' : '메모 추가'); }
+      if (mb) { var hasMemo = !!memoValue(mb.dataset.memoId).trim(); mb.classList.remove('memo-hidden'); mb.classList.toggle('aa-active', hasMemo); mb.setAttribute('aria-label', hasMemo ? '메모 편집 (메모 있음)' : '메모 추가'); }
       if (pb) { pb.classList.toggle('aa-active', isPinned); pb.setAttribute('aria-pressed', String(isPinned)); pb.title = isPinned ? '상단 고정 해제' : '상단 고정'; }
       if (bb) { bb.style.color = color || '';var icon=bb.querySelector('svg');if(icon)icon.style.fill=color||'none'; bb.setAttribute('aria-label', color ? '북마크: ' + getBookmarkName(color) : '북마크'); }
       if (db) { db.title = isHidden ? '복원' : '삭제'; db.setAttribute('aria-label', db.title); }
@@ -404,7 +404,8 @@ var ArchiveApp = (function () {
     var ind = controls.querySelector('[data-author-indicator]');
     if (ind) ind.textContent = selection.author.length ? '(' + selection.author.length + '명 선택)' : '';
     var reviewButton=controls.querySelector('[data-action=metadata-review]');if(reviewButton){reviewButton.setAttribute('aria-pressed',String(selection.review));reviewButton.textContent=selection.review?'미분류자료 해제':'미분류자료 보기';}
-    status((selection.review?'미분류자료 · ':'')+(count ? count + '개 글 표시' : '조건에 맞는 글이 없습니다.'));
+    var memoFilter=controls.querySelector('[data-action=memo-filter]');memoFilter.setAttribute('aria-pressed',String(!!selection.memo));memoFilter.textContent=selection.memo?'메모된 게시물 · 해제':'메모된 게시물';
+    status((selection.memo?'메모된 게시물 · ':'')+(selection.review?'미분류자료 · ':'')+(count ? count + '개 글 표시' : '조건에 맞는 글이 없습니다.'));
     if(aiList)aiList.querySelectorAll('[data-read-id]').forEach(function(b){var record=records.find(function(r){return r.id===b.dataset.readId;});b.closest('li').hidden=hidden.indexOf(b.dataset.readId)>=0||(selection.type[0]==='ai'&&record&&record.card.hidden);});
   }
   function dialog(id, label, html) {
@@ -419,7 +420,7 @@ var ArchiveApp = (function () {
   function close(d) { if (typeof d.close === 'function') d.close(); else { d.removeAttribute('open'); document.body.classList.remove('aa-modal-open'); if (opener) opener.focus(); } }
   var readerHistory=[];
   function openRead(r,back) {if(current&&readDialog.open&&!back&&current!==r)readerHistory.push(current);if(!readDialog.open)readerHistory=[];current=r;readDialog.querySelector('[data-topic-edit]').hidden=r.type==='ib';readDialog.querySelector('[data-share=text]').textContent='텍스트 복사';var related=(r.related||[]).filter(function(other){return hidden.indexOf(other.id)<0;});readDialog.querySelector('.aa-content').innerHTML=articleHtml(r.article)+(related.length?'<section class="reader-related"><h2>연관 게시글</h2>'+related.map(function(other){return '<button type="button" data-related-id="'+esc(other.id)+'">'+'– '+esc(title(other.article))+'<small> · '+esc(other.author)+'</small></button>';}).join('')+'</section>':'');readDialog.querySelector('[data-reader-title]').textContent=title(r.article);readDialog.querySelector('[data-reader-back]').hidden=!readerHistory.length;if(!readDialog.open)show(readDialog);formatContent(readDialog.querySelector('.aa-content'));if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();readDialog.querySelector('.aa-content').scrollTop=0; }
-  function resetFilters(){Object.keys(selection).forEach(function(k){selection[k]=(k==='hidden'||k==='review')?false:[];});mode='OR';controls.querySelector('input').value='';controls.querySelector('[data-action="mode"]').textContent='OR';update();}
+  function resetFilters(){Object.keys(selection).forEach(function(k){selection[k]=(k==='hidden'||k==='review'||k==='memo')?false:[];});mode='OR';controls.querySelector('input').value='';controls.querySelector('[data-action="mode"]').textContent='OR';update();}
 
   function download(blob, name) { var url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove(); window.setTimeout(function () { URL.revokeObjectURL(url); }, 60000); }
   function shareFile(blob, name, heading) {
@@ -472,7 +473,7 @@ var ArchiveApp = (function () {
     list = document.getElementById('articles'); if (!list) return;
     document.body.classList.remove('aa-modal-open');
     [topicDialog, controls, pinned, readDialog, memoDialog, bookmarkDialog, renameDialog, confirmDialog, exportDialog, exportDoneDialog, imageDialog, aiList].forEach(function (el) { if (el) el.remove(); });
-    selection = { type: [], topic: [], author: [], bookmark: [], subject: [], category: [], hidden: false, review: false }; mode = 'OR'; current = null;
+    selection = { type: [], topic: [], author: [], bookmark: [], subject: [], category: [], hidden: false, review: false, memo: false }; mode = 'OR'; current = null;
     pins = load('archive-pinned', []); hidden = load('archive-deleted-posts', []);
     pins = Array.isArray(pins) ? pins.map(String) : []; hidden = Array.isArray(hidden) ? hidden.map(String) : [];
     var saved = load('archive-bookmarks', {}); bookmarks = Object.create(null);
@@ -503,6 +504,7 @@ var ArchiveApp = (function () {
       var b = e.target.closest('button'); if (!b) return;
       if(b.dataset.filter==='bookmark'){if(suppressBookmarkClick){suppressBookmarkClick=false;return;}clearTimeout(bookmarkClickTimer);if(e.detail<2)bookmarkClickTimer=setTimeout(function(){selection.bookmark=b.dataset.value&&selection.bookmark[0]!==b.dataset.value?[b.dataset.value]:[];update();},250);return;}if (b.dataset.filter) {var field=b.dataset.filter;selection[field]=b.dataset.value&&selection[field][0]!==b.dataset.value?[b.dataset.value]:[];if(field==='type'){selection.topic=[];selection.author=[];selection.subject=[];selection.category=[];}}
       if(b.dataset.action==='filter-close'){var filters=b.closest('details.filters');filters.open=false;filters.querySelector('summary').focus({preventScroll:true});return;}
+      if(b.dataset.action==='memo-filter')selection.memo=!selection.memo;
       if(b.dataset.action==='metadata-review')selection.review=!selection.review;
       if(b.dataset.action==='reset') resetFilters();
       if (b.dataset.action === 'mode') { mode = mode === 'OR' ? 'AND' : 'OR'; b.textContent = mode; b.setAttribute('aria-label', '검색 조건 ' + mode + ', 클릭하여 변경'); }
