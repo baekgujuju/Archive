@@ -49,7 +49,7 @@ BUILDER_VERSION = "1.2.1"
 # 미러가 실패해도 이전 매핑이 사라지지 않게 보존한다.
 ENRICH_STATE_FILES = ['ai-tools.json', 'ai-tools-cache.json',
                       'ai-tools-vision-cache.json', 'ai-tools-progress.json']
-PRESERVED_FILES = ['translations.json', 'shared-state.json', 'media-map.json'] + ENRICH_STATE_FILES
+PRESERVED_FILES = ['translations.json', 'shared-state.json', 'media-map.json', 'article-media-map.json'] + ENRICH_STATE_FILES
 
 
 def copy_preserved_files(src_dir, dst_dir, names):
@@ -574,7 +574,7 @@ def _build_data_locked():
         # whole data/ directory (data/ -> data.backup/ -> deleted). Until
         # 2026-10-17 the ai-tools files were not carried over, so every
         # build wiped them and enrich rebuilt from scratch (152 -> 40).
-        copied = copy_preserved_files(DATA_DIR, staging_data, ENRICH_STATE_FILES)
+        copied = copy_preserved_files(DATA_DIR, staging_data, ENRICH_STATE_FILES + ['article-media-map.json'])
         for name in copied:
             print(f"  enrich 상태 보존: {name}")
         shared_state = DATA_DIR / 'shared-state.json'

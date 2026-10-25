@@ -250,7 +250,7 @@ def _validate_manifest_dict(m, short):
             return False, f"manifest.json chunks.{name} sha256 형식 오류 ({short})"
         if type(c) is not int or c < 0:  # bool은 int의 서브클래스 — type()으로 거부
             return False, f"manifest.json chunks.{name} count 형식 오류 ({short})"
-    for section in ("translations", "shared_state", "ai_tools"):
+    for section in ("translations", "shared_state", "ai_tools", "article_media_map"):
         # 부재와 null을 구분한다 — 키가 있는데 null이면 "없음"이 아니라
         # 형식 오류이다 (문서화된 "있으면 dict" 규칙).
         if section not in m:
@@ -293,7 +293,7 @@ def validate_commit_artifacts(commit):
     for name in ("posts-x", "posts-web", "posts-ib"):
         entry = chunks[name]
         pairs.append((entry["file"], entry["sha256"], name))
-    for section in ("translations", "shared_state", "ai_tools"):
+    for section in ("translations", "shared_state", "ai_tools", "article_media_map"):
         entry = m.get(section)
         if entry is None:
             continue
@@ -901,6 +901,26 @@ def publish_current_outputs(pending=0):
     return 1
 
 
+def compile_article_media_map():
+    """Required offline gate, shared by public main and operating retry overlay."""
+    try:
+        result = run([sys.executable, str(V2_ROOT / "article_media_map.py")], timeout=600)
+        if result.returncode == 0:
+            return True
+        reason = getattr(result, "stderr", "")[-1000:] or f"rc={result.returncode}"
+    except Exception as exc:
+        reason = str(exc)
+    # Operating retry patches use structured markers; public main uses legacy
+    # timestamp markers. Do not import or require the unmerged retry module.
+    retry_mark = globals().get("mark")
+    if callable(retry_mark):
+        retry_mark(RETRY_MEDIA, "article_map_failed", reason)
+    else:
+        RETRY_MEDIA.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
+    log("Article media map validation failed; previous map retained; publication deferred: " + reason)
+    return False
+
+
 def main():
     HOOKS_DIR.mkdir(parents=True, exist_ok=True)
     lock_fh = open(LOCK_FILE, "w")
@@ -1047,6 +1067,9 @@ def main():
         else:
             backup = None
             log("enrich-only — IB/빌드/미디어미러 건너뜀")
+        # Required gate after media materialization, before any release.
+        if not compile_article_media_map():
+            return 1
         # 2d. 번역 캐시 복원/병합 (공유 락 하에서, 원자적 저장)
         # P2/P3 (Codex 차단 5): 백업은 병합이 성공적으로 끝나고 나서만
         # 삭제한다. 락 타임아웃·손상 백업·현재 파일 손상·쓰기 실패 시에는

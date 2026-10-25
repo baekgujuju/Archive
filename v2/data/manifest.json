@@ -36,5 +36,10 @@
     "file": "data/ai-tools.json",
     "sha256": "aa580bca5b88db4e8e724f416788d2674dde20e7d981ba89e7ac95b460bffb89",
     "count": 25
+  },
+  "article_media_map": {
+    "file": "data/article-media-map.json",
+    "sha256": "427f0e4d03f1bc5b07f493455ac0514b374404f4a914a504542e4c662a54fb49",
+    "count": 11
   }
 }
