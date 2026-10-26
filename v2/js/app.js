@@ -687,7 +687,7 @@ var ArchiveApp = (function () {
     if(previous){selection=previous.selection;mode=previous.mode;controls.querySelector('input').value=previous.query;controls.querySelector('[data-action="mode"]').textContent=mode;}
     update();if(window.ArchiveHighlights)window.ArchiveHighlights.refresh();if(previous)window.scrollTo(0,previous.scroll);
   }
-  function mobilePrintUsesShare(){
+  function mobilePrintUsesDownload(){
     return !!(navigator.userAgentData&&navigator.userAgentData.mobile)||/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)||(/Macintosh|MacIntel/i.test(navigator.userAgent+' '+navigator.platform)&&navigator.maxTouchPoints>1);
   }
   var desktopPrintCleanup=null;
@@ -719,7 +719,7 @@ var ArchiveApp = (function () {
     if(action==='text'){var text=title(a)+'\n\n'+bodyText(a)+'\n\n'+(canonicalSource(a)||'');navigator.clipboard.writeText(text).then(function(){button.textContent='복사 완료';setTimeout(function(){if(button.isConnected)button.textContent='텍스트 복사';},2000);}).catch(function(){download(new Blob([text],{type:'text/plain;charset=utf-8'}),'archive.txt');});}
     if(action==='image')shareImage(a);
     if(action==='html'||action==='html-download')shareHtml(a,action==='html-download');
-    if(action==='print'){if(mobilePrintUsesShare())shareHtml(a,false);else printDesktopArticle(a,button);}
+    if(action==='print'){if(mobilePrintUsesDownload())shareHtml(a,true);else printDesktopArticle(a,button);}
   }
   async function cardClick(e) {
     var duplicateButton=e.target.closest('[data-duplicates]');if(duplicateButton){e.preventDefault();var duplicate=records.find(function(r){return r.id===duplicateButton.dataset.duplicates;});if(duplicate){openRead(duplicate);var info=readDialog.querySelector('.aa-record-info');if(info){info.open=true;info.scrollIntoView({block:'center'});}}return;}
