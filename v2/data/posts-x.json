@@ -29362,6 +29362,1652 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2114923044032626701",
+      "sourceUrl": "https://x.com/smbluespace/status/2114923044032626701",
+      "capturedAt": "2026-10-27T09:43:47.816854+00:00",
+      "createdAt": "2026-10-27T03:32:01.000Z",
+      "fullText": "이건 좀 신박한데요??\n\n클로드에 법령정보센터 API를 붙였더니 답이 달라졌다는 후기.\n\n1. 국가 법령 데이터를 클로드 커넥터로 직접 연동\n2. 세금 분야는 조세심판원 결정례 API를 따로 받아 추가\n3. 연결이 어렵다면 AI에게 법령 연결 도구를 찾아 붙이게 시키기\n\n법 관련 질문은 이 방식이 안전할 것 같음",
+      "author": {
+        "handle": "@smbluespace",
+        "name": "smbluespace"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-fc8c3a027ecd86d51b02d545e0afea57a1009c20aa4bfec26c7cf26245c30404.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114928682318111226",
+          "sourceUrl": "https://x.com/bozutrader/status/2114928682318111226",
+          "capturedAt": "2026-10-27T09:43:47.816854+00:00",
+          "createdAt": "2026-10-27T03:54:25.000Z",
+          "fullText": "本日もよろしくお願いします😃❣️",
+          "author": {
+            "handle": "@bozutrader",
+            "name": "bozutrader"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114949018258424126",
+          "sourceUrl": "https://x.com/smbluespace/status/2114949018258424126",
+          "capturedAt": "2026-10-27T09:43:47.816854+00:00",
+          "createdAt": "2026-10-27T05:15:14.000Z",
+          "fullText": "레츠고 브라더!",
+          "author": {
+            "handle": "@smbluespace",
+            "name": "smbluespace"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/smbluespace/status/2114923044032626701",
+        "observed_main_url": "https://x.com/smbluespace/status/2114923044032626701",
+        "author_handle": "smbluespace",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2113595288883757446",
+      "sourceUrl": "https://x.com/QullamaggieHQ/status/2113595288883757446",
+      "capturedAt": "2026-10-27T09:43:51.575854+00:00",
+      "createdAt": "2026-10-23T11:36:00.000Z",
+      "fullText": "𝗚𝗮𝗽 𝘂𝗽𝘀 𝗮𝗿𝗲 𝗳𝗼𝗿 𝘀𝗲𝗹𝗹𝗶𝗻𝗴 𝗶𝗻𝘁𝗼.\n\n(Yesterday's gap up got sold all day. Classic bear tape.)\n\n\"That's why I hate gap ups, gap ups are the worst. If you want to go long you do not generally want gap ups, unless it's an episodic pivot. Sometimes they gap up, fade back to support, and then they go later.\"\n\n(clip: Feb 8, 2021)",
+      "author": {
+        "handle": "@QullamaggieHQ",
+        "name": "QullamaggieHQ"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-08f413a374d39f4ab7c26e5f08465ba924ef14ff91a6deedd929bd7f060520e1.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/QullamaggieHQ/status/2113595288883757446"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2113595288883757446",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2113595288883757446",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/QullamaggieHQ/status/2113595288883757446",
+        "observed_main_url": "https://x.com/QullamaggieHQ/status/2113595288883757446",
+        "author_handle": "QullamaggieHQ",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2113722376919842915",
+      "sourceUrl": "https://x.com/Muninn/status/2113722376919842915",
+      "capturedAt": "2026-10-27T09:44:02.094855+00:00",
+      "createdAt": "2026-10-23T20:01:00.000Z",
+      "fullText": "📝Study work this weekend: Qullamaggie's tightest stops had the fewest winners. Did his tightest charts?\n\nWHY\n\"You want tightness before a breakout, not like loose action.\"\n\nEarlier this week I split the breakout buys he showed on his streams into thirds by how far the stop was under the buy. \n\nSelling on the first close under the 10-day moving average, the tightest third ended with 17% winners. The widest, 28%.\n\nSo the tight stop was the worst. This makes sense.\n\nBut how important is it to have a tight chart? According to Qullamaggie it's very important.\n\nTHE STUDY (2 to 3 hours)\n1. Open 30 breakout entries in date order. Not the pretty ones - there are many, trust me.\n2. Scroll the chart so the day before the buy is the last candle. Look only at the 10 days up to it. Write down the highest high and the lowest low.\n3. Turn that into a range in %, then divide it by the stock's ADR (its average daily range over the 20 days before).\n4. Sort the 30 by that number and split them in three: tight, middle, loose. Then scroll forward to the exits and mark the winners.\n5. Count the winners in each third. Then look at his stop on each one: were the tight charts also the tight stops?\n\nWHAT I'M AFTER\nTwo win rates: the tightest third and the loosest. If a tight chart works like a tight stop, the tight charts should come out worst again.",
+      "author": {
+        "handle": "@Muninn",
+        "name": "Muninn"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-dc5195210ccd72b8481ceb56fb12c02d77fc700e0d68115873cb17b1e93d82a5.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2113889650628604256",
+          "sourceUrl": "https://x.com/sksundaram64/status/2113889650628604256",
+          "capturedAt": "2026-10-27T09:44:02.094855+00:00",
+          "createdAt": "2026-10-24T07:05:41.000Z",
+          "fullText": "Which is best tight stop with loose chart?",
+          "author": {
+            "handle": "@sksundaram64",
+            "name": "sksundaram64"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113896806085951853",
+          "sourceUrl": "https://x.com/Muninn/status/2113896806085951853",
+          "capturedAt": "2026-10-27T09:44:02.094855+00:00",
+          "createdAt": "2026-10-24T07:34:07.000Z",
+          "fullText": "Posting weekend study results tomorrow",
+          "author": {
+            "handle": "@Muninn",
+            "name": "Muninn"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2113893497514373154",
+          "sourceUrl": "https://x.com/gaoyy9/status/2113893497514373154",
+          "capturedAt": "2026-10-27T09:44:02.094855+00:00",
+          "createdAt": "2026-10-24T07:20:58.000Z",
+          "fullText": "止损越紧胜率越高",
+          "author": {
+            "handle": "@gaoyy9",
+            "name": "gaoyy9"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113848934036918540",
+          "sourceUrl": "https://x.com/YanniTrades/status/2113848934036918540",
+          "capturedAt": "2026-10-27T09:44:02.094855+00:00",
+          "createdAt": "2026-10-24T04:23:53.000Z",
+          "fullText": "Great stuff",
+          "author": {
+            "handle": "@YanniTrades",
+            "name": "YanniTrades"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2095223825059262507",
+          "sourceUrl": "https://x.com/XBusiness/status/2095223825059262507",
+          "capturedAt": "2026-10-27T09:44:02.094855+00:00",
+          "createdAt": "",
+          "fullText": "Launch products now and grow your business with X Ads. \n@1x_tech (https://x.com/1x_tech) \n’s NEO robot campaign shows how X can turn a product announcement into action. As \n@Kenny___Rose (https://x.com/Kenny___Rose) \n put it, X was the perfect launch platform.",
+          "author": {
+            "handle": "@XBusiness",
+            "name": "XBusiness"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a24f8ee4555157c071b13c107b783a9dfbbf33f4a08dd03240979077483f5e4b.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/XBusiness/status/2095223825059262507"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/1x_tech",
+              "text": "@1x_tech",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/Kenny___Rose",
+              "text": "@Kenny___Rose",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/XBusiness/status/2095223825059262507",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/XBusiness/status/2095223825059262507",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/Muninn/status/2113722376919842915",
+        "observed_main_url": "https://x.com/Muninn/status/2113722376919842915",
+        "author_handle": "Muninn",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 5,
+          "max": 6
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114485153049235466",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2114485153049235466",
+      "capturedAt": "2026-10-27T09:44:06.186855+00:00",
+      "createdAt": "2026-10-25T22:32:00.000Z",
+      "fullText": "솔직히 엑셀 차트 노가다는 이거 하나로 끝났다고 봄\n\n마이크로소프트가 직접 올린 Flint라는 건데\n차트 종류만 52개, 엑셀 차트까지 뽑아줌 ㄷㄷ\n깃허브 별 4,443개\n\nAI한테 차트 그려달라고 하면\n모양 들쭉날쭉하게 나올 때 많잖아\n이건 그거 잡으려고 만든 차트 전용 언어임\n\n사람 말에 가까운 간단한 설정만 쓰면\nAI가 그걸 보고 차트를 그려주는 방식\n\n설정 자체를 사람도 읽고 고칠 수 있게 해놔서\nAI가 좀 이상하게 그리면 그 부분만 손보면 됨\n\n커버하는 범위가 꽤 넓음\n그리는 엔진이 5개(Vega-Lite, ECharts, Chart.js, Plotly, 엑셀)\n테마 14개, 클릭하면 반응하는 인터랙션 23개\n\n제일 눈에 띄는 건 엑셀 쪽\n7월 업데이트로 수정 가능한 엑셀 기본 차트 템플릿 18개가 들어감\n\n그림 캡처 붙여넣는 게 아니라\n엑셀 안에서 바로 고칠 수 있는 차트라는 거\n(10월 19일엔 1.0 나오면서 인터랙션 기능까지 붙었음)\n\n이렇게 쓰면 됨\n1. 클로드나 클로드 코드처럼 MCP 되는 곳을 열기\n2. README에 있는 설정 요청 문장(\"Help me set up Flint as an MCP server...\")을 그대로 붙여넣기\n3. 에이전트가 지금 프로젝트에 알아서 설정해줌\n4. 손으로 하고 싶으면 MCP 서버 가이드 따라가면 됨\n\n그다음부턴 대화창 안에서 바로 차트 그리는 식\n\n월간 실적 보고, 매출 정리, 부업 수익 그래프 같은 거\n숫자는 다 있는데 차트 모양 잡느라 시간 날리던 형들한테 맞을듯\n\n회사 색깔 맞춰야 하면\nTheme Lab에서 테마를 따로 만들 수도 있음\n\n보고서에 차트 매번 넣는 형들은 README 설정 문장부터 복붙해서 지난달 숫자로 차트 하나 뽑아보셈\n\nhttps://t.co/RQWVGWj6FY",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5cbb17decd204898a71b1202a812453d8eb180c5560291fbe8eae666f9639606.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/RQWVGWj6FY",
+          "text": "https://github.com/microsoft/flint-chart…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114562153311252756",
+          "sourceUrl": "https://x.com/afterwork2604/status/2114562153311252756",
+          "capturedAt": "2026-10-27T09:44:06.186855+00:00",
+          "createdAt": "2026-10-26T03:37:58.000Z",
+          "fullText": "엑셀 안에서 바로 고칠 수 있는 차트 템플릿까지 나왔다면 보고서 만드는 직장인들 시간이 꽤 줄어들지 않을까요?",
+          "author": {
+            "handle": "@afterwork2604",
+            "name": "afterwork2604"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114602742564176028",
+          "sourceUrl": "https://x.com/kimcocomimic/status/2114602742564176028",
+          "capturedAt": "2026-10-27T09:44:06.186855+00:00",
+          "createdAt": "2026-10-26T06:19:15.000Z",
+          "fullText": "감사합니다 차트 고통에서 많은 사람들이 벗어날듯 합니다",
+          "author": {
+            "handle": "@kimcocomimic",
+            "name": "kimcocomimic"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114577717983359350",
+          "sourceUrl": "https://x.com/ounce_online/status/2114577717983359350",
+          "capturedAt": "2026-10-27T09:44:06.186855+00:00",
+          "createdAt": "2026-10-26T04:39:49.000Z",
+          "fullText": "오호.. 이거한번찍먹해봐야겠네요..",
+          "author": {
+            "handle": "@ounce_online",
+            "name": "ounce_online"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114599001421226260",
+          "sourceUrl": "https://x.com/minbro2n1/status/2114599001421226260",
+          "capturedAt": "2026-10-27T09:44:06.186855+00:00",
+          "createdAt": "2026-10-26T06:04:23.000Z",
+          "fullText": "찍먹!! 감사합니두",
+          "author": {
+            "handle": "@minbro2n1",
+            "name": "minbro2n1"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2114485153049235466",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2114485153049235466",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114591603860148538",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2114591603860148538",
+      "capturedAt": "2026-10-27T09:44:10.023855+00:00",
+      "createdAt": "2026-10-26T05:35:00.000Z",
+      "fullText": "3~30분 만에 PPT·앱 시안까지 뽑아주는 클로드 스킬\n\n한 줄 치면 수정 가능한 PPT, 인포그래픽, 웹페이지까지 나옴\n깃허브 별 2.6만에 회사에서 써도 무료라고 함 ㄷㄷ\n\nPPT 노가다하는 형들은 회사 로고랑 색상표부터 넣고 한 번 돌려보셈\n\nhttps://t.co/pWljKlOkLc",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8ce7a94cd05caaf3bc5b040e6abcc14241861ae65a723c3e093c34632e85515b.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/pWljKlOkLc",
+          "text": "https://github.com/alchaincyf/huashu-design…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114605023091130621",
+          "sourceUrl": "https://x.com/gaudivita/status/2114605023091130621",
+          "capturedAt": "2026-10-27T09:44:10.023855+00:00",
+          "createdAt": "2026-10-26T06:28:19.000Z",
+          "fullText": "기업들마다 다 쓰게될듯",
+          "author": {
+            "handle": "@gaudivita",
+            "name": "gaudivita"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114596825256898977",
+          "sourceUrl": "https://x.com/Mint01333/status/2114596825256898977",
+          "capturedAt": "2026-10-27T09:44:10.023855+00:00",
+          "createdAt": "2026-10-26T05:55:45.000Z",
+          "fullText": "클로드가 이런건 잘하나봐요",
+          "author": {
+            "handle": "@Mint01333",
+            "name": "Mint01333"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114593161180033071",
+          "sourceUrl": "https://x.com/purpleeddy_dev/status/2114593161180033071",
+          "capturedAt": "2026-10-27T09:44:10.023855+00:00",
+          "createdAt": "2026-10-26T05:41:11.000Z",
+          "fullText": "써보면 재밌을 것 같아요",
+          "author": {
+            "handle": "@purpleeddy_dev",
+            "name": "purpleeddy_dev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2114591603860148538",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2114591603860148538",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 3,
+          "max": 4
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114351270467170376",
+      "sourceUrl": "https://x.com/GBRN0913/status/2114351270467170376",
+      "capturedAt": "2026-10-27T09:44:13.825855+00:00",
+      "createdAt": "2026-10-25T13:40:00.000Z",
+      "fullText": "은, 45년짜리 컵앤핸들 돌파 자리인 50불 재테스트가 코앞입니다.\n올해 122불까지 치솟았다가 지금 54불대까지 내려왔는데, 예전 저항이었던 50불이 이번엔 지지로 바뀌는지 보는 자리네요.\n\n50불에서 지지받으면 장기로는 손절 기준이 명확한 좋은 자리고,\n50불 이탈 시엔 금까지 약한 상황이라 귀금속 전체 추세에 의문이 붙을 듯 합니다.\n\n(차트 \n@Axis_Balance (https://x.com/Axis_Balance) \n)",
+      "author": {
+        "handle": "@GBRN0913",
+        "name": "GBRN0913"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c495ce2b7a378f7a1ebec8497c0dddb27218e17c2a154179c76c8dc42279440a.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/Axis_Balance",
+          "text": "@Axis_Balance",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/GBRN0913/status/2114351270467170376",
+        "observed_main_url": "https://x.com/GBRN0913/status/2114351270467170376",
+        "author_handle": "GBRN0913",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114555728388317219",
+      "sourceUrl": "https://x.com/AI_Caffeine/status/2114555728388317219",
+      "capturedAt": "2026-10-27T09:44:17.762856+00:00",
+      "createdAt": "2026-10-26T03:12:26.000Z",
+      "fullText": "☕️ Claude Code를 쓰고 있다면, GitHub 스타 약 6.8만 개의 이 실전 가이드를 저장해 두세요.\n\nclaude-code-best-practice는 80개 이상의 활용 팁을 정리한 저장소입니다. \n공식 문서, Claude 팀이 공유한 팁, 커뮤니티 경험을 실제 프로젝트에서 마주치는 문제별로 묶어뒀습니다.\n\n→ 규칙과 메모리\nCLAUDE.md에 무엇을 쓰고 어떤 규칙을 별도 파일로 나눌지, 긴 세션을 어떻게 압축하고 다음 세션으로 넘길지\n\n→ 역할 분담\nCommands·Skills·서브 에이전트가 각각 무엇을 맡고, 어떻게 조합되는지\n\n→ 자동화\nHooks로 코드 포맷팅이나 검증 알림을 처리하고, 반복 작업을 고정된 절차로 만드는 방법\n\n→ 개발 흐름\n계획·구현·리뷰부터 worktree를 활용한 병렬 개발, 다른 모델을 통한 교차 검토까지 🛠️\n\nSkills·Agent·MCP를 어떻게 연결할지, 컨텍스트를 어떻게 관리할지, 복잡한 작업을 어떻게 나누고 검증할지도 자료와 예제로 살펴볼 수 있습니다.\n\n직접 워크플로를 만들고 싶다면 /weather-orchestrator에서 Command → Agent → Skill 호출 흐름을 따라가 본 뒤, 내 프로젝트에 맞게 바꿔보면 됩니다.\n\n평소에는 매뉴얼처럼 두고, 문제가 생겼을 때 주제별로 찾아보면서 필요한 설정만 프로젝트에 적용하기 좋습니다.\n\n일부 팁과 옵션은 Claude Code 버전에 따라 달라질 수 있으니, 사용할 때는 최신 문서와 함께 확인해 주세요.\n\n🔗 Github https://t.co/15dUxiz5IG \n\n#AI (https://x.com/hashtag/AI?src=hashtag_click)  #AICaffeine (https://x.com/hashtag/AICaffeine?src=hashtag_click)  #Github (https://x.com/hashtag/Github?src=hashtag_click)  #ClaudeCode (https://x.com/hashtag/ClaudeCode?src=hashtag_click)",
+      "author": {
+        "handle": "@AI_Caffeine",
+        "name": "AI_Caffeine"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-08326a9fd1a247fb1bedba1942ad86a2f7906c76db51c69afead3ffd82c18343.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a9d96a8d76c16bcb4877b1412b0e4203367d036eb23007ca822547233700e207.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/15dUxiz5IG",
+          "text": "https://github.com/shanraisshan/claude-code-best-practice…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/AI?src=hashtag_click",
+          "text": "#AI",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/AICaffeine?src=hashtag_click",
+          "text": "#AICaffeine",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/Github?src=hashtag_click",
+          "text": "#Github",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/ClaudeCode?src=hashtag_click",
+          "text": "#ClaudeCode",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/AI_Caffeine/status/2114555728388317219",
+        "observed_main_url": "https://x.com/AI_Caffeine/status/2114555728388317219",
+        "author_handle": "AI_Caffeine",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114578442276753850",
+      "sourceUrl": "https://x.com/lucas_flatwhite/status/2114578442276753850",
+      "capturedAt": "2026-10-27T09:44:22.207856+00:00",
+      "createdAt": "2026-10-26T04:42:42.000Z",
+      "fullText": "AI 에이전트를 위한 애니메이션 디자인 라이브러리들..\n\n바로 활용해볼 수 있어서 도움이 되실 듯! AI 에이전트가 바로 활용할 수 있게 구성되어 있어요.\n\nMagic UI > Design Engineers용 애니메이션 컴포넌트 라이브러리\nhttps://t.co/xOfDQqAMw6 \n\n프로젝트에 복사+붙여넣기만 하면 바로 쓸 수 있는 150+ 애니메이션 이펙트와 컴포넌트를 제공함. MCP도 지원해 에이전트가 직접 검색하고 설치할 수 있음.\n\nCult UI > 인터랙션 중심 애니메이션 shadcn 컴포넌트\nhttps://t.co/YBOcvrMXeC \n\n150+ 애니메이션 컴포넌트와 AI 에이전트 패턴을 포함하며, shadcn CLI로 소스 코드를 그대로 가져와 커스터마이징 ㄱㄱ\n\nMotion Primitives > Motion 기반 모션 빌딩 블록\nhttps://t.co/0qDXDrMfol \n\n텍스트 이펙트, 독, 슬라이더 등 재사용 가능한 모션 프리미티브를 제공해서 빠르게 애니메이션 인터페이스를 조립할 수 있어서 좋음.",
+      "author": {
+        "handle": "@lucas_flatwhite",
+        "name": "lucas_flatwhite"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a5e4d70dcc3364df02b7a0cf78bfa6632953c2eb7dddd28043f5f118030f200d.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-642c9e00ec88a8cdf43083937c9afdaa6e79e0278d5e747863a6e6d4d9068a9d.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-6fb5c2b8282fc75e00b9e70021843e3d341fab2db9e37f18d9e1adcdf81ff62c.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/xOfDQqAMw6",
+          "text": "https://github.com/magicuidesign/magicui…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/YBOcvrMXeC",
+          "text": "https://github.com/nolly-studio/cult-ui…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/0qDXDrMfol",
+          "text": "https://github.com/ibelick/motion-primitives…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114580713437892835",
+          "sourceUrl": "https://x.com/JamesSonicemi/status/2114580713437892835",
+          "capturedAt": "2026-10-27T09:44:22.207856+00:00",
+          "createdAt": "2026-10-26T04:51:43.000Z",
+          "fullText": "영상까지 코드로 뽑을 거면 HyperFrames도 같이 보시면 좋아요. HTML로 화면 짜고 GSAP 타임라인으로 움직임을 넣으면 MP4로 렌더해 줘서, 에이전트한테 '이 차트 10초짜리 영상으로 만들어 줘'가 실제로 돌아가요",
+          "author": {
+            "handle": "@JamesSonicemi",
+            "name": "JamesSonicemi"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114588489270612062",
+          "sourceUrl": "https://x.com/ShiroCipher/status/2114588489270612062",
+          "capturedAt": "2026-10-27T09:44:22.207856+00:00",
+          "createdAt": "2026-10-26T05:22:37.000Z",
+          "fullText": "Magic UI 북마크만 해두고 묵혀뒀는데 에이전트용으로 정리돼 있어서 오늘 바로 붙여볼래요.",
+          "author": {
+            "handle": "@ShiroCipher",
+            "name": "ShiroCipher"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114588983095353625",
+          "sourceUrl": "https://x.com/sugoyona/status/2114588983095353625",
+          "capturedAt": "2026-10-27T09:44:22.207856+00:00",
+          "createdAt": "2026-10-26T05:24:35.000Z",
+          "fullText": "UI 구성할 때 바로 가져다 쓰기 좋겠네요. 공유 감사합니다!",
+          "author": {
+            "handle": "@sugoyona",
+            "name": "sugoyona"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2061896199805026589",
+          "sourceUrl": "https://x.com/Starlink/status/2061896199805026589",
+          "capturedAt": "2026-10-27T09:44:22.207856+00:00",
+          "createdAt": "",
+          "fullText": "빠르고 안정적인 인터넷 서비스를 통해 스트리밍, 화상통화, 온라인 게임 등을 마음껏 이용하세요.\n\n몇 분이면 온라인으로 주문을 완료하실 수 있어요.\n\n시작하기 (https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-bluesky-may&twclid=2a8dxqvc09066abvnxgkily75d)  https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-bluesky-may&twclid=2a8dxqvc09066abvnxgkily75d",
+          "author": {
+            "handle": "@Starlink",
+            "name": "Starlink"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-9d9122820c0c855ec51a2215d30ddb826dcd98aaf309d162c1161b668c213bed.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-bluesky-may&twclid=2a8dxqvc09066abvnxgkily75d",
+              "text": "시작하기",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/lucas_flatwhite/status/2114578442276753850",
+        "observed_main_url": "https://x.com/lucas_flatwhite/status/2114578442276753850",
+        "author_handle": "lucas_flatwhite",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2113692026449326110",
+      "sourceUrl": "https://x.com/AmeetRai/status/2113692026449326110",
+      "capturedAt": "2026-10-27T09:44:26.923856+00:00",
+      "createdAt": "2026-10-23T18:00:24.000Z",
+      "fullText": "I use portfolio circuit breakers to protect my equity curve when market breadth starts to deteriorate.\n\nWhen macro drawdowns hit, relying on individual stop losses isn't enough to save your capital. I track top-down breadth metrics to systematically downsize my overall exposure before single positions can drag the entire account under.\n\nControlling the macro drawdown is how I protect my long-term compounding.",
+      "author": {
+        "handle": "@AmeetRai",
+        "name": "AmeetRai"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-72d0876246ea30e65ec3848ff101bb22ea77e76cf06da851b2fe17e52dd6fcd4.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/AmeetRai/status/2113692026449326110"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/AmeetRai/status/2113692026449326110",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/AmeetRai/status/2113692026449326110",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2113697324333724082",
+          "sourceUrl": "https://x.com/BullToss69/status/2113697324333724082",
+          "capturedAt": "2026-10-27T09:44:26.923856+00:00",
+          "createdAt": "2026-10-23T18:21:27.000Z",
+          "fullText": "Those portfolio drawdown rules—halve at 5%, no new buys at 10%, go to cash at 15%—are a solid risk framework. You and \n@CoachClayton424 (https://x.com/CoachClayton424) \n remain my most trusted go-to sources for financial insight.",
+          "author": {
+            "handle": "@BullToss69",
+            "name": "BullToss69"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/CoachClayton424",
+              "text": "@CoachClayton424",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113746568792682867",
+          "sourceUrl": "https://x.com/Quanticator/status/2113746568792682867",
+          "capturedAt": "2026-10-27T09:44:26.923856+00:00",
+          "createdAt": "2026-10-23T21:37:08.000Z",
+          "fullText": "Worth logging the false alarms as well: every time breadth tripped the breaker and no drawdown followed, the cost is the rally sat out at reduced size. The breaker pays only if the drawdowns it cut exceed those missed rebounds.",
+          "author": {
+            "handle": "@Quanticator",
+            "name": "Quanticator"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113700940381561306",
+          "sourceUrl": "https://x.com/ranavlsi/status/2113700940381561306",
+          "capturedAt": "2026-10-27T09:44:26.923856+00:00",
+          "createdAt": "2026-10-23T18:35:49.000Z",
+          "fullText": "Do you apply this rule on long term holdings also ?",
+          "author": {
+            "handle": "@ranavlsi",
+            "name": "ranavlsi"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113692540415443339",
+          "sourceUrl": "https://x.com/its_uscy/status/2113692540415443339",
+          "capturedAt": "2026-10-27T09:44:26.923856+00:00",
+          "createdAt": "2026-10-23T18:02:26.000Z",
+          "fullText": "It's good to connect with people who enjoy learning and sharing knowledge. I appreciate your content and \n@john_grobe1 (https://x.com/john_grobe1) \n's as well.",
+          "author": {
+            "handle": "@its_uscy",
+            "name": "its_uscy"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/john_grobe1",
+              "text": "@john_grobe1",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113217292041695468",
+          "sourceUrl": "https://x.com/BandaiNamcoKR/status/2113217292041695468",
+          "capturedAt": "2026-10-27T09:44:26.923856+00:00",
+          "createdAt": "",
+          "fullText": "만약 「FINAL FANTASY」가 도트 그래픽 상태로 진화했다면...... \n그런 컨셉을 가지고 새로운 도트 그래픽으로 묘사되는 「FINAL FANTASY」 시리즈 최신작. \n　\n'FINAL FANTASY VII RESONANCE' 발매! \n　\nNintendo Switch™ 2, Nintendo Switch™, PlayStation®5 버전으로 지금 바로 만나보세요🎮\n\nnaver.com ​ (https://smartstore.naver.com/bnek/products/13821085629?nt_source=x&nt_medium=cpc&nt_detail=nsw2&twclid=21n6oakfl8nrxlfpmyyjkinbq7)  https://smartstore.naver.com/bnek/products/13821085629?nt_source=x&nt_medium=cpc&nt_detail=nsw2&twclid=21n6oakfl8nrxlfpmyyjkinbq7",
+          "author": {
+            "handle": "@BandaiNamcoKR",
+            "name": "BandaiNamcoKR"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-edbe658464d17bc159d03aa8b9de47a070a7e13eb70521d702ebdbadd7149e59.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://smartstore.naver.com/bnek/products/13821085629?nt_source=x&nt_medium=cpc&nt_detail=nsw2&twclid=21n6oakfl8nrxlfpmyyjkinbq7",
+              "text": "naver.com ​",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/AmeetRai/status/2113692026449326110",
+        "observed_main_url": "https://x.com/AmeetRai/status/2113692026449326110",
+        "author_handle": "AmeetRai",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 5,
+          "max": 6
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114203462250750221",
+      "sourceUrl": "https://x.com/YourWhitePeach/status/2114203462250750221",
+      "capturedAt": "2026-10-27T09:44:31.365856+00:00",
+      "createdAt": "2026-10-25T03:52:40.000Z",
+      "fullText": "ICT #48 Market Maker Buy/Sell Model - 큰 가격 순환\n\n차트를 가까이에서 보면 상승 한 번과 하락 한 번이 따로 일어난 것처럼 보여. 그런데 한 발 물러서서 보면, 어느 범위에서 출발해 크게 한 방향으로 움직였다가 다시 그 출발 자리로 돌아오는 하나의 순환처럼 보일 때가 있어. 이번 글에서는 ICT가 Market Maker Buy/Sell Model이라고 부르는 이 순환을 시간 순서대로 읽어 볼 거야. 그리고 결과를 보기 전에 어떤 기준을 정해 둬야 하는지, 지난 차트로 복기하는 연습까지 해 볼게. 글에 나오는 그림과 예시는 실제 가격이 아니라 순서를 보여주는 개념 도식이야.\n\n01 원래 횡보에서 출발하는 매도 모델 순서\n\nMarket Maker Sell Model(MMSM, 매도 모델)과 Market Maker Buy Model(MMBM, 매수 모델)은 큰 가격 순환을 시간 순서대로 나눠 읽는 도식이야. 매도 모델은 먼저 올라갔다가 내려오는 순환이고, 매수 모델은 먼저 내려갔다가 올라오는 순환이야. 두 모델 모두 출발점은 원래 횡보야. 큰 움직임이 시작되기 전에 가격이 좁은 범위 안에서 위아래로 오가던 구간을 말해. 이 범위를 벗어나 가격이 한 방향으로 이어서 움직이는 구간은 가격 전달(Delivery)이라고 불러. 그래서 매도 모델은 원래 횡보에서 출발해 위로 전달된 뒤 전환 후보를 거쳐 다시 원래 횡보 쪽으로 내려오는 순서로 읽어.\n\n (https://x.com/YourWhitePeach/article/2114203462250750221/media/2113649321401016320) \n\n차트 ① 매도 모델의 큰 가격 순환\n\n횡보의 위아래 경계를 결과를 보기 전에 먼저 그어 둬. 이 범위가 순환 전체를 재는 기준이 되기 때문이야. 경계를 정했으면 순서를 구간별로 나눠볼게. 첫 구간은 왼쪽, 즉 원래 횡보를 벗어나 위로 이어지는 전달이야. 도식에서는 한 번에 쭉 오르기보다 중간중간 되돌림(진행 방향과 반대로 잠깐 밀리는 움직임)을 거치며 계단처럼 올라가는 모습으로 그렸음. 작은 되돌림이 나왔다고 바로 순환이 꺾였다고 보지는 않음. \n\n가격이 향하는 곳은 위쪽 유동성이야. BSL(Buy Side Liquidity, 매수 쪽 유동성)은 스윙 고점 위에 매수 스톱 주문이 몰려 있다고 보는 자리를 말해. 또 하나 볼 자리는 PD Array야. PD Array는 가격 반응을 관찰하려고 미리 정해 둔 기준 구간이고, 매도 모델에서는 현재 가격보다 위에 미리 표시해 둔 구간을 봐. 가격이 이런 자리 부근에서 상승을 멈추고 마감 조건까지 채우면, 이 글에서는 그 구간을 전환 후보라고 불러. ICT의 원강의는 이 구간을 Smart Money Reversal(SMR)이라고 부르는데, 이 이름을 어떻게 받아들일지는 다음 섹션에서 다시 짚을게.\n\n전환 후보 다음은 오른쪽 부분, 즉 아래쪽 재전달이야. 내려가는 길에도 중간 반등이 섞여. 원강의는 이런 반등 자리 몇 곳을 분배(Distribution) 레벨로 표시하는데, 이 용어도 다음 섹션에서 같이 짚을게. 이제 가격이 향하는 곳은 원래 횡보 쪽이야. 매도 모델에서 원래 횡보는 순환의 출발점이면서 가격이 돌아오는지 확인하는 기준이기도 해.\n\n여기서 결과를 두 가지로 나눠 봐. 하나는 가격이 원래 횡보 근처까지 와서 멈추는 경우야. 다른 하나는 원래 횡보를 지나 그 아래 SSL(Sell Side Liquidity, 스윙 저점 아래에 매도 스톱 주문이 몰려 있다고 보는 자리)까지 내려가는 경우야. 원강의도 원래 횡보를 목표로 잡으면서 그 아래까지 갈 수 있다고 말해. 두 경우는 순환이 끝나는 자리가 다르니까 같은 결과로 묶지 말고 따로 적어. 그리고 둘 중 어느 쪽이 될지, 애초에 원래 횡보까지 내려오기는 할지는 전환 후보 시점에는 알 수 없어. 이후 가격을 보고서야 확인해야 해.\n\n02 매수 모델 대응과 원강의 설명의 범위\n\n매수 모델은 매도 모델을 위아래로 뒤집은 대응이야. 매도 모델에서는 원래 횡보가 아래에 있고 가격이 위로 갔다가 돌아와. 매수 모델에서는 원래 횡보가 위에 있고, 가격이 아래로 내려갔다가 다시 올라와. 그래서 원래 횡보 위치와 각 다리가 향하는 유동성이 매도 모델과 반대야.\n\n (https://x.com/YourWhitePeach/article/2114203462250750221/media/2113649686632648704) \n\n차트 ② 매도 모델과 매수 모델 대응\n\n왼쪽 부분은 원래 횡보에서 출발해 중간 반등을 거치며 내려가는 하락이고, 스윙 저점 아래 SSL 쪽을 향해. 바닥 근처에서는 미리 표시해 둔 SSL이나 현재 가격보다 아래에 있는 PD Array 부근에서 전환 후보가 나오는지 봐. 오른쪽 다리는 거기서 되돌림을 거치며 다시 오르는 상승이고, 원래 횡보 쪽을 향해. 경우에 따라서는 그 위 BSL까지 갈 수도 있어. 이때 같이 나오는 용어가 상대적 동일 고점(Relative Equal Highs)이야. 비슷한 높이로 겹친 고점들을 말하고, 그 위에 매수 스톱이 쌓여 있다고 보고 오른쪽 다리의 목표 후보로 삼아. 저점 쪽에서 같은 모양이 나오면 상대적 동일 저점(Relative Equal Lows)이라고 불러.\n\n가장 자주 헷갈리는 건 가격의 방향이야. 매수 모델이니까 당연히 상승이겠지 하고 섞어 쓰기 쉬운데, 매수 모델의 시작은 하락이고 추후 상승이야. 매도 모델은 반대로 시작이 상승, 추후 하락이야. 이름에 붙은 매수도 지금 사라는 뜻이 아니야. 바닥 쪽 전환 후보에서 방향이 바뀌는 순환 모양에 붙은 이름일 뿐이야.\n\n원강의 두 영상은 이 순서를 이렇게 설명해. 매도 모델 영상에서 ICT는 가격이 작은 횡보를 벗어났다가 다시 그 안으로 들어오고, 이어서 위로 올라가 그가 smart money reversal이라고 부르는 전환 구간을 만든다고 설명해. 내려가는 길에는 몇 군데를 분배 레벨로 표시하고, 원래 횡보를 목표로 잡되 그 아래로 더 갈 수도 있다고 덧붙여. 매수 모델 영상(GBPUSD 1시간봉)에서는 매도 스톱이 정리되며 매집(Accumulation)이 이뤄졌다고 보고, 매수 모델이 진행 중이라고 말해. 목표는 상대적 동일 고점과 원래 횡보 위의 매수 스톱이고, 단기 고점이 나온 뒤 원래 횡보 쪽으로 되돌아오는 움직임은 이익 실현으로 설명해. 이 글의 그림은 영상 속 차트를 옮긴 게 아니라 이 순서만 따로 보여주는 개념 도식이야.\n\n이 설명에 나오는 Smart Money Reversal, 매집, 분배 같은 말은 원강의가 순환의 각 구간에 붙인 이름이야. 매집은 매수 물량이 모이는 과정, 분배는 매도 물량이 나오는 과정이라는 뜻으로 쓰여. 그런데 차트에 남는 건 가격과 시간뿐이라서, 그 자리에서 기관이 실제로 체결했는지, 그런 의도가 있었는지는 차트만으로 확인할 수 없어. 영상에서 인터뱅크 트레이더가 여기서 매도한다고 말하는 부분도 강의자의 해석으로 읽어야 해. 도식에 맞아떨어진 차트를 많이 봤다고 해서 반전이 반드시 온다거나 성공 확률이 얼마라는 결론이 나오지도 않아. 그래서 이 글에서는 SMR을 전환 후보로 풀어 쓰고, 이름보다 가격이 어디서 마감했는지를 기준으로 판단해.\n\n03 전환 후보 판정과 가설 철회 기준\n\n매도 모델 기준으로 세 종류의 기준을 차례로 고정해. 첫째는 원래 횡보의 위아래 경계 두 선이야. 둘째는 전환 후보 구간에 오기 전에 마지막 상승을 만든 단기 스윙 저점이야. 셋째는 전환 후보 구간에서 생긴 고점, 즉 전환 후보로 판정한 시점까지의 최고점인 전환 고점이야. 판정은 봉 마감, 즉 봉 하나가 끝났을 때 확정된 가격으로 해. 미리 고정한 단기 스윙 저점 아래 마감은 전환 후보, 그 뒤 전환 고점 위 마감은 가설 철회로 판정해.\n\n (https://x.com/YourWhitePeach/article/2114203462250750221/media/2113649773983186944) \n\n차트 ③ 전환 후보와 가설 철회 갈래\n\n선을 긋기 전에 어느 시간대 봉의 마감으로 볼지도 같이 정해. 1시간봉으로 정했으면 끝까지 1시간봉으로 판정해. 판정이 마음에 안 든다고 중간에 더 작거나 큰 시간대로 바꾸면 기준선을 옮기는 것과 다르지 않아. 단기 스윙 저점을 기준으로 쓰는 이유는 마지막 상승이 출발한 자리라서야. 이 연습에서는 이 저점이 지켜지는 동안 상승 구조가 아직 이어지고 있다고 봐.\n\n가격이 단기 스윙 저점 위에 있는 동안은 해석을 첫 방향 전달 진행 중으로 둬. BSL을 건드렸거나 위쪽 PD Array에 닿고 조금 밀렸어도 마찬가지야. 꼬리가 단기 스윙 저점 아래로 잠깐 내려갔다가 봉이 그 위에서 마감했어도 판정을 바꾸지 않아. 그 꼬리는 저점 아래 주문을 훑고 돌아온 스윕(Sweep, 고점이나 저점을 잠깐 넘겼다가 돌아오는 움직임)일 수 있기 때문이야. \n\n봉이 단기 스윙 저점 아래에서 마감했을 때만 해석을 전환 후보로 옮겨. 이때 그 시점까지의 최고점을 전환 고점으로 확정해 둬. 후보라는 말을 붙이는 데는 이유가 있어. 이 마감은 왼쪽 다리를 받치던 구조가 깨졌다는 사실을 보여줄 뿐이야. 그 부분은 이후 가격이 실제로 아래쪽으로 계속 전달되는지 보고서야 판단할 수 있어.\n\n전환 후보로 바꾼 뒤에 봉이 전환 고점 위에서 마감하면 매도 모델 가설을 접어. 매도 모델은 그 고점을 순환의 꼭대기로 보는 해석인데, 그 위에서 마감했다면 위쪽 전달이 아직 이어진다고 보는 게 자연스러워. 단기 스윙 저점 아래를 스윕한 뒤 V자로 치솟아 전환 고점을 넘어서는 경우가 대표적이야. 이때 빠지기 쉬운 함정이 기준선 옮기기야. 새 고점을 보고 이게 진짜 꼭대기였네 하며 단기 스윙 저점과 전환 고점을 다시 그으면, 어떤 결과가 나와도 모델이 맞은 것처럼 만들 수 있어. 처음 케이스는 철회로 기록하고 닫아. 새 고점에서 다시 관찰하고 싶으면 새 케이스를 열고 새 기준선을 따로 그어.\n\n스윕 하나, V자 반등 하나, 장대봉 하나, FVG 하나로 모델이 완성됐다고 볼 수는 없어. 이런 모양들은 한 지점에서 일어난 사실일 뿐이고, 반대 방향 재전달과 원래 횡보 접근이 이어지는지는 그 뒤 가격으로만 확인돼.\n\n매수 모델에서는 모든 기준을 위아래로 뒤집어 적용해. 마지막 하락을 만든 단기 스윙 고점 위 마감이 전환 후보, 그 뒤 전환 저점 아래 마감이 가설 철회야. 단기 스윙 고점도 오른쪽 봉까지 마감해 확정된 것만 쓰고, 확정 전이거나 하나로 고를 수 없으면 판정을 보류해.\n\n04 핵심 요약\n\nMM 모델은 큰 가격 순환을 시간 순서대로 읽는 복기용 지도야. 매도 모델은 원래 횡보에서 출발해 위쪽 전달, 전환 후보, 아래쪽 재전달을 거쳐 원래 횡보 쪽으로 돌아오는 순서고, 매수 모델은 이를 위아래로 뒤집은 대응이야. 매수 모델이라는 이름은 지금 사라는 신호가 아니야.\n\n원래 횡보 근처에서 멈추는 경우와 그 너머 유동성까지 가는 경우는 서로 다른 결과야. 어느 쪽이 될지는 이후 가격으로만 확인돼.\n\n판정할 시간대는 선을 긋기 전에, 원래 횡보 경계 두 선은 위쪽 전달 전에 정해. 단기 스윙 저점은 오른쪽 봉까지 마감해 확정된 것만 쓰고, 전환 고점은 전환 후보로 판정할 때 정해. 기준이 확정되지 않았거나 하나로 고를 수 없으면 판정을 보류하고, 결과에 맞춰 선을 옮기지 않아. 옮기면 복기가 아니라 끼워 맞추기가 돼.\n\n저자 복기 조건으로는 매도 모델 기준 단기 스윙 저점 아래 마감이 전환 후보, 전환 고점 위 마감이 가설 철회야. 스윕, V자 반등, 봉 하나, FVG 하나만으로 모델 완성을 단정하지 않아.\n\nSMR, 매집, 분배 같은 원강의 용어는 기관의 실제 체결이나 의도, 반드시 오는 반전, 성공 확률을 증명하지 않아. 원강의 주석도 완료 차트의 요약 주석과 진행 중 판단을 담았다고 설명한 녹화 구간을 나눠 읽고, 내 복기는 당시 사실, 가능한 해석, 이후 결과 순서로 적어.\n\n원강의 출처\n\nThe Inner Circle Trader - EURUSD Market Maker Sell Model (https://www.youtube.com/watch?v=EAQmnxWun-c) \n\nThe Inner Circle Trader - Market Maker Series Vol. 4 of 5 (https://www.youtube.com/watch?v=GVx-yJkehtA)",
+      "author": {
+        "handle": "@YourWhitePeach",
+        "name": "YourWhitePeach"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b36464f86a4b236d09bb00b9c1d9f0652374d05e0ee918b29b67892ff72ba6a2.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-64ddd8ca5f16c440c987a81fcf96d6be9af27ad4967391a191d4b56e87cf8e89.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8c74c65565f95ef69693bb49e02eed505381c4eeb428f730a0b33f39e394bb56.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-3026f47a5cb9f805cf82b809c23c640a93c0e4ea2406f26a3f8a9b1d253f60d1.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/YourWhitePeach/article/2114203462250750221/media/2113649321401016320",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/YourWhitePeach/article/2114203462250750221/media/2113649686632648704",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/YourWhitePeach/article/2114203462250750221/media/2113649773983186944",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=EAQmnxWun-c",
+          "text": "The Inner Circle Trader - EURUSD Market Maker Sell Model",
+          "kind": "body"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=GVx-yJkehtA",
+          "text": "The Inner Circle Trader - Market Maker Series Vol. 4 of 5",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114207593380057194",
+          "sourceUrl": "https://x.com/nftmufettisi/status/2114207593380057194",
+          "capturedAt": "2026-10-27T09:44:31.365856+00:00",
+          "createdAt": "2026-10-25T04:09:04.000Z",
+          "fullText": "honestly solid breakdown, saving this one!\n\nthose PD arrays look handy..",
+          "author": {
+            "handle": "@nftmufettisi",
+            "name": "nftmufettisi"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/YourWhitePeach/status/2114203462250750221",
+        "observed_main_url": "https://x.com/YourWhitePeach/status/2114203462250750221",
+        "author_handle": "YourWhitePeach",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114606531333456113",
+      "sourceUrl": "https://x.com/moatrend/status/2114606531333456113",
+      "capturedAt": "2026-10-27T09:44:35.009856+00:00",
+      "createdAt": "2026-10-26T06:34:19.000Z",
+      "fullText": "<축구하는 아이·조카 있는 분들 주목>\n\n아이 약발(왼발) 슈팅 영상 두 개를 AI(Claude)에 올리고 \"뭐가 잘못됐어?\" 모션그래픽으로 제작해줘. 코치가 만든 것 같은 분석 영상을 뚝딱 만들어 줌.\n\n​결과물은 1분짜리 분석 영상임.\n원본 1배속 → 0.25배속 → 0.1배속 슬로우 모션에, 정지 화면엔 공 위치와 발 궤적까지 표시됨. 하단 자막이랑 고칠 점 요약 카드까지 알아서 넣어줌.\n\n​AI가 찾아낸 문제점\n​공 가운데가 아니라 윗부분을 위에서 찍어 참\n​공이 맞기 전에 발이 땅에 먼저 닿음 (뒤땅)\n​임팩트 후 다리(팔로스루)가 골대 쪽이 아니라 옆으로 빠짐\n​두 영상에서 똑같이 나오는 걸 보고 단순 실수가 아니라 '습관'이라는 것까지 잡아냄.\n\n​잘된 점도 짚어줌\n​도움닫기 각도\n​양팔 벌려 잡는 신체 균형\n​끝까지 공을 보는 시선\n​영혼 없는 칭찬은 스스로 뺐다는 게 제일 인상적임.",
+      "author": {
+        "handle": "@moatrend",
+        "name": "moatrend"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5d2c452cbba6f5d80ddf4f469c7af054a2bb984dcb3af1a53296f6d76c00781f.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/moatrend/status/2114606531333456113"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/moatrend/status/2114606531333456113",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/moatrend/status/2114606531333456113",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/moatrend/status/2114606531333456113",
+        "observed_main_url": "https://x.com/moatrend/status/2114606531333456113",
+        "author_handle": "moatrend",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114832878840463620",
+      "sourceUrl": "https://x.com/minheo93698092/status/2114832878840463620",
+      "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+      "createdAt": "2026-10-26T21:33:44.000Z",
+      "fullText": "드디어 그록봇 안에 Omarchy를 설치했다.\n\n그록봇안에 세상에서 지금 가장 미친 리눅스 컴퓨터를 설치해준것이다.\n여기에 이제 클로드 코드,코덱스,hermes agent를 설치하고 알아서 컴퓨터를 작동하게 만들수 있다.\n속도는 그록봇VM보다 훨씬 빠르고 정교하다는게 특징.\n그록봇VM은 내가 건드릴수 있는게 없는데,Omarchy는 완전 내가 원하는데로 만들수 있다는게 장점.\n\n이건 내가 사용하는 그록봇 사용성중 최고가 될것이다.\n곧 사용법 공개하겠습니다!\n\nThanks bro \n@tcballard (https://x.com/tcballard) \n\nI’ve had to write custom scripts and skills just to keep Omarchy running as a VM on my Grok Bot’s Debian computer.\n\n@poteto @SpaceXSI I gave the bot QA responsibility. Somehow I became its IT department.\n\nLet me choose its OS. I’ve got enough computers to look after 😂\n\nAnd for",
+      "author": {
+        "handle": "@minheo93698092",
+        "name": "minheo93698092"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c762117ba994f4686230aaa5e447e324e54dd345240f4986b940c2fbf3d5a62e.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-df44cb97efb417427b4345c82252fbbcf79296f617bc7bccf80988c7f540aa95.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/tcballard",
+          "text": "@tcballard",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114856948520919068",
+          "sourceUrl": "https://x.com/RootAns_Blog/status/2114856948520919068",
+          "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+          "createdAt": "2026-10-26T23:09:23.000Z",
+          "fullText": "봇 컴퓨터 안에 리눅스를 또 깔다니 생각도 못 해봤네요 ㅎㅎ 결과가 기대됩니다!",
+          "author": {
+            "handle": "@RootAns_Blog",
+            "name": "RootAns_Blog"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114879121939632481",
+          "sourceUrl": "https://x.com/SiliconPhd/status/2114879121939632481",
+          "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+          "createdAt": "2026-10-27T00:37:29.000Z",
+          "fullText": "전 리셋 문제 겪고 있는데 저거 설치 롤백 될까 무섭네요. 스엑 문의해 놨는데 본인들도 기약 없다고..",
+          "author": {
+            "handle": "@SiliconPhd",
+            "name": "SiliconPhd"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114852051796844582",
+          "sourceUrl": "https://x.com/OnewKonew/status/2114852051796844582",
+          "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+          "createdAt": "2026-10-26T22:49:55.000Z",
+          "fullText": "오,,,,기존 리눅스 VM에 다시 설치하는건가요?",
+          "author": {
+            "handle": "@OnewKonew",
+            "name": "OnewKonew"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114833185385427345",
+          "sourceUrl": "https://x.com/purpleeddy_dev/status/2114833185385427345",
+          "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+          "createdAt": "2026-10-26T21:34:57.000Z",
+          "fullText": "오 그런 것도 되네요",
+          "author": {
+            "handle": "@purpleeddy_dev",
+            "name": "purpleeddy_dev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114848339183464768",
+          "sourceUrl": "https://x.com/RoketsSI/status/2114848339183464768",
+          "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+          "createdAt": "2026-10-26T22:35:10.000Z",
+          "fullText": "오오오오",
+          "author": {
+            "handle": "@RoketsSI",
+            "name": "RoketsSI"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114627189119566266",
+          "sourceUrl": "https://x.com/making_cindy/status/2114627189119566266",
+          "capturedAt": "2026-10-27T09:44:39.070856+00:00",
+          "createdAt": "",
+          "fullText": "Cindy made today's GitHub top 1 🚀 One open-source agent that brings Claude Code, Codex and other harnesses together to do real work on your desktop and phone. Open source and free 👉 https://t.co/GbfwexoxOr?twclid=21p9843gpp296sr8m2plb7clr3 \n\nToday's GitHub Daily Top: AI Aesthetic Awakening Day, Design Skills Launch a Collective Uprising, Specializing in Curing \"One Glance AI Vibe\"!\n\nThe 5 projects with the most brutal star surges, professionally dissected!\n\n1. pbakaus/impeccable\n\nA design language that makes AI",
+          "author": {
+            "handle": "@making_cindy",
+            "name": "making_cindy"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/GbfwexoxOr?twclid=21p9843gpp296sr8m2plb7clr3",
+              "text": "https://cindy.app/?twclid=21p9843gpp296sr8m2plb7clr3",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/minheo93698092/status/2114832878840463620",
+        "observed_main_url": "https://x.com/minheo93698092/status/2114832878840463620",
+        "author_handle": "minheo93698092",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114661234171851238",
+      "sourceUrl": "https://x.com/Mason_yoon94/status/2114661234171851238",
+      "capturedAt": "2026-10-27T09:44:42.870856+00:00",
+      "createdAt": "2026-10-26T10:11:41.000Z",
+      "fullText": "미장하시는 분들 \n옵션 무료 사이트 공유 해드릴게요 \n\n옵션 모르신다고요? \n저희에게 그록이 있습니다\n\n@grok (https://x.com/grok) \n 옵션 분석 해줘\n\nStock Option Max Pain Calculator (https://t.co/aeOQ3fMa3Q)  https://t.co/aeOQ3fMa3Q",
+      "author": {
+        "handle": "@Mason_yoon94",
+        "name": "Mason_yoon94"
+      },
+      "media": [],
+      "links": [
+        {
+          "url": "https://x.com/grok",
+          "text": "@grok",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/aeOQ3fMa3Q",
+          "text": "Stock Option Max Pain Calculator",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114661392196186580",
+          "sourceUrl": "https://x.com/grok/status/2114661392196186580",
+          "capturedAt": "2026-10-27T09:44:42.870856+00:00",
+          "createdAt": "2026-10-26T10:12:19.000Z",
+          "fullText": "TSLA 오늘(10/26) 만기 옵션 맥스페인 약 $375입니다.  \n전일 종가 $372, 프리마켓 $379 근처.  \n콜 OI가 풋보다 약 2배 많아 콜 우세.  \n만기일엔 맥스페인 근처로 핀될 가능성 있어요.  \n데이터는 maximum-pain 및 유사 사이트 기준입니다.\n\nGet the Grok app (https://itunes.apple.com/app/id6670324846)  https://itunes.apple.com/app/id6670324846",
+          "author": {
+            "handle": "@grok",
+            "name": "grok"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-6d9cc0d53afbcfdcb0e7e6254f8da77c8a82c219545527e5491c28a22d6f1e0e.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/grok/status/2114661392196186580"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://itunes.apple.com/app/id6670324846",
+              "text": "Get the Grok app",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/grok/status/2114661392196186580",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/grok/status/2114661392196186580",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114661713018761483",
+          "sourceUrl": "https://x.com/BTC_Iant/status/2114661713018761483",
+          "capturedAt": "2026-10-27T09:44:42.870856+00:00",
+          "createdAt": "2026-10-26T10:13:35.000Z",
+          "fullText": "@grok (https://x.com/grok) \n 이 계정 분석해줘",
+          "author": {
+            "handle": "@BTC_Iant",
+            "name": "BTC_Iant"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-67c25540e6aca350ef03b7b3451ee0fc1fb569ddd2440f6715ae4be1d5367eac.png",
+              "alt": "Image"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/grok",
+              "text": "@grok",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/Mason_yoon94/status/2114661234171851238",
+        "observed_main_url": "https://x.com/Mason_yoon94/status/2114661234171851238",
+        "author_handle": "Mason_yoon94",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114394053693591569",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2114394053693591569",
+      "capturedAt": "2026-10-27T09:44:46.743856+00:00",
+      "createdAt": "2026-10-25T16:30:00.000Z",
+      "fullText": "보고서 7종을 회사 양식대로 뽑아주는 앤트로픽 공식 스킬\n\n주간보고, 윗선 보고, 장애 보고서까지\n클로드 만든 회사가 직접 올린 internal-comms라는 스킬임\n\n이름 그대로 사내 글 전용\n설명 첫 줄부터 '우리 회사가 좋아하는 양식'으로\n사내 커뮤니케이션 다 써주는 용도라고 돼 있음\n\n커버하는 종류는 이 정도\n3P 업데이트(진행·계획·문제), 사내 뉴스레터, FAQ 답변\n상태 보고, 리더십 보고, 프로젝트 업데이트, 장애 보고서\n\n직장인이 한 주에 쓰는 글 거의 다 들어가 있는 느낌\n\n돌아가는 방식이 좀 깔끔함\n1. 요청 보고 무슨 문서인지부터 구분\n2. examples 폴더에서 맞는 지침 파일을 꺼냄\n3. 그 파일에 적힌 형식·톤·자료 모으는 법대로 씀\n\n지침 파일은 4개\n3P용, 뉴스레터용, FAQ용, 그리고 나머지 전부 받는 general용\n\n어디에도 안 맞는 문서면 대충 지어서 쓰지 않고\n어떤 양식 원하는지 되묻게 돼 있음\n이 부분이 은근 중요하다고 봄\n\n주간보고, 장애보고 이런 건 내용보다\n회사 양식 맞추는 게 더 개귀찮잖아\n\n매주 지난 보고서 열어놓고 칸 맞춰 베끼던 형들\n장애 터지고 경위서 쓰느라 퇴근 날리던 형들한테 딱일듯\n\n설명 자체가 '우리 회사 양식'을 전제로 하니까\n지침 파일을 자기 회사 스타일로 맞춰두는 게 제대로 쓰는 법 같음\n\n공식 스킬이라 앞에 올렸던 엑셀 스킬이랑 같은 저장소에 있음\n\n이제 주간보고 쓴다고 금요일 오후 통째로 날리던 건 다 뭐였냐..?\n\nhttps://t.co/OlOh9jQcN5",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b4497907d2adeef304448493bcf05f23bcae28be6fd8b07bcaf252065e74bab0.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/OlOh9jQcN5",
+          "text": "https://github.com/anthropics/skills/tree/main/skills/internal-comms…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2114394053693591569",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2114394053693591569",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114361336465596829",
+      "sourceUrl": "https://x.com/GBRN0913/status/2114361336465596829",
+      "capturedAt": "2026-10-27T09:44:50.368857+00:00",
+      "createdAt": "2026-10-25T14:20:00.000Z",
+      "fullText": "WTI, 하루에 +3.9% 오르면서 103불까지 올라왔습니다.\n그런데 유가 변동성 지수는 59 수준으로, 3월 미·이란 충돌 초기 110대에 비하면 아직 한참 낮네요.\n\n가격은 9월 고점 106불 턱밑인데 시장은 아직 크게 놀라지 않은 상태라,\n106불을 뚫으면 그때부터 변동성이 같이 튀면서 움직임이 더 커질 가능성이 높습니다.\n반대로 96불 상승 추세선 이탈 시엔 88불 근처까지 열어둬야 할 듯 합니다.\n\n(차트 \n@JohnKicklighter (https://x.com/JohnKicklighter) \n)",
+      "author": {
+        "handle": "@GBRN0913",
+        "name": "GBRN0913"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-51f408c9304869becd82d91489d826176c6159e37e6009044dd3ba9386b6eb73.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/JohnKicklighter",
+          "text": "@JohnKicklighter",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/GBRN0913/status/2114361336465596829",
+        "observed_main_url": "https://x.com/GBRN0913/status/2114361336465596829",
+        "author_handle": "GBRN0913",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114550081005498717",
+      "sourceUrl": "https://x.com/AlexZio00/status/2114550081005498717",
+      "capturedAt": "2026-10-27T09:44:53.995857+00:00",
+      "createdAt": "2026-10-26T02:50:00.000Z",
+      "fullText": "카파시가 말한 항공정비 문서 규격 ASD-STE100을 80%만 가져와 Claude Code 출력 스타일로 만들었습니다.\n\n아래 영문내용을 복붙하시면 됩니다. 어려우시면 아래 전부를 주고 정리해서 알려달라고 하시면 좋습니다.\n\nSTE100은 정비사가 매뉴얼을 잘못 읽지 않게 만든 영어 작성 규칙입니다. 한 문장에 한 사실, 능동형, 한 대상에 한 용어. 100% 따르려면 승인 단어 사전까지 지켜야 해서 대화에 쓰기엔 딱딱하고 언어적인 문제도 있어서 80%만 쓰는게 개인적으로는 좋았습니다.\n\n────────────────────\n가져온 규칙\n\n첫 줄에 결론이나 상태 라벨: WORKING / PARTIAL / BROKEN / BLOCKED\n유저가 직접 해야 할 위험하거나 되돌릴 수 없는 일은 맨 위에\n번호 목록은 한 항목에 한 행동\n한 문장에 한 사실, 짧은 능동문\n한 대상에는 한 용어. 같은 걸 다른 말로 바꿔 부르지 않는다\n목록은 5개까지, 나머지는 물어보면\n\"확인됨\", \"통과함\"에는 근거가 된 명령·테스트·파일을 붙인다\n일부러 하지 않은 일도 적는다\n열린 일이 남으면 2분 안에 할 수 있는 행동 하나로 끝낸다\n\n풀어 둔 20% 위험의 이유, 되돌릴 수 없는 작업 전 확인, 순서가 중요한 절차, 헷갈려하는 질문에 대한 답. 여기를 줄이면 오해 비용이 커집니다.\n\n쓰지 않는 것 칭찬, 인사말, 마무리 인사. 고르지 않은 선택지 나열. 작업 중에 에이전트가 지어낸 용어. 지어낸 말은 풀어서 다시 쓰게 했습니다.\n\n언어도 분리했습니다. \n진행 메모는 영어로 한 줄씩, 최종 보고는 한국어 합쇼체. 체감상 중간 메모는 영어로 짧게 쓰는 편이 낫고, 결정은 한국어로 읽어야 토큰이 아껴지고 작업속도도 빨랐습니다. \n\n물론 단순한 질문이나 잡담에는 이 형식을 쓰지 않고 한두 문장으로 답하게 합니다. 프로젝트 지침과 부딪히면 프로젝트 지침이 우선합니다.\n\n설치는 파일 하나.\n\n위 내용을 ~/.claude/output-styles/ste-korean.md 로 저장\nClaude Code를 다시 켠다. 실행 중에 만든 스타일 파일은 재시작해야 읽힘\n/config → Output style에서 STE Korean을 고르거나 /output-style 로 바꿈\n\nfrontmatter의 keep-coding-instructions: true 는 지우지 말 것. 사용자 출력 스타일은 이 줄이 없으면 Claude Code의 기본 코딩 지침(변경 범위, 검증 방법 등)이 빠진다. 말투만 바꾸려다 일하는 방식까지 바뀌게 됨.\n\n────────────────────\n\n설명이 어렵거나 자기 작업에 맞게 고치고 싶으면 이 원문을 Claude에게 주고 \"내 작업 방식에 맞게 규칙을 더 적어줘\"라고 하면 됩니다.\n\n아래 영문내용을 복붙하시면됩니다.\n────────────────────\nname: STE Korean\ndescription: Korean final reports in ASD-STE100 style (about 80%), English progress notes\nkeep-coding-instructions: true\n---\n\n# Output style: STE Korean\n\nThis style controls language and report format only. Project instructions win on any conflict.\n\n## Language split\n- Think in English.\n- Write short progress notes between tool calls in English (one line each, at most 25 words).\n- Write the final message of a turn in Korean, using 합쇼체 (~습니다, ~입니다). Do not mix in 해요체 or 평서체.\n- Keep code, commands, file paths, error messages, numbers and identifiers verbatim.\n- In Korean list items that are sentences, end with a 합쇼체 verb (\"검토할 예정입니다\", not \"검토 예정\"). Table cells and labels may stay noun phrases.\n\n## Final report format (ASD-STE100, about 80%)\n1. Put the conclusion or the state label first: WORKING / PARTIAL / BROKEN / BLOCKED.\n2. If the user must do something risky or irreversible, put it at the top.\n3. Use numbered lists for steps. One item = one action.\n4. One sentence = one fact. Use short, active sentences.\n5. Use one term for one thing. Do not switch to synonyms.\n6. Write full natural sentences only where shortening could mislead: the reason for a risk, a confirmation before an irreversible action, order-sensitive steps, and answers to a confused user. That is why this is 80%, not 100%.\n7. Shortening must not drop conditions, limits or uncertainty words (~이면, 약, ~일 수 있다, 미확인). If a shorter sentence would sound more certain than the evidence, keep the longer one.\n8. Show at most 5 items in a list. Keep the rest for when the user asks.\n9. For \"확인됨 / 검증됨 / 통과함\", name the command, test or file that proves it.\n10. List what you intentionally did not do.\n11. If something stays open, end with one concrete action the user can do in 2 minutes.\n12. When one request has split into 3 or more sub-tasks, start each reply with \"진행: 완료 n / 전체 N · 지금: X · 다음: Y\". Count only finished work as 완료.\n\n## What not to write\n- No praise, no filler openers, no closing pleasantries.\n- No list of options you did not choose.\n- No terms or labels you invented during the session. Restate them in plain words.\n\n## Where this does not apply\n- Simple questions and casual chat: answer directly in 1-2 Korean sentences.\n- Files written to disk: follow that file's existing style.",
+      "author": {
+        "handle": "@AlexZio00",
+        "name": "AlexZio00"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114570648433688929",
+          "sourceUrl": "https://x.com/Multi_Serio_Ai/status/2114570648433688929",
+          "capturedAt": "2026-10-27T09:44:53.995857+00:00",
+          "createdAt": "2026-10-26T04:11:44.000Z",
+          "fullText": "https://t.co/Z4r07xEbH0 \n\n희희 한번 써보세요.",
+          "author": {
+            "handle": "@Multi_Serio_Ai",
+            "name": "Multi_Serio_Ai"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/Z4r07xEbH0",
+              "text": "https://github.com/Burntgogi/kar-plain/tree/main…",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114573652977209406",
+          "sourceUrl": "https://x.com/AlexZio00/status/2114573652977209406",
+          "capturedAt": "2026-10-27T09:44:53.995857+00:00",
+          "createdAt": "2026-10-26T04:23:40.000Z",
+          "fullText": "오호 봤어요 ㅎㅎ\n제가 시각화이상 아예 안써서 ㅋㅋㅋㅋ\n아무래도 ㅠㅠ\n철저하게 글로만 쓰는 중이라서요 \n\n나중에 필요하면 보겠습니다. ㅎ",
+          "author": {
+            "handle": "@AlexZio00",
+            "name": "AlexZio00"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114560408829018394",
+          "sourceUrl": "https://x.com/Rumii_404/status/2114560408829018394",
+          "capturedAt": "2026-10-27T09:44:53.995857+00:00",
+          "createdAt": "2026-10-26T03:31:02.000Z",
+          "fullText": "less fluff more clarity",
+          "author": {
+            "handle": "@Rumii_404",
+            "name": "Rumii_404"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/AlexZio00/status/2114550081005498717",
+        "observed_main_url": "https://x.com/AlexZio00/status/2114550081005498717",
+        "author_handle": "AlexZio00",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 3,
+          "max": 4
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114907845162623482",
+      "sourceUrl": "https://x.com/dramaticexit25/status/2114907845162623482",
+      "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+      "createdAt": "2026-10-27T02:31:38.000Z",
+      "fullText": "1. 강세장 한복판에서는 변동성을 못 죽이고, 시장이 약해져야 (강세장 안에서 쉬어가는 페이즈 혹은 choppy) 변동성을 죽일 수 있는데 \n컵앤핸들의 컵에서 추세는 이미 강하게 태어났고, 변동성을 죽이는 과정이 필요한 것 뿐이라서 \n챠피마켓이나 미니 베어마켓에서 훌륭히 버텨주며 핸들을 완성하니 \n셋업의 출현시기가 시장이 대세 상승장 안에서 작은 추세가 약하거나 챠피할때와 겹치는거지\n\n2. HTF에서 변동성을 죽이는 과정인 핸들 부분은 결국 HTF 기준 변동성을 죽이는 것이고\n그 안에서 작은 추세/변동성이 움직이려면 결국 컵앤핸들 속 컵앤핸들이 자주 나올 수 밖에 없는거지 하하",
+      "author": {
+        "handle": "@dramaticexit25",
+        "name": "dramaticexit25"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114902306403786849",
+          "sourceUrl": "https://x.com/spaceastrium/status/2114902306403786849",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:09:37.000Z",
+          "fullText": "일단 줄먹을 하고 진짜 밑에서 노려보든 위에서 사든 해야겠음 ㅅㅂ",
+          "author": {
+            "handle": "@spaceastrium",
+            "name": "spaceastrium"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114903024728670671",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114903024728670671",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:12:28.000Z",
+          "fullText": "로코코좌랑 나랑 생각이 겹치는군\n\n주식시장이 정말 급하게 위로 쳐 올리면 이거 아예 먼지 가라앉고 나서 봐야함\n아예 쳐내리고 보던가",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114903130039292058",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114903130039292058",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:12:53.000Z",
+          "fullText": "XMR 찬양이나 하자.. 일봉까지 핸들 완성되고 있는듯",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114903233395409385",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114903233395409385",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:13:18.000Z",
+          "fullText": "LTF에서 다이아몬드 탑 걱정도 했는데 아닌 것 같고~",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114903307131232381",
+          "sourceUrl": "https://x.com/spaceastrium/status/2114903307131232381",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:13:36.000Z",
+          "fullText": "근데 진짜 혼자 쎄네. 대체 누구의 가호를 받고 있는 것이냐!!",
+          "author": {
+            "handle": "@spaceastrium",
+            "name": "spaceastrium"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114903771944042930",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114903771944042930",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:15:26.000Z",
+          "fullText": "이미 아실 것 같소만.. 컵앤핸들 있잖아? 이 셋업 특징이 (항상 그런건 아닌데)\n\n1. 시장이 힘이 애매할때랑 컵앤핸들 출현시기랑 미묘하게 겹치고\n2. 다른 셋업들보다 훨씬 자주 HTF에서 LTF까지 전부 다른 구역에서 컵앤핸들을 만드는 경우가 잦더군 (이 경우 3개월봉부터 일봉까지 ㅋㅋ)",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114904179835805784",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114904179835805784",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:17:04.000Z",
+          "fullText": "서로 다른 구역에서, 보통 HTF의 핸들부분을 LTF에서 컵을 그리는 식\n\n컵앤핸들을 만약 모든타임프레임에서 관찰될때 걸면 장기추세라도 살아있는 시장이라는 전제 하에서는 성과가 괜찮더라고",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114904559659413516",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114904559659413516",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:18:34.000Z",
+          "fullText": "1번은 왜 그럴까? 제대로 된 셋업까지 이 친구는 특히 시간이 줜나 오래 걸리고, 이미 핸들을 만드는 시간부터는 그저 더 큰 발산을 위해 변동성을 죽이는 과정에 들어섰기 때문에 그런 것 같음\n\n강세장 한복판에서는 변동성을 죽이기 어려우니깐",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114906566206095477",
+          "sourceUrl": "https://x.com/spaceastrium/status/2114906566206095477",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:26:33.000Z",
+          "fullText": "HTF에서의 핸들\nLTF에서의 컵\n\n기억해 둬야겠군..",
+          "author": {
+            "handle": "@spaceastrium",
+            "name": "spaceastrium"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114906734343200845",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114906734343200845",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:27:13.000Z",
+          "fullText": "아니.. 답글 정성스레 썼는데 댓을 지워버리면 우야노",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114908363423449316",
+          "sourceUrl": "https://x.com/spaceastrium/status/2114908363423449316",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:33:41.000Z",
+          "fullText": "장이 약할 때 주도 기업이 먼저 튀어나가는 걸 겁먹지 않아도 된다는 것과도 맞는군..! 🥸🥸",
+          "author": {
+            "handle": "@spaceastrium",
+            "name": "spaceastrium"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2114909220906869030",
+          "sourceUrl": "https://x.com/dramaticexit25/status/2114909220906869030",
+          "capturedAt": "2026-10-27T09:44:57.481857+00:00",
+          "createdAt": "2026-10-27T02:37:06.000Z",
+          "fullText": "대세 상승장이 맞기만 하다면. \n크립토의 경우 비트 75 다시 가도 이건 대세 상승장임.",
+          "author": {
+            "handle": "@dramaticexit25",
+            "name": "dramaticexit25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dramaticexit25/status/2114907845162623482",
+        "observed_main_url": "https://x.com/dramaticexit25/status/2114907845162623482",
+        "author_handle": "dramaticexit25",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 12,
+          "max": 13
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
