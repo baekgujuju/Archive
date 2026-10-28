@@ -9028,7 +9028,7 @@
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
       "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-10-27T05:33:52.921927+00:00"
+      "failed_at": "2026-10-28T05:36:41.622859+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12457,7 +12457,7 @@
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:31:53.917522+00:00"
+    "failed_at": "2026-10-28T05:35:03.037436+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12693,7 +12693,7 @@
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:32:23.459594+00:00"
+    "failed_at": "2026-10-28T05:35:27.668047+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13287,7 +13287,7 @@
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:33:52.925903+00:00"
+    "failed_at": "2026-10-28T05:36:41.625370+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13808,7 +13808,7 @@
     "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:33:52.920471+00:00"
+    "failed_at": "2026-10-28T05:36:41.621621+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13931,7 +13931,7 @@
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:33:52.926251+00:00"
+    "failed_at": "2026-10-28T05:36:41.625655+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14004,7 +14004,7 @@
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:33:52.926652+00:00"
+    "failed_at": "2026-10-28T05:36:41.625970+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14117,7 +14117,7 @@
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-27T05:33:52.927483+00:00"
+    "failed_at": "2026-10-28T05:36:41.626550+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16035,5 +16035,187 @@
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
     "failed_at": "2026-10-24T10:13:42.328019+00:00"
+  },
+  "reply:2114578442276753850:2114580713437892835": {
+    "paragraphs": [
+      "영상까지 코드로 뽑을 거면 HyperFrames도 같이 보시면 좋아요. HTML로 화면 짜고 GSAP 타임라인으로 움직임을 넣으면 MP4로 렌더해 줘서, 에이전트한테 '이 차트 10초짜리 영상으로 만들어 줘'가 실제로 돌아가요"
+    ],
+    "translated": [
+      "영상까지 코드로 뽑을 거면 HyperFrames도 같이 보시면 좋아요. HTML로 화면 짜고 GSAP 타임라인으로 움직임을 넣으면 MP4로 렌더해 줘서, 에이전트한테 '이 차트 10초짜리 영상으로 만들어 줘'가 실제로 돌아가요"
+    ],
+    "content_hash": "6366450907b13a90",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.628703+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113692026449326110:2113217292041695468": {
+    "paragraphs": [
+      "만약 「FINAL FANTASY」가 도트 그래픽 상태로 진화했다면...... \n그런 컨셉을 가지고 새로운 도트 그래픽으로 묘사되는 「FINAL FANTASY」 시리즈 최신작. \n　\n'FINAL FANTASY VII RESONANCE' 발매! \n　\nNintendo Switch™ 2, Nintendo Switch™, PlayStation®5 버전으로 지금 바로 만나보세요🎮",
+      "naver.com ​ (https://smartstore.naver.com/bnek/products/13821085629?nt_source=x&nt_medium=cpc&nt_detail=nsw2&twclid=21n6oakfl8nrxlfpmyyjkinbq7)  https://smartstore.naver.com/bnek/products/13821085629?nt_source=x&nt_medium=cpc&nt_detail=nsw2&twclid=21n6oakfl8nrxlfpmyyjkinbq7"
+    ],
+    "translated": [],
+    "content_hash": "2a0f8feb9f5f722f",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-28T05:36:41.631314+00:00"
+  },
+  "reply:2113722376919842915:2113848934036918540": {
+    "paragraphs": [
+      "Great stuff"
+    ],
+    "translated": [
+      "정말 좋은 내용이네요"
+    ],
+    "content_hash": "578230bb15175e4f",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.627695+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2114578442276753850:2114588489270612062": {
+    "paragraphs": [
+      "Magic UI 북마크만 해두고 묵혀뒀는데 에이전트용으로 정리돼 있어서 오늘 바로 붙여볼래요."
+    ],
+    "translated": [
+      "Magic UI 북마크만 해두고 묵혀뒀는데 에이전트용으로 정리돼 있어서 오늘 바로 붙여볼래요."
+    ],
+    "content_hash": "c666c0c50cbe8ef2",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.628827+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113692026449326110:2113700940381561306": {
+    "paragraphs": [
+      "Do you apply this rule on long term holdings also ?"
+    ],
+    "translated": [
+      "이 규칙을 장기 보유 종목에도 적용하시나요?"
+    ],
+    "content_hash": "79527d43cb12abfb",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.630264+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2114203462250750221:2114207593380057194": {
+    "paragraphs": [
+      "honestly solid breakdown, saving this one!",
+      "those PD arrays look handy.."
+    ],
+    "translated": [
+      "솔직히 정말 탄탄한 분석이네요. 저장해 둘게요!",
+      "저 PD 배열들은 유용해 보이네요.."
+    ],
+    "content_hash": "5865048feb19392e",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.631947+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113692026449326110:2113697324333724082": {
+    "paragraphs": [
+      "Those portfolio drawdown rules—halve at 5%, no new buys at 10%, go to cash at 15%—are a solid risk framework. You and \n@CoachClayton424 (https://x.com/CoachClayton424) \n remain my most trusted go-to sources for financial insight."
+    ],
+    "translated": [
+      "포트폴리오가 고점 대비 5% 하락하면 보유 규모를 절반으로 줄이고, 10% 하락하면 신규 매수를 중단하고, 15% 하락하면 현금으로 전환한다는 규칙은 탄탄한 위험 관리 체계입니다. 당신과\n@CoachClayton424 (https://x.com/CoachClayton424)\n는 여전히 제가 금융 관련 통찰을 얻기 위해 가장 신뢰하며 찾는 분들입니다."
+    ],
+    "content_hash": "5ee7cb1cb70327f7",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.629455+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113692026449326110:2113692540415443339": {
+    "paragraphs": [
+      "It's good to connect with people who enjoy learning and sharing knowledge. I appreciate your content and \n@john_grobe1 (https://x.com/john_grobe1) \n's as well."
+    ],
+    "translated": [
+      "배우고 지식을 나누는 것을 즐기는 사람들과 소통할 수 있어 좋습니다. 당신의 콘텐츠와\n@john_grobe1 (https://x.com/john_grobe1)\n의 콘텐츠 모두 감사히 보고 있습니다."
+    ],
+    "content_hash": "dc5357cccdc377fd",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.630671+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113722376919842915:2095223825059262507": {
+    "paragraphs": [
+      "Launch products now and grow your business with X Ads. \n@1x_tech (https://x.com/1x_tech) \n’s NEO robot campaign shows how X can turn a product announcement into action. As \n@Kenny___Rose (https://x.com/Kenny___Rose) \n put it, X was the perfect launch platform."
+    ],
+    "translated": [
+      "지금 제품을 출시하고 X 광고로 비즈니스를 성장시키세요.\n@1x_tech (https://x.com/1x_tech)\n의 NEO 로봇 캠페인은 X가 어떻게 제품 발표를 실제 행동으로 이어지게 하는지 보여줍니다.\n@Kenny___Rose (https://x.com/Kenny___Rose)\n의 말처럼, X는 완벽한 출시 플랫폼이었습니다."
+    ],
+    "content_hash": "0963975b40083c76",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.628438+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113722376919842915:2113889650628604256": {
+    "paragraphs": [
+      "Which is best tight stop with loose chart?"
+    ],
+    "translated": [
+      "느슨한 차트 패턴에서 타이트한 손절매를 잡는 것 중 어느 것이 가장 좋을까요?"
+    ],
+    "content_hash": "6cd5fc0f875bd873",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.626964+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113722376919842915:2113896806085951853": {
+    "paragraphs": [
+      "Posting weekend study results tomorrow"
+    ],
+    "translated": [
+      "내일 주말 스터디 결과를 게시하겠습니다."
+    ],
+    "content_hash": "7f3c3fb730d6d10b",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.627370+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113692026449326110:2113746568792682867": {
+    "paragraphs": [
+      "Worth logging the false alarms as well: every time breadth tripped the breaker and no drawdown followed, the cost is the rally sat out at reduced size. The breaker pays only if the drawdowns it cut exceed those missed rebounds."
+    ],
+    "translated": [
+      "잘못된 경보도 기록할 가치가 있습니다. 시장 폭 지표가 차단 장치를 작동시켰는데 이후 하락이 발생하지 않았다면, 그때마다 투자 규모를 줄인 상태로 상승장을 놓친 것이 비용입니다. 차단 장치가 줄여준 하락 손실이 놓친 반등 수익보다 커야만 이 장치가 제값을 합니다."
+    ],
+    "content_hash": "94bde798e4aa97ac",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.630053+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2114923044032626701:2114928682318111226": {
+    "paragraphs": [
+      "本日もよろしくお願いします😃❣️"
+    ],
+    "translated": [
+      "오늘도 잘 부탁드립니다😃❣️"
+    ],
+    "content_hash": "14454071db98b125",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.626732+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2113722376919842915:2113893497514373154": {
+    "paragraphs": [
+      "止损越紧胜率越高"
+    ],
+    "translated": [
+      "손절 폭이 좁을수록 승률이 높다"
+    ],
+    "content_hash": "72ff67ab4c50a167",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-28T05:36:41.627547+00:00",
+    "chunk": "posts-x.json"
   }
 }
