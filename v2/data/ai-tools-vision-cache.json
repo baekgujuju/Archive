@@ -6536,5 +6536,16 @@
     "category_ko": "금융·주식 비교",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:51f408c9304869becd82d91489d826176c6159e37e6009044dd3ba9386b6eb73": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/open-webui/open-webui"
+    ],
+    "title": "open-webui/open-webui",
+    "description_ko": "LLM을 위한 사용자 친화적인 오픈소스 웹 인터페이스 (구 Ollama WebUI)",
+    "category_ko": "AI / LLM 웹 UI",
+    "owner_hint": "open-webui",
+    "provider": "gemini"
   }
 }
