@@ -9027,8 +9027,8 @@
       "translated": [],
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
-      "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-10-28T05:36:41.622859+00:00"
+      "error": "Codex translation failed (exit 1); existing cache retained",
+      "failed_at": "2026-10-29T03:28:44.918184+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:35:03.037436+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:26.578929+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12692,8 +12692,8 @@
     "translated": [],
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:35:27.668047+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:37.436904+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13286,8 +13286,8 @@
     "translated": [],
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:36:41.625370+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:44.918729+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13807,8 +13807,8 @@
     "translated": [],
     "content_hash": "688ac05f147f559e",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:36:41.621621+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:44.918144+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13930,8 +13930,8 @@
     "translated": [],
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:36:41.625655+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:44.918740+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14003,8 +14003,8 @@
     "translated": [],
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:36:41.625970+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:44.918748+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14116,8 +14116,8 @@
     "translated": [],
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:36:41.626550+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:44.918754+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16057,8 +16057,8 @@
     "translated": [],
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-28T05:36:41.631314+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:44.918759+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16217,5 +16217,143 @@
     "validation_version": 2,
     "translated_at": "2026-10-28T05:36:41.627547+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2114832878840463620:2114627189119566266": {
+    "paragraphs": [
+      "Cindy made today's GitHub top 1 🚀 One open-source agent that brings Claude Code, Codex and other harnesses together to do real work on your desktop and phone. Open source and free 👉 https://t.co/GbfwexoxOr?twclid=21p9843gpp296sr8m2plb7clr3",
+      "Today's GitHub Daily Top: AI Aesthetic Awakening Day, Design Skills Launch a Collective Uprising, Specializing in Curing \"One Glance AI Vibe\"!",
+      "The 5 projects with the most brutal star surges, professionally dissected!",
+      "1. pbakaus/impeccable",
+      "A design language that makes AI"
+    ],
+    "translated": [],
+    "content_hash": "31f78eeafba73af8",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791647+00:00"
+  },
+  "reply:2114550081005498717:2114560408829018394": {
+    "paragraphs": [
+      "less fluff more clarity"
+    ],
+    "translated": [],
+    "content_hash": "350555e00e2b8921",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791680+00:00"
+  },
+  "reply:2114661234171851238:2114661392196186580": {
+    "paragraphs": [
+      "TSLA 오늘(10/26) 만기 옵션 맥스페인 약 $375입니다.  \n전일 종가 $372, 프리마켓 $379 근처.  \n콜 OI가 풋보다 약 2배 많아 콜 우세.  \n만기일엔 맥스페인 근처로 핀될 가능성 있어요.  \n데이터는 maximum-pain 및 유사 사이트 기준입니다.",
+      "Get the Grok app (https://itunes.apple.com/app/id6670324846)  https://itunes.apple.com/app/id6670324846"
+    ],
+    "translated": [],
+    "content_hash": "e991a1d7858ae3be",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791675+00:00"
+  },
+  "reply:2111472920241524897:2111474646902341935": {
+    "paragraphs": [
+      "All clean on both Windows and Mac. Also ran it in an isolated sandbox and found no issues"
+    ],
+    "translated": [],
+    "content_hash": "dfbd6b0003ed6a4f",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791695+00:00"
+  },
+  "reply:2111472920241524897:2111487145600851978": {
+    "paragraphs": [
+      "not perfect, but better than paying for the original Premium"
+    ],
+    "translated": [],
+    "content_hash": "5a63ed42073101f4",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791703+00:00"
+  },
+  "reply:2114907845162623482:2114903771944042930": {
+    "paragraphs": [
+      "이미 아실 것 같소만.. 컵앤핸들 있잖아? 이 셋업 특징이 (항상 그런건 아닌데)",
+      "1. 시장이 힘이 애매할때랑 컵앤핸들 출현시기랑 미묘하게 겹치고\n2. 다른 셋업들보다 훨씬 자주 HTF에서 LTF까지 전부 다른 구역에서 컵앤핸들을 만드는 경우가 잦더군 (이 경우 3개월봉부터 일봉까지 ㅋㅋ)"
+    ],
+    "translated": [],
+    "content_hash": "f3fd641fb2e93528",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791684+00:00"
+  },
+  "reply:2111472920241524897:2111487294213677142": {
+    "paragraphs": [
+      "Absolutely 🤝"
+    ],
+    "translated": [],
+    "content_hash": "c8cef05f2c788b7f",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791707+00:00"
+  },
+  "reply:2114907845162623482:2114904179835805784": {
+    "paragraphs": [
+      "서로 다른 구역에서, 보통 HTF의 핸들부분을 LTF에서 컵을 그리는 식",
+      "컵앤핸들을 만약 모든타임프레임에서 관찰될때 걸면 장기추세라도 살아있는 시장이라는 전제 하에서는 성과가 괜찮더라고"
+    ],
+    "translated": [],
+    "content_hash": "4d7492f2f4ae4b40",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791687+00:00"
+  },
+  "reply:2114907845162623482:2114906566206095477": {
+    "paragraphs": [
+      "HTF에서의 핸들\nLTF에서의 컵",
+      "기억해 둬야겠군.."
+    ],
+    "translated": [],
+    "content_hash": "3fc0e6921ec20653",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791692+00:00"
+  },
+  "reply:2111472920241524897:2115445979407368516": {
+    "paragraphs": [
+      "after unzip, i tried to run the exe., and clicking Run Anyway in the windows security screen. nothing happens after that"
+    ],
+    "translated": [],
+    "content_hash": "aef325f85fdfd7fa",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791715+00:00"
+  },
+  "reply:2111472920241524897:2111485620262486359": {
+    "paragraphs": [
+      "As long as you know how to make use of your brain, everything will be alright."
+    ],
+    "translated": [],
+    "content_hash": "731af0244c13f010",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791712+00:00"
+  },
+  "reply:2111472920241524897:2111481949223260348": {
+    "paragraphs": [
+      "i got it running on my Mac Pro. works really fucking well"
+    ],
+    "translated": [],
+    "content_hash": "c6077277f97ee1c9",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791700+00:00"
+  },
+  "reply:2111472920241524897:2111475613429322035": {
+    "paragraphs": [
+      "Thanks for testing! Also, all VT scans are updated daily and uploaded to GitHub and the Discord server."
+    ],
+    "translated": [],
+    "content_hash": "ae6c303506613bd1",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-29T03:28:55.791698+00:00"
   }
 }
