@@ -31008,6 +31008,1322 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2115611218908168372",
+      "sourceUrl": "https://x.com/mercy_kwonu/status/2115611218908168372",
+      "capturedAt": "2026-10-29T03:24:22.305971+00:00",
+      "createdAt": "2026-10-29T01:06:35.000Z",
+      "fullText": "신용카드 분실했는데 중학생 커플이 주워서 60만 원을 사용함. -> 경찰 신고하고 진술서까지 작성했지만, 가해 학생 부모는 합의 거부.\n\n경찰은 민사소송 하라고 하고, 법원에서는 변호사를 알아보라고 했다는데…\n\n피해자분, 당장 변호사부터 찾지 마세요.\n\n해결 순서는 이렇습니다.\n① 카드사 고객센터에 전화\n- 분실·도난에 따른 부정사용 60만 원 보상 신청\n- 분실신고 전 60일 이내 부정사용은 원칙적으로 보상 대상\n- 단, 고의·중과실 등 예외 있음\n\n② 카드사가 보상을 거절한다면\n- 거절 사유를 서면으로 요청\n- 금융감독원 1332에 민원·분쟁조정 신청\n\n③ 카드사 보상으로 해결되지 않는다면\n- 대한법률구조공단 132에 무료 법률상담 신청\n- 미성년자와 부모 중 누구에게 손해배상을 청구할 수 있는지 확인\n\n④ 민사소송이 필요하다면\n- 경찰 사건번호와 피해 증빙자료 확보\n- 피고 인적사항 확인 방법 상담\n- 60만 원은 소액사건이므로 변호사 없이 직접 소송 가능\n\n핵심은 카드사 보상 신청 → 금감원 민원 → 무료 법률상담 → 필요시 소액소송 순서입니다.\n\n가해자 부모가 합의를 거부한다고 피해자가 무조건 60만 원을 떠안아야 하는 건 아닙니다.\n\n이런 절차는 피해자가 혼자 헤매지 않도록 널리 알려졌으면 좋겠습니다.\n\n카드 분실해서 누군가 사용했다면 당황하지 마시고\n하나 하나 챙겨보면 좋겠네요.\n\n신용카드 분실했는데 중학생 커플이 주워서 60만 원을 사용함. -> 경찰 신고하고 진술서까지 작성했지만, 가해 학생 부모는 합의 거부.\n\n경찰은 민사소송 하라고 하고, 법원에서는 변호사를 알아보라고 했다는데…\n\n피해자분, 당장 변호사부터 찾지 마세요.\n\n해결 순서는 이렇습니다.\n① 카드사",
+      "author": {
+        "handle": "@mercy_kwonu",
+        "name": "mercy_kwonu"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115623060393054476",
+          "sourceUrl": "https://x.com/sebal3050/status/2115623060393054476",
+          "capturedAt": "2026-10-29T03:24:22.305971+00:00",
+          "createdAt": "2026-10-29T01:53:38.000Z",
+          "fullText": "좋은 정보 감사합니다!ㅠ 카드 잘챙겨야겟네여 ㅠ",
+          "author": {
+            "handle": "@sebal3050",
+            "name": "sebal3050"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115628063929377193",
+          "sourceUrl": "https://x.com/mercy_kwonu/status/2115628063929377193",
+          "capturedAt": "2026-10-29T03:24:22.305971+00:00",
+          "createdAt": "2026-10-29T02:13:31.000Z",
+          "fullText": "안잃어버리는게 최고죠.^^",
+          "author": {
+            "handle": "@mercy_kwonu",
+            "name": "mercy_kwonu"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/mercy_kwonu/status/2115611218908168372",
+        "observed_main_url": "https://x.com/mercy_kwonu/status/2115611218908168372",
+        "author_handle": "mercy_kwonu",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115237012076921201",
+      "sourceUrl": "https://x.com/minheo93698092/status/2115237012076921201",
+      "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+      "createdAt": "2026-10-28T00:19:37.000Z",
+      "fullText": "테슬라 차량의 모니터와 맥북을 무료로 연결했습니다.\n\n곧 올라갈텐데 제가 바이브코딩으로 테슬라 차량에서 맥북과 연동되어 미러링을 사용하는 서비스를 만드는데 성공했습니다. \n\n여러가지 방법들이 있는데 대부분 유료 서비스들이 많은것 같아요. \n\n곧 오픈소스로 배포하도록 할 예정이니 많은 관심 부탁드립니다\n\n테슬라 차량안에서의 0원으로 꾸미는 나만의 업무공간 차스크테리어도 영상으로 다뤄볼 예정입니다:)\n\n이 방법으로 성공!",
+      "author": {
+        "handle": "@minheo93698092",
+        "name": "minheo93698092"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4b326d9629cfeef2a00796a9ed39c2e9d6f0aa77bc0f5395bfb1d6458a47e3d8.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-40378c4682aa75f14be725096cd59e45fcedbbf9d8a9f45cc505616beb24c87b.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": {
+        "tweetId": "2115228432808526168",
+        "sourceUrl": "https://x.com/minheo93698092/status/2115228432808526168",
+        "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+        "createdAt": "",
+        "fullText": "코덱스가 멍청해졌다면 반드시 이 방법을 사용해보세요.\n\n코덱스앱을 사용중이시라면 작업중인 쓰레드에서 사이드챗(첨부한 이미지 두번째에 단축키 있음)을 사용하여,\"클로드 코드 CLI의 Opus 5.5를 사용하여 작업 중인 내용 점검해 줘.그리고 개선작업까지 진행하여 본 쓰레드에 전달해줘.\"\n\n코덱스  x.com/minheo93698092…",
+        "author": {
+          "handle": "@minheo93698092",
+          "name": "minheo93698092"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-87671e7b97909d8e32d8a8350af056dfa8eaad0496d7fafdc88953d40947523c.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d30c6ded2f1f2fab4274beed8bbfd6e37b4b2bc45dabbb814e8a51f9a61cb137.png",
+            "alt": "Image"
+          }
+        ],
+        "links": [],
+        "stats": {}
+      },
+      "replies": [
+        {
+          "tweetId": "2115243613374550188",
+          "sourceUrl": "https://x.com/innotiva100/status/2115243613374550188",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T00:45:51.000Z",
+          "fullText": "와우 이것이 필요했는데 대부분 유료더라구요. 저는 윈도우 삼성 컴인데 미러링이 가능할가요? 맥만 가능할런가요?",
+          "author": {
+            "handle": "@innotiva100",
+            "name": "innotiva100"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115246515631571437",
+          "sourceUrl": "https://x.com/minheo93698092/status/2115246515631571437",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T00:57:23.000Z",
+          "fullText": "가능할듯요\n한번 그것도 체크해보겠습니다:)",
+          "author": {
+            "handle": "@minheo93698092",
+            "name": "minheo93698092"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115243800897655033",
+          "sourceUrl": "https://x.com/innotiva100/status/2115243800897655033",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T00:46:36.000Z",
+          "fullText": "설마 더 데스크는 트렁크 지하실 덮개? ㅋㅋㅋㅋㅋ",
+          "author": {
+            "handle": "@innotiva100",
+            "name": "innotiva100"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115246407649227207",
+          "sourceUrl": "https://x.com/minheo93698092/status/2115246407649227207",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T00:56:57.000Z",
+          "fullText": "빙고 ㅎ",
+          "author": {
+            "handle": "@minheo93698092",
+            "name": "minheo93698092"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115245650141163989",
+          "sourceUrl": "https://x.com/NOW0K/status/2115245650141163989",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T00:53:57.000Z",
+          "fullText": "과학자신가요? 저 기억하시죠? 기다리고 있습니다 ㅋㅋㅋㅋ 계속!",
+          "author": {
+            "handle": "@NOW0K",
+            "name": "NOW0K"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115251897838051779",
+          "sourceUrl": "https://x.com/minheo93698092/status/2115251897838051779",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T01:18:46.000Z",
+          "fullText": "그냥 AI좋아하는 사람입니다 ㅎ",
+          "author": {
+            "handle": "@minheo93698092",
+            "name": "minheo93698092"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2114604587558560140",
+          "sourceUrl": "https://x.com/HOTD_ads/status/2114604587558560140",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "",
+          "fullText": "약 900,000원 상당의 아이템을 받을 수 있어요!\n\n다운로드 없이 무료 플레이\n\n잠깐만 같이 놀자 (https://h5.g123.jp/game/hotd?lang=ko&platform=auto&utm_source=twitter&utm_campaign=hotd_ko_NewDisplayFirstpayKoreanGamerWW1026coupon_adn_all&utm_adgroup=cr_normal_coupon_all&utm_content=hotd_ko_rd510-10262_1080-1080.jpg&twclid=272af9m9w9wi8d6n433qsyp60k)  https://h5.g123.jp/game/hotd?lang=ko&platform=auto&utm_source=twitter&utm_campaign=hotd_ko_NewDisplayFirstpayKoreanGamerWW1026coupon_adn_all&utm_adgroup=cr_normal_coupon_all&utm_content=hotd_ko_rd510-10262_1080-1080.jpg&twclid=272af9m9w9wi8d6n433qsyp60k",
+          "author": {
+            "handle": "@HOTD_ads",
+            "name": "HOTD_ads"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d1213defa3b05ea1c1a2cf7bc151e3aa374d0add0962ceb34a6e4e9d3411668d.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://h5.g123.jp/game/hotd?lang=ko&platform=auto&utm_source=twitter&utm_campaign=hotd_ko_NewDisplayFirstpayKoreanGamerWW1026coupon_adn_all&utm_adgroup=cr_normal_coupon_all&utm_content=hotd_ko_rd510-10262_1080-1080.jpg&twclid=272af9m9w9wi8d6n433qsyp60k",
+              "text": "잠깐만 같이 놀자",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115249142239031484",
+          "sourceUrl": "https://x.com/OnewKonew/status/2115249142239031484",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T01:07:49.000Z",
+          "fullText": "크으 멋집니다!",
+          "author": {
+            "handle": "@OnewKonew",
+            "name": "OnewKonew"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115251920512368801",
+          "sourceUrl": "https://x.com/minheo93698092/status/2115251920512368801",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T01:18:51.000Z",
+          "fullText": "ㄱㄱ하시죠",
+          "author": {
+            "handle": "@minheo93698092",
+            "name": "minheo93698092"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115254545299488976",
+          "sourceUrl": "https://x.com/TechHyung/status/2115254545299488976",
+          "capturedAt": "2026-10-29T03:24:26.987971+00:00",
+          "createdAt": "2026-10-28T01:29:17.000Z",
+          "fullText": "차안에서 업무라니 대박인데요? 뭔가 낭만있습니다",
+          "author": {
+            "handle": "@TechHyung",
+            "name": "TechHyung"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/minheo93698092/status/2115237012076921201",
+        "observed_main_url": "https://x.com/minheo93698092/status/2115237012076921201",
+        "author_handle": "minheo93698092",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 10,
+          "max": 11
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115410833987788918",
+      "sourceUrl": "https://x.com/Mason_yoon94/status/2115410833987788918",
+      "capturedAt": "2026-10-29T03:24:31.592971+00:00",
+      "createdAt": "2026-10-28T11:50:19.000Z",
+      "fullText": "CVD 흡수 아주 좋은예시\n\n저항에서 CVD가 하락을 이어가지 못한다는 건, \n\n그 자리에서 매도가 가격을 내리지 못하고 있다는 뜻인데\n\n쉽게 생각해보면 됩니다. \n저항은 매도가 나와야 하는 자리잖아요?\n\n매도가 실제로 힘을 쓰고 있다면 CVD는 계속 떨어져야 겟죠?\n\n근데 가격에 저항에 붙어 있는데 \nCVD가 더 이상 안 떨어지거나, 오히려 올라가기 시작하면\n\n그 매도 물량을 같은 가격에서 매수가 받아내고 있다는 뜻이겟죠?\n\n이걸 흡수로 보시면 되겠습니다",
+      "author": {
+        "handle": "@Mason_yoon94",
+        "name": "Mason_yoon94"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8c74ab26703ec74e5e4debfa5e1e69af6af76bc192e1111ab8f374ee41cb481d.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-99559aacc31a19d486473658fffc3893e58f9b53bf1f484d0cb463685ba155a2.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115410972252987564",
+          "sourceUrl": "https://x.com/Mason_yoon94/status/2115410972252987564",
+          "capturedAt": "2026-10-29T03:24:31.592971+00:00",
+          "createdAt": "2026-10-28T11:50:52.000Z",
+          "fullText": "고점에서 가격이 더 안 오르고 있는데\n\nCVD가 계속 강하게 떨어지지 않고 멈춘 구간이 있습니다.\n매도가 나왔지만 가격을 제대로 내리지 못한 모습입니다.\n저항에서 흡수가 진행된 자리로 볼 수 있습니다.\n\n다만 반전 확인은 그 고점을 종가로 다시 아래로 마감할 때입니다.\n그렇다고 CVD만으로 바로 숏치지 말아야겠죠~?",
+          "author": {
+            "handle": "@Mason_yoon94",
+            "name": "Mason_yoon94"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/Mason_yoon94/status/2115410833987788918",
+        "observed_main_url": "https://x.com/Mason_yoon94/status/2115410833987788918",
+        "author_handle": "Mason_yoon94",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2111472920241524897",
+      "sourceUrl": "https://x.com/cryptotrice/status/2111472920241524897",
+      "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+      "createdAt": "2026-10-17T15:02:28.000Z",
+      "fullText": "How to Get Reverse-Engineered TradingView Premium on Windows and Mac\n\nThis is a full guide on how to get a reverse-engineered version of TradingView Premium that bypasses license checks and provides access to real-time data. It doesn't tamper with API requests, and you can import your custom scripts, just like in the original version. It's available on all versions of Windows and Mac.\n\nRelease Date: 10/2026 (Build 10/08/2026)  \nVersion: 3.3.0  \nDeveloper: TradingView   \nOfficial Website: \nTradingView (https://www.tradingview.com/) \n\nSystem Type: Windows 7–11 (32-bit & 64-bit), macOS \nLanguage: Multilingual   \nEdition: Premium Lifetime\n\nDownload Links:\n\n> Windows 7–11: \nDownload here (https://identidadsoberana.org/get/) \n\n> macOS: \nDownload here (https://identidadsoberana.org/mac/) \n\nPassword: github\n\nHow to Install:\n\n1. Unzip the archive using the provided password with WinRar.   \n2. Run TradingView_Premium_Desktop.   \n3. In the pop-up window labeled KeyGen, click \"Generate\".   \n4. Copy the generated license key and paste it into the required field.\n\nTradingView Premium Features:\n\n> 8 charts per tab   \n> 25 indicators per chart   \n> 20K historical bars   \n> 400 price alerts   \n> 400 technical alerts  \n> 50 parallel chart connections   \n> 2 watchlist alerts   \n> Time Price Opportunity indicator   \n> And much more\n\nP.S. This software is for educational purposes only. The link to the GitHub repo and the Discord server is in the \"Community\" section of the app.\n\nP.P.S. You can leave a tip for the devs on GitHub. It would help the project a lot. Also, VT scans are updated daily and uploaded to GitHub.\n\n (https://x.com/cryptotrice/article/2111472920241524897/media/2111472517072441345)",
+      "author": {
+        "handle": "@cryptotrice",
+        "name": "cryptotrice"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-71b5bc29fa1208075f4fe064a30d7502933b63d72c5bdc7ea56e87996bedaa74.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a1df209ee928338d58111f7d6072ffd3e5bf74316648d4f862b5e669bd623ace.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.tradingview.com/",
+          "text": "TradingView",
+          "kind": "body"
+        },
+        {
+          "url": "https://identidadsoberana.org/get/",
+          "text": "Download here",
+          "kind": "body"
+        },
+        {
+          "url": "https://identidadsoberana.org/mac/",
+          "text": "Download here",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/cryptotrice/article/2111472920241524897/media/2111472517072441345",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2111474646902341935",
+          "sourceUrl": "https://x.com/0xlaureno/status/2111474646902341935",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:09:19.000Z",
+          "fullText": "All clean on both Windows and Mac. Also ran it in an isolated sandbox and found no issues",
+          "author": {
+            "handle": "@0xlaureno",
+            "name": "0xlaureno"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-509f9f9288a08956aec50419e622c9b12229c3f991c6ab7f8ddf4c00f32f5e3b.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/0xlaureno/status/2111474646902341935"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/0xlaureno/status/2111474646902341935",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/0xlaureno/status/2111474646902341935",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111475613429322035",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111475613429322035",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:13:10.000Z",
+          "fullText": "Thanks for testing! Also, all VT scans are updated daily and uploaded to GitHub and the Discord server.",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111481949223260348",
+          "sourceUrl": "https://x.com/Horsepower14807/status/2111481949223260348",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:38:20.000Z",
+          "fullText": "i got it running on my Mac Pro. works really fucking well",
+          "author": {
+            "handle": "@Horsepower14807",
+            "name": "Horsepower14807"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111482053120385381",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111482053120385381",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:38:45.000Z",
+          "fullText": "🤝",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111487145600851978",
+          "sourceUrl": "https://x.com/mdinvestment_T/status/2111487145600851978",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:58:59.000Z",
+          "fullText": "not perfect, but better than paying for the original Premium",
+          "author": {
+            "handle": "@mdinvestment_T",
+            "name": "mdinvestment_T"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111487294213677142",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111487294213677142",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:59:35.000Z",
+          "fullText": "Absolutely 🤝",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111485620262486359",
+          "sourceUrl": "https://x.com/haoyieth/status/2111485620262486359",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:52:56.000Z",
+          "fullText": "As long as you know how to make use of your brain, everything will be alright.",
+          "author": {
+            "handle": "@haoyieth",
+            "name": "haoyieth"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111485852258062687",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111485852258062687",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:53:51.000Z",
+          "fullText": "😳",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115445979407368516",
+          "sourceUrl": "https://x.com/rey_saw/status/2115445979407368516",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-28T14:09:59.000Z",
+          "fullText": "after unzip, i tried to run the exe., and clicking Run Anyway in the windows security screen. nothing happens after that",
+          "author": {
+            "handle": "@rey_saw",
+            "name": "rey_saw"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115446531214266577",
+          "sourceUrl": "https://x.com/cryptotrice/status/2115446531214266577",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-28T14:12:10.000Z",
+          "fullText": "make sure your drivers are up to date and don't move the app out of the root folder because it needs the dependencies to run",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111478024013316460",
+          "sourceUrl": "https://x.com/WK56318/status/2111478024013316460",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:22:44.000Z",
+          "fullText": "Why you can only access the repo and discord through the local apps? It was different a month ago",
+          "author": {
+            "handle": "@WK56318",
+            "name": "WK56318"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111478666467406141",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111478666467406141",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:25:18.000Z",
+          "fullText": "because the repo went private, all links in the Community section are app-bound and expire after a single use",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2113796788239130721",
+          "sourceUrl": "https://x.com/mrblue1213/status/2113796788239130721",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-24T00:56:41.000Z",
+          "fullText": "@bot (https://x.com/bot) \n What is this",
+          "author": {
+            "handle": "@mrblue1213",
+            "name": "mrblue1213"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/bot",
+              "text": "@bot",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113988015324635555",
+          "sourceUrl": "https://x.com/cryptotrice/status/2113988015324635555",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-24T13:36:33.000Z",
+          "fullText": "Reverse-engineered TradingView Premium. You can read full documentation on the soft on GitHub",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2113861280964514291",
+          "sourceUrl": "https://x.com/AIWorldBits/status/2113861280964514291",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-24T05:12:57.000Z",
+          "fullText": "I'm scared they'll ban my account, I have indicators that are way too important to me jajajajaja",
+          "author": {
+            "handle": "@AIWorldBits",
+            "name": "AIWorldBits"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113987908189421642",
+          "sourceUrl": "https://x.com/cryptotrice/status/2113987908189421642",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-24T13:36:07.000Z",
+          "fullText": "No one has ever been banned from this",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111476865982738905",
+          "sourceUrl": "https://x.com/Buddha_in_life/status/2111476865982738905",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:18:08.000Z",
+          "fullText": "Worked on Windows 11. It only asked me to update Python to the latest version during installation",
+          "author": {
+            "handle": "@Buddha_in_life",
+            "name": "Buddha_in_life"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111477267880882384",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111477267880882384",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:19:44.000Z",
+          "fullText": "happens, the code is mainly Python",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111480018966585602",
+          "sourceUrl": "https://x.com/izci48/status/2111480018966585602",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:30:40.000Z",
+          "fullText": "It worked on my Windows operating system. Although it sometimes looks like malware, it is safe.",
+          "author": {
+            "handle": "@izci48",
+            "name": "izci48"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2111481109427130477",
+          "sourceUrl": "https://x.com/cryptotrice/status/2111481109427130477",
+          "capturedAt": "2026-10-29T03:24:36.478971+00:00",
+          "createdAt": "2026-10-17T15:35:00.000Z",
+          "fullText": "you can get occasional false positives",
+          "author": {
+            "handle": "@cryptotrice",
+            "name": "cryptotrice"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/cryptotrice/status/2111472920241524897",
+        "observed_main_url": "https://x.com/cryptotrice/status/2111472920241524897",
+        "author_handle": "cryptotrice",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 20,
+          "max": 21
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115003065623368122",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115003065623368122",
+      "capturedAt": "2026-10-29T03:24:40.520972+00:00",
+      "createdAt": "2026-10-27T08:50:00.000Z",
+      "fullText": "솔직히 저장만 하고 안 보는 형들은 이거 하나면 된다고 봄\n\n북마크, 캡처, 나중에 읽기, 반쯤 쓰다 만 노션 페이지\n이거 쌓아두기만 하고 다시 열어본 적 있음..?\n\n이름은 second-brain-os\nAI가 알아서 만들고 알아서 관리해주는 '두 번째 뇌'임\n깃허브 별 1,124개\n\n내가 읽고 보고 저장한 걸 던져두면\nAI가 서로 연결된 위키 페이지로 정리해줌\n이미 있던 내용이랑도 알아서 엮어주고\n나중엔 거기다 대고 질문까지 할 수 있다고 함\n\n저장 파일은 그냥 마크다운이라 내 컴퓨터에 내 것으로 남음\n공짜에 가입도 없고\n옵시디언이랑 클로드 같은 에이전트만 있으면 된대\n\n만든 사람 설명이 좀 뼈 때림\n자료 분류하고 연결하는 건 지루한 일이라\n사람은 2주 지나면 손을 놓는다는 거\n그러니까 그 일을 아예 AI한테 넘기면 계속 굴러간다는 논리\n\n저장소 안에 들어있는 것도 꽤 많음\n가이드 65페이지에 시작용 템플릿, 스킬 18개\n단일 프롬프트부터 실제 에이전트까지 가는 7단계 강의\n분야별로 펼쳐보는 핸드북까지 다 공짜임\n\n이렇게 쓰면 됨\n1. 깃허브 저장소 통째로 받기 (git clone)\n2. 안에 있는 vault-template 폴더를 ~/brain으로 복사\n3. skills·commands·agents 폴더는 ~/brain/.claude 안으로, scripts는 ~/brain 안으로\n4. ~/brain 폴더로 가서 claude 실행\n\n저녁 한 번이면 세팅 끝나게 아홉 단계로 짜놨다고 함\nscripts까지 복사해두면 /metrics, /health, /graph-export 같은 명령도\n안에서 바로 돌아감\n\n써먹을 데는 직장인이 제일 많을듯\n업무 자료, 회의 메모, 업계 기사 쌓아둔 거\n나중에 \"그때 그거 뭐였지\" 할 때 바로 물어보면 되니까\n\n부업러도 마찬가지\n벤치마킹하려고 저장한 계정·글·영상 링크가\n폴더에 묻혀 있는 게 아니라 서로 엮여서 남는 거임\n이게 제일 탐남\n\n2주면 정리 손 놓는다는 거 너무 정확해서 좀 찔림\n\nhttps://t.co/lvOp5wBVGP",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7c23057a76aace22b208fa4839d830dc6f5f489d16cb7af058da81078408fe14.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/lvOp5wBVGP",
+          "text": "https://github.com/undefined-ui/second-brain-os…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115003065623368122",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115003065623368122",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115235849650499635",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115235849650499635",
+      "capturedAt": "2026-10-29T03:24:44.197972+00:00",
+      "createdAt": "2026-10-28T00:15:00.000Z",
+      "fullText": "한컴 없이 hwp 만들고 고치는 클로드 스킬 나옴\n\n정부 양식 받을 때마다\n한컴오피스 없어서 멈칫했던 형들 꽤 될듯\n\n이름은 claw-hwp\n클로드나 코덱스한테 한글 문서(.hwp/.hwpx)를\n읽히고, 새로 만들고, 고치게 해주는 오픈소스 스킬임\n\n제일 큰 포인트는 한컴 프로그램이 없어도 된다는 거\nAI한테 hwp 던지면 못 읽어서\npdf로 바꿔서 다시 올리고 그랬던 것 같은데\n그 단계를 통째로 건너뛰는 거라고 보면 됨\n\n깃허브 별은 187개\n아직 엄청 유명한 저장소는 아닌데\n한국 직장인한테는 별 몇만 개짜리 해외 스킬보다\n이게 더 바로 써먹힐 수도 있음\n\n할 수 있는 건 딱 세 가지\n읽기: hwp 파일 내용을 클로드가 읽음\n만들기: 새 한글 문서를 만들어줌\n편집: 이미 있는 문서를 고쳐줌\n\n어디에 써먹냐면\n정부지원사업 신청서, 관공서 제출 서류\n학교나 공공기관 공문처럼 hwp로만 오는 양식들\n\n특히 맥 쓰거나\n회사 PC에 한컴 라이선스 없는 사람한테\n제일 크게 와닿을듯\n\n부업러도 쓸 데 많음\n청년창업이나 소상공인 지원 서류가 거의 hwp라서\n칸 채우는 노가다만 넘겨도 시간 꽤 아낄 거임\n\n물론 hwp는 표랑 서식 복잡한 문서가 많아서\n결과물은 한 번 열어보고 내는 게 마음 편할듯\n\n정부지원사업 준비하는 형들은 공고에 붙은 hwp 양식 하나부터 클로드한테 읽혀보셈\n\nhttps://t.co/18J5F300ln",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ae43004e07a6a1b86874c29bb1b1ea493db28535bae29fff4788212bf5b50370.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/18J5F300ln",
+          "text": "https://github.com/DoHyun468/claw-hwp…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115236840152445080",
+          "sourceUrl": "https://x.com/Insight_sua/status/2115236840152445080",
+          "capturedAt": "2026-10-29T03:24:44.197972+00:00",
+          "createdAt": "2026-10-28T00:18:56.000Z",
+          "fullText": "오 신기하다",
+          "author": {
+            "handle": "@Insight_sua",
+            "name": "Insight_sua"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115243228559757489",
+          "sourceUrl": "https://x.com/tkddud957/status/2115243228559757489",
+          "capturedAt": "2026-10-29T03:24:44.197972+00:00",
+          "createdAt": "2026-10-28T00:44:19.000Z",
+          "fullText": "클로드는 신이네요\n주가가 궁금해집니다ㅎㅎ",
+          "author": {
+            "handle": "@tkddud957",
+            "name": "tkddud957"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115235849650499635",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115235849650499635",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115068497030267274",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115068497030267274",
+      "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+      "createdAt": "2026-10-27T13:10:00.000Z",
+      "fullText": "클로드 코드 하나로 게임 회사를 차려주는 스킬 이거 미쳤음\n\nAI 직원이 49명 붙음\n스킬 74개, 문서 템플릿만 62개ㄷㄷ\n\n이름은 Claude-Code-Game-Studios\n깃허브 별 2.7만 찍힌 저장소임\n\n만든 사람이 짚은 문제가 꽤 현실적임\nAI랑 혼자 게임 만들면 힘은 센데 구조가 없다는 거\n\n숫자 대충 박아넣어도 말리는 사람 없고\n기획 문서 건너뛰어도 아무도 뭐라 안 하고\n코드가 엉켜도 QA 해줄 사람이 없음\n\n\"이게 우리 게임 방향이랑 맞아?\"\n이 질문 해주는 사람이 없다는 게 제일 크다고 함\n\n그래서 채팅창 하나를\n진짜 회사처럼 층층이 나눠버림\n\n맨 위엔 게임 방향을 지키는 디렉터들\n중간엔 기획·프로그래밍·아트·사운드 같은\n부서마다 책임지는 리드\n밑에선 실제 손으로 만드는 전문가들\n\n각자 맡은 일이 정해져 있고\n문제 생기면 위로 올리는 경로랑\n통과해야 하는 품질 체크까지 있음\n\n안에 들어있는 것도 많음\n저장하거나 올릴 때 자동으로 검사하는 장치 15개\n게임 로직·UI·네트워크 코드 고칠 때\n지켜야 하는 코딩 규칙 14개\n\n템플릿은 게임 기획서, UX 설계서,\n스프린트 계획, HUD 디자인, 접근성 문서까지 다 있음\n\n쓰는 건 슬래시 명령어로 함\n/start, /design-system, /create-epics,\n/create-stories, /dev-story, /story-done 이런 식\n\n아이디어 정리부터 할 일 쪼개고\n하나씩 만들고 끝났다고 체크하는 흐름이\n명령어 이름만 봐도 대충 보임\n\n중요한 건 결정은 여전히 본인이 한다는 거\nAI가 알아서 게임 뽑는 게 아니라\n옆에서 맞는 질문 던지고 실수 일찍 잡아주는 팀이 생기는 느낌\n\n퇴근하고 인디게임 하나 만들어보고 싶었던 형들한테\n제일 맞을 듯\n\n게임 아니어도 혼자 사이드 프로젝트 굴리는 부업러면\n이 회사식 구조 자체가 참고할 만함\n\n혼자 만드는데 디렉터한테 기획 검사받는 시대라니 이건 좀 무섭긴 함\n\nhttps://t.co/4dzGNTSL54",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f24e3af7042298a8eb44e8760903842b383cfe37ea48b1f300cf754d839b92f9.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/4dzGNTSL54",
+          "text": "https://github.com/Donchitos/Claude-Code-Game-Studios…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115320798395449467",
+          "sourceUrl": "https://x.com/Saya_seven/status/2115320798395449467",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-28T05:52:33.000Z",
+          "fullText": "아이구 토큰 줄줄 녹겟네.. 부자들은 써볼만하겠네요",
+          "author": {
+            "handle": "@Saya_seven",
+            "name": "Saya_seven"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115257436298981611",
+          "sourceUrl": "https://x.com/2ynch/status/2115257436298981611",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-28T01:40:47.000Z",
+          "fullText": "직원 49명이면 진짜 회사네요 ㅋㅋ",
+          "author": {
+            "handle": "@2ynch",
+            "name": "2ynch"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115208128010879401",
+          "sourceUrl": "https://x.com/purpleeddy_dev/status/2115208128010879401",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-27T22:24:51.000Z",
+          "fullText": "혼자 해도 팀 같겠어요 ㅎㅎ",
+          "author": {
+            "handle": "@purpleeddy_dev",
+            "name": "purpleeddy_dev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113876492736135364",
+          "sourceUrl": "https://x.com/Starlink/status/2113876492736135364",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "",
+          "fullText": "빠르고 안정적인 가정용 인터넷을 통해 여러 기기에서 끊김 없이 콘텐츠를 스트리밍하고, 재택근무하는 등 다양한 활동을 하실 수 있습니다.\n\n몇 분이면 온라인으로 주문을 완료하실 수 있어요.\n\n주문하기 (https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-cabinlights-stream&twclid=2d05ge1tumtcxyfxrl5dhpyr6e)  https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-cabinlights-stream&twclid=2d05ge1tumtcxyfxrl5dhpyr6e",
+          "author": {
+            "handle": "@Starlink",
+            "name": "Starlink"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-90234bd68b13dc47e183fb6ffde7c5ed9f77d59884938eddf9e8a3d93d6e6260.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-cabinlights-stream&twclid=2d05ge1tumtcxyfxrl5dhpyr6e",
+              "text": "주문하기",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115118685178531915",
+          "sourceUrl": "https://x.com/Rafat_012/status/2115118685178531915",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-27T16:29:26.000Z",
+          "fullText": "와 이거 진짜 미쳤네 ㅋㅋ 구조 없는 게 문제라는 거 공감",
+          "author": {
+            "handle": "@Rafat_012",
+            "name": "Rafat_012"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115304356073640035",
+          "sourceUrl": "https://x.com/gsfx9a/status/2115304356073640035",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-28T04:47:13.000Z",
+          "fullText": "누가 먼저 해보고 알려줘 부정적이라 토큰만 쓰고 허접한 게임 나올듯",
+          "author": {
+            "handle": "@gsfx9a",
+            "name": "gsfx9a"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115373090251432327",
+          "sourceUrl": "https://x.com/Buenodias_Kay/status/2115373090251432327",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-28T09:20:21.000Z",
+          "fullText": "Wow",
+          "author": {
+            "handle": "@Buenodias_Kay",
+            "name": "Buenodias_Kay"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115387045967429814",
+          "sourceUrl": "https://x.com/hambara000/status/2115387045967429814",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-28T10:15:48.000Z",
+          "fullText": "@grok (https://x.com/grok) \n 의견을 말해봐",
+          "author": {
+            "handle": "@hambara000",
+            "name": "hambara000"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/grok",
+              "text": "@grok",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115109445030257035",
+          "sourceUrl": "https://x.com/NOW0K/status/2115109445030257035",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-27T15:52:43.000Z",
+          "fullText": "저장~",
+          "author": {
+            "handle": "@NOW0K",
+            "name": "NOW0K"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115269893490987249",
+          "sourceUrl": "https://x.com/OhChadol/status/2115269893490987249",
+          "capturedAt": "2026-10-29T03:24:48.186972+00:00",
+          "createdAt": "2026-10-28T02:30:17.000Z",
+          "fullText": "아주 좋아요! 잘쓰겠습니다",
+          "author": {
+            "handle": "@OhChadol",
+            "name": "OhChadol"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115068497030267274",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115068497030267274",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 10,
+          "max": 11
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115078399056089263",
+      "sourceUrl": "https://x.com/QullamaggieHQ/status/2115078399056089263",
+      "capturedAt": "2026-10-29T03:24:51.769972+00:00",
+      "createdAt": "2026-10-27T13:49:21.000Z",
+      "fullText": "Wait for the tight pivot inside the breakout. That is the trade. That is where the stop stays small. https://x.com/QullamaggieHQ/status/2039078798210031811 \n\nI do not buy range breakouts unless I can align the pivot across multiple timeframes.\n\nWhen I see a full range breakout setting up, I look for a tight pivot on the shorter timeframe inside that larger pattern. That alignment allows me to manage my risk with a much tighter stop",
+      "author": {
+        "handle": "@QullamaggieHQ",
+        "name": "QullamaggieHQ"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7d8b74198acfa09e7ed12869abdfeab019cdd2870b822fb5557847a8ac4861e2.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/QullamaggieHQ/status/2115078399056089263"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2039078798210031811",
+          "text": "https://x.com/QullamaggieHQ/status/2039078798210031811…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2115078399056089263",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2115078399056089263",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/QullamaggieHQ/status/2115078399056089263",
+        "observed_main_url": "https://x.com/QullamaggieHQ/status/2115078399056089263",
+        "author_handle": "QullamaggieHQ",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114970349993443758",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2114970349993443758",
+      "capturedAt": "2026-10-29T03:24:55.269972+00:00",
+      "createdAt": "2026-10-27T06:40:00.000Z",
+      "fullText": "한 줄 입력 → 상 받을 급 웹사이트 뽑아주는 스킬\n\n데모에서 넣은 게 진짜 이거 한 줄임\n\"포트폴리오 만들어줘, 내 이름은 Julio\"\n\n이름은 /awwwards\n웹디자인 상 주는 사이트 어워즈(Awwwards) 수준으로\n홈페이지를 통째로 만들어주는 스킬임\n깃허브 별 939개\n\nAI 혼자서 크리에이티브 디렉터, 디자이너, 개발자를 다 맡는다고 함\n기획하고 디자인하고 코드까지 짠 다음\n실제 브라우저에서 한 번 돌려보고 확인까지 끝낸 걸 넘겨준다는 거\n\n이 부분이 제일 크다고 봄\nAI한테 사이트 맡기면 보통 열어보면 깨져 있잖아\n그걸 자기가 먼저 띄워보고 넘긴다는 얘기니까\n\n같은 저장소에 /jury 라는 것도 같이 들어있음\n아무 사이트나 어워즈 심사위원처럼 점수를 매겨줌\n내가 만든 거, /awwwards가 만든 거, 경쟁사 사이트까지 다 됨\n\n이렇게 쓰면 됨\n1. 터미널에 npx skills add juliobsz/skills -g 입력\n2. 클로드 코드만 쓰면 뒤에 -a claude-code 붙이기\n3. 에이전트 세션을 새로 열기\n4. /awwwards 치거나 그냥 웹사이트 만들어달라고 말하기\n\n클로드 코드 플러그인 쪽이 편하면\n/plugin install awwwards --marketplace juliobsz/skills 로도 깔림\n대신 둘 중 하나만 써야 함\n둘 다 깔면 스킬이 두 번씩 뜬다고 적혀있음\n\n클로드 코드 말고 코덱스, 커서, 제미나이 CLI 같은 데서도 돌아감\n참고로 설치 도구가 익명 사용 데이터를 모으는데\nDISABLE_TELEMETRY=1 설정하면 끌 수 있음\n\n써먹을 데는 꽤 많음\n이직 준비하는 직장인 포트폴리오 페이지\n스마트스토어·클래스 하는 부업러 브랜드 소개 페이지\n외주로 홈페이지 만들어주는 형들은 시안 뽑는 용도로도 될듯\n\n개인적으로 /jury가 더 쏠쏠해 보임\n내 사이트 고치기 전에 잘나가는 경쟁사부터 점수 매겨보면\n뭐가 부족한지 감이 바로 오잖아\n\n만드는 거랑 채점하는 걸 한 세트로 묶은 건 진짜 영리했네\n\nhttps://t.co/x1zxfbJU2O",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1561ec02bbc07b92d78791cf70b7480016d4def28c9ba35ea115e02725318142.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/x1zxfbJU2O",
+          "text": "https://github.com/juliobsz/skills",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2114971134907351420",
+          "sourceUrl": "https://x.com/kaigooddev/status/2114971134907351420",
+          "capturedAt": "2026-10-29T03:24:55.269972+00:00",
+          "createdAt": "2026-10-27T06:43:07.000Z",
+          "fullText": "사이트 만들 일 생기면 이건 한번 써봐야겠습니다",
+          "author": {
+            "handle": "@kaigooddev",
+            "name": "kaigooddev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2114970349993443758",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2114970349993443758",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115044085421781376",
+      "sourceUrl": "https://x.com/QullamaggieHQ/status/2115044085421781376",
+      "capturedAt": "2026-10-29T03:24:58.784972+00:00",
+      "createdAt": "2026-10-27T11:33:00.000Z",
+      "fullText": "𝗗𝗢𝗡'𝗧 𝗚𝗘𝗧 𝗟𝗨𝗥𝗘𝗗 𝗕𝗬 𝗧𝗛𝗘 𝗥𝗔𝗟𝗟𝗬\n\n(Yesterday was green, but the indexes stalled at key levels and the bounce had no volume behind it.)\n\n𝗛𝗼𝘄 𝗱𝗼 𝘆𝗼𝘂 𝘁𝗲𝗹𝗹 𝗮 𝗿𝗲𝗮𝗹 𝗯𝗼𝘂𝗻𝗰𝗲 𝗳𝗿𝗼𝗺 𝗮 𝗰𝗵𝗼𝗽𝗽𝘆 𝗼𝗻𝗲?",
+      "author": {
+        "handle": "@QullamaggieHQ",
+        "name": "QullamaggieHQ"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4f36c5691b7b61c45a4a2fc46cf2a5d338e46932713765d1d3cabf5b791c2d48.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/QullamaggieHQ/status/2115044085421781376"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2115044085421781376",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2115044085421781376",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/QullamaggieHQ/status/2115044085421781376",
+        "observed_main_url": "https://x.com/QullamaggieHQ/status/2115044085421781376",
+        "author_handle": "QullamaggieHQ",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115035783279317032",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115035783279317032",
+      "capturedAt": "2026-10-29T03:25:02.641972+00:00",
+      "createdAt": "2026-10-27T11:00:00.000Z",
+      "fullText": "책 PDF 통째로 스킬로 바꿔준다는 별 3.6만 저장소\n\n이름은 book-to-skill\n만든 사람 설명이 좀 찔림\n\n좋은 실무서 사서 한 번 읽고\n석 달 뒤엔 7장이 있었는지도 기억 안 난다는 거\n이거 나만 그런 거 아니었음..\n\nPDF 검색하면 답이 아니라 페이지 목록만 나오고\nAI한테 그 책 물어보면 지어내거나 모른다고 하고\n읽으면서 메모하면 200줄짜리 문서 만들고 다시 안 연다고 ㅋㅋ\n\n그래서 이 스킬이 해주는 게 뭐냐면\n책을 요약하는 게 아니라 뼈대로 쪼개서 스킬로 만들어줌\n\n책에 나온 프레임워크, 판단 기준,\n하지 말아야 할 패턴, 챕터별 파일까지 따로 뽑아둠\n그다음 질문하면 AI가 맞는 챕터를 찾아 읽고\n실제 책 내용으로 답하는 방식\n\n숫자도 하나 박혀 있음\n질문 하나 하려고 책을 통째로 넣는 것보다\n토큰을 24배에서 51배까지 덜 쓴다고 함\n실제 책으로 재본 숫자라고\n\n클로드 코드만 되는 것도 아님\n코덱스, 깃허브 코파일럿 CLI, 오픈코드 같은 데서도\n같은 SKILL.md 형식이라 다 읽힌다고 함\n\n이렇게 쓰면 됨\n1. /book-to-skill ./my-book.pdf 처럼 책 파일을 지정\n2. 그럼 알아서 책을 스킬 하나로 정리해줌\n3. 이후엔 /책이름 + 궁금한 키워드 치면 해당 챕터 보고 답함\n\n책 한 권만 되는 것도 아니고\n문서 폴더나 자료 여러 개를 묶어서\n스킬 하나로 만드는 것도 된다고 함\n\n써먹을 데는 직장인 쪽이 제일 클 듯\n회사 업무 매뉴얼 폴더나 업계 실무서 넣어두면\n\"그 규정 어디 있었지\" 할 때 바로 물어보면 되니까\n\n부업러도 마케팅 책, 세무 책 같은 거\n사놓고 책장에만 꽂아둔 거 있으면\n이게 진짜 개꿀 활용법이라고 봄\n\n책 사놓고 묵혀둔 형들은 제일 자주 펴보는 실무서 한 권부터 넣어보셈\n\nhttps://t.co/ZIJInXjpZL",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-408163d1c599ba4e810819ffbf07b682bd14457054ec7ffb034b82f547f39ecb.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/ZIJInXjpZL",
+          "text": "https://github.com/virgiliojr94/book-to-skill…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115038113932464136",
+          "sourceUrl": "https://x.com/radarcat_kr/status/2115038113932464136",
+          "capturedAt": "2026-10-29T03:25:02.641972+00:00",
+          "createdAt": "2026-10-27T11:09:16.000Z",
+          "fullText": "와 메모 요약 정리 너무 좋은데요???",
+          "author": {
+            "handle": "@radarcat_kr",
+            "name": "radarcat_kr"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115043343940136970",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2115043343940136970",
+          "capturedAt": "2026-10-29T03:25:02.641972+00:00",
+          "createdAt": "2026-10-27T11:30:03.000Z",
+          "fullText": "가주아~",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115035783279317032",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115035783279317032",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
