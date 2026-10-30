@@ -9027,8 +9027,8 @@
       "translated": [],
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
-      "error": "Codex translation failed (exit 1); existing cache retained",
-      "failed_at": "2026-10-29T03:28:44.918184+00:00"
+      "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+      "failed_at": "2026-10-30T03:37:22.636961+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:26.578929+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:35:45.346522+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12692,8 +12692,8 @@
     "translated": [],
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:37.436904+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:36:13.125512+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13286,8 +13286,8 @@
     "translated": [],
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:44.918729+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.640719+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13807,8 +13807,8 @@
     "translated": [],
     "content_hash": "688ac05f147f559e",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:44.918144+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.635737+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13930,8 +13930,8 @@
     "translated": [],
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:44.918740+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.641035+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14003,8 +14003,8 @@
     "translated": [],
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:44.918748+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.641399+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14116,8 +14116,8 @@
     "translated": [],
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:44.918754+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.641978+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16057,8 +16057,8 @@
     "translated": [],
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:44.918759+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.642660+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16229,131 +16229,171 @@
     "translated": [],
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791647+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-10-30T03:37:22.644179+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
       "less fluff more clarity"
     ],
-    "translated": [],
+    "translated": [
+      "군더더기는 줄이고 명확성은 높게"
+    ],
     "content_hash": "350555e00e2b8921",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791680+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.645457+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2114661234171851238:2114661392196186580": {
     "paragraphs": [
       "TSLA 오늘(10/26) 만기 옵션 맥스페인 약 $375입니다.  \n전일 종가 $372, 프리마켓 $379 근처.  \n콜 OI가 풋보다 약 2배 많아 콜 우세.  \n만기일엔 맥스페인 근처로 핀될 가능성 있어요.  \n데이터는 maximum-pain 및 유사 사이트 기준입니다.",
       "Get the Grok app (https://itunes.apple.com/app/id6670324846)  https://itunes.apple.com/app/id6670324846"
     ],
-    "translated": [],
+    "translated": [
+      "TSLA 오늘(10/26) 만기 옵션 맥스페인 약 $375입니다.\n전일 종가 $372, 프리마켓 $379 근처.  \n콜 OI가 풋보다 약 2배 많아 콜 우세.  \n만기일엔 맥스페인 근처로 핀될 가능성 있어요.  \n데이터는 maximum-pain 및 유사 사이트 기준입니다.",
+      "Grok 앱을 다운로드하세요 (https://itunes.apple.com/app/id6670324846)  https://itunes.apple.com/app/id6670324846"
+    ],
     "content_hash": "e991a1d7858ae3be",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791675+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.645264+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2111474646902341935": {
     "paragraphs": [
       "All clean on both Windows and Mac. Also ran it in an isolated sandbox and found no issues"
     ],
-    "translated": [],
+    "translated": [
+      "Windows와 Mac 모두에서 완전히 문제없이 깨끗합니다. 격리된 샌드박스에서도 실행해 보았는데 아무런 이상도 발견되지 않았습니다."
+    ],
     "content_hash": "dfbd6b0003ed6a4f",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791695+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.646357+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2111487145600851978": {
     "paragraphs": [
       "not perfect, but better than paying for the original Premium"
     ],
-    "translated": [],
+    "translated": [
+      "완벽하진 않지만, 정품 Premium 비용을 지불하는 것보다는 낫습니다."
+    ],
     "content_hash": "5a63ed42073101f4",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791703+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.647197+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2114907845162623482:2114903771944042930": {
     "paragraphs": [
       "이미 아실 것 같소만.. 컵앤핸들 있잖아? 이 셋업 특징이 (항상 그런건 아닌데)",
       "1. 시장이 힘이 애매할때랑 컵앤핸들 출현시기랑 미묘하게 겹치고\n2. 다른 셋업들보다 훨씬 자주 HTF에서 LTF까지 전부 다른 구역에서 컵앤핸들을 만드는 경우가 잦더군 (이 경우 3개월봉부터 일봉까지 ㅋㅋ)"
     ],
-    "translated": [],
+    "translated": [
+      "이미 아실 것 같소만.. 컵앤핸들 있잖아? 이 셋업 특징이 (항상 그런건 아닌데)",
+      "1. 시장이 힘이 애매할때랑 컵앤핸들 출현시기랑 미묘하게 겹치고\n2. 다른 셋업들보다 훨씬 자주 HTF에서 LTF까지 전부 다른 구역에서 컵앤핸들을 만드는 경우가 잦더군 (이 경우 3개월봉부터 일봉까지 ㅋㅋ)"
+    ],
     "content_hash": "f3fd641fb2e93528",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791684+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.645762+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2111487294213677142": {
     "paragraphs": [
       "Absolutely 🤝"
     ],
-    "translated": [],
+    "translated": [
+      "전적으로 동의합니다 🤝"
+    ],
     "content_hash": "c8cef05f2c788b7f",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791707+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.647369+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2114907845162623482:2114904179835805784": {
     "paragraphs": [
       "서로 다른 구역에서, 보통 HTF의 핸들부분을 LTF에서 컵을 그리는 식",
       "컵앤핸들을 만약 모든타임프레임에서 관찰될때 걸면 장기추세라도 살아있는 시장이라는 전제 하에서는 성과가 괜찮더라고"
     ],
-    "translated": [],
+    "translated": [
+      "서로 다른 구역에서, 보통 HTF의 핸들부분을 LTF에서 컵을 그리는 식",
+      "컵앤핸들을 만약 모든타임프레임에서 관찰될때 걸면 장기추세라도 살아있는 시장이라는 전제 하에서는 성과가 괜찮더라고"
+    ],
     "content_hash": "4d7492f2f4ae4b40",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791687+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.645917+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2114907845162623482:2114906566206095477": {
     "paragraphs": [
       "HTF에서의 핸들\nLTF에서의 컵",
       "기억해 둬야겠군.."
     ],
-    "translated": [],
+    "translated": [
+      "HTF에서의 핸들\nLTF에서의 컵",
+      "기억해 둬야겠군.."
+    ],
     "content_hash": "3fc0e6921ec20653",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791692+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.646013+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2115445979407368516": {
     "paragraphs": [
       "after unzip, i tried to run the exe., and clicking Run Anyway in the windows security screen. nothing happens after that"
     ],
-    "translated": [],
+    "translated": [
+      "압축을 푼 후 .exe 파일을 실행해 보고 윈도우 보안 화면에서 '추가 정보 - 실행'을 클릭했습니다. 그 이후에는 아무 일도 일어나지 않습니다."
+    ],
     "content_hash": "aef325f85fdfd7fa",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791715+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.648022+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2111485620262486359": {
     "paragraphs": [
       "As long as you know how to make use of your brain, everything will be alright."
     ],
-    "translated": [],
+    "translated": [
+      "두뇌를 활용하는 방법만 알고 있다면 모든 것이 잘될 것입니다."
+    ],
     "content_hash": "731af0244c13f010",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791712+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.647652+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2111481949223260348": {
     "paragraphs": [
       "i got it running on my Mac Pro. works really fucking well"
     ],
-    "translated": [],
+    "translated": [
+      "내 Mac Pro에서 실행에 성공했습니다. 진짜 겁나 잘 돌아가네요."
+    ],
     "content_hash": "c6077277f97ee1c9",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791700+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.646943+00:00",
+    "chunk": "posts-x.json"
   },
   "reply:2111472920241524897:2111475613429322035": {
     "paragraphs": [
       "Thanks for testing! Also, all VT scans are updated daily and uploaded to GitHub and the Discord server."
     ],
-    "translated": [],
+    "translated": [
+      "테스트해 주셔서 감사합니다! 또한 모든 VT 스캔은 매일 업데이트되어 GitHub와 Discord 서버에 업로드됩니다."
+    ],
     "content_hash": "ae6c303506613bd1",
-    "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-10-29T03:28:55.791698+00:00"
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-10-30T03:37:22.646696+00:00",
+    "chunk": "posts-x.json"
   }
 }
