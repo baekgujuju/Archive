@@ -3898,5 +3898,20 @@
     "fingerprint": "403d4822430bcaab3bdc62f77d20cf1f4ab08cebfc9a300f172d6e37c53ceca4",
     "entry": null,
     "version": 3
+  },
+  "2114361336465596829:embedded-51f408c9304869becd82d91489d826176c6159e37e6009044dd3ba9386b6eb73.jpg": {
+    "fingerprint": "aa86c123bf72f5213c8bc25c1eb931dbaec06245a3c1dafe2047fb281bee4a31",
+    "entry": {
+      "title": "open-webui/open-webui",
+      "summary_ko": "LLM을 위한 사용자 친화적인 오픈소스 웹 인터페이스 (구 Ollama WebUI)",
+      "category": "AI / LLM 웹 UI",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:open webui open"
+      ],
+      "fingerprint": "aa86c123bf72f5213c8bc25c1eb931dbaec06245a3c1dafe2047fb281bee4a31"
+    },
+    "version": 3
   }
 }

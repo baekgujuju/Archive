@@ -9027,8 +9027,8 @@
       "translated": [],
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
-      "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-10-30T03:37:22.636961+00:00"
+      "error": "Codex translation failed (exit 1); existing cache retained",
+      "failed_at": "2026-10-31T03:49:36.921094+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:35:45.346522+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:48:20.169704+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12693,7 +12693,7 @@
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:36:13.125512+00:00"
+    "failed_at": "2026-10-31T03:48:48.279411+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13286,8 +13286,8 @@
     "translated": [],
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.640719+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:36.921808+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13807,8 +13807,8 @@
     "translated": [],
     "content_hash": "688ac05f147f559e",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.635737+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:36.921024+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13930,8 +13930,8 @@
     "translated": [],
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.641035+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:36.921822+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14003,8 +14003,8 @@
     "translated": [],
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.641399+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:36.921833+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14116,8 +14116,8 @@
     "translated": [],
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.641978+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:36.921843+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16057,8 +16057,8 @@
     "translated": [],
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.642660+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:36.921850+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16229,8 +16229,8 @@
     "translated": [],
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-30T03:37:22.644179+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157793+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
@@ -16395,5 +16395,115 @@
     "validation_version": 2,
     "translated_at": "2026-10-30T03:37:22.646696+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2111472920241524897:2113987908189421642": {
+    "paragraphs": [
+      "No one has ever been banned from this"
+    ],
+    "translated": [],
+    "content_hash": "d4cb1f31c9bb0a94",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157849+00:00"
+  },
+  "reply:2111472920241524897:2111480018966585602": {
+    "paragraphs": [
+      "It worked on my Windows operating system. Although it sometimes looks like malware, it is safe."
+    ],
+    "translated": [],
+    "content_hash": "6ae551071253fe34",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157859+00:00"
+  },
+  "reply:2111472920241524897:2111481109427130477": {
+    "paragraphs": [
+      "you can get occasional false positives"
+    ],
+    "translated": [],
+    "content_hash": "0f6c46451060ab01",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157863+00:00"
+  },
+  "reply:2111472920241524897:2113861280964514291": {
+    "paragraphs": [
+      "I'm scared they'll ban my account, I have indicators that are way too important to me jajajajaja"
+    ],
+    "translated": [],
+    "content_hash": "91e6c50174147685",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157845+00:00"
+  },
+  "reply:2111472920241524897:2115446531214266577": {
+    "paragraphs": [
+      "make sure your drivers are up to date and don't move the app out of the root folder because it needs the dependencies to run"
+    ],
+    "translated": [],
+    "content_hash": "c0d1b04272b9b091",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157825+00:00"
+  },
+  "reply:2111472920241524897:2111478024013316460": {
+    "paragraphs": [
+      "Why you can only access the repo and discord through the local apps? It was different a month ago"
+    ],
+    "translated": [],
+    "content_hash": "29087b168bde2d05",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157831+00:00"
+  },
+  "reply:2111472920241524897:2113796788239130721": {
+    "paragraphs": [
+      "@bot (https://x.com/bot) \n What is this"
+    ],
+    "translated": [],
+    "content_hash": "1346a9434965cee3",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157838+00:00"
+  },
+  "reply:2111472920241524897:2111477267880882384": {
+    "paragraphs": [
+      "happens, the code is mainly Python"
+    ],
+    "translated": [],
+    "content_hash": "d886220c2bde2f04",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157856+00:00"
+  },
+  "reply:2111472920241524897:2111478666467406141": {
+    "paragraphs": [
+      "because the repo went private, all links in the Community section are app-bound and expire after a single use"
+    ],
+    "translated": [],
+    "content_hash": "8e56b8330dc0700b",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157835+00:00"
+  },
+  "reply:2111472920241524897:2111476865982738905": {
+    "paragraphs": [
+      "Worked on Windows 11. It only asked me to update Python to the latest version during installation"
+    ],
+    "translated": [],
+    "content_hash": "f5682822dd08f29f",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157853+00:00"
+  },
+  "reply:2111472920241524897:2113988015324635555": {
+    "paragraphs": [
+      "Reverse-engineered TradingView Premium. You can read full documentation on the soft on GitHub"
+    ],
+    "translated": [],
+    "content_hash": "d1dbd9ba0e52d2ee",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-10-31T03:49:47.157842+00:00"
   }
 }
