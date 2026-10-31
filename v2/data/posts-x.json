@@ -32324,6 +32324,1279 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2115631130552750391",
+      "sourceUrl": "https://x.com/fx4_living/status/2115631130552750391",
+      "capturedAt": "2026-10-31T07:34:02.233658+00:00",
+      "createdAt": "2026-10-29T02:25:42.000Z",
+      "fullText": "Pretty crazy update, check it out! \n\nhttps://t.co/4iEgDP1L60",
+      "author": {
+        "handle": "@fx4_living",
+        "name": "fx4_living"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5f9c8132d91e9f8f8fa646575865b1d44417b7df8b06a31b91590e2c22fd87f1.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b1810a66da7f8d57e5a9e36ce7df9ac19c3678dfecc0345f3c014b81d3aa5810.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/4iEgDP1L60",
+          "text": "https://tradingview.com/script/MoIO0dsx-Candle-Pairing-HR-by-fx4-living/…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115632873302618435",
+          "sourceUrl": "https://x.com/fx4_living/status/2115632873302618435",
+          "capturedAt": "2026-10-31T07:34:02.233658+00:00",
+          "createdAt": "2026-10-29T02:32:38.000Z",
+          "fullText": "",
+          "author": {
+            "handle": "@fx4_living",
+            "name": "fx4_living"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7450f0c8f40224269f589c7c5892edc86414bfe3d82a4733614bc28351b1860a.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/fx4_living/status/2115632873302618435"
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7450f0c8f40224269f589c7c5892edc86414bfe3d82a4733614bc28351b1860a.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/fx4_living/status/2115632873302618435",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/fx4_living/status/2115632873302618435",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115792454909890912",
+          "sourceUrl": "https://x.com/fx4_living/status/2115792454909890912",
+          "capturedAt": "2026-10-31T07:34:02.233658+00:00",
+          "createdAt": "2026-10-29T13:06:45.000Z",
+          "fullText": "😘",
+          "author": {
+            "handle": "@fx4_living",
+            "name": "fx4_living"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1436641e8dd0991c8eb6fdb11765f2d406bb002cce1310f30d5b015222c305ad.jpg",
+              "alt": "Image"
+            }
+          ],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115807662642209125",
+          "sourceUrl": "https://x.com/fx4_living/status/2115807662642209125",
+          "capturedAt": "2026-10-31T07:34:02.233658+00:00",
+          "createdAt": "2026-10-29T14:07:11.000Z",
+          "fullText": "incredible isn't!",
+          "author": {
+            "handle": "@fx4_living",
+            "name": "fx4_living"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5a08b2d14e7691ca193f61c82264473382825ad86a40fb77f78d827ab5985fae.png",
+              "alt": "Image"
+            }
+          ],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115882987019456814",
+          "sourceUrl": "https://x.com/exe_nq1/status/2115882987019456814",
+          "capturedAt": "2026-10-31T07:34:02.233658+00:00",
+          "createdAt": "2026-10-29T19:06:29.000Z",
+          "fullText": "Thanks for sharing your work, sir. The C+ candle being infinite is taking some getting used to. I assume it will only stop once a new valid A+B set up has printed?",
+          "author": {
+            "handle": "@exe_nq1",
+            "name": "exe_nq1"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/fx4_living/status/2115631130552750391",
+        "observed_main_url": "https://x.com/fx4_living/status/2115631130552750391",
+        "author_handle": "fx4_living",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115711483711738022",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115711483711738022",
+      "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+      "createdAt": "2026-10-29T07:45:00.000Z",
+      "fullText": "스캔본 PDF 글자 검색까지, 이제 클로드가 해주는 거야..?\n\n앤트로픽이 직접 만든 공식 스킬임\n이름도 그냥 pdf\n\nPDF로 하는 귀찮은 일은 거의 다 들어있음\n합치기, 쪼개기, 페이지 돌리기, 워터마크\n표·글자 뽑기, 서식 채우기, 암호 걸고 풀기까지\n\n제일 눈에 띄는 건 OCR\n스캔해서 그림으로만 된 PDF를\n검색되는 문서로 바꿔준다고 함\n\n설명서 내용을 쉬운 말로 풀면 이 정도\n\n1. 여러 PDF를 하나로 합치기\n파일 여러 개를 순서대로 묶어서\n한 파일로 뽑아줌\n\n2. 한 파일을 페이지별로 쪼개기\n100장짜리 PDF면 1장씩 따로 저장하는 식\n필요한 페이지만 보내야 할 때 편할듯\n\n3. 표랑 글자 뽑기\n그냥 텍스트만 긁는 게 아니라\n배치 살려서 뽑거나 표까지 끌어내는 도구가 들어있음\n\n4. 신청서 같은 서식 채우기\nPDF 양식 채울 땐 따로 붙어있는 서식 설명서를\n읽고 그대로 따라가게 짜여 있음\n\n속은 파이썬 도구(pypdf 같은 거)랑\n명령어 도구로 돌아가는 구조\n\n쓰는 쪽에서 신경 쓸 건 별로 없음\n스킬 설명 보면 .pdf 파일 얘기를 꺼내거나\nPDF 만들어달라고 하면 이 스킬을 쓰라고 적혀 있음\n\n어디에 써먹냐면\n매달 영수증·계약서 PDF 합쳐서 올리는 총무·경리\n스캔한 옛날 서류에서 숫자 찾느라 눈 빠지는 직장인\nPDF 보고서 표를 엑셀로 한 칸씩 옮겨 적던 사람\n\n부업으로 전자책·자료집 PDF 파는 형들도\n워터마크 넣고 파일 쪼개는 데 쓸만해 보임\n\nPDF 편집 프로그램 찾아 헤매던 시간 생각하면\n공식 스킬로 이게 나온 건 좀 반칙 같음 ㄷㄷ\n\n매달 PDF 합치고 쪼개는 형들은 제일 귀찮은 파일 하나 골라서 이걸로 먼저 돌려보셈\n\nhttps://t.co/rMZrr5KTJ6",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-12ecb34c66420e2861f482cfa9ed48fa11839b70c597b5fc15cd72ef2d028dc1.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/rMZrr5KTJ6",
+          "text": "https://github.com/anthropics/skills/tree/main/skills/pdf…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115722316349096389",
+          "sourceUrl": "https://x.com/cadavercollect/status/2115722316349096389",
+          "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+          "createdAt": "2026-10-29T08:28:03.000Z",
+          "fullText": "클로드 코드면 /plugin marketplace add anthropics/skills 하고 /plugin install document-skills@anthropic-agent-skills 하면 바로 씀. 같은 묶음에 docx, pptx, xlsx 스킬도 같이 딸려옴\n\n참고로 이 문서 스킬 4개는 오픈소스가 아니라 소스만 공개된 거라 상업용으로 뜯어 쓸 땐 라이선스 한번 보셈",
+          "author": {
+            "handle": "@cadavercollect",
+            "name": "cadavercollect"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115723167008469478",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2115723167008469478",
+          "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+          "createdAt": "2026-10-29T08:31:25.000Z",
+          "fullText": "ㅇㅋㅇㅋ;;",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115713909906960750",
+          "sourceUrl": "https://x.com/cocomonic25/status/2115713909906960750",
+          "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+          "createdAt": "2026-10-29T07:54:38.000Z",
+          "fullText": "진짜 클로드의 변신은 삶을 윤택하게 해 주다가 ㅎㅎㅎ 어느날 송두리째 흔들어버릴거 같아요",
+          "author": {
+            "handle": "@cocomonic25",
+            "name": "cocomonic25"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115723126852202624",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2115723126852202624",
+          "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+          "createdAt": "2026-10-29T08:31:16.000Z",
+          "fullText": "클로드야... ㅏㄴ댄다 ㅠ",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115712074127139327",
+          "sourceUrl": "https://x.com/Heyy_Alvi/status/2115712074127139327",
+          "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+          "createdAt": "2026-10-29T07:47:21.000Z",
+          "fullText": "OCR까지 된다면 업무 시간이 꽤 줄겠네요",
+          "author": {
+            "handle": "@Heyy_Alvi",
+            "name": "Heyy_Alvi"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115723138390782393",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2115723138390782393",
+          "capturedAt": "2026-10-31T07:34:23.666657+00:00",
+          "createdAt": "2026-10-29T08:31:19.000Z",
+          "fullText": "맞아요",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115711483711738022",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115711483711738022",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116378325790970188",
+      "sourceUrl": "https://x.com/nowlovepan/status/2116378325790970188",
+      "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+      "createdAt": "2026-10-31T03:54:47.000Z",
+      "fullText": "개발자 한 명이 AI로 워드, 엑셀, PPT 대체 앱을 만들어서 무료로 풀었습니다\n\n아트크래프트라는 곳의 브랜던 토머스라는 개발자인데 클로드 도움을 받아서 만들었다고 합니다\n\n워드 대신 WordCraft\n엑셀 대신 GridCraft\nPPT 대신 DeckCraft\n\n전부 오픈소스로 깃허브에 올라가 있음\n\n이 사람이 원래 하던 게 어도비 대체 앱이라 포토샵, 프리미어 같은 거 대신 쓸 프로그램 7개도 같이 무료로 풀고 있네요\n맥, 윈도우, 리눅스 다 됨\n\n다만 아직 초기 버전임\n워드 대체 앱은 실제 워드 기능의 62% 정도라고 하고\n개발자도 지금은 포토샵을 대체할 수준은 아니라고 말함\n\nAI로 혼자 이 정도까지 만드는 게 신기하긴 함\n\n깃허브 링크는 댓글에 남겨놓을게요 !",
+      "author": {
+        "handle": "@nowlovepan",
+        "name": "nowlovepan"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116378381512302666",
+          "sourceUrl": "https://x.com/nowlovepan/status/2116378381512302666",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T03:55:01.000Z",
+          "fullText": "깃허브 링크\n\n워드 대체 WordCraft\nhttps://t.co/O7AKgU5zsD \n\n엑셀 대체 GridCraft\nhttps://t.co/zJACDMI2Ha \n\nPPT 대체 DeckCraft\nhttps://t.co/9I0DC2Vlx3 \n\n어도비 대체 앱까지 전체 목록\nhttps://t.co/cB3xAMhmgU \n\n아직 초기 버전이라 중요한 파일은 사본으로 열어보는 게 안전할 듯\n\nGitHub - storytold/wordcraft: An open-source, clean-room reimplementation of Microsoft Word in pure... (https://t.co/O7AKgU5zsD)  https://t.co/O7AKgU5zsD",
+          "author": {
+            "handle": "@nowlovepan",
+            "name": "nowlovepan"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/O7AKgU5zsD",
+              "text": "https://github.com/storytold/wordcraft…",
+              "kind": "body"
+            },
+            {
+              "url": "https://t.co/zJACDMI2Ha",
+              "text": "https://github.com/storytold/gridcraft…",
+              "kind": "body"
+            },
+            {
+              "url": "https://t.co/9I0DC2Vlx3",
+              "text": "https://github.com/storytold/deckcraft…",
+              "kind": "body"
+            },
+            {
+              "url": "https://t.co/cB3xAMhmgU",
+              "text": "https://github.com/storytold",
+              "kind": "body"
+            },
+            {
+              "url": "https://t.co/O7AKgU5zsD",
+              "text": "GitHub - storytold/wordcraft: An open-source, clean-room reimplementation of Microsoft Word in pure...",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116382190074568951",
+          "sourceUrl": "https://x.com/koreabuldak/status/2116382190074568951",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T04:10:09.000Z",
+          "fullText": "워드·엑셀·PPT 대체 앱이 오픈소스로 무료라니 반갑네요!",
+          "author": {
+            "handle": "@koreabuldak",
+            "name": "koreabuldak"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116385991921656128",
+          "sourceUrl": "https://x.com/Che0dan/status/2116385991921656128",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T04:25:15.000Z",
+          "fullText": "오픈소스의 시대가 도래했다!!!!",
+          "author": {
+            "handle": "@Che0dan",
+            "name": "Che0dan"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116380211818414174",
+          "sourceUrl": "https://x.com/TechHyung/status/2116380211818414174",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T04:02:17.000Z",
+          "fullText": "내년쯤되면 진짜 완벽하게 복제하는것도 불가능은 아닐것같네요",
+          "author": {
+            "handle": "@TechHyung",
+            "name": "TechHyung"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116378704704401422",
+          "sourceUrl": "https://x.com/ramztd/status/2116378704704401422",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T03:56:18.000Z",
+          "fullText": "진짜 무서운 시대..",
+          "author": {
+            "handle": "@ramztd",
+            "name": "ramztd"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116384028609937884",
+          "sourceUrl": "https://x.com/purpleeddy_dev/status/2116384028609937884",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T04:17:27.000Z",
+          "fullText": "다음 버전이 나오면 보고 싶네요",
+          "author": {
+            "handle": "@purpleeddy_dev",
+            "name": "purpleeddy_dev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116386835941527691",
+          "sourceUrl": "https://x.com/pyojian78674/status/2116386835941527691",
+          "capturedAt": "2026-10-31T07:34:28.834657+00:00",
+          "createdAt": "2026-10-31T04:28:36.000Z",
+          "fullText": "감사요~",
+          "author": {
+            "handle": "@pyojian78674",
+            "name": "pyojian78674"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/nowlovepan/status/2116378325790970188",
+        "observed_main_url": "https://x.com/nowlovepan/status/2116378325790970188",
+        "author_handle": "nowlovepan",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 7,
+          "max": 8
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115681379984044065",
+      "sourceUrl": "https://x.com/smbluespace/status/2115681379984044065",
+      "capturedAt": "2026-10-31T07:34:32.927657+00:00",
+      "createdAt": "2026-10-29T05:45:23.000Z",
+      "fullText": "클로드 코드 처음 시작할 때 깔아두라는 확장 4개 정리.\n\n1. 문서 스킬로 PPT, 엑셀, 워드, PDF 파일을 말로 제작\n2. 클로드 멤은 지난 작업 요약을 새 대화로 가져옴\n3. UI UX 프로맥스와 버셀은 디자인 보정과 배포 담당\n\n홈페이지를 \"배포해줘\" 한마디로 공개한다니 마지막 단계가 제일 가볍네ㄷㄷ\n\n문서 스킬 저장소는 이 주소임\n\nhttps://t.co/76BhVXNKRc",
+      "author": {
+        "handle": "@smbluespace",
+        "name": "smbluespace"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-22f5d005c7fb31b3b7717448408dd001273f85c0190f30324516e6242d25f35b.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/76BhVXNKRc",
+          "text": "https://github.com/anthropics/skills…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115743560062619902",
+          "sourceUrl": "https://x.com/hoppangdev/status/2115743560062619902",
+          "capturedAt": "2026-10-31T07:34:32.927657+00:00",
+          "createdAt": "2026-10-29T09:52:27.000Z",
+          "fullText": "문서 스킬은 앤트로픽 공식 저장소라 넷 중 제일 먼저 깔아도 될 듯해요. 나머지는 깔기 전에 어떤 권한을 달라고 하는지 한 번 보는 게 좋겠네요",
+          "author": {
+            "handle": "@hoppangdev",
+            "name": "hoppangdev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115812028015431860",
+          "sourceUrl": "https://x.com/smbluespace/status/2115812028015431860",
+          "capturedAt": "2026-10-31T07:34:32.927657+00:00",
+          "createdAt": "2026-10-29T14:24:32.000Z",
+          "fullText": "권한체크 꿀팁 감사해용!.!",
+          "author": {
+            "handle": "@smbluespace",
+            "name": "smbluespace"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115709337247396092",
+          "sourceUrl": "https://x.com/thegear_kr/status/2115709337247396092",
+          "capturedAt": "2026-10-31T07:34:32.927657+00:00",
+          "createdAt": "2026-10-29T07:36:28.000Z",
+          "fullText": "확장 이름만 봐선 뭐부터 깔지 막막했는데 덕분에 순서가 잡힙니다. 저는 문서 스킬부터 깔아 볼 생각인데, 넷 중에 제일 손이 자주 가는 건 어떤 거예요?",
+          "author": {
+            "handle": "@thegear_kr",
+            "name": "thegear_kr"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115763268254101928",
+          "sourceUrl": "https://x.com/smbluespace/status/2115763268254101928",
+          "capturedAt": "2026-10-31T07:34:32.927657+00:00",
+          "createdAt": "2026-10-29T11:10:46.000Z",
+          "fullText": "글쎄요",
+          "author": {
+            "handle": "@smbluespace",
+            "name": "smbluespace"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2111179374615560206",
+          "sourceUrl": "https://x.com/Starlink/status/2111179374615560206",
+          "capturedAt": "2026-10-31T07:34:32.927657+00:00",
+          "createdAt": "",
+          "fullText": "Starlink로 이동 중에도 초고속 인터넷을 이용하세요. 와이파이 공유기가 내장된 Starlink Mini는 여행, 캠핑, 보트 타기, 원격 근무 등 다양한 활동에 적합합니다.\n\n몇 분이면 온라인으로 주문을 완료하실 수 있어요.\n\n주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti",
+          "author": {
+            "handle": "@Starlink",
+            "name": "Starlink"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-82c62dab01b959b9d05672814b9f4c4a1e5489825cf58ef5658a50af186fdca0.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti",
+              "text": "주문하기",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/smbluespace/status/2115681379984044065",
+        "observed_main_url": "https://x.com/smbluespace/status/2115681379984044065",
+        "author_handle": "smbluespace",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 5,
+          "max": 6
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115994603782320320",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115994603782320320",
+      "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+      "createdAt": "2026-10-30T02:30:01.000Z",
+      "fullText": "7개월 만에 깃허브 별 13.5만 찍은 클로드 스킬\n\n/graphify 한 줄 치면\n프로젝트 폴더 전체가 클릭되는 지도로 바뀜\n\n대문 캡처가 FastAPI 코드를 통째로 그린 그림인데\n점 하나하나가 개념이고, 색은 서로 묶이는 덩어리끼리\n\n이름은 graphify\n코드, 문서, SQL 스키마, 설정 파일, PDF까지 몽땅 읽어서\n지식 그래프라는 걸 만들어줌\n\n쉽게 말하면 파일 하나하나 검색해서 뒤지는 대신\n\"이거랑 저거 어떻게 연결돼 있어?\" 하고 물어보면 되는 거\n두 개 사이 경로를 따라가거나 개념 하나 설명시키는 것도 됨\n\n코드 분석은 내 컴에서만 돌아감\nAI 안 쓰고 구문 분석기로 쪼개서 밖으로 나가는 게 없다고\n대신 문서·PDF·이미지·영상은 쓰는 AI 모델이나 API 키로 한 번 더 읽음\n\n제일 눈에 띄는 건 연결선마다 딱지가 붙는 거\n원본에 진짜 써 있는 건 EXTRACTED\ngraphify가 추론한 건 INFERRED\n\nAI가 지어낸 연결인지 구분이 된다는 게 ㄹㅇ 큼\n이거 없으면 그럴듯한 그림이 제일 위험하니까\n\n이렇게 쓰면 됨\n1. 파이썬 3.10 이상이랑 uv(아니면 pipx) 준비\n\n2. 터미널에 uv tool install graphifyy\ny 두 개임, 오타 아님\n\n3. 이어서 graphify install\n쓰고 있는 AI 코딩 도구를 알아서 찾아서 스킬로 등록해줌\n\n4. AI 도구 채팅창에 /graphify .\n끝나면 결과 파일 3개가 떨어짐\n\n시작까지 30초면 된다고 함\n\n제일 땡기는 건 인수인계 문서 하나 없는 프로젝트 떠안았을 때\n퇴사자 코드 처음 여는 날이나\n외주로 남의 코드 고치는 부업 받았을 때도 딱일듯\n\n참고로 상시로 돌려주는 클라우드 버전은 따로 있고\n그건 14일 무료 체험부터 시작하는 방식\n\n개발자 머릿속에만 있던 구조를 그림으로 뽑아준다니, 이건 좀 무섭긴 함\n\nhttps://t.co/ozPBJ3D0Hu",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e216ce874b6c8d44adfd07dd01f33bfcd41b81710029ec22aa9f8a2c4baa13a6.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/ozPBJ3D0Hu",
+          "text": "https://github.com/Graphify-Labs/graphify…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115999109421441130",
+          "sourceUrl": "https://x.com/dldusrjf12/status/2115999109421441130",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T02:47:55.000Z",
+          "fullText": "멀해도 어렵네요..늙었나",
+          "author": {
+            "handle": "@dldusrjf12",
+            "name": "dldusrjf12"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116002538348749219",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116002538348749219",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T03:01:33.000Z",
+          "fullText": "아 이거 동영상으로 보면 완전 쉬운데....",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116000140830138663",
+          "sourceUrl": "https://x.com/AuraMetaX/status/2116000140830138663",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T02:52:01.000Z",
+          "fullText": "7개월 만에 13.5만이라니 진짜 대단하네요",
+          "author": {
+            "handle": "@AuraMetaX",
+            "name": "AuraMetaX"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116002553133748649",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116002553133748649",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T03:01:36.000Z",
+          "fullText": "최고에요~",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2115999659047215205",
+          "sourceUrl": "https://x.com/ZeoWeb3/status/2115999659047215205",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T02:50:06.000Z",
+          "fullText": "that looks useful",
+          "author": {
+            "handle": "@ZeoWeb3",
+            "name": "ZeoWeb3"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116002567725699106",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116002567725699106",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T03:01:40.000Z",
+          "fullText": "useful",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116006535646294323",
+          "sourceUrl": "https://x.com/ha_inh24324/status/2116006535646294323",
+          "capturedAt": "2026-10-31T07:34:39.987657+00:00",
+          "createdAt": "2026-10-30T03:17:26.000Z",
+          "fullText": "와 코드 파악할 때 뇌빼고 쓰기 딱이네))",
+          "author": {
+            "handle": "@ha_inh24324",
+            "name": "ha_inh24324"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115994603782320320",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115994603782320320",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 7,
+          "max": 8
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116036283101327491",
+      "sourceUrl": "https://x.com/BTC_WyckoffLab/status/2116036283101327491",
+      "capturedAt": "2026-10-31T07:34:44.428657+00:00",
+      "createdAt": "2026-10-30T05:15:38.000Z",
+      "fullText": "$INTC (https://x.com/search?q=%24INTC&src=cashtag_click) \n, 인텔의 포인트앤피겨 하락 목표가는 충족됐습니다.\n\n하지만 이 말을 ‘목표가에 도달했으니 이제 반등한다’로 \n받아들이면 안 됩니다.\n\n포인트앤피겨 목표가는\n이전 분산구간에서 만들어진 원인이 \n어느 정도의 하락 결과를 만들 수 있는지 보여주는 값이지, \n바닥을 확정해주는 매수 신호가 아닙니다.\n\n다만 이번 목표 구간이\n일봉상 남아 있던 갭과도 겹친다는 점은 흥미롭습니다.\n\n그렇다면 이제 무엇을 봐야 할까요?\n\n하락이 더 이어지더라도\n음봉 캔들의 스프레드가 점점 줄어드는지 보겠습니다.\n\n매도는 계속 나오는데 가격을 이전만큼 밀어내지 못한다면\n공급의 힘이 약해지고 있다는 첫 번째 단서가 됩니다.\n\n그리고 가격이 이 부근에서 횡보하기 시작한다면\n새로운 ‘원인’을 만드는 과정으로 볼 수 있습니다.\n\n하지만 횡보가 나온다고 모두 바닥은 아닙니다.\n\n그 원인이 물량을 받아내는 매집인지,\n반등을 이용해 다시 물량을 넘기는 재분산인지 확인해야 합니다.\n\n목표가 도달은 분석의 끝이 아닙니다.\n하락이 멈추고, 횡보가 만들어지고,\n그 안에서 수요와 공급 중 누가 우세한지 확인하는\n과정이 이제 시작된 겁니다.",
+      "author": {
+        "handle": "@BTC_WyckoffLab",
+        "name": "BTC_WyckoffLab"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7ff882e8abc4fff7c047087a6f94872bf32de19b713bc7fbe6516ae77d6d5aea.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/search?q=%24INTC&src=cashtag_click",
+          "text": "$INTC",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": {
+        "tweetId": "2110951440160272401",
+        "sourceUrl": "https://x.com/BTC_WyckoffLab/status/2110951440160272401",
+        "capturedAt": "2026-10-31T07:34:44.428657+00:00",
+        "createdAt": "",
+        "fullText": "$INTC, 인텔 분할익절을 이야기했던 날이\n결과적으로 이번 상승의 최고점이 됐습니다.\n\n당시 가격이 상승 채널 상단에 도달했기 때문에\n132달러 부근에서는 욕심내지 말고\n분할익절하자고 말씀드렸습니다.\n\n이후 인텔은 고점에서 약 30% 하락했고,\n오늘 90달러 부근에서 반등이 나왔습니다.\n그렇다면  x.com/BTC_WyckoffLab…",
+        "author": {
+          "handle": "@BTC_WyckoffLab",
+          "name": "BTC_WyckoffLab"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5f3f0b7966ec2b86773afb6ec78f313ec79c841aca26cf60b2a84cbe852e4323.jpg",
+            "alt": "Image"
+          }
+        ],
+        "links": [],
+        "stats": {}
+      },
+      "replies": [],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/BTC_WyckoffLab/status/2116036283101327491",
+        "observed_main_url": "https://x.com/BTC_WyckoffLab/status/2116036283101327491",
+        "author_handle": "BTC_WyckoffLab",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "1855930332425720114",
+      "sourceUrl": "https://x.com/babybluecream/status/1855930332425720114",
+      "capturedAt": "2026-10-31T07:34:54.138657+00:00",
+      "createdAt": "2024-11-11T11:07:27.000Z",
+      "fullText": "한 젓가락 올립니다\n\n중궈형들이 만든 webull에서\n\n주식 티커를 치고 프로필 가서\n\nshareholders를 누르면 해당 주식을 가지고 있는 ETF가 뜹니다\n\n비중도 보이고 얼마나 산지도 보입니다\n\n예를 들어 엔비디아로 찾으니 여러게 보이죵\n\n첫번째껀 fund같아서 제끼고 두번째꺼 클릭\n\n줄여서 USD네요\n\n프로필 옆에 자산 배분 누르면 \n\n비중이 보입니다 끝!!",
+      "author": {
+        "handle": "@babybluecream",
+        "name": "babybluecream"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a6403298574d820ec5485cc1de4d3e7dd2ce5136f2b30257b4f64ccab8eb859f.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1bdc949fda2d70fbad43a7725520bf2404daafeec7db58ead2b1a0ba79835846.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0a23eb77096118637420f756dcdaf252aee2f5192b87e3421cb1f6a4d9563055.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": {
+        "tweetId": "1855851024885690416",
+        "sourceUrl": "https://x.com/holzzak777/status/1855851024885690416",
+        "capturedAt": "2026-10-31T07:34:54.138657+00:00",
+        "createdAt": "",
+        "fullText": "내가 갖고 있거나 관심있는 주식이 어떤 ETF에 속해있는지 확인하는 방법\n\n1. http://etf.com 접속\n\n2. 우측 상단 돋보기 눌러서 원하는 티커 검색\n\n3. 그러면 검색결과가 여러개 뜰텐데 보통 가장 위에 있는거 고르시면 됩니다(만약 안보이면 진짜 개잡주라서 그렇습니다)\n\n4. 이 글에서는",
+        "author": {
+          "handle": "@holzzak777",
+          "name": "holzzak777"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7e767e881084d294917001f618daebf61218f1d96ac74da8e2db71b0dd62170f.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c7636465b119ce27a9d1576d82a5d494595b1593af915d39f24a0e727d6b3367.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b6bfb8ba7a5d65295720b49ff623bc7aff90bc08dfb4b26e97cfb3978d98bb99.jpg",
+            "alt": "Image"
+          }
+        ],
+        "links": [],
+        "stats": {}
+      },
+      "replies": [
+        {
+          "tweetId": "1855936674204913784",
+          "sourceUrl": "https://x.com/palandoring777/status/1855936674204913784",
+          "capturedAt": "2026-10-31T07:34:54.138657+00:00",
+          "createdAt": "2024-11-11T11:32:39.000Z",
+          "fullText": "webull 어떤가요 ?",
+          "author": {
+            "handle": "@palandoring777",
+            "name": "palandoring777"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1855945257667723769",
+          "sourceUrl": "https://x.com/babybluecream/status/1855945257667723769",
+          "capturedAt": "2026-10-31T07:34:54.138657+00:00",
+          "createdAt": "2024-11-11T12:06:45.000Z",
+          "fullText": "공짜인데 괜찮습니당 ㅎ",
+          "author": {
+            "handle": "@babybluecream",
+            "name": "babybluecream"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "1855947166734577719",
+          "sourceUrl": "https://x.com/H_diamondhand/status/1855947166734577719",
+          "capturedAt": "2026-10-31T07:34:54.138657+00:00",
+          "createdAt": "2024-11-11T12:14:21.000Z",
+          "fullText": "이런거까지 있군요!👍👍👍",
+          "author": {
+            "handle": "@H_diamondhand",
+            "name": "H_diamondhand"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1855953671281881318",
+          "sourceUrl": "https://x.com/babybluecream/status/1855953671281881318",
+          "capturedAt": "2026-10-31T07:34:54.138657+00:00",
+          "createdAt": "2024-11-11T12:40:11.000Z",
+          "fullText": "한번 해보세요",
+          "author": {
+            "handle": "@babybluecream",
+            "name": "babybluecream"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/babybluecream/status/1855930332425720114",
+        "observed_main_url": "https://x.com/babybluecream/status/1855930332425720114",
+        "author_handle": "babybluecream",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116026055970677181",
+      "sourceUrl": "https://x.com/lucian__03/status/2116026055970677181",
+      "capturedAt": "2026-10-31T07:34:58.220657+00:00",
+      "createdAt": "2026-10-30T04:35:00.000Z",
+      "fullText": "📌 오랫만에 유용한 오픈소스 하나 소개드립니다!\n\n바로.. 클로드코드 안에서 GPT-아스트라, GPT-6.1 Terra 같은 모델까지 사용할 수 있게 해주는 오픈소스입니다!\n\n별도의 오픈AI API 키 없이... 기존 ChatGPT/Codex 구독제 사용량을 연결해서 사용하는 것도 가능합니다.\n\n--> 바로 Free Claude Code(FCC)라는 오픈소스입니다!\n\n여기서 오픈AI뿐만 아니라 오픈라우터, 엔비디아, 로컬 LLM 등 다양한 제공업체도 연결할 수 있습니다.\n\n심지어 반대로 Codex CLI에서도 다른 LLM을 연결해서 사용할 수 있습니다.\n\n특히 클코랑 쳇지피티를 둘 다 구독하고 계신 분들이라면 한번 체험? 해보셔도 괜찮을 것 같아서 공유드립니다! ㅎㅎ\n\n오픈소스: https://t.co/Ssr6QqOGVc",
+      "author": {
+        "handle": "@lucian__03",
+        "name": "lucian__03"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d2bc390e6528c931efe6da9e9c6921750d5c8acdb0d6546aa9d774c7b2ece6f3.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/Ssr6QqOGVc",
+          "text": "https://github.com/Alishahryar1/free-claude-code…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116035845648179378",
+          "sourceUrl": "https://x.com/codinggils/status/2116035845648179378",
+          "capturedAt": "2026-10-31T07:34:58.220657+00:00",
+          "createdAt": "2026-10-30T05:13:54.000Z",
+          "fullText": "와 ㅋㅋㅋㅋ 대박이네요 왔다갔다하는 거 귀찮았는데",
+          "author": {
+            "handle": "@codinggils",
+            "name": "codinggils"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/lucian__03/status/2116026055970677181",
+        "observed_main_url": "https://x.com/lucian__03/status/2116026055970677181",
+        "author_handle": "lucian__03",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116339118670000257",
+      "sourceUrl": "https://x.com/lucian__03/status/2116339118670000257",
+      "capturedAt": "2026-10-31T07:35:02.145657+00:00",
+      "createdAt": "2026-10-31T01:19:00.000Z",
+      "fullText": "클로드코드에서 웹사이트 디자인할 때 이거 한번 써보세요!! 👀\n\n(모르시는 분들을 위해 다시 소개드려요!)\n\n🔥 제가 만든 400개 Motion UX/UI.. 100% 무료이고 오픈소스입니다. 🔥\n\n코덱스, 클로드코드에서도 스킬로 바로 사용할 수 있습니다! \n\n설치방법 (터미널에서 최초 한 번만)\n\nnpx skills add Seokwoooo/lucian-uxui\n\n그다음 코덱스나 클로드코드에서..\n\n/lucian-uxui 이 웹사이트 UI 좀 예쁘게 바꿔줘\n\n이렇게만 입력하면 클코가 400개 중 적절한 UI를 알아서 찾아서 적용해줍니다!\n\n바이브코딩 하시는 분들!!\n\n🔥 움직이는 UI 200개, 전부 100% 무료로 풀었습니다. 🔥\n\n--> Lucian UX/UI Prompt입니다.\n\n(제가 만든 오픈소스입니다!)\n\n누르면 종이비행기가 날아가는 버튼, 낮과 밤이 바뀌는 스위치, 움직이는 카드와 차트 등등..\n\n웹사이트에서 직접 눌러보고 마음에 드는 걸",
+      "author": {
+        "handle": "@lucian__03",
+        "name": "lucian__03"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8e97c014fbde069a889b5e74b580f4622b2c2fc8d9bb8b92084c1d4f1b16b453.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/lucian__03/status/2116339118670000257"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-26160dca2e24367b1dfe2382aa2c6028faa4f9ceef7fcab81fd7c9caba7df413.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/lucian__03/status/2116339118670000257"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/lucian__03/status/2116339118670000257",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/lucian__03/status/2116339118670000257",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        },
+        {
+          "url": "https://x.com/lucian__03/status/2116339118670000257",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/lucian__03/status/2116339118670000257",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116368159389438371",
+          "sourceUrl": "https://x.com/OnewKonew/status/2116368159389438371",
+          "capturedAt": "2026-10-31T07:35:02.145657+00:00",
+          "createdAt": "2026-10-31T03:14:24.000Z",
+          "fullText": "와...쩌네요...이건 일단 제가 써보겠습니다 ㅎㅎ",
+          "author": {
+            "handle": "@OnewKonew",
+            "name": "OnewKonew"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116348281148313778",
+          "sourceUrl": "https://x.com/oneday3min/status/2116348281148313778",
+          "capturedAt": "2026-10-31T07:35:02.145657+00:00",
+          "createdAt": "2026-10-31T01:55:24.000Z",
+          "fullText": "무료 오픈소스면 일단 깔아봐야겠어요",
+          "author": {
+            "handle": "@oneday3min",
+            "name": "oneday3min"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116355308633329666",
+          "sourceUrl": "https://x.com/codinggils/status/2116355308633329666",
+          "capturedAt": "2026-10-31T07:35:02.145657+00:00",
+          "createdAt": "2026-10-31T02:23:20.000Z",
+          "fullText": "크으 멋쟁이 이렇게 다 무료로 푸셔도 되는 건가요..?",
+          "author": {
+            "handle": "@codinggils",
+            "name": "codinggils"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2100498463276609894",
+          "sourceUrl": "https://x.com/Coloso_official/status/2100498463276609894",
+          "capturedAt": "2026-10-31T07:35:02.145657+00:00",
+          "createdAt": "",
+          "fullText": ",,,마끼아또 수강신청 하겠습니다..\n,,,아니 기다리겠습니다\n,,,누적 판매 2억 돌파? 지금 듣겠습니다...\n,,,조금만 더 두고 보겠습니다...\n\n당신이 망설이는 동안\n수강생 PICK이 된 강의,\n매주 가격 인상 전 혜택가로 만나보세요.",
+          "author": {
+            "handle": "@Coloso_official",
+            "name": "Coloso_official"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ba4c9359100bf970059a64c1cd1e8bbceea0a61a6ea8addf16ec9fdacd8a51de.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/Coloso_official/status/2100498463276609894"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/Coloso_official/status/2100498463276609894",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/Coloso_official/status/2100498463276609894",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/lucian__03/status/2116339118670000257",
+        "observed_main_url": "https://x.com/lucian__03/status/2116339118670000257",
+        "author_handle": "lucian__03",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115428376978887000",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2115428376978887000",
+      "capturedAt": "2026-10-31T07:35:06.364657+00:00",
+      "createdAt": "2026-10-28T13:00:02.000Z",
+      "fullText": "핫이슈 골라서 텔레그램으로 쏴주는 AI가 별 6.3만이구나ㄷㄷ\n\n여러 플랫폼 인기글이랑 RSS를 한 군데로 모아서\nAI가 걸러주고, 요약 브리핑까지 써서 폰으로 보내주는 도구임\n\n이름은 TrendRadar\nsansan0이라는 개발자 저장소고\n작년 4월에 올라왔는데 별이 6.3만 개\n\n중국 개발자가 만든 거라 설명이 반은 중국어인데\n쉽게 풀면 이런 거 해줌\n\n1. 여러 플랫폼 인기글을 한 번에 모음\n사이트마다 들어가서 실검 보던 걸 한 화면으로 합쳐줌\nRSS 구독도 같이 붙일 수 있음\n\n2. 키워드로 걸러냄\n내가 정한 단어 들어간 것만 골라서 보여줌\n관심 없는 이슈에 시간 뺏길 일이 줄어드는 거\n\n3. AI가 뉴스 고르고, 번역하고, 브리핑까지\n외국 소식도 번역해서 보여주고\n분석 요약본을 정리해서 폰으로 바로 쏴줌\n\n4. 알림 받는 곳이 많음\n텔레그램, 이메일, 슬랙에 위챗·페이슈·딩톡까지\n한국 사람은 텔레그램이나 메일로 받으면 될듯\n\n여기서 제일 눈에 띄는 건 MCP 지원임\n클로드 같은 AI에 붙이면\n모아둔 이슈를 그냥 말로 물어보면서\n여론 분위기나 흐름 예측 같은 분석을 시킬 수 있다는 거\n\nDocker로 돌릴 수 있고\n데이터는 내 컴이나 내 클라우드에 두는 방식이라\n남의 서버에 내 관심사 쌓일 걱정도 덜함\n\n설치 순서는 저장소 README에 정리돼 있으니까\n거기 보고 따라가면 됨\n\n어디에 써먹냐면\n블로그·쇼츠 소재 찾는 부업러\n회사에서 업계 동향 매일 보고하는 사람\n스마트스토어 하면서 뜨는 키워드 잡아야 하는 사람\n\n솔직히 부업하는 사람들 제일 시간 많이 잡아먹는 게\n글 쓰는 것보다 뭘 쓸지 찾는 거잖아\n그걸 매일 아침 알림으로 받는 건 개꿀이라고 봄\n\n물론 Docker 처음이면 세팅에서 한 번은 막힐 수 있음\n\n소재 찾는 데 지친 형들은 키워드 3개만 정해서 텔레그램 알림부터 걸어보셈\n\nhttps://t.co/CbEBFdxn9a",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-51599e4f75d309dff08d3c19d63f4f36013e9a9e99a7c4f322503eed5c335606.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/CbEBFdxn9a",
+          "text": "https://github.com/sansan0/TrendRadar…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2115586414935228588",
+          "sourceUrl": "https://x.com/daisy_bit/status/2115586414935228588",
+          "capturedAt": "2026-10-31T07:35:06.364657+00:00",
+          "createdAt": "2026-10-28T23:28:01.000Z",
+          "fullText": "정보가 모자란 게 아니라 넘쳐서, 걸러주는 게 돈이 되는 시대.. 근데 AI가 골라준 핫이슈만 보다 보면 내가 고른 건지 AI가 고른 건지 헷갈릴 듯. 편한 만큼 가끔은 직접 뒤져보는 습관도 남겨둬야겠음.",
+          "author": {
+            "handle": "@daisy_bit",
+            "name": "daisy_bit"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115433798741663954",
+          "sourceUrl": "https://x.com/wkwjs78/status/2115433798741663954",
+          "capturedAt": "2026-10-31T07:35:06.364657+00:00",
+          "createdAt": "2026-10-28T13:21:35.000Z",
+          "fullText": "핫이슈 수집부터 AI 요약, 텔레그램 알림까지 자동화된다니 소재 찾는 시간을 크게 줄여주겠네요",
+          "author": {
+            "handle": "@wkwjs78",
+            "name": "wkwjs78"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115442225467555995",
+          "sourceUrl": "https://x.com/manual_is_gone/status/2115442225467555995",
+          "capturedAt": "2026-10-31T07:35:06.364657+00:00",
+          "createdAt": "2026-10-28T13:55:04.000Z",
+          "fullText": "오 유용한 정보 감사합니다",
+          "author": {
+            "handle": "@manual_is_gone",
+            "name": "manual_is_gone"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115439739725877296",
+          "sourceUrl": "https://x.com/Leekeechul/status/2115439739725877296",
+          "capturedAt": "2026-10-31T07:35:06.364657+00:00",
+          "createdAt": "2026-10-28T13:45:11.000Z",
+          "fullText": "이런 걸 사용할 줄 알아야 하는뎅 \n공부를 더 해야 겠네요",
+          "author": {
+            "handle": "@Leekeechul",
+            "name": "Leekeechul"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2115428376978887000",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2115428376978887000",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116031779857711389",
+      "sourceUrl": "https://x.com/PeterLeejoa/status/2116031779857711389",
+      "capturedAt": "2026-10-31T07:35:17.740657+00:00",
+      "createdAt": "2026-10-30T04:57:44.000Z",
+      "fullText": "[피터리 - 2026년 10월 30일 증권사 종목리포트 브리핑]\n\n기준: 2026년 10월 29일 13:00 초과 ~ 10월 30일 13:00 KST\n\n① 한눈에 보는 결론\n\n오늘 증권사 종목리포트의 핵심은 삼성SDI의 ESS 성장 전망 강화, 현대차와 한화에어로스페이스의 실적 눈높이 하향, 삼성전자의 주주환원 실망, 대우건설의 원전 수주 불확실성, 아모레퍼시픽의 실적 회복이다.\n\n첫째, 삼성SDI는 오늘 가장 긍정적인 실적·수주 분석이 집중된 종목이다.\n\n3분기 영업이익은 4,078억원으로 시장 예상치를 웃돌았다. 미국 ESS 수주 확대와 향후 생산능력 증설이 중장기 투자논리의 중심으로 부상했다.\n\n유진투자증권은 목표주가를 50만원에서 70만원으로 40% 상향했다. 반면 이번 분기 실적에는 고객사 보상금 등 일회성 요인이 포함돼 있어, 다음 분기부터는 ESS 사업 자체의 이익 증가를 확인해야 한다.\n\n둘째, 현대차는 분기 실적보다 연간 판매·수익성 전망 하향이 더 크게 작용했다.\n\n3분기 영업이익은 시장 예상치를 웃돌았지만, 회사는 연간 판매 목표와 영업이익률 전망을 낮췄다.\n\n이에 따라 삼성증권은 목표주가를 50만원에서 41만원으로, 메리츠증권은 77만원에서 47만원으로, 키움증권은 60만원에서 50만원으로 하향했다.\n\n단기 실적의 예상치 상회와 중장기 기업가치 평가 하락이 동시에 나타난 사례다.\n\n셋째, 한화에어로스페이스는 방산 수출의 성장성보다 이번 분기의 실적 부진이 부각됐다.\n\n3분기 영업이익은 4,520억원으로 시장 예상치에 크게 못 미쳤다. 일부 수출 매출의 인식 시점이 4분기로 이동한 영향이 있지만, 이익 추정치와 목표주가를 조정하는 증권사가 늘었다.\n\n삼성증권은 목표주가를 136만원에서 100만원으로, 신한투자증권은 138만원에서 101만원으로 낮췄다.\n\n앞으로는 4분기 수출 매출 인식과 이익 회복 여부가 중요하다.\n\n넷째, 삼성전자는 사상 최대 수준의 실적과 주주환원 정책에 대한 평가가 갈렸다.\n\nIBK투자증권은 투자의견 '매수'를 유지하면서 목표주가를 46만원에서 35만원으로 약 23.9% 낮췄다.\n\n반도체 실적의 개선보다 자사주 매입·소각 등 추가 주주환원 정책의 구체성이 부족하다는 점에 무게를 두었다.\n\n다섯째, 대우건설은 오늘 투자의견 변화에 특히 주의할 종목이다.\n\n체코 원전 사업의 시공 협상 종료로 해외 원전 수주 기대가 약화됐다. 미래에셋증권은 투자의견을 '매도'로 제시하고 목표주가를 9,900원으로 낮췄다.\n\n이는 단순한 분기 실적 부진보다 투자논리 자체의 훼손 여부를 따져야 하는 변화다.\n\n여섯째, 아모레퍼시픽은 실적 개선이 확인된 소비재 종목이다.\n\n3분기 매출액 1조1,295억원, 영업이익 1,152억원으로 전년 대비 각각 11.1%, 25.4% 증가했다.\n\n한국투자증권은 목표주가를 17만원에서 18만원으로 올렸다. 국내 사업의 수익성 개선과 해외 성장 회복이 투자논리의 핵심이다.\n\n오늘의 결론은 분명하다.\n\n실적이 예상치를 웃돌았다는 사실만으로 주가 상승을 판단하기 어렵다. 앞으로의 이익 추정치가 올라가는지, 목표주가에 적용하는 평가배수가 낮아지는지, 그리고 기존 성장 논리가 훼손됐는지를 구분해야 한다.\n\n② 신규 리포트 전수 목록\n\n이번 기준 구간에 발행된 것으로 식별한 종목별 보고서를 증권사 단위로 정리했다. 동일 보고서의 재배포는 합쳤다. 다만 공개 접근이 가능한 경로에서 수집한 목록이므로 국내 모든 증권사의 발간물까지 완전히 포괄하는 것은 아니다.\n\n삼성증권\n\n삼성전자 — 「밀물에 집중하자, 파도는 지나간다」. 투자의견 매수 유지. HBM 경쟁력과 메모리 이익 증가에 주목.\n\n두산밥캣 — 「우호적이지 못한 환경 속 무난한 실적의 의미」. 매수 유지. 어려운 수요 환경에서의 실적 방어력 분석.\n\n한화에어로스페이스 — 「단기 실적부진을 야기할 수 있는 요인들이 겹쳐버린 분기」. 매수 유지. 실적 부진과 수출 인식 지연 분석.\n\n두산에너빌리티 — 「펀더멘털은 강화, 밸류에이션 부담은 완화」. 매수 유지. 원전·가스터빈 수주 확대 평가.\n\n금호타이어 — 「단기 수익성 둔화 구간」. 매수 유지. 원가와 수익성 변화 분석.\n\nKB금융 — 「예상보다 강했던 실적, 차별화의 이유 재확인」. 매수 유지. 안정적인 이익과 주주환원 여력 평가.\n\n대한유화 — 「긍정적 재고 효과 수혜」. 매수 유지. 재고 평가와 화학 업황 변화 분석.\n\n한화솔루션 — 「기대치 하회」. 매수 유지. 태양광·케미칼 실적 부진 평가.\n\nOCI홀딩스 — 「폴리실리콘 판매 성장세가 긍정적」. 매수 유지. 판매량 확대에 주목.\n\nIBK투자증권\n\n삼성SDI — 「ESS가 바꾸는 이익의 방향」. 북미 ESS 수주 증가와 향후 이익 개선 분석.\n\n현대차 — 「어려운 업황 속 돋보이는 방어력」. 판매 감소 속 실적 방어력 평가.\n\n삼성전자 — 「실적은 좋지만, 주주환원은 아쉽다」. 목표주가 46만원 → 35만원, 매수 유지.\n\n아모레퍼시픽 — 「재정비 효과의 초입」. 국내 사업 회복과 해외 성장 분석.\n\n미래에셋증권\n\n해성디에스 — 「이제는 기판도 효자」. 목표주가 8만원 유지, 매수. DDR5 기판의 이익 기여 확대.\n\n두산로보틱스 — 「북미 중심 성장 지속, 피지컬 AI로 사업 확장」. 투자의견 미제시. 로봇 사업 확장 분석.\n\n대우건설 — 「해외 원전 기대감의 균열, 투자의견 하향 불가피」. 목표주가 9,900원, 매도.\n\n삼성에스디에스 — 「무난했던 실적. 과도한 낙폭」. 매수. 실적과 주가 조정의 괴리 분석.\n\n현대차 — 「실적 우려 있지만, BD 모멘텀 주목」. 매수. 본업 부담과 신사업 가치 비교.\n\n한화에어로스페이스 — 「3분기만으로 판단하기에는 이르다」. 매수. 단기 실적과 수주잔고 구분.\n\n한화솔루션 — 「단기 실적 우려 있으나, 커지는 중장기 기대감」. 매수.\n\n삼성중공업 — 「방어 성공 and beyond」. 매수. 조선 본업 수익성과 추가 성장 기회 평가.\n\n두산에너빌리티 — 「3Q26 Review: 희비교차」. 매수. 수주 성장과 분기 손익의 차이 분석.\n\n유진투자증권\n\n23. 에이엘로봇 — 「힘·토크 센서와 제어 기술을 내재화한 핵심부품 기업」. 로봇 핵심부품 기술 경쟁력 분석.\n\n삼성SDI\n\n24. 유진투자증권 — 목표주가 50만원 → 70만원, 매수.\n\n25. 하나증권 — 「가파르게 증가하는 신규 수주」. 목표주가 66만7,000원 유지, 매수.\n\n26. 키움증권 — 「흑자 기조 유지로 기대감이 지속되는 구간」. 목표주가 67만원 유지, 매수.\n\n27. 대신증권 — 북미 ESS 출하 확대를 반영해 목표주가 74만원 → 75만원, 매수.\n\n28. DB증권 — 「좋은 소식이 너무 많았다」. 목표주가 84만원, 매수.\n\n현대차\n\n29. KB증권 — 「우려 대비 양호한 실적, 환율덕만은 아니다」. 목표주가 70만원 유지, 매수.\n\n30. 메리츠증권 — 「풀리지 않는 우려, 확인되지 않는 기대」. 목표주가 77만원 → 47만원, 매수.\n\n31. 키움증권 — 「기대치 상회했음에도 가이던스는 하향 조정」. 목표주가 60만원 → 50만원, 매수.\n\n32. 하나증권 — 목표주가 51만원 → 48만원, 매수.\n\n33. 신한투자증권 — 목표주가 55만원으로 하향, 매수.\n\n34. 대신증권 — 목표주가 50만원으로 하향, 매수.\n\n35. 유안타증권 — 목표주가 41만원 → 44만원, 매수.\n\n한화에어로스페이스\n\n36. 신한투자증권 — 「지상방산의 쉼표, 수주는 그대로」. 목표주가 138만원 → 101만원, 매수.\n\n37. SK증권 — 「일시적 부진, 4Q부터 성장 가도에 재진입」. 목표주가 130만원, 매수.\n\n38. 키움증권 — 「기다림이 필요한 구간」. 목표주가 137만원, 매수.\n\n39. 한국투자증권 — 목표주가 165만원 → 154만원, 매수.\n\n두산에너빌리티\n\n40. 하나증권 — 목표주가 10만원으로 하향, 매수.\n\n41. 대신증권 — 「시장과 산업의 시차」. 목표주가 8만5,000원, 매수.\n\n42. 키움증권 — 「과도한 낙폭. 매력적인 진입 기회」. 목표주가 10만원, 매수.\n\n43. 유진투자증권 — 「펀더멘털은 견고, 노이즈로 인한 일시적 주가 하락」. 목표주가 8만원, 매수.\n\n한화솔루션\n\n44. 하나증권 — 「긍정적인 시장 환경 vs. 확인할 이슈 몇 가지」. 목표주가 6만원 → 4만원, 매수.\n\n45. 메리츠증권 — 목표주가 4만1,000원 → 3만8,000원, 매수.\n\n46. 키움증권 — 「아쉬운 실적 너머, 기대되는 2027년」. 목표주가 4만원, 매수.\n\n47. 신한투자증권 — 「시선은 2027년으로」. 목표주가 3만4,000원, 매수.\n\n48. 유진투자증권 — 「올해보다 내년」. 중장기 회복 전망.\n\n49. 교보증권 — 「3Q26 Review: 빅쇼크」. 실적 부진 평가.\n\n아모레퍼시픽\n\n50. 한국투자증권 — 목표주가 17만원 → 18만원, 매수.\n\n51. 메리츠증권 — 「불확실성 속 부각되는 투자 매력」. 목표주가 18만원 유지, 매수.\n\n52. 신한투자증권 — 「외형 성장과 수익성 모두 Good!」. 국내외 성장성 강화 분석.\n\n53. 키움증권 — 「국내는 면세, 해외는 더마가 이끈 성장」. 실적 개선 요인 분석.\n\nKB금융\n\n54. 하나증권 — 목표주가 23만5,000원 유지, 매수.\n\n55. 키움증권 — 「든든한 실적, 주주환원 재원으로」. 목표주가 23만원, 매수.\n\n56. SK증권 — 「탄탄. 비은행 경쟁력 부각」. 목표주가 21만3,000원, 매수.\n\n57. iM증권 — 「법인세 환급 영향 제외해도 안정적 이익체력」. 목표주가 20만5,000원, 매수.\n\n58. 유안타증권 — 「보수적 비용 반영, 주주환원 여력 양호」. 목표주가 23만5,000원, 매수.\n\n기타\n\n59. 삼성전자 — 하나증권. 목표주가 48만원 유지, 매수. 메모리 업황 강세 분석.\n\n60. 삼성중공업 — NH투자증권. 목표주가 3만2,000원 → 2만6,000원, 매수.\n\n61. 세아베스틸지주 — 유진투자증권, 「2보 전진을 위한 1보 후퇴」. 목표주가 5만6,000원 유지, 매수.\n\n62. 삼성에스디에스 — 교보증권, 「단기 성장도 비워두진 않는다」. 기업 IT 서비스와 클라우드 성장 분석.\n\n이상은 개별 발행처가 구분된 62건이다. 이후 분석은 위 목록에 포함된 종목과 보고서만을 대상으로 한다.\n\n③ 실적추정 상향 TOP\n\n1. 삼성전자 — 메모리 이익 전망 강화\n\n삼성증권은 메모리 공급 부족과 HBM 경쟁력 개선이 지속된다고 판단했다.\n\n2027년 영업이익을 544조원으로 전망하면서 투자의견 매수와 목표주가를 유지했다. 외부 거시환경과 주주환원에 대한 실망보다 메모리 산업의 수익성 개선에 더 무게를 뒀다.\n\n핵심은 2027년 영업이익의 절대 규모보다 추가 생산능력 확대에도 메모리 가격과 이익률이 유지될 수 있는가이다.\n\n반면 IBK투자증권은 동일한 실적 호황을 인정하면서도 주주환원에 대한 평가를 낮췄다. 이익 전망과 목표주가의 방향이 반드시 일치하지 않는 사례다.\n\n2. 현대차 — KB증권은 내년 이익 추정 상향\n\nKB증권은 3분기 실적에서 환율 효과를 제외하더라도 일부 사업의 수익성이 예상보다 양호했다고 평가했다.\n\n이에 따라 2027년 영업이익 추정치를 상향하고 목표주가 70만원을 유지했다.\n\n다만 다른 증권사들은 생산 차질과 판매 감소를 더 중요하게 평가했다.\n\n따라서 현대차는 실적추정 상향 종목으로만 분류할 것이 아니라 증권사 간 전망 차이가 확대된 종목으로 보는 것이 적절하다.\n\n3. 삼성SDI — ESS의 중기 이익 전망 상향 가능성\n\n하나증권은 올해 신규 ESS 수주가 크게 증가하고 있다는 점을 강조했다.\n\n회사가 제시한 연간 신규 수주 목표는 최대 120GWh이며, 하나증권은 2027년 북미 ESS 생산량 20GWh, 2028년 32GWh를 실적 전망의 주요 가정으로 사용했다.\n\n추가 생산능력 확보에 따라 향후 이익 추정치가 더 높아질 가능성도 제시했다.\n\n현재는 확정 실적추정 상향과 미래의 상향 가능성을 구분해야 한다. 중요한 확인 지표는 수주잔고가 실제 생산량과 영업이익으로 전환되는 속도다.\n\n4. 해성디에스 — DDR5 기판의 이익 기여 증가\n\n미래에셋증권은 2027년 영업이익을 1,500억원대로 전망했다. 이는 시장 전망치를 약 5% 웃도는 수준이다.\n\n3분기 DDR5 관련 매출은 320억원으로 전분기 대비 88% 증가했고, 관련 기판 매출 비중은 36%에서 54%로 높아졌다.\n\n4분기에는 DDR5 비중이 60%까지 올라갈 것으로 예상했다.\n\n기존 리드프레임 사업에 DDR5 패키지 기판 수익성이 추가되면서 이익구조가 개선되는 것이 핵심이다.\n\n④ 실적추정 하향 TOP\n\n1. 한화솔루션 — 2026~2027년 이익 전망 동반 하향\n\n하나증권은 3분기 영업이익이 시장 예상치를 56% 하회했다고 분석했다.\n\n케미칼·태양광 사업의 실적 부진과 발전·EPC 사업의 비용 부담을 반영해 2026~2027년 영업이익 전망을 크게 낮췄다.\n\n목표주가도 6만원에서 4만원으로 33.3% 하향했다.\n\n미국 태양광 제품 가격 상승과 현지 생산 보조금 확대는 긍정적이지만, 이를 실제 실적에 반영하는 시기가 늦어질 수 있다는 판단이다.\n\n단기 이익 감소와 장기 산업 성장 기대가 가장 크게 충돌하는 종목이다.\n\n하나증권\n\n2. 한화에어로스페이스 — 방산 매출 인식 지연\n\n3분기 영업이익 4,520억원은 시장 기대를 크게 밑돌았다.\n\n수출 인식 시점의 이연과 비용 발생이 실적 부진의 원인으로 지목됐다.\n\n단기 영업이익 추정치가 낮아지는 가운데 삼성증권, 신한투자증권, 한국투자증권 등이 목표주가를 하향했다.\n\n그러나 수주잔고가 줄어드는 것과 매출 인식 시점이 늦어지는 것은 다르다.\n\n4분기에 예정된 해외 방산 매출이 정상적으로 인식되는지가 가장 중요한 판단 기준이다.\n\n3. 현대차 — 판매량과 연간 수익성 전망 하향\n\n회사 자체의 연간 전망이 하향됐다.\n\n2026년 도매 판매 목표는 416만대에서 400만대로 감소했고 영업이익률 목표도 6.3~7.3%에서 5.5~6.5%로 낮아졌다.\n\n연간 판매 목표는 3.8% 줄어든 것이며, 이익률 목표 구간은 각각 0.8%포인트 내려갔다.\n\n분기 영업이익의 예상치 상회에도 증권사들이 목표주가를 하향한 직접적인 이유다.\n\n4. 두산에너빌리티 — 실적보다 밸류에이션 조정\n\n삼성증권은 3분기 매출액 4조4,494억원, 영업이익 2,612억원을 제시했다.\n\n전년 대비 매출은 14.7%, 영업이익은 90.6% 증가했다.\n\n그런데도 삼성증권은 목표주가를 11만2,000원에서 8만5,000원으로 24.1% 하향했다.\n\n글로벌 비교기업의 평가배수 하락과 일부 추정치 조정을 반영한 결과다.\n\n즉, 이 경우는 영업실적이 악화됐기 때문에 목표주가가 하락한 것이 아니라 성장 기대에 적용하는 기업가치 평가 기준이 낮아진 사례다.\n\n5. 삼성중공업 — 이익 개선에도 목표주가 하향\n\nNH투자증권은 목표주가를 3만2,000원에서 2만6,000원으로 18.8% 낮췄다.\n\n3분기 영업이익은 3,384억원, 영업이익률은 10.7%로 양호했지만 조선업의 경쟁 환경과 향후 평가배수에 보수적인 시각을 적용했다.\n\n실적의 질과 주식의 가격 매력은 별도로 판단해야 한다는 점을 보여준다.\n\n⑤ 목표주가·투자의견 변화\n\n오늘 핵심 목표주가 조정 내용을 변화 폭 중심으로 정리하면 다음과 같다.\n\n목표주가 상향\n\n삼성SDI — 유진투자증권: 50만원 → 70만원, +40.0%.\n\n삼성SDI — 대신증권: 74만원 → 75만원, +1.4%.\n\n아모레퍼시픽 — 한국투자증권: 17만원 → 18만원, +5.9%.\n\n현대차 — 유안타증권: 41만원 → 44만원, +7.3%.\n\n목표주가 하향\n\n현대차 — 메리츠증권: 77만원 → 47만원, -39.0%.\n\n한화솔루션 — 하나증권: 6만원 → 4만원, -33.3%.\n\n한화에어로스페이스 — 신한투자증권: 138만원 → 101만원, -26.8%.\n\n한화에어로스페이스 — 삼성증권: 136만원 → 100만원, -26.5%.\n\n두산에너빌리티 — 삼성증권: 11만2,000원 → 8만5,000원, -24.1%.\n\n삼성전자 — IBK투자증권: 46만원 → 35만원, -23.9%.\n\n삼성중공업 — NH투자증권: 3만2,000원 → 2만6,000원, -18.8%.\n\n현대차 — 삼성증권: 50만원 → 41만원, -18.0%.\n\n현대차 — 키움증권: 60만원 → 50만원, -16.7%.\n\n현대차 — 하나증권: 51만원 → 48만원, -5.9%.\n\n투자의견 변화\n\n가장 중요한 변화는 미래에셋증권의 대우건설 '매도' 의견이다.\n\n대우건설은 체코 원전 프로젝트의 시공 협상 종료로 기존 성장 기대의 일부가 약화됐다. 미래에셋증권이 제시한 9,900원이라는 목표주가는 현재 시장의 원전 수주 기대를 재평가할 필요가 있다는 의미다.\n\n반면 현대차·삼성전자·한화에어로스페이스·두산에너빌리티의 경우 여러 증권사가 목표주가를 낮추면서도 매수 의견을 유지했다.\n\n따라서 목표주가 하향과 투자의견 하향을 같은 신호로 해석해서는 안 된다.\n\n⑥ 새로운 투자논리·구조 변화\n\n삼성SDI — EV 배터리에서 ESS로 성장 중심 이동\n\n이번 리포트에서 가장 중요한 구조 변화다.\n\n전기차 배터리 업황이 둔화되는 동안 북미 ESS 시장에서는 데이터센터 전력 수요와 전력망 투자가 확대되고 있다.\n\nESS 신규 수주 증가, 현지 생산능력 확대, 미국 생산 보조금이 결합되면서 이익 창출 구조가 달라질 가능성이 제시됐다.\n\n핵심은 ESS 사업이 EV 배터리 부진을 일시적으로 보완하는 수준을 넘어 독립적인 성장동력이 될 수 있는지다.\n\n해성디에스 — DDR5가 새로운 이익 축으로 성장\n\n리드프레임 사업 중심에서 첨단 메모리 패키지 기판으로 이익 기여가 확대되고 있다.\n\nDDR5 기판 매출 비중이 올라가면서 제품 구성 개선에 따른 수익성 향상이 나타나는 구조다.\n\n두산로보틱스 — 북미 시장과 피지컬 AI 확장\n\n미래에셋증권은 로봇 판매 확대뿐 아니라 피지컬 AI 관련 사업 확장 가능성을 평가했다.\n\n그러나 AI 사업 확대라는 설명만으로 실적 개선을 판단하기보다 실제 주문 증가와 수익성 변화가 필요하다.\n\n한화솔루션 — 미국 태양광 가격 상승의 실적 반영 시점\n\n미국 태양광 시장의 판가 상승 가능성과 현지 생산 보조금 확대는 긍정적이다.\n\n다만 기존 계약 물량과 재고 때문에 시세 상승이 회사의 실제 평균판매가격에 반영되는 시점은 늦어질 수 있다.\n\n산업 환경의 호전이 당장 실적 호전으로 이어지는 것은 아니다.\n\n삼성전자 — 실적 중심 평가와 주주환원 중심 평가의 충돌\n\n삼성증권은 메모리 업황과 2027년 이익 성장에 주목했다.\n\n반면 IBK투자증권은 주주환원 정책의 구체성과 투자자 선호도의 변화를 중요하게 평가했다.\n\n동일한 기업을 분석하면서도 적용하는 평가 기준이 달라 목표주가 조정 방향이 달라지는 사례다.\n\n대우건설 — 원전 수주 기대의 재평가\n\n체코 원전 프로젝트에서 시공 협상 종료가 발생하면서, 기존 원전 수주 기대를 그대로 적용하기 어려워졌다.\n\n앞으로는 다른 원전 프로젝트의 실제 수주 가능성과 기존 건설 본업의 이익 기여를 분리해서 평가해야 한다.\n\n⑦ 오늘 주가 영향력이 큰 리포트 TOP10\n\n아래 순위는 보고서의 투자판단 중요도를 기준으로 한 분석 순위다. 실시간 주가 상승률 순위가 아니다. 장중 주가 수치는 오후 1시 이전 시각이 명시된 경우만 사용했다.\n\n1위. 대우건설 — 성장논리 훼손과 매도 의견\n\n체코 원전 시공 협상 종료로 투자논리 재평가가 필요해졌다. 미래에셋증권의 매도 의견과 목표주가 9,900원이 핵심이다.\n\n2위. 삼성SDI — ESS 성장 전망 강화\n\n유진투자증권의 목표주가 40% 상향이 가장 강한 긍정적 신호다. 오전 9시 40분 기준 주가는 전일 대비 2.97% 상승했다. 실적 호조에 포함된 일회성 보상금과 ESS 사업의 구조적 성장은 분리해서 판단해야 한다.\n\n삼성SDI\n\n3위. 한화에어로스페이스 — 실적 쇼크와 목표가 동반 하향\n\n해외 방산 수출 매출이 지연되면서 3분기 이익이 예상치를 크게 하회했다. 오전 9시 38분 기준 주가는 약 9.7% 하락했다. 4분기 실적 회복 여부가 중요하다.\n\n4위. 현대차 — 분기 실적 상회에도 연간 전망 하향\n\n15건의 증권사 분석 가운데 8건에서 목표주가를 하향했다. 특히 연간 판매 목표와 영업이익률 전망 하향이 중요하다.\n\n5위. 삼성전자 — 사상 최대 실적과 주주환원 실망\n\nIBK투자증권의 목표주가 23.9% 하향은 단기 가격보다 기업가치 평가 기준의 변화를 보여준다.\n\n6위. 한화솔루션 — 태양광 성장 기대보다 단기 이익 부진\n\n실적 전망 하향과 목표주가 하향이 동시에 나타났다. 오후 12시 20분 기준 주가는 약 7.2% 하락했다.\n\n7위. 두산에너빌리티 — 원전 성장성과 평가배수 하락 충돌\n\n원전·가스터빈 사업의 수주 전망은 유지되지만 목표주가는 하향됐다. 실적과 밸류에이션의 방향이 다른 사례다.\n\n8위. 아모레퍼시픽 — 이익 개선과 목표가 상향\n\n3분기 수익성 개선과 국내 사업 실적 호조가 확인됐다. 오전 10시 29분 기준 주가는 5.39% 상승했다.\n\n9위. 삼성중공업 — 영업이익 개선에도 보수적인 가치평가\n\n3분기 영업이익률이 10%를 넘었지만 NH투자증권은 목표주가를 낮췄다. 수주 기대와 업종 평가배수 변화가 중요하다.\n\n10위. 해성디에스 — DDR5 비중 증가와 수익성 개선\n\n리드프레임에 DDR5 메모리 기판 성장이 더해지고 있다. 매출 증가뿐 아니라 제품 구성 변화가 이익률에 미치는 영향에 주목한다.\n\n⑧ 오늘 리포트에서 읽히는 시장 방향\n\n오늘 증권사 종목리포트에서 나타나는 가장 큰 특징은 실적 개선과 기업가치 평가가 서로 다른 방향으로 움직이는 종목이 많다는 점이다.\n\n첫째, 성장 산업이라고 해서 모두 긍정적인 평가를 받는 것은 아니다.\n\n삼성SDI는 ESS 수주 증가를 중심으로 긍정적인 평가가 이어졌지만, 한화솔루션은 같은 에너지 전환 관련 산업에 속해 있어도 당장의 수익성 악화가 더 크게 반영됐다.\n\n둘째, 분기 실적의 예상치 상회는 충분조건이 아니다.\n\n현대차는 분기 영업이익이 시장 예상치를 넘었음에도 연간 가이던스 하향 때문에 목표주가가 크게 조정됐다.\n\n셋째, 실적이 좋아도 밸류에이션이 낮아질 수 있다.\n\n삼성전자, 두산에너빌리티, 삼성중공업이 여기에 해당한다.\n\n넷째, 기존 성장 논리의 훼손 여부를 별도로 확인해야 한다.\n\n대우건설은 단순히 비용 증가나 실적 추정치 변경만의 문제가 아니다. 원전 수주 기대의 핵심 전제에 변화가 생긴 종목이다.\n\n다섯째, 신규 성장동력의 실제 이익 기여가 중요해졌다.\n\n삼성SDI의 ESS, 해성디에스의 DDR5, 두산로보틱스의 피지컬 AI는 모두 새로운 성장 논리다. 다만 각 사업의 매출과 영업이익 기여 수준은 아직 차이가 있다.\n\n⑨ 결론\n\n10월 30일 증권사 종목리포트에서 확인해야 할 핵심은 세 가지다.\n\n첫째, 실적추정 상향과 목표주가 상향을 구분한다.\n\n실적추정치가 높아져도 적용하는 가치평가 배수가 낮아지면 목표주가는 하락할 수 있다.\n\n둘째, 일회성 실적 개선과 구조적 이익 개선을 구분한다.\n\n삼성SDI의 고객사 보상금, 현대차의 환율 관련 비용 감소처럼 분기 실적에 일회성 요인이 포함되면 다음 분기 이익의 지속성을 확인해야 한다.\n\n셋째, 투자논리의 훼손 여부를 최우선으로 살핀다.\n\n단순 목표주가 하향보다 투자논리 자체가 흔들리는 변화가 더 중요할 수 있다.\n\n오늘의 핵심 관심 종목은 삼성SDI·해성디에스·아모레퍼시픽이다. 긍정적인 실적과 신규 성장동력이 연결되는지를 확인할 필요가 있다.\n\n반대로 대우건설·한화솔루션·한화에어로스페이스·현대차는 기존 기대와 실적 전망 사이의 차이를 다시 점검해야 한다.\n\n최종 판단: 오늘은 목표주가 상향 종목을 단순히 쫓기보다, 이익 추정이 실제로 높아지는 종목과 기대만 높았던 종목을 구별해야 하는 시장이다.",
+      "author": {
+        "handle": "@PeterLeejoa",
+        "name": "PeterLeejoa"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/PeterLeejoa/status/2116031779857711389",
+        "observed_main_url": "https://x.com/PeterLeejoa/status/2116031779857711389",
+        "author_handle": "PeterLeejoa",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }

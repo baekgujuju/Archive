@@ -1,19 +1,19 @@
 {
-  "version": "2026-10-29T03:25:07.249853+00:00",
-  "content_updated_at": "2026-10-29T03:25:07.249882+00:00",
+  "version": "2026-10-31T07:35:22.619864+00:00",
+  "content_updated_at": "2026-10-31T07:35:22.619890+00:00",
   "build": "v2",
-  "source_hash": "91ce02868809213818f558c95d340c18cce4edd843fa1b4d0656b78a100ab319",
+  "source_hash": "1e619d60148f57c704b7e9d6fd0a306258544b3159042e8d6d20a31e8d25ad1b",
   "builder_version": "1.2.1",
   "chunks": {
     "posts-x": {
       "file": "data/posts-x.json",
-      "sha256": "2a4d40621698912fbc7005325162e0353dd4ebc7cf1463df9c9c6cd3485f2ed3",
-      "count": 404
+      "sha256": "65789b3f8ecf8ad3d6a0d217c2fd5f1d12278297b7c71b25409d2bafda54e303",
+      "count": 415
     },
     "posts-web": {
       "file": "data/posts-web.json",
-      "sha256": "5606f43981d36a480a589a4994d37022993418d5ec82465b6dae7c62e86cebea",
-      "count": 6
+      "sha256": "3542cc3c264e6dd096f21c4a06df8d09b7d9d824e45e8f2fde92d9c912f7a435",
+      "count": 11
     },
     "posts-ib": {
       "file": "data/posts-ib.json",
