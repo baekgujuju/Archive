@@ -9028,7 +9028,7 @@
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
       "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-10-31T07:41:52.270260+00:00"
+      "failed_at": "2026-11-01T07:47:06.821128+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12457,7 +12457,7 @@
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:40:10.934475+00:00"
+    "failed_at": "2026-11-01T07:45:52.353259+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12693,7 +12693,7 @@
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:40:39.059964+00:00"
+    "failed_at": "2026-11-01T07:46:12.937225+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13287,7 +13287,7 @@
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.272841+00:00"
+    "failed_at": "2026-11-01T07:47:06.825101+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13808,7 +13808,7 @@
     "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.269018+00:00"
+    "failed_at": "2026-11-01T07:47:06.819392+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13931,7 +13931,7 @@
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.273144+00:00"
+    "failed_at": "2026-11-01T07:47:06.825563+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14004,7 +14004,7 @@
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.273474+00:00"
+    "failed_at": "2026-11-01T07:47:06.826052+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14117,7 +14117,7 @@
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.274074+00:00"
+    "failed_at": "2026-11-01T07:47:06.826952+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16058,7 +16058,7 @@
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.274744+00:00"
+    "failed_at": "2026-11-01T07:47:06.827997+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16230,7 +16230,7 @@
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-10-31T07:41:52.276503+00:00"
+    "failed_at": "2026-11-01T07:47:06.830429+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
@@ -16550,6 +16550,126 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-10-31T07:41:52.280141+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2115711483711738022:2115722316349096389": {
+    "paragraphs": [
+      "클로드 코드면 /plugin marketplace add anthropics/skills 하고 /plugin install document-skills@anthropic-agent-skills 하면 바로 씀. 같은 묶음에 docx, pptx, xlsx 스킬도 같이 딸려옴",
+      "참고로 이 문서 스킬 4개는 오픈소스가 아니라 소스만 공개된 거라 상업용으로 뜯어 쓸 땐 라이선스 한번 보셈"
+    ],
+    "translated": [],
+    "content_hash": "cb27b68b1a63647d",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-01T07:47:06.831774+00:00"
+  },
+  "reply:1855930332425720114:1855936674204913784": {
+    "paragraphs": [
+      "webull 어떤가요 ?"
+    ],
+    "translated": [
+      "webull 어떤가요 ?"
+    ],
+    "content_hash": "0e9b63b2d57811be",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.835018+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2116339118670000257:2100498463276609894": {
+    "paragraphs": [
+      ",,,마끼아또 수강신청 하겠습니다..\n,,,아니 기다리겠습니다\n,,,누적 판매 2억 돌파? 지금 듣겠습니다...\n,,,조금만 더 두고 보겠습니다...",
+      "당신이 망설이는 동안\n수강생 PICK이 된 강의,\n매주 가격 인상 전 혜택가로 만나보세요."
+    ],
+    "translated": [
+      ",,,마끼아또 수강신청 하겠습니다..\n,,,아니 기다리겠습니다\n,,,누적 판매 2억 돌파? 지금 듣겠습니다...\n,,,조금만 더 두고 보겠습니다...",
+      "당신이 망설이는 동안\n수강생 PICK이 된 강의,\n매주 가격 인상 전 혜택가로 만나보세요."
+    ],
+    "content_hash": "325fde16dc1d9637",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.835307+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2115631130552750391:2115882987019456814": {
+    "paragraphs": [
+      "Thanks for sharing your work, sir. The C+ candle being infinite is taking some getting used to. I assume it will only stop once a new valid A+B set up has printed?"
+    ],
+    "translated": [
+      "작업물을 공유해 주셔서 감사합니다. C+ 캔들이 무한히 지속되는 것에 적응하는 데 시간이 좀 걸리네요. 새로운 유효한 A+B 설정이 나와야만 멈추는 것이겠죠?"
+    ],
+    "content_hash": "a3fe2a8ebb770cd0",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.831220+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2115681379984044065:2111179374615560206": {
+    "paragraphs": [
+      "Starlink로 이동 중에도 초고속 인터넷을 이용하세요. 와이파이 공유기가 내장된 Starlink Mini는 여행, 캠핑, 보트 타기, 원격 근무 등 다양한 활동에 적합합니다.",
+      "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
+      "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti"
+    ],
+    "translated": [
+      "Starlink로 이동 중에도 초고속 인터넷을 이용하세요. 와이파이 공유기가 내장된 Starlink Mini는 여행, 캠핑, 보트 타기, 원격 근무 등 다양한 활동에 적합합니다.",
+      "몇 분이면 온라인으로 주문을 완료하실 수 있어요.",
+      "주문하기 (https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti)  https://www.starlink.com/kr/roam?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_rom_gvp_v4m_stc_ko-kr_egn-camp-lost&twclid=2bkc8ylwms93fr6wwztgv0voti"
+    ],
+    "content_hash": "166e98f1ed2d1959",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.834420+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2115994603782320320:2116002567725699106": {
+    "paragraphs": [
+      "useful"
+    ],
+    "translated": [
+      "유용함"
+    ],
+    "content_hash": "a62ed7b95a2fe9e8",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.834913+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2115994603782320320:2115999659047215205": {
+    "paragraphs": [
+      "that looks useful"
+    ],
+    "translated": [
+      "유용해 보이네요"
+    ],
+    "content_hash": "4de273c5dbfdc43e",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.834702+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2116378325790970188:2116378381512302666": {
+    "paragraphs": [
+      "깃허브 링크",
+      "워드 대체 WordCraft\nhttps://t.co/O7AKgU5zsD",
+      "엑셀 대체 GridCraft\nhttps://t.co/zJACDMI2Ha",
+      "PPT 대체 DeckCraft\nhttps://t.co/9I0DC2Vlx3",
+      "어도비 대체 앱까지 전체 목록\nhttps://t.co/cB3xAMhmgU",
+      "아직 초기 버전이라 중요한 파일은 사본으로 열어보는 게 안전할 듯",
+      "GitHub - storytold/wordcraft: An open-source, clean-room reimplementation of Microsoft Word in pure... (https://t.co/O7AKgU5zsD)  https://t.co/O7AKgU5zsD"
+    ],
+    "translated": [
+      "깃허브 링크",
+      "워드 대체 WordCraft\nhttps://t.co/O7AKgU5zsD",
+      "엑셀 대체 GridCraft\nhttps://t.co/zJACDMI2Ha",
+      "PPT 대체 DeckCraft\nhttps://t.co/9I0DC2Vlx3",
+      "어도비 대체 앱까지 전체 목록\nhttps://t.co/cB3xAMhmgU",
+      "아직 초기 버전이라 중요한 파일은 사본으로 열어보는 게 안전할 듯",
+      "GitHub - storytold/wordcraft: 순수...로 구현된 Microsoft Word의 오픈소스 클린룸 재구현체... (https://t.co/O7AKgU5zsD)  https://t.co/O7AKgU5zsD"
+    ],
+    "content_hash": "38552d158d389f18",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-01T07:47:06.833862+00:00",
     "chunk": "posts-x.json"
   }
 }
