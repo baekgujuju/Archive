@@ -1,14 +1,14 @@
 {
-  "version": "2026-10-31T07:35:22.619864+00:00",
-  "content_updated_at": "2026-10-31T07:35:22.619890+00:00",
+  "version": "2026-11-02T01:17:30.229316+00:00",
+  "content_updated_at": "2026-11-02T01:17:30.229340+00:00",
   "build": "v2",
-  "source_hash": "1e619d60148f57c704b7e9d6fd0a306258544b3159042e8d6d20a31e8d25ad1b",
+  "source_hash": "1bc08a6ba8b5e06d17e03f35b309c93c95439f67bc7ba78abcb41182b08fcb81",
   "builder_version": "1.2.1",
   "chunks": {
     "posts-x": {
       "file": "data/posts-x.json",
-      "sha256": "65789b3f8ecf8ad3d6a0d217c2fd5f1d12278297b7c71b25409d2bafda54e303",
-      "count": 415
+      "sha256": "441b8d8a52c14f805e85adf9d4adc0a5c4af0a82c30b6d5a8b064e3f8cd7eae4",
+      "count": 422
     },
     "posts-web": {
       "file": "data/posts-web.json",
@@ -39,7 +39,7 @@
   },
   "article_media_map": {
     "file": "data/article-media-map.json",
-    "sha256": "c7316d3a9203a804d38bb9c883b2b46f0ca13aa84d56467ee7afd53c84058479",
-    "count": 13
+    "sha256": "07ce0ab4b15ba49e83aa1a1f33abb9e38cdd5b2bc85882f18dcb12cf60341bd8",
+    "count": 14
   }
 }

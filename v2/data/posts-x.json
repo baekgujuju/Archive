@@ -33597,6 +33597,914 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2116662751410233832",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2116662751410233832",
+      "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+      "createdAt": "2026-10-31T22:45:00.000Z",
+      "fullText": "종목 공부 다시 한다면 나는 이 스킬부터 깔아볼듯\n\n공급망에서 '병목' 잡고 있는 회사를\n파고드는 용도로 만든 클로드 스킬임\n깃허브 별 4,118개 ㄷㄷ\n\n이름은 serenity-skill\n만든 사람은 muxuuu\n\n설명은 딱 한 줄밖에 없음\n공급망 병목 종목 리서치용 에이전트 스킬이고\nSerenity라는 이름에서 영감 받아 만들었다고 적혀있음\n\n병목이 뭐냐면\n제품 하나 만들 때 그 부품 없으면\n라인이 아예 안 돌아가는 자리\n\n대신할 회사가 거의 없는 그 칸을 말하는 거\n남들 다 완성품 회사 볼 때\n그 밑에서 꼭 필요한 부품·장비 대는 데를 보는 시선임\n\n솔직히 이런 공부는 개미 혼자 하기 ㅈㄴ 빡셈\n누가 누구한테 납품하는지\n공시랑 기사 뒤져서 하나하나 엮어야 하니까\n\n그 엮는 리서치를 클로드랑 같이 하라고\n만든 스킬이라고 보면 될듯\n\n어디에 써먹냐면\n뉴스에 테마 하나 떴을 때\n그 밑단에 어떤 회사들이 걸려있는지 정리해볼 때\n\n리포트 읽다가 처음 보는 회사 나오면\n이게 공급망 어디쯤인지 감 잡는 용도로도 괜찮을 것 같음\n\n물론 이건 공부 도구지 매수 버튼이 아님\nAI가 정리해준 거 그대로 믿고 들어가는 건 좀 무섭긴 함\n숫자랑 출처는 결국 본인 눈으로 한 번 더 보는 거\n\n완성품만 보던 눈을 밑단으로 내려주는 발상, 이건 진짜 잘 만들었네.\n\nhttps://t.co/ndMfO0lNtm",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ab3df3ac86139e3fb067271df52225312fb276f91d1fa80e76d64a9bc5358f0d.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/ndMfO0lNtm",
+          "text": "https://github.com/muxuuu/serenity-skill…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116709566285250943",
+          "sourceUrl": "https://x.com/cocadol/status/2116709566285250943",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-11-01T01:51:01.000Z",
+          "fullText": "공급망 병목을 파고드는 리서치 툴이라니 투자 공부할 때 유용할듯 하더라",
+          "author": {
+            "handle": "@cocadol",
+            "name": "cocadol"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116724763901165588",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116724763901165588",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-11-01T02:51:25.000Z",
+          "fullText": "맞다",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116673371111051445",
+          "sourceUrl": "https://x.com/flowoodzx/status/2116673371111051445",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-10-31T23:27:12.000Z",
+          "fullText": "설명 한 줄에 별 4,118개면 README보다 이름이 일을 다 한 셈입니다",
+          "author": {
+            "handle": "@flowoodzx",
+            "name": "flowoodzx"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116724794792251846",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116724794792251846",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-11-01T02:51:32.000Z",
+          "fullText": "신기해요",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2112806825967927533",
+          "sourceUrl": "https://x.com/bookiepub/status/2112806825967927533",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "",
+          "fullText": "솔직히 작가들은 이런 사전을 기다려왔다  \n두 손이 자유로운 180도 제본 방식이라\n컴퓨터 옆에 두고 작업할 때 진짜 편해짐\n\n미세팁) 알라딘에서 책 사면 문장부호 북백도 같이 고를 수 있으니까 꼭 챙겨가자\n\nSlide 1 of 5 - Carousel (https://aladin.kr/p/9hduM?twclid=267evf849cs1t3tp06k1eoay77)  https://aladin.kr/p/9hduM?twclid=267evf849cs1t3tp06k1eoay77",
+          "author": {
+            "handle": "@bookiepub",
+            "name": "bookiepub"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-754eeacc99fb191420cad183958cea35c6198164f854a59697ce9d2ec8a657c5.jpg",
+              "alt": ""
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b46de8b9fc2e0019adc56879db190b14e97b76c1f09b391e1fd89b2a52f16974.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://aladin.kr/p/9hduM?twclid=267evf849cs1t3tp06k1eoay77",
+              "text": "Slide 1 of 5 - Carousel",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116698426335449388",
+          "sourceUrl": "https://x.com/ryooster71/status/2116698426335449388",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-11-01T01:06:45.000Z",
+          "fullText": "진짜 개인이 확인하기 어려운 하단 밸류체인까지 알려주는 것인 신박하네~",
+          "author": {
+            "handle": "@ryooster71",
+            "name": "ryooster71"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116724776303726916",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116724776303726916",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-11-01T02:51:28.000Z",
+          "fullText": "신기",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116849876319490327",
+          "sourceUrl": "https://x.com/koccr8861/status/2116849876319490327",
+          "capturedAt": "2026-11-02T01:16:45.687381+00:00",
+          "createdAt": "2026-11-01T11:08:34.000Z",
+          "fullText": "저거 안에 구조를 보니 정말로 아무것도 모르는상태에서 공부한다면 그냥 그런것도 있구나 하는 책의 목차정도로만 보고 넘기는게 좋을듯합니다. 남의 틀에 따르고 이유도 원리도 모른채 그냥 이렇게 하면되던데? 이런식 구조라 저게 정답으로 확정된 구조도 아니라 산업구조가 정확히 공부가 안될거에요 저걸 공부용으로 사용한다면 산업이 어떻게 돌아가는지만 보고 결국 공부는 따로해야하는데 그럴거면 산업순서만 검색하는거랑 뭐가 다른지 모르겠습니다 그냥 지금 올린 이미지같은거랑 다를바가 없어요",
+          "author": {
+            "handle": "@koccr8861",
+            "name": "koccr8861"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b85dbcf06673a4f2335f22b6e80081f8811e851d2d3ed730ae3d3a7743370f6d.jpg",
+              "alt": "Image"
+            }
+          ],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2116662751410233832",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2116662751410233832",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 8,
+          "max": 9
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116911283547320410",
+      "sourceUrl": "https://x.com/laylaperfume/status/2116911283547320410",
+      "capturedAt": "2026-11-02T01:17:01.353381+00:00",
+      "createdAt": "2026-11-01T15:12:34.000Z",
+      "fullText": "아마 마지막 글.\n\n현재 미국 증시는 기술주가 큰 폭으로 하락했음에도 S&P500은 상대적으로 잘 버티고 있다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909402544635904) \n\n1-Month Performance heattmap\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909495746228224) \n\n10월 한달 동안 AI 인프라와 반도체, 대형 기술주를 중심으로한 매도세가 집중된 반면 헬스케어, 필수 소비재, 유틸리티, 에너지 섹터 등에서는 강한 상승세가 나타났다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909559965175808) \n\n월간 수익률 기준 근사치, 고점 대비 하락률과는 차이가 있음.\n\n여기서 주목해야할 부분은 S&P를 동일가중으로 구성한 RSP는 상승마감 했다는 점.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909625484386305) \n\n시가총액 비중이 큰 기술주들의 하락으로 지수 자체는 부진한 모습을 보여줬지만 시장 내부에선 다른 업종으로 자금이 이동하는 로테이션이 진행됐다는 의미로 해석할 수 있다.\n\n이러한 움직임을 바탕으로 이번주에는 두가지 시나리오를 생각해 볼 수 있다.\n\n현재 시장을 변곡점에 놓여 있다 보고 있습니다.\n\n강한 확신보단 BULL과 BEAR 시나리오 두가지 모두 대비할 필요가 있다 생각.\n\n이에 따른 두가지 관점을 작성합니다.\n\n첫번째, 섹터 로테이션이 재차 역전되면서 기술주로 수급이 복귀하는 시나리오.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909725468250112) \n\n최근 공개된 주식 롱숏 포지션 관련 자료, 10월 글로벌 총 익스포저 대비\n\n누적 고점에서의 감소폭이 약 -7.8%에 달한 것으로 나타남.\n\n2016년 데이터 집계 시작 이후 가장 큰 폭이며, 이미 레버리지 포지션 축소가 상당 부분 진행됐다는 점은 눈여겨볼 필요가 있습니다.\n\n이런 상황에서 시장의 불확실성이 완화되고 기술주에 매수세가 다시 유입된다면, 신규 매수뿐 아니라 기존 숏포지션의 청산이 상승 탄력을 강화할 가능성이 있습니다.\n\n또한, 현재 미국 증시는 11월 3일 중간선거를 앞두고 여러 여론조사에서 민주당이 공화당보다 우위를 보이고 있습니다.\n\n최근 나타난 섹터 로테이션에는 정치적 불확실성을 반영한 포지셔닝이 일부 영향을 미쳤을 가능성도 배제할 수 없습니다.\n\n물론 최근 있었던 헬스케어와 경기방어주의 강세에는 위험회피성 자금의 이동심리 또한 상당 부분 반영됐을 것으로 판단합니다.\n\n여기서 한가지 생각해 볼 부분이 있습니다.\n\n중간선거 결과가 발표되고 정치적 불확실성이 해소되면서 그동안 진행됐던 섹터 로테이션이 다시 역전될 가능성.\n\n선거를 앞두고 형성된 포지션들이 청산되는 과정에서 최근 강세를 보인 업종에서는 차익실현 물량이 출회되고 상대적으로 낙폭이 컸던 기술주로 자금이 복귀할 가능성이 있습니다.\n\n최근 AI 인프라와 반도체 관련 종목들은 CAPEX 부담과 투자수익률에 대한 우려로 상당한 조정을 받았으며, 헤지펀드의 레버리지 축소도 강하게 진행됐습니다.\n\n자료를 하나 더 보겠습니다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909830674001920) \n\n최근 QQQ와 SPY의 공매도 잔고가 서로 다른 방향으로 움직였다.\n\n블룸버그 자료를 기반으로 분석을 해보면 최근 QQQ의 공매도 잔고는 급격히 증가한 반면 SPY의 공매도 잔고는 상대적으로 낮은 수준을 유지하고 있었습니다.\n\n이는 최근 시장의 하방 베팅이 기술주에 집중되고 있음을 시사하는 데이터죠.\n\n반대로 말하면 기술주에 쌓인 공매도 포지션은 향후 내러티브의 변화가 발생하는 과정에서 숏커버링을 유발할 수 있는 잠재적 매수 수요로 작동하기도 합니다.\n\n이미 기술주 위주의 상당한 디레버리징이 진행된 상황에서 중간선거 이후 정치적 불확실성이 완화되고 추가 악재 없이 기술주에 매수세가 유입된다면 기존 숏포지션의 청산까지 맞물리며 강한 반등이 나타날 가능성이 있습니다.\n\n시나리오 1의 이번주 체크포인트: 기술주를 중심으로 쌓인 공매도 포지션이 추가 하락 압력으로 작용할지 반대로 숏커버링을 동반한 상승의 연료가 될지 지켜볼 필요가 있겠습니다.\n\n두번째, 매도세의 확산과 하락장으로의 진입 가능성\n\n현재까지 상승을 이어왔던 경기방어주와 헬스케어까지 하락하며 기술주와 함께 동반 하락하기 시작한다면 본격적인 하락장으로 진입할 가능성을 경계해야 합니다.\n\n지금까지 미국 증시는 기술주가 하락하는 과정에서 다른 업종들이 지수를 지탱해 주었습니다.\n\n그런데 이러한 버팀목마저 무너지게 된다면 S&P500 역시 본격적인 하방 압력을 받을 수 있습니다.\n\n특히 QQQ가 반등에 실패하고 필수소비재와 헬스케어까지 하락하면서 RSP와 IWM이 동시에 약세로 전환되는 모습이 나타난다면 시장을 경계할 필요가 있다 보고 있습니다.\n\n일반적으로 시장 전반의 위험회피가 심해지는 구간에서는 종목 간 상관관계가 높아지는 경향이 있습니다.\n\n시장 하락장의 진행 과정에 대해 생각해 볼 필요가 있다.\n\n시장 전반에 걸친 강한 매도세가 나타나는 초기 국면에선 기술주와 경기방어주 구분없이 모두 하락하는현상이 나타난다.\n\n이후 하락 추세가 이어지는 과정에서 상대적으로 실적 변동성이 낮고 경기 민감도가 적은 필수소비재, 헬스케어 등의 경기방어주가 기술주보다 낙폭을 줄이거나 상대적 강세를 보이는 흐름이 나타난다.\n\n현재까진 기술주 중심의 조정 속에서 다른 섹터는 상당한 상승세을 보여주고 있었고 동일가중지수(RSP) 또한 상대적으로 양호한 흐름을 유지해왔다.\n\n따라서 아직은 시장 전반의 하락추세가 확인된 하락장이 아니었다고 판단.\n\n다만 추후 기술주의 반등이 여전히 제한된 상황에서 그동안 강세를 보였던 업종들까지 동반 하락이 나타난다면 매우 경계할 필요가 있겠습니다.\n\n기술적 관점\n\nSPX\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116909995463995392) \n\n이번주 7750pt 테스트 가능성을 말씀드리고 지지에 실패한다면 급한 하락이 나올 가능성을 말씀드렸던 것 같습니다.\n\n역시 SPX 지수 테스트 이후 지지 전환에 실패하며 윗꼬리를 크게 남기는 매도세가 강하게 나타났습니다.\n\n현재 기준으로 7600pt 위로 재차 반등하는 흐름이 나타나는게 가장 주요해 보이며, 다시 한번 해당 라인지지 실패시 7500pt 까지도 열려있게 되었습니다.\n\nNQ(나스닥선물)\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910158232367104) \n\n월봉\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910217229459456) \n\n일봉\n\n나스닥 선물 또한 마찬가지.\n\n월봉 기준 상단 피보나치 채널 돌파 이후 지지 전환 실패, 가돌파 패턴이 출현한 상황.\n\n일봉 기준으로 유효한 서폿(지지)구간을 모두 뚫는 강한 매도세가 나타났는데, 현재 주요 지지구간으로 이전 피보나치 빗각 채널하단: 28,150pt 구간을 보고 있습니다.\n\n극단적 BEAR CASE: 해당 라인마저 강하게 밀린다면 지난 4월 상승의 변곡점이었던 구간 26,300pt까지의 하락도 염두에 둬야한다 보고 있습니다.\n\nQQQ도 함께 보겠습니다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910339497578496) \n\n700$ 하방 이탈시 680~685$ 구간까지 내려올 가능성이 높다라고 말씀 드린 뒤, 지난 금요일 시장에서 상당히 빠르게 해당라인에 도달했습니다.\n\n말씀드렸던 대로, 해당구간(685.5$)에서 QLD,1차 분할 매수를 진행해 둔 상황.\n\n추후 예정된 이벤트를 소화하며 추가 매도세가 출회한다면 668$, 630$ 해당 가격대까지 내려올 가능성도 고려해봐야 합니다.\n\n (https://x.com/laylaperfume) \n\nVIX 25, QQQ 680$ 열어 두고 분할매수 진입\n\nDo not try this at home\n\nVIX와 옵션수급\n\n최근 VIX(변동성지수)를 가장 중요하게 살펴보고 있습니다.\n\n현재 시장의 위험수준과 투자심리를 가늠하는 데 있어 현재 VIX를 가장 중요한 단서로 판단하고 있습니다.\n\n지난 금요일 VIX의 움직임을 살펴보겠습니다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910510826569728) \n\nVIX는 장중 23.93까지 급등했으나 이후 빠르게 하락하면서 19.42로 마감\n\n장중 고점 대비 약 18.9%나 되돌리는 윗꼬리가 형성된 무브는 주목할 필요가 있습니다.\n\n장중 변동성에 대한 헷지수요가 급격히 높아졌지만 고점 부근에서 상승 압력이 유지되지 못하면서 옵션시장에 반영됐던 예상 변동성이 빠르게 축소됐다는 의미가 됩니다.\n\n특히 VIX가 급락하며 주식시장 역시 저점 대비 반등을 시도했다는 점은 긍정적인 해석이 가능합니다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910578732240896) \n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910606313979904) \n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910630326460416) \n\n물론 VIX가 윗꼬리를 남겼다는 이유만으로 실제 헤지 포지션이 얼마나 청산됐는지 확인 할 수는 없지만, 장중 극단적으로 확대 되었던 공포가 장마감까지 유지되지 못했다는 점은 단기적으로 긍정적인 신호로 평가할 수 있다 봅니다. (단기 반등의 가능성)\n\n지난 금요일 옵션수급 또한 함께 살펴볼 필요가 있다.\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910768167976960) \n\n금요일 장중 델타 환산 기준 약 80억$ 규모로 추정되는 0DTE 풋 매수세가 나타났습니다.\n\n*0DTE는 당일 만기가 도래하는 옵션, 만기까지 남은 시간이 극히 짧기 때문에 지수의 움직임에 따라 옵션 델타와 감마가 빠르게 변화하는 특징이 있음\n\n이러한 풋 매수 물량이 금요일 시장의 하락 압력을 확대했을 가능성을 생각해볼 수 있습니다.\n\n이러한 VIX와 0DTE의 동시적인 움직임은 단기 변동성을 증폭했을 가능성이 있으며, 무엇보다 중요한건 금요일 급락을 유도했을 가능성이 있는 이 0DTE 옵션은 금요일 당일 만기와 함께 소멸했다는점.\n\n만약 다음주 초에 유사한 규모의 풋매수세가 재차 유입되지 않는다면 추가 하락이 제한될 가능성이 존재합니다.\n\n최근 VIX가 장중 20선을 넘었지만, 종가 기준으로 단 한차례도 20 위에서 마감하지 못했는데, 이는 시장의 공포가 반복적으로 나타나는 상황에서도 VIX 20선 위에서는 종가 기준으로 변동성이 안착하지 못하고 있다는 의미로 해석할 수 있습니다.\n\nVIX 20 위에선 헤지 수요가 일부 완화됐을 가능성을 생각해 볼 수 있습니다.\n\n앞서 살펴본 자료에서도 확인했듯이 최근 헤지펀드의 디레버리징이 상당 부분 진행됐고 특히 기술주(QQQ)를 중심으로 공매도 잔고가 크게 증가한 상황입니다.\n\n이러한 환경에서 VIX가 20선 아래를 유지하며 하락한다면 기존 헤지 수요가 완화되고 위험자산에 대한 투자심리가 회복되면서 지수의 기술적 반등을 뒷받침할 가능성이 존재합니다.\n\n반대로 VIX가 20선을 돌파한 이후 종가 기준으로 안착하고 25선 부근까지 재차 상승한다면 경계할 필요가 있습니다.\n\n이러한 경우 시장 전반의 위험회피가 다시 강화되고 있을 가능성을 고려해야 합니다.\n\n이번주 기술적 관점의 핵심은 VIX가 20선 아래에서 안정되는지, 아니면 20선을 돌파한 후 변동성 확대가 지속되는지가 되겠습니다.\n\n개인적으로는 VIX가 종가 기준으로 20선을 지속적으로 상회하기 전까지는 기술주의 숏커버링과 함께 지수의 기술적 반등이 나타날 가능성을 열어두고 있습니다.\n\n다음주 실적발표 일정 및 예정된 이벤트\n\n (https://x.com/laylaperfume/article/2116911283547320410/media/2116910856063868928) \n\n11월 2일(월): 미국장 마감 후 애플과 팔란티어 실적 발표\n\n11월 3일(화): 미국 중간선거\n\n특히 이번 주에는 빅테크 실적과 중간선거 결과에 따라 시장의 내러티브와 수급 방향이 달라질 가능성이 있는 만큼 변동성 확대에 유의할 필요가 있습니다.\n\n앞서 두 가지 시나리오와 기술적 관점을 설명드렸지만, 결국 가장 중요한 것은 예정된 이벤트들을 시장이 어떻게 받아들이고 가격에 반영하느냐라고 생각합니다.\n\n예상과 다른 결과가 나오더라도 시장이 이를 소화하며 반등할 수 있고 반대로 긍정적인 결과에도 매도세가 이어질 수 있습니다.\n\n어느 한쪽 방향을 확신하기보다 실제 지수의 움직임과 수급 변화를 확인하면서 유연하게 대응할 생각입니다.\n\n시나리오는 준비하되 시장의 움직임에 따라 판단을 바꿀 수 있어야겠습니다.\n\n또한 아마 이 글이 X에서의 마지막 글이 될 것 같습니다.\n\n매일같이 밥그릇 싸움을 하며 본인의 뷰가 틀렸음에도 뻔뻔하게 행동하는 핀플루언서 분들을 보기만 해도 지치는 느낌입니다. \n\n노이즈가 진정될 때까지 당분간 쉬다 올 예정입니다. \n\n본 글은 특정 종목이나 자산의 매수·매도를 권유하기 위한 투자추천이 아닙니다.\n\n글에 포함된 전망과 해석은 작성 시점의 정보와 필자의 판단을 바탕으로 한 것이며, 시장환경과 정책 변화에 따라 언제든 달라질 수 있습니다.\n\n모든 투자판단과 그에 따른 결과에 대한 책임은 투자자 본인에게 있습니다.",
+      "author": {
+        "handle": "@laylaperfume",
+        "name": "laylaperfume"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-fe5cdd554445d3720f9666553c20c551a438e5910a2aec89f93538a060e2a4f8.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1df9eae302c65ebed032bc03646165001b7d732789c63c46e3d2ec25ecc87990.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d92f8f49b6e274087a6e110a96ec6f26e4717c3184516baf6c8b938beb2da7a2.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-bffe917be954f714d1c2b1afbe6bad11c4abc717d85447e498f9d75bde361f0b.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-3accbdbad326d9d703c07d4dc5936c8f6f01b2829eb23fd5b92571f0f81233cc.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a505bca1fbd80a83d6831d359a35d7f37077f67fab430891632b106f860aed6c.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1adc4ec1f3a5860085abd4ee7d7ecface6ed0fbff7682c937187da4ca2924bc1.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-69374353bf1220b4eeb412b76849a10cfdeab905e82c8586533add522bb806fe.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-60b2ffcf47ae4acdf2749767bec4d8237eee1c11334f216db793f58b310c21b6.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5d075c311a799e45f2df43a37829444a526f9ea5fcdedf74a15b48df843ebe2d.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-92c0997cb8bfeaa765d7374b2bb3b698ec3294974bd151c46737732d806c7c8c.jpg",
+          "alt": ""
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-bf5b622a7ffdbfd692458a4b3a2c6456e9f9b83882ee2d2db9a4acdf91521d84.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b5b2988b2e4a3ca6eae2b7f69f5ba4154c98272bab41b7be95743c19184fd374.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-cfa26e49648d662015195d903cc9c8caa9e846e8d2db22f38a2c02f03587aa15.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-db55a7180c25a3a3d63f37fa8951b3a19ff78d2299d42b72ffeffb9eaf16c48c.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a3f5e2c550aae5afa1d3232fa1bc0b0dc7ac21c22cce5ba51d51200654d7abd2.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-bd96f0ea73a5432bffef9d19928522688c37ebb474ecfd7d8722fe46cc71e083.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909402544635904",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909495746228224",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909559965175808",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909625484386305",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909725468250112",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909830674001920",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116909995463995392",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910158232367104",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910217229459456",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910339497578496",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume",
+          "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910510826569728",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910578732240896",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910606313979904",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910630326460416",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910768167976960",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/laylaperfume/article/2116911283547320410/media/2116910856063868928",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/laylaperfume/status/2116911283547320410",
+        "observed_main_url": "https://x.com/laylaperfume/status/2116911283547320410",
+        "author_handle": "laylaperfume",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116764675023024422",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2116764675023024422",
+      "capturedAt": "2026-11-02T01:17:06.384382+00:00",
+      "createdAt": "2026-11-01T05:30:00.000Z",
+      "fullText": "쇼핑몰·지도·SNS 데이터를 클로드가 긁어온다니 이거 미쳤음\n\n부업할 때 제일 귀찮은 시장조사,\n그 복붙 노가다를 AI한테 넘기는 도구임\n\n이름은 apify-mcp-server\n만든 곳은 Apify, 깃허브 별 1.3만\n\n엄밀히 말하면 스킬보다는 MCP 서버 쪽인데\n클로드 같은 AI한테 손발 붙여주는\n연결 장치 정도로 보면 됨\n\n뭘 해주냐면\nSNS, 검색엔진, 지도, 쇼핑몰\n아니면 아예 아무 웹사이트에서든\nAI가 데이터를 뽑아오게 해줌\n\n포인트는 하나하나 직접 만드는 게 아니라는 거\nApify 스토어에 이미 만들어진\n스크래퍼·크롤러·자동화 도구가 수천 개 있고\nAI가 그걸 가져다 쓰는 방식이라고 함\n\n(스크래퍼는 페이지에서 정보 긁어오는 프로그램,\n크롤러는 링크 타고 다니면서 페이지 모으는 프로그램\n대충 이렇게 이해하면 됨)\n\n원래 이런 건 코딩 좀 하는 사람이\n사이트마다 따로 짜야 했잖아\n남이 만들어둔 걸 꺼내 쓰는 거라\n진입장벽이 확 낮아지는 쪽임\n\n설치·연결 방법은 깃허브 README에 따로 있음\n처음이면 거기 순서 그대로 따라가는 게 제일 빠를듯\n\n어디에 써먹냐면\n\n스마트스토어·쿠팡 하는 형들은\n경쟁 상품 가격이랑 리뷰 모으는 데\n\n블로그·체험단 하는 형들은\n지도에서 동네 가게 목록 뽑아 정리하는 데\n\n회사에선 경쟁사 SNS 반응 모아서\n보고서 초안 잡는 데 붙여보기 좋아 보임\n\n물론 사이트마다 이용약관이 있으니까\n아무 데나 막 긁는 건 조심해야 하고\n요금 같은 건 Apify 쪽에서 따로 확인해보는 게 맞을듯\n\n엑셀에 하나하나 복붙하던 그 시간들은 다 뭐였던 거지..?\n\nhttps://t.co/8OtXqdycq7",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-167246091abb698ba71af70c4b157208becae2adf4a98fc446b49c9ea9bdf6fc.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/8OtXqdycq7",
+          "text": "https://github.com/apify/apify-mcp-server…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116768631711522968",
+          "sourceUrl": "https://x.com/yangnyomnyom/status/2116768631711522968",
+          "capturedAt": "2026-11-02T01:17:06.384382+00:00",
+          "createdAt": "2026-11-01T05:45:44.000Z",
+          "fullText": "진짜 편리해진 세상입니다••",
+          "author": {
+            "handle": "@yangnyomnyom",
+            "name": "yangnyomnyom"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116792660216479931",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2116792660216479931",
+          "capturedAt": "2026-11-02T01:17:06.384382+00:00",
+          "createdAt": "2026-11-01T07:21:12.000Z",
+          "fullText": "ai 못쓰면.. 이제 ㅋㅡㄴ일 ㅠ",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2116764675023024422",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2116764675023024422",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116538432147345851",
+      "sourceUrl": "https://x.com/smbluespace/status/2116538432147345851",
+      "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+      "createdAt": "2026-10-31T14:31:00.000Z",
+      "fullText": "클로드에 깔아 두면 업무가 빨라지는 스킬 3개.\n\n1. 공식 스킬 모음은 오피스 문서를 진짜 파일로 뽑아 줌\n2. humanizer는 AI 티 나는 문장을 자연스럽게 손봄\n3. last30days는 한 달 치 커뮤니티 반응을 한 번에 요약\n\n트렌드 보고서 쓸 때 last30days 하나만 써도 시간 꽤 아끼겠다\n\n공식 스킬 저장소는 이 주소임\n\nhttps://t.co/76BhVXNKRc",
+      "author": {
+        "handle": "@smbluespace",
+        "name": "smbluespace"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-59cb2b14f4d8a386eded0cc62dcc43114e319fe11ff9d6fc5cf3e2e42dd25eaf.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/76BhVXNKRc",
+          "text": "https://github.com/anthropics/skills…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116833538721063285",
+          "sourceUrl": "https://x.com/nyse_min/status/2116833538721063285",
+          "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+          "createdAt": "2026-11-01T10:03:39.000Z",
+          "fullText": "이거 핸드폰에 까서 넣을수 있어요?? 클로드는 앱으로만 하는데?",
+          "author": {
+            "handle": "@nyse_min",
+            "name": "nyse_min"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116833908230877210",
+          "sourceUrl": "https://x.com/smbluespace/status/2116833908230877210",
+          "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+          "createdAt": "2026-11-01T10:05:07.000Z",
+          "fullText": "클코가야할듯요 ㅎㅎ",
+          "author": {
+            "handle": "@smbluespace",
+            "name": "smbluespace"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116539361110245454",
+          "sourceUrl": "https://x.com/2000uu2000/status/2116539361110245454",
+          "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+          "createdAt": "2026-10-31T14:34:41.000Z",
+          "fullText": "2번 휴머나이저가 제일 궁금하네요. 에이아이 티 지우는 건 도구가 해주는데, 문체는 결국 직접 써봐야 생기더라고요",
+          "author": {
+            "handle": "@2000uu2000",
+            "name": "2000uu2000"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115268244751733101",
+          "sourceUrl": "https://x.com/openbooks21/status/2115268244751733101",
+          "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+          "createdAt": "",
+          "fullText": "오늘날 미국의 초부유층은 막대한 부를 축적하고 있다.\n그들은 그 돈으로 무엇을 하고 있을까?\n\n슈퍼리치와 부, 그리고 그들의 권력의 세계는 \n과연 어떻게 움직이는가\n\n📘 『슈퍼리치의 시선』\n\nkyobobook.co.kr ​ (https://product.kyobobook.co.kr/detail/S000221774024?twclid=2bmvywo3fbg2avxmhoq9ai0dbm)  https://product.kyobobook.co.kr/detail/S000221774024?twclid=2bmvywo3fbg2avxmhoq9ai0dbm",
+          "author": {
+            "handle": "@openbooks21",
+            "name": "openbooks21"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b50f3ce547304bfc27343e0e1c438a80206a0be617b5f1c8edf938c5a57a48a9.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://product.kyobobook.co.kr/detail/S000221774024?twclid=2bmvywo3fbg2avxmhoq9ai0dbm",
+              "text": "kyobobook.co.kr ​",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116838160823116195",
+          "sourceUrl": "https://x.com/yuki__shu1224/status/2116838160823116195",
+          "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+          "createdAt": "2026-11-01T10:22:01.000Z",
+          "fullText": "ファーストビューで惹きつけても\n\nその前にUSPの独自性が無いと意味が薄いです\n\nUSPとは簡単に言うと\n\n「他と違う自分だけの強み」\n\nこれがクリアでないと\n\nLPはただの飾りに終わることが多いです\n\nUSPは料理の味付けのようなもので\n\n見た目だけじゃなく中身も決める大切な要素なんですよね",
+          "author": {
+            "handle": "@yuki__shu1224",
+            "name": "yuki__shu1224"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116592442053132767",
+          "sourceUrl": "https://x.com/themitsuha33/status/2116592442053132767",
+          "capturedAt": "2026-11-02T01:17:11.894382+00:00",
+          "createdAt": "2026-10-31T18:05:37.000Z",
+          "fullText": "@bot (https://x.com/bot)",
+          "author": {
+            "handle": "@themitsuha33",
+            "name": "themitsuha33"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/bot",
+              "text": "@bot",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/smbluespace/status/2116538432147345851",
+        "observed_main_url": "https://x.com/smbluespace/status/2116538432147345851",
+        "author_handle": "smbluespace",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116799586480361520",
+      "sourceUrl": "https://x.com/BTC_WyckoffLab/status/2116799586480361520",
+      "capturedAt": "2026-11-02T01:17:15.715382+00:00",
+      "createdAt": "2026-11-01T07:48:44.000Z",
+      "fullText": "초보자라면 이런 차트는 꼭 기억해두세요.\n박스권 하단에 저항을 맞으면 미련 없이 던져야 합니다.\n\n박스 안에 있을 때 하단은 지지입니다.\n\n하지만 가격이 박스 하단을 종가로 이탈하고,\n반등에서도 다시 박스 안으로 들어가지 못한다면?\n\n이전에 지지였던 가격이\n이제는 위로 올라가지 못하게 막는 저항으로 바뀐 겁니다.\n\nOPEN 차트에서는 이 장면이 두 번 반복됐습니다.\n\n첫 번째 박스 하단인 6.91달러 이탈.\n이후 되돌림에서 박스 하단을 \n저항으로 확인한 뒤 다시 하락했습니다.\n\n그리고 하락 중 새로운 박스가 만들어졌습니다.\n\n횡보가 길어지자 바닥처럼 보였겠지만,\n4.26달러를 이탈한 뒤 또다시 박스 하단을 넘지 못했습니다.\n\n결과는 1.80달러까지 이어진 추가 하락이었습니다.\n이 중간 박스가 바로 재분산입니다.\n\n이미 한 차례 물량을 넘긴 뒤 하락하고,\n중간에서 잠시 횡보하며 남은 물량을 다시 넘긴 다음\n또 한 번의 하락이 이어지는 구조입니다.\n\n횡보한다고 모두 매집은 아닙니다.\n많이 하락했다고 바닥도 아닙니다.\n\n박스 하단 이탈 → 되돌림 → 하단 저항 확인\n\n이 흐름이 나오면 희망을 품고 버틸 자리가 아닙니다.\n\n다시 박스 안으로 복귀해 지지하기 전까지는\n미련 없이 정리하는 편이 낫습니다.\n\n지지였던 가격이 저항으로 바뀌는 순간,\n시장은 이미 다음 하락을 말하고 있을 수 있습니다.",
+      "author": {
+        "handle": "@BTC_WyckoffLab",
+        "name": "BTC_WyckoffLab"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-324240854e82f9f5b83a0adc6869bd05d55c53d9ea525f0c660e16eb71593d12.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116864535323881668",
+          "sourceUrl": "https://x.com/moneyflags/status/2116864535323881668",
+          "capturedAt": "2026-11-02T01:17:15.715382+00:00",
+          "createdAt": "2026-11-01T12:06:49.000Z",
+          "fullText": "아 오픈도어",
+          "author": {
+            "handle": "@moneyflags",
+            "name": "moneyflags"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116869649350774862",
+          "sourceUrl": "https://x.com/BTC_WyckoffLab/status/2116869649350774862",
+          "capturedAt": "2026-11-02T01:17:15.715382+00:00",
+          "createdAt": "2026-11-01T12:27:08.000Z",
+          "fullText": "ㅜㅜㅜ",
+          "author": {
+            "handle": "@BTC_WyckoffLab",
+            "name": "BTC_WyckoffLab"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/BTC_WyckoffLab/status/2116799586480361520",
+        "observed_main_url": "https://x.com/BTC_WyckoffLab/status/2116799586480361520",
+        "author_handle": "BTC_WyckoffLab",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116566569841217767",
+      "sourceUrl": "https://x.com/aburacadabra_/status/2116566569841217767",
+      "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+      "createdAt": "2026-10-31T16:22:48.000Z",
+      "fullText": "클로드 코드 쓰다가 사용량 금방 바닥나는 사람 많을 텐데\n스포티파이 직원이 그걸 확 줄인 방법을 공개했음\n\n원인은 이거였음\n클로드 코드는 코드 짜기 전에 관련 파일을 엄청 많이 읽는데\n그 \"읽기\"에도 비싼 클로드 사용량이 그대로 깎임\n\n그래서 큰 파일 읽기는 싸고 빠른 다른 AI(구글 Gemini Flash)한테 맡기고\n클로드는 그 AI가 요약해준 내용만 보고 코드를 짜게 바꿈\n비싼 셰프한테 장보기까지 시키다가 장보기 알바를 따로 둔 것\n\n파일 읽는 데 쓰던 사용량이 82~94% 줄었다고 함\n(전체 사용량이 90% 준 건 아니고 읽기 구간 얘기)\n\nWrite code using Claude Code—the real thing that’ll bankrupt you isn’t “deep thinking,” but mindless I/O!\n\nSpotify just revealed a god-tier internal practice: they built a plugin called shunt that slashes Claude Code’s token consumption by a straight 90%.\n\nThe core insight boils",
+      "author": {
+        "handle": "@aburacadabra_",
+        "name": "aburacadabra_"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116677078850638010",
+          "sourceUrl": "https://x.com/purpleeddy_dev/status/2116677078850638010",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-10-31T23:41:56.000Z",
+          "fullText": "파일 읽는 데서 사용량이 샌다는 건 몰랐어요",
+          "author": {
+            "handle": "@purpleeddy_dev",
+            "name": "purpleeddy_dev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116728293458432073",
+          "sourceUrl": "https://x.com/aburacadabra_/status/2116728293458432073",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-11-01T03:05:26.000Z",
+          "fullText": "저도 이번에 처음 알았어요~",
+          "author": {
+            "handle": "@aburacadabra_",
+            "name": "aburacadabra_"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116569157634552136",
+          "sourceUrl": "https://x.com/momo_picks/status/2116569157634552136",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-10-31T16:33:05.000Z",
+          "fullText": "그 방법 궁금 ㅋㅋ",
+          "author": {
+            "handle": "@momo_picks",
+            "name": "momo_picks"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116728233588838425",
+          "sourceUrl": "https://x.com/aburacadabra_/status/2116728233588838425",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-11-01T03:05:12.000Z",
+          "fullText": "큰 파일 읽기는 싼 AI(Gemini Flash)한테 맡기고, 클로드는 그 요약만 보고 코드 짜게 한 거예요! 읽기에서 쓰던 사용량이 82~94% 줄었대요 ~",
+          "author": {
+            "handle": "@aburacadabra_",
+            "name": "aburacadabra_"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116804745683935401",
+          "sourceUrl": "https://x.com/shine7onus/status/2116804745683935401",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-11-01T08:09:14.000Z",
+          "fullText": "엑셀 파일 다룰 때도 똑같더라고요\n통째로 읽히지 말고 시트 이름, 열 제목, 샘플 몇 줄만 주면\n사용량도 줄고 실제 숫자나 개인정보도 안 넘어가요",
+          "author": {
+            "handle": "@shine7onus",
+            "name": "shine7onus"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116901700044984449",
+          "sourceUrl": "https://x.com/aburacadabra_/status/2116901700044984449",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-11-01T14:34:30.000Z",
+          "fullText": "오 꿀팁이네요! 개인정보까지 지켜지는 게 제일 좋은 것 같아요👍",
+          "author": {
+            "handle": "@aburacadabra_",
+            "name": "aburacadabra_"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116736788261900560",
+          "sourceUrl": "https://x.com/LunomiCloud/status/2116736788261900560",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "2026-11-01T03:39:12.000Z",
+          "fullText": "읽기만 싼 모델로 빼는 거 진짜 똑똑하네요 요약 품질만 받쳐주면 체감 클 듯",
+          "author": {
+            "handle": "@LunomiCloud",
+            "name": "LunomiCloud"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2112741073554391486",
+          "sourceUrl": "https://x.com/bookclub_millie/status/2112741073554391486",
+          "capturedAt": "2026-11-02T01:17:20.889382+00:00",
+          "createdAt": "",
+          "fullText": "🎂밀리의서재 열 번째 생일!🎂\n역대급 1+1 혜택이 찾아왔습니다!\n1달 가격 11,900원으로 2달 내내 무제한 독서를 즐겨보세요.\n\n오직 10주년 프로모션 기간에만 열리는\n1+1 혜택 놓치지 마세요!✨\n\nmillie.co.kr ​ (https://short.millie.co.kr/r3ydwch?twclid=26i3etdlqws6e9fnq7hao6mbbj)  https://short.millie.co.kr/r3ydwch?twclid=26i3etdlqws6e9fnq7hao6mbbj",
+          "author": {
+            "handle": "@bookclub_millie",
+            "name": "bookclub_millie"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e6ea88b6df72fa1216707fb0a44ea537d787a6207d5bd64febfbbb673b6eb8d7.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://short.millie.co.kr/r3ydwch?twclid=26i3etdlqws6e9fnq7hao6mbbj",
+              "text": "millie.co.kr ​",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/aburacadabra_/status/2116566569841217767",
+        "observed_main_url": "https://x.com/aburacadabra_/status/2116566569841217767",
+        "author_handle": "aburacadabra_",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 8,
+          "max": 9
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116145991820919203",
+      "sourceUrl": "https://x.com/Neko_king_fx/status/2116145991820919203",
+      "capturedAt": "2026-11-02T01:17:24.948382+00:00",
+      "createdAt": "2026-10-30T12:31:35.000Z",
+      "fullText": "When I was a beginner,  \nI had the experience of jumping in the moment a trend reversed and losing over and over.  \n\nBut now it's different—  \nI aim for the \"first pullback\" after the reversal.  \nI wait until the pullback forms!  \nThis has a pretty high win rate and tends to lead to good follow-through.  \n\nJust stopping the habit of jumping in right after the reversal can reduce a lot of pointless entries.",
+      "author": {
+        "handle": "@Neko_king_fx",
+        "name": "Neko_king_fx"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-186cf3e31258d6e9ca2980ad06d3f25dacdb283ff109c88a09d77214a407f824.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116167455085404581",
+          "sourceUrl": "https://x.com/yusuke_fx_/status/2116167455085404581",
+          "capturedAt": "2026-11-02T01:17:24.948382+00:00",
+          "createdAt": "2026-10-30T13:56:52.000Z",
+          "fullText": "転換直後に飛びつくのは流石に怖いですよね…。",
+          "author": {
+            "handle": "@yusuke_fx_",
+            "name": "yusuke_fx_"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/Neko_king_fx/status/2116145991820919203",
+        "observed_main_url": "https://x.com/Neko_king_fx/status/2116145991820919203",
+        "author_handle": "Neko_king_fx",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
