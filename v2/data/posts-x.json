@@ -34505,6 +34505,157 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2117057530937684020",
+      "sourceUrl": "https://x.com/db_goyoung/status/2117057530937684020",
+      "capturedAt": "2026-11-02T09:26:58.740522+00:00",
+      "createdAt": "2026-11-02T00:53:43.000Z",
+      "fullText": "요즘 그록봇(Grok Bot) 써보신 분들은 100% 공감할 거임.\n\nAI 에이전트로 일 시키면 진짜 편하고 신세계인데, 몇 번 굴리다 보면 사용량 제한 걸려서 리셋될 때까지 멍하니 손가락 빨아야 함.\n\n게다가 매달 나가는 비싼 구독료도 은근히 부담스러운데,\n\n사용량 무제한에, 가성비 끝판왕인 ‘딥시크(DeepSeek 4.1)’ API 물려서 24시간 헐값으로 노예처럼 부려먹을 수 있는 미친 오픈소스가 등장함.\n\n심지어 내 컴퓨터 안에서 가상머신(VM)을 직접 띄워놓고 알아서 마우스·키보드 잡고 업무를 하는 것도 가능함.\n\n어떤 툴이고 왜 난리인지 핵심 정리 (타래로 👇)",
+      "author": {
+        "handle": "@db_goyoung",
+        "name": "db_goyoung"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c5f2a2743762f2977bbbee9a57879db69b5ab990621e0d1cfa8f0ca5fc911637.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/db_goyoung/status/2117057530937684020"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/db_goyoung/status/2117057530937684020",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/db_goyoung/status/2117057530937684020",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2117057533483549067",
+          "sourceUrl": "https://x.com/db_goyoung/status/2117057533483549067",
+          "capturedAt": "2026-11-02T09:26:58.740522+00:00",
+          "createdAt": "2026-11-02T00:53:43.000Z",
+          "fullText": "주인공은 그록봇의 오픈소스 완전 대체재 ‘OpenMausBot’\n\n텔레그램이나 슬랙처럼 메신저 앱 형태로 생겼는데, 사이드바에 등록된 봇 하나하나가 브라우저와 컴퓨터를 직접 다루는 ‘진짜 독립된 AI 에이전트’임.\n\n1. 사용량 무제한 & 딥시크 4.1 꿀조합\n- 플랫폼의 쿼터 제한 없이 원하는 모델 API만 꽂으면 끝. 특히 딥시크 4.1은 토큰 비용이 압도적으로 싸서, 복잡한 다단계 리서치나 자동화 업무를 밤새 뺑뺑이 돌려도 커피 한 잔 값도 안 나옴.\n\n2. 독립된 샌드박스 VM (안전성 종결)\n- 봇마다 격리된 로컬 가상머신(VM)이나 클라우드 데스크톱을 부여함. 내 진짜 컴퓨터 화면을 더럽히지 않고 샌드박스 안에서 안전하게 웹 서핑, 코드 실행, 파일 다운로드를 척척 해냄.\n\n3. 500개 이상 업무 앱 연동 (Composio 지원)\n- 구글 시트, 노션, 깃허브, 슬랙 등 500개 이상의 서비스와 연결되어 있어, 채팅창에 친구한테 말하듯 지시만 던지면 알아서 앱들을 넘나들며 작업 완료.\n\n맥(실리콘/인텔), 윈도우, 리눅스용 데스크톱 앱(.dmg, .exe)을 공식 지원해서 설치도 초간단함.\n\n비싼 구독료와 사용량 제한 스트레스 없이, 내 컴퓨터 안에 '24시간 AI 직원'을 굴리고 싶다면 현시점 최고의 조합일듯.\n\n나도 방금 설치하고 세팅해보는 즁\n\n🔗 GitHub:\n\nGitHub - milind-soni/OpenMausBot: Open-source Grok Bot alternative with a virtual machine that bots... (https://t.co/oJv7yEPwRw)  https://t.co/oJv7yEPwRw",
+          "author": {
+            "handle": "@db_goyoung",
+            "name": "db_goyoung"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/oJv7yEPwRw",
+              "text": "GitHub - milind-soni/OpenMausBot: Open-source Grok Bot alternative with a virtual machine that bots...",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2117132728747671578",
+          "sourceUrl": "https://x.com/koreabuldak/status/2117132728747671578",
+          "capturedAt": "2026-11-02T09:26:58.740522+00:00",
+          "createdAt": "2026-11-02T05:52:31.000Z",
+          "fullText": "헤르메스보다 낫나요???",
+          "author": {
+            "handle": "@koreabuldak",
+            "name": "koreabuldak"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117106564759007577",
+          "sourceUrl": "https://x.com/OnewKonew/status/2117106564759007577",
+          "capturedAt": "2026-11-02T09:26:58.740522+00:00",
+          "createdAt": "2026-11-02T04:08:33.000Z",
+          "fullText": "저는 \n@OpenBot_ (https://x.com/OpenBot_) \n 쓰고 있습니다. 너무 좋습니다",
+          "author": {
+            "handle": "@OnewKonew",
+            "name": "OnewKonew"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/OpenBot_",
+              "text": "@OpenBot_",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117107128150508002",
+          "sourceUrl": "https://x.com/db_goyoung/status/2117107128150508002",
+          "capturedAt": "2026-11-02T09:26:58.740522+00:00",
+          "createdAt": "2026-11-02T04:10:47.000Z",
+          "fullText": "오.. 다른분도 오픈봇 사용한다던데 오픈봇도 한 번 확인해봐야겠네요",
+          "author": {
+            "handle": "@db_goyoung",
+            "name": "db_goyoung"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2089916130127221224",
+          "sourceUrl": "https://x.com/blezsportscards/status/2089916130127221224",
+          "capturedAt": "2026-11-02T09:26:58.740522+00:00",
+          "createdAt": "",
+          "fullText": "Patience is for HODLers. Some of us like to open things. \n\n🃏 Fresh sealed drops every week: pay in USDC & stablecoins. \n\nGRAILBLAZER for 20% off your first order.\n\nRip Something. Pay in USDC. (https://blezonline.com/?utm_source=X&utm_medium=paid&utm_campaign=cryp&twclid=21n1p55srxeiuqfnp363cr83e4)  https://blezonline.com/?utm_source=X&utm_medium=paid&utm_campaign=cryp&twclid=21n1p55srxeiuqfnp363cr83e4",
+          "author": {
+            "handle": "@blezsportscards",
+            "name": "blezsportscards"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-90caf99643b8b949444d3ae4d50a393ba6a7c2f4df301051019cf0856dfa4dac.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://blezonline.com/?utm_source=X&utm_medium=paid&utm_campaign=cryp&twclid=21n1p55srxeiuqfnp363cr83e4",
+              "text": "Rip Something. Pay in USDC.",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/db_goyoung/status/2117057530937684020",
+        "observed_main_url": "https://x.com/db_goyoung/status/2117057530937684020",
+        "author_handle": "db_goyoung",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 5,
+          "max": 6
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
