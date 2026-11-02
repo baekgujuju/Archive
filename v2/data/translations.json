@@ -9028,7 +9028,7 @@
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
       "error": "Codex translation failed (exit 1); existing cache retained",
-      "failed_at": "2026-11-02T01:22:46.113903+00:00"
+      "failed_at": "2026-11-02T09:33:15.830980+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12457,7 +12457,7 @@
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-02T01:22:01.948726+00:00"
+    "failed_at": "2026-11-02T09:32:33.737557+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12693,7 +12693,7 @@
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-02T01:22:26.232769+00:00"
+    "failed_at": "2026-11-02T09:32:57.535887+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13287,7 +13287,7 @@
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:46.114427+00:00"
+    "failed_at": "2026-11-02T09:33:15.831479+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13808,7 +13808,7 @@
     "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:46.113863+00:00"
+    "failed_at": "2026-11-02T09:33:15.830940+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13931,7 +13931,7 @@
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:46.114438+00:00"
+    "failed_at": "2026-11-02T09:33:15.831488+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14004,7 +14004,7 @@
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:46.114445+00:00"
+    "failed_at": "2026-11-02T09:33:15.831496+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14117,7 +14117,7 @@
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:46.114451+00:00"
+    "failed_at": "2026-11-02T09:33:15.831521+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16058,7 +16058,7 @@
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:46.114457+00:00"
+    "failed_at": "2026-11-02T09:33:15.831528+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16230,7 +16230,7 @@
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243735+00:00"
+    "failed_at": "2026-11-02T09:33:26.358162+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
@@ -16561,7 +16561,7 @@
     "content_hash": "cb27b68b1a63647d",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243771+00:00"
+    "failed_at": "2026-11-02T09:33:26.358199+00:00"
   },
   "reply:1855930332425720114:1855936674204913784": {
     "paragraphs": [
@@ -16680,7 +16680,7 @@
     "content_hash": "fce3a29e98b66f47",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243798+00:00"
+    "failed_at": "2026-11-02T09:33:26.358236+00:00"
   },
   "reply:2116538432147345851:2116838160823116195": {
     "paragraphs": [
@@ -16697,7 +16697,7 @@
     "content_hash": "93685379124794d0",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243795+00:00"
+    "failed_at": "2026-11-02T09:33:26.358231+00:00"
   },
   "reply:2116566569841217767:2112741073554391486": {
     "paragraphs": [
@@ -16709,7 +16709,7 @@
     "content_hash": "78a3c074a476959a",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243802+00:00"
+    "failed_at": "2026-11-02T09:33:26.358241+00:00"
   },
   "reply:2116662751410233832:2116673371111051445": {
     "paragraphs": [
@@ -16719,7 +16719,7 @@
     "content_hash": "f515ef780be24a2b",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243781+00:00"
+    "failed_at": "2026-11-02T09:33:26.358210+00:00"
   },
   "reply:2116538432147345851:2115268244751733101": {
     "paragraphs": [
@@ -16732,7 +16732,7 @@
     "content_hash": "41fdda00586eb25a",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243790+00:00"
+    "failed_at": "2026-11-02T09:33:26.358224+00:00"
   },
   "reply:2116662751410233832:2112806825967927533": {
     "paragraphs": [
@@ -16744,7 +16744,7 @@
     "content_hash": "f8cbd4f93c0c1b24",
     "status": "failed",
     "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-02T01:22:56.243786+00:00"
+    "failed_at": "2026-11-02T09:33:26.358216+00:00"
   },
   "reply:2116145991820919203:2116167455085404581": {
     "paragraphs": [
@@ -17038,5 +17038,24 @@
     "validation_version": 2,
     "translated_at": "2026-11-02T01:34:51.248029+00:00",
     "chunk": "posts-x.json"
+  },
+  "reply:2117057530937684020:2117057533483549067": {
+    "paragraphs": [
+      "주인공은 그록봇의 오픈소스 완전 대체재 ‘OpenMausBot’",
+      "텔레그램이나 슬랙처럼 메신저 앱 형태로 생겼는데, 사이드바에 등록된 봇 하나하나가 브라우저와 컴퓨터를 직접 다루는 ‘진짜 독립된 AI 에이전트’임.",
+      "1. 사용량 무제한 & 딥시크 4.1 꿀조합\n- 플랫폼의 쿼터 제한 없이 원하는 모델 API만 꽂으면 끝. 특히 딥시크 4.1은 토큰 비용이 압도적으로 싸서, 복잡한 다단계 리서치나 자동화 업무를 밤새 뺑뺑이 돌려도 커피 한 잔 값도 안 나옴.",
+      "2. 독립된 샌드박스 VM (안전성 종결)\n- 봇마다 격리된 로컬 가상머신(VM)이나 클라우드 데스크톱을 부여함. 내 진짜 컴퓨터 화면을 더럽히지 않고 샌드박스 안에서 안전하게 웹 서핑, 코드 실행, 파일 다운로드를 척척 해냄.",
+      "3. 500개 이상 업무 앱 연동 (Composio 지원)\n- 구글 시트, 노션, 깃허브, 슬랙 등 500개 이상의 서비스와 연결되어 있어, 채팅창에 친구한테 말하듯 지시만 던지면 알아서 앱들을 넘나들며 작업 완료.",
+      "맥(실리콘/인텔), 윈도우, 리눅스용 데스크톱 앱(.dmg, .exe)을 공식 지원해서 설치도 초간단함.",
+      "비싼 구독료와 사용량 제한 스트레스 없이, 내 컴퓨터 안에 '24시간 AI 직원'을 굴리고 싶다면 현시점 최고의 조합일듯.",
+      "나도 방금 설치하고 세팅해보는 즁",
+      "🔗 GitHub:",
+      "GitHub - milind-soni/OpenMausBot: Open-source Grok Bot alternative with a virtual machine that bots... (https://t.co/oJv7yEPwRw)  https://t.co/oJv7yEPwRw"
+    ],
+    "translated": [],
+    "content_hash": "a1dc98a5f9eb16ee",
+    "status": "failed",
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-02T09:33:26.358245+00:00"
   }
 }

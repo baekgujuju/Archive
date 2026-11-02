@@ -6547,5 +6547,27 @@
     "category_ko": "AI / LLM 웹 UI",
     "owner_hint": "open-webui",
     "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:c5f2a2743762f2977bbbee9a57879db69b5ab990621e0d1cfa8f0ca5fc911637": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/skyvern-ai/skyvern"
+    ],
+    "title": "skyvern-ai/skyvern",
+    "description_ko": "LLM과 컴퓨터 비전을 활용하여 브라우저 기반 워크플로 및 웹 자동화를 수행하는 오픈소스 AI 에이전트",
+    "category_ko": "AI / 웹 자동화",
+    "owner_hint": "skyvern-ai",
+    "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:2ca1d4b7f07c2c8aeccfd3f5a8158ca1b96c42cac31c826ae611463625d0a0da": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/microsoft/markitdown"
+    ],
+    "title": "microsoft/markitdown",
+    "description_ko": "다양한 파일 및 오피스 문서를 마크다운(Markdown) 포맷으로 변환하는 Python 도구",
+    "category_ko": "문서 변환 도구 / 유틸리티",
+    "owner_hint": "microsoft",
+    "provider": "gemini"
   }
 }
