@@ -83,7 +83,10 @@ var ArchiveApp = (function () {
   }
   function linkText(value) {
     var text=String(value||''),re=/https?:\/\/[^\s<>]+|\b(?:www\.)?[a-z0-9-]+\.(?:com|org|net|io)\/[^\s<>]+/gi,out='',last=0,m;
-    while((m=re.exec(text))){var raw=m[0].replace(/[.,;!?)]*$/,'');out+=esc(text.slice(last,m.index));var url=safeUrl(/^https?:/i.test(raw)?raw:'https://'+raw);out+=url&&!/[…⋯]/.test(raw)?'<a href="'+esc(url)+'" target="_self">'+esc(raw)+'</a>':esc(raw);out+=esc(m[0].slice(raw.length));last=m.index+m[0].length;}return out+esc(text.slice(last));
+    while((m=re.exec(text))){var raw=m[0].replace(/[.,;!?)]*$/,'');out+=esc(text.slice(last,m.index));var url=safeUrl(/^https?:/i.test(raw)?raw:'https://'+raw);out+=url&&!/[…⋯]/.test(raw)?'<a href="'+esc(url)+'" target="_self">'+esc(raw)+'</a>':esc(raw);out+=esc(m[0].slice(raw.length));last=m.index+m[0].length;}out+=esc(text.slice(last));
+    // Cashtag capture artifact: stored text keeps X cashtag links as "$TICKER (search URL)".
+    // Collapse them back to a clean "$TICKER" link instead of printing the long URL after every ticker.
+    return out.replace(/\$([A-Za-z0-9_]+) \(<a href="https:\/\/x\.com\/search\?q=%24\1&amp;src=cashtag_click" target="_self">https:\/\/x\.com\/search\?q=%24\1&amp;src=cashtag_click<\/a>\)/g,function(m,t){return '<a href="https://x.com/search?q=%24'+t+'&src=cashtag_click" target="_self">$'+t+'</a>';});
   }
   function linkProse(container){var walker=document.createTreeWalker(container,NodeFilter.SHOW_TEXT),nodes=[],n;while((n=walker.nextNode()))if(!n.parentElement.closest('a,code,pre,script,style')&&/(https?:\/\/|\b[a-z0-9-]+\.(com|org|net|io)\/)/i.test(n.nodeValue))nodes.push(n);nodes.forEach(function(node){var span=document.createElement('span');span.innerHTML=linkText(node.nodeValue);node.replaceWith(span);});}
   // Article media links: verified mediaId -> preserved file map (window.ArchiveArticleMediaMap,
