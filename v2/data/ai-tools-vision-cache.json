@@ -6569,5 +6569,16 @@
     "category_ko": "문서 변환 도구 / 유틸리티",
     "owner_hint": "microsoft",
     "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:47699eff266039fc38976684cfe2af8fac2a253429fad9dc6d811b26c813c842": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/facefusion/facefusion"
+    ],
+    "title": "facefusion/facefusion",
+    "description_ko": "차세대 얼굴 교체 및 화질 개선 도구",
+    "category_ko": "AI / 영상 처리",
+    "owner_hint": "facefusion",
+    "provider": "gemini"
   }
 }
