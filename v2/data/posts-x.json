@@ -35239,6 +35239,2125 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2117919109832962502",
+      "sourceUrl": "https://x.com/dubidubabap/status/2117919109832962502",
+      "capturedAt": "2026-11-08T22:44:58.848147+00:00",
+      "createdAt": "2026-11-04T09:57:19.000Z",
+      "fullText": "2025년 미국 투자 챔피언십 우승자 마틴 룩(Martin Luk)의 실제 매매법 후속편.\n\n앞서 그의 승률과 손익 구조를 다뤘다. 이번에는 실제 사용하는 TradingView 스크리너 3종과 차트 설정, 매수·매도 기준, 실전 매매 절차를 정리했다.\n\n마틴 룩이 직접 작성한 기고문과 2026년 10–11월 유튜브 방송을 참고했다.\n\n1. 매일 세 가지 스크리너를 돌린다.\n\n2026년 10월 28일 방송에서 실제 TradingView 설정이 공개됐다.\n\n[Premarket]\n\n장 시작 전 움직이는 종목을 찾는다.\n\n- 미국 주식\n- 시가총액 1억 달러 초과\n- 10일 평균 거래량 50만 주 초과\n- Price × Volume 5,000만 달러 초과\n- 주간 변동성 3.5% 초과\n- 프리마켓 상승률 내림차순\n\n[Leader]\n\n최근 시장을 주도한 종목을 찾는다.\n\n- 미국 주식\n- 시가총액 1억 달러 초과\n- 10일 평균 거래량 50만 주 초과\n- 최근 1주 Price × Volume 3억 달러 초과\n- 최근 1개월 상승률 내림차순\n\n[Potent]\n\n새로운 강세 종목을 발견하는 용도다.\n\n- 미국 주식\n- 시가총액 1억 달러 초과\n- 주가가 21 EMA 이상\n- 주가가 50 EMA 초과\n- 주간 변동성 3.5% 초과\n- Price × Volume 5,000만 달러 초과\n- 시가 대비 등락률 ±0.5% 범위 밖\n- 당일 등락률 내림차순\n\nPotent에는 별도 산업 필터도 있다. 해당 필터의 전체 구성은 공개되지 않았다.\n\n여기서 Price × Volume은 주가에 거래량을 곱한 거래대금 지표다. Leader의 3억 달러 조건에는 1주 기간 설정이 들어간다.\n\n이 스크리너들은 매매 후보를 찾는 도구다. 최종 진입 여부는 개별 차트와 시장 환경을 확인해 결정한다.\n\n2. 종목은 다섯 개 관심 목록으로 관리한다.\n\n2025년 직접 기고문에서 공개한 방식이다.\n\n- 당일 집중해서 볼 종목\n- 시가총액 50억 달러 미만 소형주\n- Lead\n- Mediocre\n- Lag\n\n마지막 세 개는 이동평균선 배열로 구분한다.\n\nLead\n9 EMA > 21 EMA > 50 EMA\n\nMediocre\n9 EMA > 21 EMA < 50 EMA\n또는 9 EMA < 21 EMA > 50 EMA\n\nLag\n9 EMA < 21 EMA < 50 EMA\n\n매일 스크리너 결과를 확인하면서 종목이 어느 목록으로 이동하는지 추적한다.\n\n특히 새로운 산업에서 여러 종목이 동시에 Potent에 등장하거나 Lead로 올라오면 관심을 높인다.\n\n반도체 기업 여러 곳이 같은 시기에 강세로 전환한다면 해당 산업으로 자금이 유입되는 신호일 수 있다.\n\n그는 이러한 종목을 추적한 뒤 다음 눌림목에서 진입 기회를 찾는다.\n\n3. 차트에는 네 가지 이동평균선을 사용한다.\n\nTradingView 설정은 다음과 같다.\n\n- 9 EMA\n- 21 EMA\n- 50 EMA\n- 150 EMA\n- ADR: 평균 일중 변동폭\n- LoD Distance: 당일 저점 대비 현재 가격의 거리\n- Market Cap: 시가총액\n- Dollar Volume: 달러 기준 거래대금\n\n차트 아래에는 일반적인 거래량 대신 Dollar Volume을 표시한다.\n\n2026년 10월 방송에서 그는 모니터 하나에 이러한 지표를 띄우고 매매한다고 설명했다.\n\n또 하나 중요한 지표가 Anchored VWAP다.\n\n특정 시점부터 거래된 가격과 거래량을 누적해 계산하는 거래량가중평균가격이다.\n\n그가 주로 기준점으로 사용하는 곳은 다음과 같다.\n\n- 장기간 박스권의 고점\n- 최근 작은 박스권의 고점\n- 주요 스윙 고점\n- 역사적 신고가\n\n9·21 EMA, 이전 고점, Anchored VWAP가 비슷한 가격에 모이면 주요 관심 구간이 된다.\n\n4. 눌림목은 지지선이 겹치는 위치를 찾는다.\n\n2026년 5월 방송에서 마틴 룩은 여러 지지선이 겹치는 매수 지점을 선호한다고 설명했다.\n\n예를 들어 주가가 상승한 뒤 21 EMA까지 조정받았다고 하자.\n\n그 가격에 이전 박스권 고점과 Anchored VWAP까지 위치한다면 세 가지 기술적 기준이 겹친다.\n\n그는 이러한 구간에서 주가가 실제로 지지받는지 관찰한다.\n\n동시에 다음 조건을 확인한다.\n\n- 주봉이 상승 추세인가?\n- 일봉에서 저점이 높아지고 있는가?\n- 이동평균선이 지지선으로 작동해 왔는가?\n- 장중 위아래 꼬리가 반복되는 불안정한 종목인가?\n- 같은 산업의 다른 주식들도 강한가?\n\n여러 지지선이 겹치는 구간의 중요성은 그가 실제로 강조하는 부분이다.\n\n다만 지지선의 개수에 따른 승률이나 기대수익은 공개된 정량 검증 결과가 없다.\n\n5. 분봉에서는 반등을 확인한 뒤 진입한다.\n\n실전에서 중요한 부분이다.\n\n마틴 룩은 2026년 6월 방송에서 지지선에 접근하는 주가를 관찰하고, 5분봉 또는 15분봉이 반등 돌파하는 순간을 기다린다고 설명했다.\n\n진입 과정을 예시로 살펴보자.\n\n어떤 종목이 100달러까지 상승한 뒤 조정을 받았다.\n\n- 21 EMA: 95.50달러\n- Anchored VWAP: 95.80달러\n- 이전 박스권 고점: 95달러\n\n주가가 95.50달러까지 내려온 뒤 반등한다.\n\n5분봉에서 작은 박스권을 만들고 고점을 96.50달러에 형성했다.\n\n이후 96.50달러를 상향 돌파한다면 진입 후보가 된다.\n\n손절선을 95.50달러로 정하면 주당 위험은 1달러다.\n\n진입 이후 105달러까지 상승하면 8.5R의 수익이다.\n\n이 수치는 매매 구조를 설명하기 위한 가상 사례다.\n\n그가 중요하게 보는 것은 지지 구간에서의 가격 반응과 짧은 시간봉의 상승 전환이다.\n\n6. 장 시작 직후에는 1분봉, 이후에는 5분봉을 활용한다.\n\n2025년 TraderLion 인터뷰에서 공개한 방식이다.\n\n미국장 개장 직후 첫 1분봉의 고점을 돌파하면 진입을 검토한다.\n\n개장 후 첫 5분봉이 형성되면 5분봉으로 전환한다.\n\n1분봉은 진입 시점이 빠르지만 가격 잡음이 많다.\n\n5분봉은 상대적으로 안정적인 가격 구조를 확인하는 데 유리하다.\n\n그는 장 시작 직후 돌파 매매가 실패하고 주가가 다시 상승하는 상황을 자주 경험했다.\n\n이후 장중 눌림목에서 형성되는 5분봉 박스권 돌파를 적극적으로 연구했다.\n\n실제 거래 대부분은 미국장 개장 후 첫 1–2시간에 집중된다.\n\n7. 거래량은 진입 순간의 필수 조건으로 사용하지 않는다.\n\n의외로 흥미로운 부분이다.\n\n2026년 10월 27일 방송에서 그는 진입할 때 거래량을 확인하지 않는다고 설명했다.\n\n다음 날에는 VCP 돌파의 거래량 기준에 관한 질문에도 같은 취지로 답했다.\n\nVCP는 상승 추세에서 가격 변동폭이 점차 줄어드는 수축 패턴이다.\n\n마틴 룩은 종목 선정 과정에서 거래대금과 유동성을 중요하게 본다.\n\n그러나 실제 분봉 진입에서는 가격이 지지선과 저항선에 어떻게 반응하는지를 중시한다.\n\n따라서 그의 매매법을 연구할 때 분봉 거래량 증가를 반드시 요구하는 규칙은 별도로 검증해야 한다.\n\n8. 손절선은 진입 당시의 가격 구조를 따른다.\n\n주로 사용하는 기준은 다음과 같다.\n\n- 당일 저점\n- 5분봉 돌파 캔들의 저점\n- 15분봉 돌파 캔들의 저점\n- 단기 가격 구조가 무너지는 지점\n\n2026년 6월에는 당일 저점을 기준으로 설정하면 손절폭이 지나치게 넓어지는 경우, 5분·15분봉 돌파 캔들의 저점을 활용한다고 설명했다.\n\n이렇게 하면 손절폭을 더 좁힐 수 있다.\n\n반면 작은 가격 변동에도 손절될 확률이 높아진다.\n\n그는 이런 방식을 적용했을 때의 정확한 성과 통계는 보유하고 있지 않다고 밝혔다.\n\n실제 주문에도 특징이 있다.\n\n2026년 7월 방송에 따르면 진입 주문의 약 90%는 시장가 주문이다.\n\n손절에는 시장가로 전환되는 스톱 주문을 사용한다.\n\n급격한 가격 변화가 발생해도 청산이 실행되도록 하는 목적이다.\n\n물론 갭 하락이나 호가 부족으로 최초 손절 가격보다 불리하게 체결될 위험은 존재한다.\n\n9. 손절 이후 재진입은 새로운 거래로 취급한다.\n\n2026년 9월 방송에서 손절 후 재진입도 각각 독립적인 거래로 판단한다고 설명했다.\n\n그가 확인하는 재진입 구조는 다음과 같다.\n\n- 1분·5분봉에서 새로운 반등\n- 이전보다 높은 저점 형성\n- Anchored VWAP 재시험 이후 회복\n- 분봉 9·21 EMA 지지 확인\n- 장중 박스권의 새로운 돌파\n\n실제로 2026년 10월에는 한 종목에서 하루 네 번째 숏 진입을 시도한 사례도 공개했다.\n\n재진입 횟수에 대한 고정 상한은 두고 있지 않다.\n\n다만 자신의 초기 진입이 성급했다는 점을 인정하기도 했다.\n\n실전에서 재진입을 연구한다면 첫 진입과 두 번째 진입, 세 번째 이후 진입을 나눠 승률과 손익비를 측정할 필요가 있다.\n\n10. 실적 발표 일정도 매매 조건에 포함한다.\n\n2026년 10월 26일 방송에서 실적 발표가 5일 이내로 다가온 종목은 대부분 신규 진입을 피한다고 설명했다.\n\n예외적으로 진입하더라도 발표 전에 충분한 평가이익이 확보됐는지를 확인한다.\n\n그가 말하는 Cushion은 진입 가격 대비 확보한 수익 여유분이다.\n\n실적 발표 이전에 충분한 Cushion이 없으면 보유 물량의 절반 이상을 청산하거나 전량 매도하는 방식을 고려한다.\n\n종목의 과거 실적 발표 당시 변동성도 참고한다.\n\n특히 변동성이 큰 종목은 작은 평가이익만 확보한 상태에서 실적을 통과할 경우 갭 하락 위험이 크다.\n\n11. 시장 전체의 강도는 관심 종목으로 판단한다.\n\n마틴 룩은 자신의 관심 목록을 시장 내부의 강도 지표로 활용한다.\n\n예를 들어 시장을 주도하던 종목들이 계속 9·21 EMA를 유지한다면 상승 추세가 강하다고 본다.\n\n반대로 기존 Lead 종목들이 Mediocre와 Lag로 이동하기 시작하면 주의한다.\n\n그는 업종 ETF와 주요 지수도 함께 확인한다.\n\n2026년 7월에는 일봉과 주봉의 방향이 엇갈릴 때 상위 시간봉을 기준으로 판단한다고 설명했다.\n\n일봉이 하락 추세에 있다면 60분봉에서 일시적인 상승이 발생하더라도 전체 하락 구조를 우선한다.\n\n숏 매매에서도 같은 원리를 적용한다.\n\n약한 산업의 종목이 하락하는 21·50 EMA까지 반등하고, 분봉에서 다시 하락 전환하면 진입을 검토한다.\n\n2026년 11월 2일에는 시장이 주봉 50 EMA 위에 있을 때 숏을 장기간 보유하는 데 신중하다고 설명했다.\n\n12. 익절은 시장의 추세 단계에 따라 달라진다.\n\n2026년 방송을 보면 익절 방식도 계속 개선하고 있다.\n\n상승 추세 초기에는 추세가 이어지는 동안 물량을 보유하려는 경향이 있다.\n\n이때 9·21 EMA를 추적 기준으로 사용한다.\n\n반대로 주가가 단기간 급등해 이동평균선과 크게 벌어지면 상승 도중 일부 또는 전량을 매도하기도 한다.\n\n2026년 11월 2일 방송에서는 EMA 이탈을 기다리기 전에 강세 구간에서 매도하는 경우가 상당하다고 밝혔다.\n\n숏은 하락이 진행되는 동안 이익을 실현하는 방식을 더 선호한다.\n\n특히 수익을 낸 이후 새로운 매매를 지나치게 자주 시도하다가 기존 이익을 반납하는 문제를 경계한다.\n\n13. 실제 매매 준비는 이렇게 정리할 수 있다.\n\n[주말]\n\n- Leader 스크리너 실행\n- 최근 한 달 상승률 상위 종목 검토\n- 주도 산업과 새로운 강세 테마 파악\n- 주봉에서 상승 추세와 박스권 확인\n- Lead·Mediocre·Lag 관심 목록 업데이트\n\n[장 시작 전]\n\n- Premarket 스크리너 실행\n- 전일 Potent 종목 확인\n- 관심 종목의 실적 발표 일정 확인\n- 일봉 9·21·50 EMA 위치 확인\n- Anchored VWAP와 이전 고점 표시\n- 주요 지지선과 저항선 기록\n- 진입 후보 종목과 손절 가격 선정\n\n[장 시작 후]\n\n- 1분봉과 5분봉으로 가격 반응 관찰\n- 주요 지지선에서 눌림목 형성 확인\n- 반등 고점과 손절 기준 가격 설정\n- 계획된 위험액으로 주문 수량 계산\n- 단기 돌파 발생 시 진입\n- 체결 직후 손절 주문 설정\n\n[보유 중]\n\n- 종목과 산업의 추세 변화 관찰\n- 일봉 9·21 EMA 확인\n- 급격한 가격 확장과 주요 저항 확인\n- 실적 발표와 이벤트 위험 점검\n- 이익 실현 또는 추세 보유 판단\n\n[거래 종료 후]\n\n- 진입·청산 차트 기록\n- 최초 손절폭과 실현 손익 기록\n- 진입 시 시장 환경 기록\n- 손절 후 재진입 여부 기록\n- 추격 매수와 계획 외 거래 분류\n- 놓친 거래의 공통점 분석\n\n마틴 룩은 과거 거래를 기록하면서 진입과 청산이 적절했는지 각각 검토했다고 설명했다.\n\n큰 수익을 낸 거래는 시장·섹터·경쟁 종목의 움직임과 함께 다시 분석했다.\n\n이 과정에서 자신의 매매법을 개선해 왔다.\n\n---\n\n[실제 자료 및 설정 링크]\n\n1. TradingView 스크리너 3종\n\nPremarket / Leader / Potent의 실제 필터 설정과 방송 화면을 볼 수 있다.\n\nhttps://t.co/w92ClePeNE \n\n2. TradingView 차트 레이아웃\n\n9·21·50·150 EMA, ADR, Dollar Volume 설정과 참고 지표 링크가 정리돼 있다.\n\nhttps://t.co/uIFKfLpU5J \n\n3. 2026년 실시간 방송 Q&A\n\n눌림목 진입, 손절 위치, AVWAP, 재진입, 익절, 시장 판단에 관한 답변을 볼 수 있다.\n\nhttps://t.co/59tmvA9EYv \n\n4. 매매법 FAQ\n\n실제 사용하는 도구, 진입·청산 기준과 관련 방송 링크를 정리한 자료다.\n\nhttps://t.co/wRjy8X0Awl \n\n5. 마틴 룩 유튜브 채널\n\n무료 실시간 방송과 매매 해설.\n\nhttps://t.co/YxI2rOlWnw \n\n6. 2024년 직접 기고한 매매 원칙\n\n종목 선정, 관심 목록 분류, 손절폭, 실제 거래 사례가 포함돼 있다.\n\nhttps://t.co/LTIKd1UEAQ \n\n7. 2026년 공개된 숏 매매 연구\n\n하락 추세의 저항선, 분봉 진입, 과거 차트 연구 과정을 상세하게 설명한다.\n\nhttps://t.co/vCzEQdpLkt \n\n8. TraderLion 인터뷰\n\n실제 차트와 거래를 통해 진입·익절·재진입 방식을 설명한다.\n\nhttps://t.co/ZYRCV8lqsl \n\n참고로 https://t.co/ZttmjX0iIL 은 마틴 룩의 공식 홈페이지가 아닌 팬 제작 자료실이다. 2026년 10월 방송에서 공개된 스크리너 화면과 실제 발언을 정리한 사이트이며, 원본 방송 링크도 함께 제공한다.\n\n마틴 룩의 매매법에서 특히 공부할 부분은 매수 후보를 찾는 과정과 진입을 기다리는 과정이다.\n\n주도주를 발견하는 것만큼 어떤 가격에서 사고, 어디서 자신의 판단이 틀렸다고 인정할 것인지가 중요하다.\n\n실전에서는 자신이 정한 진입·청산 조건의 통계부터 축적할 필요가 있다.",
+      "author": {
+        "handle": "@dubidubabap",
+        "name": "dubidubabap"
+      },
+      "media": [],
+      "links": [
+        {
+          "url": "https://t.co/w92ClePeNE",
+          "text": "https://martinluk.com/screeners/",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/uIFKfLpU5J",
+          "text": "https://martinluk.com/layout/",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/59tmvA9EYv",
+          "text": "https://martinluk.com/qa/",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/wRjy8X0Awl",
+          "text": "https://martinluk.com/faq/",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/YxI2rOlWnw",
+          "text": "https://youtube.com/@martinlukkt",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/LTIKd1UEAQ",
+          "text": "https://tradingresourcehub.substack.com/p/martin-luk-283-usic-2024-key-lessons…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/vCzEQdpLkt",
+          "text": "https://tradingresourcehub.substack.com/p/martin-luk-study-process…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/ZYRCV8lqsl",
+          "text": "https://youtube.com/watch?v=VKNEJA5r8zw…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/ZttmjX0iIL",
+          "text": "http://martinluk.com",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": {
+        "tweetId": "2117893788924547490",
+        "sourceUrl": "https://x.com/dubidubabap/status/2117893788924547490",
+        "capturedAt": "2026-11-08T22:44:58.848147+00:00",
+        "createdAt": "",
+        "fullText": "2025년 미국 투자 챔피언십에서 969.8% 수익률로 우승한 마틴 룩(Martin Luk).\n\n그의 트레이딩에서 가장 흥미로운 점은 승률이다.\n\n2026년 거래를 분석한 자료에 따르면 롱 승률은 16.9%, 숏 승률은 23.5%에 불과하다.\n\n어떻게 이런 승률로 엄청난 수익을 냈을까?\n\n1. 손실은 짧게, 수익은 길게",
+        "author": {
+          "handle": "@dubidubabap",
+          "name": "dubidubabap"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b0259ba7e2901c449a45ba22d770defe903d7f1dd982249b93ce3aed04b5c2f9.jpg",
+            "alt": "Image"
+          }
+        ],
+        "links": [],
+        "stats": {}
+      },
+      "replies": [],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dubidubabap/status/2117919109832962502",
+        "observed_main_url": "https://x.com/dubidubabap/status/2117919109832962502",
+        "author_handle": "dubidubabap",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2118236877341823272",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2118236877341823272",
+      "capturedAt": "2026-11-08T22:45:03.553147+00:00",
+      "createdAt": "2026-11-05T07:00:01.000Z",
+      "fullText": "발표자료에 테마 10개 중 골라 입히는 공식 스킬\n\nPPT 내용은 다 썼는데\n색 조합 고르느라 시간 존나 날려본 형들 있을거\n이 스킬은 그걸 고르기 한 번으로 줄여줌\n\n이름은 theme-factory\n클로드 만든 앤트로픽이 깃허브에 직접 올려둔 스킬임\n\n하는 일은 단순함\n미리 짜둔 테마를 슬라이드, 문서, 보고서\nHTML 랜딩페이지 같은 결과물에 통째로 입혀줌\n\n테마 하나에 들어있는 건\n색 조합(헥스 코드까지 박혀 있음)\n제목용·본문용 폰트 짝\n어떤 자리, 어떤 사람한테 보여줄지에 맞춘 분위기\n\n기본 테마는 10개인데\n차분한 바다톤 Ocean Depths\n회색 위주로 깔끔한 Modern Minimalist\n테크 회사 느낌 Tech Innovation\n어둡고 우주 같은 Midnight Galaxy 이런 식\n\n맘에 드는 게 없으면\n그 자리에서 새 테마를 만들어주기도 한다고 함\n\n이렇게 쓰면 됨\n1. 클로드가 테마 견본 PDF를 먼저 쫙 보여줌\n2. 10개 중에 뭘 쓸지 물어봄\n3. 내가 확실히 고를 때까지 기다림\n4. 고른 테마의 색이랑 폰트를 자료에 입힘\n\n개인적으로 3번이 은근 크다고 봄\nAI가 지 맘대로 색 바꿔놓는 게 제일 짜증나는데\n확정 전엔 안 건드린다는 거니까\n\n써먹을 데는 꽤 많아 보임\n매주 올리는 보고 슬라이드 톤 맞추기\n부업으로 만드는 제안서, 랜딩페이지\n\n자료 여러 개를 같은 테마로 묶어두면\n한 팀이 만든 것처럼 보이는 효과도 있을듯\n\n디자인 감 없는 직장인한텐 이게 제일 현실적인 스킬임.\n\nhttps://t.co/n8MJFn4UGx",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b43b96c37e7f440c1236494909c2e1a9460824185aa24fdff06b162eac661aa6.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/n8MJFn4UGx",
+          "text": "https://github.com/anthropics/skills/tree/main/skills/theme-factory…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2118252104330654023",
+          "sourceUrl": "https://x.com/Shoonee27/status/2118252104330654023",
+          "capturedAt": "2026-11-08T22:45:03.553147+00:00",
+          "createdAt": "2026-11-05T08:00:31.000Z",
+          "fullText": "이제 문서 같은건 사람이 하는 경우 잘 없을것 같아요.",
+          "author": {
+            "handle": "@Shoonee27",
+            "name": "Shoonee27"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2118244132229640506",
+          "sourceUrl": "https://x.com/hmmmmmm1458/status/2118244132229640506",
+          "capturedAt": "2026-11-08T22:45:03.553147+00:00",
+          "createdAt": "2026-11-05T07:28:50.000Z",
+          "fullText": "발표할때 유용하겠어요! ㅎㅎ",
+          "author": {
+            "handle": "@hmmmmmm1458",
+            "name": "hmmmmmm1458"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2118236877341823272",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2118236877341823272",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2118282172507570612",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2118282172507570612",
+      "capturedAt": "2026-11-08T22:45:07.525147+00:00",
+      "createdAt": "2026-11-05T10:00:00.000Z",
+      "fullText": "스킬 172개로 회사 부서 16개를 통째로 들이는 게 돼..?\n\n이름부터 headcount, 머릿수임\n소개 문구가 \"프롬프트 말고 부서를 추가하라\"\n깃허브 별은 2,539개\n\n구조가 진짜 회사처럼 생김\n맨 위에 CEO 역할이 있고 그 밑에 부서가 16개\n부서마다 전문 스킬이 들어 있어서 다 합치면 172개\n\n재밌는 건 부서마다 따로 설치된다는 거\n보안만 필요하면 보안팀만, 재무만 필요하면 재무팀만\n한 번에 172개 다 깔아서 무겁게 쓰는 게 아님\n\n이렇게 쓰면 됨\n1. 클로드 코드에서 마켓플레이스 추가\n/plugin marketplace add cbrock84/headcount\n\n2. 필요한 부서만 설치\n/plugin install security@headcount\n(security 자리에 원하는 부서 이름)\n\n3. 그냥 평소처럼 물어보면 맞는 부서가 알아서 붙음\n\n4. 특정 전문가를 콕 찍고 싶으면 이름으로 부르면 됨\n/finance:financial-modeling 이런 식\n\n예시로 나온 게 꽤 현실적임\n\"랜딩페이지 왜 전환이 안 돼?\" → 마케팅 쪽 전환율 전문가\n\"이 사람 뽑을 여유 있어?\" → 재무팀 단위 경제성 스킬\n\"성장이 멈췄어\" → 경영진 쪽 성장 컨설턴트\n\n스킬 이름이 부서:스킬 형태라 이름 겹칠 일도 없고\n챗GPT나 코덱스에서도 같은 저장소로 쓸 수 있다고 함\n\n부서 여러 개가 엮이는 상황 11개도 문서로 정리돼 있음\n큰 거래처가 보안 인증 요구할 때\n아무도 날짜 안 챙겨서 계약이 자동 연장됐을 때 같은 거\n검토 담당 부서는 의견만 얹는 게 아니라\n아니다 싶으면 작업을 멈춰 세운다는 것도 적혀 있음\n\n내가 보기엔 이게 제일 큼\nAI가 뭐든 다 해주겠다고 하는 것보다\n막아주는 부서가 있는 쪽이 훨씬 믿음이 감\n\n써먹을 데는 혼자 스마트스토어나 외주 뛰는 1인 사업자\n사람 뽑기엔 애매하고 혼자 다 보기엔 버거운 쪽이 딱 맞아 보임\n처음이면 어떤 부서부터 깔지 안내 문서도 따로 있음\n\n부서 골라 담게 쪼갠 건 진짜 잘했네.\n\nhttps://t.co/IrE5jk8JLS",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b914a8f089931f6f538e2cfbd184e768b131464e62705f2517eeddf74ff000e0.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/IrE5jk8JLS",
+          "text": "https://github.com/cbrock84/headcount…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2118282172507570612",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2118282172507570612",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2118352451074170884",
+      "sourceUrl": "https://x.com/babybluecream/status/2118352451074170884",
+      "capturedAt": "2026-11-08T22:45:11.275147+00:00",
+      "createdAt": "2026-11-05T14:39:16.000Z",
+      "fullText": "안 켜지는 아이폰을 컴퓨터로 살리는 DFU 모드 ㅣ 261105\n\n1. DFU 모드는 안 켜지는 아이폰을 컴퓨터로 손볼 수 있게 하는 상태임.\n\n화면은 계속 까맣고 컴퓨터가 아이폰을 알아봄. 배터리가 남았는데 갑자기 꺼진 폰 앞에서 쓰는 방법임.\n\n2. 이름은 Device Firmware Update의 줄임말임.\n아이폰이 iOS를 켜기 전 단계에서 컴퓨터와 직접 통신하는 상태라서 겉보기엔 전원이 꺼진 폰과 똑같음.\n\n3. 그럼 어디에 쓰나. 첫째는 안 켜지는 아이폰을 살리는 법임.\n사과 로고에서 멈췄거나 전원이 안 들어오거나 업데이트가 안 될 때 컴퓨터로 iOS를 다시 깔면 도움이 될 수 있음.\n\n4. 둘째는 복원이 계속 실패할 때 한 단계 더 깊게 다시 하는 법임.\nDFU에서는 컴퓨터가 더 깊은 단계의 복원을 맡음.\n\n5. 셋째는 이전 버전 iOS로 내리는 법임.\nDFU에서는 낮은 버전 iOS를 설치할 수 있음. 단 애플이 서명한 버전만 깔림.\n\n6. 그런데 이 기회가 짧음. 애플은 새 소프트웨어가 나오고 일주일쯤 뒤 이전 버전 서명을 멈추는 경우가 많음.\n서명이 끊기면 DFU로도 그 버전을 깔 수 없음.\n\n7. 2026년 9월에 애플이 iOS 26.6.2 서명을 멈췄음.\n그래서 iOS 27을 깐 아이폰은 iOS 26으로 돌아갈 수 없음.\n\n8. 쓰기 전에 순서를 보면 화면이 멈춘 정도면 강제 재시동이 먼저임.\nDFU는 그걸로 안 될 때 쓰는 고급 방법임.\n\n9. 들어가는 법 첫 단계는 연결임. 컴퓨터에 연결하고 맥은 Finder, 윈도우는 Apple 기기 앱을 켬.\n볼륨 올리기, 볼륨 내리기를 차례로 짧게 누른 뒤 측면 버튼을 화면이 까매질 때까지 길게 누름.\n\n10. 화면이 까매지면 측면 버튼과 볼륨 내리기를 함께 약 5초 누름.\n이어서 측면 버튼만 떼고 볼륨 내리기를 계속 누름. 사과 로고가 뜨면 타이밍이 어긋난 것이라 처음부터 다시 함.\n\n11. 나오는 법은 간단함. 복원을 시작하기 전이면 강제 재시동을 함.\n볼륨 올리기, 볼륨 내리기를 차례로 누르고 사과 로고가 뜰 때까지 측면 버튼을 길게 누름.\n\n12. 쓰기 전에 데이터부터 따짐. DFU에 들어가는 것만으로는 데이터가 지워지지 않음.\n컴퓨터에서 복원을 누르면 지워지고, 업데이트는 데이터를 두고 iOS만 다시 깜. 업데이트가 보이면 먼저 시도함.\n\n13. 컴퓨터가 끝까지 아이폰을 알아보지 못하거나 복원이 계속 실패하면 하드웨어 문제일 수 있고 서비스가 필요할 수 있음.",
+      "author": {
+        "handle": "@babybluecream",
+        "name": "babybluecream"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-dab4a363f4585f3ef4ca6a75e881c8c86964aabf6dd0247d2174859039440f54.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/babybluecream/status/2118352451074170884",
+        "observed_main_url": "https://x.com/babybluecream/status/2118352451074170884",
+        "author_handle": "babybluecream",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119324701453615189",
+      "sourceUrl": "https://x.com/hmmmmmm1458/status/2119324701453615189",
+      "capturedAt": "2026-11-08T22:45:15.273147+00:00",
+      "createdAt": "2026-11-08T07:02:38.000Z",
+      "fullText": "홈페이지 디자인도 해주고, 만들었는데 AI 티나서 고민이면 이거 쓰셈 홈페이지 만드는 방향성을 잡아주는 스킬임\n\nTogether AI가 만든 무료 디자인 스킬 Hallmark\n\nClaude Code, Codex, Cursor 같은 AI 코딩 도구에 붙여서 쓰는 거고 목표가 아예 \"AI가 만든 것처럼 안 보이기\"임\n\n1. AI 티 나는 습관을 잡아줌 제목마다 붙는 작은 머리글, 제목에서 단어 하나만 색칠하기, 페이지마다 끝에 붙는 이메일 구독칸처럼 AI가 자주 쓰는 뻔한 패턴을 실제 브라우저에서 띄워 보고 걸러줌\n\n2. 테마가 50개나 있음 종이 질감, 글꼴, 색감까지 정해진 테마 중에서 내 요청에 맞는 3개를 골라 보여줌. 같은 테마여도 내용에 따라 다른 페이지가 나와서 자연스러움(사진 첨부는 테마 50가지중에 10개)\n\n3. 목적에 맞게 만들어줌 예약 페이지면 예약 버튼, 쇼핑몰이면 구매 버튼이 있어야 할 자리에 딱 놓아줌. 없는 숫자나 사실은 지어내지 않고 필요한 사진이나 자료를 먼저 물어봄\n\n디자인 감각 없어도 AI한테 맡긴 결과물을 사람이 만든 것처럼 바꿔주는 스킬",
+      "author": {
+        "handle": "@hmmmmmm1458",
+        "name": "hmmmmmm1458"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-37ab30e81f7082c947ed5f86e41dfac037d74a22e739636ca5e5c113717e758f.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119324770227687666",
+          "sourceUrl": "https://x.com/hmmmmmm1458/status/2119324770227687666",
+          "capturedAt": "2026-11-08T22:45:15.273147+00:00",
+          "createdAt": "2026-11-08T07:02:55.000Z",
+          "fullText": "GitHub - Nutlope/hallmark: Anti-AI-slop design skill for Claude Code, Cursor, and Codex. (https://t.co/b9JYbjnKe2)  https://t.co/b9JYbjnKe2",
+          "author": {
+            "handle": "@hmmmmmm1458",
+            "name": "hmmmmmm1458"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/b9JYbjnKe2",
+              "text": "GitHub - Nutlope/hallmark: Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119365503873683743",
+          "sourceUrl": "https://x.com/ShiroCipher/status/2119365503873683743",
+          "capturedAt": "2026-11-08T22:45:15.273147+00:00",
+          "createdAt": "2026-11-08T09:44:46.000Z",
+          "fullText": "홈페이지가 AI 티가 나면 쓰기가 꺼려지긴 하죠. 제목 색칠이랑 구독칸처럼 반복되는 습관을 브라우저에서 걸러 주는 거라면 방향 잡는 용도로는 쓸 만해 보여요.",
+          "author": {
+            "handle": "@ShiroCipher",
+            "name": "ShiroCipher"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119337687937380659",
+          "sourceUrl": "https://x.com/GsGswoo115233/status/2119337687937380659",
+          "capturedAt": "2026-11-08T22:45:15.273147+00:00",
+          "createdAt": "2026-11-08T07:54:14.000Z",
+          "fullText": "50개 테마라 선택 폭 넓어서 홈페이지 만들 때 도움 많이 되겠어요",
+          "author": {
+            "handle": "@GsGswoo115233",
+            "name": "GsGswoo115233"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116120508920156245",
+          "sourceUrl": "https://x.com/betterme/status/2116120508920156245",
+          "capturedAt": "2026-11-08T22:45:15.273147+00:00",
+          "createdAt": "",
+          "fullText": "근육 목표를 쉽게 달성하세요 \n\n이 간단한 계획이면 성공할 수 있습니다:\n\n1. 1분 퀴즈을 풉니다 \n2. 몸무게, 키, 나이, 일일 활동량과 운동 조건에 따른 맞춤 운동과 식단 플랜을 짭니다\n3. 프로그램을 따라합니다 (쉬워요)",
+          "author": {
+            "handle": "@betterme",
+            "name": "betterme"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-eec8f8cb7cff80d6aa4f274e03f8f9274696f38c03f19c74851b8c3e29a8fe48.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/betterme/status/2116120508920156245"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/betterme/status/2116120508920156245",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/betterme/status/2116120508920156245",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/hmmmmmm1458/status/2119324701453615189",
+        "observed_main_url": "https://x.com/hmmmmmm1458/status/2119324701453615189",
+        "author_handle": "hmmmmmm1458",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119138564172890142",
+      "sourceUrl": "https://x.com/feednote_X/status/2119138564172890142",
+      "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+      "createdAt": "2026-11-07T18:43:00.000Z",
+      "fullText": "<클로드에 꼭 설치해야 하는 24가지 도구>\n\n[플러그인 8개]\n\n1. marketingskills : 마케팅 스킬 44개\n2. social-media-skills : 포스트·스레드·캡션 자동 작성\n3. gstack : 전문 도구 20개 이상\n4. superpowers : 완성형 개발 방법론\n5. codex-plugin-cc : 클로드 코드에서 OpenAI 코덱스 실행\n6. financial-services : 투자·리서치·자산관리\n7. claude-for-legal : 계약서·법률 실무\n8. claude-skills : 커뮤니티 스킬 모음\n\n[스킬 8개]\n1. frontend-design : AI 티 나는 디자인 개선\n2. humanizer : 사람이 쓴 것처럼 자연스럽게 작성\n3. ai-second-brain : 대화 기록을 개인 위키로 정리\n4. notebooklm-skill : 자료와 노트 검색\n5. claude-seo : 구글·AI 검색 최적화\n6. hyperframes : HTML로 영상 제작\n7. doc-skills : 워드·PDF·엑셀·PPT 파일 제작\n8. caveman : 답변 압축으로 토큰 절약\n\n[MCP 8개]\n\n1. notion : 노션 문서·DB 읽기 및 쓰기\n2. slack : 채널 대화 확인 및 공지 작성\n3. granola : 회의록 자동 정리\n4. zapier : 수천 개 앱 연결\n5. perplexity : 실시간 웹 검색\n6. context7 : 최신 공식 문서 참고\n7. higgsfield : 영상·이미지 모델 30개 이상\n8. agent-browser : 웹사이트 자동 클릭 및 조작\n\n[무엇부터 설치할지 모르겠다면?]\nmarketingskills → frontend-design → notion",
+      "author": {
+        "handle": "@feednote_X",
+        "name": "feednote_X"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119314880817963102",
+          "sourceUrl": "https://x.com/Bufenge7/status/2119314880817963102",
+          "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+          "createdAt": "2026-11-08T06:23:37.000Z",
+          "fullText": "24개 깔아놓고 실제로 쓰는 건 2개일 때 제일 웃김ㅋㅋ 설치 목록보다 '이번 주 쓸 일 1개'에 맞는 툴만 남기는 게 이득임.",
+          "author": {
+            "handle": "@Bufenge7",
+            "name": "Bufenge7"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119359167567974569",
+          "sourceUrl": "https://x.com/feednote_X/status/2119359167567974569",
+          "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+          "createdAt": "2026-11-08T09:19:35.000Z",
+          "fullText": "그러니까요",
+          "author": {
+            "handle": "@feednote_X",
+            "name": "feednote_X"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119139446079852610",
+          "sourceUrl": "https://x.com/BYD0811/status/2119139446079852610",
+          "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+          "createdAt": "2026-11-07T18:46:30.000Z",
+          "fullText": "보 감사합니다. 마케팅 스킬부터 시작해볼게요.",
+          "author": {
+            "handle": "@BYD0811",
+            "name": "BYD0811"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119359074286407880",
+          "sourceUrl": "https://x.com/feednote_X/status/2119359074286407880",
+          "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+          "createdAt": "2026-11-08T09:19:13.000Z",
+          "fullText": "감사합니다",
+          "author": {
+            "handle": "@feednote_X",
+            "name": "feednote_X"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119357016842047901",
+          "sourceUrl": "https://x.com/ounce_online/status/2119357016842047901",
+          "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+          "createdAt": "2026-11-08T09:11:03.000Z",
+          "fullText": "감사합니다!",
+          "author": {
+            "handle": "@ounce_online",
+            "name": "ounce_online"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119359097346916811",
+          "sourceUrl": "https://x.com/feednote_X/status/2119359097346916811",
+          "capturedAt": "2026-11-08T22:45:19.013147+00:00",
+          "createdAt": "2026-11-08T09:19:19.000Z",
+          "fullText": "저두요",
+          "author": {
+            "handle": "@feednote_X",
+            "name": "feednote_X"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/feednote_X/status/2119138564172890142",
+        "observed_main_url": "https://x.com/feednote_X/status/2119138564172890142",
+        "author_handle": "feednote_X",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119304275499368747",
+      "sourceUrl": "https://x.com/aptlab/status/2119304275499368747",
+      "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+      "createdAt": "2026-11-08T05:41:28.000Z",
+      "fullText": "부동산 개꿀 팁 하나 알려줄게요. 일단 읽어보시라.\n\n중개사 전화번호 하나씩 검색해서 찾을 필요가 없음.\n부동산 지인 들어가서 지인 빅데이터 누르고\n중개사 전화번호 클릭. 그리고 지역 누르면 사진 처럼 반경 500m이내 중개사 전화번호 싹 정리해서 나와요. \n누가 알려주나 이런거....",
+      "author": {
+        "handle": "@aptlab",
+        "name": "aptlab"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-54ae970e402d5ca42c175e3e391f358cfeef8ee75fb848523e5ebc7f3c6b3e9a.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-2e32e4777594731a70cf8733e1ad939517869133b30fa66a438bf653b764b634.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7da1a0e255bab30dbd896c01eb15875a87a34b5d1f1f7a415a19e09d6d34bc3b.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119434224885465105",
+          "sourceUrl": "https://x.com/haeundae_kim/status/2119434224885465105",
+          "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+          "createdAt": "2026-11-08T14:17:51.000Z",
+          "fullText": "이게 참 얼마나 좋은 정보인데... 가치를 아시려나 ㅎㅎㅎ 다들..",
+          "author": {
+            "handle": "@haeundae_kim",
+            "name": "haeundae_kim"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119434376421491184",
+          "sourceUrl": "https://x.com/aptlab/status/2119434376421491184",
+          "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+          "createdAt": "2026-11-08T14:18:27.000Z",
+          "fullText": "가치의 가치!!ㅋㅋ",
+          "author": {
+            "handle": "@aptlab",
+            "name": "aptlab"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119313605032354090",
+          "sourceUrl": "https://x.com/roogee1625/status/2119313605032354090",
+          "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+          "createdAt": "2026-11-08T06:18:33.000Z",
+          "fullText": "오 이거 저도 했던 방법인데 역시 ㅎㅎ\n\n다 뿌려야죠. 본인 급지를 넘어서 상하급지 모두",
+          "author": {
+            "handle": "@roogee1625",
+            "name": "roogee1625"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119314132113772585",
+          "sourceUrl": "https://x.com/aptlab/status/2119314132113772585",
+          "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+          "createdAt": "2026-11-08T06:20:38.000Z",
+          "fullText": "역시 루지님도 알고 계신😁",
+          "author": {
+            "handle": "@aptlab",
+            "name": "aptlab"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2118565793331818911",
+          "sourceUrl": "https://x.com/Starlink/status/2118565793331818911",
+          "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+          "createdAt": "",
+          "fullText": "이제 Starlink는 다양한 각도에서 연결을 보장할 수 있는 위성이 11,000개나 있기 때문에 부분적으로 장애물이 있는 환경에서도 작동합니다.\n\n주문하기 (https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq)  https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq",
+          "author": {
+            "handle": "@Starlink",
+            "name": "Starlink"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a54ca669c643b76dafb4383811702edfa3f5354f98678b8b690bb5b4fe3bded3.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq",
+              "text": "주문하기",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119337368679587888",
+          "sourceUrl": "https://x.com/AGeullo/status/2119337368679587888",
+          "capturedAt": "2026-11-08T22:45:23.349148+00:00",
+          "createdAt": "2026-11-08T07:52:58.000Z",
+          "fullText": "완전 개꿀팁스!",
+          "author": {
+            "handle": "@AGeullo",
+            "name": "AGeullo"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/aptlab/status/2119304275499368747",
+        "observed_main_url": "https://x.com/aptlab/status/2119304275499368747",
+        "author_handle": "aptlab",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2118986019966263743",
+      "sourceUrl": "https://x.com/hmmmmmm1458/status/2118986019966263743",
+      "capturedAt": "2026-11-08T22:45:27.348148+00:00",
+      "createdAt": "2026-11-07T08:36:50.000Z",
+      "fullText": "한국에서 쓸 수 있는 공개API 300여 개 정리해둔 깃허브\n\n자신이 아이디어가 없다면 여길 보시길\n\n아파트 실거래가, 지하철 실시간 도착, 주유소 가격, 넥슨 게임 데이터, 업비트 시세까지 다 있음\n\nAPI 하나 붙이면 서비스 하나 나오는 구조\n⭐3.3k 찍은 이유가 있음",
+      "author": {
+        "handle": "@hmmmmmm1458",
+        "name": "hmmmmmm1458"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-503b07a9491c32a812156146bb96bad68908b3c6ce8a59127843413c8cd8dfd5.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2118986024051486760",
+          "sourceUrl": "https://x.com/hmmmmmm1458/status/2118986024051486760",
+          "capturedAt": "2026-11-08T22:45:27.348148+00:00",
+          "createdAt": "2026-11-07T08:36:51.000Z",
+          "fullText": "GitHub - yybmion/public-apis-4Kr: 한국 서비스에 이용 가능한 Public API 모음 | Public APIs Available for Korean... (https://t.co/pXG3hIgOIt)  https://t.co/pXG3hIgOIt",
+          "author": {
+            "handle": "@hmmmmmm1458",
+            "name": "hmmmmmm1458"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/pXG3hIgOIt",
+              "text": "GitHub - yybmion/public-apis-4Kr: 한국 서비스에 이용 가능한 Public API 모음 | Public APIs Available for Korean...",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119010506275205149",
+          "sourceUrl": "https://x.com/universehuman82/status/2119010506275205149",
+          "capturedAt": "2026-11-08T22:45:27.348148+00:00",
+          "createdAt": "2026-11-07T10:14:08.000Z",
+          "fullText": "모두의 AI 사용했을때 공공 데이터로 사이트 테스트 삼아서 만들어봤는데 좀 진작에 대 개방되었으면 어땠을까? 라는 생각 ㅋㅋㅋ 개발자들이 원성이 자자했죠^^ 그래도 지금이라도 대부분 개방해줘서 실생활용 사이트랑 앱이 정말 많이 나옴 ^^",
+          "author": {
+            "handle": "@universehuman82",
+            "name": "universehuman82"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119269483357610459",
+          "sourceUrl": "https://x.com/hmmmmmm1458/status/2119269483357610459",
+          "capturedAt": "2026-11-08T22:45:27.348148+00:00",
+          "createdAt": "2026-11-08T03:23:13.000Z",
+          "fullText": "그쵸~~ 진작에 좀 나라에서 사이트 만들어주고 쓰라고 활용시켜야하는데 숨어져있음..",
+          "author": {
+            "handle": "@hmmmmmm1458",
+            "name": "hmmmmmm1458"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2090814619275436444",
+          "sourceUrl": "https://x.com/Atlas3DAI/status/2090814619275436444",
+          "capturedAt": "2026-11-08T22:45:27.348148+00:00",
+          "createdAt": "",
+          "fullText": "A prompt goes in. A skeleton comes out, IK-ready.\n\nMost text-to-3D stops at a static mesh. Atlas keeps going: standardized T-pose, rig, weights, so the character is animatable the day it is generated.\n\nTry Atlas today\n\nAI for Gamedevs (https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl)  https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl",
+          "author": {
+            "handle": "@Atlas3DAI",
+            "name": "Atlas3DAI"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-db06de290d174100732927b4fe0ed9fce9133f2d967f0efb3b59e57a5d794fe1.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl",
+              "text": "AI for Gamedevs",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/hmmmmmm1458/status/2118986019966263743",
+        "observed_main_url": "https://x.com/hmmmmmm1458/status/2118986019966263743",
+        "author_handle": "hmmmmmm1458",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119419482321916012",
+      "sourceUrl": "https://x.com/lucian__03/status/2119419482321916012",
+      "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+      "createdAt": "2026-11-08T13:19:16.000Z",
+      "fullText": "🔥 최근 해외에서 떠오르고 있는 미친 오픈소스 하나 공유해 드립니다! 🔥\n\n--> 내 아이폰이나 갤럭시를 클로드코드, 코덱스에게 통째로 맡길 수 있습니다.\n\n이름은 \"Phone Harness\"인데요.\n\nAI가 스마트폰 화면을 직접 보고, 터치하고, 글자를 입력하고, 스크롤까지 대신해 주는 오픈소스입니다.\n\n근데 이게 왜 이렇게 화제가 됐냐면...\n\nAI 에이전트에게 진짜 스마트폰을 사용할 수 있는 '눈과 손'을 만들어 줬기 때문입니다.\n\n지금까지 클로드 코드나 코덱스가 브라우저를 조작하는 모습은 많이 보셨잖아요?\n\n이제는 브라우저를 넘어.... 공식 API조차 없는 모바일 앱까지 직접 조작할 수 있게 된 겁니다.\n\n예를 들어 이런 일들을 이제 PC에서도 '딸깍'으로 시켜볼 수 있을 것 같습니다.\n\n🍔 쿠팡이츠 --> \"근처에서 가장 평점 높은 치킨집 찾아서 주문 준비해 줘.\"\n\n☕ 스타벅스 --> \"회사 근처에서 아이스 라떼 벤티 사이렌 오더로 준비해 줘.\"\n\n🥕 당근 --> \"이 물건 중고 시세 좀 알아보고 판매글 작성해 줘.\"\n\n🏪 포켓CU --> \"집 근처 CU에 두바이 초콜릿이랑 포켓몬빵 재고 있는지 찾아봐 줘.\"\n\n🎮 모바일게임 --> \"오늘 게임 출석 보상 좀 대신 받아줘ㅋㅋㅋㅋ\"\n\n그리고 더 놀라운 건 이게 무료 오픈소스라는 것입니다!\n\n그리고 내 휴대폰을 연결하기 싫다면?\n\nAI 에이전트 전용 스마트폰을 클라우드에서 따로 빌릴 수도 있습니다.\n\n(내 폰말고.. 새로운 클라우드 휴대폰..)\n\n다만 클라우드 아이폰이나 안드로이드 에뮬레이터를 MCP로 연결해 조작하게 하는 방식인데.. 이쪽은 유료로 제공하는 것 같습니다.\n\n근데 진짜 조만간 AI 에이전트에게 내 스마트폰 한 대씩 쥐여주는 시대가 올 것 같기도....? 합니다.",
+      "author": {
+        "handle": "@lucian__03",
+        "name": "lucian__03"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-88e1cf6c73ec0c3c5e040d5f291c30a41273938b40c0434cedce326b9f813bd7.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119419485191057553",
+          "sourceUrl": "https://x.com/lucian__03/status/2119419485191057553",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T13:19:16.000Z",
+          "fullText": "깃허브 오픈소스:\n\nGitHub - phone-harness/phone-harness: let your agent control your phone (https://t.co/DTgqhvJ8bg)  https://t.co/DTgqhvJ8bg",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/DTgqhvJ8bg",
+              "text": "GitHub - phone-harness/phone-harness: let your agent control your phone",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119419487233683848",
+          "sourceUrl": "https://x.com/lucian__03/status/2119419487233683848",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T13:19:17.000Z",
+          "fullText": "클라우드 MCP:\n\nGitHub - phone-harness/mcp: Connect AI agents to real iPhones and Androids (https://t.co/2CXq696lHC)  https://t.co/2CXq696lHC",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/2CXq696lHC",
+              "text": "GitHub - phone-harness/mcp: Connect AI agents to real iPhones and Androids",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119436378425757741",
+          "sourceUrl": "https://x.com/PandeuI/status/2119436378425757741",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T14:26:24.000Z",
+          "fullText": "곧 폰조작 비서 세상이 오겠네요 ㄷㄷ",
+          "author": {
+            "handle": "@PandeuI",
+            "name": "PandeuI"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2113876492736135364",
+          "sourceUrl": "https://x.com/Starlink/status/2113876492736135364",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "",
+          "fullText": "빠르고 안정적인 가정용 인터넷을 통해 여러 기기에서 끊김 없이 콘텐츠를 스트리밍하고, 재택근무하는 등 다양한 활동을 하실 수 있습니다.\n\n몇 분이면 온라인으로 주문을 완료하실 수 있어요.\n\n주문하기 (https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-cabinlights-stream&twclid=252xquob7j4i06xex8y1162ziu)  https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-cabinlights-stream&twclid=252xquob7j4i06xex8y1162ziu",
+          "author": {
+            "handle": "@Starlink",
+            "name": "Starlink"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-90234bd68b13dc47e183fb6ffde7c5ed9f77d59884938eddf9e8a3d93d6e6260.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_gvp_v4s_stc_ko-kr_egn-cabinlights-stream&twclid=252xquob7j4i06xex8y1162ziu",
+              "text": "주문하기",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119447982580088839",
+          "sourceUrl": "https://x.com/babayagamoto/status/2119447982580088839",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T15:12:31.000Z",
+          "fullText": "그니까.. AI가 컴퓨터 갖게된것도 모자라서 핸드폰도 하나씩.. 아니 여러개씩 갖게 된다는 거죠?",
+          "author": {
+            "handle": "@babayagamoto",
+            "name": "babayagamoto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119441483791241351",
+          "sourceUrl": "https://x.com/ShiroCipher/status/2119441483791241351",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T14:46:41.000Z",
+          "fullText": "내 폰을 그대로 맡기긴 부담스러워요. 에이전트 전용 기기로 나눠 두는 쪽이 마음이 놓이죠.",
+          "author": {
+            "handle": "@ShiroCipher",
+            "name": "ShiroCipher"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119433855694446687",
+          "sourceUrl": "https://x.com/TzoooosT/status/2119433855694446687",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T14:16:23.000Z",
+          "fullText": "이욬 좋으다! 이것이 진정한 에이전트 ㅋㅋㅋ",
+          "author": {
+            "handle": "@TzoooosT",
+            "name": "TzoooosT"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119425691729248698",
+          "sourceUrl": "https://x.com/Sublimernjp/status/2119425691729248698",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T13:43:56.000Z",
+          "fullText": "밤 열한시에 전여친에게 카톡하진 않겠죠? ㅋㅋㅋ",
+          "author": {
+            "handle": "@Sublimernjp",
+            "name": "Sublimernjp"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119419872086286817",
+          "sourceUrl": "https://x.com/akiroai/status/2119419872086286817",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T13:20:49.000Z",
+          "fullText": "if it stalls halfway through a chicken order, does it hand control back to you or just keep tapping?",
+          "author": {
+            "handle": "@akiroai",
+            "name": "akiroai"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119420960575230071",
+          "sourceUrl": "https://x.com/momo_picks/status/2119420960575230071",
+          "capturedAt": "2026-11-08T22:45:31.439148+00:00",
+          "createdAt": "2026-11-08T13:25:08.000Z",
+          "fullText": "좋네용",
+          "author": {
+            "handle": "@momo_picks",
+            "name": "momo_picks"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/lucian__03/status/2119419482321916012",
+        "observed_main_url": "https://x.com/lucian__03/status/2119419482321916012",
+        "author_handle": "lucian__03",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 10,
+          "max": 11
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119312712954204171",
+      "sourceUrl": "https://x.com/doodi_dev/status/2119312712954204171",
+      "capturedAt": "2026-11-08T22:45:35.355148+00:00",
+      "createdAt": "2026-11-08T06:15:00.000Z",
+      "fullText": "⭐ flawless-ui-ux ⭐\nhttps://t.co/w41DzrV3ez \n\n1. 코딩 에이전트가 화면(UI/UX)을 더 쓸 만하게 만들도록 도와주는 스킬이 나옴. 개인 개발자가 공개함\n\n2. 그럴듯하지만 다 비슷한 'AI 티 나는 디자인' 대신, 제품을 쓰는 사람·내용·분위기에 맞춰 화면을 짜게 이끌어줌\n\n3. 새로 만들기, 다시 디자인, 다듬기, 검토까지 말로 요청 가능. 글꼴·색·간격·접근성을 함께 봐줌. 예: \"프리랜서용 가계부 대시보드 만들어줘\"\n\n4. 명령어 도구가 실제로 돌아가는 화면을 열어서 색 대비, 글자 크기, 옆으로 넘치는 부분, 깨진 이미지, 자바스크립트 오류를 찾아줌. 고친 뒤 다시 돌리면 전후 비교도 해줌. 기본 검사 크기는 PC 1440×900, 폰 390×844\n\n5. MIT 무료, 공개 4일 만에 스타 88개. Codex·Claude Code 등 12개 에이전트 지원. Node 22.12 이상 필요. 화면 검사에는 Playwright용 크롬 설치가 따로 필요하고, 접근성 기준을 전부 통과했는지까지 보장하진 않는다고 밝힘\n\n설치: npx flawless-ui-ux@latest install\n\nAI가 만든 화면이 자꾸 다 비슷해 보여서 고민인 사람한테 좋을 듯\n\n━━━━━━━━━━\n🇺🇸\n1. A skill that helps coding agents build more usable interfaces (UI/UX). Released by an individual developer\n\n2. Instead of the same generic 'AI-looking design', it guides the agent to build around the product's audience, content, and identity\n\n3. Ask for create, redesign, refine, or review in plain words. It looks at typography, color, spacing, and accessibility together. Example: \"Build a financial dashboard for freelancers\"\n\n4. A command-line tool opens the running app and checks color contrast, font sizes, horizontal overflow, broken images, and JavaScript errors. Run it again after fixes to compare before and after. Default sizes are desktop 1440×900 and phone 390×844\n\n5. Free under MIT, 88 stars 4 days after release. Supports 12 agents including Codex and Claude Code. Requires Node 22.12+. Checking a live page needs a separate Playwright Chromium install, and the README says it doesn't prove full accessibility compliance\n\nInstall: npx flawless-ui-ux@latest install\n\nFeels useful for anyone tired of AI-built screens that all look the same\n\n#AI (https://x.com/hashtag/AI?src=hashtag_click)  #AgentSkills (https://x.com/hashtag/AgentSkills?src=hashtag_click)  #UIDesign (https://x.com/hashtag/UIDesign?src=hashtag_click)  #Codex (https://x.com/hashtag/Codex?src=hashtag_click)  #OpenSource (https://x.com/hashtag/OpenSource?src=hashtag_click)",
+      "author": {
+        "handle": "@doodi_dev",
+        "name": "doodi_dev"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8f774e86570739a7b421072cde948d3f0edf2bd316a6a397dd6c1502c3b32953.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/w41DzrV3ez",
+          "text": "https://github.com/smokeeaasd/flawless-ui-ux…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/AI?src=hashtag_click",
+          "text": "#AI",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/AgentSkills?src=hashtag_click",
+          "text": "#AgentSkills",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/UIDesign?src=hashtag_click",
+          "text": "#UIDesign",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/Codex?src=hashtag_click",
+          "text": "#Codex",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/OpenSource?src=hashtag_click",
+          "text": "#OpenSource",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/doodi_dev/status/2119312712954204171",
+        "observed_main_url": "https://x.com/doodi_dev/status/2119312712954204171",
+        "author_handle": "doodi_dev",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117389395578036501",
+      "sourceUrl": "https://x.com/0ooooo0/status/2117389395578036501",
+      "capturedAt": "2026-11-08T22:45:39.099148+00:00",
+      "createdAt": "2026-11-02T22:52:25.000Z",
+      "fullText": "내가 그록봇 한도가 부족하지 않은 이유\n\n그록봇에서 한도를 제일 많이 쓰는 것 중 하나가\n바로 '루틴'임\n\n루틴은 주기적으로 봇이 깨어나서 작업을 하는데\n깨어날 때도 한도를 쓰고 작업할 때도 한도를 씀\n\n그래서 이걸 대폭 줄여주는 봇 'Routinizer'를 만들었음\n\n그록봇에 기본으로 들어가야 할 만큼 효과 있다고 자부함\n원리만 알아도 한도 쓰는 게 달라짐\n\n1. 내 봇들이 반복하는 일을 찾아줌\n지난 7일 동안 같은 일을 두 번 넘게 했거나\n매번 똑같은 절차를 돌린 루틴을 골라냄\n\n2. 그걸 파이썬 스크립트로 바꾸자고 제안함\nAI가 매번 하던 일을 스크립트로 바꿔서\nAI를 안 쓰게 만드는 게 포인트임\n\n3. 스크립트는 봇 컴퓨터에서 AI 없이 돌아감\n데이터 가져오고 비교하는 건 스크립트가 하고\n바뀐 게 없으면 봇을 아예 안 깨움 (핵심)\n바뀐 게 있을 때만 봇이 깨어나서 요약해줌\n\n4. 만든 스크립트 관리도 알아서 함\n매일 상태 점검하고\n죽으면 다시 살리고\n문제 있을 때만 알려줌\n\n결과는 똑같은데\n봇이 깨어나는 횟수 자체가 확 줄어드는 거임\n\n루틴 많이 돌리는 형님들은\n꼭 해보십쇼",
+      "author": {
+        "handle": "@0ooooo0",
+        "name": "0ooooo0"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0611b52c064a39b406e6d3f9eba3f989c36b4a1f603dfa28c20f82c8623d084f.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2117389399222882433",
+          "sourceUrl": "https://x.com/0ooooo0/status/2117389399222882433",
+          "capturedAt": "2026-11-08T22:45:39.099148+00:00",
+          "createdAt": "2026-11-02T22:52:26.000Z",
+          "fullText": "Routinizer\n\nRoutinizer by Ivan (https://t.co/fiC9UVLB7S)  https://t.co/fiC9UVLB7S",
+          "author": {
+            "handle": "@0ooooo0",
+            "name": "0ooooo0"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/fiC9UVLB7S",
+              "text": "Routinizer by Ivan",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/0ooooo0/status/2117389395578036501",
+        "observed_main_url": "https://x.com/0ooooo0/status/2117389395578036501",
+        "author_handle": "0ooooo0",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117293417214742982",
+      "sourceUrl": "https://x.com/ounce_online/status/2117293417214742982",
+      "capturedAt": "2026-11-08T22:45:43.005148+00:00",
+      "createdAt": "2026-11-02T16:31:02.000Z",
+      "fullText": "헤르메스에 그록봇 이사 기능이 들어왔네요..📦\n\n그록봇과 오픈봇에서 쓰고있는 봇 역할이랑 \n메모리, 스킬, 루틴 같은 환경을 통째로 내보내서 \n헤르메스로 이식하는 기능입니다!\n\n헤르메스 모바일 베타 받아서 쓰는 중이었는데,\n생각보다 앱이 좋아서 이사할까 진지하게 고민중..😅\n\n안그래도 그록봇 토큰도 넘 부족하고,\n오픈봇 라이센스 판다고 해서 욕먹는데 ㅋㅋ\n\n@Teknium (https://x.com/Teknium) \n 형 모바일앱 출시 타이밍은 못잡으면서\n이거 사람들 흡수할 타이밍은 귀신같이 잡으심..\n\n사용방법은 그록봇한테 ‘야 니 정보 내놔라’ 하고 \n헤르메스에 가서 파일만 업로드 하는 방식임.\n\n잘 되는지는 아직 안 옮겨 봐서 모르겠지만 \n혹시 해보고 싶은 분들는 머지된지 얼마 안되서\n아마 every commit 업뎃 하셔야 쓸 수 있을듯..!\n\nPR은 아래👇",
+      "author": {
+        "handle": "@ounce_online",
+        "name": "ounce_online"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-167ed0bf47c5e5bbb56b1a00f55dc143d03503f677e553df93ba33c8ba2af7a9.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/Teknium",
+          "text": "@Teknium",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2117293421115404327",
+          "sourceUrl": "https://x.com/ounce_online/status/2117293421115404327",
+          "capturedAt": "2026-11-08T22:45:43.005148+00:00",
+          "createdAt": "2026-11-02T16:31:03.000Z",
+          "fullText": "Grok Bot and OpenBot users can move to Hermes from setup and hermes migrate; hermes migrate... (https://t.co/FwetTiBfyc)  https://t.co/FwetTiBfyc",
+          "author": {
+            "handle": "@ounce_online",
+            "name": "ounce_online"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/FwetTiBfyc",
+              "text": "Grok Bot and OpenBot users can move to Hermes from setup and hermes migrate; hermes migrate...",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2117381012552610101",
+          "sourceUrl": "https://x.com/minheo93698092/status/2117381012552610101",
+          "capturedAt": "2026-11-08T22:45:43.005148+00:00",
+          "createdAt": "2026-11-02T22:19:07.000Z",
+          "fullText": "한번 이사 잠깐 갔다와야되나?ㅋ",
+          "author": {
+            "handle": "@minheo93698092",
+            "name": "minheo93698092"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/ounce_online/status/2117293417214742982",
+        "observed_main_url": "https://x.com/ounce_online/status/2117293417214742982",
+        "author_handle": "ounce_online",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117837245055119689",
+      "sourceUrl": "https://x.com/lucian__03/status/2117837245055119689",
+      "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+      "createdAt": "2026-11-04T04:32:01.000Z",
+      "fullText": "🔥 맥 쓰시는 분들 꼭 보세요!!!!! 🔥\n\n해외에서 완전 핫한 오픈소스입니다!!\n\n—> 기존 터미널 안에서… 전체 macOS가 그냥 돌아갑니다.\n\n이름 Terminal-Mac인데…\n\n그록봇과 같은 에이전트 또는 AI에게 전용 Mac을 주고, 내 Mac은 그대로 둘 수 있어요!!\n\n⭐️ 동시에 완전 독립 작업 가능한거죠! ⭐️\n\n터미널 옆에서 실시간으로 작업하는 모습도 볼 수 있고요.\n\ncomputer use도 내장돼 있습니다. MCP, CLI, skill까지!!\n\n100% 무료 오픈소스입니다!!\n https://x.com/kirtandopamine/status/2117678349828976746/video/1",
+      "author": {
+        "handle": "@lucian__03",
+        "name": "lucian__03"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-50f55724a9baed766caf2586c33798fa8c018fff0584a33707ec8d7975e43b05.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/lucian__03/status/2117837245055119689"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/kirtandopamine/status/2117678349828976746/video/1",
+          "text": "https://x.com/kirtandopamine/status/2117678349828976746/video/1…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/lucian__03/status/2117837245055119689",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/lucian__03/status/2117837245055119689",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2117837377347661977",
+          "sourceUrl": "https://x.com/lucian__03/status/2117837377347661977",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T04:32:32.000Z",
+          "fullText": "",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-789e172c319c8e37d5a715002b9ae64f37065a7ee6da9d4e78403966375b26a3.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/lucian__03/status/2117837377347661977"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/lucian__03/status/2117837377347661977",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/lucian__03/status/2117837377347661977",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2117837515180933533",
+          "sourceUrl": "https://x.com/lucian__03/status/2117837515180933533",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T04:33:05.000Z",
+          "fullText": "repo: https://github.com/govijr/terminal-mac…",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2117852532093669394",
+          "sourceUrl": "https://x.com/nowgeun/status/2117852532093669394",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T05:32:46.000Z",
+          "fullText": "요거 메모리 많이 잡아먹을 것 같은데.. 좋아보이긴 합니다. computer use 하면 내 컴에서 다른 작업을 못하는데 용량만 충분하면 작업 효율이 크게 늘겠네요",
+          "author": {
+            "handle": "@nowgeun",
+            "name": "nowgeun"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117124176574370043",
+          "sourceUrl": "https://x.com/forestbooks7/status/2117124176574370043",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "",
+          "fullText": "사회생활에 찌든 멘헤라들 \n펑펑 울린 일본 일력 문장ㅠㅠ\n\nSlide 1 of 5 - Carousel (https://bit.ly/4BFGnmX?twclid=2k4bigwc8ed9oiele913hu9f8)  https://bit.ly/4BFGnmX?twclid=2k4bigwc8ed9oiele913hu9f8",
+          "author": {
+            "handle": "@forestbooks7",
+            "name": "forestbooks7"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-021ca6a3dc1a1741cda74f339afedcf5d5fca4c6d1275e66b8056dfe0ce8b18a.jpg",
+              "alt": ""
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-13185d731096caa8f3fbd3c23d205395c33a47baa4999b72071d9672740ed24d.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://bit.ly/4BFGnmX?twclid=2k4bigwc8ed9oiele913hu9f8",
+              "text": "Slide 1 of 5 - Carousel",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117847605741056446",
+          "sourceUrl": "https://x.com/danewon_io/status/2117847605741056446",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T05:13:11.000Z",
+          "fullText": "서브에이저트를 이용해서 터미널 맥 속의 터미널 맥 속의 터미널 맥 속의 터미널 맥이 돌아가는 세계선도 곧 오겠는데요ㅋㅋㅋ",
+          "author": {
+            "handle": "@danewon_io",
+            "name": "danewon_io"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117844264810110983",
+          "sourceUrl": "https://x.com/toris_kr/status/2117844264810110983",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T04:59:55.000Z",
+          "fullText": "저장공간 부족해서 못쓸것같네요..",
+          "author": {
+            "handle": "@toris_kr",
+            "name": "toris_kr"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117843035744825483",
+          "sourceUrl": "https://x.com/oneday3min/status/2117843035744825483",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T04:55:01.000Z",
+          "fullText": "터미널 안에서 macOS 통째로 돌리는 발상 ㄷㄷ / 에이전트용 맥 따로 주는 점도 눈에 띄어",
+          "author": {
+            "handle": "@oneday3min",
+            "name": "oneday3min"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117838808653926689",
+          "sourceUrl": "https://x.com/OnewKonew/status/2117838808653926689",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T04:38:14.000Z",
+          "fullText": "아니 이게 뭐에요 ㄷㄷㄷ 저게 어떻게 되는거지?",
+          "author": {
+            "handle": "@OnewKonew",
+            "name": "OnewKonew"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117844265288241392",
+          "sourceUrl": "https://x.com/AventusXcom/status/2117844265288241392",
+          "capturedAt": "2026-11-08T22:45:47.821148+00:00",
+          "createdAt": "2026-11-04T04:59:55.000Z",
+          "fullText": "자, 그럼 찍먹해겠습니다ㅋㅋ",
+          "author": {
+            "handle": "@AventusXcom",
+            "name": "AventusXcom"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/lucian__03/status/2117837245055119689",
+        "observed_main_url": "https://x.com/lucian__03/status/2117837245055119689",
+        "author_handle": "lucian__03",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 9,
+          "max": 10
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117318824198611364",
+      "sourceUrl": "https://x.com/QullamaggieHQ/status/2117318824198611364",
+      "capturedAt": "2026-11-08T22:45:51.759149+00:00",
+      "createdAt": "2026-11-02T18:12:00.000Z",
+      "fullText": "𝗗𝗢𝗡'𝗧 𝗚𝗘𝗧 𝗔𝗚𝗚𝗥𝗘𝗦𝗦𝗜𝗩𝗘 𝗨𝗡𝗧𝗜𝗟 𝗧𝗛𝗘 𝗦𝗘𝗧𝗨𝗣𝗦 𝗦𝗛𝗢𝗪 𝗨𝗣\n\n(Friday's selloff thinned out the setup list. No need to force breakouts until quality shows up.)\n\n𝗔𝗿𝗲 𝘆𝗼𝘂 𝘀𝗲𝗲𝗶𝗻𝗴 𝗲𝗻𝗼𝘂𝗴𝗵 𝗾𝘂𝗮𝗹𝗶𝘁𝘆 𝘀𝗲𝘁𝘂𝗽𝘀 𝘁𝗼 𝗴𝗲𝘁 𝗮𝗴𝗴𝗿𝗲𝘀𝘀𝗶𝘃𝗲, 𝗼𝗿 𝗮𝗿𝗲 𝘆𝗼𝘂 𝘀𝗶𝘁𝘁𝗶𝗻𝗴 𝘁𝗶𝗴𝗵𝘁?",
+      "author": {
+        "handle": "@QullamaggieHQ",
+        "name": "QullamaggieHQ"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-310307b5453e1eac7788fa6bf437a36d6029138c6800dd2690a0a8718f7f54f6.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/QullamaggieHQ/status/2117318824198611364"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2117318824198611364",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/QullamaggieHQ/status/2117318824198611364",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/QullamaggieHQ/status/2117318824198611364",
+        "observed_main_url": "https://x.com/QullamaggieHQ/status/2117318824198611364",
+        "author_handle": "QullamaggieHQ",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117025274273337741",
+      "sourceUrl": "https://x.com/Gaurav_Cx10/status/2117025274273337741",
+      "capturedAt": "2026-11-08T22:45:55.644149+00:00",
+      "createdAt": "2026-11-01T22:45:32.000Z",
+      "fullText": "Continuation of my last post on setup selection.\nToday: The Entry Model( 3 Trigger Bars)\nGreat stock with a bad entry is still a bad trade.\n• Tight entry → tight stop\n• Tight stop → larger position\n• Larger position → meaningful returns if right\nThat's why I am obsessive about entries.\n\nFor almost every trade, I look for just 3 trigger bars:\n• IB: Entire range inside the previous candle.\n• NR3 / NR5: Narrowest range in the last 3 or 5 bars.\n• Shakeout Bar: Undercuts support (usually EMA) and closes back near highs.\n\nHow to time them? Enter in 2 ways:\n1. Anticipation\nNear the trigger bar, before the breakout.\nHigher reward. Lower win rate.\n\n2. In Progress\nAs price breaks the trigger bar.\nNot after it's already occured . \nEverything else is usually a loose entry.\n\nLoose entry → wider stop → smaller position → lower returns.\n\nMy final filters:\n• Trade leaders\n• Strong markets favour breakouts.\n• Weak markets favour shakeouts and undercuts.\n• No trigger bar = no trades\n\nKeep it simple.",
+      "author": {
+        "handle": "@Gaurav_Cx10",
+        "name": "Gaurav_Cx10"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4820889e77d908310b2f1ad03ad8d1a0d6efc0d2c31b811130506ba9a162656d.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": {
+        "tweetId": "2116295071775514753",
+        "sourceUrl": "https://x.com/Gaurav_Cx10/status/2116295071775514753",
+        "capturedAt": "2026-11-08T22:45:55.644149+00:00",
+        "createdAt": "",
+        "fullText": "After years of trading, my watchlist comes down to just 3 setups.\n• VCP\n• Momentum Burst\n• EMA Pullback\nLooking for the same edge:\nStrong trend + tight price action + defined risk.",
+        "author": {
+          "handle": "@Gaurav_Cx10",
+          "name": "Gaurav_Cx10"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-85481ced993e673db9136ef304a64ca6f47e094f0b3e45b2c30c2006c0b804ff.png",
+            "alt": "Image"
+          }
+        ],
+        "links": [],
+        "stats": {}
+      },
+      "replies": [
+        {
+          "tweetId": "2117144402099626296",
+          "sourceUrl": "https://x.com/ArunGoyal6/status/2117144402099626296",
+          "capturedAt": "2026-11-08T22:45:55.644149+00:00",
+          "createdAt": "2026-11-02T06:38:54.000Z",
+          "fullText": "Thanks Gaurav for sharing. Do you have something on deep dives as well? What exact practice one can follow daily to understand the nuances.",
+          "author": {
+            "handle": "@ArunGoyal6",
+            "name": "ArunGoyal6"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117264841974960224",
+          "sourceUrl": "https://x.com/Gaurav_Cx10/status/2117264841974960224",
+          "capturedAt": "2026-11-08T22:45:55.644149+00:00",
+          "createdAt": "2026-11-02T14:37:29.000Z",
+          "fullText": "I have shared that previously. I will share again. Basically identify past big movers and study",
+          "author": {
+            "handle": "@Gaurav_Cx10",
+            "name": "Gaurav_Cx10"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/Gaurav_Cx10/status/2117025274273337741",
+        "observed_main_url": "https://x.com/Gaurav_Cx10/status/2117025274273337741",
+        "author_handle": "Gaurav_Cx10",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2115991075349533143",
+      "sourceUrl": "https://x.com/smbluespace/status/2115991075349533143",
+      "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+      "createdAt": "2026-10-30T02:16:00.000Z",
+      "fullText": "클로드 코드 입문자가 첫 30분에 해 두면 좋은 순서.\n\n1. 설치 후 깃허브부터 연결해 둠\n2. 어떤 일을 하는지, 뭘 원하는지, 어디까지 되면 성공인지를 폴더 하나에 정리\n3. 바로 만들게 하지 말고 플랜 모드로 계획을 먼저 받은 뒤 고쳐 나감\n\n맥락 폴더를 한 번 만들어 두면 매번 설명을 다시 안 해도 되니 편하겠다\n\n이것만으론 개념이 다 안 잡힌다는 반응도 있어서 첫 30분용으로 보면 되겠다ㅋㅋ",
+      "author": {
+        "handle": "@smbluespace",
+        "name": "smbluespace"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-48c24eb4f7ceb86c67b42d234fc334b614b8dd5473a280c81afdece36fb3db2e.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116330987139506236",
+          "sourceUrl": "https://x.com/TzoooosT/status/2116330987139506236",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "2026-10-31T00:46:41.000Z",
+          "fullText": "내 메모리상품을쓰면됨... 내껄쓰라고!! 라고말하고싶은 1인..",
+          "author": {
+            "handle": "@TzoooosT",
+            "name": "TzoooosT"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116467269534732413",
+          "sourceUrl": "https://x.com/smbluespace/status/2116467269534732413",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "2026-10-31T09:48:13.000Z",
+          "fullText": "ㅋㅋㅋ 그 마음 너무 알쥬",
+          "author": {
+            "handle": "@smbluespace",
+            "name": "smbluespace"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116002863705104892",
+          "sourceUrl": "https://x.com/cocadol/status/2116002863705104892",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "2026-10-30T03:02:50.000Z",
+          "fullText": "업무 효율 높이는 알짜 정보 공유해주니 아주 든든함!",
+          "author": {
+            "handle": "@cocadol",
+            "name": "cocadol"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2095223825059262507",
+          "sourceUrl": "https://x.com/XBusiness/status/2095223825059262507",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "",
+          "fullText": "Launch products now and grow your business with X Ads. \n@1x_tech (https://x.com/1x_tech) \n’s NEO robot campaign shows how X can turn a product announcement into action. As \n@Kenny___Rose (https://x.com/Kenny___Rose) \n put it, X was the perfect launch platform.",
+          "author": {
+            "handle": "@XBusiness",
+            "name": "XBusiness"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a24f8ee4555157c071b13c107b783a9dfbbf33f4a08dd03240979077483f5e4b.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/XBusiness/status/2095223825059262507"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/1x_tech",
+              "text": "@1x_tech",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/Kenny___Rose",
+              "text": "@Kenny___Rose",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/XBusiness/status/2095223825059262507",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/XBusiness/status/2095223825059262507",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116030272668131793",
+          "sourceUrl": "https://x.com/ShiroCipher/status/2116030272668131793",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "2026-10-30T04:51:45.000Z",
+          "fullText": "플랜 모드에서 받은 계획을 파일로 저장해 두면 다음 세션에서 이어 붙이기가 훨씬 쉬워요.\n작업이 길어지면 중간에 계획 파일부터 고쳐 주는 게 엉뚱한 방향으로 새는 걸 막더라고요.",
+          "author": {
+            "handle": "@ShiroCipher",
+            "name": "ShiroCipher"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2115997856977072266",
+          "sourceUrl": "https://x.com/ddookddak2/status/2115997856977072266",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "2026-10-30T02:42:57.000Z",
+          "fullText": "맥락 폴더는 어떻게 나눠 두시는지 궁금합니다",
+          "author": {
+            "handle": "@ddookddak2",
+            "name": "ddookddak2"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2116381708421660698",
+          "sourceUrl": "https://x.com/zzabzzalmaga/status/2116381708421660698",
+          "capturedAt": "2026-11-08T22:45:59.411149+00:00",
+          "createdAt": "2026-10-31T04:08:14.000Z",
+          "fullText": "처음부터 만들기보다 원하는 결과를 적어두는 게 먼저겠네요.",
+          "author": {
+            "handle": "@zzabzzalmaga",
+            "name": "zzabzzalmaga"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/smbluespace/status/2115991075349533143",
+        "observed_main_url": "https://x.com/smbluespace/status/2115991075349533143",
+        "author_handle": "smbluespace",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 7,
+          "max": 8
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117749915602583707",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2117749915602583707",
+      "capturedAt": "2026-11-08T22:46:03.043149+00:00",
+      "createdAt": "2026-11-03T22:45:00.000Z",
+      "fullText": "한 달 만에 별 2,208개 받은 UI 디자인 클로드 스킬\n\n시안을 하나만 주는 게 아니라\n방향이 다른 걸 여러 개 뽑아서 나란히 붙여 보여줌\n\n이름은 oil-ui\noil-oil이라는 곳에서 9월 말에 올렸는데\n한 달 남짓 만에 깃허브 별 2,208개 찍음\n\nAI한테 화면 하나 만들어달라고 하면\n대충 다 비슷비슷한 느낌 나오잖아\n이 스킬은 그걸 대놓고 겨냥한 듯\n\n설명에 적힌 걸 쉽게 풀면 세 단계임\n\n1. 서로 확실히 다른 디자인 방향 여러 개 뽑기\n색감, 배치, 분위기 자체가 다른 시안들\n\n2. 그걸 옆에 나란히 놓고 비교하기\n하나씩 넘겨보는 게 아니라 한 화면에서 고르는 거\n\n3. 실제 스크린샷 보면서 다듬기\n상상으로 고치는 게 아니라 진짜 화면 캡처 기준으로 수정\n\n개인적으로 3번이 제일 크다고 봄\nAI 디자인은 말로는 그럴듯한데\n막상 띄워보면 버튼 밀리고 글자 깨지는 게 일이라서\n\n클로드 코드 말고 코덱스 같은\n다른 AI 에이전트에서도 쓸 수 있게 만들었다고 함\n\n붙이는 방법은 저장소 README 보고 따라가는 게 제일 정확함\n\n어디에 써먹냐면\n부업으로 랜딩페이지나 작은 웹서비스 만드는 형들\n회사에서 내부용 툴 화면 급하게 뽑아야 하는 직장인\n\n디자이너 따로 못 쓰는 1인 사업자한테는\n시안 비교 단계 하나 생기는 것만으로도 개이득임\n\n이제 시안 3개 놓고 고르는 것까지 AI가 해주면 기획자 몫은 어디까지 남는 거지..?\n\nhttps://t.co/7bGKS7XJME",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b4a035204ddb61040e742e91e6c3ef8ee9f7af02b27ece79ef5741aaa1ba73a1.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/7bGKS7XJME",
+          "text": "https://github.com/oil-oil/oil-ui",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2117761294837461324",
+          "sourceUrl": "https://x.com/cadavercollect/status/2117761294837461324",
+          "capturedAt": "2026-11-08T22:46:03.043149+00:00",
+          "createdAt": "2026-11-03T23:30:13.000Z",
+          "fullText": "설치는 npx skills add oil-oil/oil-ui 한 줄이면 끝임. 쓸 때마다 https://t.co/0Re8ic87I0 에 새 버전만 체크하고(10분에 최대 1번, 프로젝트 내용은 안 올림) 신경 쓰이면 OIL_NO_UPDATE_CHECK=1 로 끄면 됨\n\n기존 프로젝트 리디자인이나 폼·대시보드 다듬기는 유료 Pro($9.99) 쪽이라, 무료판은 새 페이지 시안 여러 개 뽑아 고르는 용도로 보면 딱임\n\nOil UI · 给 Claude Code、Codex 用的 UI 设计 Skill 与案例画廊 (https://t.co/b7kZcm5kDC)  https://t.co/b7kZcm5kDC",
+          "author": {
+            "handle": "@cadavercollect",
+            "name": "cadavercollect"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/0Re8ic87I0",
+              "text": "http://ui.oiloil.org",
+              "kind": "body"
+            },
+            {
+              "url": "https://t.co/b7kZcm5kDC",
+              "text": "Oil UI · 给 Claude Code、Codex 用的 UI 设计 Skill 与案例画廊",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117762982856048722",
+          "sourceUrl": "https://x.com/oneday3min/status/2117762982856048722",
+          "capturedAt": "2026-11-08T22:46:03.043149+00:00",
+          "createdAt": "2026-11-03T23:36:55.000Z",
+          "fullText": "시안 3개 나란히 놓고 캡처 기준으로 고치기 ㄷㄷ",
+          "author": {
+            "handle": "@oneday3min",
+            "name": "oneday3min"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117758488806084623",
+          "sourceUrl": "https://x.com/poongmbti/status/2117758488806084623",
+          "capturedAt": "2026-11-08T22:46:03.043149+00:00",
+          "createdAt": "2026-11-03T23:19:04.000Z",
+          "fullText": "오오 웹페이지ㅜ부업은 어케하는거지",
+          "author": {
+            "handle": "@poongmbti",
+            "name": "poongmbti"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2117751595765248189",
+          "sourceUrl": "https://x.com/rusty_ha/status/2117751595765248189",
+          "capturedAt": "2026-11-08T22:46:03.043149+00:00",
+          "createdAt": "2026-11-03T22:51:41.000Z",
+          "fullText": "오 일단 저장...👍",
+          "author": {
+            "handle": "@rusty_ha",
+            "name": "rusty_ha"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2117749915602583707",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2117749915602583707",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 4,
+          "max": 5
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "1828917713848414334",
+      "sourceUrl": "https://x.com/AsymTrading/status/1828917713848414334",
+      "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+      "createdAt": "2024-08-28T22:08:57.000Z",
+      "fullText": "With the market in a correction, now's a good time to review the basics of pullback and compression patterns.\n\nSome good resources:\nLayman's Guide to Stock Trading by Dave Landry\n5 Secrets to Highly Profitable Swing Trading by Ivanhoff\nhttps://t.co/XCo39PHAQc \nhttps://t.co/8ANyimu6Tp \nhttps://t.co/mZW3DDX0fn \nhttps://t.co/HMAW6JY02m",
+      "author": {
+        "handle": "@AsymTrading",
+        "name": "AsymTrading"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a33b1945daf079a98ef9bcc04cd4505a536cb7138ceba83ee6527482c16e9bfb.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/XCo39PHAQc",
+          "text": "https://qullamaggie.com/my-3-timeless-setups-that-have-made-me-tens-of-millions/…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/8ANyimu6Tp",
+          "text": "https://stockbee.blogspot.com/2013/12/stocks-move-in-short-term-momentum.html…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/mZW3DDX0fn",
+          "text": "https://stockbee.blogspot.com/2017/09/what-to-look-for-in-good-swing-breakout.html…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/HMAW6JY02m",
+          "text": "https://youtube.com/watch?v=dnT8DNFZIa8&t=663s…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "1829152329410719897",
+          "sourceUrl": "https://x.com/itmrandy/status/1829152329410719897",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-29T13:41:13.000Z",
+          "fullText": "Love these posts Asym! \n\nWhen I was first starting out on my trading career, these were always so helpful to me - cheers",
+          "author": {
+            "handle": "@itmrandy",
+            "name": "itmrandy"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1829387608310370744",
+          "sourceUrl": "https://x.com/korayguclu/status/1829387608310370744",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-30T05:16:08.000Z",
+          "fullText": "@readwise (https://x.com/readwise) \n save",
+          "author": {
+            "handle": "@korayguclu",
+            "name": "korayguclu"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/readwise",
+              "text": "@readwise",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1828922086162575361",
+          "sourceUrl": "https://x.com/EdGramlich/status/1828922086162575361",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-28T22:26:19.000Z",
+          "fullText": "market is in correction?",
+          "author": {
+            "handle": "@EdGramlich",
+            "name": "EdGramlich"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1829001713287880717",
+          "sourceUrl": "https://x.com/KimJack46458989/status/1829001713287880717",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-29T03:42:44.000Z",
+          "fullText": "I never buy pullbacks when market is in corrections. Leaders are the ones that precede the market, so if they pull back, then market will be likely correct soon.",
+          "author": {
+            "handle": "@KimJack46458989",
+            "name": "KimJack46458989"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1829012734257865189",
+          "sourceUrl": "https://x.com/SamWu13/status/1829012734257865189",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-29T04:26:31.000Z",
+          "fullText": "It have similar descriptions of low cheat set up. \n$KKR (https://x.com/search?q=%24KKR&src=cashtag_click) \n recently show this pattern",
+          "author": {
+            "handle": "@SamWu13",
+            "name": "SamWu13"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/search?q=%24KKR&src=cashtag_click",
+              "text": "$KKR",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1829279483234550139",
+          "sourceUrl": "https://x.com/ZaviKhaerul/status/1829279483234550139",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-29T22:06:29.000Z",
+          "fullText": "No matter what pattern there, the breakout is the key.",
+          "author": {
+            "handle": "@ZaviKhaerul",
+            "name": "ZaviKhaerul"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "1829510939458331003",
+          "sourceUrl": "https://x.com/srikn1/status/1829510939458331003",
+          "capturedAt": "2026-11-08T22:46:10.303149+00:00",
+          "createdAt": "2024-08-30T13:26:13.000Z",
+          "fullText": "$COMM (https://x.com/search?q=%24COMM&src=cashtag_click)  looks fantastic!",
+          "author": {
+            "handle": "@srikn1",
+            "name": "srikn1"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/search?q=%24COMM&src=cashtag_click",
+              "text": "$COMM",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/AsymTrading/status/1828917713848414334",
+        "observed_main_url": "https://x.com/AsymTrading/status/1828917713848414334",
+        "author_handle": "AsymTrading",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 7,
+          "max": 8
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117478124182991017",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2117478124182991017",
+      "capturedAt": "2026-11-08T22:46:14.071149+00:00",
+      "createdAt": "2026-11-03T04:45:00.000Z",
+      "fullText": "AI가 대충 끝내는 거 막는다는 별 4,127개 클로드 스킬\n\n클로드한테 긴 일 시키면 꼭 이럼\n절반만 해놓고 \"완료했습니다\" 하는 거\n\n이걸 대놓고 잡겠다고 나온 스킬이 있음\n이름부터 unlazy, 안 게으르게\n\nLeonxlnx라는 개발자가 8월 초에 올렸고\n석 달도 안 돼서 깃허브 별 4,127개\n\n설명에 박아둔 문제가 세 개임\n\n1. 게으름\n시킨 거 대충 훑고 적당히 마무리하는 거\n\n2. 덜 생각하기\n충분히 고민 안 하고 바로 답부터 던지는 거\n\n3. 조기 완료\n다 안 끝났는데 끝났다고 보고하는 거\n\n2025~2026년에 나온 연구들 보면\nAI 모델이 실제로 이런 증상을 보인다고 함\n써본 형들은 3번에서 바로 혈압 오를듯\n\n해결 방법이 Depth Tree라는 건데\n일을 여러 층으로 쪼개서 내려가고\n제일 아래 칸 하나하나에\n전체 작업에 쓸 시간을 통째로 다 준다는 거\n\n그러니까 쪼갤수록 들어가는 공이 곱으로 불어남\n한 덩어리로 던지면 대충 뭉개던 걸\n작은 조각마다 끝까지 붙잡게 만드는 느낌\n\n어디에 써먹냐면\n시장조사, 긴 문서 정리, 데이터 검토처럼\n중간에 빠뜨려도 티 잘 안 나는 작업들\n\n부업으로 블로그 원고나 상세페이지 대량으로 뽑는 형들도\nAI가 뒤로 갈수록 대충 쓰는 거 겪어봤을 거임\n이게 존나 짜증나는 게 다시 하나하나 검사해야 됨\n\n물론 공을 곱으로 들이는 만큼\n시간이랑 사용량은 더 먹을 수밖에 없을듯\n간단한 질문까지 이걸 붙일 필요는 없어 보이고\n\n붙이는 법은 저장소 들어가서 확인하는 게 제일 정확함\n\nAI한테 긴 작업 맡기는 형들은 예전에 중간에 뭉개고 끝났던 작업 하나 골라서 이 스킬 붙이고 다시 돌려보셈\n\nhttps://t.co/yL310lanIz",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-3f40d8752cb887c3fa0d126162cd59c83fbaaf12436c7ba56df33ad716ae3d85.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/yL310lanIz",
+          "text": "https://github.com/Leonxlnx/unlazy",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2117478124182991017",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2117478124182991017",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2117580050774024698",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2117580050774024698",
+      "capturedAt": "2026-11-08T22:46:17.878150+00:00",
+      "createdAt": "2026-11-03T11:30:01.000Z",
+      "fullText": "목차·쪽번호까지 박아서 워드로 뽑아주는구나ㄷㄷ\n\n\"보고서 워드 파일로 만들어줘\" 이 한마디에\n제목 스타일, 목차, 쪽번호, 레터헤드까지 잡힌\n.docx가 나오게 해주는 스킬임\n\n만든 곳은 앤트로픽 본인들\n클로드 만든 회사가 직접 올린 공식 스킬이고 이름도 그냥 docx\n\n뭘 해주냐면\n워드 파일(.docx)이랑 워드 템플릿(.dotx)을\n새로 만들고, 읽고, 고치는 걸 다 맡음\n\n새로 만드는 것만 하는 게 아니라\n기존 파일에서 내용 뽑아서 순서 다시 짜기\n문서 안 이미지 넣고 바꾸기, 찾아 바꾸기\n변경내용 추적이랑 메모(댓글)까지 건드린다고 함\n\n직장인한테 제일 반가운 건 이 마지막 거일듯\n빨간 수정 표시 잔뜩 달린 파일 받아본 형들은 알 거\n\n안을 보면 생각보다 꼼꼼함\n워드 파일이 사실 XML 파일 묶음을 압축한 거라서\n새로 만들 땐 스크립트로 짜고\n\n기존 파일 고칠 땐 압축 풀어서 본문 XML 손보고 다시 묶음\n읽을 땐 마크다운으로 바꿔서 봄\n\n자잘한 함정도 적어놨는데\n용지 기본값이 A4라는 거\n표 음영 잘못 넣으면 칸이 시커멓게 나온다는 거\n\n글머리 기호를 그냥 • 로 찍지 말라는 거\n표 칸 너비를 퍼센트로 넣으면 구글 문서에서 깨진다는 거\n\n전부 사람이 워드 만지다 한 번씩 당하는 것들이라 좀 웃김ㅋㅋ\n\n쓰는 법은 따로 명령어 외울 거 없음\n설명에 적힌 대로면 이런 요청이 나오면 알아서 켜짐\n1. \"워드로\", \".docx로\" 만들어 달라고 할 때\n2. 보고서, 메모, 편지, 템플릿을 워드 파일로 달라고 할 때\n3. 목차·제목·쪽번호 같은 서식 들어간 문서 요청할 때\n\n대신 PDF, 엑셀, 구글 문서는 이 스킬 담당이 아님\n\n어디에 써먹냐면\n매주 같은 양식에 내용만 바꿔 넣는 주간보고, 회의록\n부업으로 제안서를 워드 파일로 보내야 하는 형들\n\n수정 표시 달린 문서 정리할 때도 꽤 쓸 만해 보임\n양식 맞추느라 쓰던 시간이 통째로 빠지는 거라 이건 좀 개사기 같음\n\n이러다 신입한테 워드 서식 잡는 법 가르칠 일도 없어지는 거 아닌가..?\n\nhttps://t.co/wSwX3Kj7vd",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b43b96c37e7f440c1236494909c2e1a9460824185aa24fdff06b162eac661aa6.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/wSwX3Kj7vd",
+          "text": "https://github.com/anthropics/skills/tree/main/skills/docx…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2117580050774024698",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2117580050774024698",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
