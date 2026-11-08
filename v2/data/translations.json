@@ -9028,7 +9028,7 @@
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
       "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-11-08T09:24:34.033392+00:00"
+      "failed_at": "2026-11-08T22:52:39.407466+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12457,7 +12457,7 @@
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:23:10.132824+00:00"
+    "failed_at": "2026-11-08T22:51:01.209576+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -12693,7 +12693,7 @@
     "content_hash": "192d46d8c2d824f3",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:23:32.740547+00:00"
+    "failed_at": "2026-11-08T22:51:14.239028+00:00"
   },
   "2076219292249706771": {
     "paragraphs": [
@@ -13287,7 +13287,7 @@
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.036573+00:00"
+    "failed_at": "2026-11-08T22:52:39.410530+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13808,7 +13808,7 @@
     "content_hash": "688ac05f147f559e",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.032137+00:00"
+    "failed_at": "2026-11-08T22:52:39.405495+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13931,7 +13931,7 @@
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.036869+00:00"
+    "failed_at": "2026-11-08T22:52:39.410849+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14004,7 +14004,7 @@
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.037256+00:00"
+    "failed_at": "2026-11-08T22:52:39.411189+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14117,7 +14117,7 @@
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.037845+00:00"
+    "failed_at": "2026-11-08T22:52:39.411855+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -16058,7 +16058,7 @@
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.038505+00:00"
+    "failed_at": "2026-11-08T22:52:39.412598+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16230,7 +16230,7 @@
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.040008+00:00"
+    "failed_at": "2026-11-08T22:52:39.414218+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
@@ -16725,8 +16725,8 @@
     "translated": [],
     "content_hash": "78a3c074a476959a",
     "status": "failed",
-    "error": "한국어 번역이 없는 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.040408+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-08T22:52:39.414806+00:00"
   },
   "reply:2116662751410233832:2116673371111051445": {
     "paragraphs": [
@@ -16751,8 +16751,8 @@
     "translated": [],
     "content_hash": "41fdda00586eb25a",
     "status": "failed",
-    "error": "한국어 번역이 없는 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.040231+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-08T22:52:39.414573+00:00"
   },
   "reply:2116662751410233832:2112806825967927533": {
     "paragraphs": [
@@ -17081,7 +17081,7 @@
     "content_hash": "a1dc98a5f9eb16ee",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-08T09:24:34.041384+00:00"
+    "failed_at": "2026-11-08T22:52:39.415843+00:00"
   },
   "2117220957622255727": {
     "paragraphs": [
@@ -17990,6 +17990,133 @@
     "status": "ok",
     "validation_version": 2,
     "translated_at": "2026-11-03T09:22:55.456040+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2119324701453615189:2119324770227687666": {
+    "paragraphs": [
+      "GitHub - Nutlope/hallmark: Anti-AI-slop design skill for Claude Code, Cursor, and Codex. (https://t.co/b9JYbjnKe2)  https://t.co/b9JYbjnKe2"
+    ],
+    "translated": [
+      "GitHub - Nutlope/hallmark: Claude Code, Cursor, Codex용 저품질 AI 결과물 방지 디자인 스킬. (https://t.co/b9JYbjnKe2)  https://t.co/b9JYbjnKe2"
+    ],
+    "content_hash": "7e0fdaaef467e71a",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.416306+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2119419482321916012:2119419487233683848": {
+    "paragraphs": [
+      "클라우드 MCP:",
+      "GitHub - phone-harness/mcp: Connect AI agents to real iPhones and Androids (https://t.co/2CXq696lHC)  https://t.co/2CXq696lHC"
+    ],
+    "translated": [
+      "클라우드 MCP:",
+      "GitHub - phone-harness/mcp: AI 에이전트를 실제 아이폰 및 안드로이드 기기에 연결하세요 (https://t.co/2CXq696lHC)  https://t.co/2CXq696lHC"
+    ],
+    "content_hash": "2ff1e9f3197f614d",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.419609+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2117293417214742982:2117293421115404327": {
+    "paragraphs": [
+      "Grok Bot and OpenBot users can move to Hermes from setup and hermes migrate; hermes migrate... (https://t.co/FwetTiBfyc)  https://t.co/FwetTiBfyc"
+    ],
+    "translated": [
+      "Grok Bot 및 OpenBot 사용자는 setup 그리고 hermes migrate에서 Hermes로 이동할 수 있습니다. hermes migrate... (https://t.co/FwetTiBfyc)  https://t.co/FwetTiBfyc"
+    ],
+    "content_hash": "e1ff3235ab458e70",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.420464+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2118986019966263743:2118986024051486760": {
+    "paragraphs": [
+      "GitHub - yybmion/public-apis-4Kr: 한국 서비스에 이용 가능한 Public API 모음 | Public APIs Available for Korean... (https://t.co/pXG3hIgOIt)  https://t.co/pXG3hIgOIt"
+    ],
+    "translated": [
+      "GitHub - yybmion/public-apis-4Kr: 한국 서비스에 이용 가능한 공개 API 모음 | 한국...에서 이용 가능한 공개 API (https://t.co/pXG3hIgOIt)  https://t.co/pXG3hIgOIt"
+    ],
+    "content_hash": "d23caac9111f389f",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.417021+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2119304275499368747:2118565793331818911": {
+    "paragraphs": [
+      "이제 Starlink는 다양한 각도에서 연결을 보장할 수 있는 위성이 11,000개나 있기 때문에 부분적으로 장애물이 있는 환경에서도 작동합니다.",
+      "주문하기 (https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq)  https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq"
+    ],
+    "translated": [
+      "이제 Starlink는 다양한 각도에서 연결을 보장할 수 있는 위성이 11,000개나 있기 때문에 부분적으로 장애물이 있는 환경에서도 작동합니다.",
+      "주문하기 (https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq)  https://www.starlink.com/kr/residential?referral=RC-481123-97289-21&utm_source=twitter&utm_medium=paid&utm_campaign=sls_kr_soc_twt_bro_dem&utm_content=sls_kr_soc_twt_bro_dem_res_obt_v4s_stc_ko-kr_egn-greenroof-obst&twclid=23eijeajvz3jvfxkczanrjxsmq"
+    ],
+    "content_hash": "251fe4dea52cb90a",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.416563+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2119419482321916012:2119419872086286817": {
+    "paragraphs": [
+      "if it stalls halfway through a chicken order, does it hand control back to you or just keep tapping?"
+    ],
+    "translated": [
+      "치킨을 주문하다가 중간에 멈추면 제어권을 사용자에게 돌려주나요, 아니면 그냥 계속 탭하나요?"
+    ],
+    "content_hash": "441284accba3f23c",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.419922+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2117389395578036501:2117389399222882433": {
+    "paragraphs": [
+      "Routinizer",
+      "Routinizer by Ivan (https://t.co/fiC9UVLB7S)  https://t.co/fiC9UVLB7S"
+    ],
+    "translated": [],
+    "content_hash": "079d390efada9a4a",
+    "status": "failed",
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-08T22:52:39.420059+00:00"
+  },
+  "reply:2119419482321916012:2119419485191057553": {
+    "paragraphs": [
+      "깃허브 오픈소스:",
+      "GitHub - phone-harness/phone-harness: let your agent control your phone (https://t.co/DTgqhvJ8bg)  https://t.co/DTgqhvJ8bg"
+    ],
+    "translated": [
+      "깃허브 오픈소스:",
+      "GitHub - phone-harness/phone-harness: 에이전트가 휴대폰을 제어하도록 하세요 (https://t.co/DTgqhvJ8bg)  https://t.co/DTgqhvJ8bg"
+    ],
+    "content_hash": "65aab324cc647f69",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.419200+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2118986019966263743:2090814619275436444": {
+    "paragraphs": [
+      "A prompt goes in. A skeleton comes out, IK-ready.",
+      "Most text-to-3D stops at a static mesh. Atlas keeps going: standardized T-pose, rig, weights, so the character is animatable the day it is generated.",
+      "Try Atlas today",
+      "AI for Gamedevs (https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl)  https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl"
+    ],
+    "translated": [
+      "프롬프트를 입력하면 IK 적용 준비가 된 스켈레톤이 나옵니다.",
+      "대부분의 텍스트 기반 3D 생성은 정적 메시에서 멈춥니다. Atlas는 표준화된 T 포즈, 리그, 가중치까지 생성하므로 캐릭터가 생성된 당일부터 애니메이션을 적용할 수 있습니다.",
+      "지금 Atlas를 사용해 보세요",
+      "게임 개발자를 위한 AI (https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl)  https://atlas.design/?utm_source=twitter&utm_medium=paid&utm_campaign=atlas_x_r1&utm_content=04_n6b_prompt-skeleton&twclid=2aqa7ss8t4fzz3bh8t736ez2yl"
+    ],
+    "content_hash": "3816a2d90c5245b6",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-08T22:52:39.418855+00:00",
     "chunk": "posts-x.json"
   }
 }
