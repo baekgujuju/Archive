@@ -392,16 +392,16 @@ function replyBodyHtml(r) {
   const compact = (t) => String(t).replace(/\s+/g, ' ').trim();
   if (!tr || tr.status !== 'ok' || !Array.isArray(tr.paragraphs) ||
       !Array.isArray(tr.translated) || tr.paragraphs.length !== tr.translated.length) {
-    return `<p class="reply-text">${escapeHtml(text)}</p>`;
+    return `<p class="reply-text">${linkify(text)}</p>`;
   }
   if (!replyParagraphsMatch(text, tr.paragraphs)) {
-    return `<p class="reply-text">${escapeHtml(text)}</p>`;
+    return `<p class="reply-text">${linkify(text)}</p>`;
   }
   return tr.paragraphs.map((t, i) => {
     const ko = String(tr.translated[i] || '').trim();
-    return `<p class="reply-text">${escapeHtml(t)}</p>` +
+    return `<p class="reply-text">${linkify(t)}</p>` +
       (ko && compact(ko) !== compact(t)
-        ? `<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>${escapeHtml(ko)}</p>`
+        ? `<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>${linkify(ko)}</p>`
         : '');
   }).join('');
 }

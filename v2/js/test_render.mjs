@@ -16,7 +16,7 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // render.js를 classic script로 실행
-const ctx = vm.createContext({ window: {}, console });
+const ctx = vm.createContext({ window: {}, console, URL, document: { baseURI: 'https://archive.example/' } });
 const src = readFileSync(join(__dirname, 'render.js'), 'utf8');
 new vm.Script(src, { filename: 'render.js' }).runInContext(ctx);
 const {
@@ -114,7 +114,7 @@ check('card data-pin-id', card.includes('data-pin-id="12345"'));
 check('card data-chart', card.includes('data-chart="1"'));
 check('card data-idx', card.includes('data-idx="7"'));
 check('card 제목 90자', card.includes('<h3>첫 줄 제목입니다'));
-check('card meta', card.includes('작성 9:36 PM · Oct 2, 2026'));
+check('card meta', card.includes('게시 9:36 PM · Oct 2, 2026'));
 check('card summary 링크', card.includes('<a href="https://example.com"'));
 check('card 삭제 버튼', card.includes('class="delete-btn"'));
 check('card 메모 버튼', card.includes('data-memo-id="12345"'));
@@ -264,6 +264,39 @@ const appRh = appReplyBody({ text: 'This is a great point.',
   translation: { status: 'ok', paragraphs: ['This is a great point.'],
     translated: ['훌륭한 지적이다.'] } });
 check('app.js replyBody text 폴백', appRh.includes('This is a great point.') && appRh.includes('훌륭한 지적이다.') && appRh.includes('한국어 번역'));
+
+// 18. 답글 bare URL — 원문·번역 링크 및 XSS 안전성 (양쪽 렌더러).
+const replyUrl = 'https://t.co/b9JYbjnKe2';
+const linkedReplyText = `Hallmark <script>alert(1)</script> ${replyUrl}`;
+const linkedReply = {
+  ...replyBase,
+  fullText: linkedReplyText,
+  translation: {
+    status: 'ok',
+    paragraphs: [linkedReplyText],
+    translated: [`홀마크 <script>alert(2)</script> ${replyUrl}`],
+  },
+};
+for (const [name, render] of [
+  ['render.js repliesHtml', (r) => repliesHtml({ replies: [r] })],
+  ['app.js appReplyBody', appReplyBody],
+]) {
+  const html = render(linkedReply);
+  for (const cls of ['reply-text', 'translation-ko']) {
+    const paragraph = html.match(new RegExp(`<p class="${cls}">([\\s\\S]*?)</p>`))?.[1] || '';
+    check(`${name} ${cls} bare URL 앵커`, paragraph.includes(`<a href="${replyUrl}"`));
+    check(`${name} ${cls} script 이스케이프`, paragraph.includes('&lt;script&gt;') && !paragraph.includes('<script>'));
+  }
+  check(`${name} raw script 없음`, !html.includes('<script>'));
+  for (const [label, translation] of [
+    ['번역 없음', undefined],
+    ['문단 불일치', { ...linkedReply.translation, paragraphs: ['Stale text'] }],
+  ]) {
+    const fallback = render({ ...linkedReply, translation });
+    check(`${name} ${label} 원문 링크`, fallback.includes(`<a href="${replyUrl}"`) && !fallback.includes('translation-ko'));
+    check(`${name} ${label} script 이스케이프`, fallback.includes('&lt;script&gt;') && !fallback.includes('<script>'));
+  }
+}
 
 console.log(`\n결과: ${pass} 통과, ${fail} 실패`);
 process.exit(fail ? 1 : 0);

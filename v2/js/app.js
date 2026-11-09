@@ -220,7 +220,7 @@ var ArchiveApp = (function () {
     if(!tr||tr.status!=='ok'||!Array.isArray(tr.paragraphs)||!Array.isArray(tr.translated)||tr.paragraphs.length!==tr.translated.length)return '<p class="reply-text">'+linkText(text)+'</p>';
     var compact=function(t){return String(t).replace(/\s+/g,' ').trim();};
     if(!replyParagraphsMatch(text,tr.paragraphs))return '<p class="reply-text">'+linkText(text)+'</p>';
-    return tr.paragraphs.map(function(t,i){var ko=String(tr.translated[i]||'').trim();return '<p class="reply-text">'+linkText(t)+'</p>'+(ko&&compact(ko)!==compact(t)?'<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+esc(ko)+'</p>':'');}).join('');
+    return tr.paragraphs.map(function(t,i){var ko=String(tr.translated[i]||'').trim();return '<p class="reply-text">'+linkText(t)+'</p>'+(ko&&compact(ko)!==compact(t)?'<p class="translation-ko"><span class="translation-label">한국어 번역</span><br>'+linkText(ko)+'</p>':'');}).join('');
   }
   function renderQuoted(q, depth, ancestors) {
     depth=depth||0; ancestors=ancestors||new Set();
