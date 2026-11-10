@@ -37358,6 +37358,1018 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2120014839896776854",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2120014839896776854",
+      "capturedAt": "2026-11-10T23:22:48.426975+00:00",
+      "createdAt": "2026-11-10T04:45:00.000Z",
+      "fullText": "별 3.9만 개 받은, 클로드한테 브라우저 쥐여주는 MS 도구\n\n마이크로소프트가 직접 만든 playwright-mcp\n클로드가 웹페이지를 직접 열고 만지게 연결해주는 도구임\n\n신기한 건 화면 캡처를 안 봄\n페이지 구조를 글자 데이터로 읽어서 움직이는 방식이라\n이미지 보는 모델이 따로 필요 없다고 함\n\n그래서 빠르고 가벼움\n스크린샷 보고 대충 눌러서 엉뚱한 데 찍는 일도 줄어든다는 게 README 설명\n\n준비물은 딱 두 개\nNode.js 18 이상, 그리고 MCP 붙는 프로그램\n클로드 데스크톱, VS Code, 커서, 윈드서프 같은 거\n\n이렇게 쓰면 됨\n1. Node.js 18 이상 깔기\n\n2. 쓰는 프로그램의 MCP 설정 열기\n\n3. mcpServers 안에 playwright 항목 넣고\n명령어는 npx @playwright/mcp@latest\n대부분 도구는 이 기본 설정 하나로 된다고 함\n\n재밌는 건 README에 스스로 써둔 비교\n코딩 에이전트로 쓸 거면 MCP 말고 CLI+스킬 버전이 토큰을 덜 먹는다고 함\n큰 도구 설명이랑 페이지 구조를 통째로 안 올려서 그렇다고\n\n대신 브라우저를 오래 켜두고 계속 들여다봐야 하는 작업은\n아직 MCP가 낫다고 함\n(자기 제품끼리 솔직하게 비교해둔 게 오히려 믿음 감)\n\n내가 보기엔 써먹을 데가 꽤 넓음\n매일 같은 사이트 들어가서 조회하고 옮겨 적는 반복 업무\n쇼핑몰 부업하는 형들 상품 페이지 하나하나 확인하는 클릭질\n테스트 자동화하는 개발자는 말할 것도 없고\n\n손으로 하던 클릭질을 말로 시키는 거라 이건 좀 탐남\n\n매일 같은 사이트에서 복붙하는 형들은 그 작업 딱 하나만 먼저 시켜보셈\n\nhttps://t.co/ziPVMa0MkD",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-371e419d8280697e0b0fb84f80bc5eb8ce15d67aa872d89d39cb572715c62419.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/ziPVMa0MkD",
+          "text": "https://github.com/microsoft/playwright-mcp…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2120022213055422483",
+          "sourceUrl": "https://x.com/hmmmmmm1458/status/2120022213055422483",
+          "capturedAt": "2026-11-10T23:22:48.426975+00:00",
+          "createdAt": "2026-11-10T05:14:18.000Z",
+          "fullText": "오 유용해보이네요",
+          "author": {
+            "handle": "@hmmmmmm1458",
+            "name": "hmmmmmm1458"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2120014839896776854",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2120014839896776854",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2098819745718133090",
+      "sourceUrl": "https://x.com/lucian__03/status/2098819745718133090",
+      "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+      "createdAt": "2026-09-12T17:03:16.000Z",
+      "fullText": "\"깃허브 ⭐️스타만 93.7k\"이고... \n제가 1년 넘게 계속 쓰고 있는 Claude Code 플러그인\n\n사실상 메인 메모리이자, 제 클로드 토큰을 지켜주고 있는\n\n--> Claude-Mem을 소개드립니다.\n\n(사용한지 벌써 1년이 됐네요.. 쓸 때와 안 쓸 때 차이가 정말 큰 사실상 필수 플러그인)\n\n단순히 \"저번에 내가 말한 OO 기억나?\"에 대답해주는 메모리 도구로만 생각하시면 안 됩니다.\n\n제가 가장 크게 체감한 장점은 이전에 다른 세션 또는 압축전 세션에서 이미 했었던 리서치를 처음부터 다시 하지 않아서..\n\n\"토큰 낭비\"가 확 줄어든다는 것입니다.\n\n다른 클로드 코드 세션이 이미 찾아본 자료와 코드, 확인한 스크립트가 있잖아요.\n\n(컨텍스트를 압축하기 전에 수 천만 토큰을 사용하며, 리서치해서 알아낸 내용도..)\n\n근데 압축 이후의 클로드 또는 새 클로드 세션에서 그걸 까먹고 같은 자료나 코드를..\n\n--> 또 검색하고\n--> 같은 코드를 또 읽고\n--> 같은 해결 방법을 다시 찾으면… \n\n그 과정에 토큰이 또 들어갑니다.\n\n제가 Claude-Mem을 계속 쓰는 건 이 반복이 줄어드는 차이가 정말 크기 때문이에요.\n\n작업 중.. 알아낸 내용을 기록하고 요약해두고, 다음 세션에서 관련 기록을 가져다 쓰는 방식입니다. \n\n(기록을 전부 한꺼번에 넣는 게 아니라, 짧은 검색 결과를 먼저 보고 필요한 내용만 더 불러올 수도 있고요.)\n\n이미 토큰을 써서 알아낸 내용을\n\n--> 다음 세션에서도 ♻️ 재활용하는 겁니다.\n\n코덱스에는 이전 대화에서 쌓는 \"기본 로컬 메모리\"가 있고\n\n별도로 PC 활동을 기억에 연결하는 \"컴퓨터 히스토리\"도 있습니다.\n\n물론 클로드 코드에도 자동 메모리와 CLAUDE.md 지침 파일은 있습니다.\n\n저는 여기에 Claude-Mem을 더해서 작업 기록을 적극적으로 재활용하는 쪽입니다.\n\n컨텍스트도 코덱스 아스트라는 공개 기본 설정상 272K이고, 사실상 쓸 수 있는 컨텍스트는 약 258K입니다. \n\nOpus나 Fable 5.1은 기본 컨텍스트가 1M(100만) 토큰입니다.\n\n그만큼 긴 작업을 이어갔는데..\n\n자동 압축되거나 새 대화를 열었다고 이미 해놓은 리서치를 다시 하면 너무 아깝잖아요?\n\n그래서 저는 1M 컨텍스트로 길게 작업할수록\n이런 메모리 플러그인은 사실상 필수라고 생각합니다.\n\n클로드 코드로 계속 작업하시는 분들은 진짜 한번 써보세요.\n\n+ 그리고 이름 때문에 헷갈리실 수 있는데요.\n\n최근에는 이름이 \"Grok Mem\"으로 바뀌었습니다.\n\n(Claude Mem --> Grok Mem...)\n\n실제 깃허브 README 맨 위에도 \"Claude-Mem is now Grok Mem\"이라고 적혀 있어요. \n\n지금은 그록봇이 작업과 결정 사항을 기억하도록 돕는 기능을 전면에 내세우고 있습니다.\n\n(클로드 코드 지원이 사라진 건 아닙니다.)\n\n클로드 코드 쓰시는 분들이라면 필수인 것 같고..\n\n여전히 사실상 클코 메모리 플러그인 중에는 👑 1황이라고 생각합니다!!!",
+      "author": {
+        "handle": "@lucian__03",
+        "name": "lucian__03"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-18aa2c8f303d934778d8568a5f94b36319ac0d5d4ca225f3d9e05611df55d0d8.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2098840894334255169",
+          "sourceUrl": "https://x.com/lucian__03/status/2098840894334255169",
+          "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+          "createdAt": "2026-09-12T18:27:18.000Z",
+          "fullText": "Claude-mem 깃허브:\n\nGitHub - thedotmack/claude-mem: Persistent Context Across Sessions for Every Agent – Captures... (https://t.co/5zVJ6EaSrX)  https://t.co/5zVJ6EaSrX",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/5zVJ6EaSrX",
+              "text": "GitHub - thedotmack/claude-mem: Persistent Context Across Sessions for Every Agent – Captures...",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2098841036512702760",
+          "sourceUrl": "https://x.com/lucian__03/status/2098841036512702760",
+          "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+          "createdAt": "2026-09-12T18:27:52.000Z",
+          "fullText": "터미널에 'npx claude-mem install' 이 명령어로 설치하실 수 있습니다!",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2098853374900994242",
+          "sourceUrl": "https://x.com/gotnommed/status/2098853374900994242",
+          "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+          "createdAt": "2026-09-12T19:16:54.000Z",
+          "fullText": "기억을 쌓는 것만큼 오래된 결정을 지우는 것도 중요할 것 같아요. 프로젝트별로 기록을 분리하거나 잘못 저장된 내용만 수정하는 것도 편한가요?",
+          "author": {
+            "handle": "@gotnommed",
+            "name": "gotnommed"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2099040490935259227",
+          "sourceUrl": "https://x.com/lucian__03/status/2099040490935259227",
+          "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+          "createdAt": "2026-09-13T07:40:25.000Z",
+          "fullText": "네 프로젝트별 기록 분리랑 메모리 전체 저희가 직접 삭제하거나 수정하거나 관리하실 수 있습니다!!",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2099015600043688050",
+          "sourceUrl": "https://x.com/MennheraHunter/status/2099015600043688050",
+          "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+          "createdAt": "2026-09-13T06:01:31.000Z",
+          "fullText": "혹시 화면속 ade? 뭐쓰시는지 물어봐도될까요?",
+          "author": {
+            "handle": "@MennheraHunter",
+            "name": "MennheraHunter"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2099040209551962408",
+          "sourceUrl": "https://x.com/lucian__03/status/2099040209551962408",
+          "capturedAt": "2026-11-10T23:22:54.102975+00:00",
+          "createdAt": "2026-09-13T07:39:18.000Z",
+          "fullText": "제가 옛날에 소개드린적있는데!\nterax라는 ade입니다!! \n\n한때 외국에서 엄청 가볍고, 디스크 용량도 7mb밖에 안되어서 핫했던 ade입니다!!\n\n구글에 terax 검색하시면 설치도 바로 하실 수 있어요!",
+          "author": {
+            "handle": "@lucian__03",
+            "name": "lucian__03"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/lucian__03/status/2098819745718133090",
+        "observed_main_url": "https://x.com/lucian__03/status/2098819745718133090",
+        "author_handle": "lucian__03",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2120030523057996173",
+      "sourceUrl": "https://x.com/joejo2038/status/2120030523057996173",
+      "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+      "createdAt": "2026-11-10T05:47:19.000Z",
+      "fullText": "많이 화제가 안된것 같은데.. 이거 꿀 아닌가?\n\nLG AI연구원은 이번 K-엑사원 2.5 발표와 동시에 자체 공식 플랫폼을 통해 API를 전면 무료로 개방하는 파격적인 승부수를 던졌습니다..\n\n별도 비용 없이 API 키 즉시 발급: 개발자와 스타트업, 일반 기업, 대학 및 연구기관 등 누구나 엑사원 공식 문서 사이트에서 API 키만 발급받으면 토큰 과금 걱정 없이 자사 업무 자동화 도구와 앱 개발, 학술 연구에 바로 연동할 수 있습니다.\n\n아래에서 가능합니다!\n\ndocs.exaone.ai\n엑사원 API | EXAONE API Platform (https://t.co/RAn4BaSRue)  https://t.co/RAn4BaSRue",
+      "author": {
+        "handle": "@joejo2038",
+        "name": "joejo2038"
+      },
+      "media": [],
+      "links": [
+        {
+          "url": "https://t.co/RAn4BaSRue",
+          "text": "docs.exaone.ai\n엑사원 API | EXAONE API Platform",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2120055509160247733",
+          "sourceUrl": "https://x.com/supernovajunn/status/2120055509160247733",
+          "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+          "createdAt": "2026-11-10T07:26:36.000Z",
+          "fullText": "한국도 질수없지!!",
+          "author": {
+            "handle": "@supernovajunn",
+            "name": "supernovajunn"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120043050437398613",
+          "sourceUrl": "https://x.com/una_invest/status/2120043050437398613",
+          "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+          "createdAt": "2026-11-10T06:37:06.000Z",
+          "fullText": "오 API도 무료로 풀렸군요 정보 감사합니다!\n다만 여전히 비상업적 라이센스라 활용이 좀 제한적이긴 하겠네요.. 아쉽",
+          "author": {
+            "handle": "@una_invest",
+            "name": "una_invest"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120044337342161284",
+          "sourceUrl": "https://x.com/jei0129/status/2120044337342161284",
+          "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+          "createdAt": "2026-11-10T06:42:13.000Z",
+          "fullText": "오오오 정보 공유 감사합니다!!",
+          "author": {
+            "handle": "@jei0129",
+            "name": "jei0129"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2110270783436280020",
+          "sourceUrl": "https://x.com/subway_korea/status/2110270783436280020",
+          "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+          "createdAt": "",
+          "fullText": "램.잘.알 윤남노 셰프의 추천 써브웨이 램 컬렉션!\n\n호주산 프리미엄 양고기에 부드러운 후무스,\n그리고 셰프의 킥이 담긴 치미추리 소스까지 더한 램 컬렉션\n\n지금 바로 전국 써브웨이 매장에서 만나보세요! 💚\n\n👉더 알아보기 (https://event.subway.co.kr/appGate/appGate_14.html?twclid=2f46hagf23plunitdanald2m3a)  https://event.subway.co.kr/appGate/appGate_14.html?twclid=2f46hagf23plunitdanald2m3a",
+          "author": {
+            "handle": "@subway_korea",
+            "name": "subway_korea"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-80d0f2b031d351c9f461554ea7f70453331b18eab27500fb500fcff1e3a08d55.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://event.subway.co.kr/appGate/appGate_14.html?twclid=2f46hagf23plunitdanald2m3a",
+              "text": "👉더 알아보기",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120048275470659773",
+          "sourceUrl": "https://x.com/reng_jo/status/2120048275470659773",
+          "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+          "createdAt": "2026-11-10T06:57:52.000Z",
+          "fullText": "번역 성능이 어쩔려나……",
+          "author": {
+            "handle": "@reng_jo",
+            "name": "reng_jo"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120055264489652248",
+          "sourceUrl": "https://x.com/sarca88/status/2120055264489652248",
+          "capturedAt": "2026-11-10T23:22:59.263975+00:00",
+          "createdAt": "2026-11-10T07:25:38.000Z",
+          "fullText": "처절하네 lg",
+          "author": {
+            "handle": "@sarca88",
+            "name": "sarca88"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/joejo2038/status/2120030523057996173",
+        "observed_main_url": "https://x.com/joejo2038/status/2120030523057996173",
+        "author_handle": "joejo2038",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119915595093385474",
+      "sourceUrl": "https://x.com/AlexZio00/status/2119915595093385474",
+      "capturedAt": "2026-11-10T23:23:04.874975+00:00",
+      "createdAt": "2026-11-09T22:10:38.000Z",
+      "fullText": "클로드 모델 사용법 간단 정리\n\n1. 사용처별 기본 모델을 정해 둔다\n   - 대량 분류와 추출, 로그 읽기 같은 일은 Haiku에 맡긴다.\n   - 범위가 분명한 일은 Sonnet에 맡긴다.\n   - 대부분의 일은 Opus medium에서 시작한다.\n   - 정말 어려운 일만 Fable을 쓴다.\n\n2. 부족할 때 고치는 순서\n   1. 먼저 검증 장치를 붙인다. 모델이 테스트, 빌드, 스크립트로 자기 결과를 확인할 수 있게 한다.\n   2. 그래도 부족하면 effort를 한 단계 올린다.\n   3. 그래도 안 되면 그때 상위 모델로 바꾼다. 바꿀 때는 effort를 낮춰서 다시 시작한다.\n\n3. effort를 무작정 높인다고 좋아지지 않는다\n   - high를 넘기면 effort 한 단계가 모델 한 단계만큼 비싸질 수 있다.\n   - effort를 올려도 모델이 원래 모르는 지식이나 없는 능력이 생기지는 않는다.\n\n4. 비용을 줄이는 요령: 처음에는 low로 돌리고, 실패한 작업만 high로 다시 돌린다. 이렇게 하는 쪽이 처음부터 전부 high로 돌리는 것보다 싸고 결과도 낫다.\n\n한 줄로 줄이면 이렇습니다. \n\n\"모델은 일의 종류로 정해 두고, 같은 일 안에서는 effort로 조절한다. 모델은 effort로도 안 될 때만 바꾼다.\"\n\n클로드 새로운 가이드 발표\n어떤 Claude 모델로 빌드해야 할까요? x.com/ClaudeDevs/sta…",
+      "author": {
+        "handle": "@AlexZio00",
+        "name": "AlexZio00"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119978978085945650",
+          "sourceUrl": "https://x.com/gelgrujam/status/2119978978085945650",
+          "capturedAt": "2026-11-10T23:23:04.874975+00:00",
+          "createdAt": "2026-11-10T02:22:30.000Z",
+          "fullText": "캬캬 완잔 개꿀팁인검다 감사함다!",
+          "author": {
+            "handle": "@gelgrujam",
+            "name": "gelgrujam"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119982600362381709",
+          "sourceUrl": "https://x.com/AlexZio00/status/2119982600362381709",
+          "capturedAt": "2026-11-10T23:23:04.874975+00:00",
+          "createdAt": "2026-11-10T02:36:53.000Z",
+          "fullText": "클로드 공식문서 정리니 이렇게 먼저 사용을 해보자구요 ㅎ",
+          "author": {
+            "handle": "@AlexZio00",
+            "name": "AlexZio00"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119937344224805275",
+          "sourceUrl": "https://x.com/ryuhyun_dev/status/2119937344224805275",
+          "capturedAt": "2026-11-10T23:23:04.874975+00:00",
+          "createdAt": "2026-11-09T23:37:04.000Z",
+          "fullText": "하이쿠는 아직 안 써봤는데 로그 읽기에 써봐야겠어요",
+          "author": {
+            "handle": "@ryuhyun_dev",
+            "name": "ryuhyun_dev"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2118619354602361143",
+          "sourceUrl": "https://x.com/site123/status/2118619354602361143",
+          "capturedAt": "2026-11-10T23:23:04.874975+00:00",
+          "createdAt": "",
+          "fullText": "비즈니스를 설명하면 AI가 페이지, 글, 이미지, 레이아웃을 대신 만들어 드려요.\n\nSlide 1 of 2 - Carousel\n채팅으로 홈페이지 만들기 (https://ko.site123.com/include/landing.php?subject=website&a=1&utm_source=x_ads&utm_campaign=pkyc2&utm_adgroup=y3gek&twclid=21f4n0c5i07txs08k1rgipz75b)  https://ko.site123.com/include/landing.php?subject=website&a=1&utm_source=x_ads&utm_campaign=pkyc2&utm_adgroup=y3gek&twclid=21f4n0c5i07txs08k1rgipz75b",
+          "author": {
+            "handle": "@site123",
+            "name": "site123"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-083ad7a776f0f67dab20c915c1bdc5dd333a18a1778f5a1083c33bdd9b30c93a.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/site123/status/2118619354602361143"
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-083ad7a776f0f67dab20c915c1bdc5dd333a18a1778f5a1083c33bdd9b30c93a.jpg",
+              "alt": ""
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-42e37c0aaa3eed3f12075003583b9f2c4d5d95bd5fa0b33884890e4d25696e48.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://ko.site123.com/include/landing.php?subject=website&a=1&utm_source=x_ads&utm_campaign=pkyc2&utm_adgroup=y3gek&twclid=21f4n0c5i07txs08k1rgipz75b",
+              "text": "Slide 1 of 2 - Carousel\n채팅으로 홈페이지 만들기",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/site123/status/2118619354602361143",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/site123/status/2118619354602361143",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119921756979053017",
+          "sourceUrl": "https://x.com/Kresnik_00/status/2119921756979053017",
+          "capturedAt": "2026-11-10T23:23:04.874975+00:00",
+          "createdAt": "2026-11-09T22:35:07.000Z",
+          "fullText": "실패분만 high로 다시 돌리는 쪽이 현실적이네요",
+          "author": {
+            "handle": "@Kresnik_00",
+            "name": "Kresnik_00"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/AlexZio00/status/2119915595093385474",
+        "observed_main_url": "https://x.com/AlexZio00/status/2119915595093385474",
+        "author_handle": "AlexZio00",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 5,
+          "max": 6
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119919314497364236",
+      "sourceUrl": "https://x.com/stellargent_lab/status/2119919314497364236",
+      "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+      "createdAt": "2026-11-09T22:25:25.000Z",
+      "fullText": "GitHub 스타 약 1.2만 개. 바이브코딩으로 만든 AI 티 나는 화면을 디자이너가 손본 화면처럼 바꿔 주는 스킬이 있어요.\n\n이름은 'unslop'.\n\n보라색 그라데이션, 빛 번짐 효과, 이모지 라벨, 과하게 외치는 문구, 들쭉날쭉한 간격 같은 AI 티를 먼저 찾아냅니다. 그다음 제품에 맞는 방향을 정하고, 디자이너가 검토하듯 여러 번에 나눠 고쳐요.\n\nClaude Code, Codex, Google Antigravity에서 쓸 수 있고, React나 Vue, 일반 HTML 등 지금 쓰는 방식 그대로 작업합니다. 링크만 있는 운영 중인 사이트도 다룰 수 있어요.\n\n고치기 전에 진단 결과와 방향부터 보여 줘서 중간에 방향을 틀 수 있습니다. 이미 괜찮은 화면이면 갈아엎지 않고 작은 개선만 제안하고요.\n\n이미지가 필요하면 유료 이미지 생성 서비스를 따로 연결해야 하고, 생성할 때마다 먼저 물어봅니다. 화면이 바뀌는 과정을 담은 10초 미만 영상도 만들 수 있는데, 이건 별도 도구 설치가 필요해요.\n\n라이선스는 CC BY 4.0이라 출처만 밝히면 상업적으로도 쓸 수 있습니다.\n\nAI로 만든 화면이 다 비슷해 보이는 게 바이브코딩의 문제점이라 보는데 AI티를 벗어나는게 필요하겠네요",
+      "author": {
+        "handle": "@stellargent_lab",
+        "name": "stellargent_lab"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-94e5de2a5f19f8ee4a8e970dc0290f7f76c7226a874bfaea28d474ebd687e3ee.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/stellargent_lab/status/2119919314497364236"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/stellargent_lab/status/2119919314497364236",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/stellargent_lab/status/2119919314497364236",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119919349234586083",
+          "sourceUrl": "https://x.com/stellargent_lab/status/2119919349234586083",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-09T22:25:33.000Z",
+          "fullText": "GitHub - heydamir/unslop: A Claude skill that turns vibecoded, AI-looking UI into a designed... (https://t.co/wMlyvzqB4u)  https://t.co/wMlyvzqB4u",
+          "author": {
+            "handle": "@stellargent_lab",
+            "name": "stellargent_lab"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://t.co/wMlyvzqB4u",
+              "text": "GitHub - heydamir/unslop: A Claude skill that turns vibecoded, AI-looking UI into a designed...",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119950063380410803",
+          "sourceUrl": "https://x.com/mindungi_ai/status/2119950063380410803",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-10T00:27:36.000Z",
+          "fullText": "unslop 이름부터 찰떡이다 ㅋㅋ 보라색 그라데이션 빼 주는 거 딱 필요했어.",
+          "author": {
+            "handle": "@mindungi_ai",
+            "name": "mindungi_ai"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119950872985936087",
+          "sourceUrl": "https://x.com/stellargent_lab/status/2119950872985936087",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-10T00:30:49.000Z",
+          "fullText": "다행이네요!ㅎㅎ",
+          "author": {
+            "handle": "@stellargent_lab",
+            "name": "stellargent_lab"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119939776149442936",
+          "sourceUrl": "https://x.com/RootAns_Blog/status/2119939776149442936",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-09T23:46:43.000Z",
+          "fullText": "보라색 그라데이션을 AI가 좋아하는 군요 ㅎㅎ",
+          "author": {
+            "handle": "@RootAns_Blog",
+            "name": "RootAns_Blog"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119940153116635265",
+          "sourceUrl": "https://x.com/stellargent_lab/status/2119940153116635265",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-09T23:48:13.000Z",
+          "fullText": "그러네요 왜 보라색을 좋아할까..",
+          "author": {
+            "handle": "@stellargent_lab",
+            "name": "stellargent_lab"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119928786557063335",
+          "sourceUrl": "https://x.com/Kresnik_00/status/2119928786557063335",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-09T23:03:03.000Z",
+          "fullText": "빛 번짐이랑 이모지 라벨까지 목록에 넣어 두셨네요",
+          "author": {
+            "handle": "@Kresnik_00",
+            "name": "Kresnik_00"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119940230421889175",
+          "sourceUrl": "https://x.com/stellargent_lab/status/2119940230421889175",
+          "capturedAt": "2026-11-10T23:23:09.724975+00:00",
+          "createdAt": "2026-11-09T23:48:32.000Z",
+          "fullText": "그러네요!",
+          "author": {
+            "handle": "@stellargent_lab",
+            "name": "stellargent_lab"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/stellargent_lab/status/2119919314497364236",
+        "observed_main_url": "https://x.com/stellargent_lab/status/2119919314497364236",
+        "author_handle": "stellargent_lab",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 7,
+          "max": 8
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119731736879792142",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2119731736879792142",
+      "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+      "createdAt": "2026-11-09T10:00:03.000Z",
+      "fullText": "95.5% → 93.9%, 문장 다 고쳐도 잡히는 AI 글\n\n사람 편집자가 AI 소설 문체를 싹 다시 써도\n탐지율이 겨우 1.6%p 떨어졌다는 연구가 있음\n단어 바꿔봤자 별 소용없다는 얘기\n\n이걸 근거로 만든 클로드 스킬이 sepia\nAI가 쓴 티를 빼주는 스킬이고 깃허브 별 3,677개\n\n보통 휴머나이저들은 단어랑 문장만 만지잖아\n근데 README에 나온 연구(이야기 61,608편)를 보면\n이야기 구조만 보고도 AI 소설을 93.2% 맞혔다고 함\n\n잡히는 포인트는 이런 거\n화자가 주제를 대놓고 설명함\n사건이 원인→결과로 너무 깔끔하게 한 줄로 감\n\n감정을 몸 반응으로만 표현함\n현실에 있는 거 언급이 하나도 없음\n시간은 처음부터 끝까지 일직선\n\n결말은 주인공이 성장하고 받아들이면서 끝남\n읽다가 좀 개뜨끔했음 ㅋㅋ\n\n그래서 sepia는 소설이면\n단어 손대기 전에 이야기 뼈대부터 고침\n주제 설명 멈추기, 인과 느슨하게 풀기,\n반전은 뒤로 미루기 이런 식\n\n소설만 되는 것도 아님\n릴리스 노트, PR 답변, 장애 회고, 티켓, 기술 글처럼\n업무 문서도 종류별로 규칙을 따로 붙여놨음\n\n이렇게 쓰면 됨\n1. Skills CLI로 명령어 한 줄이면 설치 (에이전트 77개 넘게 지원)\n2. 클로드 코드는 전용 플러그인으로도 됨\n코덱스, 그록 빌드, 안티그래비티도 같이 지원\n\n3. 시킬 작업 하나 고르기\nwrite는 새로 쓰기, review는 진단만,\nrefactor는 최소한만 수정, recreate는 통째로 다시 쓰기\n\n개인적으로 review가 제일 쓸만해 보임\n고치진 않고 어디가 AI 같은지만 짚어주니까\n내 글 톤은 그대로 두고 걸리는 데만 볼 수 있음\n\nAI로 웹소설이나 블로그 초안 뽑는 부업러,\n회고 문서·기술 글 AI로 쓰는데 티 날까 봐 신경 쓰이던 직장인한테 맞을듯\n\n단어 말고 뼈대부터 뜯어고치는 발상은 진짜 영리하네.\n\nhttps://t.co/EqRobhk26s",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-721b3378a90593974ddb9f9c1b19ff11625a9b9de71009d3049ac3d125c36742.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/EqRobhk26s",
+          "text": "https://github.com/Nanako0129/sepia…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119863466232336449",
+          "sourceUrl": "https://x.com/itsmyturn85/status/2119863466232336449",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-09T18:43:30.000Z",
+          "fullText": "1.6%p밖에 안 떨어지네요ㅎ",
+          "author": {
+            "handle": "@itsmyturn85",
+            "name": "itsmyturn85"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120010784319397902",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2120010784319397902",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-10T04:28:53.000Z",
+          "fullText": "신기해요 ㄷㄷ",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119809213417595352",
+          "sourceUrl": "https://x.com/Andy_chiky/status/2119809213417595352",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-09T15:07:55.000Z",
+          "fullText": "구조가 본질이네ㄷㄷ",
+          "author": {
+            "handle": "@Andy_chiky",
+            "name": "Andy_chiky"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120010772030099954",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2120010772030099954",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-10T04:28:50.000Z",
+          "fullText": "ㄹㅇㄹㅇ",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119998629046096295",
+          "sourceUrl": "https://x.com/wind24011/status/2119998629046096295",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-10T03:40:35.000Z",
+          "fullText": "바로써봐야지\n감사해요 도파민님",
+          "author": {
+            "handle": "@wind24011",
+            "name": "wind24011"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120010761363931328",
+          "sourceUrl": "https://x.com/dopamine_crypto/status/2120010761363931328",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-10T04:28:48.000Z",
+          "fullText": "제가 더 감샤합니다",
+          "author": {
+            "handle": "@dopamine_crypto",
+            "name": "dopamine_crypto"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2120048488549683295",
+          "sourceUrl": "https://x.com/totsgroup/status/2120048488549683295",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-10T06:58:42.000Z",
+          "fullText": "과제 때문에 여러 번 해봤는데 실제로 그렇더라고요. 근데 웃긴게 AI 특유의 정형화된 논리 전개를 바꾸니까 거의 동일한 워딩과 표현들을 유지해서 써도 에이아이 % 확 떨어지더라고요.",
+          "author": {
+            "handle": "@totsgroup",
+            "name": "totsgroup"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120029301370503348",
+          "sourceUrl": "https://x.com/zzabzzalmaga/status/2120029301370503348",
+          "capturedAt": "2026-11-10T23:23:14.410975+00:00",
+          "createdAt": "2026-11-10T05:42:28.000Z",
+          "fullText": "감삼다",
+          "author": {
+            "handle": "@zzabzzalmaga",
+            "name": "zzabzzalmaga"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2119731736879792142",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2119731736879792142",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 8,
+          "max": 9
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119765548204515549",
+      "sourceUrl": "https://x.com/minheo93698092/status/2119765548204515549",
+      "capturedAt": "2026-11-10T23:23:18.971975+00:00",
+      "createdAt": "2026-11-09T12:14:24.000Z",
+      "fullText": "GrokBot이나 Claude Code에 컴퓨터 작업을 시킨다면 agent-desktop을 붙여 보세요. \n\n화면을 사진으로 보는 대신 앱 구조를 바로 읽어서 훨씬 많은 토큰을 절약할수 있습니다.\n저는 이걸로 갈아탔습니다.\n\n기본 컴퓨터 유즈는 스크린샷을 보고 좌표를 눌러요.\nagent-desktop은 운영체제 접근성 트리를 JSON으로 읽고, 요소마다 붙은 ref(이름표)를 눌러요.\n\n그래서 이런 점이 달라요.\n1. 이미지가 아니라 글자로 읽어서 픽셀 위치를 맞출 필요가 없어요\n2. 기본은 마우스와 포커스를 안 건드려서 다른 작업과 안 부딪혀요\n3. 화면이 바뀌면 STALE_REF로 알려 줘서 다시 읽고 이어 가요\n4. 다시 해도 되는 실패인지 응답에 적혀 있어요\n\n설치: npm install -g agent-desktop\nMCP로 붙이기: agent-desktop mcp\nmacOS·Windows·Linux, Apache-2.0\n\n봇 컴퓨터 작업에서 더 답답한 건 느린 속도인가요, 엉뚱한 데 누르는 건가요?아니면 망할 토큰인가요?ㅋ\n\nhttps://t.co/yxW3lt5EzU",
+      "author": {
+        "handle": "@minheo93698092",
+        "name": "minheo93698092"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-85ad153ea668e084717ec2d7f58f9a2153ba24dd7886a2bb738c1b470aa0d068.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/minheo93698092/status/2119765548204515549"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/yxW3lt5EzU",
+          "text": "https://github.com/vercel-labs/agent-desktop…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/minheo93698092/status/2119765548204515549",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/minheo93698092/status/2119765548204515549",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2119886339328155774",
+          "sourceUrl": "https://x.com/Massskb/status/2119886339328155774",
+          "capturedAt": "2026-11-10T23:23:18.971975+00:00",
+          "createdAt": "2026-11-09T20:14:23.000Z",
+          "fullText": "Even better if they get there own VM\n\nAI with its own Windows 11 PC. 💻\n\nIt searched for a wallpaper, set it, installed Notepad++ through the GUI, and created a file, orange cursor visible the whole time. \n\nUse cases: automated setup, UI testing, repetitive desktop work, isolated agent environments.\n\nPersistent",
+          "author": {
+            "handle": "@Massskb",
+            "name": "Massskb"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-dece0e869afd16884e47f8a49de98d8e6b27059618765e82a90221baf217ac13.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/Massskb/status/2119886339328155774"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/Massskb/status/2119886339328155774",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/Massskb/status/2119886339328155774",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2119921425159233706",
+          "sourceUrl": "https://x.com/minheo93698092/status/2119921425159233706",
+          "capturedAt": "2026-11-10T23:23:18.971975+00:00",
+          "createdAt": "2026-11-09T22:33:48.000Z",
+          "fullText": "That's it!",
+          "author": {
+            "handle": "@minheo93698092",
+            "name": "minheo93698092"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2119893339030032522",
+          "sourceUrl": "https://x.com/Jasonturcotte/status/2119893339030032522",
+          "capturedAt": "2026-11-10T23:23:18.971975+00:00",
+          "createdAt": "2026-11-09T20:42:12.000Z",
+          "fullText": "@bot (https://x.com/bot) \n can we use this?",
+          "author": {
+            "handle": "@Jasonturcotte",
+            "name": "Jasonturcotte"
+          },
+          "media": [],
+          "links": [
+            {
+              "url": "https://x.com/bot",
+              "text": "@bot",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/minheo93698092/status/2119765548204515549",
+        "observed_main_url": "https://x.com/minheo93698092/status/2119765548204515549",
+        "author_handle": "minheo93698092",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 3,
+          "max": 4
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2119252316314325318",
+      "sourceUrl": "https://x.com/doodi_dev/status/2119252316314325318",
+      "capturedAt": "2026-11-10T23:23:23.735975+00:00",
+      "createdAt": "2026-11-08T02:15:00.000Z",
+      "fullText": "⭐ BAS Guard ⭐\nhttps://t.co/c8rfLT3str \n\n1. 클로드 코드 같은 AI 에이전트 환경용 \"백신\" 느낌의 보안 검사·정리 도구가 나옴\n\n2. 에이전트가 자동으로 불러오는 스킬·MCP 서버·훅·CLAUDE.md 안에 숨은 나쁜 지시를 내 컴퓨터에서 미리 찾아줌. 인터넷 없이 돌아가고 밖으로 아무것도 안 보냄\n\n3. 검사(scan, check)는 읽기만 함. 정리(clean)는 지우지 않고 휴지통 폴더로 옮기기만 하고 --undo로 원래대로 복구 가능. 중복, 낭비 토큰, 안 쓰는 스킬도 찾아줌\n\n4. 위험 검사 10가지 항목에 권한 점검까지 있고, 스킬을 불러오기 전에 검사해서 문제가 있으면 물어보는 기능도 있음. 비밀번호·키 값은 가려서 보여줌. 클로드 코드 플러그인과 슬래시 명령도 제공\n\n5. MIT 무료, 스타 14개. 맥·리눅스 바이너리 제공, 윈도우는 소스 빌드만 가능. 점수는 안전 보증이 아니라 상대적인 위험 신호라고 밝힘\n\n설치: npx --yes \n@bas (https://x.com/bas) \n.io/guard@latest check ./some-skill\n\n새 스킬 깔기 전에 한 번 검사해 보고 싶은 클로드 코드 사용자한테 좋을 듯\n\n━━━━━━━━━━\n🇺🇸\n1. A \"antivirus\"-style security scan and cleanup tool for AI agent setups like Claude Code\n\n2. It finds hidden malicious instructions in the skills, MCP servers, hooks, and CLAUDE.md files your agent auto-loads, right on your own machine. Works offline and sends nothing out\n\n3. Scanning (scan, check) is read-only. Cleanup (clean) never deletes, it only moves things to a trash folder, and --undo restores them. Also finds duplicates, wasted tokens, and unused skills\n\n4. 10 risk categories plus a permission audit, and a gate that checks a skill before the agent loads it and asks you if something looks off. Secret values are masked in reports. Ships as a Claude Code plugin with slash commands\n\n5. Free under MIT, 14 stars. Binaries for Mac and Linux, Windows is build-from-source only. The score is a relative risk signal, not a safety guarantee\n\nInstall: npx --yes \n@bas (https://x.com/bas) \n.io/guard@latest check ./some-skill\n\nGood for Claude Code users who want to vet a new skill before installing it\n\n#AI (https://x.com/hashtag/AI?src=hashtag_click)  #ClaudeCode (https://x.com/hashtag/ClaudeCode?src=hashtag_click)  #AIAgents (https://x.com/hashtag/AIAgents?src=hashtag_click)  #Security (https://x.com/hashtag/Security?src=hashtag_click)  #OpenSource (https://x.com/hashtag/OpenSource?src=hashtag_click)",
+      "author": {
+        "handle": "@doodi_dev",
+        "name": "doodi_dev"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-dfd4807aa5aa19cae5a1caf8dfb532b0a02aea3a34181eb022692489a1c9e4f7.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/c8rfLT3str",
+          "text": "https://github.com/basdotio/bas-guard…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/bas",
+          "text": "@bas",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/bas",
+          "text": "@bas",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/AI?src=hashtag_click",
+          "text": "#AI",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/ClaudeCode?src=hashtag_click",
+          "text": "#ClaudeCode",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/AIAgents?src=hashtag_click",
+          "text": "#AIAgents",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/Security?src=hashtag_click",
+          "text": "#Security",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/hashtag/OpenSource?src=hashtag_click",
+          "text": "#OpenSource",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/doodi_dev/status/2119252316314325318",
+        "observed_main_url": "https://x.com/doodi_dev/status/2119252316314325318",
+        "author_handle": "doodi_dev",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
