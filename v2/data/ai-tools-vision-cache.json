@@ -6591,5 +6591,217 @@
     "category_ko": "AI / LLM",
     "owner_hint": "QwenLM",
     "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:dfd4807aa5aa19cae5a1caf8dfb532b0a02aea3a34181eb022692489a1c9e4f7": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/basdotio/bas-guard"
+    ],
+    "title": "basdotio/bas-guard",
+    "description_ko": "주황색 로고와 기여자 3명, 이슈 0개, 스타 14개, 포크 0개가 표시된 GitHub 저장소 소개 카드.",
+    "category_ko": "GitHub 저장소",
+    "owner_hint": "basdotio",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:85ad153ea668e084717ec2d7f58f9a2153ba24dd7886a2bb738c1b470aa0d068": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Tokyo packing list",
+    "description_ko": "macOS에서 도쿄 여행 준비물 메모, 비어 있는 미리 알림 목록, 계산기가 함께 열린 화면.",
+    "category_ko": "데스크톱 생산성 앱",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:721b3378a90593974ddb9f9c1b19ff11625a9b9de71009d3049ac3d125c36742": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/Nanako0129/sepia"
+    ],
+    "title": "Nanako0129/sepia",
+    "description_ko": "Agent Skills 호환 에이전트에서 AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트. Claude Code와 Codex용 네이티브 플러그인을 언급한다.",
+    "category_ko": "AI 글쓰기 스킬",
+    "owner_hint": "Nanako0129",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:94e5de2a5f19f8ee4a8e970dc0290f7f76c7226a874bfaea28d474ebd687e3ee": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "EmberAI PRO 대시보드",
+    "description_ko": "보라색 대시보드에 탐색 메뉴, 월 결제액, 매출 막대그래프와 픽셀 단위 간격 측정선이 표시된 UI 디자인 화면.",
+    "category_ko": "대시보드 UI 디자인",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:18aa2c8f303d934778d8568a5f94b36319ac0d5d4ca225f3d9e05611df55d0d8": {
+    "index": 4,
+    "is_github": true,
+    "github_urls": [],
+    "title": "AnswerMeld-Platform의 Claude Code 세션",
+    "description_ko": "AnswerMeld-Platform 프로젝트를 연 개발 환경. Claude Code 터미널에 이전 작업의 컨텍스트 색인, 토큰 사용량과 재사용 절감 정보가 표시되어 있다. 로컬 경로에 GitHub 디렉터리가 보인다.",
+    "category_ko": "AI 코딩 개발 환경",
+    "owner_hint": "AnswerMeld",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:371e419d8280697e0b0fb84f80bc5eb8ce15d67aa872d89d39cb572715c62419": {
+    "index": 5,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/microsoft/playwright-mcp"
+    ],
+    "title": "microsoft/playwright-mcp",
+    "description_ko": "Playwright MCP 서버의 GitHub 저장소 소개 카드. 기여자 69명, 이슈 2개, 스타 약 3만 9천 개, 포크 약 3천 개가 표시되어 있다.",
+    "category_ko": "브라우저 자동화 MCP 서버",
+    "owner_hint": "microsoft",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b43b96c37e7f440c1236494909c2e1a9460824185aa24fdff06b162eac661aa6": {
+    "index": 6,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/anthropics/skills"
+    ],
+    "title": "anthropics/skills",
+    "description_ko": "Agent Skills 공개 저장소 소개 카드. 기여자 19명, 이슈 425개, 토론 111개, 스타 약 18만 6천 개, 포크 약 2만 2천 개가 표시되어 있다.",
+    "category_ko": "AI 에이전트 스킬 저장소",
+    "owner_hint": "anthropics",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3f40d8752cb887c3fa0d126162cd59c83fbaaf12436c7ba56df33ad716ae3d85": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/Leonxlnx/unlazy"
+    ],
+    "title": "Leonxlnx/unlazy",
+    "description_ko": "작업을 여러 깊이의 단계로 나누는 Depth Tree 방식을 핵심으로 소개하는 AI 에이전트용 스킬의 GitHub 저장소 카드.",
+    "category_ko": "AI 에이전트 스킬",
+    "owner_hint": "Leonxlnx",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:a33b1945daf079a98ef9bcc04cd4505a536cb7138ceba83ee6527482c16e9bfb": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "플래그 패턴과 추세 추종 매매 방법",
+    "description_ko": "상승 플래그, 채널, 하락 플래그, 대칭 플래그 차트와 강한 추세에서 조정 후 진입, 보호 손절, 추적 손절, 일부 이익 실현을 설명하는 도식.",
+    "category_ko": "주식 차트 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b4a035204ddb61040e742e91e6c3ef8ee9f7af02b27ece79ef5741aaa1ba73a1": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/oil-oil/oil-ui"
+    ],
+    "title": "oil-oil/oil-ui",
+    "description_ko": "Claude Code, Codex 등 AI 에이전트가 여러 UI 디자인 방향을 탐색하고 나란히 비교하며 개선하도록 돕는 스킬의 GitHub 저장소 카드.",
+    "category_ko": "AI UI 디자인 스킬",
+    "owner_hint": "oil-oil",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:48c24eb4f7ceb86c67b42d234fc334b614b8dd5473a280c81afdece36fb3db2e": {
+    "index": 3,
+    "is_github": true,
+    "github_urls": [],
+    "title": "클로드 코드 처음 켰을 때 30분 동안 할 일 3가지ㄷㄷ",
+    "description_ko": "Claude Code 설치와 GitHub 연결, 작업 내용·원하는 결과물·성공 기준을 담은 폴더 만들기, Plan mode 설계와 결과물 수정을 소개하는 한국어 게시글.",
+    "category_ko": "AI 코딩 도구 입문",
+    "owner_hint": "minj***",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:4820889e77d908310b2f1ad03ad8d1a0d6efc0d2c31b811130506ba9a162656d": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Entry Triggers",
+    "description_ko": "상승 흐름에서 VCP, 모멘텀 버스트, 눌림목 구간을 구분하고 IB Bar, NR3/NR5 Bar, Shakeout Bar를 진입 신호로 표시한 캔들 차트 도식.",
+    "category_ko": "주식 매매 진입 패턴",
+    "owner_hint": "@GauravCX10",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:85481ced993e673db9136ef304a64ca6f47e094f0b3e45b2c30c2006c0b804ff": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "VCP / Momentum Burst / EMA Pullback",
+    "description_ko": "변동성 수축 패턴, 모멘텀 버스트, 지수이동평균선 눌림목을 세 패널로 비교하고 횡보 구간과 돌파 기준선을 표시한 차트 도식.",
+    "category_ko": "주식 차트 패턴 비교",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:310307b5453e1eac7788fa6bf437a36d6029138c6800dd2690a0a8718f7f54f6": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "주식 차트가 표시된 유튜브 영상",
+    "description_ko": "어두운 트레이딩 화면에 Zebra Technologies의 주가 차트 두 개와 거래량이 표시되어 있다. 상단에는 운동 영상 제목이 보이고 하단에는 문의 안내 자막이 있다.",
+    "category_ko": "주식·트레이딩",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:50f55724a9baed766caf2586c33798fa8c018fff0584a33707ec8d7975e43b05": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "macOS in your Terminal",
+    "description_ko": "화려한 추상 배경 위에 macOS 스타일의 터미널 창이 열려 있으며, 내부에는 명령 프롬프트와 커서가 보인다.",
+    "category_ko": "터미널·개발 도구",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:167ed0bf47c5e5bbb56b1a00f55dc143d03503f677e553df93ba33c8ba2af7a9": {
+    "index": 2,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Hermes Setup",
+    "description_ko": "Hermes의 첫 실행 설정 화면으로, 컴퓨터에서 발견한 Grok Bot 내보내기 파일에서 설정, 메모리, 스킬, MCP 서버를 가져올지 묻는다.",
+    "category_ko": "AI 에이전트·설정 도구",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0611b52c064a39b406e6d3f9eba3f989c36b4a1f603dfa28c20f82c8623d084f": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Routinizer",
+    "description_ko": "반복 작업을 백그라운드 Python 스크립트로 바꾸고, 변화가 생길 때만 AI를 호출하며 스크립트 실행을 유지한다고 소개하는 Grok Bot 추가 화면이다.",
+    "category_ko": "AI 자동화 봇",
+    "owner_hint": "Ivan",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8f774e86570739a7b421072cde948d3f0edf2bd316a6a397dd6c1502c3b32953": {
+    "index": 4,
+    "is_github": true,
+    "github_urls": [],
+    "title": "flawless-ui-ux",
+    "description_ko": "초록색 연필 아이콘과 함께 코딩 에이전트를 위한 UI/UX 디자인 가이드를 소개하는 프로젝트 배너다.",
+    "category_ko": "UI/UX·에이전트 개발 지원",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:88e1cf6c73ec0c3c5e040d5f291c30a41273938b40c0434cedce326b9f813bd7": {
+    "index": 5,
+    "is_github": true,
+    "github_urls": [],
+    "title": "Phone Harness",
+    "description_ko": "GitHub 로고와 오픈소스 표시가 있는 Phone Harness 소개 이미지로, AI 로봇이 스마트폰의 배달 앱 아이콘을 누르는 모습을 보여준다.",
+    "category_ko": "AI·모바일 자동화",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:503b07a9491c32a812156146bb96bad68908b3c6ce8a59127843413c8cd8dfd5": {
+    "index": 6,
+    "is_github": true,
+    "github_urls": [],
+    "title": "public-apis-4Kr",
+    "description_ko": "한국 서비스에서 이용할 수 있는 공개 API 모음의 GitHub 저장소 소개 화면이다. MIT 라이선스와 약 3.3천 개의 스타, 375개의 포크가 표시되어 있다.",
+    "category_ko": "공개 API·개발 자료",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }

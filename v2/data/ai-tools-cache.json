@@ -3913,5 +3913,165 @@
       "fingerprint": "aa86c123bf72f5213c8bc25c1eb931dbaec06245a3c1dafe2047fb281bee4a31"
     },
     "version": 3
+  },
+  "2119252316314325318:embedded-dfd4807aa5aa19cae5a1caf8dfb532b0a02aea3a34181eb022692489a1c9e4f7.jpg": {
+    "fingerprint": "09a13a7a58f2a1292319f55f542d5e3e17cdc3fa9a8ba61ac6a87d261b5fdb11",
+    "entry": {
+      "title": "basdotio/bas-guard",
+      "summary_ko": "주황색 로고와 기여자 3명, 이슈 0개, 스타 14개, 포크 0개가 표시된 GitHub 저장소 소개 카드.",
+      "category": "GitHub 저장소",
+      "repo_url": "https://github.com/basdotio/bas-guard",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:basdotio bas guard"
+      ],
+      "fingerprint": "09a13a7a58f2a1292319f55f542d5e3e17cdc3fa9a8ba61ac6a87d261b5fdb11"
+    },
+    "version": 3
+  },
+  "2119765548204515549:embedded-85ad153ea668e084717ec2d7f58f9a2153ba24dd7886a2bb738c1b470aa0d068.jpg": {
+    "fingerprint": "63c961a816d215193831d1328a57db74086ab29372b64783700907c3261e9e9f",
+    "entry": null,
+    "version": 3
+  },
+  "2119731736879792142:embedded-721b3378a90593974ddb9f9c1b19ff11625a9b9de71009d3049ac3d125c36742.jpg": {
+    "fingerprint": "eddd4ac70af2fdf40e33f3f395d97c6f9f57d4bd9dca90418fd15607935f0065",
+    "entry": {
+      "title": "Nanako0129/sepia",
+      "summary_ko": "Agent Skills 호환 에이전트에서 AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트. Claude Code와 Codex용 네이티브 플러그인을 언급한다.",
+      "category": "AI 글쓰기 스킬",
+      "repo_url": "https://github.com/Nanako0129/sepia",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:nanako0129 sepia"
+      ],
+      "fingerprint": "eddd4ac70af2fdf40e33f3f395d97c6f9f57d4bd9dca90418fd15607935f0065"
+    },
+    "version": 3
+  },
+  "2119919314497364236:embedded-94e5de2a5f19f8ee4a8e970dc0290f7f76c7226a874bfaea28d474ebd687e3ee.jpg": {
+    "fingerprint": "a095044e19bfca0677425e8e2df679f83374f68444e04b2090181966e8c6709f",
+    "entry": null,
+    "version": 3
+  },
+  "2120014839896776854:embedded-371e419d8280697e0b0fb84f80bc5eb8ce15d67aa872d89d39cb572715c62419.jpg": {
+    "fingerprint": "24b57dc3406518bd920f1095d17cea5f1db0c1657b8d23fef296ee2502433883",
+    "entry": {
+      "title": "microsoft/playwright-mcp",
+      "summary_ko": "Playwright MCP 서버의 GitHub 저장소 소개 카드. 기여자 69명, 이슈 2개, 스타 약 3만 9천 개, 포크 약 3천 개가 표시되어 있다.",
+      "category": "브라우저 자동화 MCP 서버",
+      "repo_url": "https://github.com/microsoft/playwright-mcp",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:microsoft playwright"
+      ],
+      "fingerprint": "24b57dc3406518bd920f1095d17cea5f1db0c1657b8d23fef296ee2502433883"
+    },
+    "version": 3
+  },
+  "2117580050774024698:embedded-b43b96c37e7f440c1236494909c2e1a9460824185aa24fdff06b162eac661aa6.jpg": {
+    "fingerprint": "d37686a461449d623ed6c229cb509c326b9a0e2b11617c299459d4886bb2b81e",
+    "entry": {
+      "title": "anthropics/skills",
+      "summary_ko": "Agent Skills 공개 저장소 소개 카드. 기여자 19명, 이슈 425개, 토론 111개, 스타 약 18만 6천 개, 포크 약 2만 2천 개가 표시되어 있다.",
+      "category": "AI 에이전트 스킬 저장소",
+      "repo_url": "https://github.com/anthropics/skills",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:anthropics skills"
+      ],
+      "fingerprint": "d37686a461449d623ed6c229cb509c326b9a0e2b11617c299459d4886bb2b81e"
+    },
+    "version": 3
+  },
+  "2117478124182991017:embedded-3f40d8752cb887c3fa0d126162cd59c83fbaaf12436c7ba56df33ad716ae3d85.jpg": {
+    "fingerprint": "95b00482d0b8a21599ce267ea8be8d58ff3b814b7ecc093c0347e72f7df0491e",
+    "entry": {
+      "title": "Leonxlnx/unlazy",
+      "summary_ko": "작업을 여러 깊이의 단계로 나누는 Depth Tree 방식을 핵심으로 소개하는 AI 에이전트용 스킬의 GitHub 저장소 카드.",
+      "category": "AI 에이전트 스킬",
+      "repo_url": "https://github.com/Leonxlnx/unlazy",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:leonxlnx unlazy"
+      ],
+      "fingerprint": "95b00482d0b8a21599ce267ea8be8d58ff3b814b7ecc093c0347e72f7df0491e"
+    },
+    "version": 3
+  },
+  "1828917713848414334:embedded-a33b1945daf079a98ef9bcc04cd4505a536cb7138ceba83ee6527482c16e9bfb.jpg": {
+    "fingerprint": "bb14773b692b0d40e3005199aa067d8be2654ca91a55449b23cc89ff87ce93e5",
+    "entry": null,
+    "version": 3
+  },
+  "2117749915602583707:embedded-b4a035204ddb61040e742e91e6c3ef8ee9f7af02b27ece79ef5741aaa1ba73a1.jpg": {
+    "fingerprint": "532fb9a680a69b35ef3f29fb57490f2b01633ab6ac373450a3c5ccd4e5b287e0",
+    "entry": {
+      "title": "oil-oil/oil-ui",
+      "summary_ko": "Claude Code, Codex 등 AI 에이전트가 여러 UI 디자인 방향을 탐색하고 나란히 비교하며 개선하도록 돕는 스킬의 GitHub 저장소 카드.",
+      "category": "AI UI 디자인 스킬",
+      "repo_url": "https://github.com/oil-oil/oil-ui",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:oil oil oil"
+      ],
+      "fingerprint": "532fb9a680a69b35ef3f29fb57490f2b01633ab6ac373450a3c5ccd4e5b287e0"
+    },
+    "version": 3
+  },
+  "2117025274273337741:embedded-4820889e77d908310b2f1ad03ad8d1a0d6efc0d2c31b811130506ba9a162656d.jpg": {
+    "fingerprint": "91845005035b1d572881b29d4ad120ff4507e20c88a00149236c499149fe8871",
+    "entry": null,
+    "version": 3
+  },
+  "2117025274273337741:embedded-85481ced993e673db9136ef304a64ca6f47e094f0b3e45b2c30c2006c0b804ff.png": {
+    "fingerprint": "6fce2d4fa625db2096b389be6e232c640a89f889e41f9fcaae471d37564f5ed9",
+    "entry": null,
+    "version": 3
+  },
+  "2117318824198611364:embedded-310307b5453e1eac7788fa6bf437a36d6029138c6800dd2690a0a8718f7f54f6.jpg": {
+    "fingerprint": "6c21aa2e0cb99bbf808cd49bc45ce33f9735953de87ea9eecd2f6bda367908f5",
+    "entry": null,
+    "version": 3
+  },
+  "2117837245055119689:embedded-50f55724a9baed766caf2586c33798fa8c018fff0584a33707ec8d7975e43b05.jpg": {
+    "fingerprint": "b3df7f5422151792c964de608f8513b29a596d40d17dbe95519fb0ac488810f7",
+    "entry": null,
+    "version": 3
+  },
+  "2117389395578036501:embedded-0611b52c064a39b406e6d3f9eba3f989c36b4a1f603dfa28c20f82c8623d084f.jpg": {
+    "fingerprint": "603322db05dd6e5ae73bef37589dc530f822e944f7f82f5c15f87aa30614aaa7",
+    "entry": null,
+    "version": 3
+  },
+  "2119419482321916012:embedded-88e1cf6c73ec0c3c5e040d5f291c30a41273938b40c0434cedce326b9f813bd7.jpg": {
+    "fingerprint": "dbfb2a05f451646be6d9b0aab7b321bd3f1ef866d3d7955eaa61b2bbefb129db",
+    "entry": {
+      "title": "Phone Harness",
+      "summary_ko": "GitHub 로고와 오픈소스 표시가 있는 Phone Harness 소개 이미지로, AI 로봇이 스마트폰의 배달 앱 아이콘을 누르는 모습을 보여준다.",
+      "category": "AI·모바일 자동화",
+      "repo_url": "https://github.com/phone-harness/phone-harness",
+      "status": "verified",
+      "evidence": [
+        "search:phrase:phone harness"
+      ],
+      "fingerprint": "dbfb2a05f451646be6d9b0aab7b321bd3f1ef866d3d7955eaa61b2bbefb129db"
+    },
+    "version": 3
+  },
+  "2118986019966263743:embedded-503b07a9491c32a812156146bb96bad68908b3c6ce8a59127843413c8cd8dfd5.jpg": {
+    "fingerprint": "6e5fcb23725cdafaa745deedbaaf40d3159c3a8d4ca8e24ef212598ecddd4190",
+    "entry": {
+      "title": "public-apis-4Kr",
+      "summary_ko": "한국 서비스에서 이용할 수 있는 공개 API 모음의 GitHub 저장소 소개 화면이다. MIT 라이선스와 약 3.3천 개의 스타, 375개의 포크가 표시되어 있다.",
+      "category": "공개 API·개발 자료",
+      "repo_url": "https://github.com/yybmion/public-apis-4Kr",
+      "status": "verified",
+      "evidence": [
+        "search:phrase:public apis 4kr"
+      ],
+      "fingerprint": "6e5fcb23725cdafaa745deedbaaf40d3159c3a8d4ca8e24ef212598ecddd4190"
+    },
+    "version": 3
   }
 }

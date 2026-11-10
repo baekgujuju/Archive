@@ -285,5 +285,93 @@
       "screenshot:phrase:open webui open"
     ],
     "fingerprint": "aa86c123bf72f5213c8bc25c1eb931dbaec06245a3c1dafe2047fb281bee4a31"
+  },
+  "2119252316314325318": {
+    "title": "basdotio/bas-guard",
+    "summary_ko": "주황색 로고와 기여자 3명, 이슈 0개, 스타 14개, 포크 0개가 표시된 GitHub 저장소 소개 카드.",
+    "category": "GitHub 저장소",
+    "repo_url": "https://github.com/basdotio/bas-guard",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:basdotio bas guard"
+    ],
+    "fingerprint": "09a13a7a58f2a1292319f55f542d5e3e17cdc3fa9a8ba61ac6a87d261b5fdb11"
+  },
+  "2119731736879792142": {
+    "title": "Nanako0129/sepia",
+    "summary_ko": "Agent Skills 호환 에이전트에서 AI 특유의 문체를 줄이기 위한 글쓰기 스킬 프로젝트. Claude Code와 Codex용 네이티브 플러그인을 언급한다.",
+    "category": "AI 글쓰기 스킬",
+    "repo_url": "https://github.com/Nanako0129/sepia",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:nanako0129 sepia"
+    ],
+    "fingerprint": "eddd4ac70af2fdf40e33f3f395d97c6f9f57d4bd9dca90418fd15607935f0065"
+  },
+  "2120014839896776854": {
+    "title": "microsoft/playwright-mcp",
+    "summary_ko": "Playwright MCP 서버의 GitHub 저장소 소개 카드. 기여자 69명, 이슈 2개, 스타 약 3만 9천 개, 포크 약 3천 개가 표시되어 있다.",
+    "category": "브라우저 자동화 MCP 서버",
+    "repo_url": "https://github.com/microsoft/playwright-mcp",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:microsoft playwright"
+    ],
+    "fingerprint": "24b57dc3406518bd920f1095d17cea5f1db0c1657b8d23fef296ee2502433883"
+  },
+  "2117580050774024698": {
+    "title": "anthropics/skills",
+    "summary_ko": "Agent Skills 공개 저장소 소개 카드. 기여자 19명, 이슈 425개, 토론 111개, 스타 약 18만 6천 개, 포크 약 2만 2천 개가 표시되어 있다.",
+    "category": "AI 에이전트 스킬 저장소",
+    "repo_url": "https://github.com/anthropics/skills",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:anthropics skills"
+    ],
+    "fingerprint": "d37686a461449d623ed6c229cb509c326b9a0e2b11617c299459d4886bb2b81e"
+  },
+  "2117478124182991017": {
+    "title": "Leonxlnx/unlazy",
+    "summary_ko": "작업을 여러 깊이의 단계로 나누는 Depth Tree 방식을 핵심으로 소개하는 AI 에이전트용 스킬의 GitHub 저장소 카드.",
+    "category": "AI 에이전트 스킬",
+    "repo_url": "https://github.com/Leonxlnx/unlazy",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:leonxlnx unlazy"
+    ],
+    "fingerprint": "95b00482d0b8a21599ce267ea8be8d58ff3b814b7ecc093c0347e72f7df0491e"
+  },
+  "2117749915602583707": {
+    "title": "oil-oil/oil-ui",
+    "summary_ko": "Claude Code, Codex 등 AI 에이전트가 여러 UI 디자인 방향을 탐색하고 나란히 비교하며 개선하도록 돕는 스킬의 GitHub 저장소 카드.",
+    "category": "AI UI 디자인 스킬",
+    "repo_url": "https://github.com/oil-oil/oil-ui",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:oil oil oil"
+    ],
+    "fingerprint": "532fb9a680a69b35ef3f29fb57490f2b01633ab6ac373450a3c5ccd4e5b287e0"
+  },
+  "2119419482321916012": {
+    "title": "Phone Harness",
+    "summary_ko": "GitHub 로고와 오픈소스 표시가 있는 Phone Harness 소개 이미지로, AI 로봇이 스마트폰의 배달 앱 아이콘을 누르는 모습을 보여준다.",
+    "category": "AI·모바일 자동화",
+    "repo_url": "https://github.com/phone-harness/phone-harness",
+    "status": "verified",
+    "evidence": [
+      "search:phrase:phone harness"
+    ],
+    "fingerprint": "dbfb2a05f451646be6d9b0aab7b321bd3f1ef866d3d7955eaa61b2bbefb129db"
+  },
+  "2118986019966263743": {
+    "title": "public-apis-4Kr",
+    "summary_ko": "한국 서비스에서 이용할 수 있는 공개 API 모음의 GitHub 저장소 소개 화면이다. MIT 라이선스와 약 3.3천 개의 스타, 375개의 포크가 표시되어 있다.",
+    "category": "공개 API·개발 자료",
+    "repo_url": "https://github.com/yybmion/public-apis-4Kr",
+    "status": "verified",
+    "evidence": [
+      "search:phrase:public apis 4kr"
+    ],
+    "fingerprint": "6e5fcb23725cdafaa745deedbaaf40d3159c3a8d4ca8e24ef212598ecddd4190"
   }
 }
