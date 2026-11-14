@@ -38370,6 +38370,208 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2120983162604155320",
+      "sourceUrl": "https://x.com/dubidubabap/status/2120983162604155320",
+      "capturedAt": "2026-11-14T13:18:49.084885+00:00",
+      "createdAt": "2026-11-12T20:52:46.000Z",
+      "fullText": "전설적인 트레이더 린다 라슈케(Linda Bradford Raschke)의 매매 전략 9가지를 정리했다.\n\n1981년부터 트레이딩을 시작해 옵션 시장조성자, 선물 트레이더, 헤지펀드 운용자로 활동한 인물이다.\n\n잭 슈웨거의 《The New Market Wizards》에 소개됐으며, 래리 코너스와 함께 집필한 《Street Smarts》는 지금도 단기 트레이딩의 고전으로 꼽힌다.\n\n라슈케의 매매에는 공통적인 특징이 있다.\n\n추세, 모멘텀, 변동성, 가격 돌파를 이용한다. 진입 조건을 정하고 손절 위치를 미리 계산하며, 예상했던 움직임이 나타나지 않으면 빠르게 청산한다.\n\n실제 매매에 적용할 수 있도록 대표 전략 9가지를 살펴봤다.\n\n1. Anti Setup — 추세 속 모멘텀 재가속\n\n가장 관심이 가는 전략이다.\n\n상승 추세에서 단기 조정이 발생한 뒤 모멘텀이 다시 강해지는 시점을 포착한다.\n\n사용하는 지표는 스토캐스틱이다.\n\n- 빠른 선: %K 7기간, 평활화 4\n- 느린 선: %D 10기간\n\n매수 과정은 다음과 같다.\n\n1) 느린 %D가 상승한다.\n2) 가격이 조정받으며 빠른 %K가 하락한다.\n3) 느린 %D의 상승 흐름이 유지된다.\n4) 빠른 %K가 다시 상승 방향으로 꺾인다.\n5) 직전 봉 고점 돌파를 진입 기준으로 삼는다.\n\n손절은 최근 저점 아래에 설정한다. 보유기간은 일반적으로 3–4봉 정도다.\n\n핵심은 모멘텀의 속도 차이다.\n\n중기 상승 흐름이 유지되는 동안 단기 매도 압력이 약해지는 구간을 찾는다.\n\n주가가 다시 상승하기 시작하는 시점에 진입하는 방식이다.\n\n실전에서는 상승 추세가 분명한 종목을 대상으로 연구할 만하다. 횡보장에서는 스토캐스틱의 방향 전환이 자주 발생해 손절이 반복될 수 있다.\n\n2. Holy Grail — 강한 추세의 눌림목 매수\n\n라슈케의 대표적인 추세추종 전략이다.\n\n사용하는 지표는 ADX(14)와 EMA20이다.\n\nADX는 추세의 강도를 나타낸다. EMA20은 최근 20개 봉의 가격에 가중치를 둔 이동평균선이다.\n\n매수 규칙은 다음과 같다.\n\n1) ADX가 30을 초과하고 상승한다.\n2) 주가가 강한 상승 추세를 형성한다.\n3) 가격이 EMA20 부근까지 조정받는다.\n4) 조정 이후 직전 봉 고점을 돌파하면 매수한다.\n5) 최근 저점 아래에 손절을 둔다.\n\n첫 번째 목표는 직전 고점이다. 추세가 이어지면 추적손절로 수익을 관리한다.\n\n예를 들어 주가가 100달러에서 120달러까지 상승한 뒤 112달러까지 조정받았다고 가정하자.\n\nEMA20 부근에서 매수세가 회복되고 직전 봉 고점을 돌파하면 진입한다.\n\n강한 추세에서 발생하는 일시적인 조정을 이용하는 방식이다.\n\n첫 번째 눌림목과 세 번째, 네 번째 눌림목은 구분해서 볼 필요가 있다. 추세가 오래 진행될수록 가격 구조와 ADX의 변화가 중요해진다.\n\n3. Turtle Soup — 실패한 돌파를 역으로 이용\n\n상당히 흥미로운 전략이다.\n\n원래 터틀 트레이더들은 20일 신고가와 신저가 돌파를 활용했다.\n\n라슈케는 돌파가 실패한 뒤 가격이 기존 범위로 복귀하는 움직임을 매매했다.\n\n매수 규칙은 다음과 같다.\n\n1) 새로운 20거래일 최저가가 발생한다.\n2) 이전 20일 최저가는 최소 4거래일 전에 형성돼 있어야 한다.\n3) 가격이 기존 최저가를 회복한다.\n4) 기존 최저가보다 5–10틱 위에 매수 주문을 둔다.\n5) 당일 저점 아래에서 손절한다.\n\n매도는 반대다.\n\n20일 최고가를 돌파한 가격이 다시 기존 최고가 아래로 떨어지면 매도 기회를 찾는다.\n\n여기에는 시장의 주문 구조가 작용한다.\n\n신고가 돌파 구간에는 추세추종 매수와 기존 공매도 포지션의 손절 주문이 모이기 쉽다.\n\n돌파가 실패하면 새로 매수한 투자자들의 청산이 추가 매도 압력으로 작용한다.\n\n이 과정에서 짧고 강한 반전이 발생할 수 있다.\n\n중요한 것은 시장의 추세 강도다.\n\n강한 상승장에서 신고가를 역으로 매도하면 연속 손절이 발생하기 쉽다. 박스권의 극값과 추세 가속 구간을 구분하는 것이 핵심이다.\n\n4. Turtle Soup Plus One — 다음 날 확인하는 돌파 실패\n\nTurtle Soup의 변형이다.\n\n신저가 발생 다음 날을 매매 대상으로 삼는다.\n\n매수 규칙은 다음과 같다.\n\n1) 새로운 20일 최저가가 발생한다.\n2) 이전 최저가는 최소 3거래일 전에 형성돼 있어야 한다.\n3) 당일 종가가 기존 최저가 이하에서 마감한다.\n4) 다음 날 기존 최저가에 매수 스톱 주문을 배치한다.\n5) 그날 체결되지 않으면 주문을 취소한다.\n\n손절은 첫날과 둘째 날에 형성된 저점 중 낮은 가격 아래에 둔다.\n\n예를 들어 기존 20일 최저가가 100달러였다고 가정하자.\n\n주가가 98.50달러까지 하락한 뒤 99달러에 마감한다.\n\n다음 날 주가가 100달러를 회복하면 매수 신호가 발생한다.\n\n매수세가 기존 저점을 회복할 만큼 강해지는 순간을 포착하는 방식이다.\n\n일반적인 Turtle Soup보다 신호를 확인할 시간이 하루 더 주어진다.\n\n5. 80-20 Setup — 하루 급락 이후 반전\n\n전날 강하게 하락한 시장에서 다음 날 발생하는 반등을 노린다.\n\n매수 규칙은 다음과 같다.\n\n1) 전날 시가가 하루 가격 범위의 상위 20%에 위치한다.\n2) 전날 종가가 하위 20%에서 마감한다.\n3) 다음 날 전일 저가를 추가로 이탈한다.\n4) 가격이 다시 전일 저가 위로 올라오면 매수한다.\n5) 당일 형성된 저점 아래에 손절을 둔다.\n\n원전에서는 전일 저가보다 5–15틱 추가 하락하는 조건을 사용한다.\n\n당일 청산을 기본으로 한다.\n\n급락한 시장에서는 추가 매도가 발생한 직후 매도세가 소진되면서 반등하는 구간이 나타난다.\n\n이러한 단기 가격 복귀 현상을 이용한다.\n\n현재 시장에 적용하려면 상품별 최소 호가 단위와 변동성을 반영해야 한다.\n\n6. NR7 + Opening Range Breakout — 변동성 수축 이후 돌파\n\nNR7은 Narrow Range 7의 약자다.\n\n최근 7거래일 가운데 하루의 고가와 저가 차이가 가장 작은 날을 의미한다.\n\n매매 과정은 다음과 같다.\n\n1) 전날 NR7이 발생했는지 확인한다.\n2) 다음 날 개장 후 최초 45–60분의 가격 범위를 관찰한다.\n3) 해당 범위 위쪽에는 매수 주문을 설정한다.\n4) 아래쪽에는 매도 주문을 설정한다.\n5) 한쪽이 체결되면 반대쪽 주문을 취소한다.\n\n변동성이 수축한 뒤 가격이 방향성을 확보하는 구간을 이용한다.\n\n주가가 며칠 동안 좁은 범위에서 움직이다가 거래량이 증가하면서 강하게 돌파하는 모습과 연결된다.\n\n개인적으로 매우 관심이 가는 전략이다.\n\n실전에서는 첫 60분의 거래량, 시장 전체 상승·하락 종목 수, 변동성 확장 여부를 함께 분석해 볼 만하다.\n\n특히 나스닥 선물처럼 유동성이 풍부한 시장에서 분봉 데이터를 이용해 검증할 가치가 있다.\n\n7. Momentum Pinball — 단기 과매도 이후 반등\n\n1일 가격 변화율에 RSI(3)를 적용한 LBR/RSI를 사용한다.\n\n매수 규칙은 다음과 같다.\n\n1) 전날 LBR/RSI가 30 미만으로 내려간다.\n2) 다음 날 첫 1시간의 고점과 저점을 확인한다.\n3) 첫 1시간 고점을 돌파하면 매수한다.\n4) 첫 1시간 저점 아래에 손절을 둔다.\n5) 이익 상태로 마감하면 다음 날까지 보유해 청산한다.\n\nRSI가 70을 초과하면 반대 방향으로 적용한다.\n\n단기적으로 과도하게 움직인 가격이 되돌아오는 현상을 이용한다.\n\n단기 반등을 노리는 전략이므로 첫 1시간의 가격 범위와 실제 체결가격이 중요하다.\n\n8. Three-Day Unfilled Gap Reversal — 갭 이후 가격 복귀\n\n갭 하락이 발생한 뒤 가격이 회복되는 움직임을 이용한다.\n\n매수 규칙은 다음과 같다.\n\n1) 주가가 전일 저가 아래에서 출발한다.\n2) 당일 갭이 메워지지 않는다.\n3) 갭 발생일 고점보다 한 틱 높은 가격에 매수 주문을 둔다.\n4) 주문은 이후 3거래일 동안 유지한다.\n5) 체결되면 갭 발생일 저점 아래에 손절을 둔다.\n\n3거래일 동안 체결되지 않으면 주문을 취소한다.\n\n특히 기업 실적 발표 이후 발생하는 갭과 시장 전체의 변동성 확대에 따른 갭을 구분해서 분석할 필요가 있다.\n\n9. Wolfe Wave — 다섯 개의 변곡점을 이용한 반전\n\n연속된 다섯 개의 고점과 저점을 연결해 가격 반전을 예상하는 패턴이다.\n\n1번과 3번 변곡점을 연결한 추세선을 연장해 5번 진입 구간을 찾는다.\n\n이후 1번과 4번을 연결한 선을 목표가격으로 활용한다.\n\n가격 구조를 시각적으로 이해하기에는 유용하다.\n\n다만 변곡점을 어떻게 정의하는지에 따라 진입 신호가 달라진다.\n\n자동화하려면 고점과 저점을 확정하는 수학적 규칙부터 정해야 한다.\n\n---\n\n그렇다면 실제로 수익이 발생할까?\n\n여기가 가장 중요한 부분이다.\n\n앞서 미국 ETF 일봉 데이터로 Anti와 Turtle Soup Plus One의 일부 규칙을 직접 재현했다.\n\n2020년 7월부터 2026년 11월까지의 IEX 데이터를 사용했고, 2024년부터를 표본 밖 구간으로 분리했다.\n\n거래비용을 차감한 단순화된 롱 전략의 표본 밖 결과는 다음과 같다.\n\nAnti\n\n- QQQ: 17회 거래, Profit Factor 1.29\n- SPY: 12회 거래, Profit Factor 0.48\n\nTurtle Soup Plus One\n\n- QQQ: 5회 거래, Profit Factor 0.00\n- SPY: 8회 거래, Profit Factor 0.22\n\nProfit Factor는 총이익을 총손실로 나눈 값이다.\n\n1.0을 초과하면 총이익이 총손실보다 많다는 의미다.\n\n이번 탐색에서는 Anti가 QQQ에서 양의 성과를 보였지만 SPY에서는 손실이 발생했다.\n\nTurtle Soup Plus One은 두 시장 모두 부진했다.\n\n거래 횟수가 적고 일봉 내부의 체결 순서를 완전히 재현하지 못했으므로 이 결과는 예비 연구 자료로 봐야 한다.\n\n그럼에도 확인할 부분은 분명하다.\n\n동일한 전략을 사용해도 시장과 청산 규칙에 따라 성과가 상당히 달라진다.\n\n실제 매매에는 어떻게 적용할까?\n\n우선 시장 상태에 따라 사용할 전략을 구분하는 방식이 합리적이라고 생각한다.\n\n강한 상승 추세에서는 Holy Grail.\n\n추세 속 단기 조정에서는 Anti.\n\n박스권의 돌파 실패에서는 Turtle Soup.\n\n변동성이 극도로 수축했다면 NR7.\n\n단기 과매도 이후 가격이 회복되는 상황에서는 Momentum Pinball과 80-20.\n\n그리고 모든 전략에서 가장 중요한 것은 손절과 포지션 크기다.\n\n예를 들어 계좌자산이 20,000달러이고 거래당 위험을 0.5%로 제한한다고 가정하자.\n\n허용 손실은 100달러다.\n\n500달러에 매수하고 490달러에 손절한다면 주당 손실은 10달러다.\n\n거래비용을 제외하면 최대 10주까지 매수할 수 있다.\n\n이렇게 위험을 먼저 계산하면 진입가격과 손절가격이 달라져도 동일한 위험 기준을 유지할 수 있다.\n\n서로 상관관계가 높은 종목을 동시에 매수할 때는 전체 위험 노출도 함께 계산해야 한다.\n\n최종적으로 무엇을 연구할 것인가?\n\n개인적으로는 Anti와 NR7을 가장 먼저 연구하고 싶다.\n\nAnti에서는 추세 강도와 모멘텀 재가속의 조합을 검증할 계획이다.\n\nADX 수준, 이동평균선 기울기, 조정 폭, 거래량 변화에 따라 성과가 어떻게 달라지는지 확인하는 것이다.\n\nNR7에서는 변동성 수축 이후 방향성이 얼마나 지속되는지 확인하고 싶다.\n\n특히 돌파 이후 거래량, 시장 폭, 변동성 확대가 다음 몇 시간의 수익률과 어떤 관계를 갖는지 살펴볼 가치가 있다.\n\n라슈케의 전략을 관통하는 공통점은 시장에서 반복되는 가격 행동을 규칙으로 정리했다는 것이다.\n\n추세가 형성되고, 조정이 발생하고, 모멘텀이 회복된다.\n\n중요한 가격을 돌파한 뒤 실패하기도 한다.\n\n좁은 범위에서 움직이던 시장이 갑자기 강한 방향성을 형성하기도 한다.\n\n이런 가격 행동은 지금도 시장에서 관찰된다.\n\n여기서 연구의 핵심은 각 현상이 발생한 이후의 수익률 분포를 측정하는 것이다.\n\n어떤 시장에서, 어떤 국면에서, 어느 정도의 손절과 보유기간을 사용할 때 통계적으로 유의미한 기대값이 발생하는지 확인해야 한다.\n\n라슈케가 수십 년 동안 활용해 온 방법론에서 배울 부분도 여기에 있다고 생각한다.\n\n매매 이전에 진입 조건을 정한다.\n\n손절가격과 수량을 계산한다.\n\n예상한 움직임이 나오지 않으면 청산한다.\n\n그리고 같은 규칙을 반복하면서 결과를 측정한다.\n\n결국 장기 성과를 결정하는 것은 개별 거래의 적중 여부보다 수많은 거래에서 발생하는 기대값과 위험 관리의 일관성이다.\n\n@LindaRaschke (https://x.com/LindaRaschke)",
+      "author": {
+        "handle": "@dubidubabap",
+        "name": "dubidubabap"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-735b600ec20892d1b19229a6dcc9de24233b4d3e65bc9d05530f88a72a401157.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e3864ab0878b353c8e2bdf51e206a165f2d968df64b511d0d599037331be952c.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ffdcb96f16992ebf22e8cb880033acea707782c218e4321c457ba35487887e06.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e9dbd336781cc28ac07ab143c3a1e57b65195a7fdc4abdabb7c335bc52631f84.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c167a3bc84ac192ca2cfa9e446d5fe560c9cd685de371a03b7654051b2e0d614.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-05123605cece223869b3137d84129b1d628b5861877452ee33a15f6870f59c29.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c3cf0c7c06688f4b05e49d19a5f01ea2e5e38fc85972d2b608fff749c62b29e8.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-bf13ce663acd15e62c34bdc93924874fc01e9bb1c6ddf9ed2c83fd936fe5481b.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0b7881fea99985df491aafa22fa07713175d44d3f9935d2d6df37c46d621ece9.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/LindaRaschke",
+          "text": "@LindaRaschke",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dubidubabap/status/2120983162604155320",
+        "observed_main_url": "https://x.com/dubidubabap/status/2120983162604155320",
+        "author_handle": "dubidubabap",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2120286630615691768",
+      "sourceUrl": "https://x.com/dopamine_crypto/status/2120286630615691768",
+      "capturedAt": "2026-11-14T13:18:54.253885+00:00",
+      "createdAt": "2026-11-10T22:45:00.000Z",
+      "fullText": "명령 한 번에 SEO 보고서랑 할 일 목록까지 뽑는다는 스킬\n\n안에 든 게 하위 스킬 16개, 전문 에이전트 10개, 스크립트 89개 ㄷㄷ\nBhanunamikaze가 만든 Agentic-SEO-Skill, 깃허브 별 1,034개\n\n블로그나 사이트 하는 형들이\n검색 노출 안 돼서 답답할 때 원인 찾아주는 스킬임\n\n구조가 좀 재밌음\n판단은 AI가 하고, 스크립트는 증거 모으는 역할\n페이지 긁어오고, 제목·메타·소제목·링크·이미지 같은 걸\n하나하나 뽑아서 AI한테 근거로 넘겨주는 식\n\n그래서 \"느낌상 이게 문제 같아요\" 말고\n실제로 뽑은 데이터 보고 얘기하는 쪽이라고 보면 됨\n\n자주 쓰는 스크립트만 보면\n\n1. audit_runner.py\n명령 하나로 전체 점검 돌림\n결과가 JSON, HTML, 전체 점검 보고서, 실행 계획(ACTION-PLAN)까지 한 번에 나옴\n\n2. generate_report.py\n브라우저로 열어보는 대시보드를 만들어줌\n결과를 남한테 공유할 때 쓰는 용도\n\n3. parse_html.py\n제목, 메타 정보, 소제목, 링크, 이미지, 캐노니컬 같은 걸 싹 뽑아줌\n\n4. https://t.co/HBfVMAZRsf \n페이지 속도랑 코어 웹 바이탈 체크\n\n이렇게 쓰면 됨\n1. 설치 프로그램이 쓰는 툴에 맞는 형식으로 깔아줌\n2. 클로드 코드면 ~/.claude/skills/seo 폴더에 들어감\n3. 코덱스, 커서, 윈드서프, 코파일럿, 클라인 같은 데도 지원\n4. 자세한 설치법이랑 예시 프롬프트는 위키에 따로 정리돼 있음\n\n제일 써먹을 데는 블로그로 광고 수익 노리는 부업러,\n자사몰이나 랜딩페이지 굴리는 사장님 쪽일듯\n회사에서 홈페이지 리뉴얼 맡은 직장인도\n개발자한테 \"이거 고쳐주세요\" 넘길 근거 자료로 쓰기 좋아 보임\n\n보고서만 주고 끝나는 게 아니라\n뭘 먼저 고칠지 실행 계획까지 뱉는 게 제일 큼\n\n스크립트 89개면 이건 그냥 SEO 대행사 하나 들고 다니는 거임.\n\nhttps://t.co/yzLoGrRoF0",
+      "author": {
+        "handle": "@dopamine_crypto",
+        "name": "dopamine_crypto"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a0af0c304cea080e63c207c560fee24a4b8164b082bb641a5c5f9c548e88cf15.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/HBfVMAZRsf",
+          "text": "http://pagespeed.py",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/yzLoGrRoF0",
+          "text": "https://github.com/Bhanunamikaze/Agentic-SEO-Skill…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/dopamine_crypto/status/2120286630615691768",
+        "observed_main_url": "https://x.com/dopamine_crypto/status/2120286630615691768",
+        "author_handle": "dopamine_crypto",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2120834043885555730",
+      "sourceUrl": "https://x.com/nowlovepan/status/2120834043885555730",
+      "capturedAt": "2026-11-14T13:18:58.887885+00:00",
+      "createdAt": "2026-11-12T11:00:13.000Z",
+      "fullText": "한글 파일 때문에 한컴 깔 필요 없어짐\n브라우저에서 바로 여는 무료 도구\n\n'쌤글'이라는 사이트인데\n한글(hwp), 워드, PDF를 프로그램 설치 없이 인터넷 창에서 열고 고칠 수 있음\n\n구글 계정으로 로그인하면 끝이고\n광고도 없고 결제도 없다고 적혀 있음\n\n한글 파일 열어서 고친 다음 hwp로 다시 저장\nPDF에 형광펜, 메모, 서명\nPDF를 워드로, 한글을 PDF로 바꾸기\n\n옆에 AI 도우미도 있어서 \"맞춤법 고쳐 줘\" 하면 문서를 직접 고쳐줌\n대신 AI는 내 제미나이 키를 넣어야 쓸 수 있음\n\n문서는 서버로 안 보내고 내 브라우저에만 저장된다고 함\n\n가정통신문이나 공문 하나 열어보려고 한컴 깔기 애매했던 사람한텐 딱 맞을 듯?",
+      "author": {
+        "handle": "@nowlovepan",
+        "name": "nowlovepan"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0cc50a46eb9f4d7ee1a2337555f60f19d92509b839486fc8b99fe90ac263c6f1.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2120857831759032671",
+          "sourceUrl": "https://x.com/ministerbtc/status/2120857831759032671",
+          "capturedAt": "2026-11-14T13:18:58.887885+00:00",
+          "createdAt": "2026-11-12T12:34:45.000Z",
+          "fullText": "꿀딱이네요 클로드로 hwp 수정해주는 프로그램 만들어놨었는데.. 저방법도 꿀딱이군요",
+          "author": {
+            "handle": "@ministerbtc",
+            "name": "ministerbtc"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2120891315168944147",
+          "sourceUrl": "https://x.com/goldenpigshome/status/2120891315168944147",
+          "capturedAt": "2026-11-14T13:18:58.887885+00:00",
+          "createdAt": "2026-11-12T14:47:48.000Z",
+          "fullText": "문서를 서버로 안 보내고 브라우저에만 저장한다는 게 공문 같은 걸 열 때는 중요하겠네요. hwp로 다시 저장해도 서식이 잘 유지되는지 궁금해요.",
+          "author": {
+            "handle": "@goldenpigshome",
+            "name": "goldenpigshome"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/nowlovepan/status/2120834043885555730",
+        "observed_main_url": "https://x.com/nowlovepan/status/2120834043885555730",
+        "author_handle": "nowlovepan",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
