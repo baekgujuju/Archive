@@ -373,5 +373,27 @@
       "search:phrase:public apis 4kr"
     ],
     "fingerprint": "6e5fcb23725cdafaa745deedbaaf40d3159c3a8d4ca8e24ef212598ecddd4190"
+  },
+  "2120834043885555730": {
+    "title": "browser-use",
+    "summary_ko": "LLM(대형 언어 모델)을 기반으로 웹 브라우저 조작을 자동화하여 AI 에이전트가 웹사이트를 제어하고 상호작용할 수 있도록 돕는 오픈소스 라이브러리입니다.",
+    "category": "AI 웹 자동화",
+    "repo_url": "https://github.com/browser-use/browser-use",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:browser use"
+    ],
+    "fingerprint": "b0903710750f50af30de274849cb8517c883c23490fc6c56df1e7e5f97df4032"
+  },
+  "2120286630615691768": {
+    "title": "facefusion",
+    "summary_ko": "차세대 얼굴 교체 및 향상 도구",
+    "category": "AI / 이미지 및 영상 처리",
+    "repo_url": "https://github.com/facefusion/facefusion",
+    "status": "verified",
+    "evidence": [
+      "screenshot:name-match"
+    ],
+    "fingerprint": "73f0fb06ab5694d5f51497dca888a652bd9e10244858a8f2c94145f25a3c61ee"
   }
 }

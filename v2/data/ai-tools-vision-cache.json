@@ -6803,5 +6803,167 @@
     "category_ko": "공개 API·개발 자료",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0cc50a46eb9f4d7ee1a2337555f60f19d92509b839486fc8b99fe90ac263c6f1": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/browser-use/browser-use"
+    ],
+    "title": "browser-use",
+    "description_ko": "LLM(대형 언어 모델)을 기반으로 웹 브라우저 조작을 자동화하여 AI 에이전트가 웹사이트를 제어하고 상호작용할 수 있도록 돕는 오픈소스 라이브러리입니다.",
+    "category_ko": "AI 웹 자동화",
+    "owner_hint": "browser-use",
+    "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:a0af0c304cea080e63c207c560fee24a4b8164b082bb641a5c5f9c548e88cf15": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/facefusion/facefusion"
+    ],
+    "title": "facefusion",
+    "description_ko": "차세대 얼굴 교체 및 향상 도구",
+    "category_ko": "AI / 이미지 및 영상 처리",
+    "owner_hint": "facefusion",
+    "provider": "gemini"
+  },
+  "codex-gpt-6.1-sol-v1:735b600ec20892d1b19229a6dcc9de24233b4d3e65bc9d05530f88a72a401157": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ① Anti Setup",
+    "description_ko": "상승 추세에서 짧은 조정 후 모멘텀이 재가속할 때 진입하는 전략. 스토캐스틱 %D의 상승 흐름과 %K의 상방 전환을 확인하고 직전 봉 고점 돌파 시 매수하는 조건을 설명한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e3864ab0878b353c8e2bdf51e206a165f2d968df64b511d0d599037331be952c": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ② Holy Grail",
+    "description_ko": "강한 상승 추세에서 EMA20 부근의 첫 눌림목을 공략하는 전략. ADX(14) 30 이상과 상승 흐름을 확인하고 조정 후 직전 봉 고점 돌파 시 진입하는 조건을 설명한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ffdcb96f16992ebf22e8cb880033acea707782c218e4321c457ba35487887e06": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ③ Turtle Soup",
+    "description_ko": "새로운 20일 고점 또는 저점 돌파가 실패하고 기존 범위로 복귀할 때 반대 방향으로 진입하는 역매매 전략. 가짜 돌파 사례와 손절·청산 기준을 도식으로 설명한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e9dbd336781cc28ac07ab143c3a1e57b65195a7fdc4abdabb7c335bc52631f84": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ④ Turtle Soup Plus One",
+    "description_ko": "20일 고점·저점을 돌파한 날 종가가 기존 극값 바깥에서 마감한 뒤, 다음 날 기존 극값을 회복하면 진입하는 전략. 돌파 실패를 하루 더 확인하는 Turtle Soup 변형을 설명한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c167a3bc84ac192ca2cfa9e446d5fe560c9cd685de371a03b7654051b2e0d614": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ⑤ 80-20 Setup",
+    "description_ko": "전일 시가가 가격 범위 상위 20%, 종가가 하위 20%에 위치한 급락 사례를 바탕으로 다음 날 반전을 공략하는 전략. 전일 저점을 추가 이탈한 뒤 회복할 때 매수하는 조건과 당일 청산 원칙을 설명한다.",
+    "category_ko": "금융·트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:05123605cece223869b3137d84129b1d628b5861877452ee33a15f6870f59c29": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ⑥ NR7 + ORB",
+    "description_ko": "최근 7봉 중 변동폭이 가장 좁은 NR7 발생 후, 다음 날 첫 45~60분의 시초 범위를 돌파하는 방향으로 진입하는 전략을 설명한다. 시초 범위 반대편 손절과 추적 손절, 횡보장의 가짜 돌파 및 거래량 확인에 관한 주의사항을 담고 있다.",
+    "category_ko": "금융·주식 트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:c3cf0c7c06688f4b05e49d19a5f01ea2e5e38fc85972d2b608fff749c62b29e8": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ⑦ Momentum Pinball",
+    "description_ko": "단기 과매도·과매수 이후의 가격 복귀를 노리는 전략을 소개한다. LBR/RSI가 30 미만이면 매수를 준비하고, 다음 날 첫 1시간 고점 돌파 시 진입하는 예시와 손절·청산 기준을 설명한다.",
+    "category_ko": "금융·주식 트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bf13ce663acd15e62c34bdc93924874fc01e9bb1c6ddf9ed2c83fd936fe5481b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ⑧ 3-Day Unfilled Gap Reversal",
+    "description_ko": "하락 갭이 당일 메워지지 않은 뒤, 최대 3일 이내 갭 발생일 고점을 돌파하면 매수하는 반전 전략을 설명한다. 갭 발생일 저점 아래 손절, 미체결 주문 취소 및 악재성 갭의 추가 하락 가능성을 안내한다.",
+    "category_ko": "금융·주식 트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:0b7881fea99985df491aafa22fa07713175d44d3f9935d2d6df37c46d621ece9": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "린다 라슈케 매매법 ⑨ Wolfe Wave",
+    "description_ko": "다섯 변곡점으로 구성된 울프 웨이브 반전 패턴을 도식화한다. 5번 지점에서 반전 신호를 확인해 진입하고 1번과 4번을 연결한 목표선 부근에서 청산하는 방식과, 변곡점 판단의 주관성 및 자동화의 어려움을 설명한다.",
+    "category_ko": "금융·주식 트레이딩 교육",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:54ae970e402d5ca42c175e3e391f358cfeef8ee75fb848523e5ebc7f3c6b3e9a": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "지인빅데이터 중개사 전화번호부 메뉴",
+    "description_ko": "부동산 정보 사이트의 메뉴 화면으로, TOP10·거래량·경매·중개사 전화번호부 항목이 보이며 전화번호부가 강조되어 있다.",
+    "category_ko": "부동산 서비스 메뉴",
+    "owner_hint": "지인빅데이터",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:2e32e4777594731a70cf8733e1ad939517869133b30fa66a438bf653b764b634": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "수내동 중개사 위치 지도",
+    "description_ko": "경기도 성남시 분당구 수내동 지도에 중개사 위치와 반경 500m 검색 범위가 표시되어 있다. 지역 검색창과 필터 사용 안내도 보인다.",
+    "category_ko": "부동산 중개사 지도 검색",
+    "owner_hint": "중개사 로고가 보이나 운영 주체는 명확하지 않음",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7da1a0e255bab30dbd896c01eb15875a87a34b5d1f1f7a415a19e09d6d34bc3b": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "중개사 정보 결과",
+    "description_ko": "주변 중개사들의 거리, 상호명, 사무소 위치, 중개사명, 전화번호, 최근 한 달 매물 수를 정리한 표와 Excel 저장 버튼이 보인다.",
+    "category_ko": "부동산 중개사 연락처 목록",
+    "owner_hint": "화면에 운영 주체가 명시되지 않음",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:37ab30e81f7082c947ed5f86e41dfac037d74a22e739636ca5e5c113717e758f": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Hallmark 테마 자료 모음",
+    "description_ko": "Dusk, Cobalt, 스튜디오, 향수 공방, Ribbon 등 웹 디자인 테마 10개의 미리보기와 설명이 격자로 배치되어 있다. 하단에는 전체 50개 테마 자료에 대한 안내와 usehallmark.com 링크가 보인다.",
+    "category_ko": "웹 디자인 테마 갤러리",
+    "owner_hint": "Hallmark / usehallmark.com",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:dab4a363f4585f3ef4ca6a75e881c8c86964aabf6dd0247d2174859039440f54": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "DFU in 3 Easy Steps",
+    "description_ko": "홈 버튼이 있는 아이폰을 DFU 모드로 전환하는 과정을 세 단계의 손 그림과 기기 화면으로 설명한 주황색 안내 이미지이다.",
+    "category_ko": "아이폰 DFU 모드 안내",
+    "owner_hint": "제작자 표시 없음",
+    "provider": "codex"
   }
 }

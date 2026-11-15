@@ -950,7 +950,7 @@
     "version": 3
   },
   "article-20261016-1928:612b95c9c04f7a9b.jpg": {
-    "fingerprint": "2c2436466ac36124c7c23e141ba0d896e5cc2ceabf1930c20cd88e89872291d8",
+    "fingerprint": "ca3151de4ca6a66fee1b86cc267009fde6ef996b6a01397f5e9e5d58453f8c30",
     "entry": null,
     "version": 3
   },
@@ -975,7 +975,7 @@
     "version": 3
   },
   "article-20261016-1928:b54547065111105a.png": {
-    "fingerprint": "97839250204f79a99ecef9779fb8d0ceddadf8fa32f2a5a5a444634ab2edb56a",
+    "fingerprint": "761a28fe577f4938f88ab5e042b809e2a67c630d57a26f4aa9ce053e45f1e41c",
     "entry": null,
     "version": 3
   },
@@ -1000,7 +1000,7 @@
     "version": 3
   },
   "article-20261016-1928:7e57c509a603f4f9.png": {
-    "fingerprint": "c23392c56b87712730051da7dac66f1a7ad6f49e1af147c6ed467db056d0178a",
+    "fingerprint": "c635bf105cecf942a42816986ad3b69494e243e5f5758b30b3466bc48f918ce1",
     "entry": null,
     "version": 3
   },
@@ -4072,6 +4072,81 @@
       ],
       "fingerprint": "6e5fcb23725cdafaa745deedbaaf40d3159c3a8d4ca8e24ef212598ecddd4190"
     },
+    "version": 3
+  },
+  "2120834043885555730:embedded-0cc50a46eb9f4d7ee1a2337555f60f19d92509b839486fc8b99fe90ac263c6f1.jpg": {
+    "fingerprint": "b0903710750f50af30de274849cb8517c883c23490fc6c56df1e7e5f97df4032",
+    "entry": {
+      "title": "browser-use",
+      "summary_ko": "LLM(대형 언어 모델)을 기반으로 웹 브라우저 조작을 자동화하여 AI 에이전트가 웹사이트를 제어하고 상호작용할 수 있도록 돕는 오픈소스 라이브러리입니다.",
+      "category": "AI 웹 자동화",
+      "repo_url": "https://github.com/browser-use/browser-use",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:browser use"
+      ],
+      "fingerprint": "b0903710750f50af30de274849cb8517c883c23490fc6c56df1e7e5f97df4032"
+    },
+    "version": 3
+  },
+  "2120286630615691768:embedded-a0af0c304cea080e63c207c560fee24a4b8164b082bb641a5c5f9c548e88cf15.jpg": {
+    "fingerprint": "73f0fb06ab5694d5f51497dca888a652bd9e10244858a8f2c94145f25a3c61ee",
+    "entry": {
+      "title": "facefusion",
+      "summary_ko": "차세대 얼굴 교체 및 향상 도구",
+      "category": "AI / 이미지 및 영상 처리",
+      "repo_url": "https://github.com/facefusion/facefusion",
+      "status": "verified",
+      "evidence": [
+        "screenshot:name-match"
+      ],
+      "fingerprint": "73f0fb06ab5694d5f51497dca888a652bd9e10244858a8f2c94145f25a3c61ee"
+    },
+    "version": 3
+  },
+  "2120983162604155320:embedded-735b600ec20892d1b19229a6dcc9de24233b4d3e65bc9d05530f88a72a401157.jpg": {
+    "fingerprint": "69cfc813d0e8e8ce5a73c225f69a1479aeb015352fce5fea4085ba3d4a869132",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-e3864ab0878b353c8e2bdf51e206a165f2d968df64b511d0d599037331be952c.jpg": {
+    "fingerprint": "23755a592754504c9299f2bbc87980fff2d4e48e05654065af05fd9b8bbacbc1",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-ffdcb96f16992ebf22e8cb880033acea707782c218e4321c457ba35487887e06.jpg": {
+    "fingerprint": "0504367028e7efafd415ddc6cabfa1b13a3197ff4de9121e60c3323f10d6e12d",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-e9dbd336781cc28ac07ab143c3a1e57b65195a7fdc4abdabb7c335bc52631f84.jpg": {
+    "fingerprint": "fa5052c61fa6b6f36dab224a69841949177b312798a9c4e4202b517b4b89031a",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-c167a3bc84ac192ca2cfa9e446d5fe560c9cd685de371a03b7654051b2e0d614.jpg": {
+    "fingerprint": "12ff8c44b2cab9c022fa34708c1a64452c8557959c19dc1f588dfcf92c33b1d7",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-05123605cece223869b3137d84129b1d628b5861877452ee33a15f6870f59c29.jpg": {
+    "fingerprint": "b0ac75b3828dd09869071d9afd84273445a2229d3fe36c86894d2a56639d4810",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-c3cf0c7c06688f4b05e49d19a5f01ea2e5e38fc85972d2b608fff749c62b29e8.jpg": {
+    "fingerprint": "e7ca4597b4b028d9677564ec1be5171c24e2fd9b6dbd25d61b0c356e6fa1c94c",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-bf13ce663acd15e62c34bdc93924874fc01e9bb1c6ddf9ed2c83fd936fe5481b.jpg": {
+    "fingerprint": "6b8c4dbed2623876ddb88f3da329b15b7281ba14984237e9d00c8e5d12e5d8ef",
+    "entry": null,
+    "version": 3
+  },
+  "2120983162604155320:embedded-0b7881fea99985df491aafa22fa07713175d44d3f9935d2d6df37c46d621ece9.jpg": {
+    "fingerprint": "dfcc7916c84b4c919f0db598604f14ea826100555b213fd75aef98dd6078665f",
+    "entry": null,
     "version": 3
   }
 }
