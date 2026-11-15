@@ -24,7 +24,7 @@
   "app_version": "2.6.0",
   "translations": {
     "file": "data/translations.json",
-    "sha256": "5c2292b703a2228bb42de8ea44b0a3efae27cad1d1699d5c9d9ba1a906b0f8e4",
+    "sha256": "caa81b50ef03e569bc2082df0953a4aecc0fd7be8c341def324f9b497d6e703f",
     "count": 862
   },
   "shared_state": {
@@ -34,8 +34,8 @@
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
-    "sha256": "93f9cc191739db14a6fd1836cd296c06b40a1b3e4c6d45dc17d418556dbb3b01",
-    "count": 36
+    "sha256": "1110fd089bfb498aebd157322bb22d3f7710f6277c88b280ac1685278e83843f",
+    "count": 39
   },
   "article_media_map": {
     "file": "data/article-media-map.json",

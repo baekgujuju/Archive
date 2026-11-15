@@ -6965,5 +6965,187 @@
     "category_ko": "아이폰 DFU 모드 안내",
     "owner_hint": "제작자 표시 없음",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b914a8f089931f6f538e2cfbd184e768b131464e62705f2517eeddf74ff000e0": {
+    "index": 0,
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/cbrock84/headcount"
+    ],
+    "title": "cbrock84/headcount",
+    "description_ko": "회사의 조직 구조를 본뜬 에이전트 프로젝트. 15개 이상의 부서와 125개 이상의 개별 설치 가능한 스킬을 제공하며, 관련 표준과 규제 기관을 인용한다고 소개한다.",
+    "category_ko": "AI 에이전트·스킬",
+    "owner_hint": "cbrock84",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:b0259ba7e2901c449a45ba22d770defe903d7f1dd982249b93ce3aed04b5c2f9": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "TraderLion — Martin Luk",
+    "description_ko": "TraderLion 로고와 Martin Luk이라는 이름이 표시된 인물 소개 이미지. 인물 뒤로 금융 거래 차트가 열린 여러 모니터가 보인다.",
+    "category_ko": "트레이딩·인물 소개",
+    "owner_hint": "TraderLion",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:8973b1f8b475e8c3734126a0f26f7e90bea5fc48cf8d1f3cc363c694cc46c57b": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Qullamaggie’s Timeless Setups Simplified",
+    "description_ko": "주식 매매의 세 가지 패턴인 돌파, 포물선 상승 후 공매도, 기업의 중대한 변화에 따른 전환을 가격·거래량 도식으로 설명한 이미지.",
+    "category_ko": "주식 트레이딩 교육",
+    "owner_hint": "Ankur Patel (@AnkurPatel59)",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:bf1e7d7d336787428224d9e39752235a4c979e038f1506f36c031ab23ae7a443": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Open Weight Token Volume and Spend",
+    "description_ko": "2025년 12월부터 2026년 9월까지 오픈 웨이트 모델의 토큰 사용량 비중과 지출 비중을 비교한 이중 축 차트. 마지막 달에는 각각 약 72%와 23%까지 상승한다.",
+    "category_ko": "AI 모델 사용량 및 비용 통계",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3b111eead9c6e8d7c55e8793f387d08722c0cdfb82f76f43bde966602061dfa0": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Ramp Monthly Change in Token Spend",
+    "description_ko": "2025년부터 2026년 9월까지 토큰 지출의 월별 증감률을 나타낸 막대그래프. 최고 증가율은 58%이며, 2025년 11월에는 -2%, 마지막 달에는 0%를 기록한다.",
+    "category_ko": "AI 토큰 지출 통계",
+    "owner_hint": "Ramp",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d7270afb430e821f27a0c0ea14cdd17f2587a286fc64dda3bd6c5ac3461309f8": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Price ($/hr)",
+    "description_ko": "1월 초부터 10월 말까지 시간당 가격의 변화를 보여 주는 선 그래프. 가격은 약 4.4달러에서 시작해 여러 차례 급등과 조정을 거쳐 약 6.6달러로 상승하며, 가격 대상과 연도는 표시되지 않는다.",
+    "category_ko": "시간당 가격 추이",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:d1bc66670f3441b25695964aa91be7e30dbb873e020d097514f138eeab6db324": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "GPU 임대 비용과 매출총이익률의 관계",
+    "description_ko": "매출총이익률을 ‘1 − 시간당 GPU 임대 비용 ÷ (GPU 시간당 처리 토큰 수 × 토큰당 매출)’로 근사하는 수식이다.",
+    "category_ko": "AI 인프라 비용 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:70407e2a6cd5183650687eda59735e562982f119b944d087df6ce76967f72edb": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "계약 기간별 B200·H100 GPU 시간당 임대료",
+    "description_ko": "현물부터 36개월까지 계약 기간별 GPU 임대료를 비교한 이중 축 차트다. B200은 막대, H100은 선으로 표시된다. 현물 가격은 각각 6.60달러와 2.89달러이며, 24개월에는 5.66달러와 2.47달러로 내려갔다가 36개월에는 반등한다.",
+    "category_ko": "GPU 임대료 비교",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:ad4a247d9e9d38b4509d72027a027c6e2afcc556cf0e85162e173784e3449af1": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Ramp Token Volume Index",
+    "description_ko": "2025년 1월부터 2026년 10월까지 토큰 사용량 지수를 나타낸 막대그래프다. 초기에는 낮은 수준을 유지하다가 2026년 들어 상승 속도가 빨라지며 마지막에는 약 170에 도달한다.",
+    "category_ko": "AI 토큰 사용량 추이",
+    "owner_hint": "Ramp",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:822c46118fce3d08b107468888b1afbdebd6159ae2e982901b307156a6d2eaed": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Market Implied Fragmentation Factor",
+    "description_ko": "2005년부터 2026년까지 시장 내재 분절화 요인의 변동을 보여주는 시계열 차트다. ±2 표준편차 기준선이 있으며, 마지막 관측치는 약 2.8 수준의 빨간 점으로 강조되어 있다.",
+    "category_ko": "금융시장 지표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:780c83c1aad48ef9b67914645367dd2c52c71ed14b0805def45f22bd9d79c6e9": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "가격 추이와 피보나치 되돌림·RSI",
+    "description_ko": "상단에는 가격 추이와 피보나치 되돌림 수준, 하단에는 RSI 보조지표가 배치된 기술적 분석 차트다. 가격은 급등과 하락을 거쳐 약 98.65에 있으며, 마지막 RSI는 약 51.5로 표시된다. 자산명은 식별하기 어렵다.",
+    "category_ko": "금융 기술적 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:34f081fe73a2cde08ebd07c7127320fac99848d40a74909d5f1f4ddc6fefb55c": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "14-Day RSI (30 = Oversold, 70 = Overbought)",
+    "description_ko": "미국 2년물·30년물 국채와 브렌트유의 14일 RSI를 비교한 시계열 차트다. 2025년 1월부터 2026년 9월 무렵까지 표시하며, 과매수 기준 70과 과매도 기준 30을 빨간 점선으로 나타낸다.",
+    "category_ko": "금융 기술적 지표",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:e225accd863101ae2eb79c6bc0b23e7c61bbf11534428ca28a2c1cb5bdfb4a3b": {
+    "index": 0,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Share > 3%: 12m Change vs 6m Change",
+    "description_ko": "2015~2026년 3% 초과 비중을 12개월 변화와 6개월 변화 기준으로 비교한 선 그래프. 두 지표는 2022~2023년 정점 이후 하락했다가 마지막 구간에서 반등한다.",
+    "category_ko": "경제·금융 통계",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:7b89f32b7a129f95d6638d7eccb07da1fe0e724a5a01e981e13f23746c98da15": {
+    "index": 1,
+    "is_github": false,
+    "github_urls": [],
+    "title": "PC1 × PC2 State Space | 2003–2026",
+    "description_ko": "2003~2026년 관측치를 시기별 파란색 점으로 표시한 주성분 산점도. 가로축은 정책 요인, 세로축은 성장 요인이며 빨간 점으로 특정 관측치를 강조한다.",
+    "category_ko": "경제 데이터 분석",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fada55db1307c4aec5cd6beb5db7c359d3cd7767ec9cc90d26f8447802641f9a": {
+    "index": 2,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Top 1% Spend/Month and MoM % Change",
+    "description_ko": "2023년 8월~2026년 7월 상위 1%의 월간 지출액과 전월 대비 변화율을 함께 보여주는 복합 그래프. 지출액은 마지막 구간에서 약 7,400달러까지 급증한다.",
+    "category_ko": "소비·지출 통계",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:55acdb5cf2014cb24857e462668213dcf54f7415992d28463e83bccce9e6b035": {
+    "index": 3,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Federal Reserve",
+    "description_ko": "석조 건물 외벽에 설치된 독수리 조각과 그 아래 FEDERAL RESERVE 문구를 담은 사진.",
+    "category_ko": "금융기관·건축 사진",
+    "owner_hint": "미국 연방준비제도",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:3f00df053a2ff9aa2b8ce6644b5d6b83296229152aecf95b4147f7ef7e088b34": {
+    "index": 4,
+    "is_github": false,
+    "github_urls": [],
+    "title": "US New Business Applications",
+    "description_ko": "2004~2026년 미국 신규 사업 신청 건수의 추이를 보여주는 선 그래프. 2020년 급증이 나타나며, 2022년 말 부근에는 ChatGPT 출시 시점을 표시한 세로 점선이 있다.",
+    "category_ko": "창업·경제 통계",
+    "owner_hint": "",
+    "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:71ba26173bebd345f42db63efbaee018628b74a97625ebafef8a69103c8bd5df": {
+    "index": 5,
+    "is_github": false,
+    "github_urls": [],
+    "title": "Buy/Sell Ratio Z-Score vs Forward CT10 Yield Change",
+    "description_ko": "2024~2026년 과거 20일 평균 매수·매도 비율의 Z점수와 향후 20일 CT10 수익률 변화를 비교한 이중축 선 그래프. 수익률 변화는 오른쪽 역방향 축으로 표시된다.",
+    "category_ko": "채권·금융시장 분석",
+    "owner_hint": "",
+    "provider": "codex"
   }
 }

@@ -395,5 +395,38 @@
       "screenshot:name-match"
     ],
     "fingerprint": "73f0fb06ab5694d5f51497dca888a652bd9e10244858a8f2c94145f25a3c61ee"
+  },
+  "2118236877341823272": {
+    "title": "anthropics/skills",
+    "summary_ko": "Agent Skills 공개 저장소 소개 카드. 기여자 19명, 이슈 425개, 토론 111개, 스타 약 18만 6천 개, 포크 약 2만 2천 개가 표시되어 있다.",
+    "category": "AI 에이전트 스킬 저장소",
+    "repo_url": "https://github.com/anthropics/skills",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:anthropics skills"
+    ],
+    "fingerprint": "64d3afe32d480f86e2cdb88cb6c38c416768f42870b1edaf940f7f434023f060"
+  },
+  "2117220957622255727": {
+    "title": "facefusion/facefusion",
+    "summary_ko": "차세대 얼굴 교체 및 화질 개선 도구",
+    "category": "AI / 영상 처리",
+    "repo_url": "https://github.com/facefusion/facefusion",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:facefusion facefusion"
+    ],
+    "fingerprint": "083ae0bb0e1ba6ba38506068443f42f8298dc1ed427236e2db00facfecc8a180"
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db": {
+    "title": "microsoft/markitdown",
+    "summary_ko": "다양한 파일 및 오피스 문서를 마크다운(Markdown) 포맷으로 변환하는 Python 도구",
+    "category": "문서 변환 도구 / 유틸리티",
+    "repo_url": "https://github.com/microsoft/markitdown",
+    "status": "verified",
+    "evidence": [
+      "screenshot:phrase:microsoft markitdown"
+    ],
+    "fingerprint": "5d524b727fdee31549d6adeacbd0ea6240082bce10cc219d82b93ebf3d378e7c"
   }
 }

@@ -1025,7 +1025,7 @@
     "version": 3
   },
   "article-20261016-1928:91272f074471eef8.jpg": {
-    "fingerprint": "a38535ca0be308255c1c2646d80c4e804daac0f9c924658657d23ce578e1b81f",
+    "fingerprint": "99525d389229b03f3cbba50b1073224907f873523dd48840884dc9790d5e8a67",
     "entry": null,
     "version": 3
   },
@@ -1050,7 +1050,7 @@
     "version": 3
   },
   "article-20261016-1928:7d4f2051dc890e07.png": {
-    "fingerprint": "5bb7711c17b5c620eb117b711710be1a58c7f90c66eb596fadc75c9d7458df5a",
+    "fingerprint": "a0f3ea70683eb7f776b9878990ee604eef4caefd7ff4e5c680d7062a6c574dba",
     "entry": null,
     "version": 3
   },
@@ -1075,7 +1075,7 @@
     "version": 3
   },
   "article-20261016-1928:1676079cb1578b14.png": {
-    "fingerprint": "7d01bafa5c1d2f310ed1bd3e0f5ad6971cc66f56986b352beff3a3e8126a3ee0",
+    "fingerprint": "2384658b406c1ae93f2aef45ed4e9b15ac0f8b0aa4d82671e5ffe4c5234b8266",
     "entry": null,
     "version": 3
   },
@@ -1100,7 +1100,7 @@
     "version": 3
   },
   "article-20261016-1928:8c6a61b35a41b490.png": {
-    "fingerprint": "806c8cf833730d31068873920e7c78e9dedb5b1a5a9e41f83df13b54d6135f05",
+    "fingerprint": "471faf6acf6c19d6573b25072b122bb6b001a71210e1d0b6d88b3534c90ad753",
     "entry": null,
     "version": 3
   },
@@ -1125,7 +1125,7 @@
     "version": 3
   },
   "article-20261016-1928:4348450ea71edd5a.png": {
-    "fingerprint": "b0245a658dc80f2c69a7f9dbb0f8ae9daa32548dfce7fbcdd4ad712babec1a1a",
+    "fingerprint": "6ede7bcf9eea2e0c9642db115e2b7028179b664b5bec3ba75fd2f03cff2a2d19",
     "entry": null,
     "version": 3
   },
@@ -1150,7 +1150,7 @@
     "version": 3
   },
   "article-20261016-1928:2ead9147a92fb8b1.jpg": {
-    "fingerprint": "c4c17b8cc31212cf75bc27519f09d54fbe8db1e29f9ba0ca34e1dfce76090cc2",
+    "fingerprint": "4edcf1fb20cecf49c603cda3fc4172cdd324c732497dc12d30d65ad97a6e54c1",
     "entry": null,
     "version": 3
   },
@@ -1185,7 +1185,7 @@
     "version": 3
   },
   "article-20261016-1928:71628a811bb42311.png": {
-    "fingerprint": "eb27e3c73cd52b5fd22bc1247cb182e1501e254b1d93bb44f9426dde6928ea2b",
+    "fingerprint": "c39280e1772f4d637be49185efab0956506b407aa30d9121c290f515bd920cd4",
     "entry": null,
     "version": 3
   },
@@ -1250,7 +1250,7 @@
     "version": 3
   },
   "article-20261016-1928:9b2b3f1d6a77b188.png": {
-    "fingerprint": "24414c3021f609a2c883cbc012a15f06fc4f891c4343114936116b711961d154",
+    "fingerprint": "01d3a86d3ac755959ebcb236acfa226ab1904bc55448f2cb85f5454de7ae27a9",
     "entry": null,
     "version": 3
   },
@@ -4146,6 +4146,161 @@
   },
   "2120983162604155320:embedded-0b7881fea99985df491aafa22fa07713175d44d3f9935d2d6df37c46d621ece9.jpg": {
     "fingerprint": "dfcc7916c84b4c919f0db598604f14ea826100555b213fd75aef98dd6078665f",
+    "entry": null,
+    "version": 3
+  },
+  "2119304275499368747:embedded-54ae970e402d5ca42c175e3e391f358cfeef8ee75fb848523e5ebc7f3c6b3e9a.png": {
+    "fingerprint": "11b9b9149a6cffb27ec8f45ed089e7220cc0db9eb931c35a531a182b987aa6e4",
+    "entry": null,
+    "version": 3
+  },
+  "2119304275499368747:embedded-2e32e4777594731a70cf8733e1ad939517869133b30fa66a438bf653b764b634.jpg": {
+    "fingerprint": "0ce8b6a81c0d844f103a83fc9d4b93517cd7b908d1c3e4ad91589589ebb610f0",
+    "entry": null,
+    "version": 3
+  },
+  "2119304275499368747:embedded-7da1a0e255bab30dbd896c01eb15875a87a34b5d1f1f7a415a19e09d6d34bc3b.jpg": {
+    "fingerprint": "479ee0a0d176fb2830cc0a0a6bec38b99e8ff8a908ff33d050e2e87de0483ee5",
+    "entry": null,
+    "version": 3
+  },
+  "2119324701453615189:embedded-37ab30e81f7082c947ed5f86e41dfac037d74a22e739636ca5e5c113717e758f.jpg": {
+    "fingerprint": "26f8dfa916d8fbfc7557911f2c5547c67541602f036735f57e5320afecd5a1a4",
+    "entry": null,
+    "version": 3
+  },
+  "2118352451074170884:embedded-dab4a363f4585f3ef4ca6a75e881c8c86964aabf6dd0247d2174859039440f54.png": {
+    "fingerprint": "3bb33eed7dec8f21e528846357de0127905763393cff28aaf7dc27dc219b3622",
+    "entry": null,
+    "version": 3
+  },
+  "2118236877341823272:embedded-b43b96c37e7f440c1236494909c2e1a9460824185aa24fdff06b162eac661aa6.jpg": {
+    "fingerprint": "64d3afe32d480f86e2cdb88cb6c38c416768f42870b1edaf940f7f434023f060",
+    "entry": {
+      "title": "anthropics/skills",
+      "summary_ko": "Agent Skills 공개 저장소 소개 카드. 기여자 19명, 이슈 425개, 토론 111개, 스타 약 18만 6천 개, 포크 약 2만 2천 개가 표시되어 있다.",
+      "category": "AI 에이전트 스킬 저장소",
+      "repo_url": "https://github.com/anthropics/skills",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:anthropics skills"
+      ],
+      "fingerprint": "64d3afe32d480f86e2cdb88cb6c38c416768f42870b1edaf940f7f434023f060"
+    },
+    "version": 3
+  },
+  "2117919109832962502:embedded-b0259ba7e2901c449a45ba22d770defe903d7f1dd982249b93ce3aed04b5c2f9.jpg": {
+    "fingerprint": "d8dbed60758677b414427e0e23e7699b8bf038be6f502ec37f0907b3c0eb761f",
+    "entry": null,
+    "version": 3
+  },
+  "2117220957622255727:embedded-47699eff266039fc38976684cfe2af8fac2a253429fad9dc6d811b26c813c842.jpg": {
+    "fingerprint": "083ae0bb0e1ba6ba38506068443f42f8298dc1ed427236e2db00facfecc8a180",
+    "entry": {
+      "title": "facefusion/facefusion",
+      "summary_ko": "차세대 얼굴 교체 및 화질 개선 도구",
+      "category": "AI / 영상 처리",
+      "repo_url": "https://github.com/facefusion/facefusion",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:facefusion facefusion"
+      ],
+      "fingerprint": "083ae0bb0e1ba6ba38506068443f42f8298dc1ed427236e2db00facfecc8a180"
+    },
+    "version": 3
+  },
+  "2045816930683277627:embedded-8973b1f8b475e8c3734126a0f26f7e90bea5fc48cf8d1f3cc363c694cc46c57b.png": {
+    "fingerprint": "aa0dbd1144536b8ed03ce57310db37ac673a036124a9365f39f30b54deab856c",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-2ca1d4b7f07c2c8aeccfd3f5a8158ca1b96c42cac31c826ae611463625d0a0da.png": {
+    "fingerprint": "5d524b727fdee31549d6adeacbd0ea6240082bce10cc219d82b93ebf3d378e7c",
+    "entry": {
+      "title": "microsoft/markitdown",
+      "summary_ko": "다양한 파일 및 오피스 문서를 마크다운(Markdown) 포맷으로 변환하는 Python 도구",
+      "category": "문서 변환 도구 / 유틸리티",
+      "repo_url": "https://github.com/microsoft/markitdown",
+      "status": "verified",
+      "evidence": [
+        "screenshot:phrase:microsoft markitdown"
+      ],
+      "fingerprint": "5d524b727fdee31549d6adeacbd0ea6240082bce10cc219d82b93ebf3d378e7c"
+    },
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-bf1e7d7d336787428224d9e39752235a4c979e038f1506f36c031ab23ae7a443.png": {
+    "fingerprint": "db320c3c03b0fb8fa794901255240ca849abbdb7a5c2e7b5911624d8e52b378a",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-3b111eead9c6e8d7c55e8793f387d08722c0cdfb82f76f43bde966602061dfa0.png": {
+    "fingerprint": "7ceb0b3038bbffc7124147ba3f01c9814b896355dac0df5d9fc9ece832476d81",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-d7270afb430e821f27a0c0ea14cdd17f2587a286fc64dda3bd6c5ac3461309f8.png": {
+    "fingerprint": "b443bf702435d7fc1cb84ea3e9ec5e012f6431233b7e28aff49507c16a9ac86f",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-d1bc66670f3441b25695964aa91be7e30dbb873e020d097514f138eeab6db324.png": {
+    "fingerprint": "1d807e6b0d07cfcc9ce671926c280afe15ae9ae4ab0bbfc5f1b0d52edb3339a4",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-70407e2a6cd5183650687eda59735e562982f119b944d087df6ce76967f72edb.png": {
+    "fingerprint": "658d5005b3731c1c3750ba5aec3466b98e85d15909714a5a0f6a73da7cfaa060",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-ad4a247d9e9d38b4509d72027a027c6e2afcc556cf0e85162e173784e3449af1.png": {
+    "fingerprint": "47fbe8968474200e3feaf41f96f07d50bfab16f8f244e0908dfdc2d29ce7fbdd",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-822c46118fce3d08b107468888b1afbdebd6159ae2e982901b307156a6d2eaed.jpg": {
+    "fingerprint": "5f9d71c0e1cf9a18eefb66caa6294d46f28675d2c07794bba57527c751473104",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-780c83c1aad48ef9b67914645367dd2c52c71ed14b0805def45f22bd9d79c6e9.jpg": {
+    "fingerprint": "91024aa11dda5e49f76b901d78fad63b3935dd7ff6217e622f5ea44c0b344d19",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-34f081fe73a2cde08ebd07c7127320fac99848d40a74909d5f1f4ddc6fefb55c.jpg": {
+    "fingerprint": "0b136290c389a8735f1dc9267c005edcd870f590dc168544af0231d624a5e6c4",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-e225accd863101ae2eb79c6bc0b23e7c61bbf11534428ca28a2c1cb5bdfb4a3b.jpg": {
+    "fingerprint": "a33da4a076d35dfc1c16f636fdfd2385bbd0c082cbeaabf3ebbee006bf20aa25",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-7b89f32b7a129f95d6638d7eccb07da1fe0e724a5a01e981e13f23746c98da15.jpg": {
+    "fingerprint": "22bc5c861469906eab49e10b37d04c62a322fc615c1cfe89a915afabaa073bb3",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-fada55db1307c4aec5cd6beb5db7c359d3cd7767ec9cc90d26f8447802641f9a.jpg": {
+    "fingerprint": "fd0e19c2e535b27b6f75ce525a0b255c1eb076890553e68db3d4d80d5b4f361a",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-55acdb5cf2014cb24857e462668213dcf54f7415992d28463e83bccce9e6b035.jpg": {
+    "fingerprint": "381ab71ad526781bb6dfacbad0411f51f3347231a5fa98f5e7bfdd83dde80f67",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-3f00df053a2ff9aa2b8ce6644b5d6b83296229152aecf95b4147f7ef7e088b34.jpg": {
+    "fingerprint": "d35226ccf9afbcec05d582879f47bd2aa781ffcda9be5377e8950ffb158761ca",
+    "entry": null,
+    "version": 3
+  },
+  "web-0d86c8300fe58db1de244ea3ee2ab9128b2617fe0552366496cddf98842b03db:embedded-71ba26173bebd345f42db63efbaee018628b74a97625ebafef8a69103c8bd5df.jpg": {
+    "fingerprint": "2de500a38f562127a3a7a58cad8928b07f77eadb3232f79ba32f2a901183df19",
     "entry": null,
     "version": 3
   }
