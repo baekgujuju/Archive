@@ -9027,8 +9027,8 @@
       "translated": [],
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
-      "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-      "failed_at": "2026-11-16T08:26:50.888184+00:00"
+      "error": "Codex translation failed (exit 1); existing cache retained",
+      "failed_at": "2026-11-17T23:26:32.453074+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:24:24.015971+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:22:49.551776+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -13304,8 +13304,8 @@
     "translated": [],
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.892024+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:32.453594+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13825,8 +13825,8 @@
     "translated": [],
     "content_hash": "688ac05f147f559e",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.886976+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:32.453020+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13948,8 +13948,8 @@
     "translated": [],
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.892339+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:32.453605+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14021,8 +14021,8 @@
     "translated": [],
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.892667+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:32.453613+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14134,8 +14134,8 @@
     "translated": [],
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.893292+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:32.453619+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -14431,8 +14431,8 @@
     "translated": [],
     "content_hash": "ea5b211ded388cba",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:24:44.672420+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:25:02.350372+00:00"
   },
   "2112930954268615039": {
     "paragraphs": [
@@ -16075,8 +16075,8 @@
     "translated": [],
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.893947+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:32.453624+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16247,8 +16247,8 @@
     "translated": [],
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.895453+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118841+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
@@ -16743,8 +16743,8 @@
     "translated": [],
     "content_hash": "78a3c074a476959a",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.895926+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118886+00:00"
   },
   "reply:2116662751410233832:2116673371111051445": {
     "paragraphs": [
@@ -16769,8 +16769,8 @@
     "translated": [],
     "content_hash": "41fdda00586eb25a",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.895712+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118875+00:00"
   },
   "reply:2116662751410233832:2112806825967927533": {
     "paragraphs": [
@@ -17098,8 +17098,8 @@
     "translated": [],
     "content_hash": "a1dc98a5f9eb16ee",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.896866+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118893+00:00"
   },
   "2117220957622255727": {
     "paragraphs": [
@@ -18100,8 +18100,8 @@
     "translated": [],
     "content_hash": "079d390efada9a4a",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.896996+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118901+00:00"
   },
   "reply:2119419482321916012:2119419485191057553": {
     "paragraphs": [
@@ -18970,8 +18970,8 @@
     "translated": [],
     "content_hash": "9bae86d3c7f05e6f",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.897410+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118909+00:00"
   },
   "2098819745718133090": {
     "paragraphs": [
@@ -19426,8 +19426,8 @@
     "translated": [],
     "content_hash": "3bd8fd9c81efa243",
     "status": "failed",
-    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-16T08:26:50.897553+00:00"
+    "error": "Codex translation failed (exit 1); existing cache retained",
+    "failed_at": "2026-11-17T23:26:44.118915+00:00"
   },
   "reply:2119919314497364236:2119919349234586083": {
     "paragraphs": [
