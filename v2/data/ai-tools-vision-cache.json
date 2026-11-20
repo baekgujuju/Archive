@@ -7147,5 +7147,16 @@
     "category_ko": "채권·금융시장 분석",
     "owner_hint": "",
     "provider": "codex"
+  },
+  "codex-gpt-6.1-sol-v1:fe0f4b7d93314d7f305c89d9af996adb572cdf355c68c52547aab9dd535130c3": {
+    "is_github": true,
+    "github_urls": [
+      "https://github.com/browser-use/browser-use"
+    ],
+    "title": "browser-use",
+    "description_ko": "AI 에이전트가 웹사이트를 탐색하고 상호작용하며 자동화할 수 있도록 지원하는 오픈소스 웹 자동화 라이브러리",
+    "category_ko": "AI / 웹 자동화",
+    "owner_hint": "browser-use",
+    "provider": "gemini"
   }
 }
