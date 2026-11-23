@@ -1,11 +1,11 @@
 {
   "total": 891,
-  "remaining": 141,
+  "remaining": 140,
   "stats": {
     "verified": 0,
-    "pending": 1,
-    "pending_github_look": 7,
-    "cached": 742,
+    "pending": 0,
+    "pending_github_look": 8,
+    "cached": 743,
     "temporary_failures": 0,
     "errors": 0
   },
@@ -14,7 +14,7 @@
     "2115991075349533143:embedded-48c24eb4f7ceb86c67b42d234fc334b614b8dd5473a280c81afdece36fb3db2e.png": "GitHub screenshot requires verified repository match",
     "2117293417214742982:embedded-167ed0bf47c5e5bbb56b1a00f55dc143d03503f677e553df93ba33c8ba2af7a9.jpg": "GitHub screenshot requires verified repository match",
     "2119312712954204171:embedded-8f774e86570739a7b421072cde948d3f0edf2bd316a6a397dd6c1502c3b32953.png": "GitHub screenshot requires verified repository match",
-    "article-20261016-1928:d467170e7f571be9.png": "successfully inspected: no GitHub project",
+    "2042091141328466156:2031da7b5558dbb2.png": "GitHub screenshot requires verified repository match",
     "2118282172507570612:embedded-b914a8f089931f6f538e2cfbd184e768b131464e62705f2517eeddf74ff000e0.jpg": "GitHub screenshot requires verified repository match",
     "2117262959957463191:embedded-561591647fea8a0d4b459570ea9d068cadcf4ea8d61f2eedeef3d86fada7b294.jpg": "GitHub screenshot requires verified repository match",
     "2117057530937684020:embedded-c5f2a2743762f2977bbbee9a57879db69b5ab990621e0d1cfa8f0ca5fc911637.jpg": "GitHub screenshot requires verified repository match"
