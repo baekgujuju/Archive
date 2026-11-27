@@ -38572,6 +38572,2075 @@
         },
         "capture_type": "text"
       }
+    },
+    {
+      "tweetId": "2124344552077316117",
+      "sourceUrl": "https://x.com/TechHyung/status/2124344552077316117",
+      "capturedAt": "2026-11-27T01:09:33.533999+00:00",
+      "createdAt": "2026-11-22T03:29:44.000Z",
+      "fullText": "해외에서 주문한 JetKVM mini 제품이 동작해서 테스트 중\n\n모르시는 분들을 위해 짧게 설명하면 IP KVM 제품류인데\n\n원격으로 PC 를 제어하기 위한 제품임\n\n일반 원격 소프트웨어와 다른점은 OS가 없이도 동작하고,\n\n바이오스 설정, OS설치, 원격 부팅등이 가능함. 부팅실패나 블루스크린 같은 상황에서도 화면을 보고 조작이 가능한 제품임\n\n집에 서버처럼 켜놓은 윈도우 컴퓨터가 있는데, 이게 가끔 꺼지기도 하고 제어가 불가능한 상황이 있을때가 많아서 구매했음\n\n이제 안심하고 컴퓨터 켜놓고 외부에서도 작업이 가능해져서 기분이 좋음",
+      "author": {
+        "handle": "@TechHyung",
+        "name": "TechHyung"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d1b862b5dda1db11b48f8d3ab2324663fae74c479ff000547f2fba3f4e8f82dc.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-8c8a283373b025e3f8b3bf6756b3484f38209f928a891f66e3d2da0879832d45.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-995328bbb511de968371640d8c7e18874fd7c220e1df7937be0d62655cfcbb2c.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-2652f257c8640964b9bfcb735dad22e134c3b7476b234ba438282035be1ecc3d.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2124354636689858891",
+          "sourceUrl": "https://x.com/koreabuldak/status/2124354636689858891",
+          "capturedAt": "2026-11-27T01:09:33.533999+00:00",
+          "createdAt": "2026-11-22T04:09:48.000Z",
+          "fullText": "오 신기하네요 ㅋㅋㅋ 처음봤어요 전 맥스튜디오를 그냥 계속 켜놓으니",
+          "author": {
+            "handle": "@koreabuldak",
+            "name": "koreabuldak"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2124388383527166222",
+          "sourceUrl": "https://x.com/TechHyung/status/2124388383527166222",
+          "capturedAt": "2026-11-27T01:09:33.533999+00:00",
+          "createdAt": "2026-11-22T06:23:54.000Z",
+          "fullText": "ㅎㅎ 신기하죠 트러블 슈팅용으로 많이 쓰나보더라구용 신기해서 사봤어요 ㅋㅋ",
+          "author": {
+            "handle": "@TechHyung",
+            "name": "TechHyung"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2125773161409212605",
+          "sourceUrl": "https://x.com/hoottown_twt/status/2125773161409212605",
+          "capturedAt": "2026-11-27T01:09:33.533999+00:00",
+          "createdAt": "",
+          "fullText": "[애플] 에어팟 프로 3세대 미국 블프 40% OFF!\n🎧정품 에어팟 프로 3세대가 단 $149?! \n배송비 10% 할인받고 훗타운에서 직구하세요✈️\n👉 가격: 최종가(상품가+할인 배송비) 244,707원\n\nLearn more (https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl)  https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl",
+          "author": {
+            "handle": "@hoottown_twt",
+            "name": "hoottown_twt"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-039b27ccba0d6497a4ae38f0decab64a3587bfe5e0dd445f61f2a9ccf74a4a45.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl",
+              "text": "Learn more",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2124359724573544448",
+          "sourceUrl": "https://x.com/doyun_dev_kor/status/2124359724573544448",
+          "capturedAt": "2026-11-27T01:09:33.533999+00:00",
+          "createdAt": "2026-11-22T04:30:01.000Z",
+          "fullText": "오 서버 원격 부팅까지 되는 거 진짜 편하겠네요 집에서 켜놓은 컴퓨터 관리 고민 해결돼서 좋으시겟어요",
+          "author": {
+            "handle": "@doyun_dev_kor",
+            "name": "doyun_dev_kor"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2124428331907187048",
+          "sourceUrl": "https://x.com/TechHyung/status/2124428331907187048",
+          "capturedAt": "2026-11-27T01:09:33.533999+00:00",
+          "createdAt": "2026-11-22T09:02:38.000Z",
+          "fullText": "넹 ㅎㅎ 편하네유",
+          "author": {
+            "handle": "@TechHyung",
+            "name": "TechHyung"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/TechHyung/status/2124344552077316117",
+        "observed_main_url": "https://x.com/TechHyung/status/2124344552077316117",
+        "author_handle": "TechHyung",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 5,
+          "max": 6
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2108171726412464173",
+      "sourceUrl": "https://x.com/0xMorlex/status/2108171726412464173",
+      "capturedAt": "2026-11-27T01:10:34.953998+00:00",
+      "createdAt": "2026-10-08T12:24:42.000Z",
+      "fullText": "Grok Bot + Opus 5.5: The Ultimate Agent Harness in 10 Steps  \n\nEvery agent you have used so far came as one package. The harness - the computer, the logins, the memory, the routines - and the brain that drives it were built by the same company and sold together.\n\nOn October 7, Grok Bot split them: \n\n (https://x.com/elonmusk) \n\nImportant note regarding Grok \n@Bot (https://x.com/bot) \n:\n\nGoing forward, \n@SpaceX (https://x.com/SpaceX) \n will use the best back end model for any given task, including Claude Opus 5.5, MidJourney, Suno and other leading APIs. \n\nWhatever is most likely to give you the best outcome.\n\nfrom now on, SpaceX routes every task to the best back-end model - and the first name on the list is Claude Opus 5.5. SpaceX kept the harness. The brain is now Anthropic's. \n\nThat combination is the strongest version of the product so far: an agent that owns its own computer and works while you sleep, driven by the model that leads independent benchmarks for multi-step agentic work.\n\nThis is the 10-step tutorial from understanding what changed to running a crew of Opus-powered specialists that hand work to each other - and pull you in only for the calls that need a human.\n\n01. Understand what just changed\n\nIt started with one post. Late on October 6 US time, Musk wrote on X that SpaceX will use the best back-end model for any given task - naming Claude Opus 5.5, Midjourney and Suno. His closing line: \"Whatever is most likely to give you the best outcome.\"\n\nHours later, Lauren (\n@poteto (https://x.com/@poteto) \n) from the Grok Bot team made it concrete: all bots will be powered by Opus 5.5, and they can spawn cloud agents running Cursor's models. 9to5Mac reported it live as of October 7.\n\n (https://x.com/claudeai) \n\nIntroducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.\n\nOn average, it costs around 75% less to run than Claude Haiku 4.5.\n\n0:11\n\nWhy a rival's model? Because on the work an agent actually does, the gap is large. Artificial Analysis measured both labs on the same harness:\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108160821154967552) \n\nOne caveat: that is Grok 4.6, not September's Grok 4.7, and the two were measured a month apart. But Terminal-Bench is the number that predicts whether you can hand a model a job instead of a question - and there the gap is almost 3x.\n\n (https://x.com/zhuokaiz) \n\nAfter we fixed the weak spots exposed by Grok 4.7 (thank you, Grok), we audited every model we have run on the SWE-Together leaderboard for the same behavior, re-ran every trial that got through, and updated the rows. \n\nHere is what changed.\n\nWe scanned the tool calls of all\n\n0:11\n\nQuote\n\n0:09\n\nGrok 4.7 is just okay at coding, but its reward hacking really surprised me.\n\nEvery task in SWE-Together is built from a real open-source repository, and for most tasks the fix already exists upstream. So we built the sandbox with that in mind. Task images strip all git history\n\nX reacted before the press did:\n\nOn October 7, Grok Bot split themk to the best back-end model - and the first name on the list is Claude Opus 5.5. SpaceX kept the harness. The brain is now Anthropic's.\n\nWho\n\nWhat they said\n\nTheo - t3.gg (@theo)\n\n\"Bad news guys: Grok Bot is actually really good\" - 4.4M views, posted hours before the news. Lauren replied the next day that it had just gotten even better.\n\nLauren (@poteto)\n\nQuote-posted Musk to announce that Grok Bot is getting an upgrade.\n\nIorel (@Iorel_X)\n\nFramed it as Grok Bot opening up to outside models instead of staying locked to one.\n\n02. Install it and meet the Chief\n\nGrok Bot is an app, not a browser tab. It runs on Mac, iPhone and iPad. You sign in with your Grok or Cursor account - it is not sold on its own, it comes bundled with most SuperGrok and paid Cursor plans.\n\nYou land in something closer to a messaging client than a chatbot: named bots on the left, a conversation on the right. Each bot gets its own computer in the cloud.\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108166399705198592) \n\nYou do not need to switch anything to get Opus 5.5. According to the Grok Bot team, it is the default for every bot. There is no separate Claude subscription.\n\nStart with one general-purpose bot - call it the Chief. Its job is to be the one you message when you do not yet know which specialist should own a task.\n\nGive it a real errand with a result you can check in thirty seconds. Every step after this is about trusting it with bigger jobs - so start with one you can verify.\n\n03. Write a charter for a stronger brain\n\nA prompt is a request. A bot is a role - it persists, builds memory, and owns a domain. So name it after a job: Inbox Manager, Research Lead, Sales Outbound.\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108166429740560385) \n\nThen brief it like a new hire: what it owns, what good looks like, and where it must stop and ask you.\n\nHere is what changes with Opus 5.5. Charters written for the old default were defensive - short chains, frequent check-ins - because the model stalled a few steps in. With a brain that scores almost 3x higher on multi-step work, you can hand over the whole job, not just the first step.\n\nOpus 5.5 also supports a 1M-token context window and up to 128K output tokens on the API. How much of that Grok Bot exposes is not published - but longer jobs are now the point.\n\npython\n\nThe charter prompt — built for Opus 5.5\nYou are my Research Lead.\n\n// what you own\nGiven a topic, run the whole job end to end: find primary\nsources, open every page you cite, cross-check numbers across\nat least two sources, and draft a 1,500-word brief.\n\n// what good looks like\nEvery number has a link next to it. Conflicting sources are\nflagged, not averaged. Draft lands in my Drive folder, not chat.\n\n// where you stop\nNever publish. Never email anyone. Draft only.\nIf two sources disagree and you can't resolve it, park it and ask.\n\nThe rule: a smarter brain gets more steps, not more authority. The \"where you stop\" block stays exactly as strict as before.\n\n04. Connect tools once - and draw the data line\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108166469368328192) \n\nGrok Bot ships a plugin panel with one-click connections: Notion, Slack, Google Drive, AWS Agents, AWS SageMaker, Browserbase, Composio and Context7, plus custom ones.\n\nConnections are account-level. Connect Gmail once, and every bot you create can use it. Your fifth bot is productive in seconds.\n\nThe new part: your data now has a second destination. When a bot thinks with Opus 5.5, what it reads goes to Anthropic for that step. Tom's opt-out question under Musk's post has no answer yet, and SpaceXAI has not published terms for what is shared.\n\nYou cannot choose where the model runs. You can choose what the bot touches. Add this to every charter:\n\npython\n\n// the data line — add to every charter\nDo not open, read, or summarize:\n  - anything in my /Legal or /Finance Drive folders\n  - emails from my lawyer, accountant, or bank\n  - any message with passwords, seed phrases, or 2FA codes\n\nIf a task needs one of these, stop and ask me first.\nWhen you work with a document, use only what the task needs.\n\nConnect what you actually need, leave the rest alone. During a beta, every connection reaches every bot - and now more than one company.\n\n05. Hand off the login, never the password\n\nMost software inside a real company has no API and no MCP server. This is the mechanic that makes Grok Bot work on it anyway.\n\nThe bot navigates its own cloud browser until it hits a login wall. Then it hands you the screen. You sign in, click done, and the bot picks up on the same browser session where it left off.\n\nThe bot gets a session, not a secret. You never type a credential into chat - and with a third-party model now in the loop, that matters more than ever. A password pasted into a conversation is text the model reads. A login done on the handed-off screen is not.\n\nThe rule to insist on: if any tool ever asks you to paste a password into a message, that is the wrong path.\n\n06. Show it once, then make it a routine\n\nYou can teach a bot a workflow by doing it once while it watches. It saves the steps and runs them on its own next time.\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108166528382148608) \n\nThe best first recording is recurring, multi-tool and stable: something you do weekly, across two or more apps, where the steps rarely change. Tedious to describe, forty seconds to show.\n\nThen give the routine a reason to fire. Two options, both set in plain language - no node canvas, no workflow builder:\n\npython\n\n// schedule — the morning brief\nEvery weekday at 7am, check my calendar, my inbox, and the\n#launches Slack channel. One short brief: what's on today,\nwhat needs a reply, what changed overnight.\n\n// trigger — the inbound catcher\nWhenever an email arrives from a domain not in my contacts and\nit mentions pricing, draft a reply from the template and park it.\n\n// the shortcut that creates most routines\nRun this every week.\n   ^ said right after a task you liked.\n\nWhere Opus 5.5 earns its keep: routines break when a site changes its layout or an input looks slightly different. A model that is stronger at multi-step work is more likely to recover from a changed page instead of silently failing.\n\n07. Hire specialists that spawn Cursor agents\n\nRun several bots in parallel, each owning one domain. Separate bots mean separate memory, separate context and a clean thread to check when something goes wrong. SpaceXAI says its own teams run bots for sales outreach, marketing, office operations and bug fixes.\n\nSplit by domain, not by task size. An Expense Manager that only thinks about receipts gets good at your receipts.\n\nThe new layer is the quieter half of the Grok Bot team's announcement: bots can spawn cloud agents running any of Cursor's models. That fits the ownership map - SpaceX bought Cursor in August in a $60 billion deal.\n\nSo a coding bot becomes a manager. The Opus-powered bot plans the job and holds the context. Cursor agents do the heavy lifting in parallel. The bot reviews what comes back.\n\npython\n\n// the Repo Maintainer — a bot that manages agents\nYou are my Repo Maintainer.\n\nWhen an issue is labeled \"bug\" on GitHub:\n1. Reproduce it on your computer and write a failing test.\n2. Spawn a Cursor cloud agent to fix it on a new branch.\n3. Run the full test suite on the result.\n4. Open a draft PR with the test, the fix, and a 3-line summary.\n\nNever merge. Never push to main.\nIf the fix touches auth, billing, or a migration, park it for me.\n\nUsers on X were already doing a version of this before the announcement - posted in late September about spinning up Cursor cloud agents from Grok Bot\n\n (https://x.com/mikepat711) \n\nOpus 5.5 runs amazingly through Cursor.  Grok Bot voice mode runs amazingly now. Spinning up Cursor cloud agents with Grok Bot works incredibly. Driving your terminal with your Grok Bots to run Grok Build or Claude Code works incredibly. Grok Chat works incredibly.  Imagine works\n\n08. Put them in a group chat\n\nBots can message each other and share context in threads. Put several in one group chat and they coordinate on their own - passing work, assigning ownership, and pulling you in only for judgment calls.\n\nSpaceXAI's own example: an engineering bot reproduces a bug, files a ticket, and hands it to a second bot to debug. One bot deciding another is better suited - and passing ownership - is the thing no single-chat tool does.\n\nSince late September, teams can also publish a shared bot that colleagues use in the app or in Slack.\n\nThe trick is to give the group an objective, not a task list. A task list means you already did the decomposition. An objective lets them split the work - and decomposition is exactly the kind of multi-step reasoning Opus 5.5 is strongest at.\n\npython\n\n// objective, not tasks\nGoal: launch the October newsletter by Friday 5pm.\n\nResearch Lead owns facts and sources.\nInbox Manager owns subscriber replies.\nChief owns the timeline and tells me what's blocked.\n\nSplit the work yourselves. Park anything public for me.\n\n09. Draw the approval line\n\nGrok Bot's premise is that a bot finishes jobs end to end and comes back only when something needs your approval. That puts the burden on you to define \"needs approval\" - because the bot's default may not match yours.\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108166570526621696) \n\nThe line that works is not about task size. It is about reversibility. Anything the bot can undo, it finishes alone. Anything the outside world sees, that moves money, or that cannot be taken back, gets parked for you.\n\nThis matters more now, not less. A stronger brain will push further into a job before it hits your line - so the line has to be explicit.\n\npython\n\n// finish these alone, always\ndraft · file · tag · summarize · research · prepare · reconcile\n   everything reversible. don't ask, just do it and log it.\n\n// park these for me, always\nsend anything to a person outside the company\nspend or move money, or commit to a price\npublish anything public\ndelete anything that isn't obvious junk\naccept any terms or sign up for anything\n\n// when unsure\nIf you can't undo it in under a minute, park it and ask.\n\nThe shape to aim for on every bot: 36 drafts queued, 0 sent. Every reversible step done, a hard stop at the first irreversible one.\n\n10. Watch the cost, review weekly\n\nOpus 5.5 is not a cheap brain. On the API it is priced well above Grok:\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108162964184276992) \n\nOn a small job - 30K tokens in, 8K out - that is roughly 28 cents against 11. On very long context the order flips, because Grok's rates double above 200K tokens and Opus stays flat.\n\nYou do not pay per token in Grok Bot - it is bundled in your plan. The open question, the one Adam Hincu asked on X, is whether Opus-powered jobs burn through plan limits faster. SpaceXAI has not said. So watch usage for the first week before you add routines.\n\n (https://x.com/0xMorlex/article/2108171726412464173/media/2108166604739452928) \n\nAnd not everything announced is live. Midjourney and Suno have no date, and at least one user's bot said Suno was not available on day one. Build on Opus 5.5 - it is confirmed. Wait on the rest.\n\nThen put fifteen minutes a week on the calendar and let the bots report on themselves:\n\npython\n\nList every routine you ran this week. For each one:\n\n  - how many times it fired\n  - what it produced\n  - anything it skipped, failed, or had to guess at\n  - anything you parked for me that I never answered\n\nThen tell me which one is least useful, and why.\nIf you can't tell which model handled a step, say so.\n\nSpot-check one output per routine by hand. A bot grading its own work has the same blind spot you do.\n\nConclusion: the harness is the product\n\nFor three years the question was which model is best. This week the most aggressive model-builder in the market answered a different one: which harness is best - and then put a rival's brain inside it.\n\nThat is the shift. The harness owns the computer, the logins, the memory and the routines. The brain is swappable underneath, and right now the best one for agent work is Opus 5.5.\n\nYour job does not change. You decide what to delegate, where the bot's authority ends, and what data it may touch. Write all three into the charter - and let the strongest brain on the market do the clicking.",
+      "author": {
+        "handle": "@0xMorlex",
+        "name": "0xMorlex"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e3016887b8d92c828361e4ce42c4e0b462ec1561adf37d55b2371c89480196fd.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f4773e4e3eda57e611df64ba8e63e85a2b98184c1c849735b862e79b478ea87d.jpg",
+          "alt": ""
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-cd435af477005fa0a4011dc2a789ca7d9977e32bffd314b980ea42340a661cef.jpg",
+          "alt": ""
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-3f6d2a1fd7a4e3b5ea50f057341c125aa3e54d2457e76611b2d0b0c1694c7f02.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/0xMorlex/status/2108171726412464173"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ac7967f732e76543605c7f2ed326dfe9ce22ec5864862f5a64ed4ee979ccdbb2.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ba27eee3aaf9709c5216b21a728bab75a97b57b3d55ad479a91a0629708e3a07.jpg",
+          "alt": ""
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ae4285a9c0dc2617ab4e45c1b7379976fd5402206b1ebf53a48ef274638bb8ba.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/0xMorlex/status/2108171726412464173"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4655c9ec950a9270e0379ca2863c9091e3cb2f45776a4097642a26c5e4a0caca.jpg",
+          "alt": ""
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-fecdd7bddb0aa0e23bfa07367a5183b256d531c586c86c0703dfbfe515ff54b6.jpg",
+          "alt": "Embedded video"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-3de04336d6c488f213c93f3c3e0017394804d3d25d4ceaa7349a251f410d46a4.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4363ef9642ee144eef5dd969f9bfbc8369888e8f940a5c68f7ba4ede20d0c52c.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-57bd8348c5993302a063868c101a310efe2979454a77d28d4688b01535ee8048.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0ef76a6d846202c0916b20151964e49782be61d34e37edbdda07f255433a3094.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-61ea19ae533fca3a01b0a82c1899d9527dd41d2cea93b49896240bfa4e20a9da.jpg",
+          "alt": ""
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-3d4fd971bb6e96bd7edd9c437d37df56e99cc1d647f3392f9435e99e1f9fad86.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-9927a28dde96e34f04ac1df5061a91879efa3a3addad6e6babf6dd3e9277f045.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-6f5722bcbb677de6a4ea0122dcd9643e904537cd700db406209f4c25c4a3bcbb.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/elonmusk",
+          "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/bot",
+          "text": "@Bot",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/SpaceX",
+          "text": "@SpaceX",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/@poteto",
+          "text": "@poteto",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/claudeai",
+          "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/status/2108171726412464173",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/status/2108171726412464173",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108160821154967552",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/zhuokaiz",
+          "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/status/2108171726412464173",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/status/2108171726412464173",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108166399705198592",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108166429740560385",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108166469368328192",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108166528382148608",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/mikepat711",
+          "text": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108166570526621696",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108162964184276992",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/article/2108171726412464173/media/2108166604739452928",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/0xMorlex/status/2108171726412464173",
+        "observed_main_url": "https://x.com/0xMorlex/status/2108171726412464173",
+        "author_handle": "0xMorlex",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2120417138985017529",
+      "sourceUrl": "https://x.com/damipov/status/2120417138985017529",
+      "capturedAt": "2026-11-27T01:10:59.223998+00:00",
+      "createdAt": "2026-11-11T07:23:36.000Z",
+      "fullText": "고점 경고는 거래량이 먼저 보냈다: 거래량 신호 읽는 법\n\n안녕하세요 김대미입니다. 큰 거래량이 붙은 반등을 보면 안심하기 쉽습니다. 11월 5일 급락 뒤 11월 9일 \n$QQQ (https://x.com/search?q=%24QQQ&src=cashtag_click) \n가 3.54% 오른 날도 그랬습니다. 저는 이런 날 거래량과 종가를 함께 읽습니다. 거래량은 이 움직임이 진짜인지를 말해 주고, 종가가 어디에 남았는지는 그날 사는 쪽과 파는 쪽 중 누가 이겼는지를 말해 줍니다.\n\n같은 큰 거래량도 어디서 나왔느냐에 따라 뜻이 달라집니다. 베이스 안에서 거래량이 마르면 준비이고, 거래량이 실리며 기준선을 넘으면 돌파이고, 이미 많이 오른 자리에서 터지면 고점 경고일 수 있습니다. \n\n1. 거래량을 읽기 전에 비교 대상을 정합니다\n\n거래량은 일정 시간 동안 체결된 주식 수입니다. 한 거래에는 사는 쪽과 파는 쪽이 함께 있습니다. 거래량이 늘었다고 해서 순유입 금액을 계산하거나, 기관이 얼마나 샀는지를 확정할 수는 없습니다.\n\n제가 확인하려는 것은 거래가 활발했던 자리에서 가격이 앞으로 나갔는지입니다. 매물이 나오는데도 종가가 높은 곳에 남으면 그 매물을 받아낸 흔적으로 읽습니다. 거래가 늘었는데 종가가 밀리면 위에서 나온 물량을 가격이 소화하지 못한 것으로 봅니다.\n\n이 글의 중심 숫자는 상대거래량, RVOL(Relative Volume)입니다. 당일 거래량을 직전 50거래일 평균으로 나눈 값입니다. 1배는 평소 수준이고, 2배는 그 평균의 두 배입니다. 종목마다 평소 거래량이 다르므로 같은 종목의 평소와 비교합니다.\n\n모든 질문에 50일 평균을 쓰지는 않습니다. 분산일은 전일 거래량과 비교하고, 포켓 피벗은 직전 10거래일 중 하락일의 최대 거래량과 비교합니다. 같은 거래량이라도 무엇과 비교하느냐에 따라 답하는 질문이 달라집니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120370567413207040) \n\n2. 매집과 분산은 하루보다 여러 날의 리듬으로 봅니다\n\n매집과 분산도 거래량 하면 많이 나오는 단어들입니다. 매집(accumulation)은 주식을 모으는 과정이고, 분산(distribution)은 보유 물량을 시장에 넘기는 과정입니다. 저는 하루가 아니라 여러 날을 묶어서 두 가지를 봅니다. 거래량이 상승일에 몰리는지 하락일에 몰리는지, 그리고 내린 날에도 종가가 위쪽을 지키는지입니다. 아래 그림에서 두 경우를 나란히 보시죠.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120370626594758656) \n\n상승일 쪽으로 기울고 하락일 종가가 위를 지키면 매집 흔적, 그 반대면 분산 흔적으로 읽습니다.\n\n애플(\n$AAPL (https://x.com/search?q=%24AAPL&src=cashtag_click) \n)은 2023년 1월 6일부터 1월 20일까지 상승일 8일과 하락일 2일이 나왔습니다. 상승일 거래량 합계는 하락일 합계의 3.91배였습니다.\n\n지지 거래량은 가격이 장중에 밀렸다가 다시 위에서 마감하는 날 나옵니다. 파는 물량이 나왔는데 누군가 그걸 다 받아냈다는 뜻입니다. 2023년 1월 6일 애플이 그랬습니다. 장중에 124.89달러까지 밀렸지만 사흘 전 저점 124.17달러는 깨지 않았고, 종가는 그날 범위의 거의 꼭대기에서 끝났습니다. 거래량은 평균의 1.04배로 평소 수준이었습니다. 저점을 지킨 1월 6일 뒤로 상승일 거래량이 우세해졌습니다. \n\n (https://x.com/damipov/article/2120417138985017529/media/2120370717858693121) \n\n반대 장면은 알파벳(\n$GOOGL (https://x.com/search?q=%24GOOGL&src=cashtag_click) \n)에서 보입니다. 2023년 2월 8일 거래량은 평균의 2.91배였고, 종가는 7.68% 하락했습니다. 1월 30일부터 2월 10일까지 상승일 거래량 합계는 하락일의 0.47배였습니다. 애플과 반대로, 큰 거래량이 저점을 받친 게 아니라 가격을 아래로 밀었습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371049938427904) \n\n애플은 하락을 받아낸 뒤 상승일 쪽으로, 알파벳은 하락일 쪽으로 거래가 기울었습니다. 알파벳이 2월 8일 고가 103.14달러를 종가로 되찾는다면 그날 판단을 다시 보겠습니다.\n\n3. AMD 한 종목에서 나온 세 장면\n\n이제 AMD의 같은 흐름을 길게 보겠습니다. 2023년 11월 말에는 베이스가 형성 중이었습니다. 12월에는 위쪽 기준선을 통과했습니다. 2024년 3월에는 이미 가격이 올라온 자리에서 큰 거래량이 나왔습니다. 먼저 세 장면이 전체 흐름의 어디에 있었는지 보겠습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371074353561601) \n\n세 장면을 순서대로 보겠습니다. \n\n3-1 첫 번째 장면: 거래량이 마른 준비\n\n베이스 안에서 거래량이 평소보다 말라붙는 날이 나오는데, 이걸 VDU(Volume Dry-Up)라고 부릅니다. 파는 사람이 거의 남지 않았다는 신호입니다. 2023년 11월 28일 AMD 거래량은 50일 평균의 0.60배까지 줄었고, 하루 가격폭도 좁았습니다.\n\n이때 지킬 선은 그날 저가 120.79달러입니다. 12월 4일 종가가 118.57달러로 이 선 아래에서 끝나면서 준비는 한 번 깨졌습니다. 다음으로 볼 선은 11월 29일 고가 125.73달러입니다. 그 위에서 종가가 나와야 두 번째 장면인 돌파로 넘어갑니다.\n\n3-2 두 번째 장면: 거래량이 실린 돌파\n\n12월 7일 AMD 종가는 128.37달러로 125.73달러 위에서 끝났고, 거래량은 평균의 2.25배였습니다. 거래량이 돌파에 힘을 실었고, 이후 20거래일 동안 종가가 한 번도 125.73달러 아래로 내려가지 않으면서 진짜 돌파였다는 게 확인됐습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371134239748096) \n\n3-3 세 번째 장면: 꼭대기에서 나온 큰 거래량\n\n12월 AMD의 큰 거래량은 바닥 근처에서 돌파를 만들었습니다. 석 달 뒤 큰 거래량이 다시 나왔는데, 이번에는 한 달 새 +23.66% 오른 꼭대기였습니다. 2024년 3월 8일 거래량은 평균의 1.57배였고, 장중 고가 227.30달러까지 올랐다가 종가는 207.39달러로 밀려 끝났습니다. 거래량이 많았던 만큼 위에서 판 물량도 많았고, 종가는 파는 쪽이 이겼다고 말해 줬습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120372010962620417) \n\n종가는 그날 범위의 아래쪽 8.25% 지점, 사실상 바닥에서 끝났습니다. 저는 이 날을 긴 윗꼬리단 캔들에 거래량까지 붙어 고점 경고로 봤습니다. 결과는 20거래일 뒤인 4월 8일 종가 169.90달러, -18.08%였습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371449789927424) \n\n4. 돌파 전에 먼저 들어가는 자리: 포켓 피벗\n\n돌파 전에도 거래량으로 먼저 들어갈 자리를 찾을 수 있습니다. 포켓 피벗(Pocket Pivot)입니다. 상승일 거래량이 직전 10거래일 중 가장 컸던 하락일 거래량보다 크고, 가격이 주요 이동평균 위로 올라서는 날입니다.\n\n애플의 2023년 2월 1일 거래량은 직전 10거래일 하락일 최대치인 1월 18일 거래량을 넘었습니다. 50일 평균 대비로는 1.04배로 평소 수준이었지만, 종가 145.43달러는 10일선과 50일선 위에서 끝났습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371180066762753) \n\n평균 수준의 거래량도 최근 하락일 최대치를 넘어설 수 있습니다. 가격에서는 종가가 10일선과 50일선 위로 돌아왔는지를 함께 확인합니다.\n\n5. 큰 거래량이 실려도 돌파는 실패할 수 있습니다\n\n거래량이 큰 돌파도 실패할 수 있습니다. 마이크로소프트(\n$MSFT (https://x.com/search?q=%24MSFT&src=cashtag_click) \n)는 2023년 7월 18일 평균의 2.46배 거래량으로 움직였습니다. 종가 359.49달러는 6월 16일 고가 351.47달러 위였습니다. 제가 먼저 표시하는 피벗선은 351.47달러입니다. 7월 20일 종가는 346.87달러로 그 아래로 돌아왔습니다. 돌파 뒤 두 번째 거래일에 꺾어 내려오면 돌파 유지 판단을 취소할 수 있습니다. \n\n (https://x.com/damipov/article/2120417138985017529/media/2120371247867633664) \n\n큰 거래량은 진짜 돌파일 수 있다는 신호를 줬고, 이틀 뒤 선 아래 종가는 그 돌파가 실패했다는 걸 확인해 줬습니다. 가격의 움직임이 돌파신호도 무마시킬 수 있습니다. 이런게 Failed Breakout 즉, 실패한 돌파입니다. \n\n또 다른 케이스 입니다. \n\n코스트코(\n$COST (https://x.com/search?q=%24COST&src=cashtag_click) \n)는 2024년 5월 10일 종가 787.19달러로 3월 7일 고가 787.08달러를 넘었습니다. 거래량은 평균의 0.79배였습니다. \n\n5월 13일 종가는 775.15달러로 선 아래로 돌아왔습니다. 이때 돌파 유지 판단을 접습니다. 5월 15일에도 종가는 787.04달러로 선 아래였습니다. 5월 16일에는 793.07달러로 다시 위에서 끝났습니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120407290809602048) \n\n가격이 통과했지만 거래량이 못따라 왔을때는 이런 식으로 다시 풀백이 있다가 재 회복 하며 돌파하는 경우도 생깁니다. \n\n (https://x.com/damipov/article/2120417138985017529/media/2120371350774968320) \n\n그러면 돌파시의 거래량과 함께 진짜인지 아닌지 가격의 움직임까지 진짜인지 아닌지는 아래 처럼 판단할 수 있습니다. 꼭 그런건 아니지만 종가의 중요성이 여기에 나타납니다. 돌파는 항상 장중 고가가 아니라 종가로 판단합니다. 고가만 선을 스치고 종가가 아래에서 끝난 날은 돌파가 아닙니다. 갭으로 넘은 날은 그날 저가를 지키는지가 기준입니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371366721671168) \n\n거래량은 돌파에 힘이 실렸는지를 알려 주고, 종가는 그 돌파가 기준선 위에서 확정됐는지를 알려 줍니다.\n\n6. 차트에서는 이 순서로 확인하려고 합니다\n\n가격의 위치, 거래량 분모, 종가가 남긴 자리, 피벗선과 판단을 바꿀 취소선을 순서대로 확인합니다. 아래 체크리스트가 순서입니다.\n\n (https://x.com/damipov/article/2120417138985017529/media/2120371589862830080) \n\n체크하다가 모르겠다면 그 종목은 보류입니다. \n\n마치며\n\n거래량은 이 움직임이 진짜인지를 알려 주고, 종가는 그날 누가 이겼는지를 알려 줍니다. 그래서 큰 거래량 막대를 보면 먼저 무엇과 비교한 숫자인지를 정합니다. \n\n그다음 여러 날의 거래가 상승일과 하락일 중 어느 쪽으로 기우는지를 보고 매집인지 분산인지를 가릅니다. 베이스 안에서 거래량이 마르면 준비이고, 거래량이 실리면서 종가가 기준선 위에서 끝나면 돌파입니다. 큰 거래량이 나왔더라도 종가가 기준선 아래로 돌아오면 그 돌파는 실패입니다. 이미 많이 오른 자리에서 큰 거래량과 함께 종가가 하루 범위의 바닥에 붙으면 고점 경고입니다.\n\n다음에 큰 거래량 막대를 보시면 두 가지만 확인하세요. 그 거래량이 어디서 나왔는지, 그리고 종가가 그날 범위의 어디에서 끝났는지입니다.\n\n정보 제공용, 투자 권유 아님",
+      "author": {
+        "handle": "@damipov",
+        "name": "damipov"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-40fb9012245f50e2e710607c41859be8144cb5cf3572077faa51e214ba6be542.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-816b36985085a52aa719d18409e2d8f185a299616926e86fa6b8407aacb571f1.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-57f3fad045eceacaff02613ba12f619ec28f192694798d2c5a639cb30a6f280c.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f6bdf3e0102479975588e06edf180adc8f9dd759a62aa5e262a1f6b652fc8de1.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c897d22ba75de3b330c8f3d165758a936746dc2d9a2ff5bb1f833f55fbc8f511.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c508ed3a0c70f531f5dfd9cff9038041d8572e01bc2ba5a74c0d1f74a159dcc6.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a6e6be4d6d40f2805658f41fd579d216ddb425bcdbe0eefcfff90650a0bd5361.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b6d7f86e4c0f6584ae254be9f98c5838223193c9c01a6552d56af53c05f78126.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-640ad378e364c0f3d1c2c3a87fe4bef7e504b11d519fb15b53e9a1a8b1343be8.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1870d915d7213cb0fa44c69caff587c6be7f6a5aea64da84264f058668dc2f67.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7651dd3dcefe97cbdf72c0a5079128bbbdeb75b6e36c9780691c3776662ad53a.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-085ca50f3d8286fd66760ce831d88502bce5d4b3a9a45627dd90af72c7d599af.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f1dc32a581b30d5b1aeac4a0d527dd32ee531f9b3c626e50efa7221753d46102.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-b91b003286d077fd7af7cea169bb0944e3c949e8eb0701b74c8217f4aa3dc50e.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e41ef7417d758a630b2ab4dadac31c3dbeaa5ff7d698c7d59294e62ac880244f.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/search?q=%24QQQ&src=cashtag_click",
+          "text": "$QQQ",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120370567413207040",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120370626594758656",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/search?q=%24AAPL&src=cashtag_click",
+          "text": "$AAPL",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120370717858693121",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/search?q=%24GOOGL&src=cashtag_click",
+          "text": "$GOOGL",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371049938427904",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371074353561601",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371134239748096",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120372010962620417",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371449789927424",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371180066762753",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/search?q=%24MSFT&src=cashtag_click",
+          "text": "$MSFT",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371247867633664",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/search?q=%24COST&src=cashtag_click",
+          "text": "$COST",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120407290809602048",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371350774968320",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371366721671168",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/damipov/article/2120417138985017529/media/2120371589862830080",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/damipov/status/2120417138985017529",
+        "observed_main_url": "https://x.com/damipov/status/2120417138985017529",
+        "author_handle": "damipov",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2122852360586453119",
+      "sourceUrl": "https://x.com/KeppyKapital/status/2122852360586453119",
+      "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+      "createdAt": "2026-11-18T00:40:18.000Z",
+      "fullText": "미국 저점을 맞춘 래리윌리엄스의 한국주식시장 예측\n\n저 이분 말 믿고 진짜 11, 12월 풀매수 갑니다.\n인증도 해드릴게요 ㅋㅋ",
+      "author": {
+        "handle": "@KeppyKapital",
+        "name": "KeppyKapital"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0fdfadc38e8a87ca6c96c1bf0f023f06828d848cfba1adfeaf3639babc11e662.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4a2d7d2ee9ff70bbcb02ff58418f807deb65dd9c2cc891a7e2283d10b3723eda.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e7c9ff2cc10c9cc257e0f69b14deabc1a3322f6f33ac21d4d05523104a1cd889.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-66206b327238f46862d2888658297c0a230cccf6c19416d840f84d68cdee9460.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e45c9732ad447f7c8a7db653e74c19a51aed85d56d01b1736bbff6682455ead0.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-294f807305d744e8b44bfa9937f8f4854bac7a0103e2f8b0f9427bb89a20d568.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7d9915409e9b23c8b6721a423683a671e357dd87b2bf27280be199b9340770ef.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2122883173063573609",
+          "sourceUrl": "https://x.com/Solos_labs/status/2122883173063573609",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-18T02:42:44.000Z",
+          "fullText": "와...오늘이 저점이라는 소리?",
+          "author": {
+            "handle": "@Solos_labs",
+            "name": "Solos_labs"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2122908227713241456",
+          "sourceUrl": "https://x.com/KeppyKapital/status/2122908227713241456",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-18T04:22:17.000Z",
+          "fullText": "네 그렇습니다. ㅋㅋㅋ",
+          "author": {
+            "handle": "@KeppyKapital",
+            "name": "KeppyKapital"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2123361294313275465",
+          "sourceUrl": "https://x.com/Myhobby_YT/status/2123361294313275465",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-19T10:22:37.000Z",
+          "fullText": "풀매수 대박여",
+          "author": {
+            "handle": "@Myhobby_YT",
+            "name": "Myhobby_YT"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2123408435949838608",
+          "sourceUrl": "https://x.com/KeppyKapital/status/2123408435949838608",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-19T13:29:56.000Z",
+          "fullText": "풀매수라 해봤자 얼마 없습니다 ㅋㅋ",
+          "author": {
+            "handle": "@KeppyKapital",
+            "name": "KeppyKapital"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2122920946902413412",
+          "sourceUrl": "https://x.com/baeruru01/status/2122920946902413412",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-18T05:12:50.000Z",
+          "fullText": "아직 현금이 남아있나요?\n전 이미 현금 다써서 존버말곤 할게 없네요 ㅎ",
+          "author": {
+            "handle": "@baeruru01",
+            "name": "baeruru01"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2122935232647065698",
+          "sourceUrl": "https://x.com/KeppyKapital/status/2122935232647065698",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-18T06:09:36.000Z",
+          "fullText": "연말 성과금 나오면 바로 꽂을려구요 ㅋㅋㅋㅋ",
+          "author": {
+            "handle": "@KeppyKapital",
+            "name": "KeppyKapital"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2125749328488591416",
+          "sourceUrl": "https://x.com/HorizonxSo/status/2125749328488591416",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "",
+          "fullText": "Still on the fence? Pro yearly is $119.95 instead of $239.90 for your first year.\n\n3,000+ templates, UI kits, components and 3D assets. The Black Friday price ends Monday.\n\n50% off yearly, ends Monday (https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg)  https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg",
+          "author": {
+            "handle": "@HorizonxSo",
+            "name": "HorizonxSo"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f9b1b9258a773dfd0a4241e127ebffcc565d9db7cdd1ad20de0b61765dfc1988.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg",
+              "text": "50% off yearly, ends Monday",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2122972570135978251",
+          "sourceUrl": "https://x.com/treerabbit5759/status/2122972570135978251",
+          "capturedAt": "2026-11-27T01:11:22.600998+00:00",
+          "createdAt": "2026-11-18T08:37:58.000Z",
+          "fullText": "내년부터 금리 인하 흐름으로 갈거긴합니다만, 당장 12월FOMC 금리 인상 자체를 일종의 불확실성 해소로 보는건지 12월을 저점 근거로 삼는 이유가 뭔지 궁금하네요.",
+          "author": {
+            "handle": "@treerabbit5759",
+            "name": "treerabbit5759"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/KeppyKapital/status/2122852360586453119",
+        "observed_main_url": "https://x.com/KeppyKapital/status/2122852360586453119",
+        "author_handle": "KeppyKapital",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 8,
+          "max": 9
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2123566997849972930",
+      "sourceUrl": "https://x.com/BBBang9900/status/2123566997849972930",
+      "capturedAt": "2026-11-27T01:12:00.380997+00:00",
+      "createdAt": "2026-11-20T00:00:00.000Z",
+      "fullText": "계약서 검토랑 법률 관련 AI 에이전트\n하나 만들어 두면 든든하긴 함\n\n1. Legal Skills Open (법률 스킬 모음)\n계약서 분석·GDPR 검토·소송비용 계산 같은 법률 스킬 18000개 모음이라 나라·분야별로 골라 쓸 수 있음\n🔗 https://t.co/T348Zhp12j \n\n2. Contract Review (계약서 검토)\n계약서 읽고 위험 조항 찾고 핵심 조건 뽑아내고 \n수정안까지 제안해줌\n🔗 https://t.co/dPoN4hNAp1 \n\n3. Claude Legal Skill (계약서 검토)\n계약서 검토해서 위험도 매기고 핵심 요약해주고 변호사 검토용 초안까지 만들어줌 Claude·Codex·Cursor·Gemini 등 26개 이상 도구에서 됨\n🔗 https://t.co/ZacvTvbyk2 \n\n4. Agent Master Skills (법률 모음)\n법률 스킬 모음이라 계약·규제 같은 법률 스킬을 한 번에 골라 쓸 수 있음\n🔗 https://t.co/hvpvtDRAzC \n\n계약서 도장 찍기 전에 위험한 조항부터 한 번 걸러내셈\n\n링크 다 남겨뒀으니 저장해두고 써먹으셈",
+      "author": {
+        "handle": "@BBBang9900",
+        "name": "BBBang9900"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-878d07ebd32658d1ac5cb2a875e807aef1c08f81e51ae30b0fcd5ece69d15f75.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/T348Zhp12j",
+          "text": "https://github.com/ThomasMoreAI/legal-skills-open…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/dPoN4hNAp1",
+          "text": "https://github.com/lawve-ai/awesome-legal-skills/tree/main/skills/contract-review-kevin-lordy…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/ZacvTvbyk2",
+          "text": "https://github.com/evolsb/claude-legal-skill…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/hvpvtDRAzC",
+          "text": "https://github.com/LeoYeAI/agent-master-skills…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2123759688995242167",
+          "sourceUrl": "https://x.com/zzil77/status/2123759688995242167",
+          "capturedAt": "2026-11-27T01:12:00.380997+00:00",
+          "createdAt": "2026-11-20T12:45:42.000Z",
+          "fullText": "계약금액보다 위험 조항이 더 무서운 경우가 많아서 이건 한 번 세팅해두면 진짜 든든하져. 저는 조항마다 위험도 매기게 시키고 최종 확인은 사람이 하는 식으로 쓰고 있슴다",
+          "author": {
+            "handle": "@zzil77",
+            "name": "zzil77"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2123765582315319553",
+          "sourceUrl": "https://x.com/BBBang9900/status/2123765582315319553",
+          "capturedAt": "2026-11-27T01:12:00.380997+00:00",
+          "createdAt": "2026-11-20T13:09:07.000Z",
+          "fullText": "맞슴다 맞슨다",
+          "author": {
+            "handle": "@BBBang9900",
+            "name": "BBBang9900"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2062620994221854903",
+          "sourceUrl": "https://x.com/coderabbitai/status/2062620994221854903",
+          "capturedAt": "2026-11-27T01:12:00.380997+00:00",
+          "createdAt": "",
+          "fullText": "Cut code review time & bugs in half. Instantly. Reviews for AI-powered teams who move fast (but don’t break things) - Try it for free!",
+          "author": {
+            "handle": "@coderabbitai",
+            "name": "coderabbitai"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-1e069d2c458f580792304aa21fce44c7fee33d26ddd77a682241728b49260557.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/coderabbitai/status/2062620994221854903"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://x.com/coderabbitai/status/2062620994221854903",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/coderabbitai/status/2062620994221854903",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/BBBang9900/status/2123566997849972930",
+        "observed_main_url": "https://x.com/BBBang9900/status/2123566997849972930",
+        "author_handle": "BBBang9900",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 3,
+          "max": 4
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2125369349389328834",
+      "sourceUrl": "https://x.com/tristanyb22/status/2125369349389328834",
+      "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+      "createdAt": "2026-11-24T23:21:55.000Z",
+      "fullText": "미국 주식시장 저점을 정확히 예측한 래리 \n윌리엄스의 한국주식전망😎👀💵\n\n래리 윌리엄스 전망 요약\n바닥 시점: 12월 첫째 주 전후 저점 예상 \n\n이후 흐름: 2월 중순까지 상승 흐름, 3월 중순 재차 매수 기회, 8월경 고점 제시 \n\n시장 관점: 극단적 공포 구간과 유가 선행성 등을 근거로 제시하며, 반도체 대형주 큰 흐름은 긍정적으로 평가",
+      "author": {
+        "handle": "@tristanyb22",
+        "name": "tristanyb22"
+      },
+      "media": [],
+      "links": [],
+      "stats": {},
+      "quoted": {
+        "tweetId": "2122852360586453119",
+        "sourceUrl": "https://x.com/KeppyKapital/status/2122852360586453119",
+        "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+        "createdAt": "",
+        "fullText": "미국 저점을 맞춘 래리윌리엄스의 한국주식시장 예측\n\n저 이분 말 믿고 진짜 11, 12월 풀매수 갑니다.\n인증도 해드릴게요 ㅋㅋ",
+        "author": {
+          "handle": "@KeppyKapital",
+          "name": "KeppyKapital"
+        },
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-0fdfadc38e8a87ca6c96c1bf0f023f06828d848cfba1adfeaf3639babc11e662.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-4a2d7d2ee9ff70bbcb02ff58418f807deb65dd9c2cc891a7e2283d10b3723eda.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e7c9ff2cc10c9cc257e0f69b14deabc1a3322f6f33ac21d4d05523104a1cd889.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-66206b327238f46862d2888658297c0a230cccf6c19416d840f84d68cdee9460.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e45c9732ad447f7c8a7db653e74c19a51aed85d56d01b1736bbff6682455ead0.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-294f807305d744e8b44bfa9937f8f4854bac7a0103e2f8b0f9427bb89a20d568.jpg",
+            "alt": "Image"
+          },
+          {
+            "type": "photo",
+            "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-7d9915409e9b23c8b6721a423683a671e357dd87b2bf27280be199b9340770ef.jpg",
+            "alt": "Image"
+          }
+        ],
+        "links": [],
+        "stats": {}
+      },
+      "replies": [
+        {
+          "tweetId": "2125371252005359933",
+          "sourceUrl": "https://x.com/tristanyb22/status/2125371252005359933",
+          "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+          "createdAt": "2026-11-24T23:29:28.000Z",
+          "fullText": "브레이브님 GM!! ㅎㅎ 힘내세요 화이팅요",
+          "author": {
+            "handle": "@tristanyb22",
+            "name": "tristanyb22"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2125538899820945726",
+          "sourceUrl": "https://x.com/formanystories_/status/2125538899820945726",
+          "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+          "createdAt": "2026-11-25T10:35:38.000Z",
+          "fullText": "내년 8월 고점!",
+          "author": {
+            "handle": "@formanystories_",
+            "name": "formanystories_"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125540130622771569",
+          "sourceUrl": "https://x.com/tristanyb22/status/2125540130622771569",
+          "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+          "createdAt": "2026-11-25T10:40:32.000Z",
+          "fullText": "지켜 봐야 겠습니다 11월 말에 맞는지",
+          "author": {
+            "handle": "@tristanyb22",
+            "name": "tristanyb22"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2120716585333915867",
+          "sourceUrl": "https://x.com/ALCON_VC/status/2120716585333915867",
+          "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+          "createdAt": "",
+          "fullText": "알콘 워터클럽 가입 혜택!\n혜택이 와르르💝\n\n🎁누구에게나 드리는 가입혜택!\n\n1) 가입즉시 웰컴쿠폰 제공\n2) 워터스탬프 적립 시 추가 본팩 증정\n3) 오직 워터클럽에서만 진행하는 특별 이벤트까지!\n\nLearn more (https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88)  https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88",
+          "author": {
+            "handle": "@ALCON_VC",
+            "name": "ALCON_VC"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f580c60057acd4373ee423b7de2d2c9f0031a7ac086516be6a9cd94802b713a2.jpg",
+              "alt": "동영상 썸네일",
+              "kind": "video_thumbnail",
+              "sourceUrl": "https://x.com/ALCON_VC/status/2120716585333915867"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88",
+              "text": "Learn more",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/ALCON_VC/status/2120716585333915867",
+              "text": "",
+              "kind": "body"
+            },
+            {
+              "url": "https://x.com/ALCON_VC/status/2120716585333915867",
+              "text": "동영상 원문 보기",
+              "kind": "media_source"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125456369021325596",
+          "sourceUrl": "https://x.com/satosi5379/status/2125456369021325596",
+          "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+          "createdAt": "2026-11-25T05:07:42.000Z",
+          "fullText": "코스피 예측은 그 누구보다 힘든데 특히 저점.. ㅋㅋ",
+          "author": {
+            "handle": "@satosi5379",
+            "name": "satosi5379"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125462228812124537",
+          "sourceUrl": "https://x.com/tristanyb22/status/2125462228812124537",
+          "capturedAt": "2026-11-27T01:12:58.439997+00:00",
+          "createdAt": "2026-11-25T05:30:59.000Z",
+          "fullText": "지켜 봐야죠 ㅎㅎ",
+          "author": {
+            "handle": "@tristanyb22",
+            "name": "tristanyb22"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "extracted",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/tristanyb22/status/2125369349389328834",
+        "observed_main_url": "https://x.com/tristanyb22/status/2125369349389328834",
+        "author_handle": "tristanyb22",
+        "body_status": "text",
+        "quote_status": "extracted",
+        "replies_scope": {
+          "collected": 6,
+          "max": 7
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2122887535710155061",
+      "sourceUrl": "https://x.com/BBBang9900/status/2122887535710155061",
+      "capturedAt": "2026-11-27T01:13:17.889997+00:00",
+      "createdAt": "2026-11-18T03:00:04.000Z",
+      "fullText": "크롬 확장 프로그램, 남들 좋다는 거 \n무작정 깔다 보면 브라우저만 무거워집니다\n\n제가 직접 써보고 계속 남겨둔 것들만 추려봤슴다\n전부 핵심 기능은 무료로 쓸 수 있는 것들입니다\n\n1. LanguageTool (문법 검사)\n영어 이메일이나 글 쓸 때 문법이랑 맞춤법을 바로잡아줍니다\n기본 검사는 무료인데도 웬만한 실수는 다 잡아줘서 저는 이걸로 충분했슴다\n🔗 https://t.co/LnXoBzffFB \n\n2. GoFullPage (페이지 전체 캡처)\n스크롤해야 보이는 긴 페이지도 클릭 한 번에 이미지 하나로 캡처해줍니다\n일부만 잘라 붙이는 수고가 사라지니까 자료 저장할 때 진짜 편해짐다\n🔗 https://t.co/pLXcjtlGts \n\n3. ColorZilla (색상 추출)\n웹페이지에서 마음에 드는 색을 클릭 한 번으로 뽑아내는 도구입니다\n디자인 작업할 때 색상 코드 찾느라 헤맬 일이 없어졌슴다\n🔗 https://t.co/L8aLYSdizr \n\n4. Toby (탭·세션 정리)\n열어둔 탭 묶음을 통째로 저장해뒀다가 나중에 그대로 다시 열 수 있습니다\n작업별로 탭을 나눠두면 컴퓨터 껐다 켜도 흐름이 안 끊김다\n🔗 https://t.co/SH9xrSf16b \n\n공식 사이트 링크 같이 남겨둘게요, 하나씩 써보고 맞는 것만 남기면 됩니다",
+      "author": {
+        "handle": "@BBBang9900",
+        "name": "BBBang9900"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-60df82ed54b24c8184614f4d1e4dda6c7a0928308db26c621119203024e246b0.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/LnXoBzffFB",
+          "text": "https://languagetool.org",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/pLXcjtlGts",
+          "text": "https://gofullpage.com",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/L8aLYSdizr",
+          "text": "https://colorzilla.com",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/SH9xrSf16b",
+          "text": "https://gettoby.com",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/BBBang9900/status/2122887535710155061",
+        "observed_main_url": "https://x.com/BBBang9900/status/2122887535710155061",
+        "author_handle": "BBBang9900",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2121509506211524685",
+      "sourceUrl": "https://x.com/wyckoffske/status/2121509506211524685",
+      "capturedAt": "2026-11-27T01:14:48.830996+00:00",
+      "createdAt": "2026-11-14T07:44:16.000Z",
+      "fullText": "'진짜' 와이코프의 첫 걸음 입니다.\n\n와이코프 기초 1화 입니다.\n\n와이코프 이론에 대해 널리 퍼져 있는 오해와 잘못된 해석을 하나씩 바로잡아 나가겠습니다.\n\nhttps://t.co/JwjouVVcFH \n\n와이코프 커뮤니티는 매우 폐쇄적입니다.\n\n잘못된 정보가 너무 많습니다.\n'진짜' 와이코프를 보여드리는게 저의 역할입니다. x.com/wyckoffske/sta…",
+      "author": {
+        "handle": "@wyckoffske",
+        "name": "wyckoffske"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ec9744685b0a2fa1bd124696ffe47a7f0e3c668c039ff6d7df97aac185788676.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://t.co/JwjouVVcFH",
+          "text": "https://patreon.com/wyckoffske/posts/175291204…",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2121509508816278015",
+          "sourceUrl": "https://x.com/wyckoffske/status/2121509508816278015",
+          "capturedAt": "2026-11-27T01:14:48.830996+00:00",
+          "createdAt": "2026-11-14T07:44:17.000Z",
+          "fullText": "",
+          "author": {
+            "handle": "@wyckoffske",
+            "name": "wyckoffske"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-ec9744685b0a2fa1bd124696ffe47a7f0e3c668c039ff6d7df97aac185788676.jpg",
+              "alt": "Image"
+            }
+          ],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2121835334153748854",
+          "sourceUrl": "https://x.com/Yureka_J/status/2121835334153748854",
+          "capturedAt": "2026-11-27T01:14:48.830996+00:00",
+          "createdAt": "2026-11-15T05:19:00.000Z",
+          "fullText": "재능기부 감사합니다 사스케님",
+          "author": {
+            "handle": "@Yureka_J",
+            "name": "Yureka_J"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/wyckoffske/status/2121509506211524685",
+        "observed_main_url": "https://x.com/wyckoffske/status/2121509506211524685",
+        "author_handle": "wyckoffske",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 2,
+          "max": 3
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "1858822375015661742",
+      "sourceUrl": "https://x.com/jfsrev/status/1858822375015661742",
+      "capturedAt": "2026-11-27T01:15:31.512996+00:00",
+      "createdAt": "2024-11-19T10:39:24.000Z",
+      "fullText": "This will mark my 8th year of Black Friday using Tradingview.\n\nHere are 8 FREE public scripts I highly recommend exploring to refine your workflow, templates, or layouts. They’re listed alphabetically by script name:  \n\n1. **ADR% - Average Daily Range %** - By \n@zerokapital (https://x.com/zerokapital) \n\nhttps://t.co/X4auTxiKfR \n \nUse this to study the historical ADR% of securities and analyze how momentum stocks develop and build their volatility patterns.  \n\n2. **ATR% Multiple from 50-MA** - Credits to \n@DumbleDax (https://x.com/DumbleDax) \n\nhttps://t.co/mLUqfb8OMa \n\nMy favorite tool for profit-taking or extension signals in setups. It’s also helpful for index analysis to gauge when to scale back on risk exposure.\n\n3. **EPS & Sales** - By \n@DumbleDax (https://x.com/DumbleDax) \n  \nhttps://t.co/jvz3G2xm36 \n\nArguably the best EPS & Sales script available. It integrates earnings, sales, beats, and guidance into your charts via table format or below price template, as seen in my trading ideas and stock update.  \n\n4. **Financials on Chart** - By \n@tradingview (https://x.com/tradingview) \n\nhttps://t.co/CbtPTKxl11 \n\nA fantastic on-chart display of up to 9 fundamentals (Qtr/Yr) of your choice from over 100 options, including PEG, Earnings Yield, Price to Free Cash Flow Ratio, and ROIC%. This is great for your long-term investment overview without referencing to another 3rd party website for fundamental data.\n\n5. **Industry Group Strength** - By \n@amphtrading (https://x.com/amphtrading) \n \nhttps://t.co/IKtmMr502b \n\nThis indicator helps you pinpoint the best-performing stocks within specific industry groups. My default template lists the top 5 RS stocks from the same industry as the stock I’m analyzing. \n@amphtrading (https://x.com/amphtrading) \n also offers 41+ free scripts, making him one of the most generous contributors to our TradingView community.  \n\n6. **Range Tightening Indicator** - By \n@Ollie_AllCaps (https://x.com/Ollie_AllCaps) \n   \nhttps://t.co/Mor5ex7AdU \n\nA price-tightening indicator using a lookback period. It’s also useful for identifying the \"rate of change\" of potential bottoms or tops, as highlighted by Stanley Druckenmiller in his podcast with Nicolai Tangen.  \n\n7. **Simple Volume with Pocket Pivots** - By \n@finallynitin (https://x.com/finallynitin) \n \nhttps://t.co/aLQ9h3B0Xc \n\nThe most versatile volume script, in my opinion, offering extensive customization for color coding, dollar volume, RVOL, and more. \n\n8. **Swing Data** - Credits to \n@DumbleDax (https://x.com/DumbleDax) \n  \nhttps://t.co/JzrW28SgVE   \n\nThis table consolidates essential data for swing traders in a simple format, providing everything you need to improve trading execution & efficiency.\n\nIf you found this post helpful and valuable, consider retweeting🔁to spread the words to support their efforts and encourage future updates and enhancements. \n\nI hope these scripts will prove beneficial on your trading journey.",
+      "author": {
+        "handle": "@jfsrev",
+        "name": "jfsrev"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-09f5e007aa3e78477026a37ab8de22ed5466f9492a24c222f65c692431504dc5.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/zerokapital",
+          "text": "@zerokapital",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/X4auTxiKfR",
+          "text": "https://tradingview.com/v/ss2QgCWi/",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/DumbleDax",
+          "text": "@DumbleDax",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/mLUqfb8OMa",
+          "text": "https://tradingview.com/v/oimVgV7e/",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/DumbleDax",
+          "text": "@DumbleDax",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/jvz3G2xm36",
+          "text": "https://tradingview.com/v/WiaFmLGR/",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/tradingview",
+          "text": "@tradingview",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/CbtPTKxl11",
+          "text": "https://tradingview.com/v/Lbxl9OqZ/",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/amphtrading",
+          "text": "@amphtrading",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/IKtmMr502b",
+          "text": "https://tradingview.com/v/5NsvcOVp/",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/amphtrading",
+          "text": "@amphtrading",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Ollie_AllCaps",
+          "text": "@Ollie_AllCaps",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/Mor5ex7AdU",
+          "text": "https://tradingview.com/script/yaIeno72-Range-Tightening-Indicator-RTI/…",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/finallynitin",
+          "text": "@finallynitin",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/aLQ9h3B0Xc",
+          "text": "https://tradingview.com/v/JkB0iCFp/",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/DumbleDax",
+          "text": "@DumbleDax",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/JzrW28SgVE",
+          "text": "https://tradingview.com/v/uloAa2EI/",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/jfsrev/status/1858822375015661742",
+        "observed_main_url": "https://x.com/jfsrev/status/1858822375015661742",
+        "author_handle": "jfsrev",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2116380257544462625",
+      "sourceUrl": "https://x.com/OnWhEe/status/2116380257544462625",
+      "capturedAt": "2026-11-27T01:15:52.675996+00:00",
+      "createdAt": "2026-10-31T04:02:28.000Z",
+      "fullText": "제가 보는 코스피 차트적 견해입니다. 26.10.31 \n초 장문 주의 (제가 상승이 남았다고 보는 이유)\n\n사진 1 ) 코스피 월봉\n--\n근거 1 ) 채널과 캔들\n\n우선 레드박스를 참고해주세요. 제가 코스피 고점을 9200으로 생각했던 이유입니다. 코스피는 초록색 메인채널을 위로 확장 하고, 이후 그 채널을 한 번더 분할했을때 중단에서 하락이 나왔습니다. 또한, 6월 봉 마무리가 음봉 도지마감 (추세반전형) 캔들이 나왔습니다. 이후 7월 강하게 하락했습니다.\n--\n근거  2 )  캔들패턴과 엘리엇파동(사진2)\n\n결국 추세반전형 도지캔들 이후로 7월 강하게 하락해주며 이브닝스타 (강력한 하락전환형) 캔들패턴이 완성되었습니다. 이때 주황색 원을 참고해주세요. \n\n주황색원에서 지지시도를 했던게 보이시나요 ? 저건 3월입니다. 이후 지지 시도 이후 재발산이 나왔습니다. 그렇다면 파동적으로는 저 구간이 사진 2를 참고해주세요.(사진 온휘 교과서) 3파연장임펄스의 3-4파가 됩니다.\n\n즉, 지지 이후 한 차례 고점을 올린 상태라는 겁니다. 그렇다면 우리는 여기서 9300부근이 3파의 종료지점이 되는 것을 알 수 있습니다.\n--\n근거 3 ) 파동교대의법칙 (절대규칙아님) 온휘 교과서 p99(사진3)\n\n메인 2파 추정 위치가 기간조정이 나왔습니다.(박스피 시절) 이후 4파가 가격조정이 나오는 건 당연한 겁니다. 아직 3-4파예상위치를 깨지않았음으로 4파가 종료되었을 가능성 역시 열려있습니다. 또한, 4파가 가격조정이라면 이후 나오는 반등은 기술적 반등이 아닌 메인 5파일 가능성 역시 존재합니다.\n--\n근거 4 ) 그렇다면 가능한 시나리오는 단 3개 (나머지는 댓글)\n\n이렇게 ABC로 하락 한 다음 마지막 5파를 만드는 시나리오(사진4)",
+      "author": {
+        "handle": "@OnWhEe",
+        "name": "OnWhEe"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-675d88ca63834b20f1da229de6711d2d8ffc7ff723f4891c58576b7da897c94f.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-c01a6d26b40701abbd54f5c6f5d63ac05c88921902a18432fe8761d9126a7b35.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-5681d9b6dec595137b2fe4dce723db868fd379522b27c552cc31a417fd9f74ca.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-57332dbc259d600280724294422bbc91c2334af32f0434445469864115b8ab0b.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2116381196477489319",
+          "sourceUrl": "https://x.com/OnWhEe/status/2116381196477489319",
+          "capturedAt": "2026-11-27T01:15:52.675996+00:00",
+          "createdAt": "2026-10-31T04:06:12.000Z",
+          "fullText": "시나리오 2(사진1) 이렇게 바로 5파로 올려서 월봉상 하락다이버전스를 만든 뒤 재차 강하게 하락하거나.\n\n시나리오 3(사진2) 이렇게 기술적 반등이후 5파가 절단되고 재차 강하게 쏟고 이것이 조정의 시작이던가.\n\n바로 강하게 꽂을 수 있는 차트는 한국전쟁 한국멸망외에 없습니다. 차트는 틀릴 수 있지만, 지수는 개부분의 차트를 준수하니 가능성이 높겠죠 ?",
+          "author": {
+            "handle": "@OnWhEe",
+            "name": "OnWhEe"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e85ce594fb35f58a80d5b1ffdcc21b65c34c72bf8860ebd4ac839065e8147a52.jpg",
+              "alt": "Image"
+            },
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-9cc029b61c537690122ee6b15ed5986f2a706a8c038d9427dd77d47657c13e5a.jpg",
+              "alt": "Image"
+            }
+          ],
+          "links": [],
+          "stats": {},
+          "isThread": true
+        },
+        {
+          "tweetId": "2116388038280663496",
+          "sourceUrl": "https://x.com/ethanhwak/status/2116388038280663496",
+          "capturedAt": "2026-11-27T01:15:52.675996+00:00",
+          "createdAt": "2026-10-31T04:33:23.000Z",
+          "fullText": "여러번 정독하고 이해했습니다. 결론적으로 시나리오 2,3은 매크로적인 측면을 포함해서 힘들 것 같고 매크로와 차트 분석상 abc파동후 마지막 5파 연장이 나온다는 1번시나리오라는 것이죠? 온휘님 월봉으로 판단하시는 이유는 무엇인지 여쭈어볼수 있을까요?",
+          "author": {
+            "handle": "@ethanhwak",
+            "name": "ethanhwak"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125776091071807929",
+          "sourceUrl": "https://x.com/HOTD_ads/status/2125776091071807929",
+          "capturedAt": "2026-11-27T01:15:52.675996+00:00",
+          "createdAt": "",
+          "fullText": "약 900,000원 상당의 아이템을 받을 수 있어요!\n\n다운로드 없이 무료 플레이\n\n잠깐만 같이 놀자 (https://h5.g123.jp/game/hotd?lang=ko&platform=auto&utm_source=twitter&utm_campaign=hotd_ko_NewDisplayFirstpayKoreanGamer1126_adn_all&utm_adgroup=cr_normal_KoreanGamer_all&utm_content=hotd_ko_rd510-142_1200-1200.jpg&twclid=280db94nofbptxho4zj9bseowa)  https://h5.g123.jp/game/hotd?lang=ko&platform=auto&utm_source=twitter&utm_campaign=hotd_ko_NewDisplayFirstpayKoreanGamer1126_adn_all&utm_adgroup=cr_normal_KoreanGamer_all&utm_content=hotd_ko_rd510-142_1200-1200.jpg&twclid=280db94nofbptxho4zj9bseowa",
+          "author": {
+            "handle": "@HOTD_ads",
+            "name": "HOTD_ads"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-6b89a935a072a056b4e70a88ccc92c798787bb1c92a8041e802ffa064718dbe6.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://h5.g123.jp/game/hotd?lang=ko&platform=auto&utm_source=twitter&utm_campaign=hotd_ko_NewDisplayFirstpayKoreanGamer1126_adn_all&utm_adgroup=cr_normal_KoreanGamer_all&utm_content=hotd_ko_rd510-142_1200-1200.jpg&twclid=280db94nofbptxho4zj9bseowa",
+              "text": "잠깐만 같이 놀자",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/OnWhEe/status/2116380257544462625",
+        "observed_main_url": "https://x.com/OnWhEe/status/2116380257544462625",
+        "author_handle": "OnWhEe",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 3,
+          "max": 4
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2114247019816755435",
+      "sourceUrl": "https://x.com/Mason_yoon94/status/2114247019816755435",
+      "capturedAt": "2026-11-27T01:16:40.263995+00:00",
+      "createdAt": "2026-10-25T06:45:44.000Z",
+      "fullText": "아직도 VRVP 이렇게 쓰고 계시죠? FRVP를 사용하는 하는 이유는 이렇습니다.\n\n대부분의 볼륨프로파일을 접한지 얼마 안되신 분들과 \nMTS에서 매물대 지표를 사용하시는 것은 VRVP 입니다. \n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114246773892055040) \n\nMTS의 매물대 지표의 경우 \n이게 POC VAL VAH가 표시가 안되니  직접 표시를 해야할겁니다.\n\n바로 이렇게요\n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114245268187308032) \n\n그리고 화면을 옮긴다면 당연히 VAH,VAL,POC 가 바뀌게 될거구요\n\n즉 내가 보는 범위의 거래량 프로파일\nVirtual Range Volume Profile\n개념은 알겠는데, 차트 앞에서 왜 \n\"내가 그은건만 안 맞고 유의미하지 않지?\"\n\n이건\n“그래서 어떻게 그리지?”가 안 되서 입니다.\n\n그래서 사용 하는 것이 \n가장 기본으로사용하실 도구가 \n\n고정 범위 볼륨 프로파일 FRVP\nFixed Range Volume Profile 입니다.\n오늘은 그 부분을 해결해보겠습니다.\n\n그러니 매물대 지표를 제대로 사용하시기 위해서는 \n우선 MTS는 내려두시고 트레이딩뷰 무료버전으로도 충분히 가능하니\n트레이딩 뷰로 우선 익숙해져 봅시다\n\n우선 아래 아티클 두개를 먼저 읽어 보시길 바랍니다.\n\n1. 볼륨프로파일의 기본개념 (https://x.com/Mason_yoon94/status/2111370347463446904?s=20) \n\n2. 볼륨프로파일의 구성요소 (https://x.com/Mason_yoon94/status/2111471241756541297?s=20) \n\n1. 왜 표시하는가?\n\n단순히 눈으로만 보면 판단이 흔들립니다.\n\n“여기가 Value Area 안인가?”\n\n“지금 Balance인가 Imbalance인가?”\n\n매일 같은 기준으로 표시해두면,\n감정에 휘둘리지 않고 레짐을 객관적으로 볼 수 있습니다.\n표시의 목적은 예쁘게 그리는 게 아닙니다.\n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114240735923122176) \n\n초간단 3단계\n\n차트 왼쪽 툴바에서 Fixed Range Volume Profile을 선택합니다.\n\n최근 횡보 구간(또는 보고 싶은 구간)의 시작점과 끝점을 드래그합니다.\n\n프로파일이 나타나면 POC, VAH, VAL이 자동으로 표시됩니다.\n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114238080295292928) \n\n이것을 사용하는데 가장 기본적인 개념은\n\n“오늘은 어떤 환경인가?” 를 한눈에 보기 위함입니다.\n\n처음에는 정확한 구간을 고르는 게 어렵습니다.\n걱정하지 마세요.\n\n지금은 “대충이라도 그리는 연습”이 더 중요합니다.\n\n2. FRVP를 어느 범위에 그릴 것인가\n\n볼륨 프로파일을 제대로 쓰려면 어떤 구간을 기준으로 그릴지가 가장 중요합니다.\n\n범위가 잘못되면 Value Area, POC, VAH, VAL이 전부 의미가 달라지기 때문입니다.\n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114241089662341120) \n\n우리는 오늘 시장의 환경을 보기 위해서\n매일 두 가지는 꼭 정확하게 그려 보시면 됩니다.\n\n1. 전일 Profile (고정)\n\n시작: 한국시간 AM 07:00\n\n끝: 한국시간 AM 06:00\n\nExtend Right(오른쪽 확장) 사용 금지\n\n전날 완성된 Value Area와 POC를 그대로 가져와서,\n당일 가격이 그 구간에 어떻게 반응하는지 보는 용도입니다.\n\n2. 당일 Profile (실시간) 또는 세션프로파일 (아시아,런던,미국)\n\n시작: 한국시간 AM 07:00(당일프로파일) 또는 장 시작 시간\n\n끝: 한국시간 AM 06:00 또는 장 마감 시간\n\nExtend Right(오른쪽 확장) 사용해도 됨\n\n오늘 장이 진행되면서 Value Area가 어떻게 쌓이는지\n실시간으로 확인하는 용도입니다.\n\n비트코인과 같은 24시간 차트를 활용하셔서 \n하루를 당일을 통째로 그어 보는 겁니다. \n\n그 이후에 익숙해 진다면 그때는 \n즉 국장, 미장, 유럽장 의 시간으로 구분해서 그어서 활용하시면 됩니다. \n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114241675380076544) \n\n그리는 순서 (매일 장 시작 전)\n\n전일 Profile을 먼저 그린다 (고정)\n\n당일 Profile을 그린다 (Extend Right ON)\n\n필요하면 Weekly Profile도 확인한다\n\n이 두 가지만 정확하게\n그리면 “지금 가격이 Value Area 안인가, 밖인가?”를\n가장 빠르고 명확하게 판단할 수 있습니다.\n\n이걸 활용해서 주간, 월간 흐름도 파악할 수 있겠죠?\n\n전주와 이번 주\n전월과 당월\n\n초보자를 위한 한 줄 정리\n\n전일 → 고정해서 가져온다\n\n당일 → 실시간으로 쌓이게 한다\n\n이 기준을 지키는 것이\n볼륨 프로파일 매매의 첫 번째 습관입니다.\n\n그 이후 볼륨 프로파일의 활용 방도는 굉장히 많습니다.\nㅡ 횡보 구간에 그을 수도 있고 \nㅡ 추세가 강하게 터진 방향으로 그을 수도 있고\nㅡ FOMC 이후 일주일 동안의 기간으로 그을 수도 있고\n\n이것을 해석하고 활용하기 나름입니다\n(나중에 대표적인 4개의 프로파일 쉐입 모양으로 나뉘어 해석하게 됩니다)\n\n즉 위에서 말씀드린 것처럼 \n\"나는 어떠한 기준을 통해서 \n오늘은, 지금은 어떤 환경속에 있는가” \n를 한눈에 보기 위함 이라는 겁니다. \n\n3. 이전에 배운 개념과 연결하기\n\n우선 아래 아티클 두개를 먼저 읽어 보시길 바랍니다.\n\n1. 볼륨프로파일의 기본개념 (https://x.com/Mason_yoon94/status/2111370347463446904?s=20) \n\n2. 볼륨프로파일의 구성요소 (https://x.com/Mason_yoon94/status/2111471241756541297?s=20) \n\n3. 현재 보고 계신 아티클 (볼륨프로파일 사용법)\n\n이제 전체 흐름이 이렇게 연결됩니다\n\nVolume Profile을 그린다 (2)\n\nVAH / VAL / POC를 확인한다 (2)\n\n현재 가격이 Value Area 안인지 밖인지 본다 (1 + 3)\n\nBalance면 관망, Imbalance면 방향성 매매를 준비한다 (1)\n\n이 순서를 매일 반복하는 게 이 전략의 기본 루틴입니다.\n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114243824763736064) \n\n이전에 게시글을 통해 은근슬쩍 ORB, IB 를 소개 한적이 있었습니다. \n\n (https://x.com/Mason_yoon94/article/2114247019816755435/media/2114244188355379200) \n\n실제로 해보신 분들이 몇분 계시는 것 같습니다. \n이제는 FRVP를 사용하시면서 익숙해질 단계가 되셨습니다. \n\n실제로 그려보는 연습을 해보세요 \n\nTradingView에서 Fixed Range Volume Profile을 그려 볼겁니다.\n\n전일과 당일 전주와 이번주를 그어 봅니다.\n\nVAH와 VAL을 수평선이 나오도록 셋팅 하세요\n\n현재 가격이 Value Area 안인지 밖인지 구분해보세요.\n\n“오늘은 Balance인가? Imbalance인가?”를 한 줄로 적어보세요.\n\n\"어제 대비 “오늘은 Balance인가? Imbalance인가?”를 한 줄로 적어보세요.\n\n\"전주 대비 \" 이번주는 Balance인가? Imbalance인가?” 를 한 줄로 적어보세요.\n\n세션 프로파일도 한번 그어보세요\n\n완벽하게 그릴 필요는 없습니다.\n“현재 캔들이 밸런스 안인가 밖인가”만 구분할 수 있으면 충분합니다.\n\n내가 보려는 기간 동안에서, 그리고 현재의 상황에서\n밸런스 상태의 차트와 임밸런스 상태의 차트를 찾아서\n환경을 읽는 연습을 하는 겁니다.\n\nBalance와 Imbalance를 구분하는 가장 간단한 방법은\n현재 가격이 Value Area 안인지 밖인지를 보는 것입니다.\n\n프로파일을 그리고, VAH/VAL을 표시하고, 안인지 밖인지만 답하면 됩니다.\n\n본 자료는 교육 목적이며 투자 판단과 손실의 책임은 본인에게 있습니다.\n레버리지·선물·마진 거래는 원금 손실 위험이 매우 큽니다.\n\n본 강의는 매수·매도 지시가 아니라, \n차트를 읽는 절차와 판정 규칙을 학습하기 위한 프레임워크입니다.",
+      "author": {
+        "handle": "@Mason_yoon94",
+        "name": "Mason_yoon94"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-cdee4d39306532efbfb3ca3bc7f85d4b7bca3066bb471aa5ca0bc2809af8af99.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e0a37f3ce5e8fb32609c371c9381207071a8a43c99dbf0e14ea4094af969dab2.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-412d736c35bfe581a02c544e40fda3335a16655b5516c8d96f8bc72f7e3c3f8d.png",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a83fdf77136fab9ee8ddaf5c808794190f57dd33e10bf363a101204af60dbba0.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-def1f6da4d20d52171058fd22bb3c409525012a03c58c144fd521b4749273167.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-6ba76248f4e597c0c1cae0049e3e8afe2e81bdd51160950a6b2a6b77046de53e.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f50e033cf8b97be8a7d007b9aeb01e34013a46b4bc32e526230c2a940cf855c3.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-2977f47525130eb6dde30ce12cde6a04ba7ecc709e16db6ad2ff7738a1b80bfe.jpg",
+          "alt": "Image"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-05924ab88ef1ab139b07956da3cb57ce7c4178e0f5697f858e4b8aaeec7a9144.png",
+          "alt": "Image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114246773892055040",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114245268187308032",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/status/2111370347463446904?s=20",
+          "text": "1. 볼륨프로파일의 기본개념",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/status/2111471241756541297?s=20",
+          "text": "2. 볼륨프로파일의 구성요소",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114240735923122176",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114238080295292928",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114241089662341120",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114241675380076544",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/status/2111370347463446904?s=20",
+          "text": "1. 볼륨프로파일의 기본개념",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/status/2111471241756541297?s=20",
+          "text": "2. 볼륨프로파일의 구성요소",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114243824763736064",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/Mason_yoon94/article/2114247019816755435/media/2114244188355379200",
+          "text": "\n\n\n\n\n\n\n\n\n\n",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/Mason_yoon94/status/2114247019816755435",
+        "observed_main_url": "https://x.com/Mason_yoon94/status/2114247019816755435",
+        "author_handle": "Mason_yoon94",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 0,
+          "max": 1
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2125231026888716505",
+      "sourceUrl": "https://x.com/0xKitsui/status/2125231026888716505",
+      "capturedAt": "2026-11-27T01:17:01.769995+00:00",
+      "createdAt": "2026-11-24T14:12:16.000Z",
+      "fullText": "Architects are going to hate this one. A free Claude skill just ran every duct, pipe and wire in a coffee shop, then checked it against Denver code.\n\nI just found a free skill for Claude Code and typed one line: \"a 30-seat coffee shop in Denver, every system behind the walls.\"\n\nEvery AI floor plan I've seen is a pretty picture you can't build from.\n\nHow the skill works:\n\n> It reads the plan into numbers before it builds anything: the scale, the rooms, the walls and every opening in feet.\n> Every part is its own object tagged with its system, so 413 plan symbols turn into 795 pieces you can count as they land.\n> The look gets pinned with reference images first and every render is checked against them until the list of differences comes back empty.\n> One timeline drives the whole build: ducts, drains, water, gas and power fly in system by system on the same clock as the sound.\n> Once it's built the model checks itself against 10 code rules computed from the geometry, from GFCI on 20 outlets to 570 cfm of fresh air for 30 seats.\n> Every pipe and duct gets measured against every other until the clash count reads 0.\n\nWhat still messes with me?\n\nI keep rewatching it and checking the numbers, waiting for it to slip up. It hasn't.\n\nPeople charge for courses that teach less than this and this skill is free.\n\nThe skill and every prompt are in the article below 👇",
+      "author": {
+        "handle": "@0xKitsui",
+        "name": "0xKitsui"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-f9ed157565f18bac2e56c476ea7b6e4ae59b40096ea445731e375b98c1f0a39a.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/0xKitsui/status/2125231026888716505"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-a3e942d804b9cfb14fb3ae172545c404ae1dd592b9853de45c3c16b8f59383cc.jpg",
+          "alt": "Article cover image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/0xKitsui/status/2125231026888716505",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xKitsui/status/2125231026888716505",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2125231841321910436",
+          "sourceUrl": "https://x.com/Nyxera0x/status/2125231841321910436",
+          "capturedAt": "2026-11-27T01:17:01.769995+00:00",
+          "createdAt": "2026-11-24T14:15:30.000Z",
+          "fullText": "ty for sharing it bro, you use a skill like a real designer",
+          "author": {
+            "handle": "@Nyxera0x",
+            "name": "Nyxera0x"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/0xKitsui/status/2125231026888716505",
+        "observed_main_url": "https://x.com/0xKitsui/status/2125231026888716505",
+        "author_handle": "0xKitsui",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2125639134798909646",
+      "sourceUrl": "https://x.com/bluechipdaily/status/2125639134798909646",
+      "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+      "createdAt": "2026-11-25T17:13:56.000Z",
+      "fullText": "Often asked, these are my 10 favorite trading books, that I have learned the most from.",
+      "author": {
+        "handle": "@bluechipdaily",
+        "name": "bluechipdaily"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-13d9ef497b5aee95778c74d7beb0088def684c1fc50be46f307362d22cffd959.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2125832795675336834",
+          "sourceUrl": "https://x.com/aj_nikhil/status/2125832795675336834",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-26T06:03:29.000Z",
+          "fullText": "Stan Weinstein the OG 🙏",
+          "author": {
+            "handle": "@aj_nikhil",
+            "name": "aj_nikhil"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125660019429683219",
+          "sourceUrl": "https://x.com/KubaMrowczynsk1/status/2125660019429683219",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-25T18:36:56.000Z",
+          "fullText": "Great selection. I almost forgot about Dr Elder and his books, I need dig them out from my bookshelf.",
+          "author": {
+            "handle": "@KubaMrowczynsk1",
+            "name": "KubaMrowczynsk1"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2074088303339491680",
+          "sourceUrl": "https://x.com/vincent_hus/status/2074088303339491680",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "",
+          "fullText": "166 open issues. 71 contributors last week. Room for more.\n\nPick your issue. (https://github.com/Tracer-Cloud/opensre/?twclid=2db5d6lkajsqb9jme6smhm98mi)  https://github.com/Tracer-Cloud/opensre/?twclid=2db5d6lkajsqb9jme6smhm98mi",
+          "author": {
+            "handle": "@vincent_hus",
+            "name": "vincent_hus"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-d3c3792dc60f8e1bd177f75970fbbe3a5e93f1c890ea3bfb70b50d1f51eed6d1.jpg",
+              "alt": ""
+            }
+          ],
+          "links": [
+            {
+              "url": "https://github.com/Tracer-Cloud/opensre/?twclid=2db5d6lkajsqb9jme6smhm98mi",
+              "text": "Pick your issue.",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125846459522441453",
+          "sourceUrl": "https://x.com/Erik96754/status/2125846459522441453",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-26T06:57:46.000Z",
+          "fullText": "I have read them all.  Great books!",
+          "author": {
+            "handle": "@Erik96754",
+            "name": "Erik96754"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125642571120595169",
+          "sourceUrl": "https://x.com/SystematicIRE/status/2125642571120595169",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-25T17:27:36.000Z",
+          "fullText": "Great group of books.",
+          "author": {
+            "handle": "@SystematicIRE",
+            "name": "SystematicIRE"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125778969307783199",
+          "sourceUrl": "https://x.com/mtaylor49701/status/2125778969307783199",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-26T02:29:36.000Z",
+          "fullText": "Best Loser Wins is really really good as well, by Tom Hougaard. Have a great holiday!",
+          "author": {
+            "handle": "@mtaylor49701",
+            "name": "mtaylor49701"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125643456873631832",
+          "sourceUrl": "https://x.com/YousufKolia/status/2125643456873631832",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-25T17:31:07.000Z",
+          "fullText": "Great collection. I have gone through few of it.",
+          "author": {
+            "handle": "@YousufKolia",
+            "name": "YousufKolia"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125809671676297473",
+          "sourceUrl": "https://x.com/grant8381/status/2125809671676297473",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-26T04:31:36.000Z",
+          "fullText": "Pretty much all you need will share",
+          "author": {
+            "handle": "@grant8381",
+            "name": "grant8381"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        },
+        {
+          "tweetId": "2125651070210998373",
+          "sourceUrl": "https://x.com/ReformedTrader/status/2125651070210998373",
+          "capturedAt": "2026-11-27T13:27:20.421571+00:00",
+          "createdAt": "2026-11-25T18:01:22.000Z",
+          "fullText": "Hedge Fund Market Wizards is great - especially the interview with Jamie Mai.\n\n\"Long volatility and convexity as a whole is utilized as a source of alpha and traditionally accepted as a form of absolute returns.\"\n\nThis reminds me of my favorite interview from the Market Wizards books:\n\nJamie Mai\n\"We had already seen cases where the option market assigned x.com/Ksidiii/status…",
+          "author": {
+            "handle": "@ReformedTrader",
+            "name": "ReformedTrader"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/bluechipdaily/status/2125639134798909646",
+        "observed_main_url": "https://x.com/bluechipdaily/status/2125639134798909646",
+        "author_handle": "bluechipdaily",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 9,
+          "max": 10
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2125325696914383054",
+      "sourceUrl": "https://x.com/0xMorlex/status/2125325696914383054",
+      "capturedAt": "2026-11-27T14:23:18.219933+00:00",
+      "createdAt": "2026-11-24T20:28:27.000Z",
+      "fullText": "SpaceXAI engineer Lauren Tan runs 20+ Grok Bots like a small company, and she only talks to one of them\n\ni turned her setup into an org chart you can copy\n\nabsolutely amazing...\n\nthe full setup is in the image:\n\n· 1 chief of staff: the only bot you talk to, it routes every request\n· 3 managers: they split the work and review it, never do it themselves\n· 16 workers: 5 or 6 per manager, they do the actual work and report up\n· 1 message from you turns into 3 projects and 16 tasks\n· 0 results come straight to you: workers report to managers, managers to the chief\n· 1 summary from the chief of staff instead of 20 chats\n· 3 things wait for your OK: money, posts, merges\n\npart 6 of Lauren's bots. save the image, then build the same team in your Grok Bot\n\nGrok Bot just got a serious brain upgrade\n\nWith Claude Opus 5.5 entering the stack, one Bot could run an entire AI team that researches, writes code, uses tools, verifies results, and delivers finished work\n\nHere's how to build it in 10 steps:",
+      "author": {
+        "handle": "@0xMorlex",
+        "name": "0xMorlex"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-16ce6399be4324f69cc82263a1ed19cb563956e68568a18dcb7231d8abc4925a.jpg",
+          "alt": "동영상 썸네일",
+          "kind": "video_thumbnail",
+          "sourceUrl": "https://x.com/0xMorlex/status/2125325696914383054"
+        },
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-e3016887b8d92c828361e4ce42c4e0b462ec1561adf37d55b2371c89480196fd.jpg",
+          "alt": "Article cover image"
+        }
+      ],
+      "links": [
+        {
+          "url": "https://x.com/0xMorlex/status/2125325696914383054",
+          "text": "",
+          "kind": "body"
+        },
+        {
+          "url": "https://x.com/0xMorlex/status/2125325696914383054",
+          "text": "동영상 원문 보기",
+          "kind": "media_source"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2125391873984303225",
+          "sourceUrl": "https://x.com/brianmcgrath/status/2125391873984303225",
+          "capturedAt": "2026-11-27T14:23:18.219933+00:00",
+          "createdAt": "2026-11-25T00:51:25.000Z",
+          "fullText": "Do you use your main Grok Bot as your chief of staff or do you only communicate with your chief of staff?",
+          "author": {
+            "handle": "@brianmcgrath",
+            "name": "brianmcgrath"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/0xMorlex/status/2125325696914383054",
+        "observed_main_url": "https://x.com/0xMorlex/status/2125325696914383054",
+        "author_handle": "0xMorlex",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2125093805711925687",
+      "sourceUrl": "https://x.com/gagarot200/status/2125093805711925687",
+      "capturedAt": "2026-11-27T16:27:50.530197+00:00",
+      "createdAt": "2026-11-24T05:07:00.000Z",
+      "fullText": "Elon Musk’s world is over.\nJust add this skill to Muse\nand you won’t need to use Grok anymore\n👇\nUntil now, Muse could read posts if you gave it a URL,\nbut it was weak at keyword searches like\n“How is this topic spreading on X right now?”\n\nBut connect Grok’s X search skill,\nand you can find posts on the topic and follow\nthe thread right through to the end within Muse\n\nIf you want to set it up, copy and paste the text below into Muse as is\n👇\nSet up this Grok X search skill in Muse.\nhttps://t.co/QmZ0h5nx1q \n\n① Fetch the repository, read the setup instructions, and place SKILL.md and skill.yaml in custom-skills/grok_x_search/.\n\n② Check the CLI with grok --version. If it isn’t installed, fetch the official installation script from https://t.co/8l0mwkVBEq , confirm that it only writes within your home directory, and then run it.\n\n③ Run grok login --device-code and show me the authentication URL and the device code to enter on the screen. I’ll authenticate on the official page, so wait here. Don’t open ~/.grok/auth.json, and don’t ask me for my password or a one-time authentication code.\n\n④ Once I tell you “Authentication succeeded,” run grok models and check that the available models are displayed.\n\nHere’s what to say first after setup\n👇\n“What’s being discussed on X today about how to use Muse? Summarize it together with links to the original posts and what you learned from the threads.”\n\nGitHub - kgmkm/muse-grok-x-search (https://t.co/QmZ0h5nx1q)  https://t.co/QmZ0h5nx1q",
+      "author": {
+        "handle": "@gagarot200",
+        "name": "gagarot200"
+      },
+      "media": [],
+      "links": [
+        {
+          "url": "https://t.co/QmZ0h5nx1q",
+          "text": "https://github.com/kgmkm/muse-grok-x-search…",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/8l0mwkVBEq",
+          "text": "http://x.ai",
+          "kind": "body"
+        },
+        {
+          "url": "https://t.co/QmZ0h5nx1q",
+          "text": "GitHub - kgmkm/muse-grok-x-search",
+          "kind": "body"
+        }
+      ],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2125093805976121572",
+          "sourceUrl": "https://x.com/gagarot200/status/2125093805976121572",
+          "capturedAt": "2026-11-27T16:27:50.530197+00:00",
+          "createdAt": "2026-11-24T05:07:00.000Z",
+          "fullText": "How a college student with a 39 IQ score\nmade 60 million yen\nin sales on social media in just 4 months\nI'm revealing all the secrets and methods 👇\nhttps://t.co/3LSIguS0rb ~",
+          "author": {
+            "handle": "@gagarot200",
+            "name": "gagarot200"
+          },
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-9999b4395e869f7a475ad42fbc98ace6fcba78574dbd29269da33367d5911e28.jpg",
+              "alt": "Image"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://t.co/3LSIguS0rb",
+              "text": "https://line.me/R/app/2009133356-hKXfGBGF?uLand=oSynw1&deviceId=j3sxfn1795260203601#…",
+              "kind": "body"
+            }
+          ],
+          "stats": {},
+          "isThread": true
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/gagarot200/status/2125093805711925687",
+        "observed_main_url": "https://x.com/gagarot200/status/2125093805711925687",
+        "author_handle": "gagarot200",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
+    },
+    {
+      "tweetId": "2125666944439472510",
+      "sourceUrl": "https://x.com/RebellioMarket/status/2125666944439472510",
+      "capturedAt": "2026-11-27T16:28:16.108198+00:00",
+      "createdAt": "2026-11-25T19:04:27.000Z",
+      "fullText": "Mark Minervini Setup\nHow to find stocks\n\nScreen stocks that are within 25% of their 52-week high\n\nEliminate the following stocks\n\nEliminate stocks trading below 30\n\n200 MA is rising for at least 3 months\n\n50 MA is above 200 MA\n\nCurrent price is above 200 SMA and preferably above 50 too\n\nCurrent price is at least above 100% from 52-week low\n\nThe stock should have made a 52-week high at least once every 4 to 6 months\n\nBuying Pattern\n\nMake stock list every week after weekly closing\n\nUse weekly charts\n\nUse Volatility Contraction Pattern (VCP)\n\nUse only Price and Volume\n\nStocks moving up with good volume and then falling with lower volume (consolidating) is good\n\nUse weekly charts\n\nAMO daily charts are good for seeing setting of the stock\n\nLook for volatility contraction in daily charts (just for looking entry)\n\nYou don’t need to find new candidates every day, try to add to existing position\n\nBreakouts should happen between 4–8 weeks\n\nWin rate is only 50%, so be prepared\n\nPost Buying Monitoring\n\nFollow up buying\n\nGreen days vs Red days\n\nUp Volume vs Down Volume\n\nTennis Ball Action\n\nShallow Pullback\n\nVCP Pattern\n\nVolatility Contraction Pattern (VCP)\n\nTo calculate volatility contraction, divide swing low by swing high then -1 gives the % drop in volatility\n\nThere should be ideally 3 VCP\n\nEach time volatility should decrease by ideally 50% (not a hard rule)\n\nBuy when the previous swing high is taken out\n\nWith volatility, there is also time contraction which is very similar to price contraction\n\nTake a stock for 2 VCP only if the second contraction is more than 70%\n\nStop Loss Calculation\n\nPlot 20-period ATR on daily chart\n\nCalculate 2× of the above value\n\nUse this value as your stop loss\n\nUse maximum of 10% as stop loss\n\nHere’s Mark Minervini coming into the ‘95 uptrend based on what stocks met his criteria. He didn’t get really aggressive until April ‘95 - had an incredible 413% return that year!   From ‘Trade Like A Stock Market Wizard’ - Minervini 2013",
+      "author": {
+        "handle": "@RebellioMarket",
+        "name": "RebellioMarket"
+      },
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://baekgujuju.github.io/Archive/v2/media/full/embedded-02cacf419705d828f57f4c26d3a4d80fc64441f469d53b6c5efb5bc8a6399661.jpg",
+          "alt": "Image"
+        }
+      ],
+      "links": [],
+      "stats": {},
+      "quoted": null,
+      "replies": [
+        {
+          "tweetId": "2125668887664751007",
+          "sourceUrl": "https://x.com/donf101/status/2125668887664751007",
+          "capturedAt": "2026-11-27T16:28:16.108198+00:00",
+          "createdAt": "2026-11-25T19:12:10.000Z",
+          "fullText": "Save the screen as a preset so you can rerun it weekly instead of rebuilding filters.",
+          "author": {
+            "handle": "@donf101",
+            "name": "donf101"
+          },
+          "media": [],
+          "links": [],
+          "stats": {},
+          "isThread": false
+        }
+      ],
+      "quoteStatus": "none",
+      "captureType": "text",
+      "capture": {
+        "version": "1",
+        "validator_version": "mobile-1.0.13",
+        "requested_url": "https://x.com/RebellioMarket/status/2125666944439472510",
+        "observed_main_url": "https://x.com/RebellioMarket/status/2125666944439472510",
+        "author_handle": "RebellioMarket",
+        "body_status": "text",
+        "quote_status": "none",
+        "replies_scope": {
+          "collected": 1,
+          "max": 2
+        },
+        "capture_type": "text"
+      }
     }
   ]
 }
