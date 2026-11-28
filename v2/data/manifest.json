@@ -29,7 +29,7 @@
   },
   "shared_state": {
     "file": "data/shared-state.json",
-    "sha256": "b048bd19352c69e2ff4192a3840b81d37ca14d1889f47554f8bf55dd0615d1cb",
+    "sha256": "08c003e2f0d937f7e5a219ff52388b4ab565c08129e19e9aa0bfca3e5a403e14",
     "revision": "2026-11-27T13:34:16.429Z-3knoy5h4"
   },
   "ai_tools": {
