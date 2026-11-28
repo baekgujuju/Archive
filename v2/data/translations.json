@@ -9027,8 +9027,8 @@
       "translated": [],
       "content_hash": "fde61472bb6ba52d",
       "status": "failed",
-      "error": "Codex translation failed (exit 1); existing cache retained",
-      "failed_at": "2026-11-24T14:04:13.565241+00:00"
+      "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+      "failed_at": "2026-11-28T01:34:30.640827+00:00"
     }
   },
   "reply:2111689249854779408:2111695757741047979": {
@@ -12456,8 +12456,8 @@
     "translated": [],
     "content_hash": "de48ef59fcc66de0",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T13:59:53.950094+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:32:22.604005+00:00"
   },
   "2111820320956952991": {
     "paragraphs": [
@@ -13304,8 +13304,8 @@
     "translated": [],
     "content_hash": "d44a6c1d215b6cf1",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:04:13.565777+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:34:30.643435+00:00"
   },
   "reply:2111851509533352153:2111853596195381250": {
     "paragraphs": [
@@ -13825,8 +13825,8 @@
     "translated": [],
     "content_hash": "688ac05f147f559e",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:04:13.565173+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:34:30.639590+00:00"
   },
   "2111732766270488857": {
     "paragraphs": [
@@ -13948,8 +13948,8 @@
     "translated": [],
     "content_hash": "5d9d653a4ee2bdb8",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:04:13.565788+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:34:30.643736+00:00"
   },
   "reply:2112550213990982051:2107130125594861722": {
     "paragraphs": [
@@ -14021,8 +14021,8 @@
     "translated": [],
     "content_hash": "d2f9e52f74f51fba",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:04:13.565797+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:34:30.644057+00:00"
   },
   "reply:2112367388503257439:2112359426594410632": {
     "paragraphs": [
@@ -14134,8 +14134,8 @@
     "translated": [],
     "content_hash": "48ff0a2d81b4bff2",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:04:13.565803+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:34:30.644634+00:00"
   },
   "reply:2112348661577626067:2112348668384919967": {
     "paragraphs": [
@@ -14431,8 +14431,8 @@
     "translated": [],
     "content_hash": "ea5b211ded388cba",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:02:05.950023+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:32:48.474041+00:00"
   },
   "2112930954268615039": {
     "paragraphs": [
@@ -16075,8 +16075,8 @@
     "translated": [],
     "content_hash": "2a0f8feb9f5f722f",
     "status": "failed",
-    "error": "Codex translation failed (exit 1); existing cache retained",
-    "failed_at": "2026-11-24T14:04:13.565808+00:00"
+    "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
+    "failed_at": "2026-11-28T01:34:30.645343+00:00"
   },
   "reply:2113722376919842915:2113848934036918540": {
     "paragraphs": [
@@ -16248,7 +16248,7 @@
     "content_hash": "31f78eeafba73af8",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.023259+00:00"
+    "failed_at": "2026-11-28T01:34:30.646821+00:00"
   },
   "reply:2114550081005498717:2114560408829018394": {
     "paragraphs": [
@@ -16744,7 +16744,7 @@
     "content_hash": "78a3c074a476959a",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.023842+00:00"
+    "failed_at": "2026-11-28T01:34:30.647315+00:00"
   },
   "reply:2116662751410233832:2116673371111051445": {
     "paragraphs": [
@@ -16770,7 +16770,7 @@
     "content_hash": "41fdda00586eb25a",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.023612+00:00"
+    "failed_at": "2026-11-28T01:34:30.647084+00:00"
   },
   "reply:2116662751410233832:2112806825967927533": {
     "paragraphs": [
@@ -17099,7 +17099,7 @@
     "content_hash": "a1dc98a5f9eb16ee",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.024944+00:00"
+    "failed_at": "2026-11-28T01:34:30.648260+00:00"
   },
   "2117220957622255727": {
     "paragraphs": [
@@ -18101,7 +18101,7 @@
     "content_hash": "079d390efada9a4a",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.025095+00:00"
+    "failed_at": "2026-11-28T01:34:30.648401+00:00"
   },
   "reply:2119419482321916012:2119419485191057553": {
     "paragraphs": [
@@ -18971,7 +18971,7 @@
     "content_hash": "9bae86d3c7f05e6f",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.025528+00:00"
+    "failed_at": "2026-11-28T01:34:30.648849+00:00"
   },
   "2098819745718133090": {
     "paragraphs": [
@@ -19427,7 +19427,7 @@
     "content_hash": "3bd8fd9c81efa243",
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
-    "failed_at": "2026-11-24T14:05:42.025656+00:00"
+    "failed_at": "2026-11-28T01:34:30.648979+00:00"
   },
   "reply:2119919314497364236:2119919349234586083": {
     "paragraphs": [
@@ -19635,5 +19635,95 @@
     "status": "failed",
     "error": "외국어 원문과 동일한 결과: 번역 완료로 기록하지 않습니다.",
     "failed_at": "2026-11-15T01:50:48.185269+00:00"
+  },
+  "reply:2123566997849972930:2062620994221854903": {
+    "paragraphs": [
+      "Cut code review time & bugs in half. Instantly. Reviews for AI-powered teams who move fast (but don’t break things) - Try it for free!"
+    ],
+    "translated": [
+      "코드 리뷰 시간과 버그를 절반으로 줄이세요. 즉시 가능합니다. 빠르게 전진하면서도 (시스템을 망가뜨리지 않는) AI 기반 팀을 위한 리뷰 - 무료로 체험해보세요!"
+    ],
+    "content_hash": "8c609cb6892fb0e6",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-28T01:34:30.651699+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2125231026888716505:2125231841321910436": {
+    "paragraphs": [
+      "ty for sharing it bro, you use a skill like a real designer"
+    ],
+    "translated": [
+      "공유해줘서 고마워 브로, 진짜 디자이너처럼 스킬을 쓰네"
+    ],
+    "content_hash": "1cb4124ca26fbceb",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-28T01:34:30.652330+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2122852360586453119:2122972570135978251": {
+    "paragraphs": [
+      "내년부터 금리 인하 흐름으로 갈거긴합니다만, 당장 12월FOMC 금리 인상 자체를 일종의 불확실성 해소로 보는건지 12월을 저점 근거로 삼는 이유가 뭔지 궁금하네요."
+    ],
+    "translated": [
+      "내년부터 금리 인하 흐름으로 갈거긴합니다만, 당장 12월FOMC 금리 인상 자체를 일종의 불확실성 해소로 보는건지 12월을 저점 근거로 삼는 이유가 뭔지 궁금하네요."
+    ],
+    "content_hash": "a993558eb575e484",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-28T01:34:30.651240+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2122852360586453119:2125749328488591416": {
+    "paragraphs": [
+      "Still on the fence? Pro yearly is $119.95 instead of $239.90 for your first year.",
+      "3,000+ templates, UI kits, components and 3D assets. The Black Friday price ends Monday.",
+      "50% off yearly, ends Monday (https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg)  https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg"
+    ],
+    "translated": [
+      "아직 고민되시나요? 첫해 Pro 연간 요금은 $239.90 대신 $119.95입니다.",
+      "3,000개 이상의 템플릿, UI 키트, 컴포넌트 및 3D 에셋. 블랙 프라이데이 특가는 월요일에 종료됩니다.",
+      "연간 요금 50% 할인, 월요일 종료 (https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg)  https://horizonx.so/explore?coupon=BLACKFRIDAY50&utm_source=x&utm_medium=paid&utm_campaign=black-friday-2026&utm_content=retarget-orbit&twclid=21nsrdim7mouozrh9umluivupg"
+    ],
+    "content_hash": "5c4a9a7f07ef230d",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-28T01:34:30.651052+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2124344552077316117:2125773161409212605": {
+    "paragraphs": [
+      "[애플] 에어팟 프로 3세대 미국 블프 40% OFF!\n🎧정품 에어팟 프로 3세대가 단 $149?! \n배송비 10% 할인받고 훗타운에서 직구하세요✈️\n👉 가격: 최종가(상품가+할인 배송비) 244,707원",
+      "Learn more (https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl)  https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl"
+    ],
+    "translated": [
+      "[애플] 에어팟 프로 3세대 미국 블프 40% OFF!\n🎧정품 에어팟 프로 3세대가 단 $149?! \n배송비 10% 할인받고 훗타운에서 직구하세요✈️\n👉 가격: 최종가(상품가+할인 배송비) 244,707원",
+      "자세히 알아보기 (https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl)  https://www.hoottown.com/sellDtl?P2611250000028664=&utm_medium=x&utm_source=display&utm_campaign=mopromo&utm_content=airpods_pro_3&twclid=24eih0hkfldxlaxgh82o6pw2kl"
+    ],
+    "content_hash": "993d4d9388cdf1be",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-28T01:34:30.649441+00:00",
+    "chunk": "posts-x.json"
+  },
+  "reply:2125369349389328834:2120716585333915867": {
+    "paragraphs": [
+      "알콘 워터클럽 가입 혜택!\n혜택이 와르르💝",
+      "🎁누구에게나 드리는 가입혜택!",
+      "1) 가입즉시 웰컴쿠폰 제공\n2) 워터스탬프 적립 시 추가 본팩 증정\n3) 오직 워터클럽에서만 진행하는 특별 이벤트까지!",
+      "Learn more (https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88)  https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88"
+    ],
+    "translated": [
+      "알콘 워터클럽 가입 혜택!\n혜택이 와르르💝",
+      "🎁누구에게나 드리는 가입혜택!",
+      "1) 가입즉시 웰컴쿠폰 제공\n2) 워터스탬프 적립 시 추가 본팩 증정\n3) 오직 워터클럽에서만 진행하는 특별 이벤트까지!",
+      "자세히 알아보기 (https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88)  https://waterclub.myalcon.com/?utm_source=X&utm_medium=video&utm_campaign=promotiontweet&twclid=29w0dcgxg3cgjc25olua7nuh88"
+    ],
+    "content_hash": "d8b63e056a0c2d2c",
+    "status": "ok",
+    "validation_version": 2,
+    "translated_at": "2026-11-28T01:34:30.652070+00:00",
+    "chunk": "posts-x.json"
   }
 }
