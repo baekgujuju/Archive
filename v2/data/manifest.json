@@ -29,8 +29,8 @@
   },
   "shared_state": {
     "file": "data/shared-state.json",
-    "sha256": "e28a6b573604bd4c7a9dc991011447618c32e99556a7b7b4e4795e15a0f6469d",
-    "revision": "2026-10-24T14:38:16.259Z-ic851hd0"
+    "sha256": "b048bd19352c69e2ff4192a3840b81d37ca14d1889f47554f8bf55dd0615d1cb",
+    "revision": "2026-11-27T13:34:16.429Z-3knoy5h4"
   },
   "ai_tools": {
     "file": "data/ai-tools.json",
